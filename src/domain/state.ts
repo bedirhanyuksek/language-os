@@ -31,11 +31,12 @@ const stateFields = {
 }
 
 export const legacyStateSchema = z.strictObject(stateFields).omit({ reviewHistory: true, skippedListening: true })
-export const stateSchema = z.strictObject(stateFields).refine((state) =>
-  unique(state.attempts, (item) => item.id) && unique(state.reviews, (item) => item.cardId) &&
-  unique(state.speakingSessions, (item) => item.id) &&
-  unique(state.speakingAssessments, (item) => item.report.sessionId) &&
-  unique(state.activity, (item) => item.id), 'Öğrenme kaydında tekrarlanan kimlik var.')
+export const stateSchema = z.strictObject(stateFields)
+  .refine((state) => unique(state.attempts, (item) => item.id), { path: ['attempts'], message: 'Tekrarlanan deneme kimliği.' })
+  .refine((state) => unique(state.reviews, (item) => item.cardId), { path: ['reviews'], message: 'Tekrarlanan kelime kartı.' })
+  .refine((state) => unique(state.speakingSessions, (item) => item.id), { path: ['speakingSessions'], message: 'Tekrarlanan konuşma oturumu.' })
+  .refine((state) => unique(state.speakingAssessments, (item) => item.report.sessionId), { path: ['speakingAssessments'], message: 'Tekrarlanan konuşma raporu.' })
+  .refine((state) => unique(state.activity, (item) => item.id), { path: ['activity'], message: 'Tekrarlanan çalışma kaydı.' })
 
 export type LearningState = z.infer<typeof stateSchema>
 export type StudySession = LearningState['activity'][number]

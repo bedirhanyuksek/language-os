@@ -6,10 +6,13 @@ import { DiagnosticView } from './DiagnosticView'
 import { phaseTasks, gradeVocabularyRecall, receptionTask } from '../domain/pedagogy'
 import type { ExerciseAttempt, PedagogyPhase } from '../domain/model'
 import { initialState, type LearningState } from '../domain/state'
-import { IndexedLearningRepository, parseBackup } from '../persistence/repository'
+import { IndexedLearningRepository, localLearningOrigin, parseBackup, type QuarantineNotice } from '../persistence/repository'
+import type { MigrationIssue } from '../persistence/migration'
+import { StorageAccessError, storageIssue as describeStorageIssue, type StorageIssue } from '../persistence/storage-error'
 import { ExerciseForm } from './ExerciseForm'
 import { languageLabels, skillLabels } from './labels'
 import { ProfileForm } from './ProfileForm'
+import { TutorSettings } from './TutorPanel'
 import { Settings } from './Settings'
 import { SpeakingView } from './SpeakingView'
 import { Dashboard, LessonNotes, LessonResults, ReviewCard, SkillProfile } from './StudyViews'
@@ -32,19 +35,44 @@ const nowISO = () => new Date().toISOString()
 export function App() {
   const [state, setState] = useState<LearningState>()
   const [ready, setReady] = useState(false)
+  const [storageIssue, setStorageIssue] = useState<StorageIssue>()
+  const [quarantine, setQuarantine] = useState<QuarantineNotice[]>([])
+  const [allowNewProfile, setAllowNewProfile] = useState(false)
+  const [confirmReset, setConfirmReset] = useState(false)
+  const [resetting, setResetting] = useState(false)
+  const [resetBlocked, setResetBlocked] = useState(false)
+  const [resetError, setResetError] = useState('')
+  const resetInFlight = useRef(false)
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
   const [busy, setBusy] = useState(false)
-  const [screen, setScreen] = useState<Screen>({ type: 'home' })
+  const [screen, setScreen] = useState<Screen>(() => ({
+    type: new URLSearchParams(window.location.search).get('chatgpt') === 'return' ? 'settings' : 'home',
+  }))
   const [now, setNow] = useState(nowISO)
   const inFlight = useRef(false)
   const mainRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    repository.read().then((saved) => { setState(saved); setReady(true) })
-      .catch(() => setError('Tarayıcıdaki yerel kayıt açılamadı.'))
+    if (new URLSearchParams(window.location.search).get('chatgpt') === 'return') window.history.replaceState(null, '', '/')
+    let active = true
+    const unsubscribe = repository.onBlocked(() => {
+      if (resetInFlight.current) setResetBlocked(true)
+      else if (active) setStorageIssue(describeStorageIssue('upgrade', { name: 'BlockedError' }))
+    })
+    repository.openWorkspace().then(({ state: saved, quarantine: notices }) => {
+      if (!active || resetInFlight.current) return
+      setState(saved)
+      setQuarantine(notices)
+      setStorageIssue(undefined)
+      setReady(true)
+    }).catch((cause: unknown) => {
+      if (!active || resetInFlight.current) return
+      setStorageIssue(cause instanceof StorageAccessError
+        ? describeStorageIssue(cause.operation, cause.cause, cause.issues) : describeStorageIssue('open', cause))
+    })
     const timer = window.setInterval(() => setNow(nowISO()), 30_000)
-    return () => window.clearInterval(timer)
+    return () => { active = false; unsubscribe(); window.clearInterval(timer) }
   }, [])
 
   function go(next: Screen) {
@@ -81,10 +109,38 @@ export function App() {
     return state ? save(() => repository.update(state.profile.id, change), after) : Promise.resolve(false)
   }
 
+  async function resetLocalData() {
+    if (!confirmReset || resetInFlight.current || inFlight.current) return
+    resetInFlight.current = true
+    setResetting(true)
+    setResetError('')
+    try {
+      await repository.resetLocalData(window.location.origin)
+      window.location.reload()
+    } catch {
+      setResetError('Yerel veriler sıfırlanamadı. Sayfayı yeniden yükleyip tekrar dene.')
+      resetInFlight.current = false
+      setResetting(false)
+      setResetBlocked(false)
+    }
+  }
+
   const course = state && catalog[state.profile.language]
   let content
-  if (!ready) {
-    content = error ? <button className="primary" onClick={() => window.location.reload()}>Yeniden dene</button> : <p role="status">Yerel kayıt açılıyor…</p>
+  if (resetting) {
+    content = <p role="status">{resetBlocked
+      ? 'Sıfırlama bekliyor. Bu adresteki diğer Language OS sekmelerini kapat.'
+      : 'Language OS veritabanı sıfırlanıyor…'}</p>
+  } else if (screen.type === 'settings' && !state) {
+    content = <><header className="page-heading"><h1>Ayarlar</h1></header><TutorSettings /></>
+  } else if (!ready) {
+    content = storageIssue ? <button className="primary" onClick={() => window.location.reload()}>Yeniden dene</button> : <p role="status">Yerel kayıt açılıyor…</p>
+  } else if (!state && quarantine.some(({ active }) => active) && !allowNewProfile) {
+    content = <section className="surface">
+      <h1>Önceki profil koruma altında</h1>
+      <p>Önceki ilerleme henüz yüklenemedi. Teknik ayrıntıları paylaşarak uygun geçişin belirlenmesini sağlayabilirsin.</p>
+      <button className="secondary" onClick={() => setAllowNewProfile(true)}>Ayrı bir yeni profille devam et</button>
+    </section>
   } else if (!state || !course) {
     content = <div className="onboarding">
       <header className="onboarding-intro"><p className="eyebrow">Kişisel öğrenme stüdyosu</p>
@@ -138,7 +194,7 @@ export function App() {
       content = <>
         <header className="page-heading"><div><p className="eyebrow">{languageLabels[course.language]} · {lesson.objective.level}</p>
           <h1>{lesson.title}</h1><p>{lesson.objective.description}</p></div></header>
-        {tasks.some(({ exercise }) => exercise.kind !== 'open') && <LessonNotes lesson={lesson} />}
+        {tasks.some(({ exercise }) => exercise.kind !== 'open') && <LessonNotes lesson={lesson} state={state} />}
         {lesson.pedagogy && <details><summary>Yazını kontrol etmek için ölçütler</summary>
           <ul>{lesson.pedagogy.rubric.map(({ criterion }) => <li key={criterion}>{criterion}</li>)}</ul>
         </details>}
@@ -149,7 +205,7 @@ export function App() {
               (saved) => go({ type: 'results', lessonId: lesson.id, attempts: saved.attempts.slice(-tasks.length) }))} />
         </section>
       </>
-    } else if (screen.type === 'results' && lesson) content = <LessonResults lesson={lesson}
+    } else if (screen.type === 'results' && lesson) content = <LessonResults lesson={lesson} state={state}
       attempts={screen.attempts} onContinue={() => go({ type: 'home' })} />
     else if (screen.type === 'pedagogy' && lesson && lesson.pedagogy) {
       const tasks = phaseTasks(state, lesson, screen.phase, now)
@@ -211,20 +267,63 @@ export function App() {
       <button type="button" className="brand" disabled={busy} onClick={() => go({ type: 'home' })}>
         <img src="/icon.svg" width="34" height="34" alt="" /><span>Language <strong>OS</strong></span>
       </button>
-      {state && <nav aria-label="Ana menü">
-        <button disabled={busy} onClick={() => go({ type: 'home' })} aria-current={screen.type === 'home' ? 'page' : undefined}>Plan</button>
-        {state.placementAt && <button disabled={busy} onClick={() => go({ type: 'skills' })} aria-current={screen.type === 'skills' ? 'page' : undefined}>Beceri profili</button>}
-        <button disabled={busy} onClick={() => go({ type: 'settings' })} aria-current={screen.type === 'settings' ? 'page' : undefined}>Ayarlar</button>
-      </nav>}
+      <nav aria-label="Ana menü">
+        {state && <button disabled={busy || resetting} onClick={() => go({ type: 'home' })} aria-current={screen.type === 'home' ? 'page' : undefined}>Plan</button>}
+        {state?.placementAt && <button disabled={busy || resetting} onClick={() => go({ type: 'skills' })} aria-current={screen.type === 'skills' ? 'page' : undefined}>Beceri profili</button>}
+        <button disabled={busy || resetting} onClick={() => go({ type: 'settings' })} aria-current={screen.type === 'settings' ? 'page' : undefined}>Ayarlar</button>
+      </nav>
       {course && <span className="top-language">{languageLabels[course.language]} · {course.level}</span>}
     </header>
     <main id="main" tabIndex={-1} ref={mainRef} className={state ? 'workspace' : 'workspace welcome'}>
+      {storageIssue && <section className="notice error">
+        <p role="alert">Tarayıcı yerel kaydı açamadı. {storageIssue.advice}</p>
+        <details><summary>Teknik ayrıntılar</summary>
+          <p>Adres <code>{window.location.origin}</code></p>
+          <p>İşlem <code>{{ open: 'IndexedDB.open(language-os)', read: 'workspace.get(active)',
+            validate: 'workspace.get(active) → kayıt doğrulama', upgrade: 'IndexedDB sürüm geçişi' }[storageIssue.operation]}</code></p>
+          <p>Hata türü <code>{storageIssue.type}{storageIssue.innerType && ` → ${storageIssue.innerType}`}</code></p>
+          {storageIssue.issues && <MigrationIssueList issues={storageIssue.issues} />}
+        </details>
+      </section>}
+      {quarantine.length > 0 && <section className="notice">
+        <p role="status">Doğrulanamayan {quarantine.length} öğrenme kaydı özgün içeriğiyle yerelde korumaya alındı.</p>
+        <details><summary>Geçişin teknik ayrıntıları</summary>
+          {quarantine.map(({ id, active, sourceVersion, targetVersion, issues }) => <div key={id}>
+            <p>{active ? 'Etkin profil' : 'Diğer çalışma kaydı'} · IndexedDB şeması {sourceVersion} → {targetVersion} · ZodError</p>
+            <MigrationIssueList issues={issues} />
+          </div>)}
+        </details>
+      </section>}
+      {window.location.origin === localLearningOrigin && !resetting &&
+        (storageIssue || quarantine.length > 0 || (screen.type === 'settings' && state)) &&
+        <section className="surface section" aria-label="Yerel veri sıfırlama">
+          {confirmReset ? <>
+            <h2>Yerel veriler silinsin mi?</h2>
+            <p>Bu Chrome profilinde {localLearningOrigin} adresindeki Language OS veritabanı silinir.
+              Profil, ilerleme, öğrenci yanıtları, kelime tekrarları, konuşma raporları ve korumaya alınan kayıtlar geri alınamaz.</p>
+            <p>Diğer adreslerin verileri, tarayıcı önbelleği, indirilen yedekler ve ChatGPT hesap bağlantısı korunur.</p>
+            <div className="button-row">
+              <button className="secondary" disabled={busy} onClick={() => setConfirmReset(false)}>Vazgeç</button>
+              <button className="primary" disabled={busy} onClick={() => void resetLocalData()}>Yerel verileri kalıcı olarak sil</button>
+            </div>
+          </> : <button className="secondary" disabled={busy} onClick={() => setConfirmReset(true)}>Yerel verileri sıfırla</button>}
+          {resetError && <p role="alert">{resetError}</p>}
+        </section>}
       {error && <p className="notice error" role="alert">{error}</p>}
       {notice && <p className="notice" role="status">{notice}</p>}
       <Suspense fallback={<p role="status">Çalışma açılıyor…</p>}>{content}</Suspense>
     </main>
     <footer><span>Language OS</span><span>İlerleme bu tarayıcıda saklanır.</span></footer>
   </div>
+}
+
+function MigrationIssueList({ issues }: { issues: readonly MigrationIssue[] }) {
+  return <ul>{issues.map((issue, index) => <li key={index}>
+    {issue.recordType} · <code>{issue.path}</code> · <code>{issue.code}</code>
+    {issue.expected && <> · Beklenen <code>{issue.expected}</code></>}
+    {issue.contentVersion && <> · İçerik v{issue.contentVersion}</>}
+    {issue.reportVersion && <> · Rapor v{issue.reportVersion}</>}
+  </li>)}</ul>
 }
 
 function SettingsRestore({ busy, restore }: { busy: boolean; restore: (state: LearningState) => Promise<boolean> }) {

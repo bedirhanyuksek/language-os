@@ -1,3 +1,5 @@
+import { coachingForAnswer } from '../domain/lesson-coaching'
+import { InlineCoaching } from './TutorPanel'
 import { useState } from 'react'
 import { receptionExercises, type Course, type Lesson } from '../content/schema'
 import type { Answer, ExerciseAttempt, PedagogyPhase } from '../domain/model'
@@ -96,7 +98,8 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
             <blockquote lang={p.language}>{example.correctExample}</blockquote></div>
         })}
       </div>}
-      <ExerciseForm tasks={tasks} language={p.language} busy={busy} onSubmit={submit} />
+      <ExerciseForm tasks={tasks} language={p.language} busy={busy} onSubmit={submit}
+        initialAnswers={phase === 'revision' && draft && p.revision ? { [p.revision.id]: draft.answer } : undefined} />
     </section>}
   </>
 }
@@ -129,6 +132,7 @@ export function PedagogyResults({ lesson, phase, attempts, onContinue, state, re
       if (!exercise) return null
       const check = p.checks.find(({ conceptId }) => conceptId === attempt.conceptId)
       const wrong = attempt.evidence.outcome === 'incorrect'
+      const coaching = coachingForAnswer(state, lesson, exercise, attempt)
       return <article key={attempt.id} className="surface feedback section">
         <p className={`status ${attempt.evidence.outcome}`}>{wrong ? (finalFailure ? 'Kanıt eksik' : 'Tekrar çalışılacak') :
           attempt.evidence.outcome === 'correct' ? 'Doğru' : 'İnceleme bekliyor'}</p>
@@ -137,6 +141,7 @@ export function PedagogyResults({ lesson, phase, attempts, onContinue, state, re
         {exercise.kind === 'open' && <p><strong>Örnek</strong> {exercise.sample}</p>}
         <p>{exercise.explanation}</p>
         {wrong && check && phase !== 'foundation' && <p>{check.misconception} · <s>{check.incorrectExample}</s> → {check.correctExample}</p>}
+        {coaching && <InlineCoaching {...coaching} />}
       </article>
     })}
     <button className="primary" onClick={onContinue}>Günlük plana dön</button>

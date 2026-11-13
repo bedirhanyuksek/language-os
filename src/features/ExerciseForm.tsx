@@ -50,15 +50,16 @@ function ExerciseInput({ exercise, language, answer, change }: {
   }
 }
 
-export function ExerciseForm({ tasks, language, busy, onSubmit, placement = false, submitLabel }: {
+export function ExerciseForm({ tasks, language, busy, onSubmit, placement = false, submitLabel, initialAnswers }: {
   tasks: ExerciseTask[]
   language: Language
   busy: boolean
   onSubmit: (answers: Record<string, Answer>) => Promise<boolean>
   placement?: boolean
   submitLabel?: string
+  initialAnswers?: Record<string, Answer>
 }) {
-  const [answers, setAnswers] = useState<Record<string, Answer>>({})
+  const [answers, setAnswers] = useState<Record<string, Answer>>(initialAnswers ?? {})
   const [error, setError] = useState('')
   async function submit(event: FormEvent) {
     event.preventDefault()

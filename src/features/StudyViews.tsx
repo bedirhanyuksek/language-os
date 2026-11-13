@@ -1,3 +1,5 @@
+import { coachingForAnswer } from '../domain/lesson-coaching'
+import { InlineCoaching, LessonHelp } from './TutorPanel'
 import { useState } from 'react'
 import type { Course, Lesson, VocabularyItem } from '../content/schema'
 import { mapPlacement } from '../domain/assessment'
@@ -57,7 +59,7 @@ export function Dashboard({ state, course, plan, start }: {
   </>
 }
 
-export function LessonNotes({ lesson }: { lesson: Lesson }) {
+export function LessonNotes({ lesson, state }: { lesson: Lesson; state: LearningState }) {
   return <article className="surface notes">
     <h2>Önce hatırla</h2><p>{lesson.recall}</p>
     <h2>Kural ve kullanım</h2>
@@ -69,11 +71,12 @@ export function LessonNotes({ lesson }: { lesson: Lesson }) {
       <p><strong>Düzelt</strong> <s>{example.incorrect}</s></p>
       <p>{example.note}</p>
     </div>)}
+    <LessonHelp state={state} lesson={lesson} />
   </article>
 }
 
-export function LessonResults({ lesson, attempts, onContinue }: {
-  lesson: Lesson; attempts: ExerciseAttempt[]; onContinue: () => void
+export function LessonResults({ lesson, attempts, onContinue, state }: {
+  lesson: Lesson; attempts: ExerciseAttempt[]; onContinue: () => void; state: LearningState
 }) {
   const exercises = [...lesson.concepts.flatMap(({ variants }) => variants), lesson.production]
   const correct = attempts.filter(({ evidence }) => evidence.outcome === 'correct').length
@@ -85,6 +88,7 @@ export function LessonResults({ lesson, attempts, onContinue }: {
       const exercise = exercises.find(({ id }) => id === attempt.exerciseId)
       if (!exercise) return null
       const { outcome } = attempt.evidence
+      const coaching = coachingForAnswer(state, lesson, exercise, attempt)
       return <article className="surface feedback" key={attempt.id}>
         <span className={`status ${outcome}`}>{outcome === 'correct' ? 'Doğru' : outcome === 'incorrect' ? 'Tekrar çalışılacak' : 'İnceleme bekliyor'}</span>
         <h2>{exercise.prompt}</h2>
@@ -97,6 +101,7 @@ export function LessonResults({ lesson, attempts, onContinue }: {
           .map((check) => <p key={check.conceptId}><strong>{check.misconception}</strong> <s>{check.incorrectExample}</s> → {check.correctExample}</p>)}
         {exercise.kind === 'open' && lesson.pedagogy && <ul>{lesson.pedagogy.rubric.map(({ criterion, example }) =>
           <li key={criterion}>{criterion} · {example}</li>)}</ul>}
+        {coaching && <InlineCoaching {...coaching} />}
       </article>
     })}</div>
     <button className="primary" onClick={onContinue}>Günlük plana dön <span aria-hidden>→</span></button>

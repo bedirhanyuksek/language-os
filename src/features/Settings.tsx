@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import type { LearningState, Profile } from '../domain/state'
 import { exportBackup, parseBackup } from '../persistence/repository'
+import { TutorSettings } from './TutorPanel'
 import { ProfileForm } from './ProfileForm'
 
 export function Settings({ state, busy, onSave, onRestore, notice }: {
@@ -41,6 +42,7 @@ export function Settings({ state, busy, onSave, onRestore, notice }: {
         return saved
       }} />
     </section>
+    <TutorSettings />
     <section className="surface section">
       <h2>Yerel kayıtlar</h2><p>Yedek dosyası yanıtlarını ve içe aktardığın konuşma alıntılarını içerir.</p>
       <div className="button-row">

@@ -182,6 +182,9 @@ for (const course of Object.values(catalog)) {
       await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
       await expect(page.getByRole('heading', { name: 'İlk yazın' })).toBeVisible()
       await expect(page.getByRole('heading', { name: 'Yazını gözden geçir' })).toBeVisible()
+      if (lesson.production.kind === 'open') {
+        await expect(task(page, p.revision!).getByRole('textbox')).toHaveValue(lesson.production.sample)
+      }
       await fill(task(page, p.revision!), p.revision!)
       await submit(page)
       await expect(page.getByText('İnceleme bekliyor', { exact: true })).toBeVisible()

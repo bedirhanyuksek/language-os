@@ -19,7 +19,8 @@ self.addEventListener('activate', event => event.waitUntil(
 ));
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
-  if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
+  if (event.request.method !== 'GET' || url.origin !== self.location.origin ||
+    url.pathname === '/auth/callback' || url.pathname.startsWith('/local-tutor/')) return;
   if (event.request.mode === 'navigate') {
     event.respondWith(fetch(event.request).catch(() => caches.open(cacheName).then(cache => cache.match('/index.html'))));
   } else if (files.includes(url.pathname)) {

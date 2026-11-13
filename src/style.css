@@ -188,3 +188,12 @@ details textarea, .backup-inline { margin-top: 8px; }
 .passage { white-space: pre-line; }
 audio { max-width: 100%; }
 .notes h3 { margin-bottom: .45rem; }
+
+.lesson-coaching {
+  border-inline-start: 2px solid currentColor;
+  margin-block-start: 1rem;
+  padding-inline-start: .875rem;
+}
+.lesson-coaching form, .lesson-coaching dl { margin-block: .75rem; }
+.lesson-coaching textarea, .lesson-coaching input { width: 100%; }
+.lesson-coaching dd { margin-inline-start: 0; margin-block-end: .5rem; }
