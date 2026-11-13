@@ -1,0 +1,1577 @@
+{
+  "patches": [
+    {
+      "lessonId": "ru.intro",
+      "receptionRetry": {
+        "reading": {
+          "text": "— Здравствуйте! Меня зовут Лена. Как вас зовут?\n— Меня зовут Роман.",
+          "question": {
+            "id": "ru.intro.retry.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Yanıt veren kişinin adı ne?",
+            "options": [
+              "Lena",
+              "Roman",
+              "Pavel"
+            ],
+            "accepted": "Roman",
+            "explanation": "Yanıt Меня зовут Роман ile başlıyor."
+          },
+          "coaching": "Her repliğin başına bir konuşmacı koy. Меня зовут sonrası adı o satıra yaz."
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "Здравствуйте! Меня зовут Ирина. Как вас зовут? Меня зовут Олег.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.intro.retry.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.intro.retry.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Kişiler ne yapıyor?",
+            "options": [
+              "Saat soruyorlar",
+              "Kibarca tanışıyorlar",
+              "Bilet alıyorlar"
+            ],
+            "accepted": "Kibarca tanışıyorlar",
+            "explanation": "Selam ve ad sorusu ilk tanışmayı gösterir."
+          },
+          "detail": {
+            "id": "ru.intro.retry.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İkinci kişinin adı ne?",
+            "options": [
+              "Irina",
+              "Oleg",
+              "Maksim"
+            ],
+            "accepted": "Oleg",
+            "explanation": "İkinci ad Олег."
+          },
+          "mainCoaching": "Selam ve soru kalıbını birlikte tanımaya çalış.",
+          "detailCoaching": "İkinci Меня зовут kalıbından hemen sonrasını dinle."
+        }
+      },
+      "revision": {
+        "id": "ru.intro.revision",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "İlk yanıtını oku. İki ölçütü kontrol edip mesajın yeni sürümünü yaz.",
+        "sample": "Здравствуйте! Меня зовут Лена. Как вас зовут?",
+        "explanation": "İki sürümü yan yana karşılaştır. Yazı inceleme bekler."
+      }
+    },
+    {
+      "lessonId": "ru.roles",
+      "receptionRetry": {
+        "reading": {
+          "text": "Это Нина. Она студентка. Это Иван. Он врач.",
+          "question": {
+            "id": "ru.roles.retry.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Ivan’ın mesleği nedir?",
+            "options": [
+              "Mühendis",
+              "Doktor",
+              "Öğrenci"
+            ],
+            "accepted": "Doktor",
+            "explanation": "Он врач, Ivan’ı anlatıyor."
+          },
+          "coaching": "Это ile başlayan tanıtımı izleyen он veya она ile bağla. Meslek adı o kişiye aittir."
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "Это Лена. Она инженер. Это Антон. Он студент.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.roles.retry.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.roles.retry.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İki kişi hakkında ne söyleniyor?",
+            "options": [
+              "Nerede yaşadıkları",
+              "Ne iş yaptıkları",
+              "Kaç yaşında oldukları"
+            ],
+            "accepted": "Ne iş yaptıkları",
+            "explanation": "Инженер ve студент meslek veya rol bildiriyor."
+          },
+          "detail": {
+            "id": "ru.roles.retry.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Lena ne iş yapıyor?",
+            "options": [
+              "Doktor",
+              "Mühendis",
+              "Öğrenci"
+            ],
+            "accepted": "Mühendis",
+            "explanation": "Она инженер ilk kişiye bağlanıyor."
+          },
+          "mainCoaching": "Kişi adlarıyla meslek sözcüklerini ayrı dinle.",
+          "detailCoaching": "Лена adından sonraki она cümlesine odaklan."
+        }
+      },
+      "revision": {
+        "id": "ru.roles.revision",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "İlk yanıtını oku. İki ölçütü kontrol edip mesajın yeni sürümünü yaz.",
+        "sample": "Меня зовут Олег. Я инженер. Это Нина. Она врач.",
+        "explanation": "İki sürümü yan yana karşılaştır. Yazı inceleme bekler."
+      }
+    },
+    {
+      "lessonId": "ru.city",
+      "receptionRetry": {
+        "reading": {
+          "text": "Антон живёт в Москве. Ира живёт в Самаре. Павел живёт в Петербурге.",
+          "question": {
+            "id": "ru.city.retry.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Pavel nerede yaşıyor?",
+            "options": [
+              "Moskova",
+              "Petersburg",
+              "Samara"
+            ],
+            "accepted": "Petersburg",
+            "explanation": "Павел ile başlayan cümlede в Петербурге geçiyor."
+          },
+          "coaching": "Her kişinin adını, aynı cümledeki в + şehir ifadesiyle eşleştir."
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "Меня зовут Нина. Я живу в Самаре. Это Антон. Он живёт в Москве.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.city.retry.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.city.retry.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Konuşmacılar hakkında ne öğreniyoruz?",
+            "options": [
+              "Çalışma saatlerini",
+              "Yaşadıkları şehirleri",
+              "Mesleklerini"
+            ],
+            "accepted": "Yaşadıkları şehirleri",
+            "explanation": "Живу ve живёт ikamet bildiriyor."
+          },
+          "detail": {
+            "id": "ru.city.retry.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Anton nerede yaşıyor?",
+            "options": [
+              "Samara",
+              "Moskova",
+              "Petersburg"
+            ],
+            "accepted": "Moskova",
+            "explanation": "Son cümle Anton’u Moskova’ya bağlıyor."
+          },
+          "mainCoaching": "Живу ve живёт, konuşmanın konusunu işaret eder.",
+          "detailCoaching": "Sorulan adı duyduktan sonra aynı kişi için gelen şehir ifadesini yakala."
+        }
+      },
+      "revision": {
+        "id": "ru.city.revision",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "İlk yanıtını oku. İki ölçütü kontrol edip mesajın yeni sürümünü yaz.",
+        "sample": "Меня зовут Анна. Я врач. Я живу в Москве.",
+        "explanation": "İki sürümü yan yana karşılaştır. Yazı inceleme bekler."
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "ru.cyrillic",
+      "title": "Kiril yazısıyla ilk kelimeler",
+      "objective": {
+        "id": "ru.cyrillic.objective",
+        "description": "Kısa tabela ve isimlerde sık Kiril harflerini ayırt et.",
+        "level": "A1"
+      },
+      "prerequisites": [],
+      "minutes": 5,
+      "goals": [
+        "general"
+      ],
+      "recall": "Bu iletişim durumunda daha önce hangi ifadeyi kullandığını düşün.",
+      "explanation": [
+        "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir.",
+        "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+      ],
+      "examples": [
+        {
+          "correct": "сон: s-o-n",
+          "incorrect": "сон: k-o-h",
+          "note": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+        },
+        {
+          "correct": "том: t-o-m",
+          "incorrect": "том: m-o-t",
+          "note": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ru.cyrillic.concept.1",
+          "label": "Görünüşü benzer harfler",
+          "variants": [
+            {
+              "id": "ru.cyrillic.concept.1.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "Kiril Н hangi Latin ses harfiyle karşılanır?",
+              "accepted": [
+                "n"
+              ],
+              "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+            },
+            {
+              "id": "ru.cyrillic.concept.1.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "Kiril Р hangi Latin ses harfiyle karşılanır?",
+              "accepted": [
+                "r"
+              ],
+              "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+            }
+          ]
+        },
+        {
+          "id": "ru.cyrillic.concept.2",
+          "label": "Sesleri birleştir",
+          "variants": [
+            {
+              "id": "ru.cyrillic.concept.2.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "t-o-m dizisini Kiril yazısıyla yaz.",
+              "accepted": [
+                "том"
+              ],
+              "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+            },
+            {
+              "id": "ru.cyrillic.concept.2.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "r-o-m dizisini Kiril yazısıyla yaz.",
+              "accepted": [
+                "ром"
+              ],
+              "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "ru.cyrillic.write",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Kiril yazısıyla iki kişi adı ve bir tabela sözcüğü yaz.",
+        "sample": "Нина. Роман. Метро.",
+        "explanation": "Örnek ile kendi mesajını iki ölçüte göre karşılaştır."
+      },
+      "vocabulary": [
+        {
+          "id": "ru.cyrillic.word.1",
+          "term": "метро",
+          "meaning": "metro",
+          "example": "Это метро.",
+          "context": "Kısa tabela ve isimlerde sık Kiril harflerini ayırt et.",
+          "partOfSpeech": "Kalıp",
+          "grammar": "станция метро"
+        }
+      ],
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://mezhdunami.org/unit01/1_4/language.shtml",
+          "https://mezhdunami.org/unit03/3_7/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Görünüşü benzer harfler",
+            "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir.",
+            "example": "сон: s-o-n"
+          },
+          {
+            "title": "Sesleri birleştir",
+            "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir.",
+            "example": "том: t-o-m"
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Görevde istenen bilgileri ver.",
+            "example": "Нина. Роман. Метро."
+          },
+          {
+            "criterion": "Hedef kalıpları amaca uygun kullan.",
+            "example": "сон: s-o-n"
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.cyrillic.concept.1",
+            "misconception": "Görünüşü benzer harfler",
+            "incorrectExample": "сон: k-o-h",
+            "correctExample": "сон: s-o-n",
+            "correction": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic.concept.1.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "Kiril С hangi Latin ses harfiyle karşılanır?",
+                "accepted": [
+                  "s"
+                ],
+                "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+              },
+              {
+                "id": "ru.cyrillic.concept.1.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“сон” sözcüğünün ilk sesi hangi Latin harfle yazılır?",
+                "accepted": [
+                  "s"
+                ],
+                "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic.concept.1.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“нос” sözcüğünün ilk sesi hangi Latin harfle yazılır?",
+                "accepted": [
+                  "n"
+                ],
+                "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+              },
+              {
+                "id": "ru.cyrillic.concept.1.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“рот” sözcüğünün ilk sesi hangi Latin harfle yazılır?",
+                "accepted": [
+                  "r"
+                ],
+                "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.cyrillic.concept.2",
+            "misconception": "Sesleri birleştir",
+            "incorrectExample": "том: m-o-t",
+            "correctExample": "том: t-o-m",
+            "correction": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic.concept.2.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "s-o-m dizisini Kiril yazısıyla yaz.",
+                "accepted": [
+                  "сом"
+                ],
+                "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+              },
+              {
+                "id": "ru.cyrillic.concept.2.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "n-o-s dizisini Kiril yazısıyla yaz.",
+                "accepted": [
+                  "нос"
+                ],
+                "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic.concept.2.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "r-o-t dizisini Kiril yazısıyla yaz.",
+                "accepted": [
+                  "рот"
+                ],
+                "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+              },
+              {
+                "id": "ru.cyrillic.concept.2.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "s-o-n dizisini Kiril yazısıyla yaz.",
+                "accepted": [
+                  "сон"
+                ],
+                "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "На́дя · Рома́н · Софи́я",
+          "question": {
+            "id": "ru.cyrillic.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Hangi isim Kiril Р harfiyle başlıyor?",
+            "options": [
+              "Надя",
+              "Роман",
+              "София"
+            ],
+            "accepted": "Роман",
+            "explanation": "Р Roman adının ilk harfi ve r sesidir."
+          }
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "Нина. Роман. Соня.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.cyrillic.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.cyrillic.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Kayıtta ne duyuyorsun?",
+            "options": [
+              "Şehir adları",
+              "Kişi adları",
+              "Sayılar"
+            ],
+            "accepted": "Kişi adları",
+            "explanation": "Nina, Roman ve Sonya kişi adlarıdır."
+          },
+          "detail": {
+            "id": "ru.cyrillic.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İkinci ad hangisi?",
+            "options": [
+              "Нина",
+              "Роман",
+              "Соня"
+            ],
+            "accepted": "Роман",
+            "explanation": "İkinci sözcük Роман."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "Саша · Нина · Рита",
+            "question": {
+              "id": "ru.cyrillic.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Hangi ad С ile başlıyor?",
+              "options": [
+                "Нина",
+                "Саша",
+                "Рита"
+              ],
+              "accepted": "Саша",
+              "explanation": "С, s sesine karşılık gelir."
+            },
+            "coaching": "Sorulan bilgiyi önce adlandır. Metinde bu bilgiyi taşıyan kişi, zaman ya da eylemi aynı cümlede bul."
+          },
+          "listening": {
+            "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+            "transcript": "Рита. Соня. Нина.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "main": {
+              "id": "ru.cyrillic.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Ne duyuyorsun?",
+              "options": [
+                "Ürün fiyatları",
+                "Kişi adları",
+                "Çalışma saatleri"
+              ],
+              "accepted": "Kişi adları",
+              "explanation": "Üç sözcük de kişi adıdır."
+            },
+            "detail": {
+              "id": "ru.cyrillic.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "İkinci ad hangisi?",
+              "options": [
+                "Рита",
+                "Соня",
+                "Нина"
+              ],
+              "accepted": "Соня",
+              "explanation": "Ortadaki ad Соня."
+            },
+            "mainCoaching": "İlk dinlemede konu ile amacı ayır. Tek tek kelimelere takılmadan konuşmanın ne yaptığını düşün.",
+            "detailCoaching": "Sorunun istediği kişi, sayı veya eylemi belirle. İkinci dinlemede ilgili bölüme odaklan."
+          }
+        },
+        "revision": {
+          "id": "ru.cyrillic.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "İlk metnini kontrol et. Bağlam ve hedef kalıp bakımından yeni bir sürüm yaz.",
+          "sample": "Нина. Роман. Метро.",
+          "explanation": "Görevin bilgi ve kullanım ölçütleriyle karşılaştır."
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic.word.1",
+            "collocations": [
+              "станция метро"
+            ],
+            "pronunciation": "метро́",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "“метро” ne demek?",
+              "options": [
+                "bugün erken",
+                "metro",
+                "uzun bir yol"
+              ],
+              "accepted": "metro",
+              "explanation": "Kalıbın anlamını örnek cümleye bağla."
+            },
+            "recall": {
+              "id": "ru.cyrillic.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“metro” için öğrendiğin ifadeyi yaz.",
+              "accepted": [
+                "метро"
+              ],
+              "explanation": "Kalıbı örnekteki anlamıyla hatırla."
+            },
+            "use": {
+              "id": "ru.cyrillic.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "“метро” ifadesini kısa bir cümlede kullan.",
+              "sample": "Это метро.",
+              "explanation": "İfadenin bağlamına ve anlamına bak."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Bir isim listesinden Нина ve Роман adlarını, sonra сон ve рот sözcüklerini sesli oku.",
+        "grammar": "Görünüşü benzer harfler; Sesleri birleştir",
+        "goals": [
+          "Kısa tabela ve isimlerde sık Kiril harflerini ayırt et."
+        ],
+        "rubric": [
+          "Н ve Р harflerini Latin harfleriyle karıştırmadan seslendir.",
+          "Sözcükleri önce harf harf, sonra kesmeden birleştir."
+        ],
+        "context": "daily_conversation"
+      }
+    },
+    {
+      "id": "ru.order",
+      "title": "Kafede sipariş ver",
+      "objective": {
+        "id": "ru.order.objective",
+        "description": "Kibarca sipariş ver ve fiyatı sor.",
+        "level": "A1"
+      },
+      "prerequisites": [
+        "ru.city.objective"
+      ],
+      "minutes": 5,
+      "goals": [
+        "general"
+      ],
+      "recall": "Bu iletişim durumunda daha önce hangi ifadeyi kullandığını düşün.",
+      "explanation": [
+        "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır.",
+        "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır."
+      ],
+      "examples": [
+        {
+          "correct": "Мне чай, пожалуйста.",
+          "incorrect": "Я чай, пожалуйста.",
+          "note": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır."
+        },
+        {
+          "correct": "Сколько стоит чай?",
+          "incorrect": "Сколько стоят чай?",
+          "note": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ru.order.concept.1",
+          "label": "Kibar istek",
+          "variants": [
+            {
+              "id": "ru.order.concept.1.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "“Bana çay, lütfen.” ___ чай, пожалуйста.",
+              "accepted": [
+                "Мне"
+              ],
+              "explanation": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır."
+            },
+            {
+              "id": "ru.order.concept.1.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "“Bana kahve, lütfen.” ___ кофе, пожалуйста.",
+              "accepted": [
+                "Мне"
+              ],
+              "explanation": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır."
+            }
+          ]
+        },
+        {
+          "id": "ru.order.concept.2",
+          "label": "Fiyat sorusu",
+          "variants": [
+            {
+              "id": "ru.order.concept.2.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "Сколько ___ чай? (fiyat)",
+              "accepted": [
+                "стоит"
+              ],
+              "explanation": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır."
+            },
+            {
+              "id": "ru.order.concept.2.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "Сколько ___ кофе? (fiyat)",
+              "accepted": [
+                "стоит"
+              ],
+              "explanation": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "ru.order.write",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Kafede bir içecek iste ve fiyatını sor.",
+        "sample": "Мне чай, пожалуйста. Сколько стоит чай?",
+        "explanation": "Örnek ile kendi mesajını iki ölçüte göre karşılaştır."
+      },
+      "vocabulary": [
+        {
+          "id": "ru.order.word.1",
+          "term": "пожалуйста",
+          "meaning": "lütfen",
+          "example": "Мне кофе, пожалуйста.",
+          "context": "Kibarca sipariş ver ve fiyatı sor.",
+          "partOfSpeech": "Kalıp",
+          "grammar": "чай, пожалуйста"
+        }
+      ],
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://mezhdunami.org/unit01/1_4/language.shtml",
+          "https://mezhdunami.org/unit03/3_7/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Kibar istek",
+            "explanation": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır.",
+            "example": "Мне чай, пожалуйста."
+          },
+          {
+            "title": "Fiyat sorusu",
+            "explanation": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır.",
+            "example": "Сколько стоит чай?"
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Görevde istenen bilgileri ver.",
+            "example": "Мне чай, пожалуйста. Сколько стоит чай?"
+          },
+          {
+            "criterion": "Hedef kalıpları amaca uygun kullan.",
+            "example": "Мне чай, пожалуйста."
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.order.concept.1",
+            "misconception": "Kibar istek",
+            "incorrectExample": "Я чай, пожалуйста.",
+            "correctExample": "Мне чай, пожалуйста.",
+            "correction": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır.",
+            "transfer": [
+              {
+                "id": "ru.order.concept.1.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Bana su, lütfen.” ___ воду, пожалуйста.",
+                "accepted": [
+                  "Мне"
+                ],
+                "explanation": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır."
+              },
+              {
+                "id": "ru.order.concept.1.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Bir çay alabilir miyim?” ___ чай, пожалуйста?",
+                "accepted": [
+                  "Можно"
+                ],
+                "explanation": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.order.concept.1.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Bir kahve alabilir miyim?” ___ кофе, пожалуйста?",
+                "accepted": [
+                  "Можно"
+                ],
+                "explanation": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır."
+              },
+              {
+                "id": "ru.order.concept.1.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Bana çorba, lütfen.” ___ суп, пожалуйста.",
+                "accepted": [
+                  "Мне"
+                ],
+                "explanation": "Можно + ürün adı veya Мне + ürün adı bir isteği açar. Пожалуйста sözü isteği yumuşatır."
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.order.concept.2",
+            "misconception": "Fiyat sorusu",
+            "incorrectExample": "Сколько стоят чай?",
+            "correctExample": "Сколько стоит чай?",
+            "correction": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır.",
+            "transfer": [
+              {
+                "id": "ru.order.concept.2.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "Сколько ___ суп? (fiyat)",
+                "accepted": [
+                  "стоит"
+                ],
+                "explanation": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır."
+              },
+              {
+                "id": "ru.order.concept.2.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "Сколько ___ билет? (fiyat)",
+                "accepted": [
+                  "стоит"
+                ],
+                "explanation": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.order.concept.2.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "Сколько ___ сок? (fiyat)",
+                "accepted": [
+                  "стоит"
+                ],
+                "explanation": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır."
+              },
+              {
+                "id": "ru.order.concept.2.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "Сколько ___ салат? (fiyat)",
+                "accepted": [
+                  "стоит"
+                ],
+                "explanation": "Сколько стоит + tekil nesne ile fiyat sor. Стоят çoğul nesnelerle kullanılır."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "Чай — 80 рублей. Кофе — 120 рублей. Вода — 50 рублей.",
+          "question": {
+            "id": "ru.order.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "En ucuz içecek hangisi?",
+            "options": [
+              "Kahve",
+              "Su",
+              "Çay"
+            ],
+            "accepted": "Su",
+            "explanation": "Вода 50 ruble ile en düşük fiyat."
+          }
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "Здравствуйте! Мне чай, пожалуйста. Сколько стоит чай? Восемьдесят рублей.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.order.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.order.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Konuşmacı ne yapıyor?",
+            "options": [
+              "Yol soruyor",
+              "Çay sipariş ediyor",
+              "Adını söylüyor"
+            ],
+            "accepted": "Çay sipariş ediyor",
+            "explanation": "Мне чай sipariş kalıbıdır."
+          },
+          "detail": {
+            "id": "ru.order.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Çay kaç ruble?",
+            "options": [
+              "50",
+              "80",
+              "120"
+            ],
+            "accepted": "80",
+            "explanation": "Восемьдесят, 80 demek."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "Суп — 180 рублей. Сок — 90 рублей. Чай — 70 рублей.",
+            "question": {
+              "id": "ru.order.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Meyve suyu kaç ruble?",
+              "options": [
+                "70",
+                "90",
+                "180"
+              ],
+              "accepted": "90",
+              "explanation": "Сок satırındaki fiyat 90 ruble."
+            },
+            "coaching": "Sorulan bilgiyi önce adlandır. Metinde bu bilgiyi taşıyan kişi, zaman ya da eylemi aynı cümlede bul."
+          },
+          "listening": {
+            "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+            "transcript": "Мне суп, пожалуйста. Сколько стоит суп? Сто пятьдесят рублей.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.order.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "main": {
+              "id": "ru.order.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Konuşmacı ne istiyor?",
+              "options": [
+                "Çay",
+                "Çorba",
+                "Meyve suyu"
+              ],
+              "accepted": "Çorba",
+              "explanation": "Суп, çorba demek."
+            },
+            "detail": {
+              "id": "ru.order.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Çorba kaç ruble?",
+              "options": [
+                "50",
+                "150",
+                "180"
+              ],
+              "accepted": "150",
+              "explanation": "Сто пятьдесят 150 eder."
+            },
+            "mainCoaching": "İlk dinlemede konu ile amacı ayır. Tek tek kelimelere takılmadan konuşmanın ne yaptığını düşün.",
+            "detailCoaching": "Sorunun istediği kişi, sayı veya eylemi belirle. İkinci dinlemede ilgili bölüme odaklan."
+          }
+        },
+        "revision": {
+          "id": "ru.order.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "İlk metnini kontrol et. Bağlam ve hedef kalıp bakımından yeni bir sürüm yaz.",
+          "sample": "Мне чай, пожалуйста. Сколько стоит чай?",
+          "explanation": "Görevin bilgi ve kullanım ölçütleriyle karşılaştır."
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.order.word.1",
+            "collocations": [
+              "чай, пожалуйста"
+            ],
+            "pronunciation": "пожа́луйста",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.order.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.order.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "“пожалуйста” ne demek?",
+              "options": [
+                "bugün erken",
+                "lütfen",
+                "uzun bir yol"
+              ],
+              "accepted": "lütfen",
+              "explanation": "Kalıbın anlamını örnek cümleye bağla."
+            },
+            "recall": {
+              "id": "ru.order.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“lütfen” için öğrendiğin ifadeyi yaz.",
+              "accepted": [
+                "пожалуйста"
+              ],
+              "explanation": "Kalıbı örnekteki anlamıyla hatırla."
+            },
+            "use": {
+              "id": "ru.order.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "“пожалуйста” ifadesini kısa bir cümlede kullan.",
+              "sample": "Мне кофе, пожалуйста.",
+              "explanation": "İfadenin bağlamına ve anlamına bak."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Kafede bir içecek iste ve fiyatını sor.",
+        "grammar": "Kibar istek; Fiyat sorusu",
+        "goals": [
+          "Kibarca sipariş ver ve fiyatı sor."
+        ],
+        "rubric": [
+          "İçecek adıyla birlikte kibar bir istek kur.",
+          "Fiyatı Сколько стоит…? ile sor."
+        ],
+        "context": "daily_conversation"
+      }
+    },
+    {
+      "id": "ru.meeting",
+      "title": "Buluşmayı yeniden planla",
+      "objective": {
+        "id": "ru.meeting.objective",
+        "description": "Bir buluşmanın gününü veya saatini değiştir ve yeni planı doğrula.",
+        "level": "A2"
+      },
+      "prerequisites": [
+        "ru.order.objective"
+      ],
+      "minutes": 5,
+      "goals": [
+        "general"
+      ],
+      "recall": "Bu iletişim durumunda daha önce hangi ifadeyi kullandığını düşün.",
+      "explanation": [
+        "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять.",
+        "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir."
+      ],
+      "examples": [
+        {
+          "correct": "Давайте встретимся в пять.",
+          "incorrect": "Давайте встретимся на пять. (buluşma saati)",
+          "note": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять."
+        },
+        {
+          "correct": "Давайте встретимся завтра.",
+          "incorrect": "Давайте встречаться завтра. (tek bir buluşma için hedef kalıp)",
+          "note": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ru.meeting.concept.1",
+          "label": "Saat bildirme",
+          "variants": [
+            {
+              "id": "ru.meeting.concept.1.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "“Saat kaçta?” ___ сколько?",
+              "accepted": [
+                "Во"
+              ],
+              "explanation": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять."
+            },
+            {
+              "id": "ru.meeting.concept.1.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "“Saat üçte.” ___ три.",
+              "accepted": [
+                "В"
+              ],
+              "explanation": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять."
+            }
+          ]
+        },
+        {
+          "id": "ru.meeting.concept.2",
+          "label": "Yeni seçenek sunma",
+          "variants": [
+            {
+              "id": "ru.meeting.concept.2.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "“Yarın buluşalım.” Давайте ___ завтра.",
+              "accepted": [
+                "встретимся"
+              ],
+              "explanation": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir."
+            },
+            {
+              "id": "ru.meeting.concept.2.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "“Saat üçte buluşalım.” Давайте ___ в три.",
+              "accepted": [
+                "встретимся"
+              ],
+              "explanation": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "ru.meeting.write",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Bugün uygun olmadığını söyle, yeni gün ve saat öner.",
+        "sample": "Сегодня я не могу. Давайте встретимся завтра в семь.",
+        "explanation": "Örnek ile kendi mesajını iki ölçüte göre karşılaştır."
+      },
+      "vocabulary": [
+        {
+          "id": "ru.meeting.word.1",
+          "term": "встретимся",
+          "meaning": "buluşuruz",
+          "example": "Встретимся завтра у метро.",
+          "context": "Bir buluşmanın gününü veya saatini değiştir ve yeni planı doğrula.",
+          "partOfSpeech": "Kalıp",
+          "grammar": "встретимся у метро"
+        }
+      ],
+      "pedagogy": {
+        "language": "ru",
+        "target": "A2",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://mezhdunami.org/unit01/1_4/language.shtml",
+          "https://mezhdunami.org/unit03/3_7/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Saat bildirme",
+            "explanation": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять.",
+            "example": "Давайте встретимся в пять."
+          },
+          {
+            "title": "Yeni seçenek sunma",
+            "explanation": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir.",
+            "example": "Давайте встретимся завтра."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Görevde istenen bilgileri ver.",
+            "example": "Сегодня я не могу. Давайте встретимся завтра в семь."
+          },
+          {
+            "criterion": "Hedef kalıpları amaca uygun kullan.",
+            "example": "Давайте встретимся в пять."
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.meeting.concept.1",
+            "misconception": "Saat bildirme",
+            "incorrectExample": "Давайте встретимся на пять. (buluşma saati)",
+            "correctExample": "Давайте встретимся в пять.",
+            "correction": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять.",
+            "transfer": [
+              {
+                "id": "ru.meeting.concept.1.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Saat beşte.” ___ пять.",
+                "accepted": [
+                  "В"
+                ],
+                "explanation": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять."
+              },
+              {
+                "id": "ru.meeting.concept.1.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Saat yedide.” ___ семь.",
+                "accepted": [
+                  "В"
+                ],
+                "explanation": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.meeting.concept.1.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Saat kaçta buluşuyoruz?” ___ сколько мы встречаемся?",
+                "accepted": [
+                  "Во"
+                ],
+                "explanation": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять."
+              },
+              {
+                "id": "ru.meeting.concept.1.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Saat sekizde.” ___ восемь.",
+                "accepted": [
+                  "В"
+                ],
+                "explanation": "Во сколько? başlangıç saatini sorar. Saat verirken в kullan: в три, в пять."
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.meeting.concept.2",
+            "misconception": "Yeni seçenek sunma",
+            "incorrectExample": "Давайте встречаться завтра. (tek bir buluşma için hedef kalıp)",
+            "correctExample": "Давайте встретимся завтра.",
+            "correction": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir.",
+            "transfer": [
+              {
+                "id": "ru.meeting.concept.2.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Bugün arayalım.” Давайте ___ сегодня. (позвонить)",
+                "accepted": [
+                  "позвоним"
+                ],
+                "explanation": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir."
+              },
+              {
+                "id": "ru.meeting.concept.2.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Cuma buluşalım.” Давайте ___ в пятницу.",
+                "accepted": [
+                  "встретимся"
+                ],
+                "explanation": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.meeting.concept.2.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Yarın arayalım.” Давайте ___ завтра. (позвонить)",
+                "accepted": [
+                  "позвоним"
+                ],
+                "explanation": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir."
+              },
+              {
+                "id": "ru.meeting.concept.2.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "“Saat yedide buluşalım.” Давайте ___ в семь.",
+                "accepted": [
+                  "встретимся"
+                ],
+                "explanation": "Давайте + birlikte yapılacak eylem bir öneri verir. Встретимся, birlikte buluşma önerisinde kullanılabilir."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "Сегодня я не могу встретиться. Давайте встретимся завтра в пять у метро.",
+          "question": {
+            "id": "ru.meeting.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Yeni buluşma ne zaman?",
+            "options": [
+              "Bugün saat beşte",
+              "Yarın saat beşte",
+              "Yarın saat üçte"
+            ],
+            "accepted": "Yarın saat beşte",
+            "explanation": "Завтра в пять yeni zamanı verir."
+          }
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "Сегодня я работаю до шести. Давайте встретимся завтра в семь. Хорошо, завтра в семь.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.meeting.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.meeting.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Konuşma ne hakkında?",
+            "options": [
+              "Kafede sipariş",
+              "Buluşmayı yeniden planlama",
+              "Birinin mesleği"
+            ],
+            "accepted": "Buluşmayı yeniden planlama",
+            "explanation": "Yeni buluşma zamanı önerilip onaylanıyor."
+          },
+          "detail": {
+            "id": "ru.meeting.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Yeni saat kaç?",
+            "options": [
+              "Altı",
+              "Yedi",
+              "Beş"
+            ],
+            "accepted": "Yedi",
+            "explanation": "В семь buluşma saatidir, до шести işin bitişini bildirir."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "В пятницу я занят. Давайте встретимся в субботу в три.",
+            "question": {
+              "id": "ru.meeting.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Hangi gün öneriliyor?",
+              "options": [
+                "Cuma",
+                "Cumartesi",
+                "Pazar"
+              ],
+              "accepted": "Cumartesi",
+              "explanation": "В субботу yeni gündür."
+            },
+            "coaching": "Sorulan bilgiyi önce adlandır. Metinde bu bilgiyi taşıyan kişi, zaman ya da eylemi aynı cümlede bul."
+          },
+          "listening": {
+            "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+            "transcript": "Я не могу в пять. Давайте встретимся в восемь. Хорошо, в восемь у метро.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.meeting.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "main": {
+              "id": "ru.meeting.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Konuşmacılar neyi değiştiriyor?",
+              "options": [
+                "Bir fiyatı",
+                "Buluşma saatini",
+                "Bir otobüs hattını"
+              ],
+              "accepted": "Buluşma saatini",
+              "explanation": "İlk saat reddedilip yeni saat seçiliyor."
+            },
+            "detail": {
+              "id": "ru.meeting.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Nerede buluşacaklar?",
+              "options": [
+                "Kafede",
+                "Metro yakınında",
+                "Evde"
+              ],
+              "accepted": "Metro yakınında",
+              "explanation": "У метро konumu belirtir."
+            },
+            "mainCoaching": "İlk dinlemede konu ile amacı ayır. Tek tek kelimelere takılmadan konuşmanın ne yaptığını düşün.",
+            "detailCoaching": "Sorunun istediği kişi, sayı veya eylemi belirle. İkinci dinlemede ilgili bölüme odaklan."
+          }
+        },
+        "revision": {
+          "id": "ru.meeting.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "İlk metnini kontrol et. Bağlam ve hedef kalıp bakımından yeni bir sürüm yaz.",
+          "sample": "Сегодня я не могу. Давайте встретимся завтра в семь.",
+          "explanation": "Görevin bilgi ve kullanım ölçütleriyle karşılaştır."
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.meeting.word.1",
+            "collocations": [
+              "встретимся у метро"
+            ],
+            "pronunciation": "встре́тимся",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.meeting.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.meeting.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "“встретимся” ne demek?",
+              "options": [
+                "bugün erken",
+                "buluşuruz",
+                "uzun bir yol"
+              ],
+              "accepted": "buluşuruz",
+              "explanation": "Kalıbın anlamını örnek cümleye bağla."
+            },
+            "recall": {
+              "id": "ru.meeting.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“buluşuruz” için öğrendiğin ifadeyi yaz.",
+              "accepted": [
+                "встретимся"
+              ],
+              "explanation": "Kalıbı örnekteki anlamıyla hatırla."
+            },
+            "use": {
+              "id": "ru.meeting.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "“встретимся” ifadesini kısa bir cümlede kullan.",
+              "sample": "Встретимся завтра у метро.",
+              "explanation": "İfadenin bağlamına ve anlamına bak."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Bugün uygun olmadığını söyle, yeni gün ve saat öner. Karşındaki kabul ederse yeni saati tekrar et.",
+        "grammar": "Saat bildirme; Yeni seçenek sunma",
+        "goals": [
+          "Bir buluşmanın gününü veya saatini değiştir ve yeni planı doğrula."
+        ],
+        "rubric": [
+          "Uygun olmadığını söyle ve yeni bir gün öner.",
+          "Saati в ile belirt ve kabul edilen saati doğrula."
+        ],
+        "context": "daily_conversation"
+      }
+    }
+  ],
+  "diagnostics": {
+    "ru.intro": {
+      "reading": {
+        "text": "— Меня зовут Вера. Как вас зовут? — Меня зовут Игорь.",
+        "question": {
+          "id": "ru.intro.diagnostic.reading",
+          "skill": "reading",
+          "kind": "single",
+          "prompt": "İkinci konuşmacının adı ne?",
+          "options": [
+            "Vera",
+            "İgor",
+            "Oleg"
+          ],
+          "accepted": "İgor",
+          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+        }
+      },
+      "listening": {
+        "preparation": "Dinle ve sorulan ayrıntıyı seç.",
+        "transcript": "Здравствуйте! Меня зовут Мария. Как вас зовут? Меня зовут Иван.",
+        "audio": {
+          "kind": "recording",
+          "src": "/audio/ru.intro.diagnostic.mp3",
+          "license": "MIT",
+          "source": "https://github.com/espeak-ng/espeak-ng",
+          "locale": "ru-RU",
+          "synthetic": true
+        },
+        "detail": {
+          "id": "ru.intro.diagnostic.listening",
+          "skill": "listening",
+          "kind": "single",
+          "prompt": "İkinci konuşmacının adı ne?",
+          "options": [
+            "Maria",
+            "Ivan",
+            "Anton"
+          ],
+          "accepted": "Ivan",
+          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+        }
+      }
+    },
+    "ru.cyrillic": {
+      "reading": {
+        "text": "Рита · Соня · Нина",
+        "question": {
+          "id": "ru.cyrillic.diagnostic.reading",
+          "skill": "reading",
+          "kind": "single",
+          "prompt": "Hangi isim Н ile başlıyor?",
+          "options": [
+            "Рита",
+            "Нина",
+            "Соня"
+          ],
+          "accepted": "Нина",
+          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+        }
+      },
+      "listening": {
+        "preparation": "Dinle ve sorulan ayrıntıyı seç.",
+        "transcript": "Саша. Роман. Нина.",
+        "audio": {
+          "kind": "recording",
+          "src": "/audio/ru.cyrillic.diagnostic.mp3",
+          "license": "MIT",
+          "source": "https://github.com/espeak-ng/espeak-ng",
+          "locale": "ru-RU",
+          "synthetic": true
+        },
+        "detail": {
+          "id": "ru.cyrillic.diagnostic.listening",
+          "skill": "listening",
+          "kind": "single",
+          "prompt": "İlk isim hangisi?",
+          "options": [
+            "Роман",
+            "Саша",
+            "Нина"
+          ],
+          "accepted": "Саша",
+          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+        }
+      }
+    }
+  }
+}

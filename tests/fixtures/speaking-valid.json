@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "sessionId": "72752ef8-871a-4a80-8299-ccfeec0dc4e1",
+  "language": "en",
+  "lessonId": "en.experience",
+  "objectivesAttempted": ["en.experience.objective"],
+  "observedErrors": [{"conceptId": "en.experience.detail", "description": "Bitmiş zaman ifadesiyle present perfect kullanıldı.", "evidenceId": "q1"}],
+  "corrections": [{"text": "I joined the team last May.", "evidenceId": "q1"}],
+  "vocabularyGaps": [{"cardId": "en.experience.word.1", "evidenceId": "q2"}],
+  "successfulUses": [],
+  "suggestedReviews": ["en.experience.detail"],
+  "evidence": [
+    {"id": "q1", "quote": "I have joined the team last May."},
+    {"id": "q2", "quote": "I don't know how to say that I was in charge of the workshop."}
+  ],
+  "confidence": "medium",
+  "transcriptAvailability": "partial",
+  "completionStatus": "completed"
+}

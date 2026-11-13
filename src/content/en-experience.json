@@ -1,0 +1,1589 @@
+{
+  "patches": [
+    {
+      "lessonId": "en.experience",
+      "receptionRetry": {
+        "reading": {
+          "text": "Ben has led several training sessions. He led the latest one in June, when the new volunteers arrived.",
+          "question": {
+            "id": "en.experience.retry.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Son eğitimin zamanı nedir?",
+            "options": [
+              "Mayıs",
+              "Haziran",
+              "Gelecek ay"
+            ],
+            "accepted": "Haziran",
+            "explanation": "In June son eğitimin zamanını verir."
+          },
+          "coaching": "Önce kişiyi ve olayı bul. Ardından aynı olayı anlatan bitmiş zaman ifadesini işaretle."
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "I have run two training sessions. I ran the second one last July for the evening staff.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/en.experience.retry.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "en-US",
+            "synthetic": true
+          },
+          "main": {
+            "id": "en.experience.retry.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Konuşmacının konusu nedir?",
+            "options": [
+              "İş ilanı",
+              "Eğitim deneyimi",
+              "Tatil planı"
+            ],
+            "accepted": "Eğitim deneyimi",
+            "explanation": "Run a training session eğitim yürütmeyi anlatır."
+          },
+          "detail": {
+            "id": "en.experience.retry.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İkinci eğitim ne zaman yapıldı?",
+            "options": [
+              "Geçen nisan",
+              "Geçen temmuz",
+              "Gelecek hafta"
+            ],
+            "accepted": "Geçen temmuz",
+            "explanation": "Last July geçmiş zamanı belirtir."
+          },
+          "mainCoaching": "Deneyim bildiren eylemi dinle. Tarihi ikinci dinleyişe bırak.",
+          "detailCoaching": "Last, in veya on gibi bir zaman işaretinden sonra gelen ifadeyi yakala."
+        }
+      },
+      "revision": {
+        "id": "en.experience.revision",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "İlk yanıtını oku. İki ölçütü kontrol edip mesajın yeni sürümünü yaz.",
+        "sample": "I’ve led a project handover. I led it last March.",
+        "explanation": "İki sürümü yan yana karşılaştır. Yazı inceleme bekler."
+      }
+    },
+    {
+      "lessonId": "en.sequence",
+      "receptionRetry": {
+        "reading": {
+          "text": "When the guests arrived, Priya had already checked the microphones. After the talk, she emailed the recording.",
+          "question": {
+            "id": "en.sequence.retry.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Konuklardan önce hangi iş bitmişti?",
+            "options": [
+              "Kaydı yollama",
+              "Mikrofon kontrolü",
+              "Konuşma"
+            ],
+            "accepted": "Mikrofon kontrolü",
+            "explanation": "Had already checked daha erken işi gösterir."
+          },
+          "coaching": "İki olayı çizgiye koy. Had + üçüncü biçimle verilen eylemi geçmiş referansın soluna yaz."
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "When the class began, Leo had printed the worksheets. After the class, he collected the papers.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/en.sequence.retry.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "en-US",
+            "synthetic": true
+          },
+          "main": {
+            "id": "en.sequence.retry.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Kayıt neyi sıralıyor?",
+            "options": [
+              "Kurs ücretlerini",
+              "Dersin çevresindeki işleri",
+              "Sınıf kurallarını"
+            ],
+            "accepted": "Dersin çevresindeki işleri",
+            "explanation": "İki iş, dersin başı ve sonuna bağlanıyor."
+          },
+          "detail": {
+            "id": "en.sequence.retry.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Dersten sonra ne yaptı?",
+            "options": [
+              "Formları bastı",
+              "Kâğıtları topladı",
+              "Dersi başlattı"
+            ],
+            "accepted": "Kâğıtları topladı",
+            "explanation": "After the class sonrasını belirtir."
+          },
+          "mainCoaching": "Başlama anını referans al. Önce ve sonra yapılan işleri bir bütün olarak düşün.",
+          "detailCoaching": "After ile başlayan bölümdeki fiile odaklan."
+        }
+      },
+      "revision": {
+        "id": "en.sequence.revision",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "İlk yanıtını oku. İki ölçütü kontrol edip mesajın yeni sürümünü yaz.",
+        "sample": "By the time the meeting began, I had shared the agenda.",
+        "explanation": "İki sürümü yan yana karşılaştır. Yazı inceleme bekler."
+      }
+    },
+    {
+      "lessonId": "en.update",
+      "receptionRetry": {
+        "reading": {
+          "text": "We’ve repaired the lift. We repaired it on Wednesday. We’re going to inspect it again tomorrow.",
+          "question": {
+            "id": "en.update.retry.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Sıradaki adım ne?",
+            "options": [
+              "Asansörü onarmak",
+              "Asansörü yeniden incelemek",
+              "Asansörü kapatmak"
+            ],
+            "accepted": "Asansörü yeniden incelemek",
+            "explanation": "Going to inspect sıradaki eylemdir."
+          },
+          "coaching": "Durum, bitiş tarihi ve sonraki adımı ayır. Next veya going to planı bulmana yardım eder."
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "We have finished the booking form. We finished it on Friday. Next, we are going to send it to the volunteers.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/en.update.retry.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "en-US",
+            "synthetic": true
+          },
+          "main": {
+            "id": "en.update.retry.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Konuşmacı ne yapıyor?",
+            "options": [
+              "Bütçe istiyor",
+              "İş güncellemesi veriyor",
+              "Şikâyet alıyor"
+            ],
+            "accepted": "İş güncellemesi veriyor",
+            "explanation": "Sonucu, tarihini ve sonraki adımı veriyor."
+          },
+          "detail": {
+            "id": "en.update.retry.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Bir sonraki adım ne?",
+            "options": [
+              "Formu yeniden yazmak",
+              "Formu gönüllülere göndermek",
+              "Bir toplantı ayarlamak"
+            ],
+            "accepted": "Formu gönüllülere göndermek",
+            "explanation": "Next ile gönderim planı başlıyor."
+          },
+          "mainCoaching": "İlk iki cümlenin durum bildirip bildirmediğini dinle.",
+          "detailCoaching": "Next sonrasında gelen eylemi yakala."
+        }
+      },
+      "revision": {
+        "id": "en.update.revision",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "İlk yanıtını oku. İki ölçütü kontrol edip mesajın yeni sürümünü yaz.",
+        "sample": "We’ve fixed the issue. We fixed it on Monday. We’re going to test the change.",
+        "explanation": "İki sürümü yan yana karşılaştır. Yazı inceleme bekler."
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "en.routine",
+      "title": "Bir iş rutinini anlat",
+      "objective": {
+        "id": "en.routine.objective",
+        "description": "Günlük düzenini anlat ve bugünkü değişikliği bildir.",
+        "level": "A2"
+      },
+      "prerequisites": [],
+      "minutes": 5,
+      "goals": [
+        "general",
+        "professional"
+      ],
+      "recall": "Bu iletişim durumunda daha önce hangi ifadeyi kullandığını düşün.",
+      "explanation": [
+        "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir.",
+        "Now ile şu an olan eylemi am/is/are + -ing ile anlat."
+      ],
+      "examples": [
+        {
+          "correct": "She usually starts at nine.",
+          "incorrect": "She usually start at nine.",
+          "note": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir."
+        },
+        {
+          "correct": "They are working now.",
+          "incorrect": "They working now.",
+          "note": "Now ile şu an olan eylemi am/is/are + -ing ile anlat."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "en.routine.concept.1",
+          "label": "Rutin için geniş zaman",
+          "variants": [
+            {
+              "id": "en.routine.concept.1.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "She usually ___ (start) at eight.",
+              "accepted": [
+                "starts"
+              ],
+              "explanation": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir."
+            },
+            {
+              "id": "en.routine.concept.1.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "He often ___ (take) the bus.",
+              "accepted": [
+                "takes"
+              ],
+              "explanation": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir."
+            }
+          ]
+        },
+        {
+          "id": "en.routine.concept.2",
+          "label": "Şu an için devam eden eylem",
+          "variants": [
+            {
+              "id": "en.routine.concept.2.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "I ___ (work) from home right now.",
+              "accepted": [
+                "am working"
+              ],
+              "explanation": "Now ile şu an olan eylemi am/is/are + -ing ile anlat."
+            },
+            {
+              "id": "en.routine.concept.2.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "They ___ (wait) outside now.",
+              "accepted": [
+                "are waiting"
+              ],
+              "explanation": "Now ile şu an olan eylemi am/is/are + -ing ile anlat."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "en.routine.write",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Kısa bir mesajda normal çalışma düzenini ve bugün ne yaptığını yaz.",
+        "sample": "I usually work at the office. Today I am working from home.",
+        "explanation": "Örnek ile kendi mesajını iki ölçüte göre karşılaştır."
+      },
+      "vocabulary": [
+        {
+          "id": "en.routine.word.1",
+          "term": "work from home",
+          "meaning": "evden çalışmak",
+          "example": "I work from home on Fridays.",
+          "context": "Günlük düzenini anlat ve bugünkü değişikliği bildir.",
+          "partOfSpeech": "Kalıp",
+          "grammar": "work from home on Fridays"
+        }
+      ],
+      "pedagogy": {
+        "language": "en",
+        "target": "A2",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/talking-about-past"
+        ],
+        "sections": [
+          {
+            "title": "Rutin için geniş zaman",
+            "explanation": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir.",
+            "example": "She usually starts at nine."
+          },
+          {
+            "title": "Şu an için devam eden eylem",
+            "explanation": "Now ile şu an olan eylemi am/is/are + -ing ile anlat.",
+            "example": "They are working now."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Görevde istenen bilgileri ver.",
+            "example": "I usually work at the office. Today I am working from home."
+          },
+          {
+            "criterion": "Hedef kalıpları amaca uygun kullan.",
+            "example": "She usually starts at nine."
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "en.routine.concept.1",
+            "misconception": "Rutin için geniş zaman",
+            "incorrectExample": "She usually start at nine.",
+            "correctExample": "She usually starts at nine.",
+            "correction": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir.",
+            "transfer": [
+              {
+                "id": "en.routine.concept.1.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "The shop ___ (open) at nine every day.",
+                "accepted": [
+                  "opens"
+                ],
+                "explanation": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir."
+              },
+              {
+                "id": "en.routine.concept.1.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "My colleague usually ___ (check) the list first.",
+                "accepted": [
+                  "checks"
+                ],
+                "explanation": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "en.routine.concept.1.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "The library ___ (close) at six on Mondays.",
+                "accepted": [
+                  "closes"
+                ],
+                "explanation": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir."
+              },
+              {
+                "id": "en.routine.concept.1.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "Our driver ___ (leave) at seven each morning.",
+                "accepted": [
+                  "leaves"
+                ],
+                "explanation": "Usually ile alışkanlığı ifade et. Üçüncü tekil kişide fiile -s gelir."
+              }
+            ]
+          },
+          {
+            "conceptId": "en.routine.concept.2",
+            "misconception": "Şu an için devam eden eylem",
+            "incorrectExample": "They working now.",
+            "correctExample": "They are working now.",
+            "correction": "Now ile şu an olan eylemi am/is/are + -ing ile anlat.",
+            "transfer": [
+              {
+                "id": "en.routine.concept.2.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "She ___ (talk) to a customer right now.",
+                "accepted": [
+                  "is talking"
+                ],
+                "explanation": "Now ile şu an olan eylemi am/is/are + -ing ile anlat."
+              },
+              {
+                "id": "en.routine.concept.2.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "We ___ (set) up the room now.",
+                "accepted": [
+                  "are setting"
+                ],
+                "explanation": "Now ile şu an olan eylemi am/is/are + -ing ile anlat."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "en.routine.concept.2.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "He ___ (drive) to the station now.",
+                "accepted": [
+                  "is driving"
+                ],
+                "explanation": "Now ile şu an olan eylemi am/is/are + -ing ile anlat."
+              },
+              {
+                "id": "en.routine.concept.2.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "You ___ (listen) to the briefing right now.",
+                "accepted": [
+                  "are listening"
+                ],
+                "explanation": "Now ile şu an olan eylemi am/is/are + -ing ile anlat."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "Mia usually opens the shop at nine. Today she is opening it at ten because the team has a meeting.",
+          "question": {
+            "id": "en.routine.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Bugün dükkân ne zaman açılıyor?",
+            "options": [
+              "Saat dokuzda",
+              "Saat onda",
+              "Öğlen"
+            ],
+            "accepted": "Saat onda",
+            "explanation": "Today bugüne ait istisnayı gösterir."
+          }
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "I usually take the bus to work. Today I am walking because the bus is late.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/en.routine.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "en-US",
+            "synthetic": true
+          },
+          "main": {
+            "id": "en.routine.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Konuşmacı neyi karşılaştırıyor?",
+            "options": [
+              "İki farklı işi",
+              "Rutin ile bugünkü değişikliği",
+              "İki otobüs hattını"
+            ],
+            "accepted": "Rutin ile bugünkü değişikliği",
+            "explanation": "Usually ve today iki farklı durumu işaretliyor."
+          },
+          "detail": {
+            "id": "en.routine.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Bugün nasıl gidiyor?",
+            "options": [
+              "Otobüsle",
+              "Yürüyerek",
+              "Bisikletle"
+            ],
+            "accepted": "Yürüyerek",
+            "explanation": "I am walking bugünkü hareketi belirtir."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "The museum usually opens at ten. Today it is opening at eleven for a private event.",
+            "question": {
+              "id": "en.routine.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Bugün açılış saati ne?",
+              "options": [
+                "10",
+                "11",
+                "12"
+              ],
+              "accepted": "11",
+              "explanation": "Today ile 11 veriliyor."
+            },
+            "coaching": "Sorulan bilgiyi önce adlandır. Metinde bu bilgiyi taşıyan kişi, zaman ya da eylemi aynı cümlede bul."
+          },
+          "listening": {
+            "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+            "transcript": "I usually work upstairs. Today I am working in the lobby because we have visitors.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/en.routine.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "en-US",
+              "synthetic": true
+            },
+            "main": {
+              "id": "en.routine.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Konuşmacı neyi anlatıyor?",
+              "options": [
+                "Yıllık izni",
+                "Bugünkü değişikliği",
+                "Yeni maaşı"
+              ],
+              "accepted": "Bugünkü değişikliği",
+              "explanation": "Today geçici değişikliği işaret ediyor."
+            },
+            "detail": {
+              "id": "en.routine.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Bugün nerede çalışıyor?",
+              "options": [
+                "Üst katta",
+                "Lobide",
+                "Evde"
+              ],
+              "accepted": "Lobide",
+              "explanation": "In the lobby bugünkü yeri verir."
+            },
+            "mainCoaching": "İlk dinlemede konu ile amacı ayır. Tek tek kelimelere takılmadan konuşmanın ne yaptığını düşün.",
+            "detailCoaching": "Sorunun istediği kişi, sayı veya eylemi belirle. İkinci dinlemede ilgili bölüme odaklan."
+          }
+        },
+        "revision": {
+          "id": "en.routine.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "İlk metnini kontrol et. Bağlam ve hedef kalıp bakımından yeni bir sürüm yaz.",
+          "sample": "I usually work at the office. Today I am working from home.",
+          "explanation": "Görevin bilgi ve kullanım ölçütleriyle karşılaştır."
+        },
+        "vocabulary": [
+          {
+            "cardId": "en.routine.word.1",
+            "collocations": [
+              "work from home on Fridays"
+            ],
+            "pronunciation": "work from home",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/en.routine.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "en-US",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "en.routine.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "“work from home” ne demek?",
+              "options": [
+                "bugün erken",
+                "evden çalışmak",
+                "uzun bir yol"
+              ],
+              "accepted": "evden çalışmak",
+              "explanation": "Kalıbın anlamını örnek cümleye bağla."
+            },
+            "recall": {
+              "id": "en.routine.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“evden çalışmak” için öğrendiğin ifadeyi yaz.",
+              "accepted": [
+                "work from home"
+              ],
+              "explanation": "Kalıbı örnekteki anlamıyla hatırla."
+            },
+            "use": {
+              "id": "en.routine.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "“work from home” ifadesini kısa bir cümlede kullan.",
+              "sample": "I work from home on Fridays.",
+              "explanation": "İfadenin bağlamına ve anlamına bak."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Bir çalışma arkadaşına normal düzenini ve bugün neyin değiştiğini sesli anlat.",
+        "grammar": "Rutin için geniş zaman; Şu an için devam eden eylem",
+        "goals": [
+          "Günlük düzenini anlat ve bugünkü değişikliği bildir."
+        ],
+        "rubric": [
+          "Normal rutini ve bugünkü değişikliği ayrı cümlelerle belirt.",
+          "Rutin için geniş zaman, şu anki değişiklik için devam eden zaman kullan."
+        ],
+        "context": "daily_conversation"
+      }
+    },
+    {
+      "id": "en.opinion",
+      "title": "Bir öneriyi gerekçelendir",
+      "objective": {
+        "id": "en.opinion.objective",
+        "description": "Bir ekip seçeneği öner, gerekçe ver ve karşı öneriye yanıt ver.",
+        "level": "B1"
+      },
+      "prerequisites": [
+        "en.update.objective"
+      ],
+      "minutes": 5,
+      "goals": [
+        "general",
+        "professional"
+      ],
+      "recall": "Bu iletişim durumunda daha önce hangi ifadeyi kullandığını düşün.",
+      "explanation": [
+        "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur.",
+        "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir."
+      ],
+      "examples": [
+        {
+          "correct": "Let’s meet online because the room is booked.",
+          "incorrect": "Let’s meet online because of the room is booked.",
+          "note": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur."
+        },
+        {
+          "correct": "We could try a shorter meeting.",
+          "incorrect": "We could to try a shorter meeting.",
+          "note": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "en.opinion.concept.1",
+          "label": "Neden belirtme",
+          "variants": [
+            {
+              "id": "en.opinion.concept.1.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "Let’s meet online ___ the room is booked. (neden bağlacı)",
+              "accepted": [
+                "because"
+              ],
+              "explanation": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur."
+            },
+            {
+              "id": "en.opinion.concept.1.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "We chose the train ___ it was cheaper. (neden bağlacı)",
+              "accepted": [
+                "because"
+              ],
+              "explanation": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur."
+            }
+          ]
+        },
+        {
+          "id": "en.opinion.concept.2",
+          "label": "Öneri kalıbı",
+          "variants": [
+            {
+              "id": "en.opinion.concept.2.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "We could ___ (move) the call to Friday.",
+              "accepted": [
+                "move"
+              ],
+              "explanation": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir."
+            },
+            {
+              "id": "en.opinion.concept.2.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "You could ___ (send) a short note first.",
+              "accepted": [
+                "send"
+              ],
+              "explanation": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "en.opinion.write",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Bir ekip etkinliği için öneri, bir gerekçe ve bir yedek seçenek yaz.",
+        "sample": "We could meet on Friday because both teams are free. If that changes, we can meet online.",
+        "explanation": "Örnek ile kendi mesajını iki ölçüte göre karşılaştır."
+      },
+      "vocabulary": [
+        {
+          "id": "en.opinion.word.1",
+          "term": "suggest a change",
+          "meaning": "değişiklik önermek",
+          "example": "I’d like to suggest a change to the agenda.",
+          "context": "Bir ekip seçeneği öner, gerekçe ver ve karşı öneriye yanıt ver.",
+          "partOfSpeech": "Kalıp",
+          "grammar": "suggest a change to the schedule"
+        }
+      ],
+      "pedagogy": {
+        "language": "en",
+        "target": "B1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/talking-about-past"
+        ],
+        "sections": [
+          {
+            "title": "Neden belirtme",
+            "explanation": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur.",
+            "example": "Let’s meet online because the room is booked."
+          },
+          {
+            "title": "Öneri kalıbı",
+            "explanation": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir.",
+            "example": "We could try a shorter meeting."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Görevde istenen bilgileri ver.",
+            "example": "We could meet on Friday because both teams are free. If that changes, we can meet online."
+          },
+          {
+            "criterion": "Hedef kalıpları amaca uygun kullan.",
+            "example": "Let’s meet online because the room is booked."
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "en.opinion.concept.1",
+            "misconception": "Neden belirtme",
+            "incorrectExample": "Let’s meet online because of the room is booked.",
+            "correctExample": "Let’s meet online because the room is booked.",
+            "correction": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur.",
+            "transfer": [
+              {
+                "id": "en.opinion.concept.1.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "I suggest Tuesday ___ Jo is free then. (neden bağlacı)",
+                "accepted": [
+                  "because"
+                ],
+                "explanation": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur."
+              },
+              {
+                "id": "en.opinion.concept.1.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "We should print fewer copies ___ most people read online. (neden bağlacı)",
+                "accepted": [
+                  "because"
+                ],
+                "explanation": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "en.opinion.concept.1.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "I prefer the early slot ___ I work at noon. (neden bağlacı)",
+                "accepted": [
+                  "because"
+                ],
+                "explanation": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur."
+              },
+              {
+                "id": "en.opinion.concept.1.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "We can wait ___ the shop closes late. (neden bağlacı)",
+                "accepted": [
+                  "because"
+                ],
+                "explanation": "Because sonrasında neden bildiren bir cümle kullan. Bu cümlede bir özne ve fiil bulunur."
+              }
+            ]
+          },
+          {
+            "conceptId": "en.opinion.concept.2",
+            "misconception": "Öneri kalıbı",
+            "incorrectExample": "We could to try a shorter meeting.",
+            "correctExample": "We could try a shorter meeting.",
+            "correction": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir.",
+            "transfer": [
+              {
+                "id": "en.opinion.concept.2.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "We could ___ (test) both options.",
+                "accepted": [
+                  "test"
+                ],
+                "explanation": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir."
+              },
+              {
+                "id": "en.opinion.concept.2.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "They could ___ (book) a smaller room.",
+                "accepted": [
+                  "book"
+                ],
+                "explanation": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "en.opinion.concept.2.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "We could ___ (invite) both teams.",
+                "accepted": [
+                  "invite"
+                ],
+                "explanation": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir."
+              },
+              {
+                "id": "en.opinion.concept.2.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "You could ___ (ask) for a second estimate.",
+                "accepted": [
+                  "ask"
+                ],
+                "explanation": "Could ile olası bir seçenek sun. Could sonrasında fiilin yalın biçimi gelir."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "Ava suggests meeting online because two colleagues are travelling. Ben agrees but asks for a shorter agenda.",
+          "question": {
+            "id": "en.opinion.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Ben hangi değişikliği istiyor?",
+            "options": [
+              "Yüz yüze toplantı",
+              "Daha kısa gündem",
+              "Daha geç toplantı"
+            ],
+            "accepted": "Daha kısa gündem",
+            "explanation": "But sonrası Ben’in istediği değişikliği verir."
+          }
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "We could book the small room because only five people are coming. If more people sign up, we can move online.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/en.opinion.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "en-US",
+            "synthetic": true
+          },
+          "main": {
+            "id": "en.opinion.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Konuşmacının ilk önerisi ne?",
+            "options": [
+              "Hemen çevrimiçi buluşmak",
+              "Küçük odayı ayırtmak",
+              "Etkinliği iptal etmek"
+            ],
+            "accepted": "Küçük odayı ayırtmak",
+            "explanation": "We could book ilk öneridir."
+          },
+          "detail": {
+            "id": "en.opinion.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Kaç kişinin gelmesi bekleniyor?",
+            "options": [
+              "Üç",
+              "Beş",
+              "On"
+            ],
+            "accepted": "Beş",
+            "explanation": "Only five people gerekçenin ayrıntısıdır."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "Sam suggests a shorter call because the team is busy. Jo asks to keep the first agenda item.",
+            "question": {
+              "id": "en.opinion.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Jo neyi korumak istiyor?",
+              "options": [
+                "Tüm gündemi",
+                "İlk gündem maddesini",
+                "Toplantı süresini"
+              ],
+              "accepted": "İlk gündem maddesini",
+              "explanation": "First agenda item ilk maddeyi belirtir."
+            },
+            "coaching": "Sorulan bilgiyi önce adlandır. Metinde bu bilgiyi taşıyan kişi, zaman ya da eylemi aynı cümlede bul."
+          },
+          "listening": {
+            "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+            "transcript": "We could start at eleven because the room is free then. If it is booked, we can use the library.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/en.opinion.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "en-US",
+              "synthetic": true
+            },
+            "main": {
+              "id": "en.opinion.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "İlk öneri nedir?",
+              "options": [
+                "Kütüphaneyi seçmek",
+                "On birde başlamak",
+                "Toplantıyı iptal etmek"
+              ],
+              "accepted": "On birde başlamak",
+              "explanation": "İlk cümle saati öneriyor."
+            },
+            "detail": {
+              "id": "en.opinion.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Yedek yer neresi?",
+              "options": [
+                "Kafe",
+                "Kütüphane",
+                "Ofis"
+              ],
+              "accepted": "Kütüphane",
+              "explanation": "If sonrası kütüphane seçeneği geliyor."
+            },
+            "mainCoaching": "İlk dinlemede konu ile amacı ayır. Tek tek kelimelere takılmadan konuşmanın ne yaptığını düşün.",
+            "detailCoaching": "Sorunun istediği kişi, sayı veya eylemi belirle. İkinci dinlemede ilgili bölüme odaklan."
+          }
+        },
+        "revision": {
+          "id": "en.opinion.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "İlk metnini kontrol et. Bağlam ve hedef kalıp bakımından yeni bir sürüm yaz.",
+          "sample": "We could meet on Friday because both teams are free. If that changes, we can meet online.",
+          "explanation": "Görevin bilgi ve kullanım ölçütleriyle karşılaştır."
+        },
+        "vocabulary": [
+          {
+            "cardId": "en.opinion.word.1",
+            "collocations": [
+              "suggest a change to the schedule"
+            ],
+            "pronunciation": "suggest a change",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/en.opinion.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "en-US",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "en.opinion.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "“suggest a change” ne demek?",
+              "options": [
+                "bugün erken",
+                "değişiklik önermek",
+                "uzun bir yol"
+              ],
+              "accepted": "değişiklik önermek",
+              "explanation": "Kalıbın anlamını örnek cümleye bağla."
+            },
+            "recall": {
+              "id": "en.opinion.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“değişiklik önermek” için öğrendiğin ifadeyi yaz.",
+              "accepted": [
+                "suggest a change"
+              ],
+              "explanation": "Kalıbı örnekteki anlamıyla hatırla."
+            },
+            "use": {
+              "id": "en.opinion.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "“suggest a change” ifadesini kısa bir cümlede kullan.",
+              "sample": "I’d like to suggest a change to the agenda.",
+              "explanation": "İfadenin bağlamına ve anlamına bak."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Bir ekip etkinliği için öneri ve gerekçe sun. Karşındaki saat önerine itiraz ederse bir yedek seçenek söyle.",
+        "grammar": "Neden belirtme; Öneri kalıbı",
+        "goals": [
+          "Bir ekip seçeneği öner, gerekçe ver ve karşı öneriye yanıt ver."
+        ],
+        "rubric": [
+          "İlk öneri ve gerekçeyi ayrı ayrı anlaşılır biçimde söyle.",
+          "İtiraza yanıt verirken could ile uygulanabilir bir seçenek ver."
+        ],
+        "context": "daily_conversation"
+      }
+    },
+    {
+      "id": "en.tradeoff",
+      "title": "İki seçeneği tart",
+      "objective": {
+        "id": "en.tradeoff.objective",
+        "description": "Bir kararın yararını ve sakıncasını açıklayıp koşullu öneri ver.",
+        "level": "B2"
+      },
+      "prerequisites": [
+        "en.opinion.objective"
+      ],
+      "minutes": 5,
+      "goals": [
+        "general",
+        "professional"
+      ],
+      "recall": "Bu iletişim durumunda daha önce hangi ifadeyi kullandığını düşün.",
+      "explanation": [
+        "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle.",
+        "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla."
+      ],
+      "examples": [
+        {
+          "correct": "Although the app is cheaper, it takes longer to set up.",
+          "incorrect": "Although the app is cheaper, but it takes longer to set up.",
+          "note": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle."
+        },
+        {
+          "correct": "If we had more time, we would test both options.",
+          "incorrect": "If we had more time, we would tested both options.",
+          "note": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "en.tradeoff.concept.1",
+          "label": "Ödünleme",
+          "variants": [
+            {
+              "id": "en.tradeoff.concept.1.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "___ the train costs more, it is faster. (ödünleme bağlacı)",
+              "accepted": [
+                "Although",
+                "Though",
+                "Even though"
+              ],
+              "explanation": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle."
+            },
+            {
+              "id": "en.tradeoff.concept.1.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "___ the room is small, it has good lighting. (ödünleme bağlacı)",
+              "accepted": [
+                "Although",
+                "Though",
+                "Even though"
+              ],
+              "explanation": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle."
+            }
+          ]
+        },
+        {
+          "id": "en.tradeoff.concept.2",
+          "label": "Varsayımsal öneri",
+          "variants": [
+            {
+              "id": "en.tradeoff.concept.2.1",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "If we had a larger budget, we would ___ (rent) the hall.",
+              "accepted": [
+                "rent"
+              ],
+              "explanation": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla."
+            },
+            {
+              "id": "en.tradeoff.concept.2.2",
+              "kind": "fill",
+              "skill": "grammar",
+              "prompt": "If we had two days, we would ___ (run) a trial.",
+              "accepted": [
+                "run"
+              ],
+              "explanation": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "en.tradeoff.write",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Bir kurs için iki ulaşım seçeneğini karşılaştır ve hangi koşulda kararının değişeceğini yaz.",
+        "sample": "Although the bus is cheaper, I’d take the train for the early class. If the class started later, I would take the bus.",
+        "explanation": "Örnek ile kendi mesajını iki ölçüte göre karşılaştır."
+      },
+      "vocabulary": [
+        {
+          "id": "en.tradeoff.word.1",
+          "term": "weigh the options",
+          "meaning": "seçenekleri tartmak",
+          "example": "We should weigh the options before we sign.",
+          "context": "Bir kararın yararını ve sakıncasını açıklayıp koşullu öneri ver.",
+          "partOfSpeech": "Kalıp",
+          "grammar": "weigh the options before deciding"
+        }
+      ],
+      "pedagogy": {
+        "language": "en",
+        "target": "B2",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://learnenglish.britishcouncil.org/free-resources/grammar/english-grammar-reference/talking-about-past"
+        ],
+        "sections": [
+          {
+            "title": "Ödünleme",
+            "explanation": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle.",
+            "example": "Although the app is cheaper, it takes longer to set up."
+          },
+          {
+            "title": "Varsayımsal öneri",
+            "explanation": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla.",
+            "example": "If we had more time, we would test both options."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Görevde istenen bilgileri ver.",
+            "example": "Although the bus is cheaper, I’d take the train for the early class. If the class started later, I would take the bus."
+          },
+          {
+            "criterion": "Hedef kalıpları amaca uygun kullan.",
+            "example": "Although the app is cheaper, it takes longer to set up."
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "en.tradeoff.concept.1",
+            "misconception": "Ödünleme",
+            "incorrectExample": "Although the app is cheaper, but it takes longer to set up.",
+            "correctExample": "Although the app is cheaper, it takes longer to set up.",
+            "correction": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle.",
+            "transfer": [
+              {
+                "id": "en.tradeoff.concept.1.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "___ the plan is simple, it needs approval. (ödünleme bağlacı)",
+                "accepted": [
+                  "Although",
+                  "Though",
+                  "Even though"
+                ],
+                "explanation": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle."
+              },
+              {
+                "id": "en.tradeoff.concept.1.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "___ the repair is cheap, it may take a week. (ödünleme bağlacı)",
+                "accepted": [
+                  "Although",
+                  "Though",
+                  "Even though"
+                ],
+                "explanation": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "en.tradeoff.concept.1.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "___ the venue is nearby, it has no lift. (ödünleme bağlacı)",
+                "accepted": [
+                  "Although",
+                  "Though",
+                  "Even though"
+                ],
+                "explanation": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle."
+              },
+              {
+                "id": "en.tradeoff.concept.1.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "___ the tool is new, staff already know how to use it. (ödünleme bağlacı)",
+                "accepted": [
+                  "Although",
+                  "Though",
+                  "Even though"
+                ],
+                "explanation": "Although bir karşı noktayı kabul eden yan cümle açar. Ana cümlede kararını söyle."
+              }
+            ]
+          },
+          {
+            "conceptId": "en.tradeoff.concept.2",
+            "misconception": "Varsayımsal öneri",
+            "incorrectExample": "If we had more time, we would tested both options.",
+            "correctExample": "If we had more time, we would test both options.",
+            "correction": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla.",
+            "transfer": [
+              {
+                "id": "en.tradeoff.concept.2.3",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "If it were cheaper, I would ___ (choose) that option.",
+                "accepted": [
+                  "choose"
+                ],
+                "explanation": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla."
+              },
+              {
+                "id": "en.tradeoff.concept.2.4",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "If the route were safer, we would ___ (cycle).",
+                "accepted": [
+                  "cycle"
+                ],
+                "explanation": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "en.tradeoff.concept.2.5",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "If the deadline were flexible, we would ___ (compare) more quotes.",
+                "accepted": [
+                  "compare"
+                ],
+                "explanation": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla."
+              },
+              {
+                "id": "en.tradeoff.concept.2.6",
+                "kind": "fill",
+                "skill": "grammar",
+                "prompt": "If I had the figures, I would ___ (check) the estimate.",
+                "accepted": [
+                  "check"
+                ],
+                "explanation": "If + past simple ve would + yalın fiil ile varsayımsal bir durumda ne seçeceğini açıkla."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "Option A is cheaper but would require a week of training. Option B costs more and can be used immediately. The team needs a tool by Monday.",
+          "question": {
+            "id": "en.tradeoff.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "A seçeneğinin bedel dışındaki sakıncası ne?",
+            "options": [
+              "Bakım ücreti",
+              "Eğitim süresi",
+              "Erişim yokluğu"
+            ],
+            "accepted": "Eğitim süresi",
+            "explanation": "A bir haftalık eğitim gerektiriyor."
+          }
+        },
+        "listening": {
+          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+          "transcript": "Although the bus is cheaper, the train is more reliable. If our schedule were flexible, I would take the bus. Today, I recommend the train.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/en.tradeoff.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "en-US",
+            "synthetic": true
+          },
+          "main": {
+            "id": "en.tradeoff.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Konuşmacı bugün hangisini öneriyor?",
+            "options": [
+              "Otobüs",
+              "Tren",
+              "Taksi"
+            ],
+            "accepted": "Tren",
+            "explanation": "Today, I recommend the train son kararı veriyor."
+          },
+          "detail": {
+            "id": "en.tradeoff.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Otobüsün avantajı ne?",
+            "options": [
+              "Daha güvenilir",
+              "Daha ucuz",
+              "Daha hızlı"
+            ],
+            "accepted": "Daha ucuz",
+            "explanation": "Cheaper, otobüsün avantajını belirtir."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "The new venue is near the station, although the rent is higher. If we had more space in the old venue, we would stay there.",
+            "question": {
+              "id": "en.tradeoff.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Yeni yerin avantajı ne?",
+              "options": [
+                "Düşük kira",
+                "İstasyona yakınlık",
+                "Daha geniş alan"
+              ],
+              "accepted": "İstasyona yakınlık",
+              "explanation": "Near the station ulaşım avantajıdır."
+            },
+            "coaching": "Sorulan bilgiyi önce adlandır. Metinde bu bilgiyi taşıyan kişi, zaman ya da eylemi aynı cümlede bul."
+          },
+          "listening": {
+            "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
+            "transcript": "Although the online course is flexible, the classroom course offers live practice. If my shifts changed, I would choose the classroom course.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/en.tradeoff.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "en-US",
+              "synthetic": true
+            },
+            "main": {
+              "id": "en.tradeoff.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Hangi iki seçenek tartılıyor?",
+              "options": [
+                "İki ulaşım yolu",
+                "Çevrimiçi ve sınıf kursu",
+                "İki vardiya"
+              ],
+              "accepted": "Çevrimiçi ve sınıf kursu",
+              "explanation": "Konuşma iki kurs biçimini karşılaştırıyor."
+            },
+            "detail": {
+              "id": "en.tradeoff.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Sınıf kursunun avantajı ne?",
+              "options": [
+                "Düşük ücret",
+                "Canlı pratik",
+                "Esnek zaman"
+              ],
+              "accepted": "Canlı pratik",
+              "explanation": "Live practice sınıf kursunun avantajıdır."
+            },
+            "mainCoaching": "İlk dinlemede konu ile amacı ayır. Tek tek kelimelere takılmadan konuşmanın ne yaptığını düşün.",
+            "detailCoaching": "Sorunun istediği kişi, sayı veya eylemi belirle. İkinci dinlemede ilgili bölüme odaklan."
+          }
+        },
+        "revision": {
+          "id": "en.tradeoff.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "İlk metnini kontrol et. Bağlam ve hedef kalıp bakımından yeni bir sürüm yaz.",
+          "sample": "Although the bus is cheaper, I’d take the train for the early class. If the class started later, I would take the bus.",
+          "explanation": "Görevin bilgi ve kullanım ölçütleriyle karşılaştır."
+        },
+        "vocabulary": [
+          {
+            "cardId": "en.tradeoff.word.1",
+            "collocations": [
+              "weigh the options before deciding"
+            ],
+            "pronunciation": "weigh the options",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/en.tradeoff.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "en-US",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "en.tradeoff.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "“weigh the options” ne demek?",
+              "options": [
+                "bugün erken",
+                "seçenekleri tartmak",
+                "uzun bir yol"
+              ],
+              "accepted": "seçenekleri tartmak",
+              "explanation": "Kalıbın anlamını örnek cümleye bağla."
+            },
+            "recall": {
+              "id": "en.tradeoff.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“seçenekleri tartmak” için öğrendiğin ifadeyi yaz.",
+              "accepted": [
+                "weigh the options"
+              ],
+              "explanation": "Kalıbı örnekteki anlamıyla hatırla."
+            },
+            "use": {
+              "id": "en.tradeoff.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "“weigh the options” ifadesini kısa bir cümlede kullan.",
+              "sample": "We should weigh the options before we sign.",
+              "explanation": "İfadenin bağlamına ve anlamına bak."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Bir kursa gitmek için iki ulaşım seçeneğini sesli karşılaştır. Kararının hangi koşulda değişeceğini açıkla.",
+        "grammar": "Ödünleme; Varsayımsal öneri",
+        "goals": [
+          "Bir kararın yararını ve sakıncasını açıklayıp koşullu öneri ver."
+        ],
+        "rubric": [
+          "Her seçenek için bir yarar ya da sakınca belirt.",
+          "Kararını söyle ve varsayımsal bir değişikliği if ve would ile açıkla."
+        ],
+        "context": "daily_conversation"
+      }
+    }
+  ],
+  "diagnostics": {
+    "en.experience": {
+      "reading": {
+        "text": "Rita has trained new staff. She trained her last group in March.",
+        "question": {
+          "id": "en.experience.diagnostic.reading",
+          "skill": "reading",
+          "kind": "single",
+          "prompt": "Son eğitim ne zaman yapıldı?",
+          "options": [
+            "Mayıs",
+            "Mart",
+            "Haziran"
+          ],
+          "accepted": "Mart",
+          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+        }
+      },
+      "listening": {
+        "preparation": "Dinle ve sorulan ayrıntıyı seç.",
+        "transcript": "I have worked in two branches. I joined the second branch in September.",
+        "audio": {
+          "kind": "recording",
+          "src": "/audio/en.experience.diagnostic.mp3",
+          "license": "MIT",
+          "source": "https://github.com/espeak-ng/espeak-ng",
+          "locale": "en-US",
+          "synthetic": true
+        },
+        "detail": {
+          "id": "en.experience.diagnostic.listening",
+          "skill": "listening",
+          "kind": "single",
+          "prompt": "İkinci şubeye ne zaman katıldı?",
+          "options": [
+            "Temmuz",
+            "Eylül",
+            "Ekim"
+          ],
+          "accepted": "Eylül",
+          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+        }
+      }
+    },
+    "en.routine": {
+      "reading": {
+        "text": "Our office normally opens at eight. Today it opens at nine.",
+        "question": {
+          "id": "en.routine.diagnostic.reading",
+          "skill": "reading",
+          "kind": "single",
+          "prompt": "Bugün ofis ne zaman açılıyor?",
+          "options": [
+            "Sekizde",
+            "Dokuzda",
+            "Onda"
+          ],
+          "accepted": "Dokuzda",
+          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+        }
+      },
+      "listening": {
+        "preparation": "Dinle ve sorulan ayrıntıyı seç.",
+        "transcript": "I normally take the train. Today I am taking the bus.",
+        "audio": {
+          "kind": "recording",
+          "src": "/audio/en.routine.diagnostic.mp3",
+          "license": "MIT",
+          "source": "https://github.com/espeak-ng/espeak-ng",
+          "locale": "en-US",
+          "synthetic": true
+        },
+        "detail": {
+          "id": "en.routine.diagnostic.listening",
+          "skill": "listening",
+          "kind": "single",
+          "prompt": "Bugün nasıl gidiyor?",
+          "options": [
+            "Trenle",
+            "Otobüsle",
+            "Yürüyerek"
+          ],
+          "accepted": "Otobüsle",
+          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+        }
+      }
+    }
+  }
+}

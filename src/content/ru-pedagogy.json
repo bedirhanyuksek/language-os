@@ -1,0 +1,910 @@
+{
+  "lessons": [
+    {
+      "lessonId": "ru.intro",
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://mezhdunami.org/unit01/1_4/language.shtml",
+          "https://mezhdunami.org/unit03/3_7/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Ad kalıbını bir bütün olarak öğren",
+            "explanation": "Меня́ зову́т + ad kalıbında меня́, я zamirinin belirtme hâlidir. Türkçedeki “benim adım” ile aynı iletişim işini görür. İlk aşamada çekim tablosuna girmeden kalıbı kullan.",
+            "example": "Меня́ зову́т Ди́ма."
+          },
+          {
+            "title": "Kibar hitabı seç",
+            "explanation": "Bir yetişkine veya yeni tanıştığın birine Здра́вствуйте ve Как вас зову́т? diyebilirsin. Arkadaşına Как тебя́ зову́т? denebilir. Aynı soru, ilişkiye göre farklı hitap taşır.",
+            "example": "Здра́вствуйте! Как вас зову́т? — Меня́ зову́т И́ра."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Adını kalıpla söyle",
+            "example": "Меня́ зову́т Ле́на."
+          },
+          {
+            "criterion": "Uygun hitapla ad sor",
+            "example": "Как вас зову́т?"
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.intro.name",
+            "misconception": "Adı veren kalıp",
+            "incorrectExample": "Я зовут Дима.",
+            "correctExample": "Меня зовут Дима.",
+            "correction": "Bu kalıpta adı taşıyan kişi меня ile ifade edilir.",
+            "transfer": [
+              {
+                "id": "ru.intro.name.transfer.1",
+                "kind": "fill",
+                "prompt": "Bir kursa giriş: ___ зовут Дима. (“Adım Dima.”)",
+                "explanation": "Bu kalıpta adı taşıyan kişi меня ile ifade edilir.",
+                "skill": "grammar",
+                "accepted": [
+                  "Меня"
+                ]
+              },
+              {
+                "id": "ru.intro.name.transfer.2",
+                "kind": "fill",
+                "prompt": "Bir kulüpte tanışma: Меня ___ Лена. (“Adım Lena.”)",
+                "explanation": "Bu kalıpta adı taşıyan kişi меня ile ifade edilir.",
+                "skill": "grammar",
+                "accepted": [
+                  "зовут"
+                ]
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.intro.name.delayed.1",
+                "kind": "fill",
+                "prompt": "Bir telefon tanışması: ___ зовут Роман. (“Adım Roman.”)",
+                "explanation": "Bu kalıpta adı taşıyan kişi меня ile ifade edilir.",
+                "skill": "grammar",
+                "accepted": [
+                  "Меня"
+                ]
+              },
+              {
+                "id": "ru.intro.name.delayed.2",
+                "kind": "fill",
+                "prompt": "Yeni bir komşuya: Меня ___ Ольга. (“Adım Olga.”)",
+                "explanation": "Bu kalıpta adı taşıyan kişi меня ile ifade edilir.",
+                "skill": "grammar",
+                "accepted": [
+                  "зовут"
+                ]
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.intro.polite",
+            "misconception": "Kibar ve samimi hitap",
+            "incorrectExample": "Как тебя зовут? (yeni bir yetişkine kibar hitap)",
+            "correctExample": "Как вас зовут?",
+            "correction": "Kibar tekil hitapta вас, samimi tekil hitapta тебя kullanılır.",
+            "transfer": [
+              {
+                "id": "ru.intro.polite.transfer.1",
+                "kind": "fill",
+                "prompt": "Bir öğretmene kibarca sor: Как ___ зовут?",
+                "explanation": "Kibar tekil hitapta вас, samimi tekil hitapta тебя kullanılır.",
+                "skill": "grammar",
+                "accepted": [
+                  "вас"
+                ]
+              },
+              {
+                "id": "ru.intro.polite.transfer.2",
+                "kind": "fill",
+                "prompt": "Yeni bir müşteriye kibarca sor: ___ вас зовут?",
+                "explanation": "Kibar tekil hitapta вас, samimi tekil hitapta тебя kullanılır.",
+                "skill": "grammar",
+                "accepted": [
+                  "Как"
+                ]
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.intro.polite.delayed.1",
+                "kind": "fill",
+                "prompt": "Bir doktorla tanışıyorsun. Kibarca tamamla: Как ___ зовут?",
+                "explanation": "Kibar tekil hitapta вас, samimi tekil hitapta тебя kullanılır.",
+                "skill": "grammar",
+                "accepted": [
+                  "вас"
+                ]
+              },
+              {
+                "id": "ru.intro.polite.delayed.2",
+                "kind": "fill",
+                "prompt": "Resepsiyonda kibarca ad sor: Как вас ___?",
+                "explanation": "Kibar tekil hitapta вас, samimi tekil hitapta тебя kullanılır.",
+                "skill": "grammar",
+                "accepted": [
+                  "зовут"
+                ]
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "— Здравствуйте! Меня зовут Ирина. Как вас зовут?\n— Меня зовут Павел.",
+          "question": {
+            "id": "ru.intro.reading",
+            "kind": "single",
+            "prompt": "İkinci kişinin adı ne?",
+            "explanation": "İkinci kişi Меня зовут Павел diyor.",
+            "skill": "reading",
+            "accepted": "Pavel",
+            "options": [
+              "Irina",
+              "Pavel",
+              "Dima"
+            ]
+          }
+        },
+        "listening": {
+          "preparation": "İki kişinin ilk tanışmasını dinle. Önce konuşmanın amacını, sonra adı yakala.",
+          "transcript": "Здравствуйте! Меня зовут Анна. Как вас зовут? Меня зовут Максим.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.intro.mp3",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "license": "MIT",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.intro.listen.main",
+            "kind": "single",
+            "prompt": "Konuşmanın amacı nedir?",
+            "explanation": "Selam ve ad sorma kalıpları bir ilk tanışma kuruyor.",
+            "skill": "listening",
+            "accepted": "Tanışmak",
+            "options": [
+              "Adres sormak",
+              "Tanışmak",
+              "Meslek öğrenmek"
+            ]
+          },
+          "detail": {
+            "id": "ru.intro.listen.detail",
+            "kind": "single",
+            "prompt": "İkinci kişinin adı ne?",
+            "explanation": "İkinci ad Максим.",
+            "skill": "listening",
+            "accepted": "Maksim",
+            "options": [
+              "Anna",
+              "Maksim",
+              "Pavel"
+            ]
+          }
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.intro.word.1",
+            "collocations": [
+              "Здравствуйте! Как вас зовут?"
+            ],
+            "pronunciation": "здра́вствуйте",
+            "recognize": {
+              "id": "ru.intro.word.1.recognize",
+              "kind": "single",
+              "prompt": "“здравствуйте” ifadesi bu bağlamda ne anlama gelir?",
+              "explanation": "Kibar merhaba",
+              "skill": "vocabulary",
+              "accepted": "Kibarca merhaba",
+              "options": [
+                "Birinin adresini sormak",
+                "Kibarca merhaba",
+                "Gelecek haftayı belirtmek"
+              ]
+            },
+            "recall": {
+              "id": "ru.intro.word.1.recall",
+              "kind": "short",
+              "prompt": "İfadeyi yardım almadan yaz: kibarca merhaba.",
+              "explanation": "Hedef ifade: здравствуйте. Kibar merhaba.",
+              "skill": "vocabulary",
+              "accepted": [
+                "здравствуйте"
+              ]
+            },
+            "use": {
+              "id": "ru.intro.word.1.use",
+              "kind": "open",
+              "prompt": "“здравствуйте” ifadesiyle bağlama uygun kısa bir cümle yaz. Bağlam: kibar merhaba.",
+              "explanation": "Örnekle karşılaştır. İfadenin anlamını ve cümledeki yerini kontrol et.",
+              "skill": "vocabulary",
+              "sample": "Здравствуйте! Меня зовут Олег."
+            },
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.intro.word.1.mp3",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "license": "MIT",
+              "locale": "ru-RU",
+              "synthetic": true
+            }
+          },
+          {
+            "cardId": "ru.intro.word.2",
+            "collocations": [
+              "Меня зовут + ad"
+            ],
+            "pronunciation": "меня́ зову́т",
+            "recognize": {
+              "id": "ru.intro.word.2.recognize",
+              "kind": "single",
+              "prompt": "“меня зовут” ifadesi bu bağlamda ne anlama gelir?",
+              "explanation": "Adını söyleme",
+              "skill": "vocabulary",
+              "accepted": "Benim adım",
+              "options": [
+                "Birinin adresini sormak",
+                "Benim adım",
+                "Gelecek haftayı belirtmek"
+              ]
+            },
+            "recall": {
+              "id": "ru.intro.word.2.recall",
+              "kind": "short",
+              "prompt": "İfadeyi yardım almadan yaz: benim adım.",
+              "explanation": "Hedef ifade: меня зовут. Adını söyleme.",
+              "skill": "vocabulary",
+              "accepted": [
+                "меня зовут"
+              ]
+            },
+            "use": {
+              "id": "ru.intro.word.2.use",
+              "kind": "open",
+              "prompt": "“меня зовут” ifadesiyle bağlama uygun kısa bir cümle yaz. Bağlam: adını söyleme.",
+              "explanation": "Örnekle karşılaştır. İfadenin anlamını ve cümledeki yerini kontrol et.",
+              "skill": "vocabulary",
+              "sample": "Меня зовут Вера."
+            },
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.intro.word.2.mp3",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "license": "MIT",
+              "locale": "ru-RU",
+              "synthetic": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "ru.roles",
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://mezhdunami.org/unit01/1_4/language.shtml",
+          "https://mezhdunami.org/unit07/7_3/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Kim olduğunu söyle",
+            "explanation": "Я врач cümlesinde врач yalın hâldedir. Şimdiki zamanda bu tür basit meslek tanıtımında ayrı bir “olmak” fiili duymazsın. Был veya будет gibi zaman biçimleri başka bir konudur.",
+            "example": "Я инжене́р. Она́ врач."
+          },
+          {
+            "title": "Birini işaret ederek tanıt",
+            "explanation": "Это ile birini tanıt. Sonraki cümlede он veya она kullan. Kim olduğunu sorarken Кто э́то? kalıbını duyabilirsin.",
+            "example": "Э́то Оле́г. Он студе́нт. — Кто э́то? — Э́то Ма́ша."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Mesleğini söyle",
+            "example": "Я инжене́р."
+          },
+          {
+            "criterion": "Bir başkasını tanıt",
+            "example": "Э́то Ле́на. Она́ врач."
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.roles.role",
+            "misconception": "Meslek cümlesinde şimdiki zaman",
+            "incorrectExample": "Я есть инженер.",
+            "correctExample": "Я инженер.",
+            "correction": "Basit meslek tanıtımında özne ve yalın meslek adı yeterli.",
+            "transfer": [
+              {
+                "id": "ru.roles.role.transfer.1",
+                "kind": "fill",
+                "prompt": "“Ben doktorum.” ___ врач.",
+                "explanation": "Basit meslek tanıtımında özne ve yalın meslek adı yeterli.",
+                "skill": "grammar",
+                "accepted": [
+                  "Я"
+                ]
+              },
+              {
+                "id": "ru.roles.role.transfer.2",
+                "kind": "fill",
+                "prompt": "“O mühendis.” (kadın) ___ инженер.",
+                "explanation": "Basit meslek tanıtımında özne ve yalın meslek adı yeterli.",
+                "skill": "grammar",
+                "accepted": [
+                  "Она"
+                ]
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.roles.role.delayed.1",
+                "kind": "fill",
+                "prompt": "“O doktor.” (erkek) ___ врач.",
+                "explanation": "Basit meslek tanıtımında özne ve yalın meslek adı yeterli.",
+                "skill": "grammar",
+                "accepted": [
+                  "Он"
+                ]
+              },
+              {
+                "id": "ru.roles.role.delayed.2",
+                "kind": "fill",
+                "prompt": "“Ben mühendisim.” Я ___.",
+                "explanation": "Basit meslek tanıtımında özne ve yalın meslek adı yeterli.",
+                "skill": "grammar",
+                "accepted": [
+                  "инженер"
+                ]
+              }
+            ],
+            "foundation": {
+              "conceptId": "ru.intro.name",
+              "exercise": {
+                "id": "ru.roles.role.foundation",
+                "kind": "fill",
+                "prompt": "Adını söyle: Меня ___ Олег.",
+                "explanation": "Ad kalıbında Меня зовут kullanılır.",
+                "skill": "grammar",
+                "accepted": [
+                  "зовут"
+                ]
+              },
+              "errorAnswers": [
+                "меня"
+              ]
+            }
+          },
+          {
+            "conceptId": "ru.roles.lex",
+            "misconception": "Meslek söz varlığı",
+            "incorrectExample": "Инженер — доктор.",
+            "correctExample": "Инженер — mühendis.",
+            "correction": "Инженер ve врач iki farklı meslek adı.",
+            "transfer": [
+              {
+                "id": "ru.roles.lex.transfer.1",
+                "kind": "fill",
+                "prompt": "Bir tanışmada “mühendis” sözcüğünü Rusça yaz.",
+                "explanation": "Инженер ve врач iki farklı meslek adı.",
+                "skill": "vocabulary",
+                "accepted": [
+                  "инженер"
+                ]
+              },
+              {
+                "id": "ru.roles.lex.transfer.2",
+                "kind": "fill",
+                "prompt": "Bir tanışmada “doktor” sözcüğünü Rusça yaz.",
+                "explanation": "Инженер ve врач iki farklı meslek adı.",
+                "skill": "vocabulary",
+                "accepted": [
+                  "врач"
+                ]
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.roles.lex.delayed.1",
+                "kind": "fill",
+                "prompt": "Bir öğrenci kulübünde erkek “öğrenci” sözcüğünü Rusça yaz.",
+                "explanation": "Инженер ve врач iki farklı meslek adı.",
+                "skill": "vocabulary",
+                "accepted": [
+                  "студент"
+                ]
+              },
+              {
+                "id": "ru.roles.lex.delayed.2",
+                "kind": "fill",
+                "prompt": "Bir hastane tanışmasında “doktor” sözcüğünü Rusça yaz.",
+                "explanation": "Инженер ve врач iki farklı meslek adı.",
+                "skill": "vocabulary",
+                "accepted": [
+                  "врач"
+                ]
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "Это Ира. Она врач. Это Олег. Он инженер. А я студент.",
+          "question": {
+            "id": "ru.roles.reading",
+            "kind": "single",
+            "prompt": "Oleg’in mesleği ne?",
+            "explanation": "Он инженер, Oleg’in mesleğini veriyor.",
+            "skill": "reading",
+            "accepted": "Mühendis",
+            "options": [
+              "Doktor",
+              "Mühendis",
+              "Öğrenci"
+            ]
+          }
+        },
+        "listening": {
+          "preparation": "Konuşanın mesleğini ve tanıttığı kişinin mesleğini ayrı dinle.",
+          "transcript": "Меня зовут Дима. Я студент. Это Анна. Она врач.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.roles.mp3",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "license": "MIT",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.roles.listen.main",
+            "kind": "single",
+            "prompt": "Konuşmacı ne yapıyor?",
+            "explanation": "Önce kendi adını ve mesleğini, sonra Anna’yı söylüyor.",
+            "skill": "listening",
+            "accepted": "Kendini ve bir başkasını tanıtıyor",
+            "options": [
+              "Bir şehir tarif ediyor",
+              "Kendini ve bir başkasını tanıtıyor",
+              "Birinin adını soruyor"
+            ]
+          },
+          "detail": {
+            "id": "ru.roles.listen.detail",
+            "kind": "single",
+            "prompt": "Anna’nın mesleği ne?",
+            "explanation": "Она врач ifadesi Anna’ya ait.",
+            "skill": "listening",
+            "accepted": "Doktor",
+            "options": [
+              "Öğrenci",
+              "Doktor",
+              "Mühendis"
+            ]
+          }
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.roles.word.1",
+            "collocations": [
+              "Я врач",
+              "она врач"
+            ],
+            "pronunciation": "врач",
+            "recognize": {
+              "id": "ru.roles.word.1.recognize",
+              "kind": "single",
+              "prompt": "“врач” ifadesi bu bağlamda ne anlama gelir?",
+              "explanation": "Mesleğini söyleme",
+              "skill": "vocabulary",
+              "accepted": "Doktor",
+              "options": [
+                "Birinin adresini sormak",
+                "Doktor",
+                "Gelecek haftayı belirtmek"
+              ]
+            },
+            "recall": {
+              "id": "ru.roles.word.1.recall",
+              "kind": "short",
+              "prompt": "İfadeyi yardım almadan yaz: doktor.",
+              "explanation": "Hedef ifade: врач. Mesleğini söyleme.",
+              "skill": "vocabulary",
+              "accepted": [
+                "врач"
+              ]
+            },
+            "use": {
+              "id": "ru.roles.word.1.use",
+              "kind": "open",
+              "prompt": "“врач” ifadesiyle bağlama uygun kısa bir cümle yaz. Bağlam: mesleğini söyleme.",
+              "explanation": "Örnekle karşılaştır. İfadenin anlamını ve cümledeki yerini kontrol et.",
+              "skill": "vocabulary",
+              "sample": "Я врач."
+            },
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.roles.word.1.mp3",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "license": "MIT",
+              "locale": "ru-RU",
+              "synthetic": true
+            }
+          },
+          {
+            "cardId": "ru.roles.word.2",
+            "collocations": [
+              "он инженер",
+              "Я инженер"
+            ],
+            "pronunciation": "инжене́р",
+            "recognize": {
+              "id": "ru.roles.word.2.recognize",
+              "kind": "single",
+              "prompt": "“инженер” ifadesi bu bağlamda ne anlama gelir?",
+              "explanation": "Birini tanıtma",
+              "skill": "vocabulary",
+              "accepted": "Mühendis",
+              "options": [
+                "Birinin adresini sormak",
+                "Mühendis",
+                "Gelecek haftayı belirtmek"
+              ]
+            },
+            "recall": {
+              "id": "ru.roles.word.2.recall",
+              "kind": "short",
+              "prompt": "İfadeyi yardım almadan yaz: mühendis.",
+              "explanation": "Hedef ifade: инженер. Birini tanıtma.",
+              "skill": "vocabulary",
+              "accepted": [
+                "инженер"
+              ]
+            },
+            "use": {
+              "id": "ru.roles.word.2.use",
+              "kind": "open",
+              "prompt": "“инженер” ifadesiyle bağlama uygun kısa bir cümle yaz. Bağlam: birini tanıtma.",
+              "explanation": "Örnekle karşılaştır. İfadenin anlamını ve cümledeki yerini kontrol et.",
+              "skill": "vocabulary",
+              "sample": "Это Игорь. Он инженер."
+            },
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.roles.word.2.mp3",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "license": "MIT",
+              "locale": "ru-RU",
+              "synthetic": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "lessonId": "ru.city",
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
+          "https://mezhdunami.org/unit01/1_4/language.shtml",
+          "https://mezhdunami.org/unit03/3_7/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Nerede sorusunu tanı",
+            "explanation": "Где? “nerede?” demektir. Я живу́ в… kalıbıyla ikamet ettiğin yeri ver. Я ile живу́, он/она ile живёт kullanılır.",
+            "example": "Где она́ живёт? Она́ живёт в Москве́."
+          },
+          {
+            "title": "Şehir adındaki değişiklik",
+            "explanation": "Bu örneklerde Москва́ → Москве́, Сама́ра → Сама́ре, Петербу́рг → Петербу́рге. Burada в, yer bildiriyor ve bulunma hâliyle kullanılıyor. Şehir adının yalın biçimini tanıyıp kalıpla birlikte değişmiş biçimini öğren.",
+            "example": "Я живу́ в Сама́ре. Он живёт в Петербу́рге."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Yaşadığı şehri doğru biçimle ver",
+            "example": "Я живу́ в Москве́."
+          },
+          {
+            "criterion": "Kişiyi ve yeri birlikte anlat",
+            "example": "Э́то И́ра. Она́ живёт в Сама́ре."
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.city.where",
+            "misconception": "Yer bildiren şehir biçimi",
+            "incorrectExample": "Я живу в Москва.",
+            "correctExample": "Я живу в Москве.",
+            "correction": "Где? sorusuna verilen bu yanıtta şehir adı bulunma hâlindedir.",
+            "transfer": [
+              {
+                "id": "ru.city.where.transfer.1",
+                "kind": "fill",
+                "prompt": "Bir profil kartı: Она живёт в ___ (Самара).",
+                "explanation": "Где? sorusuna verilen bu yanıtta şehir adı bulunma hâlindedir.",
+                "skill": "grammar",
+                "accepted": [
+                  "Самаре"
+                ]
+              },
+              {
+                "id": "ru.city.where.transfer.2",
+                "kind": "fill",
+                "prompt": "Bir arkadaşın adresi: Он живёт в ___ (Петербург).",
+                "explanation": "Где? sorusuna verilen bu yanıtta şehir adı bulunma hâlindedir.",
+                "skill": "grammar",
+                "accepted": [
+                  "Петербурге"
+                ]
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.city.where.delayed.1",
+                "kind": "fill",
+                "prompt": "Bir konuk tanışması: Анна живёт в ___ (Москва).",
+                "explanation": "Где? sorusuna verilen bu yanıtta şehir adı bulunma hâlindedir.",
+                "skill": "grammar",
+                "accepted": [
+                  "Москве"
+                ]
+              },
+              {
+                "id": "ru.city.where.delayed.2",
+                "kind": "fill",
+                "prompt": "Bir öğrenci tanışması: Я живу в ___ (Самара).",
+                "explanation": "Где? sorusuna verilen bu yanıtta şehir adı bulunma hâlindedir.",
+                "skill": "grammar",
+                "accepted": [
+                  "Самаре"
+                ]
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.city.meaning",
+            "misconception": "Şehri metinden çıkarma",
+            "incorrectExample": "В Москве → Самара.",
+            "correctExample": "В Москве → Москва.",
+            "correction": "Metindeki bulunma biçiminden şehir adının yalın biçimine dön.",
+            "transfer": [
+              {
+                "id": "ru.city.meaning.transfer.1",
+                "kind": "fill",
+                "prompt": "Это Катя. Она живёт в Самаре. Şehrin Rusça yalın adını yaz.",
+                "explanation": "Metindeki bulunma biçiminden şehir adının yalın biçimine dön.",
+                "skill": "reading",
+                "accepted": [
+                  "Самара"
+                ]
+              },
+              {
+                "id": "ru.city.meaning.transfer.2",
+                "kind": "fill",
+                "prompt": "Это Игорь. Он живёт в Петербурге. Şehrin Rusça yalın adını yaz.",
+                "explanation": "Metindeki bulunma biçiminden şehir adının yalın biçimine dön.",
+                "skill": "reading",
+                "accepted": [
+                  "Петербург"
+                ]
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.city.meaning.delayed.1",
+                "kind": "fill",
+                "prompt": "Меня зовут Вера. Я живу в Москве. Şehrin Rusça yalın adını yaz.",
+                "explanation": "Metindeki bulunma biçiminden şehir adının yalın biçimine dön.",
+                "skill": "reading",
+                "accepted": [
+                  "Москва"
+                ]
+              },
+              {
+                "id": "ru.city.meaning.delayed.2",
+                "kind": "fill",
+                "prompt": "Олег врач. Он живёт в Самаре. Şehrin Rusça yalın adını yaz.",
+                "explanation": "Metindeki bulunma biçiminden şehir adının yalın biçimine dön.",
+                "skill": "reading",
+                "accepted": [
+                  "Самара"
+                ]
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "Меня зовут Роман. Я инженер. Я живу в Самаре. Это Анна. Она врач и живёт в Москве.",
+          "question": {
+            "id": "ru.city.reading",
+            "kind": "single",
+            "prompt": "Moskova’da kim yaşıyor?",
+            "explanation": "Она, önceki cümledeki Анна kişisine bağlanıyor.",
+            "skill": "reading",
+            "accepted": "Anna",
+            "options": [
+              "Roman",
+              "Anna",
+              "İkisi de"
+            ]
+          }
+        },
+        "listening": {
+          "preparation": "İki şehir adı duyacaksın. Her birini doğru kişiyle eşleştirmeye çalış.",
+          "transcript": "Меня зовут Олег. Я живу в Москве. Это Ира. Она живёт в Самаре.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.city.mp3",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "license": "MIT",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.city.listen.main",
+            "kind": "single",
+            "prompt": "Konuşmacı hangi bilgiyi veriyor?",
+            "explanation": "Живу ve живёт yaşanan yeri bildiriyor.",
+            "skill": "listening",
+            "accepted": "İki kişinin yaşadığı yer",
+            "options": [
+              "İki kişinin yaşadığı yer",
+              "İki kişinin çalışma saatleri",
+              "Bir kişinin yaşı"
+            ]
+          },
+          "detail": {
+            "id": "ru.city.listen.detail",
+            "kind": "single",
+            "prompt": "İra nerede yaşıyor?",
+            "explanation": "Она живёт в Самаре cümlesi İra’yı anlatıyor.",
+            "skill": "listening",
+            "accepted": "Samara",
+            "options": [
+              "Moskova",
+              "Samara",
+              "Petersburg"
+            ]
+          }
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.city.word.1",
+            "collocations": [
+              "жить в городе",
+              "я живу в Москве"
+            ],
+            "pronunciation": "жить · я живу́ · он/она живёт",
+            "recognize": {
+              "id": "ru.city.word.1.recognize",
+              "kind": "single",
+              "prompt": "“жить” ifadesi bu bağlamda ne anlama gelir?",
+              "explanation": "Yaşadığı yeri söyleme",
+              "skill": "vocabulary",
+              "accepted": "Yaşamak",
+              "options": [
+                "Birinin adresini sormak",
+                "Yaşamak",
+                "Gelecek haftayı belirtmek"
+              ]
+            },
+            "recall": {
+              "id": "ru.city.word.1.recall",
+              "kind": "short",
+              "prompt": "İfadeyi yardım almadan yaz: yaşamak.",
+              "explanation": "Hedef ifade: жить. Yaşadığı yeri söyleme.",
+              "skill": "vocabulary",
+              "accepted": [
+                "жить"
+              ]
+            },
+            "use": {
+              "id": "ru.city.word.1.use",
+              "kind": "open",
+              "prompt": "“жить” ifadesiyle bağlama uygun kısa bir cümle yaz. Bağlam: yaşadığı yeri söyleme.",
+              "explanation": "Örnekle karşılaştır. İfadenin anlamını ve cümledeki yerini kontrol et.",
+              "skill": "vocabulary",
+              "sample": "Я живу в Москве."
+            },
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.city.word.1.mp3",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "license": "MIT",
+              "locale": "ru-RU",
+              "synthetic": true
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "placement": [
+    {
+      "exercise": {
+        "id": "ru.diagnostic.1",
+        "kind": "single",
+        "prompt": "“Benim adım İra.” cümlesini seç.",
+        "explanation": "Меня зовут sabit kalıptır.",
+        "skill": "grammar",
+        "accepted": "Меня зовут Ира.",
+        "options": [
+          "Меня зовут Ира.",
+          "Я зовут Ира."
+        ]
+      },
+      "objectiveId": "ru.intro.objective",
+      "diagnosticConceptId": "ru.intro.name",
+      "difficulty": "A1"
+    },
+    {
+      "exercise": {
+        "id": "ru.diagnostic.2",
+        "kind": "fill",
+        "prompt": "___ зовут Павел. (“Adım Pavel.”)",
+        "explanation": "Ad kalıbında меня kullanılır.",
+        "skill": "grammar",
+        "accepted": [
+          "Меня"
+        ]
+      },
+      "objectiveId": "ru.intro.objective",
+      "diagnosticConceptId": "ru.intro.name",
+      "difficulty": "A1"
+    },
+    {
+      "exercise": {
+        "id": "ru.diagnostic.3",
+        "kind": "single",
+        "prompt": "Kibar hitapla “Adınız ne?” sorusunu seç.",
+        "explanation": "Kibar hitapta вас kullanılır.",
+        "skill": "grammar",
+        "accepted": "Как вас зовут?",
+        "options": [
+          "Как тебя зовут?",
+          "Как вас зовут?"
+        ]
+      },
+      "objectiveId": "ru.intro.objective",
+      "diagnosticConceptId": "ru.intro.polite",
+      "difficulty": "A1"
+    },
+    {
+      "exercise": {
+        "id": "ru.diagnostic.4",
+        "kind": "fill",
+        "prompt": "Resepsiyonda kibarca sor: Как ___ зовут?",
+        "explanation": "Kibar hitapta вас kullanılır.",
+        "skill": "grammar",
+        "accepted": [
+          "вас"
+        ]
+      },
+      "objectiveId": "ru.intro.objective",
+      "diagnosticConceptId": "ru.intro.polite",
+      "difficulty": "A1"
+    }
+  ]
+}

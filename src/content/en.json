@@ -1,0 +1,522 @@
+{
+  "id": "en.starter",
+  "language": "en",
+  "level": "B1",
+  "version": 1,
+  "source": "Language OS için özgün içerik; CEFR Companion Volume (2020) referansı",
+  "license": "MIT",
+  "reviewStatus": "reviewed",
+  "unit": {
+    "id": "en.unit.1",
+    "title": "İş deneyimini anlatma",
+    "lessons": [
+      {
+        "id": "en.experience",
+        "title": "Deneyimden ayrıntıya",
+        "objective": {
+          "id": "en.experience.objective",
+          "description": "Bir iş deneyimini tanıt ve ne zaman gerçekleştiğini açıkla.",
+          "level": "B1"
+        },
+        "prerequisites": [],
+        "minutes": 5,
+        "goals": [
+          "general",
+          "professional",
+          "exam"
+        ],
+        "recall": "Geçen hafta yaptığın bir işi düşün. Zamanını söylemeden bu işi bir deneyim olarak nasıl tanıtırsın?",
+        "explanation": [
+          "Present perfect, have/has + fiilin üçüncü hâliyle kurulur. Belirli bir bitmiş zaman vermeden deneyimini anlatmak için kullan: I’ve led a workshop.",
+          "O deneyimin geçmişte ne zaman gerçekleştiğini veya hangi adımları içerdiğini anlatırken past simple kullan: I led it in April."
+        ],
+        "examples": [
+          {
+            "correct": "I’ve worked with remote teams. I joined one in April.",
+            "incorrect": "I’ve joined a remote team last April.",
+            "note": "Last April bitmiş bir zamanı gösterir. Joined kullan."
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en.experience.overview",
+            "label": "Zamanı belirtilmeyen deneyim",
+            "variants": [
+              {
+                "id": "en.experience.overview.1",
+                "kind": "single",
+                "prompt": "Deneyim sorusunu seç.",
+                "skill": "grammar",
+                "explanation": "Ever, şimdiye kadarki deneyimi sorar.",
+                "accepted": "Have you ever led a workshop?",
+                "options": [
+                  "Did you lead the workshop yesterday?",
+                  "Have you ever led a workshop?"
+                ]
+              },
+              {
+                "id": "en.experience.overview.2",
+                "kind": "fill",
+                "prompt": "Şimdiye kadarki deneyim: She ___ (has / had) worked with remote teams.",
+                "skill": "grammar",
+                "explanation": "She ile present perfect için has kullan.",
+                "accepted": [
+                  "has"
+                ]
+              },
+              {
+                "id": "en.experience.overview.3",
+                "kind": "single",
+                "prompt": "Şimdiye kadarki deneyimi seç.",
+                "skill": "grammar",
+                "explanation": "Belirli bir bitmiş zaman verilmiyor.",
+                "accepted": "We have shipped several updates.",
+                "options": [
+                  "We shipped an update last Friday.",
+                  "We have shipped several updates."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "en.experience.detail",
+            "label": "Bitmiş zamanda ayrıntı",
+            "variants": [
+              {
+                "id": "en.experience.detail.1",
+                "kind": "fill",
+                "prompt": "I ___ (join) the project last May.",
+                "skill": "grammar",
+                "explanation": "Last May, past simple gerektirir.",
+                "accepted": [
+                  "joined"
+                ]
+              },
+              {
+                "id": "en.experience.detail.2",
+                "kind": "single",
+                "prompt": "Geçen yıl gerçekleşen tek bir olayı anlat.",
+                "skill": "grammar",
+                "explanation": "Last year ile past simple kullan.",
+                "accepted": "I led the workshop last year.",
+                "options": [
+                  "I’ve led the workshop last year.",
+                  "I led the workshop last year."
+                ]
+              },
+              {
+                "id": "en.experience.detail.3",
+                "kind": "fill",
+                "prompt": "We ___ (finish) the audit two days ago.",
+                "skill": "grammar",
+                "explanation": "Two days ago bitmiş zamanı belirtir.",
+                "accepted": [
+                  "finished"
+                ]
+              }
+            ]
+          }
+        ],
+        "production": {
+          "id": "en.experience.write",
+          "kind": "open",
+          "prompt": "Bir iş deneyimini iki cümleyle anlat. İlk cümlede deneyimi tanıt, ikincide ne zaman gerçekleştiğini belirt.",
+          "skill": "writing",
+          "explanation": "İlk cümlede have/has + V3, bitmiş zamanla kurduğun ikinci cümlede past simple kullandığını kontrol et.",
+          "sample": "I’ve led a project handover. I led it last March."
+        },
+        "vocabulary": [
+          {
+            "id": "en.experience.word.1",
+            "term": "lead a workshop",
+            "meaning": "bir atölye çalışması yürütmek",
+            "example": "I led a workshop in April.",
+            "context": "Ekip eğitimi veya toplantı",
+            "partOfSpeech": "fiil öbeği",
+            "grammar": "lead · led · led"
+          },
+          {
+            "id": "en.experience.word.2",
+            "term": "handover",
+            "meaning": "iş veya sorumluluk devri",
+            "example": "I’ve prepared a project handover.",
+            "context": "Bir işi başka bir ekip üyesine devretme",
+            "partOfSpeech": "isim",
+            "grammar": "prepare a handover"
+          }
+        ],
+        "speaking": {
+          "scenario": "Bir ekip lideriyle tanışıyorsun. İş deneyimlerinden birini tanıt, ardından ne zaman ve nasıl gerçekleştiğini anlat.",
+          "grammar": "Present perfect (experience) ve past simple (finished time)",
+          "goals": [
+            "Deneyimini bir cümlede tanıt.",
+            "Bitmiş zamana ait iki ayrıntı ver.",
+            "Hedef ifadelerden birini doğal biçimde kullan."
+          ],
+          "rubric": [
+            "Deneyim ile bitmiş zaman ayrıntısı ayırt ediliyor mu?",
+            "Yanıt soruya uygun ve anlaşılır mı?",
+            "Kullanılan hedef ifade uygun bağlamda mı?"
+          ],
+          "context": "workplace"
+        }
+      },
+      {
+        "id": "en.sequence",
+        "title": "Olayları sıraya koy",
+        "objective": {
+          "id": "en.sequence.objective",
+          "description": "Geçmişteki bir olayı ve ondan önce tamamlanmış adımı ayır.",
+          "level": "B1"
+        },
+        "prerequisites": [
+          "en.experience.objective"
+        ],
+        "minutes": 5,
+        "goals": [
+          "general",
+          "professional",
+          "exam"
+        ],
+        "recall": "Bir işin bittiği zamanı past simple ile söyle: The meeting started at nine.",
+        "explanation": [
+          "Past perfect, had + fiilin üçüncü hâliyle kurulur. Geçmişteki bir referans anından önce tamamlanmış bir işi vurgular.",
+          "Sıra zaten açık olduğunda iki past simple kullanımı da mümkün olabilir. Bu derste daha önce tamamlanmış işi özellikle vurguluyoruz."
+        ],
+        "examples": [
+          {
+            "correct": "By the time the meeting began, we had sent the agenda.",
+            "incorrect": "By the time the meeting began, we had send the agenda.",
+            "note": "Had sonrasında send fiilinin üçüncü hâli sent gelir."
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en.sequence.prior",
+            "label": "Daha önce tamamlanmış adım",
+            "variants": [
+              {
+                "id": "en.sequence.prior.1",
+                "kind": "fill",
+                "prompt": "By the time the client called, we ___ (send) the report. Erken tamamlanan işi past perfect ile yaz.",
+                "skill": "grammar",
+                "explanation": "Had + sent, telefon konuşmasından önce tamamlanan işi gösterir.",
+                "accepted": [
+                  "had sent"
+                ]
+              },
+              {
+                "id": "en.sequence.prior.2",
+                "kind": "short",
+                "prompt": "The review started at noon. We ___ (finish) the draft by then. Past perfect kullan.",
+                "skill": "grammar",
+                "explanation": "Had finished, inceleme başlamadan önce biten işi anlatır.",
+                "accepted": [
+                  "had finished"
+                ]
+              },
+              {
+                "id": "en.sequence.prior.3",
+                "kind": "fill",
+                "prompt": "By the time I arrived, they ___ (leave). Past perfect kullan.",
+                "skill": "grammar",
+                "explanation": "Leave fiilinin üçüncü hâli left.",
+                "accepted": [
+                  "had left"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "en.sequence.sequence",
+            "label": "Geçmişteki olay sırası",
+            "variants": [
+              {
+                "id": "en.sequence.sequence.1",
+                "kind": "sentence_order",
+                "prompt": "İlk gerçekleşen olayı en üste yerleştir. When the meeting began, I had already shared the link.",
+                "skill": "reading",
+                "explanation": "Had already shared daha erken gerçekleşir.",
+                "accepted": [
+                  "I shared the link.",
+                  "The meeting began."
+                ],
+                "options": [
+                  "The meeting began.",
+                  "I shared the link."
+                ]
+              },
+              {
+                "id": "en.sequence.sequence.2",
+                "kind": "single",
+                "prompt": "When Mina joined, I had already opened the document. Hangi olay daha önce oldu?",
+                "skill": "reading",
+                "explanation": "Had already opened daha önce tamamlanan işi gösterir.",
+                "accepted": "I opened the document.",
+                "options": [
+                  "Mina joined.",
+                  "I opened the document."
+                ]
+              },
+              {
+                "id": "en.sequence.sequence.3",
+                "kind": "sentence_order",
+                "prompt": "İlk gerçekleşen olayı üste yerleştir. By the time the call ended, Sam had saved the notes.",
+                "skill": "reading",
+                "explanation": "Notları kaydetme daha erken gerçekleşir.",
+                "accepted": [
+                  "Sam saved the notes.",
+                  "The call ended."
+                ],
+                "options": [
+                  "The call ended.",
+                  "Sam saved the notes."
+                ]
+              }
+            ]
+          }
+        ],
+        "production": {
+          "id": "en.sequence.write",
+          "kind": "open",
+          "prompt": "Bir toplantıdan ve toplantı başlamadan önce tamamladığın bir işten söz et.",
+          "skill": "writing",
+          "explanation": "Referans olayını past simple ile, daha önce tamamlanan işi had + V3 ile ifade et.",
+          "sample": "By the time the meeting began, I had shared the agenda."
+        },
+        "vocabulary": [
+          {
+            "id": "en.sequence.word.1",
+            "term": "agenda",
+            "meaning": "gündem",
+            "example": "I had sent the agenda before the meeting.",
+            "context": "Toplantı hazırlığı",
+            "partOfSpeech": "isim",
+            "grammar": "send the agenda"
+          }
+        ]
+      },
+      {
+        "id": "en.update",
+        "title": "Bir iş güncellemesi ver",
+        "objective": {
+          "id": "en.update.objective",
+          "description": "Tamamlanan işi, bitmiş zaman ayrıntısını ve sonraki adımı aktar.",
+          "level": "B1"
+        },
+        "prerequisites": [
+          "en.sequence.objective"
+        ],
+        "minutes": 5,
+        "goals": [
+          "general",
+          "professional",
+          "exam"
+        ],
+        "recall": "We sent the draft yesterday cümlesinde yesterday ifadesinin işlevini hatırla.",
+        "explanation": [
+          "Güncel sonucu öne çıkarmak için present perfect kullanabilirsin: We’ve finished the draft. Bitmiş zamanı belirttiğinde past simple kullan: We finished it on Tuesday.",
+          "Kararlaştırılmış bir sonraki adım için am/is/are going to + yalın fiil kullan: We’re going to ask for feedback."
+        ],
+        "examples": [
+          {
+            "correct": "We’ve finished the draft. We sent it yesterday. We’re going to ask for feedback.",
+            "incorrect": "We’ve sent it yesterday. We’re going to asked for feedback.",
+            "note": "Yesterday ile sent, going to sonrasında ask kullan."
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en.update.status",
+            "label": "Güncel sonuç ve tarih",
+            "variants": [
+              {
+                "id": "en.update.status.1",
+                "kind": "multiple",
+                "prompt": "Dil bilgisi açısından doğru iki cümleyi seç.",
+                "skill": "grammar",
+                "explanation": "Present perfect güncel sonucu, past simple bitmiş zamanı ifade eder.",
+                "accepted": [
+                  "We have finished the draft.",
+                  "We sent it yesterday."
+                ],
+                "options": [
+                  "We have finished the draft.",
+                  "We have sent it yesterday.",
+                  "We sent it yesterday."
+                ]
+              },
+              {
+                "id": "en.update.status.2",
+                "kind": "fill",
+                "prompt": "The team ___ (fix) the bug last night.",
+                "skill": "grammar",
+                "explanation": "Last night bitmiş zamandır.",
+                "accepted": [
+                  "fixed"
+                ]
+              },
+              {
+                "id": "en.update.status.3",
+                "kind": "single",
+                "prompt": "Today is Wednesday. Doğru cümleyi seç.",
+                "skill": "grammar",
+                "explanation": "Pazartesi sona ermiş bir zaman dilimidir.",
+                "accepted": "I sent the file on Monday.",
+                "options": [
+                  "I have sent the file on Monday.",
+                  "I sent the file on Monday."
+                ]
+              }
+            ]
+          },
+          {
+            "id": "en.update.next",
+            "label": "Kararlaştırılmış sonraki adım",
+            "variants": [
+              {
+                "id": "en.update.next.1",
+                "kind": "word_order",
+                "prompt": "Sözcükleri sırala: Taslağı inceleyeceğiz.",
+                "skill": "grammar",
+                "explanation": "Going to sonrasında fiilin yalın hâli gelir.",
+                "accepted": [
+                  "We’re",
+                  "going",
+                  "to",
+                  "review",
+                  "the draft."
+                ],
+                "options": [
+                  "the draft.",
+                  "to",
+                  "We’re",
+                  "review",
+                  "going"
+                ]
+              },
+              {
+                "id": "en.update.next.2",
+                "kind": "fill",
+                "prompt": "We’re going to ___ (discuss) the feedback.",
+                "skill": "grammar",
+                "explanation": "Going to sonrasında discuss yalın kullanılır.",
+                "accepted": [
+                  "discuss"
+                ]
+              },
+              {
+                "id": "en.update.next.3",
+                "kind": "single",
+                "prompt": "Toplantı ayarlama niyetini ifade et.",
+                "skill": "grammar",
+                "explanation": "Going to + arrange.",
+                "accepted": "We’re going to arrange a meeting.",
+                "options": [
+                  "We’re going to arranged a meeting.",
+                  "We’re going to arrange a meeting."
+                ]
+              }
+            ]
+          }
+        ],
+        "production": {
+          "id": "en.update.write",
+          "kind": "open",
+          "prompt": "Üç cümleyle iş güncellemesi yaz: güncel sonuç, bitmiş zaman ayrıntısı ve sonraki adım.",
+          "skill": "writing",
+          "explanation": "Her cümlenin ayrı bir işlevi olduğunu kontrol et.",
+          "sample": "We’ve fixed the issue. We fixed it on Monday. We’re going to test the change."
+        },
+        "vocabulary": [
+          {
+            "id": "en.update.word.1",
+            "term": "ask for feedback",
+            "meaning": "geri bildirim istemek",
+            "example": "We’re going to ask for feedback.",
+            "context": "Taslak veya sunum incelemesi",
+            "partOfSpeech": "fiil öbeği",
+            "grammar": "ask for + isim"
+          }
+        ]
+      }
+    ]
+  },
+  "placement": [
+    {
+      "exercise": {
+        "id": "en.placement.1",
+        "kind": "single",
+        "prompt": "I ___ the workshop last Tuesday.",
+        "skill": "grammar",
+        "explanation": "Last Tuesday ile past simple kullan.",
+        "accepted": "led",
+        "options": [
+          "have led",
+          "led"
+        ]
+      },
+      "difficulty": "B1",
+      "objectiveId": "en.experience.objective"
+    },
+    {
+      "exercise": {
+        "id": "en.placement.2",
+        "kind": "fill",
+        "prompt": "When the call began, I ___ (already / send) the notes. Daha önceki işi past perfect ile yaz.",
+        "skill": "grammar",
+        "explanation": "Had already sent önce gerçekleşen eylemdir.",
+        "accepted": [
+          "had already sent"
+        ]
+      },
+      "difficulty": "B1",
+      "objectiveId": "en.sequence.objective"
+    },
+    {
+      "exercise": {
+        "id": "en.placement.3",
+        "kind": "single",
+        "prompt": "A colleague is taking over your tasks. What do you prepare?",
+        "skill": "vocabulary",
+        "explanation": "Handover, bir işi başkasına devretmedir.",
+        "accepted": "a handover",
+        "options": [
+          "a handover",
+          "a holiday",
+          "a headline"
+        ]
+      },
+      "difficulty": "B1",
+      "objectiveId": "en.experience.objective"
+    },
+    {
+      "exercise": {
+        "id": "en.placement.4",
+        "kind": "single",
+        "prompt": "The slides were ready on Monday. We sent them on Thursday after checking the figures. When did they send the slides?",
+        "skill": "reading",
+        "explanation": "Metin gönderim günü olarak perşembeyi veriyor.",
+        "accepted": "On Thursday",
+        "options": [
+          "On Monday",
+          "On Thursday"
+        ]
+      },
+      "difficulty": "A2",
+      "objectiveId": "en.update.objective"
+    },
+    {
+      "exercise": {
+        "id": "en.placement.5",
+        "kind": "open",
+        "prompt": "In one or two sentences, describe a work or study experience. Add one detail about when it happened.",
+        "skill": "writing",
+        "explanation": "Deneyimi ve belirli bir geçmiş zaman ayrıntısını kontrol et.",
+        "sample": "I’ve worked with a small team. We completed a report last month."
+      },
+      "difficulty": "B1",
+      "objectiveId": "en.experience.objective"
+    }
+  ]
+}

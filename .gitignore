@@ -1,0 +1,36 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.DS_Store
+
+# Local environment, credentials and OAuth state
+.env
+.env.*
+*.env
+*.env.*
+.envrc
+.npmrc
+.netrc
+.secrets/
+secrets/
+credentials.json
+oauth-token*.json
+oauth_token*.json
+oauth-state*.json
+device-id*
+device_id*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local learner data and browser profiles
+language-os-backup*.json
+local-data/
+.local/
+.auth/
+browser-profile/
+*.sqlite*
+*.db
+*.db-*
