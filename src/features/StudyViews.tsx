@@ -182,6 +182,7 @@ export function SkillProfile({ state, course }: { state: LearningState; course: 
               ['Tanıma', observations.recognition], ['Kontrollü üretim', observations.controlled_production],
               ['Serbest yazı örneği', observations.free_production], ['Gecikmeli hatırlama', observations.retention],
               ['Dış konuşma raporu', observations.speaking_application],
+              ['Bağımsız sözlü kullanım', observations.speaking_independent],
             ].filter(([, count]) => count).map(([label, count]) => `${label}: ${count}`).join(' · ') : 'Henüz gözlem yok'}</small>
             {comparison.length > 0 && <details><summary>İlk ve gecikmeli denemeyi karşılaştır</summary>
               {comparison.map(({ concept, first, latest }) => <p key={concept.id}>

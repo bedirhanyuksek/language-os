@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 2,
+  "sessionId": "72752ef8-871a-4a80-8299-ccfeec0dc4e1",
+  "lessonId": "en.experience",
+  "language": "en",
+  "confidence": "medium",
+  "transcriptAvailability": "partial",
+  "completionStatus": "completed",
+  "observations": [
+    {
+      "id": "e1", "kind": "error_observed", "target": { "kind": "concept", "id": "en.experience.detail" },
+      "quote": "I have joined the team last May.",
+      "description": "Bitmiş zaman ifadesiyle present perfect kullanıldı.",
+      "explanation": "Last May bitmiş bir zaman dilimidir. Olayın tarihini verdiğin için past simple kullan.",
+      "correction": "I joined the team last May."
+    },
+    {
+      "id": "r1", "kind": "repeated_after_correction", "target": { "kind": "concept", "id": "en.experience.detail" },
+      "quote": "I joined the team last May.", "followsErrorId": "e1"
+    },
+    {
+      "id": "i1", "kind": "independent_correct", "target": { "kind": "concept", "id": "en.experience.overview" },
+      "quote": "I have trained several new colleagues."
+    },
+    {
+      "id": "v1", "kind": "error_observed", "target": { "kind": "card", "id": "en.experience.word.1" },
+      "quote": "I made a workshop.",
+      "description": "Atölye yürütmeyi anlatan fiil seçimi.",
+      "explanation": "Bir atölye oturumunu yönetmek için lead fiili kullanılır.",
+      "correction": "I led a workshop."
+    },
+    {
+      "id": "u1", "kind": "insufficient_evidence", "target": { "kind": "card", "id": "en.experience.word.2" },
+      "reason": "Ses kaydındaki sözcük net anlaşılmadı."
+    },
+    {
+      "id": "m1", "kind": "error_observed", "target": { "kind": "unmapped", "skill": "grammar", "label": "Dolaylı soru dizilimi" },
+      "quote": "Could you tell me where is the room?",
+      "description": "Dolaylı soruda doğrudan soru sırası kullanıldı.",
+      "explanation": "Where sonrasına özneyi, ardından fiili koy.",
+      "correction": "Could you tell me where the room is?"
+    }
+  ]
+}

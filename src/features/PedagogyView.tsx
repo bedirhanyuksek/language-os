@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { receptionExercises, type Course, type Lesson } from '../content/schema'
 import type { Answer, ExerciseAttempt, PedagogyPhase } from '../domain/model'
 import { receptionTask, type ExerciseTask } from '../domain/pedagogy'
+import { pendingSpeakingCorrections } from '../domain/speaking'
 import type { LearningState } from '../domain/state'
 import { AudioPlayer } from './AudioPlayer'
 import { ExerciseForm } from './ExerciseForm'
@@ -19,6 +20,9 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
   const reception = phase === 'reading' || phase === 'listening' ? receptionTask(state, lesson, phase) : undefined
   const reading = reception && 'text' in reception.material ? reception.material : p.reading
   const listening = reception && 'audio' in reception.material ? reception.material : p.listening
+  const transferCorrections = phase === 'transfer' ? pendingSpeakingCorrections(state, lesson).filter((item, index, all) =>
+    tasks.some(({ conceptId }) => conceptId === item.conceptId) &&
+    all.findIndex(({ conceptId }) => conceptId === item.conceptId) === index) : []
   const draft = state.attempts.find(({ exerciseId }) => exerciseId === lesson.production.id)
   const card = phase === 'vocabulary' ? lesson.vocabulary[Math.floor(step / 4)] : undefined
   const entry = p.vocabulary.find(({ cardId }) => cardId === card?.id)
@@ -41,6 +45,17 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
         <p>Önceki yanıtın: {String(answer)}</p><p>{reception.coaching[index]}</p>
       </div>)}
     </section>}
+    {transferCorrections.length > 0 && <details className="surface section">
+      <summary>Konuşma hatalarını gözden geçir</summary>
+      {transferCorrections.map(({ conceptId, quote, description, explanation, correction }) => {
+        const check = p.checks.find((item) => item.conceptId === conceptId)
+        return <article key={conceptId} className="section">
+          <blockquote lang={p.language}>{quote}</blockquote>
+          <p>{description}</p><p>{explanation ?? check?.correction}</p>
+          <p lang={p.language}>{correction ?? check?.correctExample}</p>
+        </article>
+      })}
+    </details>}
     {phase === 'revision' && draft && <section className="surface">
       <h2>İlk yazın</h2><blockquote>{String(draft.answer)}</blockquote>
       <h3>Yazını gözden geçir</h3><ul>{p.rubric.map(({ criterion }) => <li key={criterion}>{criterion}</li>)}</ul>
@@ -146,6 +161,7 @@ export function TypedReview({ card, learning, busy, grade, onRate }: {
       <p>{grade(answer) === 'remembered' ? 'Doğru hatırladın.' : 'Bu ifade için kısa bir tekrar planlanacak.'}</p>
       <p><strong>Yanıtın</strong> {answer}</p><p><strong>Hedef ifade</strong> {card.term}</p>
       <blockquote>{card.example}</blockquote>
+      <p><strong>Birlikte kullanılan ifadeler</strong> {learning.collocations.join(' · ')}</p>
       <button className="primary" disabled={busy} onClick={() => void onRate(answer)}>Tekrarı kaydet</button>
     </>}
   </article>

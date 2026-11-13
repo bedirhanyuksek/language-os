@@ -1,4 +1,5 @@
 import type { Course, Exercise, Lesson } from '../content/schema'
+import { pendingSpeakingCorrections } from './speaking'
 import { assess } from './assessment'
 import type { ExerciseAttempt, PedagogyPhase, StudyPlan } from './model'
 import type { LearningState } from './state'
@@ -60,7 +61,13 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
     return [...pending(recognize, cardId, label), ...pending(recall, cardId, 'Aktif hatırlama'), ...pending(use, cardId, 'Cümle içinde kullanım')]
   })
 
-  return p.checks.flatMap((check) => {
+  const speakingCorrections = phase === 'transfer' ? pendingSpeakingCorrections(state, lesson) : []
+  const priority = [...new Set(speakingCorrections.map(({ conceptId }) => conceptId))]
+  const orderedChecks = [
+    ...priority.flatMap((id) => p.checks.filter(({ conceptId }) => conceptId === id)),
+    ...p.checks.filter(({ conceptId }) => !priority.includes(conceptId)),
+  ]
+  return orderedChecks.flatMap((check) => {
     const concept = lesson.concepts.find(({ id }) => id === check.conceptId)!
     const history = previous.filter(({ conceptId }) => conceptId === concept.id)
     const last = history.at(-1)
@@ -76,11 +83,10 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
     }
     if (phase === 'transfer') {
       const latest = related.filter(({ context }) => context === 'transfer' || context === 'lesson').at(-1)
-      const report = state.speakingAssessments.find(({ report }) =>
-        report.lessonId === lesson.id && report.observedErrors.some(({ conceptId }) => conceptId === concept.id))
-      const afterReport = !report || (last && state.attempts.indexOf(last) >= report.attemptCountAtImport)
-      if (latest === last && last?.evidence.outcome === 'correct' && afterReport) return []
-      return [task(check.transfer[history.length % check.transfer.length], concept.id, concept.label)]
+      const needsSpeakingCheck = priority.includes(concept.id)
+      if (latest === last && last?.evidence.outcome === 'correct' && !needsSpeakingCheck) return []
+      const fresh = needsSpeakingCheck && check.transfer.find(({ id }) => !history.some(({ exerciseId }) => exerciseId === id))
+      return [task(fresh || check.transfer[history.length % check.transfer.length], concept.id, concept.label)]
     }
     const transfer = related.filter(({ context, evidence }) => context === 'transfer' && evidence.outcome === 'correct').at(-1)
     const anchor = last && (!transfer || state.attempts.indexOf(last) > state.attempts.indexOf(transfer)) ? last : transfer
@@ -105,8 +111,7 @@ export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesso
     const relevant = new Set(transfer.map(({ conceptId }) => conceptId))
     const previous = state.attempts.filter(({ lessonId, conceptId, context }) => lessonId === lesson.id &&
       relevant.has(conceptId) && (context === 'lesson' || context === 'transfer')).at(-1)
-    const reportError = state.speakingAssessments.find(({ report }) => report.lessonId === lesson.id)?.report.observedErrors
-      .find(({ conceptId }) => relevant.has(conceptId))
+    const reportError = pendingSpeakingCorrections(state, lesson).find(({ conceptId }) => relevant.has(conceptId))
     if (reportError) return phase('transfer', `Konuşma raporunda şu gözlem var: ${reportError.description} Aynı yapıyı yeni bağlamda dene.`)
     if (previous?.evidence.outcome === 'incorrect') {
       return { ...phase('transfer', `Önceki yanıtın “${String(previous.answer)}”. Bu yapıyı başka bir durumda dene.`),

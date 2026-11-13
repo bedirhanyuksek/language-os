@@ -179,17 +179,26 @@ export function App() {
         </>
       }
     } else if (screen.type === 'speaking' && lesson && speakingSession) {
-      content = <SpeakingView key={speakingSession.id} lesson={lesson} session={speakingSession} state={state} busy={busy}
+      content = <SpeakingView key={speakingSession.id} lesson={lesson} session={speakingSession} state={state} plan={plan} busy={busy}
+        onContinue={() => go({ type: 'home' })}
         onSkip={() => update((current) => ({ ...current, skippedSpeaking: [...new Set([...current.skippedSpeaking, lesson.id])] }),
           () => go({ type: 'home' }))}
         onImport={(report) => update((current) => importReport(current, lesson, report, nowISO()),
-          () => { go({ type: 'home' }); setNotice('Rapor kaydedildi ve günlük plan güncellendi.') })} />
+          () => { window.scrollTo(0, 0); mainRef.current?.focus(); setNotice('Rapor kaydedildi ve günlük plan güncellendi.') })} />
     } else {
       const pending = state.speakingSessions.find((session) =>
         !state.speakingAssessments.some(({ report }) => report.sessionId === session.id))
       content = <>
         <Dashboard state={state} course={course} plan={plan} start={start} />
         {diagnostic && <button className="link-button" onClick={() => go({ type: 'diagnostic' })}>Tanılamaya devam et</button>}
+        {state.speakingAssessments.length > 0 && <details className="section">
+          <summary>Kaydedilen konuşma raporları</summary>
+          <ul>{[...state.speakingAssessments].reverse().map(({ report }) => <li key={report.sessionId}>
+            <button className="link-button" onClick={() => go({ type: 'speaking', lessonId: report.lessonId })}>
+              {course.unit.lessons.find(({ id }) => id === report.lessonId)?.title}
+            </button>
+          </li>)}</ul>
+        </details>}
         {pending && plan.kind !== 'speaking' && <button className="link-button" onClick={() =>
           go({ type: 'speaking', lessonId: pending.lessonId })}>Hazırlanan konuşma oturumunu aç</button>}
       </>

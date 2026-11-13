@@ -1,11 +1,13 @@
 # ChatGPT Voice
 
-1. Günlük planda konuşma görevini aç. Hedefler, senaryo ve oturum kimliği ekranda görünür.
+1. Günlük planda konuşma görevini aç. Hedefler ve seçim gerekçesi ekranda görünür.
 2. Talimatı kopyala, ChatGPT’yi aç ve talimatı yapıştır. ChatGPT’de ses modunu elle başlat.
-3. Çalışmayı bitirince aynı sohbette JSON raporunu iste. JSON’u Language OS’a yapıştır, önizlemeyi kontrol et ve onayla.
+3. Çalışmayı bitirince aynı sohbette JSON raporunu iste. JSON’u Language OS’a yapıştır, alıntıları oturumunla karşılaştır ve onayla.
 
-Ses modu erişimi ve kullanım kotası hesap, plan ve çalışma alanı ayarlarına bağlıdır. Transkript konuşmayı her zaman kelimesi kelimesine yansıtmayabilir. Yerel uygulama yalnızca senin kopyaladığın talimatı ve içe aldığın raporu işler. [OpenAI Help Center · ChatGPT Voice](https://help.openai.com/en/articles/20001274-chatgpt-voice)
+İngilizce oturumunda sorular ağırlıklı İngilizcedir. Önemli hatalar için kısa Türkçe açıklama, düzeltilmiş İngilizce örnek, sesli tekrar ve daha sonra farklı bir soru istenir. Talimat dersin iletişim hedefini, yerel denemeleri, önceki konuşma gözlemlerini ve hedef kalıpları kullanır. Sesli prova hesap olmadan yapılabilir. [ChatGPT Learn · Voice](https://learn.chatgpt.com/docs/features/voice)
 
-Rapor v1, oturum kimliği, dil ve ders eşleşmesini, içerik kimliklerini ve her gözlemin alıntı referansını doğrular. Aynı oturumun ikinci raporu işlem içinde reddedilir. Önerilen tekrarlar raporda korunur. Alıntıya bağlı gözlemler planı güncelleyebilir. [Geçerli örnek](../tests/fixtures/speaking-valid.json) ve [geçersiz örnek](../tests/fixtures/speaking-invalid.json) testlerde kullanılır. Elle denemek için örnekteki oturum kimliğini ekrandaki kimlikle değiştir.
+Rapor v2 bağımsız doğru kullanım, gözlenen hata, öğretmen yardımıyla düzeltme, düzeltmeden sonra tekrar, yeni bağlamda bağımsız kullanım ve yetersiz kanıtı ayrı saklar. Alıntıya, oturuma ve hedef kimliğine ilişkin tutarlılık kontrolleri uygulanır. Gerçek transkript eşleşmesi önizlemede öğrenci tarafından kontrol edilir. V1 raporları ve önceki yedekler kendi biçimleriyle okunur. V1’de yardım düzeyi belirtilmediği için eski başarı bildirimlerinden bağımsız kullanım çıkarılmaz.
 
-Uygulamanın talimat ve rapor aktarımı, örnek JSON verileriyle yerelde test edildi. Hesaba bağlı gerçek ses oturumu ve özel MCP ile okuma/yazma doğrulanmadı. İkincisi bağımsız bir prototip ve kimliği doğrulanmış sunucu köprüsü gerektirir.
+Eşleşen gramer hatası açıklama ve mevcut bir aktarım alıştırması açar. Eşleşen kelime ve kalıplar tekrar sırasına alınır. Aynı hedefte tekrarlanan sorunlar öncelik kazanır. Müfredatta karşılığı olmayan hatalar raporda kalır. Bağımsız sözlü kullanım gözlemi beceri profiline eklenir. Ders geçişi ve kalıcılık için mevcut ölçütler uygulanır. Aynı oturuma ikinci rapor kaydedilemez.
+
+[Örnek v2 raporu](../tests/fixtures/speaking-coach.json) ve [örnek v1 raporu](../tests/fixtures/speaking-valid.json) sentetik test verisidir. Gerçek hesapla İngilizce soru ve Türkçe açıklamanın akışı, yeni bağlamda yardım düzeyi ve JSON alıntılarının konuşmayla eşleşmesi ayrıca denenmelidir.

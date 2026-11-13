@@ -20,7 +20,13 @@ const context = {
   targetGrammar: lesson.speaking!.grammar,
   vocabulary: lesson.vocabulary.map(({ id, term }) => ({ id, term })),
   previousRecurringMistakes: ['Synthetic example: I have joined the team last May.'],
-  instructions: buildSpeakingPrompt(session, lesson, ['Synthetic example: I have joined the team last May.']),
+  instructions: buildSpeakingPrompt(session, lesson, {
+    reason: 'Synthetic lesson context for a local prototype.',
+    concepts: lesson.concepts.map(({ id, label }) => ({ id, label, basis: 'Synthetic fixture' })),
+    vocabulary: lesson.vocabulary.map(({ id, term }) => ({ id, term })),
+    previousMistakes: ['Synthetic example: I have joined the team last May.'],
+    goals: lesson.speaking!.goals,
+  }),
 }
 
 export function createPrototype() {

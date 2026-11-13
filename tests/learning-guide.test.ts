@@ -3,8 +3,12 @@ import { catalog } from '../src/content/catalog'
 import type { Course, Exercise } from '../src/content/schema'
 import { mapPlacement } from '../src/domain/assessment'
 import type { Answer } from '../src/domain/model'
+import coachReport from './fixtures/speaking-coach.json'
+import legacyReport from './fixtures/speaking-valid.json'
+import { exportBackup, parseBackup } from '../src/persistence/repository'
+import { buildSpeakingPrompt, parseSpeakingReport, speakingFocus } from '../src/domain/speaking'
 import { phaseTasks } from '../src/domain/pedagogy'
-import { dailyPlan, finishLesson, finishPedagogy, finishPlacement, lessonTasks, masteryFor } from '../src/domain/progress'
+import { beginSpeaking, dailyPlan, finishLesson, finishPedagogy, finishPlacement, finishTypedReview, importReport, lessonTasks, masteryFor } from '../src/domain/progress'
 import { initialState } from '../src/domain/state'
 
 const start = '2026-11-13T10:00:00.000Z'
@@ -68,4 +72,120 @@ test('local practice advances with no account and keeps unsupported evidence out
   expect(phaseTasks(skipped, lesson, 'delayed', tomorrow).map(({ exercise }) => exercise.id)).toEqual([
     'ru.intro.name.delayed.1', 'ru.intro.polite.delayed.1',
   ])
+})
+
+const course = catalog.en
+const [lesson] = course.unit.lessons
+const now = '2026-11-13T11:00:00.000Z'
+const zone = 'Europe/Istanbul'
+
+function speakingSetup() {
+  const placed = place(course, { ...practiceAnswers(course.placement), 'en.placement.1': 'have led' })
+  const guided = finishLesson(placed, course, lesson, practiceAnswers(lessonTasks(placed, lesson)), start)
+  const transferred = finishPedagogy(guided, course, lesson, 'transfer', practiceAnswers(phaseTasks(guided, lesson, 'transfer', start)), start)
+  const state = beginSpeaking(transferred, lesson, start, coachReport.sessionId)
+  return { state, session: state.speakingSessions[0] }
+}
+
+test('English coach explains an important error in Turkish and checks the target in a different question', () => {
+  const { state, session } = speakingSetup()
+  const focus = speakingFocus(state, lesson)
+  const prompt = buildSpeakingPrompt(session, lesson, focus)
+  expect(prompt).toContain('"explanationLanguage": "tr"')
+  expect(prompt).toContain('why the original is wrong')
+  expect(prompt).toContain('later with a different question')
+  expect(prompt).toContain('without giving the answer')
+  expect(prompt).toContain(lesson.objective.description)
+  expect(prompt).toContain('Yazılı aktarım gözlendi')
+  expect(prompt).toContain('collocations')
+  expect(prompt).toContain('not my measured CEFR level')
+})
+
+test('only independently produced evidence contributes to the speaking observation count', () => {
+  const { state, session } = speakingSetup()
+  const report = parseSpeakingReport(JSON.stringify(coachReport), session, lesson)
+  const saved = importReport(state, lesson, report, now)
+  expect(masteryFor(saved, lesson)).toMatchObject({
+    status: 'developing', observations: { speaking_independent: 1 },
+    evidenceIds: expect.arrayContaining([`${session.id}.i1`]),
+  })
+  expect(masteryFor(saved, lesson).evidenceIds).not.toContain(`${session.id}.r1`)
+  const disguisedRepeat = {
+    ...coachReport,
+    observations: [...coachReport.observations, {
+      id: 'false-success', kind: 'independent_correct',
+      target: coachReport.observations[1].target, quote: 'I joined the team last May',
+    }],
+  }
+  expect(() => parseSpeakingReport(JSON.stringify(disguisedRepeat), session, lesson)).toThrow(/alıntısı tutarsız/)
+  expect(() => parseSpeakingReport(JSON.stringify({ ...coachReport, transcriptAvailability: 'unavailable' }), session, lesson)).toThrow()
+})
+
+test('confirmed report schedules the mapped collocation and a new grammar check and round-trips without loss', () => {
+  const { state, session } = speakingSetup()
+  const before = dailyPlan(state, course, now, zone)
+  const report = parseSpeakingReport(JSON.stringify(coachReport), session, lesson)
+  const saved = importReport(state, lesson, report, now)
+  const [{ cardId, recall }] = lesson.pedagogy!.vocabulary
+  expect(before.kind).not.toBe('review')
+  expect(dailyPlan(saved, course, now, zone)).toMatchObject({ kind: 'review', cardIds: [cardId], reason: expect.stringContaining('Konuşma raporunda') })
+  const typed = finishTypedReview(saved, course, cardId, String(practiceAnswers([{ exercise: recall }])[recall.id]), now)
+  expect(dailyPlan(typed, course, now, zone)).toMatchObject({ kind: 'pedagogy', lessonId: lesson.id, phase: 'transfer' })
+  expect(phaseTasks(typed, lesson, 'transfer', now).map(({ exercise }) => exercise.id)).toEqual([lesson.pedagogy!.checks[1].transfer[1].id])
+  expect(parseBackup(exportBackup(typed))).toEqual(typed)
+  expect(() => importReport(typed, lesson, report, now)).toThrow(/daha önce kaydedildi/)
+  expect(() => parseSpeakingReport(JSON.stringify({ ...coachReport, sessionId: state.profile.id }), session, lesson)).toThrow(/eşleşmiyor/)
+})
+
+test('uncertain and unmapped observations are preserved without scheduling a lesson or a card', () => {
+  const { state, session } = speakingSetup()
+  const observations = coachReport.observations.filter(({ id }) => ['u1', 'm1'].includes(id))
+  const report = parseSpeakingReport(JSON.stringify({ ...coachReport, observations }), session, lesson)
+  const saved = importReport(state, lesson, report, now)
+  expect(saved.speakingAssessments[0].report).toEqual(report)
+  expect(saved.reviews).toEqual(state.reviews)
+  expect(dailyPlan(saved, course, now, zone)).toEqual(dailyPlan(state, course, now, zone))
+  expect(masteryFor(saved, lesson).observations.speaking_independent).toBeUndefined()
+  const wrongTarget = { ...observations[1], target: { kind: 'concept', id: 'unpublished' } }
+  expect(() => parseSpeakingReport(JSON.stringify({ ...coachReport, observations: [wrongTarget] }), session, lesson)).toThrow(/kimliği/)
+})
+
+test('older reports retain their original evidence and remain importable and restorable', () => {
+  const { state, session } = speakingSetup()
+  const report = parseSpeakingReport(JSON.stringify(legacyReport), session, lesson)
+  expect(report).toEqual(legacyReport)
+  const saved = importReport(state, lesson, report, now)
+  expect(parseBackup(exportBackup(saved)).speakingAssessments[0].report).toEqual(legacyReport)
+  expect(masteryFor(saved, lesson).observations.speaking_independent).toBeUndefined()
+})
+
+test('distinguishes teacher assistance and a later unaided transfer and checks their earlier error links', () => {
+  const { state, session } = speakingSetup()
+  const error = coachReport.observations[0]
+  const assisted = { id: 'a1', kind: 'teacher_assisted', target: error.target, quote: 'I joined last May.', followsErrorId: error.id }
+  const transfer = {
+    id: 't1', kind: 'transferred', target: error.target, quote: 'I ran my first workshop in 2022.',
+    newContext: 'A first teaching experience instead of joining a team.', followsErrorId: error.id,
+  }
+  const report = parseSpeakingReport(JSON.stringify({ ...coachReport, observations: [error, assisted, transfer] }), session, lesson)
+  const saved = importReport(state, lesson, report, now)
+  expect(masteryFor(saved, lesson).observations.speaking_independent).toBe(1)
+  expect(masteryFor(saved, lesson).status).toBe('developing')
+  expect(() => parseSpeakingReport(JSON.stringify({ ...coachReport, observations: [error, { ...transfer, followsErrorId: 'missing' }] }),
+    session, lesson)).toThrow(/bağlantısı/)
+  const repeatAsObjective = { id: 'duplicate', kind: 'independent_correct',
+    target: { kind: 'objective', id: lesson.objective.id }, quote: assisted.quote }
+  expect(() => parseSpeakingReport(JSON.stringify({ ...coachReport, observations: [error, assisted, repeatAsObjective] }),
+    session, lesson)).toThrow(/alıntısı/)
+})
+
+test('prioritizes repeated mapped speaking errors ahead of a single error in transfer', () => {
+  const { state, session } = speakingSetup()
+  const error = coachReport.observations[0]
+  const firstConceptError = { ...error, id: 'first', target: { kind: 'concept', id: lesson.concepts[0].id } }
+  const observations = [firstConceptError, error, { ...error, id: 'again', quote: 'I have started the job last April.' }]
+  const report = parseSpeakingReport(JSON.stringify({ ...coachReport, observations }), session, lesson)
+  const saved = importReport(state, lesson, report, now)
+  expect(phaseTasks(saved, lesson, 'transfer', now).map(({ conceptId }) => conceptId))
+    .toEqual([lesson.concepts[1].id, lesson.concepts[0].id])
 })

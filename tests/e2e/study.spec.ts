@@ -1,5 +1,6 @@
 import { expect, test, type Locator, type Page } from '@playwright/test'
 import { catalog } from '../../src/content/catalog'
+import coachReport from '../fixtures/speaking-coach.json' with { type: 'json' }
 import validReport from '../fixtures/speaking-valid.json' with { type: 'json' }
 import invalidReport from '../fixtures/speaking-invalid.json' with { type: 'json' }
 
@@ -188,9 +189,11 @@ for (const course of Object.values(catalog)) {
 
       if (index === 0 && course.language === 'en') {
         await page.getByRole('button', { name: 'Konuşmayı hazırla' }).click()
-        await expect(page.getByRole('link', { name: 'ChatGPT ile konuşmayı başlat' })).toHaveAttribute('href', 'https://chatgpt.com/')
+        await expect(page.getByRole('link', { name: 'ChatGPT’yi aç' })).toHaveAttribute('href', 'https://chatgpt.com/')
         await page.getByText('Konuşma talimatını görüntüle').click()
-        await expect(page.getByRole('textbox', { name: 'Konuşma talimatı' })).toHaveValue(/targetGrammar/)
+        const prompt = page.getByRole('textbox', { name: 'Konuşma talimatı' })
+        await expect(prompt).toHaveValue(/"explanationLanguage": "tr"/)
+        await expect(prompt).toHaveValue(/"selectionReason"/)
         const sessionId = (await page.locator('.session-id code').textContent())!
         const json = page.getByRole('textbox', { name: 'Konuşma raporu JSON' })
         await json.fill(JSON.stringify({ ...invalidReport, sessionId }))
@@ -198,11 +201,28 @@ for (const course of Object.values(catalog)) {
         await expect(page.getByRole('alert')).toContainText('kanıt')
         await json.fill(JSON.stringify({ ...validReport, sessionId }))
         await page.getByRole('button', { name: 'Raporu doğrula' }).click()
+        await expect(page.getByText(/Eski rapor biçimi/)).toBeVisible()
+        await json.fill(JSON.stringify({ ...coachReport, sessionId }))
+        await page.getByRole('button', { name: 'Raporu doğrula' }).click()
         await expect(page.getByText('I have joined the team last May.', { exact: true })).toBeVisible()
         await page.getByRole('button', { name: 'Raporu onayla ve kaydet' }).click()
         await expect(page.getByRole('status')).toContainText('günlük plan güncellendi')
+        await expect(page.getByRole('heading', { name: 'Konuşma raporun' })).toBeVisible()
+        await expect(page.getByRole('heading', { name: 'Bağımsız doğru kullanım' })).toHaveCount(1)
+        await expect(page.getByRole('heading', { name: 'Düzeltmeden sonra tekrarlandı' })).toBeVisible()
+        await expect(page.getByRole('heading', { name: 'Yetersiz kanıt' })).toBeVisible()
+        await expect(page.getByText(coachReport.observations[0].explanation!)).toBeVisible()
+        await expect(page.getByText(/müfredatta eşleşen çalışma bulunmuyor/)).toBeVisible()
+        await expect(page.getByText(/Konuşma raporunda.*lead a workshop/)).toBeVisible()
+        await toPlan(page)
         await review([p.vocabulary[0].recall])
-        await practicePhase('Yeni bağlamda üretim', [p.checks[1].transfer[1]])
+        await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
+        await expect(page.getByRole('heading', { name: 'Yeni bağlamda üretim' })).toBeVisible()
+        await page.getByText('Konuşma hatalarını gözden geçir').click()
+        await expect(page.getByText(coachReport.observations[0].explanation!)).toBeVisible()
+        await fill(task(page, p.checks[1].transfer[1]), p.checks[1].transfer[1])
+        await submit(page)
+        await toPlan(page)
       }
       else if (lesson.speaking) {
         await page.getByRole('button', { name: 'Konuşmayı hazırla' }).click()
@@ -240,6 +260,10 @@ for (const course of Object.values(catalog)) {
       await page.getByRole('button', { name: 'Yedeği geri yükle' }).click()
       await expect(page.getByRole('status')).toContainText('Yedek geri yüklendi')
       await expect(page.getByText('Gecikmeli aktarım gözlendi')).toHaveCount(lessons.length)
+      await page.getByText('Kaydedilen konuşma raporları').click()
+      await page.getByRole('button', { name: lessons[0].title, exact: true }).click()
+      await expect(page.getByRole('heading', { name: 'Konuşma raporun' })).toBeVisible()
+      await expect(page.getByRole('button', { name: 'Raporu onayla ve kaydet' })).toHaveCount(0)
     }
     expect(errors).toEqual([])
   })

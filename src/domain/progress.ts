@@ -4,7 +4,7 @@ import { bridgeLesson, isLessonEvidence, needsBridge, nextDiagnostic } from './d
 import { assess } from './assessment'
 import { answerSchema, levelSchema, type Answer, type ErrorRecord, type ExerciseAttempt, type SkillMastery, type StudyPlan, type PedagogyPhase } from './model'
 import { dayMs, scheduleReview } from './review'
-import { reportSchema, validateSpeakingReport, type SpeakingReport, type SpeakingSession } from './speaking'
+import { reportSchema, validateSpeakingReport, pendingSpeakingCorrections, speakingFocus, speakingSuccesses, speakingWordGaps, type SpeakingReport, type SpeakingSession } from './speaking'
 import type { LearningState, StudySession } from './state'
 
 type AnsweredExercise = { exercise: Exercise; conceptId: string }
@@ -42,13 +42,11 @@ export function finishDiagnostic(state: LearningState, course: Course, exerciseI
 function getConceptState(state: LearningState, lesson: Lesson, conceptId: string) {
   const attempts = state.attempts.filter((attempt) => attempt.lessonId === lesson.id && attempt.conceptId === conceptId &&
     (attempt.context === 'lesson' || attempt.context === 'transfer'))
-  const report = state.speakingAssessments.find(({ report }) =>
-    report.lessonId === lesson.id && report.observedErrors.some((error) => error.conceptId === conceptId))
   const last = attempts.at(-1)
   return {
     attempts,
     ready: last?.evidence.outcome === 'correct' &&
-      (!report || state.attempts.indexOf(last) >= report.attemptCountAtImport),
+      !pendingSpeakingCorrections(state, lesson).some((item) => item.conceptId === conceptId),
   }
 }
 
@@ -63,8 +61,12 @@ export function masteryFor(state: LearningState, lesson: Lesson): SkillMastery {
     Date.parse(card.lastAt) - Date.parse(card.introducedAt) >= dayMs)
   if (delayed.length) observations.retention = delayed.length
   const speakingEvidence = state.speakingAssessments.filter(({ report }) =>
-    report.lessonId === lesson.id && (report.observedErrors.length > 0 || report.successfulUses.length > 0 ||
-      report.vocabularyGaps.length > 0))
+    report.lessonId === lesson.id && (report.schemaVersion === 1
+      ? report.observedErrors.length > 0 || report.successfulUses.length > 0 || report.vocabularyGaps.length > 0
+      : report.observations.length > 0))
+  const unaided = speakingEvidence.flatMap(({ report }) =>
+    speakingSuccesses(report).map(({ id }) => `${report.sessionId}.${id}`))
+  if (unaided.length) observations.speaking_independent = unaided.length
   if (speakingEvidence.length) observations.speaking_application = speakingEvidence.length
   const ready = lesson.concepts.every(({ id }) => getConceptState(state, lesson, id).ready)
   const transferred = !lesson.pedagogy || lesson.pedagogy.checks.every(({ conceptId }) =>
@@ -78,7 +80,7 @@ export function masteryFor(state: LearningState, lesson: Lesson): SkillMastery {
   const retained = ready && transferred && (lesson.pedagogy ? delayedGrammar : delayed.length === lesson.vocabulary.length)
   return { status: retained ? 'retained' : ready && transferred ? 'ready' : attempts.length ? 'developing' : 'not_assessed',
     evidenceIds: [...attempts.map(({ id }) => id), ...delayed.map(({ cardId }) => cardId),
-      ...speakingEvidence.map(({ report }) => report.sessionId)], observations }
+      ...speakingEvidence.map(({ report }) => report.sessionId), ...unaided], observations }
 }
 
 export function lessonTasks(state: LearningState, lesson: Lesson): ExerciseTask[] {
@@ -182,12 +184,16 @@ export function importReport(state: LearningState, lesson: Lesson, candidate: Sp
   const session = state.speakingSessions.find(({ id }) => id === report.sessionId)
   if (!session) throw new Error('Konuşma oturumu bulunamadı.')
   validateSpeakingReport(report, session, lesson)
-  const gaps = new Set(report.vocabularyGaps.map(({ cardId }) => cardId))
+  const gaps = new Set(speakingWordGaps(report))
+  const newCards = lesson.vocabulary.filter(({ id }) => gaps.has(id) && !state.reviews.some(({ cardId }) => cardId === id))
   return spend({ ...state,
     speakingAssessments: [...state.speakingAssessments, { report, importedAt: now, attemptCountAtImport: state.attempts.length, source: 'external_report' }],
-    reviews: state.reviews.map((card) => gaps.has(card.cardId)
-      ? { cardId: card.cardId, introducedAt: card.introducedAt, dueAt: now, step: 0 }
-      : card),
+    reviews: [
+      ...state.reviews.map((card) => gaps.has(card.cardId)
+        ? { cardId: card.cardId, introducedAt: card.introducedAt, dueAt: now, step: 0 }
+        : card),
+      ...newCards.map(({ id }) => ({ cardId: id, introducedAt: now, dueAt: now, step: 0 })),
+    ],
   }, 'speaking', session.id, 5, now)
 }
 
@@ -220,10 +226,25 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
     !['ready', 'retained'].includes(masteryFor(state, bridge).status)
   const unlocked = eligible.filter((lesson) => isUnlocked(state, course, lesson) &&
     (lesson !== bridge || needsBridge(course, state, lesson)) && (!bridgePending || lesson === bridge))
-  const cards = dueCards(state, now)
+  const reportCards = new Map<string, number>()
+  for (const { report, importedAt } of state.speakingAssessments) {
+    for (const id of speakingWordGaps(report)) {
+      const lastReviewAt = state.reviews.find(({ cardId }) => cardId === id)?.lastAt
+      if (!lastReviewAt || lastReviewAt < importedAt) {
+        reportCards.set(id, (reportCards.get(id) ?? 0) + 1)
+      }
+    }
+  }
+  const cards = dueCards(state, now).sort((a, b) => (reportCards.get(b) ?? 0) - (reportCards.get(a) ?? 0))
   let task: StudyPlan | undefined
   if (cards.length && available > 0) {
     const cardIds = cards.slice(0, available)
+    const fromSpeaking = cardIds.find((id) => reportCards.has(id))
+    if (fromSpeaking) {
+      const term = course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).find(({ id }) => id === fromSpeaking)?.term
+      return { kind: 'review', cardIds, minutes: cardIds.length,
+        reason: `Konuşma raporunda “${term}” için kelime veya kalıp eksiği görüldü. İfadeyi hatırla ve kullanım örneğini incele.` }
+    }
     const missed = cardIds.find((id) => {
       const previousReview = state.reviewHistory.filter(({ cardId }) => cardId === id).at(-1)
       if (previousReview) return previousReview.result === 'again'
@@ -257,7 +278,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
       } else if (lesson.pedagogy) task = pedagogyPlan(state, course, lesson, now, true)
       if (!task && lesson.speaking && !state.skippedSpeaking.includes(lesson.id) &&
         !state.speakingAssessments.some(({ report }) => report.lessonId === lesson.id)) {
-        task = { kind: 'speaking', lessonId: lesson.id, minutes: 5, reason: lesson.speaking.scenario }
+        task = { kind: 'speaking', lessonId: lesson.id, minutes: 5, reason: speakingFocus(state, lesson).reason }
       }
       if (task) break
     }
