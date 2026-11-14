@@ -2,6 +2,7 @@ node_modules/
 dist/
 test-results/
 playwright-report/
+.redesign-shots/
 .DS_Store
 
 # Local environment, credentials and OAuth state

@@ -78,7 +78,7 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
       {unavailable && <button className="link-button" disabled={busy} onClick={() => void submit({}, 'unavailable')}>Metinle çalış ve dinlemeyi atla</button>}
       {plays > 0 && tasks.length > 1 && <p className="section">İlk dinlemede ana fikre, tekrar dinlerken ayrıntıya odaklan.</p>}
     </section>}
-    {phase === 'vocabulary' && card && entry && vocabStep === 0 && <article className="surface section">
+    {phase === 'vocabulary' && card && entry && vocabStep === 0 && <article className="surface section word-card">
       <h2 lang={p.language}>{card.term}</h2><p>{card.meaning} · {card.partOfSpeech}</p>
       <p lang={p.language}>{entry.pronunciation}</p><blockquote lang={p.language}>{card.example}</blockquote>
       <p>{card.context}</p><ul>{entry.collocations.map((value) => <li key={value} lang={p.language}>{value}</li>)}</ul>
@@ -144,9 +144,9 @@ export function PedagogyResults({ lesson, phase, attempts, onContinue, state, re
       return <article key={attempt.id} className="surface feedback section">
         <p className={`status ${attempt.evidence.outcome}`}>{wrong ? (finalFailure ? 'Kanıt eksik' : 'Tekrar çalışılacak') :
           attempt.evidence.outcome === 'correct' ? 'Doğru' : 'İnceleme bekliyor'}</p>
-        <h2>{exercise.prompt}</h2><p><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
-        {wrong && exercise.kind !== 'open' && <p><strong>Beklenen yanıt</strong> {Array.isArray(exercise.accepted) ? exercise.accepted.join(' / ') : exercise.accepted}</p>}
-        {exercise.kind === 'open' && <p><strong>Örnek</strong> {exercise.sample}</p>}
+        <h2>{exercise.prompt}</h2><p className="yours"><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
+        {wrong && exercise.kind !== 'open' && <p className="expected"><strong>Beklenen yanıt</strong> {Array.isArray(exercise.accepted) ? exercise.accepted.join(' / ') : exercise.accepted}</p>}
+        {exercise.kind === 'open' && <p className="expected"><strong>Örnek</strong> {exercise.sample}</p>}
         <p>{exercise.explanation}</p>
         {wrong && check && phase !== 'foundation' && <>
           <p>{check.misconception} · <s>{check.incorrectExample}</s> → {check.correctExample}</p>
@@ -181,7 +181,7 @@ export function TypedReview({ card, learning, busy, grade, onRate }: {
       <div className="button-row"><button className="primary" disabled={!answer.trim()}>Yanıtı karşılaştır</button></div>
     </form> : <>
       <p>{grade(answer) === 'remembered' ? 'Doğru hatırladın.' : 'Bu ifade için kısa bir tekrar planlanacak.'}</p>
-      <p><strong>Yanıtın</strong> {answer}</p><p><strong>Hedef ifade</strong> {card.term}</p>
+      <p className="yours"><strong>Yanıtın</strong> {answer}</p><p className="expected"><strong>Hedef ifade</strong> {card.term}</p>
       <blockquote>{card.example}</blockquote>
       <p><strong>Birlikte kullanılan ifadeler</strong> {learning.collocations.join(' · ')}</p>
       <button className="primary" disabled={busy} onClick={() => void onRate(answer)}>Tekrarı kaydet</button>

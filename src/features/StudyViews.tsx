@@ -27,10 +27,10 @@ export function Curriculum({ course, state }: { course: Course; state: LearningS
       const unlocked = eligible && isUnlocked(state, course, lesson)
       const outsideRoute = course.language === 'en' && lesson.objective.level === 'A1' && !needsEnglishStarter(state)
       const status = masteryFor(state, lesson).status
-      return <div className="curriculum-row" key={lesson.id}>
+      return <div className={unlocked ? 'curriculum-row' : 'curriculum-row locked'} key={lesson.id}>
         <span className={`step-icon ${unlocked ? 'available' : ''}`} aria-hidden>{String(index + 1).padStart(2, '0')}</span>
         <div><strong>{lesson.title}</strong><small>{lesson.objective.level} · {lesson.objective.description}</small></div>
-        <span className="status">{!eligible ? 'Hedef seviyenin üzerinde' : outsideRoute ? 'Başlangıç rotasında' :
+        <span className={`status ${unlocked && !outsideRoute ? status : ''}`}>{!eligible ? 'Hedef seviyenin üzerinde' : outsideRoute ? 'Başlangıç rotasında' :
           unlocked ? statusLabels[status] : 'Ön koşul bekliyor'}</span>
       </div>
     })}
@@ -56,7 +56,7 @@ export function Dashboard({ state, course, plan, start, now }: {
         <h2>{headline}</h2>
         {lesson && <p className="objective">{lesson.objective.description}</p>}
         <p className="plan-reason">{'minutes' in plan && <strong>Neden bu çalışma? </strong>}{plan.reason}</p>
-        <p>Bugün {used} dk çalıştın · {Math.max(0, state.profile.minutes - used)} dk kaldı · Hedef {state.profile.target}</p>
+        <p className="plan-budget">Bugün {used} dk çalıştın · {Math.max(0, state.profile.minutes - used)} dk kaldı · Hedef {state.profile.target}</p>
         {'minutes' in plan && <button className="light-button" onClick={start}>{plan.kind === 'pedagogy' ? 'Çalışmayı aç' : action[plan.kind]} <span aria-hidden>↗</span></button>}
       </div>
       <div className="cover-type" aria-hidden="true" lang={course.language}>{course.language === 'en' ? 'Aa' : 'Яя'}</div>
@@ -160,9 +160,9 @@ export function LessonResults({ lesson, attempts, onContinue, state }: {
       return <article className="surface feedback" key={attempt.id}>
         <span className={`status ${outcome}`}>{outcome === 'correct' ? 'Doğru' : outcome === 'incorrect' ? 'Tekrar çalışılacak' : 'İnceleme bekliyor'}</span>
         <h2>{exercise.prompt}</h2>
-        <p><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
-        {exercise.kind === 'open' && <p><strong>Örnek yanıt</strong> {exercise.sample}</p>}
-        {outcome === 'incorrect' && exercise.kind !== 'open' && <p><strong>Beklenen yanıt</strong> {
+        <p className="yours"><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
+        {exercise.kind === 'open' && <p className="expected"><strong>Örnek yanıt</strong> {exercise.sample}</p>}
+        {outcome === 'incorrect' && exercise.kind !== 'open' && <p className="expected"><strong>Beklenen yanıt</strong> {
           Array.isArray(exercise.accepted) ? exercise.accepted.join(exercise.kind === 'fill' || exercise.kind === 'short' ? ' / ' : ' · ') : exercise.accepted}</p>}
         <p>{exercise.explanation}</p>
         {outcome === 'incorrect' && lesson.pedagogy?.checks.filter(({ conceptId }) => conceptId === attempt.conceptId)
@@ -224,8 +224,8 @@ export function SkillProfile({ state, course, plan, now }: { state: LearningStat
       const answer = state.attempts.find(({ exerciseId }) => exerciseId === exercise.id)?.answer
       if (!answer) return null
       return <article className="surface feedback" key={exercise.id}>
-        <h2>Yazılı üretim örneği</h2><p><strong>Yanıtın</strong> {answer}</p>
-        <p><strong>Örnek yanıt</strong> {exercise.sample}</p><p>{exercise.explanation}</p>
+        <h2>Yazılı üretim örneği</h2><p className="yours"><strong>Yanıtın</strong> {answer}</p>
+        <p className="expected"><strong>Örnek yanıt</strong> {exercise.sample}</p><p>{exercise.explanation}</p>
       </article>
     })}
     <section className="section">
