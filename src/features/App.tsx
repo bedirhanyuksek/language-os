@@ -137,7 +137,7 @@ export function App() {
   } else if (screen.type === 'settings' && !state) {
     content = <><header className="page-heading"><h1>Ayarlar</h1></header><TutorSettings /></>
   } else if (!ready) {
-    content = storageIssue ? <button className="primary" onClick={() => window.location.reload()}>Yeniden dene</button> : <p role="status">Yerel kayıt açılıyor…</p>
+    content = storageIssue ? <button className="primary" onClick={() => window.location.reload()}>Yeniden dene</button> : <p role="status" className="loading">Yerel kayıt açılıyor…</p>
   } else if (!state && quarantine.some(({ active }) => active) && !allowNewProfile) {
     content = <section className="surface">
       <h1>Önceki profil koruma altında</h1>
@@ -147,7 +147,13 @@ export function App() {
   } else if (!state || !course) {
     content = <div className="onboarding">
       <header className="onboarding-intro"><p className="eyebrow">Kişisel öğrenme stüdyosu</p>
-        <h1>Öğrenme planını kur.</h1><p>Dilini, hedefini ve çalışma zamanını seç. Kısa bir taramayla başlayacağız.</p></header>
+        <h1>Öğrenme planını kur.</h1><p className="lede">Dilini, hedefini ve çalışma zamanını seç. Kısa bir taramayla başlayacağız.</p>
+        <div className="specimen" aria-hidden="true">
+          <span className="specimen-glyph specimen-latin" lang="en">Aa</span>
+          <span className="specimen-glyph specimen-cyrillic" lang="ru">Яя</span>
+          <span className="specimen-note specimen-note-latin">Latin · 26 harf</span>
+          <span className="specimen-note specimen-note-cyrillic" lang="ru">Кириллица · 33 буквы</span>
+        </div></header>
       <section className="surface onboarding-form">
         <ProfileForm busy={busy} onSave={(profile) => save(() => repository.create(initialState(profile)), () => go({ type: 'home' }))} />
         <details><summary>Önceden kaydedilmiş bir yedeğin var mı?</summary>
@@ -269,7 +275,7 @@ export function App() {
     <a className="skip-link" href="#main">İçeriğe geç</a>
     <header className="topbar">
       <button type="button" className="brand" disabled={busy} onClick={() => go({ type: 'home' })}>
-        <img src="/icon.svg" width="34" height="34" alt="" /><span>Language <strong>OS</strong></span>
+        <img src="/icon.svg" width="30" height="30" alt="" /><span>Language <strong>OS</strong></span>
       </button>
       <nav aria-label="Ana menü">
         {state && <button disabled={busy || resetting} onClick={() => go({ type: 'home' })} aria-current={screen.type === 'home' ? 'page' : undefined}>Plan</button>}
@@ -324,7 +330,7 @@ export function App() {
         </section>}
       {error && <p className="notice error" role="alert">{error}</p>}
       {notice && <p className="notice" role="status">{notice}</p>}
-      <Suspense fallback={<p role="status">Çalışma açılıyor…</p>}>{content}</Suspense>
+      <Suspense fallback={<p role="status" className="loading">Çalışma açılıyor…</p>}>{content}</Suspense>
     </main>
     <footer><span>Language OS</span><span>İlerleme bu tarayıcıda saklanır.</span></footer>
   </div>

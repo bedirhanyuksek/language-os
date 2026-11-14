@@ -44,7 +44,7 @@ export function ProfileForm({ initial, onSave, busy, fixedLanguage }: {
       <legend>Hangi dili çalışacaksın?</legend>
       <div className="choice-grid">
         {(['en', 'ru'] as const).map((item) => <label className="language-option" key={item}>
-          <input type="radio" name="language" checked={language === item} onChange={() => changeLanguage(item)} />
+          <input type="radio" name="language" value={item} checked={language === item} onChange={() => changeLanguage(item)} />
           <span className="language-mark" lang={item}>{item === 'en' ? 'Aa' : 'Яя'}</span>
           <span><strong>{languageLabels[item]}</strong><small>{item === 'en' ? 'B1 başlangıç ünitesi' : 'A1 başlangıç ünitesi'}</small></span>
         </label>)}
