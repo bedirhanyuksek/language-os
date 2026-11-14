@@ -1,0 +1,274 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.participle",
+      "outcome": "B2.participle",
+      "level": "B2",
+      "prerequisite": [
+        "ru.relative",
+        "ru.reports"
+      ],
+      "title": "Rapor dilindeki ortaçları açık tümcelere çevir",
+      "objective": "Bir kamu bakım raporundaki sıkıştırılmış ifadeleri çöz, eylemi kimin gerçekleştirdiğini ve sonucun kesin olup olmadığını koru.",
+      "situation": "Park köprüsünün kapatılması üzerine bakım servisi ile erişim ekibi ayrı metinler yayımladı.",
+      "bridge": "Önce ortacın bağlı olduğu ismi bul. Aktif gelen -вший biçiminde özneyi, edilgende yapılan işi koru. Metinde yoksa faili uydurma.",
+      "models": [
+        {
+          "phrase": "Инженер, осмотревший мост, оставил записку.",
+          "explanation": "Осмотревший, işi yapan mühendis ile uyumlu. Açılım: инженер, который осмотрел мост."
+        },
+        {
+          "phrase": "Мост, закрытый после осмотра, отмечен на карте.",
+          "explanation": "Закрытый, eylemi gören мост ile uyumlu. Fail belirtilmediği için который закрыли kullanabilirsin."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Aktif ortacı ilgi tümcesine aç",
+          "incorrect": "Сотрудница, проверившая список: список, который проверили.",
+          "correct": "Сотрудница, которая проверила список.",
+          "explanation": "Özne hâlindeki kişi veya kurum yaptığı eylemle kalır.",
+          "guided": [
+            [
+              "Рабочие, убравшие снег: рабочие, которые ___ снег.",
+              "убрали"
+            ],
+            [
+              "Мастер, заменивший замок: мастер, который ___ замок.",
+              "заменил"
+            ]
+          ],
+          "transfer": [
+            [
+              "Лаборатория, измерившая шум: лаборатория, которая ___ шум.",
+              "измерила"
+            ],
+            [
+              "Команда, завершившая испытание: команда, которая ___ испытание.",
+              "завершила"
+            ]
+          ],
+          "delayed": [
+            [
+              "Службы, осмотревшие тоннель: службы, которые ___ тоннель.",
+              "осмотрели"
+            ],
+            [
+              "Ученица, собравшая образцы: ученица, которая ___ образцы.",
+              "собрала"
+            ]
+          ]
+        },
+        {
+          "label": "Edilgende kaynakta olmayan faili ekleme",
+          "incorrect": "Дверь, запертая утром: дверь, которую запер директор.",
+          "correct": "Дверь, которую заперли утром.",
+          "explanation": "Kimin yaptığı bilinmiyorsa üçüncü çoğul belirsiz özneli yapı anlamı korur.",
+          "guided": [
+            [
+              "Лестница, очищенная после дождя: лестница, которую ___ после дождя.",
+              "очистили"
+            ],
+            [
+              "Мост, открытый в мае: мост, который ___ в мае.",
+              "открыли"
+            ]
+          ],
+          "transfer": [
+            [
+              "Список, обновлённый в пятницу: список, который ___ в пятницу.",
+              "обновили"
+            ],
+            [
+              "Участок, ограждённый до проверки: участок, который ___ до проверки.",
+              "оградили"
+            ]
+          ],
+          "delayed": [
+            [
+              "Письмо, доставленное вечером: письмо, которое ___ вечером.",
+              "доставили"
+            ],
+            [
+              "Маршрут, изменённый из-за ремонта: маршрут, который ___ из-за ремонта.",
+              "изменили"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "осмотр конструкции",
+        "meaning": "yapı incelemesi",
+        "example": "Осмотр конструкции закончили до дождя.",
+        "usage": "Осмотр + tamlayan, inceleme nesnesini belirtir.",
+        "pronunciation": "осмо́тр констру́кции",
+        "collocations": [
+          "провести осмотр конструкции",
+          "после осмотра конструкции"
+        ],
+        "recognize": [
+          "“осмотр конструкции” burada ne anlama gelir?",
+          "yapı incelemesi",
+          "yol açılışı",
+          "mevsimsel yağış",
+          "Осмотр + tamlayan, inceleme nesnesini belirtir."
+        ],
+        "recall": [
+          "“yapı incelemesi” anlamındaki hedef ifadeyi yaz.",
+          "осмотр конструкции"
+        ],
+        "use": "Raporun hangi aşamada olduğunu bir cümleyle bildir."
+      },
+      "additionalWords": [
+        {
+          "term": "временное ограждение",
+          "meaning": "geçici bariyer",
+          "example": "Вдоль дорожки поставили временное ограждение.",
+          "usage": "Rapor için önlemin kalıcı olup olmadığını ayır.",
+          "pronunciation": "вре́менное огражде́ние",
+          "collocations": [
+            "установить временное ограждение",
+            "снять временное ограждение"
+          ],
+          "recognize": [
+            "“временное ограждение” burada ne anlama gelir?",
+            "geçici bariyer",
+            "yeni yürüyüş yolu",
+            "gece bekçisi",
+            "Rapor için önlemin kalıcı olup olmadığını ayır."
+          ],
+          "recall": [
+            "“geçici bariyer” anlamındaki hedef ifadeyi yaz.",
+            "временное ограждение"
+          ],
+          "use": "Benzer kısa önlemi bir ziyaretçiye aktar."
+        },
+        {
+          "term": "до получения результатов",
+          "meaning": "sonuçlar gelene kadar",
+          "example": "Площадка закрыта до получения результатов.",
+          "usage": "До + tamlayan kararın kalkabileceği eşiği gösterir; tarih garantisi vermez.",
+          "pronunciation": "до получе́ния результа́тов",
+          "collocations": [
+            "ждать до получения результатов",
+            "отложить до получения результатов"
+          ],
+          "recognize": [
+            "“до получения результатов” burada ne anlama gelir?",
+            "sonuçlar gelene kadar",
+            "sonuçlardan altı gün sonra",
+            "sonuçtan bağımsız",
+            "До + tamlayan kararın kalkabileceği eşiği gösterir; tarih garantisi vermez."
+          ],
+          "recall": [
+            "“sonuçlar gelene kadar” anlamındaki hedef ifadeyi yaz.",
+            "до получения результатов"
+          ],
+          "use": "Bir açılış kararının neye bağlı olduğunu açıkla."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "настил",
+          "cue": "köprü kaplaması"
+        },
+        {
+          "term": "перила",
+          "cue": "korkuluk"
+        },
+        {
+          "term": "несущая балка",
+          "cue": "taşıyıcı kiriş"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir spor tesisi raporundaki iki ortaçlı ayrıntıyı halka yönelik 100–135 sözcüklük duyuruya dönüştür. Hangi sınırın henüz geçerli olduğunu yaz.",
+        "sample": "Вчера специалисты осмотрели лестницу возле бассейна. Они обнаружили, что две ступени расшатались. Площадку возле лестницы оградили до окончания проверки. Для посетителей открыт боковой вход, который находится рядом с остановкой. Сотрудники центра уже разместили схему обхода у главных дверей. Если вам нужен проход без ступеней, попросите администратора показать отдельный вход с улицы. Пока неизвестно, когда лестницу можно будет открыть. Решение примут только после испытания креплений. Мы сообщим результат на сайте центра и у входа, как только инженеры закончат работу. Абонементы и время занятий остаются прежними. В течение дня дежурный будет на месте. Участникам утренних групп лучше прийти на десять минут раньше, чтобы спокойно найти новую дорогу.",
+        "revision": "Faili kaynakta verilen yerlerde açıkça yaz. Açılışın ölçülebilen koşulunu bir cümlede koru.",
+        "criteria": [
+          "Aktif eylem doğru kişiye bağlandı.",
+          "Belirsiz fail ve kapanışın koşulu korunuyor."
+        ]
+      },
+      "input": {
+        "text": "Акт осмотра. Инженер, проверивший пешеходный мост после паводка, обнаружил смещение двух досок. Настил, повреждённый водой, оградили до получения результатов дополнительной проверки. Перила, установленные прошлой осенью, не пострадали. Несущая балка требует отдельного осмотра, поскольку снизу ещё видны следы воды.\n\nЗаписка отдела доступности. Обход, предложенный подрядчиком, проходит через лестницу. Посетители, пользующиеся колясками, смогут пройти через северные ворота. Дежурный уже поставил там указатель. Городской сайт сообщает, что мост пока закрыт. Из этого сообщения нельзя заключить, что настил заменят: решение отложено до проверки балки. Служба обещает обновить объявление в среду, даже если к этому времени не будет готово окончательное заключение. До обновления временное ограждение останется на месте.",
+        "reading": [
+          "Hangi önlem şu anda uygulanıyor?",
+          "Hasarlı kaplama geçici olarak çevrildi",
+          "Taşıyıcı kiriş değiştirildi",
+          "Tüm park kapatıldı",
+          "Edilgen yapıda kaplamanın su hasarı anlatılır, onarım kararı henüz verilmemiştir.",
+          "настил, повреждённый водой, оградили"
+        ],
+        "transcript": "Ведущая: Мост закрыт. Кто решил менять настил? Инженер: Замену ещё не утвердили. Доски, смещённые водой, сейчас ограждены. Сначала нужно проверить балку, которая держит настил. Представитель парка: А обход с лестницей не всем подходит. Мы уже открыли северные ворота. Ведущая: Значит, к среде ремонт закончится? Инженер: В среду мы обновим объявление. Это срок сообщения, а не обещание открыть мост. Представитель парка: До объявления указатель у северного входа останется на месте.",
+        "preparation": "Güncellemeyi ve onarım garantisini ayır.",
+        "main": [
+          "Hangi karar henüz verilmedi?",
+          "Kaplamayı değiştirme",
+          "Kuzey girişini kullanma",
+          "Yön işareti koyma",
+          "Замену ещё не утвердили deniyor.",
+          "Замену ещё не утвердили"
+        ],
+        "detail": [
+          "Çarşamba ne yapılacak?",
+          "Duyuru güncellenecek",
+          "Köprü açılacak",
+          "Korkuluk sökülecek",
+          "Konuşmacı yalnız duyuru sözü veriyor.",
+          "мы обновим объявление"
+        ]
+      },
+      "retry": {
+        "text": "На складе обнаружили коробки, повреждённые при перевозке. Сотрудник, принявший груз, внёс номера в журнал. Решение о возврате примут после осмотра содержимого.",
+        "reading": [
+          "Numaraları kim kaydetti?",
+          "Teslim alan görevli",
+          "Nakliyeci",
+          "Müşteri",
+          "Aktif ortaç görevliye bağlanır.",
+          "сотрудник, принявший груз"
+        ],
+        "transcript": "Письма, возвращённые из-за ошибки в адресе, пока остаются у секретаря. Сотрудник, заметивший ошибку, подготовит новый список утром.",
+        "preparation": "Geri gelen nesnelerle yeniden yapılacak işi ayır.",
+        "main": [
+          "Mektuplar şimdilik nerede?",
+          "Sekreterde",
+          "Müşteride",
+          "Posta dağıtımında",
+          "У секретаря yerini verir.",
+          "остаются у секретаря"
+        ],
+        "detail": [
+          "Sabah ne hazırlanacak?",
+          "Yeni liste",
+          "Yeni mektuplar",
+          "Teslimat aracı",
+          "Новый список yeni listedir.",
+          "подготовит новый список"
+        ]
+      },
+      "readingPurpose": "Ortaçları bağlı oldukları isimlere bağla. Ölçüm, duyuru ve onarımı ayrı göster.",
+      "readingUse": "Merdiven kullanamayan birine geçici güzergâhı açıkla.",
+      "listeningUse": "Başka birine onarımın ne zaman kesinleşeceğini söyle.",
+      "speaking": "Bir depo sorumlusu olarak edilgen yazılmış hasar kaydını halka açık konuşma diline çevir. Faili bildiğin ve bilmediğin eylemleri ayır.",
+      "genres": {
+        "reading": "teknik bakım ile erişim notu",
+        "listening": "çok rollü saha görüşmesi",
+        "writing": "kamusal bakım duyurusu"
+      },
+      "recovery": {
+        "reading": "Hasarlı nesnenin adını ve edimi birlikte bul.",
+        "main": "Замену ardından gelen olumsuzluğa dön.",
+        "detail": "Çarşambanın hangi işin tarihi olduğunu ayır."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "geçmiş aktif ve edilgen ortaç"
+      ]
+    }
+  ]
+}

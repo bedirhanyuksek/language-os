@@ -1,0 +1,275 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.register",
+      "outcome": "C1.register",
+      "level": "C1",
+      "prerequisite": [
+        "en.brief",
+        "en.study-discussion"
+      ],
+      "title": "Aynı kararı farklı tür ve okurlara uyarla",
+      "objective": "Bir kararın şartlarını koruyarak kurul notu ve katılımcı mesajı yaz; bilgi sırasını ve dilbilgisel yoğunluğu hedefe göre değiştir.",
+      "situation": "Bir açık hava film programında yüksek ses ve kapasiteyle ilgili bir deneme kararı var. Kurul gerekçeyi, katılımcılar ne zaman nereye gideceğini bilmek istiyor.",
+      "bridge": "Önce değişmez bilgileri yaz: süre, kapsam, koşul ve sorumlu. Kurul kaydında nominalisation bazı tekrarları kısaltır. Katılımcı sürümünde özne ve eylemi geri getir.",
+      "models": [
+        {
+          "phrase": "A reduction in evening capacity was agreed for the first two screenings.",
+          "explanation": "Reduction eylemi paketler. Kurul kaydında karar ve süresi öndedir. Fail önemliyse kaldırma."
+        },
+        {
+          "phrase": "We will offer fewer seats at the first two evening screenings.",
+          "explanation": "Katılımcı sürümünde offer ve we, kimin ne yapacağını açıklar; süre ve kapsam aynı kalır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Adlaştırmayı eyleme aç",
+          "incorrect": "After confirmation of the new time, we will email you. → After we confirmation the new time …",
+          "correct": "After we confirm the new time, we will email you.",
+          "explanation": "Confirm fiil, confirmation ad. Eylemi açarken özne ve zamanı koru.",
+          "guided": [
+            [
+              "After our review of comments → After we ___ the comments.",
+              "review"
+            ],
+            [
+              "Before publication of the dates → Before we ___ the dates.",
+              "publish"
+            ]
+          ],
+          "transfer": [
+            [
+              "After our approval of the route → After we ___ the route.",
+              "approve"
+            ],
+            [
+              "Before confirmation of the booking → Before we ___ the booking.",
+              "confirm"
+            ]
+          ],
+          "delayed": [
+            [
+              "After her assessment of the room → After she ___ the room.",
+              "assesses"
+            ],
+            [
+              "Before their inspection of the fence → Before they ___ the fence.",
+              "inspect"
+            ]
+          ]
+        },
+        {
+          "label": "Okur değişse de kararın koşulunu koru",
+          "incorrect": "“Sunday only, provided staff are available” → “We are now open all weekend.”",
+          "correct": "“We can open on Sunday if enough staff are available.”",
+          "explanation": "Daha yalın yazı kapsam, tarih veya koşulu genişletemez.",
+          "guided": [
+            [
+              "“First week only.” Hangisi korunur? first week / whole month.",
+              "first week"
+            ],
+            [
+              "“No change to weekday access.” Hangisi korunur? weekdays unchanged / weekdays cancelled.",
+              "weekdays unchanged"
+            ]
+          ],
+          "transfer": [
+            [
+              "“Subject to a safety check.” Ön koşul ne? safety check / booking fee.",
+              "safety check"
+            ],
+            [
+              "“Review in June, decision later.” Haziranda ne var? review / permanent approval.",
+              "review"
+            ]
+          ],
+          "delayed": [
+            [
+              "“Additional places for registered visitors.” Kimler? registered visitors / all passers-by.",
+              "registered visitors"
+            ],
+            [
+              "“Free exchange if requested by Friday.” Son gün? Friday / Saturday.",
+              "Friday"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "subject to approval",
+        "meaning": "onaya bağlı",
+        "example": "The revised timetable is subject to approval.",
+        "usage": "Koşulun henüz gerçekleştiğini ima etmez.",
+        "pronunciation": "/ˈsʌbdʒekt tu əˈpɹuvəl/",
+        "collocations": [
+          "subject to final approval",
+          "subject to committee approval"
+        ],
+        "recognize": [
+          "“subject to approval” burada ne anlama gelir?",
+          "onaya bağlı",
+          "çoktan onaylandı",
+          "belirtilmeyen itiraz",
+          "Koşulun henüz gerçekleştiğini ima etmez."
+        ],
+        "recall": [
+          "“onaya bağlı” anlamındaki hedef ifadeyi yaz.",
+          "subject to approval"
+        ],
+        "use": "Yeni bir topluluk projesinin yürürlüğe giriş koşulunu belirt."
+      },
+      "additionalWords": [
+        {
+          "term": "remain in effect",
+          "meaning": "yürürlükte kalmak",
+          "example": "The current entry rules remain in effect.",
+          "usage": "Bir değişiklik görüşülürken eski kuralın sürdüğünü resmî dille bildirir.",
+          "pronunciation": "/ɹɪˈmeɪn ɪn ɪˈfekt/",
+          "collocations": [
+            "remain in effect until Friday",
+            "the restrictions remain in effect"
+          ],
+          "recognize": [
+            "“remain in effect” burada ne anlama gelir?",
+            "yürürlükte kalmak",
+            "yeni kuralı duyurmak",
+            "yürürlükten kaldırmak",
+            "Bir değişiklik görüşülürken eski kuralın sürdüğünü resmî dille bildirir."
+          ],
+          "recall": [
+            "“yürürlükte kalmak” anlamındaki hedef ifadeyi yaz.",
+            "remain in effect"
+          ],
+          "use": "Bir kural hangi tarihe kadar sürüyor, söyle."
+        },
+        {
+          "term": "make alternative arrangements",
+          "meaning": "başka bir düzenleme yapmak",
+          "example": "We can make alternative arrangements for late arrivals.",
+          "usage": "Genel çözüm vaadini somut bir seçenekle eşleştir.",
+          "pronunciation": "/meɪk ɔlˈtɜɹnətɪv əˈɹeɪndʒmənts/",
+          "collocations": [
+            "make alternative arrangements for travel",
+            "need to make alternative arrangements"
+          ],
+          "recognize": [
+            "“make alternative arrangements” burada ne anlama gelir?",
+            "başka bir düzenleme yapmak",
+            "bütün planı garanti etmek",
+            "kararı iptal etmek",
+            "Genel çözüm vaadini somut bir seçenekle eşleştir."
+          ],
+          "recall": [
+            "“başka bir düzenleme yapmak” anlamındaki hedef ifadeyi yaz.",
+            "make alternative arrangements"
+          ],
+          "use": "Bir sınıf taşınınca katılımcıya alternatif düzenleme öner."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "quiet access route",
+          "cue": "sessiz giriş güzergâhı"
+        },
+        {
+          "term": "capacity cap",
+          "cue": "kapasite üst sınırı"
+        },
+        {
+          "term": "provisional",
+          "cue": "geçici"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir gece pazarı denemesini iki metne dönüştür. Kurul için 85–110 sözcüklük karar notu ve satıcılar için 65–90 sözcüklük e-posta yaz. Denemenin iki cuma, batı girişinde, yalnız denetim geçerse olacağını koru.",
+        "sample": "Board record. The committee provisionally approved a trial at the west entrance on the next two Fridays. Approval is subject to a safety inspection. The fire lane is to remain clear, and all weekday arrangements remain in effect. The coordinator will confirm the inspection outcome by Thursday. The two pilot dates may be listed in the minutes, but the booking page must continue to show them as provisional until the coordinator has received the inspection result. Vendor email. If the west entrance passes its safety check, we will open it for the market on the next two Fridays. Please keep the fire lane clear. Your usual weekday setup stays the same. We will email you by Thursday to say whether the trial can go ahead. If the gate stays closed, please use your usual pitch and report any access difficulties to our coordinator.",
+        "revision": "Okura göre ilk cümleyi değiştir, sonra iki metinde tarih, giriş, denetim şartı ve sorumluyu yan yana kontrol et.",
+        "criteria": [
+          "İki tür bilgi önceliği ve üslup bakımından ayrılıyor.",
+          "Koşullar, sorumlu ve belirsizlik iki metinde de korunuyor."
+        ]
+      },
+      "input": {
+        "text": "Draft minutes. The committee approved a provisional capacity cap for the first two Friday film screenings. The measure applies only to the evening programme and is subject to a sound check before tickets are issued. The daytime programme will continue under the existing rules. The venue manager will submit a short report after the second screening, including the number of people turned away and the results of sound checks in nearby streets. Any extension requires a fresh vote.\n\nVisitor draft. There may be fewer seats at our first two Friday evening films. We will confirm ticket numbers after Friday morning’s sound check. If you already hold a daytime ticket, come at the time printed on it. Please use the quiet access route along the library wall. If you cannot use that entrance, call the box office so we can make alternative arrangements. We will post any changes on the ticket page before noon.",
+        "reading": [
+          "Which statement can appear in both versions without changing the decision?",
+          "The two Friday evenings depend on a sound check",
+          "All screenings now have fewer seats",
+          "The pilot automatically continues after two Fridays",
+          "Pilot kapsamı ve ön koşul değişmeden kalır.",
+          "subject to a sound check"
+        ],
+        "transcript": "Secretary: The written record says a provisional reduction in capacity was agreed. Front desk: People are asking whether they should buy new tickets for the afternoon. Secretary: No. The change applies to two Friday evenings only. Front desk: Then I can lead with that, and give the time for the ticket update next. Manager: Include the reason near the end. First we run a sound check. If it fails, do not advertise the extra screening plan as confirmed. Secretary: Also keep the review date separate from the ticket update. We can decide on an extension after reading the report.",
+        "preparation": "Kurul ve katılımcı metninde ilk gelen bilginin yerini karşılaştır.",
+        "main": [
+          "What should the front desk lead with?",
+          "Only two Friday evenings are affected",
+          "Details of the capacity vote",
+          "The date of the extension vote",
+          "Katılımcının doğrudan etkilendiği kapsam öne gelir.",
+          "two Friday evenings only"
+        ],
+        "detail": [
+          "What happens after reading the report?",
+          "An extension can be decided",
+          "Afternoon tickets expire",
+          "The sound check is cancelled",
+          "Yeni karar rapordan sonra verilebilir.",
+          "decide on an extension after reading the report"
+        ]
+      },
+      "retry": {
+        "text": "Official notice: Cancellation of the Monday trial was confirmed after the gate failed inspection. Bookings from Tuesday onward remain valid.",
+        "reading": [
+          "Which bookings stay valid?",
+          "Tuesday onward",
+          "Monday only",
+          "None",
+          "Pazartesi iptali ileriki günlere taşınmaz.",
+          "from Tuesday onward remain valid"
+        ],
+        "transcript": "Staff lead: Our guide calls it a temporary relocation of the information desk. Could you explain that to visitors? Volunteer: We have moved the desk to the west door for today. Staff lead: Good, and mention that library returns still go to the main desk.",
+        "preparation": "İki hizmetten hangisinin gerçekten taşındığını dinle.",
+        "main": [
+          "Where is the information desk today?",
+          "At the west door",
+          "At the main desk",
+          "At the library wall",
+          "Yer değişikliği bugün batı kapısında.",
+          "to the west door for today"
+        ],
+        "detail": [
+          "Where do library returns go?",
+          "Main desk",
+          "West door",
+          "Online only",
+          "İadeler eski yerde kalır.",
+          "returns still go to the main desk"
+        ]
+      },
+      "readingPurpose": "Değişmez karar verilerini iki metinden ayrı ayrı çıkar ve eşleştir.",
+      "readingUse": "Kurul notunu karardan etkilenene sadeleştir, sonra metinleri koşul ve tarih açısından kıyasla.",
+      "listeningUse": "İki sürümün bilgi sırasını aynı konu üzerinden açıkla.",
+      "speaking": "Bir kütüphane pilotu için önce kurul başkanına karar ve değerlendirme koşullarını, sonra bekleyen veliye yalnız uygulanacak adımları anlat. Veli takvimi yanlış yorumlarsa kapsamı düzelt.",
+      "genres": {
+        "reading": "karar tutanağı ve ziyaretçi duyurusu",
+        "listening": "masa başı kurum içi görüşme",
+        "writing": "iki kitleye karar aktarımı"
+      },
+      "recovery": {
+        "reading": "Süreyi, bilet koşulunu ve sonraki oylamayı işaretle.",
+        "main": "Akşam sınırı söylenirken daytime ne oluyor?",
+        "detail": "Rapor sonrası kararın ne olduğunu dinle."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "adlaştırma ve okura göre bilgi sırası"
+      ]
+    }
+  ]
+}

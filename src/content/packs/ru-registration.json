@@ -1,0 +1,513 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.forms",
+      "outcome": "A1.forms",
+      "level": "A1",
+      "prerequisite": [
+        "ru.numbers",
+        "ru.repair"
+      ],
+      "title": "Bir etkinlik kaydı doldur ve bilgiyi düzelt",
+      "objective": "Adı, yaşı ve iletişim numarasını forma yaz ve bir yanlış kaydı kısa bir cümleyle düzelt.",
+      "situation": "Bir mahalle kütüphanesinde atölyeye kaydoluyorsun. Formda dört satır var.",
+      "bridge": "Başlığı okuyup yalnız istenen bilgiyi yaz. Yaşı konuşurken Мне + sayı kullan. Bilgi ters girdiyse önce doğru alanı söyle.",
+      "models": [
+        {
+          "phrase": "Мне двадцать два года.",
+          "explanation": "Мне ile yaş söylenir. Двадцать два ardından года gelir."
+        },
+        {
+          "phrase": "Моя фамилия Орлова, а имя Анна.",
+          "explanation": "Фамилия soyadı, имя addır. Моя ve моё biçimlerini alanlarla karşılaştır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Yaş sayısından sonra gereken biçim",
+          "incorrect": "Мне двадцать два лет.",
+          "correct": "Мне двадцать два года.",
+          "explanation": "Bir ile год, iki-dört ile года, beş-yirmi ve 11–14 ile лет.",
+          "guided": [
+            [
+              "Мне двадцать один ___.",
+              "год"
+            ],
+            [
+              "Мне двадцать четыре ___.",
+              "года"
+            ]
+          ],
+          "transfer": [
+            [
+              "Мне тридцать пять ___.",
+              "лет"
+            ],
+            [
+              "Мне двенадцать ___.",
+              "лет"
+            ]
+          ],
+          "delayed": [
+            [
+              "Мне сорок три ___.",
+              "года"
+            ],
+            [
+              "Мне пятьдесят один ___.",
+              "год"
+            ]
+          ]
+        },
+        {
+          "label": "Forma doğru bilgiyi yaz",
+          "incorrect": "Имя: Орлова. Фамилия: Анна.",
+          "correct": "Имя: Анна. Фамилия: Орлова.",
+          "explanation": "Alanı önce oku. Имя adı, фамилия soyadı ister.",
+          "guided": [
+            [
+              "Инна Волкова. Поле «Имя»:",
+              "Инна"
+            ],
+            [
+              "Илья Котов. Поле «Фамилия»:",
+              "Котов"
+            ]
+          ],
+          "transfer": [
+            [
+              "Марк Белый, 25 лет. Поле «Возраст»:",
+              "25",
+              "25 лет"
+            ],
+            [
+              "Телефон: 43-10. Поле «Телефон»:",
+              "43-10"
+            ]
+          ],
+          "delayed": [
+            [
+              "Рита Орехова. Поле «Имя»:",
+              "Рита"
+            ],
+            [
+              "Лев Павлов, 31 год. Поле «Возраст»:",
+              "31",
+              "31 год"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "заполнить анкету",
+        "meaning": "form doldurmak",
+        "example": "Пожалуйста, заполните анкету.",
+        "usage": "Заполнить tamamlanmış doldurma eylemi; анкета form veya anket.",
+        "pronunciation": "запо́лнить анке́ту",
+        "collocations": [
+          "заполнить анкету онлайн",
+          "заполнить короткую анкету"
+        ],
+        "recognize": [
+          "“заполнить анкету” burada ne anlama gelir?",
+          "form doldurmak",
+          "sola dönmek",
+          "bilet satmak",
+          "Заполнить tamamlanmış doldurma eylemi; анкета form veya anket."
+        ],
+        "recall": [
+          "“form doldurmak” anlamındaki hedef ifadeyi yaz.",
+          "заполнить анкету"
+        ],
+        "use": "Bir katılımcıya kayıt formunu doldurmasını rica et."
+      },
+      "additionalWords": [
+        {
+          "term": "указать возраст",
+          "meaning": "yaşı belirtmek",
+          "example": "В анкете нужно указать возраст.",
+          "usage": "Указать, gerekli bilgiyi yazmak veya belirtmek için kullanılır.",
+          "pronunciation": "указа́ть во́зраст",
+          "collocations": [
+            "указать возраст ребёнка",
+            "указать свой возраст"
+          ],
+          "recognize": [
+            "“указать возраст” burada ne anlama gelir?",
+            "yaşı belirtmek",
+            "randevu almak",
+            "saat söylemek",
+            "Указать, gerekli bilgiyi yazmak veya belirtmek için kullanılır."
+          ],
+          "recall": [
+            "“yaşı belirtmek” anlamındaki hedef ifadeyi yaz.",
+            "указать возраст"
+          ],
+          "use": "Yeni bir formun hangi bilgiye ihtiyacı olduğunu söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "образец",
+          "cue": "örnek"
+        },
+        {
+          "term": "подпись",
+          "cue": "imza"
+        }
+      ],
+      "writing": {
+        "prompt": "Aşağıdaki uydurma bilgilerle bir kurs kaydı yap. Олег Громов, 24, 42-15. Dört alan yaz ve adın yazımını bir cümlede teyit et.",
+        "sample": "Имя: Олег. Фамилия: Громов. Возраст: 24 года. Телефон: 42-15. Моё имя Олег.",
+        "revision": "Имя ve фамилия satırının doğru olduğuna bak. Yaşı birine konuşarak da bildir.",
+        "criteria": [
+          "Dört alan doğru dolduruldu.",
+          "Yaş ve ad tekrarı doğru."
+        ]
+      },
+      "input": {
+        "text": "Анкета для кружка. Имя: Олег. Фамилия: Громов. Возраст: 24 года. Телефон: 42-15. Это образец. Внизу нужна подпись.",
+        "reading": [
+          "Formun altında ne gerekiyor?",
+          "İmza",
+          "Adres",
+          "Başka numara",
+          "Подпись imzadır.",
+          "Внизу нужна подпись"
+        ],
+        "transcript": "— Ваше имя? — Вера. Фамилия Белова. — Сколько вам лет? — Мне двадцать шесть лет. — Ваш телефон? — Сорок, шестнадцать.",
+        "preparation": "Ad ve soyadından sonra yaş ve telefon gelir.",
+        "main": [
+          "Soyadı ne?",
+          "Белова",
+          "Вера",
+          "Орлова",
+          "Фамилия sonrasını dinle.",
+          "Фамилия Белова"
+        ],
+        "detail": [
+          "Yaş kaç?",
+          "26",
+          "16",
+          "20",
+          "Двадцать шесть sayıyı verir.",
+          "двадцать шесть лет"
+        ]
+      },
+      "retry": {
+        "text": "Анкета читателя. Фамилия: Никитин. Имя: Роман. Телефон: 45-30.",
+        "reading": [
+          "Ad hangisi?",
+          "Роман",
+          "Никитин",
+          "Телефон",
+          "Bu formda ad ikinci sırada.",
+          "Имя: Роман"
+        ],
+        "transcript": "— Мне тридцать один год. — Телефон двадцать четыре, пятнадцать? — Нет. Двадцать четыре, пятьдесят.",
+        "preparation": "Нет sonrasında düzeltmeyi dinle.",
+        "main": [
+          "Yaş kaç?",
+          "31",
+          "21",
+          "30",
+          "Тридцать один otuz bir.",
+          "тридцать один год"
+        ],
+        "detail": [
+          "Telefonun son grubu ne?",
+          "50",
+          "15",
+          "24",
+          "Düzeltmede son sayı elli.",
+          "четыре, пятьдесят"
+        ]
+      },
+      "readingPurpose": "Form başlıkları ile değerlerini çift olarak işaretle.",
+      "readingUse": "Kayıt görevlisinden örnek form iste.",
+      "listeningUse": "İşittiklerini yeniden sırala ve teyit et.",
+      "speaking": "Uydurma bir tiyatro kulübü başvurusu yap. Partner bir alanı yanlış okursa doğru alanı ve değeri söyle.",
+      "genres": {
+        "reading": "örnek kayıt formu",
+        "listening": "başvuru diyaloğu",
+        "writing": "kulüp kayıt formu"
+      },
+      "recovery": {
+        "reading": "Alttaki satırın işlevini bul.",
+        "main": "Фамилия kelimesinden sonra geleni seç.",
+        "detail": "Мне sonrasındaki sayıyı dinle."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "мне ile yaş ve год çekimi"
+      ]
+    },
+    {
+      "id": "ru.numbers",
+      "outcome": "A1.numbers",
+      "level": "A1",
+      "prerequisite": [
+        "ru.intro"
+      ],
+      "title": "Telefonu, fiyatı ve saati teyit et",
+      "objective": "Sayı dizisini doğru geri söyle, fiyat ve saat sorusuna bağlama uygun biçimle karşılık ver.",
+      "situation": "Bir yüzme kursunu arıyorsun. İlk dersin saatini, bilet fiyatını ve danışma numarasını kaydedeceksin.",
+      "bridge": "Сколько стоит ile fiyatı, во сколько ile başlangıç saatini sor. Numarayı kısa gruplara böl.",
+      "models": [
+        {
+          "phrase": "Во сколько урок? В пять часов.",
+          "explanation": "Во сколько başlangıç zamanını sorar. Saatle v kullanılır."
+        },
+        {
+          "phrase": "Билет стоит двадцать рублей.",
+          "explanation": "Yirmiden sonra рублей gelir. Два рубля ve пять рублей biçimlerini karşılaştır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Ruble biçimi",
+          "incorrect": "Билет стоит пять рубль.",
+          "correct": "Билет стоит пять рублей.",
+          "explanation": "Bir ile рубль, iki-dört ile рубля, beş-yirmi ile рублей. Son basamak kuralında 11–14 ayrı kalır.",
+          "guided": [
+            [
+              "Карандаш стоит два ___.",
+              "рубля"
+            ],
+            [
+              "Значок стоит пять ___.",
+              "рублей"
+            ]
+          ],
+          "transfer": [
+            [
+              "Тетрадь стоит двадцать один ___.",
+              "рубль"
+            ],
+            [
+              "Открытка стоит четырнадцать ___.",
+              "рублей"
+            ]
+          ],
+          "delayed": [
+            [
+              "Пакет стоит двадцать три ___.",
+              "рубля"
+            ],
+            [
+              "Чай стоит один ___.",
+              "рубль"
+            ]
+          ]
+        },
+        {
+          "label": "Başlangıç saatini v ile söyle",
+          "incorrect": "Занятие начинается на шесть.",
+          "correct": "Занятие начинается в шесть.",
+          "explanation": "Tam saat için в + sayı. Вокруг gibi yaklaşık ifadeler bu örneklerin hedefi değil.",
+          "guided": [
+            [
+              "Начало ___ два часа.",
+              "в"
+            ],
+            [
+              "Тренировка ___ пять часов.",
+              "в"
+            ]
+          ],
+          "transfer": [
+            [
+              "Урок начинается ___ девять.",
+              "в"
+            ],
+            [
+              "Поезд отправляется ___ восемь.",
+              "в"
+            ]
+          ],
+          "delayed": [
+            [
+              "Сеанс ___ одиннадцать.",
+              "в"
+            ],
+            [
+              "Библиотека открывается ___ десять.",
+              "в"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "во сколько",
+        "meaning": "saat kaçta",
+        "example": "Во сколько начинается урок?",
+        "usage": "Bir olayın başlangıç veya buluşma saatini sorar.",
+        "pronunciation": "во ско́лько",
+        "collocations": [
+          "во сколько начало",
+          "во сколько закрывается"
+        ],
+        "recognize": [
+          "“во сколько” burada ne anlama gelir?",
+          "saat kaçta",
+          "kaç tane",
+          "kaç ruble",
+          "Bir olayın başlangıç veya buluşma saatini sorar."
+        ],
+        "recall": [
+          "“saat kaçta” anlamındaki hedef ifadeyi yaz.",
+          "во сколько"
+        ],
+        "use": "Bir dersin başlangıç saatini sor."
+      },
+      "additionalWords": [
+        {
+          "term": "номер телефона",
+          "meaning": "telefon numarası",
+          "example": "Запишите номер телефона, пожалуйста.",
+          "usage": "Telefon numarası için sayı gruplarını teyit et.",
+          "pronunciation": "но́мер телефо́на",
+          "collocations": [
+            "записать номер телефона",
+            "назвать номер телефона"
+          ],
+          "recognize": [
+            "“номер телефона” burada ne anlama gelir?",
+            "telefon numarası",
+            "daire numarası",
+            "başlangıç saati",
+            "Telefon numarası için sayı gruplarını teyit et."
+          ],
+          "recall": [
+            "“telefon numarası” anlamındaki hedef ifadeyi yaz.",
+            "номер телефона"
+          ],
+          "use": "Bir antrenörden iletişim numarasını iste."
+        },
+        {
+          "term": "сколько стоит",
+          "meaning": "ne kadar tutuyor",
+          "example": "Сколько стоит билет?",
+          "usage": "Tekil nesneyle стоит, çoğulla стоят kullanılır.",
+          "pronunciation": "ско́лько сто́ит",
+          "collocations": [
+            "сколько стоит билет",
+            "сколько стоит урок"
+          ],
+          "recognize": [
+            "“сколько стоит” burada ne anlama gelir?",
+            "ne kadar tutuyor",
+            "saat kaçta",
+            "kaç numara",
+            "Tekil nesneyle стоит, çoğulla стоят kullanılır."
+          ],
+          "recall": [
+            "“ne kadar tutuyor” anlamındaki hedef ifadeyi yaz.",
+            "сколько стоит"
+          ],
+          "use": "Bir müze biletinin fiyatını sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "касса",
+          "cue": "gişe"
+        },
+        {
+          "term": "вход",
+          "cue": "giriş"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir spor kursuna ilk kez gidecek arkadaşına saati ve fiyatı bildir. Sonra telefon numarasını sor.",
+        "sample": "Урок в шесть часов. Вход стоит двадцать рублей. Какой номер телефона?",
+        "revision": "Bir bilgiyi, arkadaşın geri söyleyebileceği kısa soruyla teyit ettir.",
+        "criteria": [
+          "Saat ve fiyat ayrı anlaşılır.",
+          "Ruble biçimi sayıya uyar."
+        ]
+      },
+      "input": {
+        "text": "Бассейн. Первый урок в шесть часов. Вход стоит двадцать рублей. Касса открыта с пяти. Номер справочной: 25-14.",
+        "reading": [
+          "Giriş kaç ruble?",
+          "20",
+          "25",
+          "14",
+          "Двадцать yirmi demek.",
+          "Вход стоит двадцать рублей"
+        ],
+        "transcript": "— Во сколько урок? — В шесть. — Сколько стоит билет? — Двадцать рублей. Наш номер: двадцать пять, четырнадцать. — Двадцать пять, четырнадцать? — Да.",
+        "preparation": "Saatten sonra ücret ve iki numara grubunu dinle.",
+        "main": [
+          "Ders saat kaçta?",
+          "6",
+          "5",
+          "7",
+          "В шесть saat altıda demek.",
+          "В шесть"
+        ],
+        "detail": [
+          "Danışma numarası ne?",
+          "25-14",
+          "14-25",
+          "25-40",
+          "İlk grup 25, ikinci 14.",
+          "двадцать пять, четырнадцать"
+        ]
+      },
+      "retry": {
+        "text": "Музей. Билет стоит тридцать два рубля. Экскурсия начинается в три часа.",
+        "reading": [
+          "Bilet kaç ruble?",
+          "32",
+          "30",
+          "23",
+          "Тридцать два otuz iki demek.",
+          "тридцать два рубля"
+        ],
+        "transcript": "— Показ в семь, а касса открыта с шести. — Наш номер десять, сорок два? — Нет, сорок два, десять.",
+        "preparation": "Açılış ve gösterim saatini ayır.",
+        "main": [
+          "Gösterim saat kaçta?",
+          "7",
+          "6",
+          "10",
+          "Показ в семь gösterim yedide demek.",
+          "Показ в семь"
+        ],
+        "detail": [
+          "Düzeltilen numara ne?",
+          "42-10",
+          "10-42",
+          "42-20",
+          "Нет sonrasında doğru sıra geliyor.",
+          "сорок два, десять"
+        ]
+      },
+      "readingPurpose": "Saat, ücret ve numara için üç bölüm ayır.",
+      "readingUse": "Duyuruyu bir arkadaşına kısaca açıkla.",
+      "listeningUse": "Numarayı iki grup olarak geri söyle.",
+      "speaking": "Arkadaşın yeni bir kulübün saatini ve fiyatını söylesin. Kendi saat sorunu ve numara teyidini kur.",
+      "genres": {
+        "reading": "spor kursu ilanı",
+        "listening": "telefonla danışma",
+        "writing": "başlangıç bilgisi mesajı"
+      },
+      "recovery": {
+        "reading": "Касса saatiyle ders saatini ayır.",
+        "main": "Во сколько sorusunun ardından saati dinle.",
+        "detail": "İlk ve ikinci sayı gruplarını ayrı yaz."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "sayıyla рубль çekimi ve saat"
+      ]
+    }
+  ]
+}

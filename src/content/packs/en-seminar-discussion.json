@@ -1,0 +1,280 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.study-discussion",
+      "outcome": "B2.study-discussion",
+      "level": "B2",
+      "prerequisite": [
+        "en.education-talk",
+        "en.newsviews"
+      ],
+      "title": "Seminerde bulguyu soruya ve karşı örneğe bağla",
+      "objective": "Önceki konuşmacının bulgusunu kaynağına bağla, genellemeyi sınayan bir soru sor ve somut bir karşı örneği tartışmaya kat.",
+      "situation": "Bir yetişkin eğitimi seminerinde bir çalışma altyazılı kurs videolarını değerlendiriyor. Bir katılımcı bulgunun her dil düzeyi için geçerli olduğunu ileri sürüyor.",
+      "bridge": "Kaynağı geri söyle ve niceliği koru. Does that also hold for …? ile kapsamı sına. If so, how …? ile bir takip sorusu kur.",
+      "models": [
+        {
+          "phrase": "The finding applies to beginners, who watched videos with captions.",
+          "explanation": "Bu virgüllü örnekte beginners zaten belirli bir gruptur. Who tümcesi ek açıklamadır."
+        },
+        {
+          "phrase": "The finding applies to learners who used captions on every video.",
+          "explanation": "Virgülsüz who tümcesi sonucu hangi öğrenci alt grubuna bağladığını belirler."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "İlgi tümcesi hangi grubu seçiyor?",
+          "incorrect": "The rule applies to students, who have evening classes. (Yalnız akşam grubu kastediliyor.)",
+          "correct": "The rule applies to students who have evening classes.",
+          "explanation": "Amaç yalnız alt grubu seçmekse ilgi tümcesini virgülle ayırma.",
+          "guided": [
+            [
+              "Yalnız kayıt kullananlar: The results apply to students ___ used the recordings. (that / who)",
+              "who",
+              "that"
+            ],
+            [
+              "Yalnız ayrı testi alanlar: The model covers users ___ took the separate test. (who / where)",
+              "who"
+            ]
+          ],
+          "transfer": [
+            [
+              "Alt grup: The report includes speakers ___ used the headset. (who / that)",
+              "who",
+              "that"
+            ],
+            [
+              "Yalnız gece açık odalar: We checked rooms ___ remain open after dark. (which / that)",
+              "which",
+              "that"
+            ]
+          ],
+          "delayed": [
+            [
+              "Yalnız erken bitirenler: The support applies to people ___ finished early. (who / that)",
+              "who",
+              "that"
+            ],
+            [
+              "Sadece yaş aralığını veren anketler: Use surveys ___ list the age range. (which / that)",
+              "which",
+              "that"
+            ]
+          ]
+        },
+        {
+          "label": "Karşı örnek iddiayı gerçekten sınıyor mu?",
+          "incorrect": "Claim: All late arrivals missed the warm-up. Counterexample: A late arrival lost a pencil.",
+          "correct": "Claim: All late arrivals missed the warm-up. Counterexample: One late arrival joined before the warm-up ended.",
+          "explanation": "Örnek iddianın koşuluna uymalı ve sonucuna ters düşmeli.",
+          "guided": [
+            [
+              "“Every beginner turned captions on.” Karşı örnek: beginner with captions off / advanced learner with captions off.",
+              "beginner with captions off"
+            ],
+            [
+              "“No first-year student finished.” Karşı örnek: first-year student who finished / lecturer who finished.",
+              "first-year student who finished"
+            ]
+          ],
+          "transfer": [
+            [
+              "“All remote groups prefer evenings.” Karşı örnek: remote group preferring mornings / local morning group.",
+              "remote group preferring mornings"
+            ],
+            [
+              "“Every short talk exceeded time.” Karşı örnek: short talk on time / long talk on time.",
+              "short talk on time"
+            ]
+          ],
+          "delayed": [
+            [
+              "“No volunteers asked for help.” Karşı örnek: volunteer asking for help / coordinator asking for help.",
+              "volunteer asking for help"
+            ],
+            [
+              "“Every online class used slides.” Karşı örnek: online class without slides / in-person class without slides.",
+              "online class without slides"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "hold for",
+        "meaning": "bir durum için geçerli olmak",
+        "example": "The pattern may not hold for part-time students.",
+        "usage": "Genellemenin kapsamını yoklamak için hold for kullan.",
+        "pronunciation": "/hoʊld fəɹ/",
+        "collocations": [
+          "hold for another group",
+          "hold across several settings"
+        ],
+        "recognize": [
+          "“hold for” burada ne anlama gelir?",
+          "bir durum için geçerli olmak",
+          "bir kapıyı açık tutmak",
+          "süreyi uzatmak",
+          "Genellemenin kapsamını yoklamak için hold for kullan."
+        ],
+        "recall": [
+          "“bir durum için geçerli olmak” anlamındaki hedef ifadeyi yaz.",
+          "hold for"
+        ],
+        "use": "Bir kurs araştırmasının gece grubuna uygulanıp uygulanmadığını sor."
+      },
+      "additionalWords": [
+        {
+          "term": "offer a counterexample",
+          "meaning": "bir karşı örnek vermek",
+          "example": "I can offer a counterexample from the pilot.",
+          "usage": "Özellikle bir genellemeyle çelişen örneği ifade eder.",
+          "pronunciation": "/ˈɔfəɹ ə ˈkaʊntəɹɪɡˌzæmpəl/",
+          "collocations": [
+            "offer a clear counterexample",
+            "counterexample to a claim"
+          ],
+          "recognize": [
+            "“offer a counterexample” burada ne anlama gelir?",
+            "bir karşı örnek vermek",
+            "sonucu tekrar etmek",
+            "bir soruyu atlamak",
+            "Özellikle bir genellemeyle çelişen örneği ifade eder."
+          ],
+          "recall": [
+            "“bir karşı örnek vermek” anlamındaki hedef ifadeyi yaz.",
+            "offer a counterexample"
+          ],
+          "use": "Toplu taşıma iddiasına gerçek bir karşı örnek kur."
+        },
+        {
+          "term": "a follow-up question",
+          "meaning": "takip sorusu",
+          "example": "I have a follow-up question about the interviews.",
+          "usage": "İlk yanıttan doğan yeni ayrıntıyı sor.",
+          "pronunciation": "/ə ˈfɑloʊ ʌp ˈkwestʃən/",
+          "collocations": [
+            "ask a follow-up question",
+            "invite follow-up questions"
+          ],
+          "recognize": [
+            "“a follow-up question” burada ne anlama gelir?",
+            "takip sorusu",
+            "ilk yoklama",
+            "son karar",
+            "İlk yanıttan doğan yeni ayrıntıyı sor."
+          ],
+          "recall": [
+            "“takip sorusu” anlamındaki hedef ifadeyi yaz.",
+            "a follow-up question"
+          ],
+          "use": "Katılımcı bir sınır belirttikten sonra bunu açan takip sorusu sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "captioned clips",
+          "cue": "altyazılı kesitler"
+        },
+        {
+          "term": "comparison group",
+          "cue": "karşılaştırma grubu"
+        },
+        {
+          "term": "dropout rate",
+          "cue": "çalışmayı bırakma oranı"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir seminer için 120–160 sözcüklük söz alma notu tasarla. Ulaşım kartı verisine ilişkin sınırlı bulgu, kapsam sorusu, karşı örnek ve takip sorusu ekle.",
+        "sample": "The report shows that students who collected a weekly bus pass made more trips than they had made before. That is useful, but the comparison only describes students who enrolled in the pilot. Does the result also hold for people who take late classes? A student in my evening group collected a pass and still walked home because the last bus left before class ended. This does not reverse the overall trend. It does show why the increase cannot be assumed for every student with a pass. The timing of the last bus is an alternative explanation worth checking. Could we see a breakdown by timetable? If the evening group was too small to track, how could the next pilot recruit enough evening students to test the difference?",
+        "revision": "Sorun genel ortalamayı reddediyor mu, yoksa kapsamı mı sınırlıyor? Karşı örneği doğru iddiaya iliştir.",
+        "criteria": [
+          "Alıntılanan bulgu ve örneğin sınırı korunur.",
+          "İlk soru ve takip sorusu ayrı iş görür."
+        ]
+      },
+      "input": {
+        "text": "Study summary. Thirty learners in an evening language course watched four captioned clips. They could pause and replay the clips before a vocabulary check. The group remembered more words after the final video than after the first. There was no comparison group using the same clips without captions. The dropout rate was low, although two participants did not complete the last check. The report recommends a second trial with a different group.\n\nSeminar note. One speaker plans to argue that every learner benefits from captions. Another will bring examples from advanced learners who listened for tone rather than vocabulary. The chair asks participants to separate the result from explanations for the result. She also wants a proposal for what to compare in the next study.",
+        "reading": [
+          "Which missing comparison would help test the effect of captions?",
+          "The same clips without captions",
+          "Different films in another language",
+          "A headcount of presenters",
+          "The study has no non-caption comparison.",
+          "without captions"
+        ],
+        "transcript": "Chair: We found a vocabulary improvement in this group. Theo: Does that hold for advanced listeners, too? They might be listening for tone. Ana: One advanced learner I interviewed turned captions off to focus on stress. That example challenges the claim that every learner prefers captions, but it does not tell us whether they learn more words without them. Theo: Could the next study measure tone and vocabulary separately? Chair: Yes, and it would need another group using the same clips.",
+        "preparation": "Hangi iddianın karşı örnek aldığını ve hangi sorunun henüz açık kaldığını ayır.",
+        "main": [
+          "What claim does the interview challenge?",
+          "Every learner prefers captions",
+          "The class used video",
+          "Captions were available",
+          "A learner turned captions off.",
+          "turned captions off to focus on stress"
+        ],
+        "detail": [
+          "Which two outcomes are proposed?",
+          "Tone and vocabulary",
+          "Attendance and transport",
+          "Spelling and fees",
+          "Theo iki ayrı ölçüm öneriyor.",
+          "tone and vocabulary separately"
+        ]
+      },
+      "retry": {
+        "text": "The tree survey found more leaves on the sheltered side. It recorded young trees only. The council cannot yet tell whether the pattern holds for older trees.",
+        "reading": [
+          "Which group still needs checking?",
+          "Older trees",
+          "Young sheltered trees",
+          "All streets with no trees",
+          "Genelleme yaşça daha büyük ağaçlara açık.",
+          "pattern holds for older trees"
+        ],
+        "transcript": "Speaker: People who used the phone line received faster replies. Participant: What about callers who left a message after closing? One waited two days. Speaker: Let us compare callers within opening hours and callers outside them before we publish the result.",
+        "preparation": "Karşı örneğin hangi zamanda olduğunu ve sonraki karşılaştırmayı dinle.",
+        "main": [
+          "When did the counterexample call?",
+          "After closing",
+          "At noon",
+          "Before the trial",
+          "Bıraktığı mesaj kapanıştan sonra.",
+          "after closing"
+        ],
+        "detail": [
+          "What will the team compare?",
+          "Calls during and outside opening hours",
+          "Phone calls and paper letters",
+          "Two staff members",
+          "Saat dilimine göre ayrı gruplar karşılaştırılacak.",
+          "within opening hours and callers outside them"
+        ]
+      },
+      "readingPurpose": "Bulgu, dayanak ve açıklama olasılığı olarak üç satır ayır.",
+      "readingUse": "Bir karşı örneğin hangi genellemeyle çeliştiğini açıkla.",
+      "listeningUse": "Takip sorusunu ilk tartışmadan bağımsız biçimde yeniden söyle.",
+      "speaking": "Kurs araştırması üzerine bir seminerde söz iste. Partner bir sınır söyleyince bunun hangi öğrencilere uygulanacağını sorgula ve takip sorusu sor.",
+      "genres": {
+        "reading": "çalışma özeti ve seminer notu",
+        "listening": "çok rollü akademik tartışma",
+        "writing": "seminer söz alma taslağı"
+      },
+      "recovery": {
+        "reading": "Örneklemi ve karşılaştırma eksikliğini bul.",
+        "main": "Tercih ile sözcük başarısı ayrılıyor mu?",
+        "detail": "En son önerilen iki ölçümü dinle."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "virgüllü ve alt grup seçen ilgi tümceleri"
+      ]
+    }
+  ]
+}

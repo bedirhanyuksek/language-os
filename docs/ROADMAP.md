@@ -48,6 +48,10 @@ Gündelik iletişim, seminer ve kurmaca, ileri aracılık ve yeniden anlatım i�
 
 Standart JSON paketlerinden 11 ders, toplu ses üretimi ve katalog/rota denetimleri. [Üretim adımları, kapsam ve kalan hedefler](MILESTONE_5_SCALABLE.md)
 
+## Milestone 5 · İletişim ve kaynak dizileri
+
+İngilizce ve Rusça için 11 yeni dersle 144 hedeften 77’si çalışılabilir. [Öğrenme dizileri ve kapsam](MILESTONE_5_CURRICULUM_EXPANSION.md)
+
 ## Sonraki çalışmalar
 
 - Mevcut derslerin dil uzmanı incelemesi ve öğrenci pilotu. Doğal ses, varyant tükenince yeni onarım, aralıklı beceri kontrolleri, bağımsız yazma ve konuşma değerlendirmesi.

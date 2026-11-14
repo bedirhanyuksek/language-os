@@ -1,0 +1,270 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.relative",
+      "outcome": "B1.relative",
+      "level": "B1",
+      "prerequisite": [
+        "ru.progress"
+      ],
+      "title": "Kişi ve eşyayı ilgi tümcesiyle ayırt et",
+      "objective": "Bir kayıp eşya kaydında doğru nesneyi ve tanığı ayırt etmek için который ile gerekli ayrıntıyı ekle.",
+      "situation": "Bir tiyatronun emanet masasındaki iki benzer çantayı ayırman gerekiyor.",
+      "bridge": "Önce hangi ismi tanımladığını belirle. Который ailesi isimle cinsiyette uyum sağlar. Yan tümcede fiilin işlevine göre çekilir.",
+      "models": [
+        {
+          "phrase": "Это сумка, которая лежала под стулом.",
+          "explanation": "Сумка dişil, которая yan tümcede özne."
+        },
+        {
+          "phrase": "Это сумка, которую взял администратор.",
+          "explanation": "Aynı isim bu defa взял eyleminin nesnesi; которую gerekir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Который: özne ile nesneyi ayır",
+          "incorrect": "Это папка, которая вы принесли.",
+          "correct": "Это папка, которую вы принесли.",
+          "explanation": "Yan tümcede işi yapan вы. Getirilen папка doğrudan nesne.",
+          "guided": [
+            [
+              "Это книга, ___ лежала на полке.",
+              "которая"
+            ],
+            [
+              "Это записка, ___ я нашла под дверью.",
+              "которую"
+            ]
+          ],
+          "transfer": [
+            [
+              "Где папка, ___ стояла у окна?",
+              "которая"
+            ],
+            [
+              "Я вернул куртку, ___ взял в гардеробе.",
+              "которую"
+            ]
+          ],
+          "delayed": [
+            [
+              "Принесите ключи, ___ остались на стойке.",
+              "которые"
+            ],
+            [
+              "Мы ищем перчатку, ___ потеряла Лена.",
+              "которую"
+            ]
+          ]
+        },
+        {
+          "label": "Ayırt eden ayrıntıyı seç",
+          "incorrect": "«Ирина нашла зонт; Марк его открыл». Открыл Ирина.",
+          "correct": "Зонт открыл Марк.",
+          "explanation": "Aradığın eylemi yapan kişiyi kaynakla eşleştir.",
+          "guided": [
+            [
+              "«Олег нашёл папку; Вера передала её дежурному». Кто передал папку?",
+              "Вера"
+            ],
+            [
+              "«Чёрная чашка стояла на столе, белая — у окна». Какая чашка у окна?",
+              "белая"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Лев заметил рюкзак, который висел на крючке». Что висело?",
+              "рюкзак"
+            ],
+            [
+              "«Катя принесла записку, а Нина оставила ключ». Что принесла Катя?",
+              "записку"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Саша увидел шапку, которую забрала Ира». Кто забрал шапку?",
+              "Ира"
+            ],
+            [
+              "«Лампа, которую починил мастер, теперь у двери». Что починили?",
+              "лампу"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "отличительный признак",
+        "meaning": "ayırt edici özellik",
+        "example": "Назовите один отличительный признак сумки.",
+        "usage": "Gözlenebilir ayrıntı seç. Renk tek başına yeterli olmayabilir.",
+        "pronunciation": "отличи́тельный при́знак",
+        "collocations": [
+          "назвать отличительный признак",
+          "заметить отличительный признак"
+        ],
+        "recognize": [
+          "“отличительный признак” burada ne anlama gelir?",
+          "ayırt edici özellik",
+          "gişe bileti",
+          "telefon kodu",
+          "Gözlenebilir ayrıntı seç. Renk tek başına yeterli olmayabilir."
+        ],
+        "recall": [
+          "“ayırt edici özellik” anlamındaki hedef ifadeyi yaz.",
+          "отличительный признак"
+        ],
+        "use": "Bir kitapla aynı görünen ikinci kitabı ayıracak işaret söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "бюро находок",
+          "meaning": "kayıp eşya bürosu",
+          "example": "Пожалуйста, обратитесь в бюро находок.",
+          "usage": "Обратиться в ile kuruma başvurulur.",
+          "pronunciation": "бюро́ нахо́док",
+          "collocations": [
+            "позвонить в бюро находок",
+            "отнести в бюро находок"
+          ],
+          "recognize": [
+            "“бюро находок” burada ne anlama gelir?",
+            "kayıp eşya bürosu",
+            "tiyatro sahnesi",
+            "posta kutusu",
+            "Обратиться в ile kuruma başvurulur."
+          ],
+          "recall": [
+            "“kayıp eşya bürosu” anlamındaki hedef ifadeyi yaz.",
+            "бюро находок"
+          ],
+          "use": "Bir turistin eşyasını nereye sorması gerektiğini söyle."
+        },
+        {
+          "term": "оставить у стойки",
+          "meaning": "bankonun yanında bırakmak",
+          "example": "Он оставил футляр у стойки.",
+          "usage": "У + tamlayan, nesnenin konumunu belirtir.",
+          "pronunciation": "оста́вить у сто́йки",
+          "collocations": [
+            "оставить ключ у стойки",
+            "забрать предмет у стойки"
+          ],
+          "recognize": [
+            "“оставить у стойки” burada ne anlama gelir?",
+            "bankonun yanında bırakmak",
+            "kapıdan girmek",
+            "çantayı açmak",
+            "У + tamlayan, nesnenin konumunu belirtir."
+          ],
+          "recall": [
+            "“bankonun yanında bırakmak” anlamındaki hedef ifadeyi yaz.",
+            "оставить у стойки"
+          ],
+          "use": "Birine eşyanın son görüldüğü yeri bildir."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "ремешок",
+          "cue": "ince kayış"
+        },
+        {
+          "term": "гардероб",
+          "cue": "vestiyer"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir kütüphanede kaybolan çantayı altı cümlede tarif et. Yeri, bir ayırt edici işareti ve kimin en son gördüğünü yaz; iki farklı который biçimini kullan.",
+        "sample": "Я ищу сумку, которую оставила после встречи. Это синяя сумка, которая лежала под стулом. На ней есть белая полоска. Я ушла в семь, но Лена ещё была в зале. Она видела сумку, которую потом перенесли к стойке. Можно проверить, осталась ли она там?",
+        "revision": "Çantanın genel tarifiyle gerçekten ayıran işareti ayrı cümlelerde ver.",
+        "criteria": [
+          "İki ilgi tümcesi özne/nesne işlevine uygun.",
+          "Yer ve ayırt edici işaret geri teyit edilebilir."
+        ]
+      },
+      "input": {
+        "text": "Гардероб театра. У гардероба нашли две серые сумки. У сумки, которая лежала под стулом, сломан ремешок. Сумку, которую отдал охранник, оставили у кассы. На ней красная метка. Чтобы забрать вещь, назовите свой ряд и отличительный признак.",
+        "reading": [
+          "Kırık kayışlı çanta nerede bulundu?",
+          "Sandalyenin altında",
+          "Gişede",
+          "Sahnede",
+          "İlk çanta altında bulundu.",
+          "лежала под стулом"
+        ],
+        "transcript": "Посетитель: Я ищу сумку, которую оставил после спектакля. Сотрудница: У одной сумки сломан ремешок. Посетитель: Мой ремешок цел. На моей сумке есть красная метка. Сотрудница: Тогда спросите у кассы. Туда отнесли сумку, которую передал охранник.",
+        "preparation": "Bulunduğu yeri ve eşyayı ayıran işareti ayrı not et.",
+        "main": [
+          "Sahibinin verdiği ayırt edici işaret ne?",
+          "Kırmızı işaret",
+          "Kırık kayış",
+          "Mavi ip",
+          "Çantada kırmızı işaret var.",
+          "есть красная метка"
+        ],
+        "detail": [
+          "Hangi masaya sormalı?",
+          "Gişe",
+          "Vestiyer",
+          "Işık masası",
+          "У кассы gişe yanında demek.",
+          "спросите у кассы"
+        ]
+      },
+      "retry": {
+        "text": "У стойки нашли два чехла. Чехол, который принесла Вера, с узкой белой полосой. Футляр, который принёс Олег, без рисунка.",
+        "reading": [
+          "Beyaz çizgili kılıfı kim getirdi?",
+          "Вера",
+          "Олег",
+          "Лена",
+          "İlk kılıfı Vera getirdi.",
+          "который принесла Вера"
+        ],
+        "transcript": "В зале оставили книгу, которую я дала сестре. Книга, которая лежит у окна, не наша. Наша книга в синей обложке.",
+        "preparation": "Yanlış kitabı doğru kitaptan ayır.",
+        "main": [
+          "Pencere yanındaki kitap kimin?",
+          "Bu ailenin değil",
+          "Kız kardeşin",
+          "Konuşanın",
+          "Не наша, bizim değil demek.",
+          "не наша"
+        ],
+        "detail": [
+          "Aranan kapak ne renk?",
+          "Mavi",
+          "Beyaz",
+          "Kırmızı",
+          "В синей обложке, mavi kaplı.",
+          "в синей обложке"
+        ]
+      },
+      "readingPurpose": "İki çantanın yer ve işaret özelliklerine ayrı satır aç.",
+      "readingUse": "Bir kayıp eşya görevlisine yalnız doğru çantanın ayırt edici tarafını söyle.",
+      "listeningUse": "Muhatabın işareti tekrar edince doğru anladığını teyit et.",
+      "speaking": "Trende kalan bir kutuyu tarif et. Görevli iki benzer kutu gösterince hangisini aradığını iki ilgi tümcesiyle belirt.",
+      "genres": {
+        "reading": "kayıp eşya duyurusu",
+        "listening": "emanet masası diyaloğu",
+        "writing": "eşya bildirimi"
+      },
+      "recovery": {
+        "reading": "İlgi tümcesini bağlı olduğu isme bağla.",
+        "main": "Sahibinin reddettiği özelliği işaretle.",
+        "detail": "Gişeyi söyleyen konuşmacıya dön."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "который ile ilgi tümcesinde özne ve nesne"
+      ]
+    }
+  ]
+}

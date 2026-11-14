@@ -302,14 +302,17 @@ describe('Learning Experience v1 learner scenarios', () => {
       .map(({ exercise }) => [exercise.id, 'Bilmiyorum']))
     let state = start(course, placementErrors)
     state = { ...state, profile: { ...state.profile, days: [1, 2, 3, 4, 5], minutes: 5, target: 'C1' } }
+    const beginnerOnlyEnglish = new Set(['en.rebook', 'en.detour', 'en.symptoms', 'en.appointment', 'en.invite', 'en.host', 'en.instructions'])
+    const route = course.unit.lessons.filter(({ id, objective }) => objective.level !== 'C2' &&
+      (course.language === 'ru' || (objective.level !== 'A1' && !beginnerOnlyEnglish.has(id))))
     const learningDays = new Set<string>()
     let routeEnd = false
-    for (let day = 0; day < 650 && !routeEnd; day++) {
+    for (let day = 0; day < route.length * 24 && !routeEnd; day++) {
       const now = new Date(Date.parse(at) + day * 86_400_000).toISOString()
       for (let block = 0; block < 10; block++) {
         const plan = dailyPlan(state, course, now, 'Europe/Istanbul')
         if (plan.kind === 'complete') {
-          routeEnd = course.unit.lessons.filter(({ id }) => !['en.identity', 'en.cafe', 'en.station', 'en.rebook', 'en.detour', 'en.symptoms', 'en.appointment', 'en.invite', 'en.host', 'en.home', 'en.implication', 'en.mediation', 'ru.implication', 'ru.recast'].includes(id)).every((lesson) => masteryFor(state, lesson).status === 'retained')
+          routeEnd = route.every((lesson) => masteryFor(state, lesson).status === 'retained')
           break
         }
         if (plan.kind === 'out_of_scope' || plan.kind === 'budget' || plan.kind === 'rest') break
@@ -332,6 +335,6 @@ describe('Learning Experience v1 learner scenarios', () => {
     expect(routeEnd, JSON.stringify({ learningDays: learningDays.size, statuses: course.unit.lessons.map((lesson) => [lesson.id, masteryFor(state, lesson).status]), tail: state.activity.slice(-5), phases: state.attempts.slice(-8).map(({ context, exerciseId }) => [context, exerciseId]) })).toBe(true)
     expect(learningDays.size).toBeGreaterThanOrEqual(40)
     expect(state.speakingAssessments).toHaveLength(0)
-    expect(state.attempts.filter(({ context }) => context === 'revision')).toHaveLength(course.unit.lessons.length - (course.language === 'en' ? 12 : 2))
+    expect(state.attempts.filter(({ context }) => context === 'revision')).toHaveLength(route.length)
   })
 })

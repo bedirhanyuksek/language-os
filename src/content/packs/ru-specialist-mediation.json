@@ -1,0 +1,276 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.mediate",
+      "outcome": "C2.mediation",
+      "level": "C2",
+      "prerequisite": [
+        "ru.specialist",
+        "ru.participle"
+      ],
+      "title": "Uzmanlar arasında yöntem ve karar sınırlarına aracılık et",
+      "objective": "İki uzman grubunun aynı sözcükle ayrı ölçütleri anlattığını ortaya çıkar, terimleri karşılıklı yeniden çerçevele ve koşullu ortak karar öner.",
+      "situation": "Bir okul bahçesinin ağır yağışta kullanım iznini hidrologlar ve erişilebilirlik danışmanları tartışıyor. “Безопасно” sözcüğü iki grupta farklı ölçüt taşıyor.",
+      "bridge": "Önce ortak kelimeyi değil ortak ölçü birimini teyit et. Под … имеется в виду ile terimi konuşmacıya bağla. Лишь при ile koşulu, при том что ile göz ardı edilmemesi gereken bilgiyi ayır.",
+      "models": [
+        {
+          "phrase": "Под допустимым уровнем гидролог имеет в виду глубину воды на дорожке.",
+          "explanation": "Alt ölçütü sahibine bağlayan açıklama. Başka uzman bunu eğim olarak kullanabilir."
+        },
+        {
+          "phrase": "Доступ можно восстановить лишь при условии, что проверят покрытие.",
+          "explanation": "Yalnızca gerçekleşirse açılabileceğini söyler. İzin verildiğini ima etmez."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "İki tanımı üstü kapalı biçimde birleştirme",
+          "incorrect": "Для обеих групп «открыто» значит, что всё проверено.",
+          "correct": "Для диспетчера «открыто» значит, что ворота не заперты; для инспектора — что маршрут проверен.",
+          "explanation": "Her tanımı kendi kaynağıyla yaz. Tek bir ortak karşılık türetme.",
+          "guided": [
+            [
+              "«Норма» для кассира — сумма, для врача — показатель. Что имеет в виду врач?",
+              "показатель"
+            ],
+            [
+              "«Вход» для водителя — съезд, для посетителя — дверь. Что имеет в виду водитель?",
+              "съезд",
+              "съезд с дороги"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Объект» для юриста — договор, для инженера — здание. Что имеет в виду инженер?",
+              "здание"
+            ],
+            [
+              "«Запас» для службы — минуты, для склада — детали. Что имеет в виду склад?",
+              "детали"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Стабильность» для геолога — грунт, для администратора — график. Что имеет в виду администратор?",
+              "график"
+            ],
+            [
+              "«Модель» для техника — прибор, для исследователя — формула. Что имеет в виду исследователь?",
+              "формулу"
+            ]
+          ],
+          "skill": "reading"
+        },
+        {
+          "label": "Kısıtı bağlayıcısıyla koru",
+          "incorrect": "Зал можно открыть лишь после того, что проверят выход.",
+          "correct": "Зал можно открыть лишь после того, как проверят выход.",
+          "explanation": "Zamanda после того, как sıralamayı; açık koşulda при условии, что gereği bildirir.",
+          "guided": [
+            [
+              "Лабораторию откроют после того, ___ проверят вентиляцию.",
+              "как"
+            ],
+            [
+              "Отчёт примут при условии, ___ приложат таблицу.",
+              "что"
+            ]
+          ],
+          "transfer": [
+            [
+              "Смету пересмотрят после того, ___ обновят тариф.",
+              "как"
+            ],
+            [
+              "Движение разрешат при условии, ___ мост выдержит испытание.",
+              "что"
+            ]
+          ],
+          "delayed": [
+            [
+              "Протокол подпишут после того, ___ сверят подписи.",
+              "как"
+            ],
+            [
+              "Маршрут подтвердят при условии, ___ останется свободным проход.",
+              "что"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "свести позиции",
+        "meaning": "tarafların görüşlerini yakınlaştırmak",
+        "example": "Нам удалось свести позиции двух служб.",
+        "usage": "Ortak bir adım bulmak bütün ayrımların kalktığı anlamına gelmez.",
+        "pronunciation": "свести́ пози́ции",
+        "collocations": [
+          "свести позиции сторон",
+          "попытаться свести позиции"
+        ],
+        "recognize": [
+          "“свести позиции” burada ne anlama gelir?",
+          "tarafların görüşlerini yakınlaştırmak",
+          "tutanağı yok etmek",
+          "tarih değiştirmek",
+          "Ortak bir adım bulmak bütün ayrımların kalktığı anlamına gelmez."
+        ],
+        "recall": [
+          "“tarafların görüşlerini yakınlaştırmak” anlamındaki hedef ifadeyi yaz.",
+          "свести позиции"
+        ],
+        "use": "Ulaşım denetimindeki iki tarafın ayrımını koruyarak ortak adım öner."
+      },
+      "additionalWords": [
+        {
+          "term": "пороговое значение",
+          "meaning": "eşik değer",
+          "example": "Комиссия уточнила пороговое значение измерения.",
+          "usage": "Eşik kararın değişebileceği değerdir. Birimini açık söyle.",
+          "pronunciation": "поро́говое значе́ние",
+          "collocations": [
+            "установить пороговое значение",
+            "превысить пороговое значение"
+          ],
+          "recognize": [
+            "“пороговое значение” burada ne anlama gelir?",
+            "eşik değer",
+            "yıllık rapor",
+            "sınırsız değer",
+            "Eşik kararın değişebileceği değerdir. Birimini açık söyle."
+          ],
+          "recall": [
+            "“eşik değer” anlamındaki hedef ifadeyi yaz.",
+            "пороговое значение"
+          ],
+          "use": "İki ekip ayrı birim kullanıyorsa hangisini teyit edeceğini belirt."
+        },
+        {
+          "term": "с оговоркой",
+          "meaning": "çekinceyle",
+          "example": "Комиссия согласилась с оговоркой о сроке.",
+          "usage": "Оговорка kararın değişmez olan kapsamına sınır koyar.",
+          "pronunciation": "с огово́ркой",
+          "collocations": [
+            "согласиться с оговоркой",
+            "принять рекомендацию с оговоркой"
+          ],
+          "recognize": [
+            "“с оговоркой” burada ne anlama gelir?",
+            "çekinceyle",
+            "kesin koşulsuz",
+            "sessiz kalarak",
+            "Оговорка kararın değişmez olan kapsamına sınır koyar."
+          ],
+          "recall": [
+            "“çekinceyle” anlamındaki hedef ifadeyi yaz.",
+            "с оговоркой"
+          ],
+          "use": "Bir çözümü süre veya veri şartıyla nasıl kabul edeceğini söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "уклон",
+          "cue": "eğim"
+        },
+        {
+          "term": "водоотвод",
+          "cue": "su tahliyesi"
+        },
+        {
+          "term": "нескользкое покрытие",
+          "cue": "kaydırmaz yüzey"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir klinik girişinin açılışında ölçüm ekibi “проход свободен” ile genişliği, personel ise vardiyada yardım bulunduğunu kastediyor. İki gruba ortak 130–170 sözcüklük aracılık notu yaz. Yeni vardiya bilgisinin kararı değiştirmesine izin ver.",
+        "sample": "В протоколе обе службы называют проход свободным, но опираются на разные признаки. Инженеры имеют в виду, что ширина дорожки соответствует измеренному нормативу. Администратор говорит о возможности пройти с помощью сотрудника у двери. Эти утверждения можно совместить, если отдельно обозначить, кто проверил ширину и когда помощь действительно доступна. Сейчас подтверждена дневная смена, а вечерняя ещё не распределена. Я предлагаю указать дневной маршрут и номер дежурного, не объявляя вечерний вход открытым. Если наймут сотрудника на вечер, нужно будет повторно проверить не ширину, а время работы помощи и способ вызова. Если сотрудника не найдут, следует предложить самостоятельный маршрут через соседний вход и заранее поставить указатель. Расписание помощи следует разместить у обоих входов. После первой недели попросим пользователей сообщить, на каком этапе им пришлось ждать. Это поможет решить, что проверять дальше, а не только уточнить формулировку на двери.",
+        "revision": "Okuyucu hangi eşik için hangi grubun sorumluluğu olduğunu bulabilsin. Yeni vardiya bilgisi yokken kesin onay ima eden cümleyi düzelt.",
+        "criteria": [
+          "Ortak kelimenin iki farklı anlamı kaynaklarıyla ayrılıyor.",
+          "Ara karar, koşul ve yeniden kontrol eşiği korunuyor."
+        ]
+      },
+      "input": {
+        "text": "Фрагмент гидрологического заключения. После ливня водоотвод справляется с обычным потоком. На центральной дорожке вода не поднимается выше принятого порога. В отчёте слово «безопасно» относится к глубине воды рядом с канавой. Замеров сцепления колёс с мокрым покрытием группа не проводила.\n\nОтдельная записка консультанта по доступности. Отсутствие глубокой воды не гарантирует самостоятельного прохода. На повороте есть поперечный уклон, а нескользкое покрытие проложено только до первого перекрёстка. Северный проход шире, но после дождя там временно стоит контейнер. Его обещают убрать к вечеру.\n\nПротокол. Школа не хочет отменять утреннее мероприятие, однако общий вывод о доступности делать рано. Стороны согласились проверить центральную дорожку с пользователями колясок и уточнить, убрали ли контейнер. До проверки можно объявить только маршрут с сопровождением от главных ворот. Новое измерение должно показать не просто отсутствие луж, а возможность двигаться по повороту и остановиться без помощи. Если такого прохода нет, группе предложат другое место встречи с равным временем доступа.",
+        "reading": [
+          "Hangi iki koşul aynı “güvenli” kararında ayrı kalmalı?",
+          "Su derinliği ve kaymadan bağımsız geçiş",
+          "Etkinlik ücreti ve kapı rengi",
+          "Sadece yol genişliği ve tarih",
+          "Birinci ekip derinlik, ikinci ekip tek başına güvenli hareket ölçütüne bakar.",
+          "Замеров сцепления колёс с мокрым покрытием группа не проводила"
+        ],
+        "transcript": "Модератор: Оба заключения называют проход безопасным. Можно объявить, что он открыт для всех? Гидролог: Моя группа измерила глубину воды. Мы не проверяли, скользит ли поверхность на повороте. Консультант: Я могу подтвердить проход с сопровождающим по центральной дорожке. Самостоятельный путь пока не проверен. Директор: Контейнер с северной дорожки обещали убрать сегодня, но подтверждения у нас нет. Модератор: Тогда кто проверит северный вход, если контейнер всё-таки уберут? Консультант: Я проверю уклон и поверхность, а инженер запишет ширину. Модератор: До этого сообщаем о сопровождении и уточняем время. Если проверка пройдёт, объявим независимый маршрут отдельным сообщением. Никто не будет читать обещание о контейнере как разрешение пройти.",
+        "preparation": "Sözcüğü kimin hangi sınırda kullandığını not al; son güncelleme zincirini ayrı tut.",
+        "main": [
+          "Şimdilik ne ilan edilebilir?",
+          "Refakatli geçiş",
+          "Herkes için bağımsız kuzey geçişi",
+          "Hiçbir girişin olmadığı",
+          "Geçici ortak karar refakatli rota.",
+          "сообщаем о сопровождении"
+        ],
+        "detail": [
+          "Bağımsız rota ne zaman ilan edilir?",
+          "Kontrol başarılıysa ayrı bir duyuruda",
+          "Konteyner sözü verildiğinde",
+          "Mühendis saat söyleyince",
+          "İlan başarılı kontrole bağlı.",
+          "Если проверка пройдёт"
+        ]
+      },
+      "retry": {
+        "text": "В отчёте о зале «готовность» означает работающий проектор. В письме организатора она означает, что открыт вход для участников. Ключ от входа пока не доставили.",
+        "reading": [
+          "Hangi ölçüt henüz karşılanmadı?",
+          "Katılımcı girişinin açılması",
+          "Projektörün çalışması",
+          "Raporun hazırlanması",
+          "Anahtar gelmediği için giriş açık değil.",
+          "Ключ от входа пока не доставили"
+        ],
+        "transcript": "Врач назвал запись подтверждённой после проверки направления. Регистратор так называет запись, для которой уже назначено время. В направлении всё верно, но свободного времени пока нет. Сообщим пациенту оба факта отдельно.",
+        "preparation": "Kurumların teyit anlamını ayır.",
+        "main": [
+          "Hangisi tamamlandı?",
+          "Sevk belgesinin kontrolü",
+          "Randevu saatinin atanması",
+          "Hastanın gelişi",
+          "Belge doğru, saat henüz yok.",
+          "В направлении всё верно"
+        ],
+        "detail": [
+          "İki bilgiyi nasıl aktaracaklar?",
+          "Ayrı ayrı",
+          "Tek kesin randevu olarak",
+          "Yalnız yazılı şartla",
+          "Оба факта отдельно deniyor.",
+          "оба факта отдельно"
+        ]
+      },
+      "readingPurpose": "İki grubun aynı kelimeye bağladığı ölçütleri ve yeni riskleri tabloya ayır.",
+      "readingUse": "Kurula gelip bir ölçümün kapsamını soran veliye kararın şimdi ve sonra ne anlama geldiğini söyle.",
+      "listeningUse": "Bir üçüncü kişi senden “açık mı?” diye ikili cevap isteyince iki koşulu kısa biçimde yeniden söyle.",
+      "speaking": "Halka açık tesiste iki uzmana farklı “hazır” tanımlarını açıklat. Biri yeni bir ölçüm sonucu verince ortak geçici kararı değiştir ve hangi konuda hâlâ çekince olduğunu belirt.",
+      "genres": {
+        "reading": "teknik görüş, erişim notu ve tutanak",
+        "listening": "çok paydaşlı uzman arabuluculuğu",
+        "writing": "iki uzman grubu için aracı notu"
+      },
+      "recovery": {
+        "reading": "Derinlik ve yüzey ölçümü aynı paragrafta mı?",
+        "main": "Bağımsız ile refakatli ifadeleri ayır.",
+        "detail": "İzin değil, son kontrol durumunu bul."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "под … имеется в виду ile tanım; лишь ve karmaşık koşul"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.instructions",
+      "outcome": "A2.instructions",
+      "level": "A2",
+      "prerequisite": [
+        "ru.directions",
+        "ru.forms"
+      ],
+      "title": "Kısa kullanım talimatını birine aktar",
+      "objective": "İşlem sırasını, gerekli eşyayı ve hata durumunda yardım yolunu kısa yönergede aktar.",
+      "situation": "Bir mahalle kütüphanesinin kartlı kitap iade cihazını ilk kez kullanacaksın.",
+      "bridge": "Сначала ile başla, потом ile devam et. Перед ardından araç hâli gelebilir. İstisna için если ile ayrı cümle kur.",
+      "models": [
+        {
+          "phrase": "Перед выдачей поднесите карту к экрану.",
+          "explanation": "Перед + araç hâli. Выдача → выдачей. К экрану hareketin yönünü belirtir."
+        },
+        {
+          "phrase": "Если экран не работает, обратитесь к дежурному.",
+          "explanation": "Если’den sonra koşul gelir. Eylemi ayrı söyle ve kime başvuracağını belirt."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Перед + araç hâli",
+          "incorrect": "Перед выдача проверьте номер.",
+          "correct": "Перед выдачей проверьте номер.",
+          "explanation": "Перед bir isimle kullanıldığında araç hâli ister.",
+          "guided": [
+            [
+              "Перед ___ (оплата) проверьте сумму.",
+              "оплатой"
+            ],
+            [
+              "Перед ___ (встреча) откройте письмо.",
+              "встречей"
+            ]
+          ],
+          "transfer": [
+            [
+              "Перед ___ (поездка) купите билет.",
+              "поездкой"
+            ],
+            [
+              "Перед ___ (регистрация) приготовьте паспорт.",
+              "регистрацией"
+            ]
+          ],
+          "delayed": [
+            [
+              "Перед ___ (урок) выключите звук.",
+              "уроком"
+            ],
+            [
+              "Перед ___ (обед) вымойте руки.",
+              "обедом"
+            ]
+          ]
+        },
+        {
+          "label": "Yardım adımı koşula bağlı",
+          "incorrect": "Если карта не работает, повторите номер комнаты.",
+          "correct": "Если карта не работает, обратитесь к дежурному.",
+          "explanation": "Metinde yazan arıza ve yardım adımını eşleştir.",
+          "guided": [
+            [
+              "«Если нет билета, покажите письмо». Что показать?",
+              "письмо"
+            ],
+            [
+              "«Если коробка тяжёлая, возьмите тележку». Что взять?",
+              "тележку"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Если дверь закрыта, нажмите кнопку». Что нажать?",
+              "кнопку"
+            ],
+            [
+              "«Если нет ключа, позвоните администратору». Кому позвонить?",
+              "администратору"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Если машина занята, подождите в холле». Где ждать?",
+              "в холле"
+            ],
+            [
+              "«Если нет этикетки, напишите номер». Что написать?",
+              "номер"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "поднести карту",
+        "meaning": "kartı yaklaştırmak",
+        "example": "Поднесите карту к синему экрану.",
+        "usage": "Поднести + nesne ve к + yönelme, kartı nereye yaklaştıracağını gösterir.",
+        "pronunciation": "поднести́ ка́рту",
+        "collocations": [
+          "поднести карту к экрану",
+          "поднести карту к считывателю"
+        ],
+        "recognize": [
+          "“поднести карту” burada ne anlama gelir?",
+          "kartı yaklaştırmak",
+          "kartı postalamak",
+          "kartı kesmek",
+          "Поднести + nesne ve к + yönelme, kartı nereye yaklaştıracağını gösterir."
+        ],
+        "recall": [
+          "“kartı yaklaştırmak” anlamındaki hedef ifadeyi yaz.",
+          "поднести карту"
+        ],
+        "use": "Spor salonundaki giriş cihazının ilk adımını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "обратиться к дежурному",
+          "meaning": "nöbetçi görevliye başvurmak",
+          "example": "Если дверь закрыта, обратитесь к дежурному.",
+          "usage": "К дежурному yönelme hâli alır.",
+          "pronunciation": "обрати́ться к дежу́рному",
+          "collocations": [
+            "обратиться к дежурному по залу",
+            "можно обратиться к дежурному"
+          ],
+          "recognize": [
+            "“обратиться к дежурному” burada ne anlama gelir?",
+            "nöbetçi görevliye başvurmak",
+            "masaya eşya bırakmak",
+            "kapıyı kilitlemek",
+            "К дежурному yönelme hâli alır."
+          ],
+          "recall": [
+            "“nöbetçi görevliye başvurmak” anlamındaki hedef ifadeyi yaz.",
+            "обратиться к дежурному"
+          ],
+          "use": "Cihaz arızasında ziyaretçiye yardım seçeneği öner."
+        },
+        {
+          "term": "забрать чек",
+          "meaning": "fişi almak",
+          "example": "После оплаты заберите чек.",
+          "usage": "Забрать bir şeyi yanına almak; emir biçimi заберите.",
+          "pronunciation": "забра́ть чек",
+          "collocations": [
+            "не забудьте забрать чек",
+            "забрать чек после оплаты"
+          ],
+          "recognize": [
+            "“забрать чек” burada ne anlama gelir?",
+            "fişi almak",
+            "bilet kesmek",
+            "kapıyı açmak",
+            "Забрать bir şeyi yanına almak; emir biçimi заберите."
+          ],
+          "recall": [
+            "“fişi almak” anlamındaki hedef ifadeyi yaz.",
+            "забрать чек"
+          ],
+          "use": "Kafede ödeme sonrasında fiş için kısa hatırlatma ver."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "штрихкод",
+          "cue": "barkod"
+        },
+        {
+          "term": "лоток",
+          "cue": "hazne"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir müzede sesli rehber ödünç alma adımlarını dört cümleyle aktar. Bir ön koşul ve bir arıza alternatifi ekle.",
+        "sample": "Сначала поднесите билет к экрану. Перед выдачей выберите язык. Потом заберите плеер из лотка. Если лоток пуст, обратитесь к дежурному.",
+        "revision": "Arıza adı ve izlenecek adımı ayrı cümlede koru.",
+        "criteria": [
+          "Normal işlem doğru sırada.",
+          "Arıza adımında doğru yardım yolu var."
+        ]
+      },
+      "input": {
+        "text": "Возврат книги. Сначала поднесите карту к экрану. Потом найдите штрихкод на книге. Положите книгу в лоток. Если лоток не открывается, передайте книгу дежурному.",
+        "reading": [
+          "İlk hangi nesne kullanılır?",
+          "Kart",
+          "Kitap",
+          "Fiş",
+          "Сначала ardından kart geliyor.",
+          "Сначала поднесите карту"
+        ],
+        "transcript": "— Сначала карта. Потом покажите штрихкод. — Лоток не открывается. — Тогда передайте книгу дежурному у окна. Он запишет её номер.",
+        "preparation": "Normal sıra ve arıza sonrasını ayır.",
+        "main": [
+          "Karttan sonra hangisi gösterilir?",
+          "Barkod",
+          "Fiş",
+          "Anahtar",
+          "Покажите штрихкод.",
+          "Потом покажите штрихкод"
+        ],
+        "detail": [
+          "Görevli nerede?",
+          "Pencerenin yanında",
+          "Çıkışta",
+          "Arka salonda",
+          "У окна pencere yanında demek.",
+          "дежурному у окна"
+        ]
+      },
+      "retry": {
+        "text": "Перед оплатой проверьте сумму на экране. Если сумма верная, нажмите зелёную кнопку и заберите чек.",
+        "reading": [
+          "Ödemeden önce ne kontrol edilir?",
+          "Tutar",
+          "Oda numarası",
+          "Sıra numarası",
+          "Проверьте сумму tutarı kontrol et demek.",
+          "проверьте сумму"
+        ],
+        "transcript": "Перед входом положите сумку в шкаф. Потом возьмите ключ. Если свободного шкафа нет, попросите корзину.",
+        "preparation": "Dolap varsa ve yoksa ne yapılır?",
+        "main": [
+          "Çantayı nereye koymalı?",
+          "Dolaba",
+          "Kasaya",
+          "Masaya",
+          "В шкаф dolaba demek.",
+          "сумку в шкаф"
+        ],
+        "detail": [
+          "Dolap yoksa ne istenir?",
+          "Sepet",
+          "Kart",
+          "Su",
+          "Корзину sepet nesnesidir.",
+          "попросите корзину"
+        ]
+      },
+      "readingPurpose": "Normal sıraya 1, 2, 3 yaz. Arıza adımına ayrı ok çiz.",
+      "readingUse": "Yönergeyi geç gelen arkadaşına kendi sözcüklerinle söyle.",
+      "listeningUse": "Görevliye ulaşma adımını tek cümlede aktar.",
+      "speaking": "Yeni bir çamaşır makinesi için iki normal adım ve bir arıza cevabı ver. Muhatabın bir adımı yanlış sırada söyleyince düzelt.",
+      "genres": {
+        "reading": "kütüphane cihaz yönergesi",
+        "listening": "iade sırasında kısa danışma",
+        "writing": "müze cihazı yönergesi"
+      },
+      "recovery": {
+        "reading": "Сначала ile başlayan kart adımını seç.",
+        "main": "Потом sonrasını dinle.",
+        "detail": "Görevlinin yerini у ile başlayan öbekte bul."
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "перед + araç hâli ve koşullu talimat"
+      ]
+    }
+  ]
+}

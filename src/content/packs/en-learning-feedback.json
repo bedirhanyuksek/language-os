@@ -1,0 +1,270 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.education-talk",
+      "outcome": "B1.education-talk",
+      "level": "B1",
+      "prerequisite": [
+        "en.interaction"
+      ],
+      "title": "Öğrenme deneyimini anlat ve geri bildirim iste",
+      "objective": "Önceki bir denemeyi ve gelişen zorluğu belirt, açık bir geri bildirim sorusu sor ve yeniden deneme adımı belirle.",
+      "situation": "Bir yetişkin kursunda yaptığın ilk görsel sunumu öğretmeninle değerlendiriyorsun.",
+      "bridge": "Davranışı somutlaştır: I found it hard to … Ardından hangi geri bildirime ihtiyacın olduğunu ask for ile sınırla.",
+      "models": [
+        {
+          "phrase": "I found it hard to explain the first chart.",
+          "explanation": "It, to explain ile açılacak görevi ileriye taşır. Hard burada zor anlamında."
+        },
+        {
+          "phrase": "Could you tell me which example was unclear?",
+          "explanation": "Dolaylı soruda which example was unclear bir bütün. Doğrudan is/was ile ayrıca soru kurma."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Found it hard to + eylem",
+          "incorrect": "I found hard to explain the chart.",
+          "correct": "I found it hard to explain the chart.",
+          "explanation": "Found it hard ardından to + yalın fiil. It, sonra gelen eylemi tutar.",
+          "guided": [
+            [
+              "I found it ___ (hard / hardly) to answer the last question.",
+              "hard"
+            ],
+            [
+              "I found it hard ___ (to describe / describing) the first picture.",
+              "to describe"
+            ]
+          ],
+          "transfer": [
+            [
+              "We found ___ hard to hear the instructions from the back.",
+              "it"
+            ],
+            [
+              "She found it hard to ___ (justify) her choices in the interview.",
+              "justify"
+            ]
+          ],
+          "delayed": [
+            [
+              "At rehearsal I found ___ hard to speak without notes.",
+              "it"
+            ],
+            [
+              "They found it ___ (easy / easily) to follow the second example.",
+              "easy"
+            ]
+          ]
+        },
+        {
+          "label": "Geri bildirim sorusunu somutlaştır",
+          "incorrect": "Was it fine?",
+          "correct": "At which point did my explanation stop making sense?",
+          "explanation": "Kişilik veya genel beğeni yerine gözlenebilen bir işi ve yeri sor.",
+          "guided": [
+            [
+              "Which question gives usable feedback on timing: “Did I rush the final step?” / “Was I good?”",
+              "Did I rush the final step?"
+            ],
+            [
+              "Which asks how the listener understood a picture: “What did the arrows mean to you?” / “How old are you?”",
+              "What did the arrows mean to you?"
+            ]
+          ],
+          "transfer": [
+            [
+              "You need to know where a listener got lost: “Which instruction was unclear?” / “Was I nervous?”",
+              "Which instruction was unclear?"
+            ],
+            [
+              "For a draft report, ask which comparison needs a unit: “Where should I add a unit?” / “Do you like the report?”",
+              "Where should I add a unit?"
+            ]
+          ],
+          "delayed": [
+            [
+              "For a story, check cause rather than length: “Why did you think Mina left?” / “How many lines?”",
+              "Why did you think Mina left?"
+            ],
+            [
+              "After a map rehearsal, check route choice: “Which turn did you expect after the bridge?” / “Was the map blue?”",
+              "Which turn did you expect after the bridge?"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "ask for feedback",
+        "meaning": "geri bildirim istemek",
+        "example": "I asked for feedback on the opening of my talk.",
+        "usage": "On ile geri bildirimin konusunu belirt.",
+        "pronunciation": "/æsk fəɹ ˈfidbæk/",
+        "collocations": [
+          "ask for specific feedback",
+          "ask for feedback on a draft"
+        ],
+        "recognize": [
+          "“ask for feedback” burada ne anlama gelir?",
+          "geri bildirim istemek",
+          "not istemek",
+          "görev dağıtmak",
+          "On ile geri bildirimin konusunu belirt."
+        ],
+        "recall": [
+          "“geri bildirim istemek” anlamındaki hedef ifadeyi yaz.",
+          "ask for feedback"
+        ],
+        "use": "Bir kütüphane sunumunda hangi kısma ilişkin geri bildirim istediğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "a rough draft",
+          "meaning": "ilk ham taslak",
+          "example": "I brought a rough draft to the workshop.",
+          "usage": "Rough burada henüz geliştirilmemiş anlamında.",
+          "pronunciation": "/ə ɹʌf dɹæft/",
+          "collocations": [
+            "bring a rough draft",
+            "revise a rough draft"
+          ],
+          "recognize": [
+            "“a rough draft” burada ne anlama gelir?",
+            "ilk ham taslak",
+            "son baskı",
+            "öğrenme planı",
+            "Rough burada henüz geliştirilmemiş anlamında."
+          ],
+          "recall": [
+            "“ilk ham taslak” anlamındaki hedef ifadeyi yaz.",
+            "a rough draft"
+          ],
+          "use": "Ders arkadaşına ilk yazdığın metni nasıl tanıtacağını söyle."
+        },
+        {
+          "term": "give it another go",
+          "meaning": "bir daha denemek",
+          "example": "I will change the title and give it another go.",
+          "usage": "Gündelik bir yeniden deneme ifadesi.",
+          "pronunciation": "/ɡɪv ɪt əˈnʌðəɹ ɡoʊ/",
+          "collocations": [
+            "give the talk another go",
+            "give the exercise another go"
+          ],
+          "recognize": [
+            "“give it another go” burada ne anlama gelir?",
+            "bir daha denemek",
+            "konuyu kapatmak",
+            "birine ödül vermek",
+            "Gündelik bir yeniden deneme ifadesi."
+          ],
+          "recall": [
+            "“bir daha denemek” anlamındaki hedef ifadeyi yaz.",
+            "give it another go"
+          ],
+          "use": "Bir sonraki denemenin ne zaman olacağını belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "pause",
+          "cue": "kısa durak"
+        },
+        {
+          "term": "caption",
+          "cue": "görsel altı açıklaması"
+        }
+      ],
+      "writing": {
+        "prompt": "Geçen hafta yaptığın kısa bir kurs gösterimini 75–105 sözcükle değerlendir. İki gözlem, bir hedefli soru ve yeniden deneme adımı ekle.",
+        "sample": "Last week I showed our group how to repair a small hole in a jacket. Everyone saw the first stitch, but I found it hard to explain how to finish the thread. I moved too quickly and the people at the back asked me to repeat the last step. Could you tell me exactly where I stopped being clear? Next Wednesday I will use a larger needle and pause after each move, then ask one person to show the final step back to me.",
+        "revision": "Geri bildirim sorusunu tek gözlenebilir davranışa odakla ve tekrarın işe yaradığını nasıl anlayacağını ekle.",
+        "criteria": [
+          "Deneyimde somut zorluk ve güçlü yan ayrı.",
+          "Hedefli soru yeniden denemeye bağlanır."
+        ]
+      },
+      "input": {
+        "text": "Learning journal. On Tuesday I explained a chart with three bars. I spoke slowly at the start, but the group could not see what the green bar meant. My partner said the caption was too small. She also noticed that I did not pause after asking a question. Next time I will label the bars directly and give the group time to answer.",
+        "reading": [
+          "Öğrenci renkli sütun sorununu nasıl düzeltecek?",
+          "Sütunları doğrudan etiketleyecek",
+          "Yeşili kaldıracak",
+          "Grafiği gizleyecek",
+          "Planı sütunlara doğrudan etiket eklemek.",
+          "label the bars directly"
+        ],
+        "transcript": "Tutor: What did you find hard about the chart? Learner: People could see the bars, but I lost them when I changed units. Tutor: Show one unit at a time. Could you also pause before you show the final value? Learner: I can try that. Which example made the change easiest to follow? Tutor: The one about a family’s weekly budget.",
+        "preparation": "Zorluğu ve öğretmenin iki önerisini ayır.",
+        "main": [
+          "Öğrencinin güçlüğü ne?",
+          "Birim değişiminde dinleyici koptu",
+          "Sütunlar hiç görünmedi",
+          "Aile örneği yoktu",
+          "Dinleyiciler birim değişiminde zorlandı.",
+          "lost them when I changed units"
+        ],
+        "detail": [
+          "Hangi örnek kolay takip edildi?",
+          "Haftalık aile bütçesi",
+          "Aylık aidat",
+          "Yıllık okul bütçesi",
+          "Öğretmen haftalık bütçeyi işaret etti.",
+          "family’s weekly budget"
+        ]
+      },
+      "retry": {
+        "text": "Workshop note. Please bring one rough draft. Underline a part that worries you. Ask a partner one question about that part, then revise it.",
+        "reading": [
+          "Öğrenci hangi kısmı işaretleyecek?",
+          "Kaygı duyduğu yeri",
+          "İlk satırı hep",
+          "Partnerin adını",
+          "Underline sonrasındaki sınırlamayı izle.",
+          "a part that worries you"
+        ],
+        "transcript": "I gave the recipe another go. I wrote the oven temperature on the board. This time everyone knew when to turn the oven on, but two people still mixed up the bowls. Next time I will use bowls of different colours.",
+        "preparation": "Düzeltilen ve süren sorunu ayrı dinle.",
+        "main": [
+          "Bu defa ne anlaşıldı?",
+          "Fırının ne zaman açılacağı",
+          "Kapların sırası",
+          "Öğretmenin yokluğu",
+          "İlerleyen nokta fırın zamanı.",
+          "when to turn the oven on"
+        ],
+        "detail": [
+          "Kalan sorun için ne değiştirecek?",
+          "Kap renklerini",
+          "Fırın ısısını",
+          "Sınıfı",
+          "Farklı renk kullanacak.",
+          "bowls of different colours"
+        ]
+      },
+      "readingPurpose": "Hata, geri bildirim ve yeni denemeyi ayrı satıra al.",
+      "readingUse": "Yeni görev için işe yarayacak bir danışma sorusu yaz.",
+      "listeningUse": "Güçlük ve en yararlı öneriyi bir arkadaşına aktar.",
+      "speaking": "Bir arkadaşına son denemende gerçekleşen bir olayı anlat. Partnerin belirsiz geri bildirim verirse hangi adımı değiştireceğini netleştiren takip sorusu sor.",
+      "genres": {
+        "reading": "öğrenme günlüğü",
+        "listening": "eğitmen görüşmesi",
+        "writing": "yansıtıcı kurs notu"
+      },
+      "recovery": {
+        "reading": "Sorunla çözümün aynı olduğundan emin ol.",
+        "main": "Öğrencinin kendi sözüne dön.",
+        "detail": "Budget öncesindeki kaç günlük dönem?"
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "find it + sıfat + to ve hedefli soru"
+      ]
+    }
+  ]
+}

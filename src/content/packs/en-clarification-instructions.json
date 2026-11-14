@@ -1,0 +1,514 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.repair",
+      "outcome": "A1.repair",
+      "level": "A1",
+      "prerequisite": [
+        "en.identity"
+      ],
+      "title": "Anlamadığında tekrar ve yazım iste",
+      "objective": "Bir ad, numara veya kodu anlamadığında yavaş söyleme ve heceleme iste, sonra duyduğunu teyit et.",
+      "situation": "Bir kursa ilk kez kayıt oluyorsun. Görevli adını ve kapı kodunu hızlı söylüyor.",
+      "bridge": "Anlamadığın ayrıntıyı seç. Can you + yalın fiil ile rica et. Duyduğun bilgiye kısa teyit sorusu ekle.",
+      "models": [
+        {
+          "phrase": "Can you say the name again, please?",
+          "explanation": "Can you ardından say gelir. Again tekrar, more slowly daha yavaş demek."
+        },
+        {
+          "phrase": "Is that M as in Monday?",
+          "explanation": "Bir harfi benzer sesten ayırmak için as in ardından tanıdık bir sözcük söyle."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Can you sonrası yalın eylem",
+          "incorrect": "Can you to repeat the code?",
+          "correct": "Can you repeat the code?",
+          "explanation": "Can you sonrasında to kullanma.",
+          "guided": [
+            [
+              "Kod için: Can you ___ (repeat) the code?",
+              "repeat"
+            ],
+            [
+              "Soyadı için: Can you ___ (spell) your name?",
+              "spell"
+            ]
+          ],
+          "transfer": [
+            [
+              "Kapıda: Can you ___ (show) me the number?",
+              "show"
+            ],
+            [
+              "Telefonda: Can you ___ (say) the street again?",
+              "say"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kütüphanede: Can you ___ (write) the room number?",
+              "write"
+            ],
+            [
+              "Otelde: Can you ___ (speak) more slowly?",
+              "speak"
+            ]
+          ]
+        },
+        {
+          "label": "Neyi yeniden istemek gerektiğini seç",
+          "incorrect": "I heard the first name. Can you repeat the first name?",
+          "correct": "I heard the first name. Can you spell the surname?",
+          "explanation": "Anlamadığın parçayı sor. Spell harfleri istemek için kullanılır.",
+          "guided": [
+            [
+              "“I heard Ava. I missed King.” Eksik bilgi: room / surname.",
+              "surname"
+            ],
+            [
+              "“The code is 41. The floor comes next, but I missed it.” Eksik: floor / code.",
+              "floor"
+            ]
+          ],
+          "transfer": [
+            [
+              "“I know the street but not the house number.” Sorulacak: house number / street.",
+              "house number"
+            ],
+            [
+              "“You heard room eight. You didn’t hear the time.” Sorulacak: time / room.",
+              "time"
+            ]
+          ],
+          "delayed": [
+            [
+              "“I heard Sam, but I missed the email address.” Sorulacak: name / email address.",
+              "email address"
+            ],
+            [
+              "“I know the day. I missed the name of the station.” Sorulacak: station name / day.",
+              "station name"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "say it again",
+        "meaning": "bir daha söylemek",
+        "example": "Can you say it again, please?",
+        "usage": "It ile az önce duyduğun bilgiyi kastedersin.",
+        "pronunciation": "/seɪ ɪt əˈɡen/",
+        "collocations": [
+          "say it again, please",
+          "say the number again"
+        ],
+        "recognize": [
+          "“say it again” burada ne anlama gelir?",
+          "bir daha söylemek",
+          "yazıyı okumak",
+          "sonraki adı söylemek",
+          "It ile az önce duyduğun bilgiyi kastedersin."
+        ],
+        "recall": [
+          "“bir daha söylemek” anlamındaki hedef ifadeyi yaz.",
+          "say it again"
+        ],
+        "use": "Görevli dolap kodunu hızlı söyledi. Tekrar iste."
+      },
+      "additionalWords": [
+        {
+          "term": "spell your name",
+          "meaning": "adını harf harf söylemek",
+          "example": "Can you spell your name for me?",
+          "usage": "Spell, pronounce yerine harf dizisini istemek içindir.",
+          "pronunciation": "/spel jɔɹ neɪm/",
+          "collocations": [
+            "spell your first name",
+            "spell your surname"
+          ],
+          "recognize": [
+            "“spell your name” burada ne anlama gelir?",
+            "adını harf harf söylemek",
+            "telefonu kapatmak",
+            "adresini söylemek",
+            "Spell, pronounce yerine harf dizisini istemek içindir."
+          ],
+          "recall": [
+            "“adını harf harf söylemek” anlamındaki hedef ifadeyi yaz.",
+            "spell your name"
+          ],
+          "use": "Bir kulüp üyesinin soyadını nasıl yazacağını sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "door code",
+          "cue": "kapı kodu"
+        },
+        {
+          "term": "letter",
+          "cue": "harf"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir randevu mesajında adın okunmuyor. İngilizce iki cümleyle harflerini iste ve saat teyidi sor.",
+        "sample": "Can you spell your name, please? Is the appointment at ten?",
+        "revision": "Ne duymadığını açıkça yaz ve iki ricayı ayrı tut.",
+        "criteria": [
+          "Eksik bilgiye uygun rica var.",
+          "Bilinen bilgi için kısa teyit var."
+        ]
+      },
+      "input": {
+        "text": "At the front desk: Ask for Mara. The door code is 46B. The last letter is B as in book.",
+        "reading": [
+          "Son karakter hangisi?",
+          "B",
+          "D",
+          "6",
+          "Duyuru B harfini book ile ayırıyor.",
+          "B as in book"
+        ],
+        "transcript": "— My name is May Lin. — Can you spell your last name, please? — L, I, N. — Thank you. Is the door code twelve? — Yes.",
+        "preparation": "Adın harfleriyle kapı sayısını ayrı dinle.",
+        "main": [
+          "Öğrenci neyi harf harf istiyor?",
+          "Soyadı",
+          "Kodu",
+          "Oda numarasını",
+          "Last name soyaddır.",
+          "your last name"
+        ],
+        "detail": [
+          "Kapı kodu kaç?",
+          "12",
+          "20",
+          "10",
+          "Twelve on ikidir.",
+          "code twelve"
+        ]
+      },
+      "retry": {
+        "text": "On your ticket: Gate 4, desk D. The letter D is as in day.",
+        "reading": [
+          "Masa hangi harfle işaretli?",
+          "D",
+          "B",
+          "A",
+          "Day D ile başlar.",
+          "D is as in day"
+        ],
+        "transcript": "— Go to Room 25. — Can you say the number again? — Twenty-five. The door is blue.",
+        "preparation": "Önce oda, sonra kapı ayrıntısı.",
+        "main": [
+          "Hangi bilgi tekrar isteniyor?",
+          "Oda numarası",
+          "Kapı rengi",
+          "Gün",
+          "Number soruldu.",
+          "say the number again"
+        ],
+        "detail": [
+          "Kapı ne renk?",
+          "Mavi",
+          "Sarı",
+          "Gri",
+          "Blue mavi demek.",
+          "door is blue"
+        ]
+      },
+      "readingPurpose": "İsim, sayı ve harfe ayrı işaret koy.",
+      "readingUse": "Bir diğer görevliye kodun son harfini söyle.",
+      "listeningUse": "Duyduğun soyadını harf harf geri söyle.",
+      "speaking": "Görevli bir soyadını ve oda kodunu yalnız bir kez söylesin. Anlamadığın parçaya dön, tekrar iste ve duyduğunu teyit et.",
+      "genres": {
+        "reading": "kayıt masası duyurusu",
+        "listening": "kayıt diyaloğu",
+        "writing": "randevu teyidi"
+      },
+      "recovery": {
+        "reading": "Son harfi tanıdık sözcükle eşleştir.",
+        "main": "Ricanın hangi ayrıntıya geldiğini dinle.",
+        "detail": "Önce sayıyı sonra rengi seç."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "can you + yalın fiil"
+      ]
+    },
+    {
+      "id": "en.instructions",
+      "outcome": "A2.instructions",
+      "level": "A2",
+      "prerequisite": [
+        "en.detour",
+        "en.repair"
+      ],
+      "title": "Talimatı oku ve sırayla yeniden anlat",
+      "objective": "Bir duyuruda sıra ve istisnayı ayır, yeni gelen birine kısa talimat ver.",
+      "situation": "Bir onarım atölyesine bisiklet götüreceksin. Kayıt, etiket ve teslim adımları farklı yerlerde.",
+      "bridge": "Önce/sonra işaretlerini bul. Emirle kısa adımlar ver. Before/after sonrası eylemi adlaştırabilir veya bir yan tümce kurabilirsin.",
+      "models": [
+        {
+          "phrase": "Before leaving your bike, fill in a tag.",
+          "explanation": "Before + -ing, başka bir eylemden önce yapılacak işi yerleştirir."
+        },
+        {
+          "phrase": "If the desk is closed, leave the tag in the box.",
+          "explanation": "If bir istisna koşulunu açar. Sonraki emir bu koşulda uygulanır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Sıralama için before",
+          "incorrect": "Before leave the hall, switch off the lights.",
+          "correct": "Before leaving the hall, switch off the lights.",
+          "explanation": "Verilen before veya after ardından bare fiil yerine -ing yaz.",
+          "guided": [
+            [
+              "Before ___ (enter) the lab, put on glasses.",
+              "entering"
+            ],
+            [
+              "After ___ (wash) the cups, put them on the shelf.",
+              "washing"
+            ]
+          ],
+          "transfer": [
+            [
+              "Before ___ (send) the parcel, check the address.",
+              "sending"
+            ],
+            [
+              "After ___ (read) the map, circle the exit.",
+              "reading"
+            ]
+          ],
+          "delayed": [
+            [
+              "Before ___ (scan) the ticket, turn up the screen brightness.",
+              "scanning"
+            ],
+            [
+              "After ___ (pay) the fee, keep your receipt.",
+              "paying"
+            ]
+          ]
+        },
+        {
+          "label": "Koşullu talimatı ayır",
+          "incorrect": "If the gate is locked, always use it.",
+          "correct": "If the gate is locked, use the side door.",
+          "explanation": "If bölümünü kontrol et. Yalnız gerçekleşen durumda ilgili eylemi seç.",
+          "guided": [
+            [
+              "“If the printer is offline, email the form.” Yazıcı çevrimdışı: email / print.",
+              "email"
+            ],
+            [
+              "“If it rains, meet inside.” Yağmur: inside / outside.",
+              "inside"
+            ]
+          ],
+          "transfer": [
+            [
+              "“If the lockers are full, ask at the desk.” Dolaplar dolu: ask / wait.",
+              "ask"
+            ],
+            [
+              "“If the label is wet, use a new one.” Etiket ıslak: replace / keep.",
+              "replace"
+            ]
+          ],
+          "delayed": [
+            [
+              "“If the lift is out of order, take the stairs.” Asansör arızalı: stairs / lift.",
+              "stairs",
+              "the stairs"
+            ],
+            [
+              "“If your ticket is missing, show your booking email.” Bilet yok: booking email / payment card.",
+              "booking email"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "fill in a form",
+        "meaning": "form doldurmak",
+        "example": "Fill in a form before you join the workshop.",
+        "usage": "Fill in özellikle Britanya, fill out özellikle Amerikan kullanımında sık görülür.",
+        "pronunciation": "/fɪl ɪn ə fɔɹm/",
+        "collocations": [
+          "fill in an online form",
+          "fill out a form"
+        ],
+        "recognize": [
+          "“fill in a form” burada ne anlama gelir?",
+          "form doldurmak",
+          "form okutmak",
+          "formu çöpe atmak",
+          "Fill in özellikle Britanya, fill out özellikle Amerikan kullanımında sık görülür."
+        ],
+        "recall": [
+          "“form doldurmak” anlamındaki hedef ifadeyi yaz.",
+          "fill in a form",
+          "fill out a form"
+        ],
+        "use": "Bir gönüllüye ilk kayıt adımını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "hand in",
+          "meaning": "teslim etmek",
+          "example": "Hand in your tag at the desk.",
+          "usage": "Bir şeyi işlem için yetkili kişiye vermek. Hand the tag in de olur.",
+          "pronunciation": "/hænd ɪn/",
+          "collocations": [
+            "hand in a tag",
+            "hand in a worksheet"
+          ],
+          "recognize": [
+            "“hand in” burada ne anlama gelir?",
+            "teslim etmek",
+            "geri istemek",
+            "bir şeyi asmak",
+            "Bir şeyi işlem için yetkili kişiye vermek. Hand the tag in de olur."
+          ],
+          "recall": [
+            "“teslim etmek” anlamındaki hedef ifadeyi yaz.",
+            "hand in"
+          ],
+          "use": "Bir atölyede teslim edilecek şeyi ve yeri söyle."
+        },
+        {
+          "term": "out of order",
+          "meaning": "arızalı",
+          "example": "The ticket machine is out of order.",
+          "usage": "Bir makine veya hizmetin o anda çalışmadığını bildirir.",
+          "pronunciation": "/aʊt əv ˈɔɹdəɹ/",
+          "collocations": [
+            "the lift is out of order",
+            "an out-of-order machine"
+          ],
+          "recognize": [
+            "“out of order” burada ne anlama gelir?",
+            "arızalı",
+            "önceden sipariş",
+            "açılış saatinde",
+            "Bir makine veya hizmetin o anda çalışmadığını bildirir."
+          ],
+          "recall": [
+            "“arızalı” anlamındaki hedef ifadeyi yaz.",
+            "out of order"
+          ],
+          "use": "Bir yolcuya çalışan başka bir seçenek varsa tarif et."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "collection point",
+          "cue": "teslim alma noktası"
+        },
+        {
+          "term": "rack",
+          "cue": "park demiri veya raf"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir spor merkezinde ilk kez gelen kişi için dolap kullanma adımlarını dört cümleyle yaz. Bir istisna ekle.",
+        "sample": "First, get a key at the front desk. Before putting your bag in a locker, check the number on the key. If there are no free lockers, ask for a basket. Hand in the key when you leave.",
+        "revision": "İstisnanın hangi adımı değiştirdiğini ve anahtarın ne zaman teslim edildiğini açıklaştır.",
+        "criteria": [
+          "En az üç adım doğru sırada.",
+          "İstisnanın koşulu ve eylemi ayrı."
+        ]
+      },
+      "input": {
+        "text": "Bike workshop. First, fill in a form at the front desk. Before leaving your bike in the rack, put the numbered tag on it. Keep the small part of the tag. If the collection point is closed, ask the front desk to open it.",
+        "reading": [
+          "Teslim alma noktasına gitmek için hangi parça sende kalır?",
+          "Etiketin küçük parçası",
+          "Bisiklet kilidi",
+          "Büyük etiket",
+          "Duyuru etiketin küçük parçasını saklamanı ister.",
+          "Keep the small part of the tag"
+        ],
+        "transcript": "— Can I put my bike in the rack now? — First, get a numbered tag from the front desk. Put it on the bike. Keep the small part. — What if the collection point is closed? — Ask the front desk to open it.",
+        "preparation": "Sıradaki işi ve istisna adımını ayrı not et.",
+        "main": [
+          "Rafa bırakmadan önce ne takılır?",
+          "Numaralı etiket",
+          "Yeni kilit",
+          "Renkli kurdele",
+          "Numaralı etiket bisiklete takılır.",
+          "get a numbered tag"
+        ],
+        "detail": [
+          "Teslim alma yeri kapalıysa nereye gidilir?",
+          "Ön masaya",
+          "Tamir masasına",
+          "Arka kapıya",
+          "İstisna için ön masa yardımcı olur.",
+          "Ask the front desk to open it"
+        ]
+      },
+      "retry": {
+        "text": "Take a tray before choosing food. After paying, keep your receipt. If the tables inside are full, use the seats in the garden.",
+        "reading": [
+          "Ödemeden sonra ne saklanır?",
+          "Fiş",
+          "Tepsi",
+          "Masa numarası",
+          "Receipt fiştir.",
+          "keep your receipt"
+        ],
+        "transcript": "First, write your name on the sheet. Put on the gloves before touching the plants. If the gloves are too small, ask for a larger pair.",
+        "preparation": "Güvenlik ve beden koşulunu ayır.",
+        "main": [
+          "Bitkilere dokunmadan önce ne yapılır?",
+          "Eldiven takılır",
+          "Ad değiştirilir",
+          "Bitki sulanır",
+          "Before sonrası zaman ilişkisini verir.",
+          "Put on the gloves before touching"
+        ],
+        "detail": [
+          "Eldiven küçükse ne istenir?",
+          "Daha büyük bir çift",
+          "Yeni bitki",
+          "İsim listesi",
+          "Larger pair daha büyük çifttir.",
+          "ask for a larger pair"
+        ]
+      },
+      "readingPurpose": "Adım numarası ve istisna için ayrı satır kullan.",
+      "readingUse": "Atölye yönergesini geç kalan birine sesli özetle.",
+      "listeningUse": "Ön koşulu kaçırmış bir kişiye yeniden anlat.",
+      "speaking": "Bir seramik atölyesinde iki normal adım ve bir malzeme istisnası ver. Muhatabın istisnayı ana kuralla karıştırırsa düzelt.",
+      "genres": {
+        "reading": "atölye yönergesi",
+        "listening": "teslim masası konuşması",
+        "writing": "ziyaretçi adım listesi"
+      },
+      "recovery": {
+        "reading": "Etiketi bisiklette kalan ve sende kalan parçaya ayır.",
+        "main": "Önce hangi nesne takılır?",
+        "detail": "If sonrasındaki durumda masadan ne istenir?"
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "before/after + -ing ve if ile yönerge"
+      ]
+    }
+  ]
+}

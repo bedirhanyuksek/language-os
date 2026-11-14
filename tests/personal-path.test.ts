@@ -50,10 +50,12 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
   let reviewMinutes = 0
   let missedRecall = false
   const missedPhases = new Set<string>()
-  for (let elapsed = 0; elapsed < 100; elapsed++) {
+  let reachedPublishedEnd = false
+  for (let elapsed = 0; elapsed < 140 && !reachedPublishedEnd; elapsed++) {
     const now = new Date(Date.parse(at) + elapsed * day).toISOString()
     for (let count = 0; count < 60; count++) {
       const plan = dailyPlan(state, course, now, zone)
+      if (plan.kind === 'complete') reachedPublishedEnd = true
       if (!('minutes' in plan)) break
       expect(dailyMinutes(state, now, zone) + plan.minutes).toBeLessThanOrEqual(minutes)
       if (plan.kind === 'review' || (plan.kind === 'pedagogy' && plan.phase === 'delayed')) reviewMinutes += plan.minutes
@@ -90,6 +92,7 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
       } else state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), now)
     }
   }
+  expect(reachedPublishedEnd).toBe(true)
   expect(seen.has('en.routine')).toBe(false)
   expect(seen.has('en.identity')).toBe(false)
   expect(seen.has('en.rebuttal')).toBe(true)
@@ -266,10 +269,13 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
   let state = start(course, 30)
   state = { ...state, profile: { ...state.profile, estimate: 'A1', target } }
   const order: string[] = []
-  for (let elapsed = 0; elapsed < 100; elapsed++) {
+  const studied = new Set<string>()
+  let reachedPublishedEnd = false
+  for (let elapsed = 0; elapsed < 150 && !reachedPublishedEnd; elapsed++) {
     const now = new Date(Date.parse(at) + elapsed * day).toISOString()
     for (let block = 0; block < 30; block++) {
       const plan = dailyPlan(state, course, now, zone)
+      if (plan.kind === 'complete') reachedPublishedEnd = true
       if (!('minutes' in plan)) break
       expect(dailyMinutes(state, now, zone) + plan.minutes).toBeLessThanOrEqual(30)
       if (plan.kind === 'review') {
@@ -280,6 +286,7 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
         continue
       }
       const lesson = course.unit.lessons.find(({ id }) => id === plan.lessonId)!
+      if (plan.kind === 'lesson') studied.add(lesson.id)
       if (targets.includes(lesson.id) && !order.includes(lesson.id)) order.push(lesson.id)
       if (plan.kind === 'speaking') state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
       else if (plan.kind === 'pedagogy') state = finishPedagogy(state, course, lesson, plan.phase,
@@ -288,6 +295,17 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
     }
   }
   expect(order).toEqual(targets)
+  expect(reachedPublishedEnd).toBe(true)
+  const available = course.unit.lessons.filter(({ objective }) =>
+    target === 'C2' || ['A1', 'A2', 'B1', 'B2', 'B2+'].includes(objective.level))
+  expect(studied).toEqual(new Set(available.map(({ id }) => id).filter((id) => !['ru.cyrillic', 'ru.intro'].includes(id))))
+  const preparationOrder = ['ru.cyrillic', 'ru.intro', ...studied]
+  for (const { entry } of packedLessons.filter(({ language, entry }) =>
+    language === 'ru' && available.some(({ id }) => id === entry.id))) {
+    for (const previous of entry.prerequisite) {
+      expect(preparationOrder.indexOf(previous), entry.id).toBeLessThan(preparationOrder.indexOf(entry.id))
+    }
+  }
   expect(masteryFor(state, course.unit.lessons.find(({ id }) => id === (target === 'C2' ? 'ru.recast' : 'ru.handover'))!).status).toBe('retained')
   expect(state.attempts.some(({ exerciseId }) => exerciseId === 'ru.weekend.writing')).toBe(true)
   expect(masteryFor(state, course.unit.lessons.find(({ id }) => id === 'ru.debate')!).status).toBe('retained')
@@ -296,4 +314,7 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
   expect(firstAt('ru.opinion')).toBeLessThan(firstAt('ru.debate'))
   expect(parseBackup(exportBackup(state))).toEqual(state)
   expect(state.profile.estimate).toBe('A1')
+  if (process.env.npm_lifecycle_event === 'curriculum:report') {
+    console.log(JSON.stringify({ russianFromA1: target, newLessons: studied.size, introducedCards: state.reviews.length }))
+  }
 })
