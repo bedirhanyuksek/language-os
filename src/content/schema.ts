@@ -3,6 +3,7 @@ import { goalSchema, idSchema, languageSchema, levelSchema } from '../domain/mod
 
 import { exerciseSchema, line } from './exercise-schema'
 import { pedagogySchema, type Pedagogy } from './pedagogy-schema'
+import { teachingSchema } from './teaching'
 export { exerciseSchema } from './exercise-schema'
 
 const conceptSchema = z.strictObject({
@@ -18,6 +19,7 @@ export const lessonSchema = z.strictObject({
   id: idSchema, title: line, objective: z.strictObject({ id: idSchema, description: line, level: levelSchema }),
   prerequisites: z.array(idSchema), minutes: z.number().int().positive(), goals: z.array(goalSchema).min(1),
   pedagogy: pedagogySchema.optional(),
+  teaching: teachingSchema.optional(),
   recall: line, explanation: z.array(line).min(1),
   examples: z.array(z.strictObject({ correct: line, incorrect: line, note: line })).min(1),
   concepts: z.array(conceptSchema).min(2),
@@ -49,6 +51,16 @@ export const courseSchema = z.strictObject({
     }
     if ((course.version === 2) !== Boolean(lesson.pedagogy)) {
       ctx.addIssue({ code: 'custom', message: 'Ders pedagojisi paket sürümüyle eşleşmeli.' })
+    }
+    if (lesson.teaching) {
+      const cardIds = lesson.teaching.vocabulary.map(({ cardId }) => cardId)
+      if (!lesson.pedagogy || cardIds.length !== lesson.vocabulary.length ||
+        new Set(cardIds).size !== cardIds.length || lesson.vocabulary.some(({ id }) => !cardIds.includes(id))) {
+        ctx.addIssue({ code: 'custom', message: `Öğretim notları kelime kartlarıyla eşleşmeli: ${lesson.id}` })
+      }
+      if (lesson.concepts.some(({ variants }) => variants.filter(({ kind }) => !['single', 'multiple', 'matching'].includes(kind)).length < 2)) {
+        ctx.addIssue({ code: 'custom', message: `En az iki rehberli cümle kurma görevi gerekli: ${lesson.id}` })
+      }
     }
     if (lesson.pedagogy) {
       const p = lesson.pedagogy

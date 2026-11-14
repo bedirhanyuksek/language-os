@@ -1,0 +1,277 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.specialist",
+      "outcome": "C1.specialist",
+      "level": "C1",
+      "prerequisite": [
+        "ru.reports",
+        "ru.synthesis"
+      ],
+      "title": "Bir uzman raporunun dayandığı varsayımı açığa çıkar",
+      "objective": "Ölçümün hangi koşulda yorumlanabileceğini uzman görüşünden ayır ve farklı veriyle değişecek öneriyi savun.",
+      "situation": "Bir öğrenci yurdunun ısıtma raporu ve bakım uzmanının notu yalıtım önerisinde farklı varsayımlardan hareket ediyor.",
+      "bridge": "Bir varsayımı raporun sözüymüş gibi sunma. При условии, что ile sınırı yaz, если исходить из ile hangi kabulden yola çıktığını açıkla.",
+      "models": [
+        {
+          "phrase": "Экономию можно оценить при условии, что режим работы не изменился.",
+          "explanation": "При условии, что ölçümün geçerli olacağı şartı ekler; bu şartın gerçekleştiğini ileri sürmez."
+        },
+        {
+          "phrase": "Если исходить из неизменной загрузки, результат выглядит убедительно.",
+          "explanation": "Исходить из + tamlayan, analizde hangi kabulden hareket edildiğini gösterir. Güçlü sonuç yalnız bu varsayım altındadır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Başlangıç kabulünü tamlayanla kur",
+          "incorrect": "Если исходить из одинаковая температура, расход снизился.",
+          "correct": "Если исходить из одинаковой температуры, расход снизился.",
+          "explanation": "Исходить из öbeği tamlayan ister. Bu bilgi bir başlangıç varsayımıdır; doğrulanmış veriden ayır.",
+          "guided": [
+            [
+              "Если исходить из ___ (прежняя цена), расходы почти не изменились.",
+              "прежней цены"
+            ],
+            [
+              "Если исходить из ___ (одинаковый спрос), план выполним.",
+              "одинакового спроса"
+            ]
+          ],
+          "transfer": [
+            [
+              "Если исходить из ___ (полная загрузка), понадобится ещё один автобус.",
+              "полной загрузки"
+            ],
+            [
+              "Если исходить из ___ (средний показатель), разница небольшая.",
+              "среднего показателя"
+            ]
+          ],
+          "delayed": [
+            [
+              "Если исходить из ___ (достоверность журнала), сбой начался ночью.",
+              "достоверности журнала"
+            ],
+            [
+              "Если исходить из ___ (неизменный тариф), смету можно сохранить.",
+              "неизменного тарифа"
+            ]
+          ]
+        },
+        {
+          "label": "Ölçülmeyen değişkeni ayır",
+          "incorrect": "Счёт уменьшился, следовательно, новая система лучше.",
+          "correct": "Счёт уменьшился; без данных о тарифе нельзя оценить расход.",
+          "explanation": "Karşılaştırmada değişmiş olabilecek ama ölçülmeyen bir etken varsa, kesin neden bildirme.",
+          "guided": [
+            [
+              "«Платёж снизился, объём воды не записан». Что не измерили?",
+              "объём воды",
+              "объем воды"
+            ],
+            [
+              "«Утренние замеры короче вечерних; минуты работы не записали». Чего не хватает?",
+              "минут работы"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Тест прошли быстрее после смены группы». Что изменилось?",
+              "группа"
+            ],
+            [
+              "«Выручка выше; число клиентов неизвестно». Hangi sayı eksik?",
+              "число клиентов"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Раньше учитывали выходные, теперь только будни». Что поменялось?",
+              "период учёта",
+              "период учета"
+            ],
+            [
+              "«Ошибок меньше; новая версия проверяет меньше полей». Что сузилось?",
+              "охват проверки"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "исходить из допущения",
+        "meaning": "bir varsayımdan hareket etmek",
+        "example": "Мы исходим из допущения, что загрузка не изменилась.",
+        "usage": "Varsayımı kaynaktan ve gözlemden ayrı işaretler.",
+        "pronunciation": "исходи́ть из допуще́ния",
+        "collocations": [
+          "исходить из рабочего допущения",
+          "проверить исходное допущение"
+        ],
+        "recognize": [
+          "“исходить из допущения” burada ne anlama gelir?",
+          "bir varsayımdan hareket etmek",
+          "sonucu ölçmek",
+          "onayı yayımlamak",
+          "Varsayımı kaynaktan ve gözlemden ayrı işaretler."
+        ],
+        "recall": [
+          "“bir varsayımdan hareket etmek” anlamındaki hedef ifadeyi yaz.",
+          "исходить из допущения"
+        ],
+        "use": "Kamu ulaşımında veri yokken kullanacağın geçici varsayımı belirt."
+      },
+      "additionalWords": [
+        {
+          "term": "поправка на погоду",
+          "meaning": "hava koşullarına göre düzeltme",
+          "example": "Поправка на погоду изменила оценку экономии.",
+          "usage": "Ham karşılaştırmada havanın etkisini ayırmayı amaçlayan düzeltme.",
+          "pronunciation": "попра́вка на пого́ду",
+          "collocations": [
+            "внести поправку на погоду",
+            "посчитать без поправки на погоду"
+          ],
+          "recognize": [
+            "“поправка на погоду” burada ne anlama gelir?",
+            "hava koşullarına göre düzeltme",
+            "hava raporu",
+            "cihaz garantisi",
+            "Ham karşılaştırmada havanın etkisini ayırmayı amaçlayan düzeltme."
+          ],
+          "recall": [
+            "“hava koşullarına göre düzeltme” anlamındaki hedef ifadeyi yaz.",
+            "поправка на погоду"
+          ],
+          "use": "Soğutma giderlerini karşılaştıran bir ekipten ek hesap iste."
+        },
+        {
+          "term": "предел применимости",
+          "meaning": "geçerlilik sınırı",
+          "example": "В приложении указан предел применимости модели.",
+          "usage": "Yöntemin hangi koşula kadar anlamlı olduğunu gösterir.",
+          "pronunciation": "преде́л примени́мости",
+          "collocations": [
+            "обозначить предел применимости",
+            "выйти за предел применимости"
+          ],
+          "recognize": [
+            "“предел применимости” burada ne anlama gelir?",
+            "geçerlilik sınırı",
+            "nihai karar",
+            "uygulama tarihi",
+            "Yöntemin hangi koşula kadar anlamlı olduğunu gösterir."
+          ],
+          "recall": [
+            "“geçerlilik sınırı” anlamındaki hedef ifadeyi yaz.",
+            "предел применимости"
+          ],
+          "use": "Bir okul araştırmasının başka okullara aktarım sınırını belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "погодная поправка",
+          "cue": "hava etkisi düzeltmesi"
+        },
+        {
+          "term": "расчётный режим",
+          "cue": "hesaplamada kullanılan çalışma düzeni"
+        },
+        {
+          "term": "теплопотери",
+          "cue": "ısı kaybı"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir spor salonu için biri nem ölçümü, diğeri havalandırma saatleri kaydı sunan iki uzman notu düşün. 100–150 sözcükte nasıl sınırlı bir öneri çıkaracağını yaz. Varsayımı ve değiştirecek veriyi açıkça adlandır.",
+        "sample": "В двух записках описаны разные стороны одной проблемы. Лаборатория зафиксировала повышенную влажность в зале после вечерней тренировки, а инженер привёл часы работы вентиляции по журналу. Из записок не следует, что установка неисправна: в лабораторном протоколе нет данных о числе участников, а журнал показывает расписание, но не подтверждает фактическую работу оборудования. Если исходить из допущения, что группы сопоставимы, можно проверить более ранний запуск системы в течение недели. Эта проба даст полезный результат при условии, что сотрудники будут отмечать фактическое время запуска и число людей в зале. Если влажность останется высокой при той же загрузке, стоит проверить датчики и воздуховоды, прежде чем менять расписание на весь сезон.",
+        "revision": "Ölçümle çalışma varsayımını ayrı cümlelere yerleştir. Hangi koşulda farklı bir müdahale gerekeceğini ekle.",
+        "criteria": [
+          "Yöntemin gördüğü ve görmediği değişkenler ayrılır.",
+          "Öneri sınanabilir ve yeni veriyle değişebilir."
+        ]
+      },
+      "input": {
+        "text": "Заключение энергослужбы. За четыре недели после настройки автоматики расход тепла снизился на двенадцать процентов. При сравнении была применена погодная поправка: расчётный режим учитывает показания наружного датчика, но предполагает, что число открытых окон и график заселения не менялись. На этой основе служба предлагает сохранить настройки до конца сезона.\n\nЗаписка инженера общежития. Датчик исправен. Однако за время наблюдений жильцы двух этажей переехали, и уборщики сократили проветривание коридоров. Эти изменения могли снизить теплопотери даже без перенастройки. Их величина неизвестна. Сравнить два периода можно, но нельзя приписывать всё снижение автоматике. Инженер предлагает повторить сравнение после заселения, фиксировать время проветривания и отдельно анализировать дни с полной загрузкой.\n\nСовместный вывод. Сейчас нет основания отменять настройки, пока в комнатах сохраняется допустимая температура. Утверждение о размере экономии следует отложить до проверки в сопоставимых условиях. Отдел эксплуатации подготовит таблицу для учёта загрузки и проветривания в следующем месяце.",
+        "reading": [
+          "Hangi varsayım ikinci belgeyle sorgulanıyor?",
+          "Pencere ve doluluk alışkanlıklarının aynı kaldığı",
+          "Dış sensörün bozuk olduğu",
+          "Her odanın ölçüm dışı olduğu",
+          "İlk hesap doluluk ve pencere davranışını sabit tutuyor.",
+          "график заселения не менялись"
+        ],
+        "transcript": "Ведущая: В отчёте указана экономия двенадцать процентов. Можем ли мы обещать тот же результат в другом здании? Инженер: Я бы пока не обещал. Здесь часть комнат пустовала, а проветривание изменилось. Исследователь: Но расчёт уже учитывает погоду. Инженер: Согласен. Погода учтена, загрузка нет. Мы можем сравнить недели с одинаковой загрузкой и проверить, сохраняется ли эффект. Ведущая: Значит, сотрудники собирают новый журнал, а настройки пока остаются? Исследователь: Да, при условии, что температура в комнатах в пределах нормы. И в записке зафиксируем, на какие даты распространяется оценка.",
+        "preparation": "Bir uzmanın itirazına diğerinin hangi yönüyle katıldığını dinle.",
+        "main": [
+          "Hangi değişken hesapta yok?",
+          "Doluluk",
+          "Dış hava",
+          "Tarih",
+          "Hava hesapta var; odaların doluluğu yok.",
+          "загрузка нет"
+        ],
+        "detail": [
+          "Ayarlar şimdilik hangi koşulda kalır?",
+          "Oda sıcaklığı normalse",
+          "Yüzde on iki garanti edilirse",
+          "Tüm odalar boşalırsa",
+          "Geçici kararı güvenlik koşulu sınırlar.",
+          "температура в комнатах в пределах нормы"
+        ]
+      },
+      "retry": {
+        "text": "Проверка школьного питания показала меньше отходов в апреле. В расчёте на порцию апрель сравнили с мартом, но доля младших классов изменилась. Прежде чем менять меню во всех школах, комиссия просит сравнить отдельно данные по возрасту.",
+        "reading": [
+          "Hangi veri sonuçları ayırmaya yardım eder?",
+          "Yaş gruplarına göre ayrı veriler",
+          "Yemekhane tabelası",
+          "Okulun posta adresi",
+          "Yaş grubu payı değişti.",
+          "отдельно данные по возрасту"
+        ],
+        "transcript": "После запуска нового сайта звонков стало меньше. Но часть пользователей не смогла найти номер телефона, так что это могло быть не улучшением, а препятствием. Давайте сначала проверим, сколько людей смогли решить вопрос без звонка.",
+        "preparation": "Gözlenmiş sonuçla alternatif açıklamayı ayır.",
+        "main": [
+          "Yeni hangi ölçüm isteniyor?",
+          "Aramadan sorun çözen kişi sayısı",
+          "Sitenin renk sayısı",
+          "Çağrı merkezi maaşı",
+          "Arama azalması tek başına çözüm demek değildir.",
+          "сколько людей смогли решить вопрос без звонка"
+        ],
+        "detail": [
+          "Alternatif açıklama ne?",
+          "Bazı kullanıcılar numarayı bulamadı",
+          "Telefon hattı genişledi",
+          "Tüm kullanıcılar başarılı oldu",
+          "Numarayı bulamamak engel olabilir.",
+          "не смогла найти номер телефона"
+        ]
+      },
+      "readingPurpose": "Kaynaklar için ölçülen, varsayılan ve bilinmeyen diye üç sütun aç.",
+      "readingUse": "Bir teknik bulgunun ne zaman başka bir yere aktarılabileceğini açıkla.",
+      "listeningUse": "İki uzmanın üzerinde anlaştığı geçici adımı ve sınırını özetle.",
+      "speaking": "Bir üniversite yönetimine ölçüm değiştiğinde enerji önerisini anlat. Muhatap sonuç garantisi isteyince açık varsayımı ve bir kontrol koşulunu gerekçelendir.",
+      "genres": {
+        "reading": "teknik inceleme ve karşı uzman görüşü",
+        "listening": "karar öncesi uzman görüşmesi",
+        "writing": "sınırlı uygulama tavsiyesi"
+      },
+      "recovery": {
+        "reading": "Dış hava ile doluluğun aynı yöntemle kontrol edilip edilmediğini bul.",
+        "main": "Hangi değişkenin eksik olduğu söyleniyor?",
+        "detail": "Geçici koşulu kalıcı sonuçtan ayır."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "исходить из + tamlayan ve koşullu çıkarım"
+      ]
+    }
+  ]
+}

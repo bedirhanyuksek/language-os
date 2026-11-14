@@ -5,6 +5,25 @@ import ruPedagogy from './ru-pedagogy.json' with { type: 'json' }
 import enExperience from './en-experience.json' with { type: 'json' }
 import ruExperience from './ru-experience.json' with { type: 'json' }
 import { courseSchema, type Course } from './schema'
+import { englishBatch } from './curriculum/en'
+import { russianBatch } from './curriculum/ru'
+import { englishTravel } from './curriculum/travel-en'
+import { russianMovement } from './curriculum/movement-ru'
+import { englishAdvanced } from './curriculum/advanced-en'
+import { russianAdvanced } from './curriculum/advanced-ru'
+import { englishInteraction } from './curriculum/interaction-en'
+import { englishHealth } from './curriculum/health-en'
+import { russianNarrative } from './curriculum/narrative-ru'
+import { englishLife } from './curriculum/life-en'
+import { russianCommunity } from './curriculum/community-ru'
+import { englishSocial } from './curriculum/social-en'
+import { russianHome } from './curriculum/home-ru'
+import { englishSeminar } from './curriculum/seminar-en'
+import { russianSeminar } from './curriculum/seminar-ru'
+import { englishHome } from './curriculum/home-en'
+import { additionsFor, packedLessons } from './curriculum/packs'
+import { author, continuity } from './continuity'
+import { guidedAlternatives, teaching } from './teaching'
 import type { Language } from '../domain/model'
 
 export function publishCourse(data: unknown): Course {
@@ -42,18 +61,32 @@ export const baselineCatalog: Record<Language, Course> = {
   ru: revise('ru', ruPedagogy),
 }
 
-function extend(language: Language, extension: typeof enExperience | typeof ruExperience) {
+const batch = { en: [...englishBatch, ...englishTravel, ...englishAdvanced, ...englishInteraction, ...englishHealth, ...englishLife, ...englishSocial, ...englishSeminar, ...englishHome], ru: [...russianBatch, ...russianMovement, ...russianAdvanced, ...russianNarrative, ...russianCommunity, ...russianHome, ...russianSeminar] }
+
+function extend(language: Language, extension: typeof enExperience | typeof ruExperience, packs: typeof packedLessons) {
   const course = baselineCatalog[language]
   const lessons = course.unit.lessons.map((lesson) => {
     const patch = extension.patches.find(({ lessonId }) => lessonId === lesson.id)
     if (!patch) throw new Error(`Ders eki eksik: ${lesson.id}`)
     return { ...lesson, pedagogy: { ...lesson.pedagogy, receptionRetry: patch.receptionRetry, revision: patch.revision, diagnostic: (extension.diagnostics as Record<string, unknown>)[lesson.id] } }
   })
-  return publishCourse({ ...course, unit: { ...course.unit, lessons: [...lessons, ...extension.lessons.map((lesson) => ({ ...lesson, pedagogy: { ...lesson.pedagogy,
-    diagnostic: (extension.diagnostics as Record<string, unknown>)[lesson.id] } }))] } })
+  const added = extension.lessons.map((lesson) => ({ ...lesson, pedagogy: { ...lesson.pedagogy,
+    diagnostic: (extension.diagnostics as Record<string, unknown>)[lesson.id] } }))
+  const taught = [...lessons, ...added].map((lesson) => {
+    const notes = teaching[lesson.id]
+    if (!notes) throw new Error(`Ders öğretimi eksik: ${lesson.id}`)
+    return { ...lesson, teaching: notes, concepts: lesson.concepts.map((concept) => {
+      const alternative = guidedAlternatives[concept.id]
+      return alternative ? { ...concept, variants: [...concept.variants, alternative] } : concept
+    }) }
+  })
+  const existing = [...taught, ...continuity[language], ...batch[language].map((item) => author(language, item))]
+  return publishCourse({ ...course, unit: { ...course.unit,
+    lessons: [...existing, ...additionsFor(language, existing.map(({ id }) => id), packs)] } })
 }
 
-export const catalog: Record<Language, Course> = {
-  en: extend('en', enExperience),
-  ru: extend('ru', ruExperience),
+export function createCatalog(packs: typeof packedLessons): Record<Language, Course> {
+  return { en: extend('en', enExperience, packs), ru: extend('ru', ruExperience, packs) }
 }
+
+export const catalog = createCatalog(packedLessons)

@@ -63,7 +63,7 @@ export function AudioPlayer({ audio, text, label = 'Dinle', onEnd, onUnavailable
   }
   if (audio.kind === 'recording') return <>
     <audio key={recordingAttempt} controls preload="none" src={recordings[`../content${audio.src}`] ?? audio.src} onEnded={onEnd} onError={unavailable} aria-label={label} />
-    {audio.synthetic && <p><small>Sentetik ses</small></p>}
+    {audio.synthetic && <p><small>Sentetik ses · doğal konuşma incelemesi bekliyor</small></p>}
     {message && <button type="button" className="secondary" onClick={() => {
       setMessage('')
       setRecordingAttempt(recordingAttempt + 1)

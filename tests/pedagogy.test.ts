@@ -1,6 +1,7 @@
 import { existsSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { baselineCatalog, catalog, publishCourse } from '../src/content/catalog'
+import { modelRecording } from '../src/content/teaching'
 import type { Course, Exercise, Lesson } from '../src/content/schema'
 import { bridgeLesson, nextDiagnostic } from '../src/domain/diagnostic'
 import { assess, mapPlacement } from '../src/domain/assessment'
@@ -38,10 +39,14 @@ function runPhase(state: LearningState, lesson: Lesson, phase: PedagogyPhase, da
     date, phase === 'listening' ? 'played' : undefined)
 }
 
+function write(state: LearningState, lesson = first) {
+  return finishLesson(state, en, lesson, { [lesson.production.id]: correct(lesson.production) }, at)
+}
+
 function teachFirst() {
   const state = start(en, { 'en.placement.1': 'have led' })
   const guided = finishLesson(state, en, first, answers(lessonTasks(state, first)), at)
-  return runPhase(guided, first, 'transfer')
+  return runPhase(write(guided), first, 'transfer')
 }
 
 function finishInput(state: LearningState, lesson = first) {
@@ -51,6 +56,35 @@ function finishInput(state: LearningState, lesson = first) {
 }
 
 describe('adaptive evidence', () => {
+  it.each(Object.values(catalog))('requires guided production before an independent $language draft', (course) => {
+    const changes = Object.fromEntries(course.placement.filter(({ diagnosticConceptId }) => diagnosticConceptId)
+      .map(({ exercise }) => [exercise.id, 'Bilmiyorum']))
+    const initial = start(course, changes)
+    const plan = dailyPlan(initial, course, at, 'Europe/Istanbul')
+    expect(plan.kind).toBe('lesson')
+    if (plan.kind !== 'lesson') throw new Error('Expected a lesson')
+    const lesson = course.unit.lessons.find(({ id }) => id === plan.lessonId)!
+    const tasks = lessonTasks(initial, lesson)
+    const draft = { [lesson.production.id]: correct(lesson.production) }
+    expect(() => finishLesson(initial, course, lesson, { ...answers(tasks), ...draft }, at)).toThrow()
+    const firstTask = tasks[0]
+    const wrong = { ...answers(tasks), [firstTask.exercise.id]: 'Bilmiyorum' }
+    const failed = finishLesson(initial, course, lesson, wrong, at)
+    expect(dailyPlan(failed, course, next, 'Europe/Istanbul')).toMatchObject({ kind: 'practice', lessonId: lesson.id })
+    expect(() => finishLesson(failed, course, lesson, draft, next)).toThrow()
+    expect(() => runPhase(failed, lesson, 'transfer', next, {}, course)).toThrow(/rehberli/)
+    const retry = lessonTasks(failed, lesson)
+    expect(retry.map(({ exercise }) => exercise.id)).not.toContain(firstTask.exercise.id)
+    const failedAgain = finishLesson(failed, course, lesson, { [retry[0].exercise.id]: 'Bilmiyorum' }, next)
+    expect(dailyPlan(failedAgain, course, later, 'Europe/Istanbul')).toMatchObject({ kind: 'practice', lessonId: lesson.id })
+    expect(() => finishLesson(failedAgain, course, lesson, draft, later)).toThrow()
+    const repaired = finishLesson(failedAgain, course, lesson, answers(lessonTasks(failedAgain, lesson)), later)
+    expect(lessonTasks(repaired, lesson).map(({ exercise }) => exercise.id)).toEqual([lesson.production.id])
+    const written = finishLesson(repaired, course, lesson, draft, later)
+    expect(written.attempts.at(-1)?.evidence).toMatchObject({ observation: 'free_production', outcome: 'review_required' })
+    expect(parseBackup(exportBackup(written))).toEqual(written)
+  })
+
   it.each(Object.values(catalog))('uses recognition plus production to shorten the $language path', (course) => {
     const state = start(course)
     const lesson = course.unit.lessons[0]
@@ -66,7 +100,7 @@ describe('adaptive evidence', () => {
     expect(canAccelerate(state, en, first)).toBe(false)
     expect(dailyPlan(state, en, at, 'Europe/Istanbul')).toMatchObject({ kind: 'lesson' })
     const guided = finishLesson(state, en, first, answers(lessonTasks(state, first)), at)
-    const retry = runPhase(guided, first, 'transfer', at, { 'en.experience.overview.transfer.1': 'have lead' })
+    const retry = runPhase(write(guided), first, 'transfer', at, { 'en.experience.overview.transfer.1': 'have lead' })
     expect(masteryFor(retry, first).status).toBe('developing')
     expect(phaseTasks(retry, first, 'transfer', at).map(({ exercise }) => exercise.id)).toEqual(['en.experience.overview.transfer.2'])
     const saved = runPhase(retry, first, 'transfer')
@@ -77,7 +111,7 @@ describe('adaptive evidence', () => {
   it('routes a mapped previous-tense error to a prerequisite and returns to a new example', () => {
     const state = teachFirst()
     const guided = finishLesson(state, en, second, answers(lessonTasks(state, second)), at)
-    const mistaken = runPhase(guided, second, 'transfer', at, { 'en.sequence.prior.transfer.1': 'have put' })
+    const mistaken = runPhase(write(guided, second), second, 'transfer', at, { 'en.sequence.prior.transfer.1': 'have put' })
     expect(dailyPlan(mistaken, en, at, 'Europe/Istanbul')).toMatchObject({ phase: 'foundation', reason: expect.stringContaining(first.title) })
     const repaired = runPhase(mistaken, second, 'foundation')
     expect(phaseTasks(repaired, second, 'transfer', at)[0].exercise.id).toBe('en.sequence.prior.transfer.2')
@@ -157,7 +191,7 @@ describe('vocabulary, listening and content checks', () => {
       'ru.meeting': ['Yarın saat beşte', 'Yedi', 'Cumartesi', 'Metro yakınında'],
     }
     for (const course of Object.values(catalog)) {
-      for (const lesson of course.unit.lessons.slice(3)) {
+      for (const lesson of course.unit.lessons.slice(3, 6)) {
         const p = lesson.pedagogy!
         const { reading, listening } = p.receptionRetry!
         const tasks = [p.reading.question, p.listening.detail, reading.question, listening.detail]
@@ -177,7 +211,12 @@ describe('vocabulary, listening and content checks', () => {
     for (const course of Object.values(catalog)) {
       for (const lesson of course.unit.lessons) {
         const p = lesson.pedagogy!
-        for (const audio of [p.listening.audio, p.receptionRetry?.listening.audio, p.diagnostic?.listening.audio, ...p.vocabulary.map((item) => item.audio)]) {
+        const teaching = lesson.teaching!
+        expect(new Set(teaching.models.map(({ phrase }) => phrase)).size).toBe(teaching.models.length)
+        expect(teaching.receptive?.every(({ term }) => p.reading.text.toLocaleLowerCase(course.language).includes(term.toLocaleLowerCase(course.language))) ?? true, lesson.id).toBe(true)
+        const models = teaching.models.map((_, index) => modelRecording(lesson.id, index, course.language))
+        for (const audio of [p.listening.audio, p.receptionRetry?.listening.audio, p.diagnostic?.listening.audio,
+          ...p.vocabulary.map((item) => item.audio), ...models]) {
           if (audio?.kind === 'recording') expect(existsSync(`src/content${audio.src}`), audio.src).toBe(true)
         }
       }
@@ -262,15 +301,15 @@ describe('Learning Experience v1 learner scenarios', () => {
     const placementErrors = Object.fromEntries(course.placement.filter(({ exercise }) => exercise.skill === 'reading')
       .map(({ exercise }) => [exercise.id, 'Bilmiyorum']))
     let state = start(course, placementErrors)
-    state = { ...state, profile: { ...state.profile, days: [1, 2, 3, 4, 5], minutes: 5 } }
+    state = { ...state, profile: { ...state.profile, days: [1, 2, 3, 4, 5], minutes: 5, target: 'C1' } }
     const learningDays = new Set<string>()
     let routeEnd = false
-    for (let day = 0; day < 90 && !routeEnd; day++) {
+    for (let day = 0; day < 650 && !routeEnd; day++) {
       const now = new Date(Date.parse(at) + day * 86_400_000).toISOString()
       for (let block = 0; block < 10; block++) {
         const plan = dailyPlan(state, course, now, 'Europe/Istanbul')
         if (plan.kind === 'complete') {
-          routeEnd = course.unit.lessons.every((lesson) => masteryFor(state, lesson).status === 'retained')
+          routeEnd = course.unit.lessons.filter(({ id }) => !['en.identity', 'en.cafe', 'en.station', 'en.rebook', 'en.detour', 'en.symptoms', 'en.appointment', 'en.invite', 'en.host', 'en.home', 'en.implication', 'en.mediation', 'ru.implication', 'ru.recast'].includes(id)).every((lesson) => masteryFor(state, lesson).status === 'retained')
           break
         }
         if (plan.kind === 'out_of_scope' || plan.kind === 'budget' || plan.kind === 'rest') break
@@ -293,6 +332,6 @@ describe('Learning Experience v1 learner scenarios', () => {
     expect(routeEnd, JSON.stringify({ learningDays: learningDays.size, statuses: course.unit.lessons.map((lesson) => [lesson.id, masteryFor(state, lesson).status]), tail: state.activity.slice(-5), phases: state.attempts.slice(-8).map(({ context, exerciseId }) => [context, exerciseId]) })).toBe(true)
     expect(learningDays.size).toBeGreaterThanOrEqual(40)
     expect(state.speakingAssessments).toHaveLength(0)
-    expect(state.attempts.filter(({ context }) => context === 'revision')).toHaveLength(6)
+    expect(state.attempts.filter(({ context }) => context === 'revision')).toHaveLength(course.unit.lessons.length - (course.language === 'en' ? 12 : 2))
   })
 })

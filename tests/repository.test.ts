@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto'
 import Dexie from 'dexie'
 import { IDBObjectStore } from 'fake-indexeddb'
-import { legacyCatalog } from '../src/content/catalog'
+import { catalog, legacyCatalog } from '../src/content/catalog'
 import type { Answer } from '../src/domain/model'
 import { finishPlacement } from '../src/domain/progress'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -29,6 +29,28 @@ describe('IndexedDB and backup', () => {
     } finally {
       secondConnection.close()
     }
+  })
+  it('switches and restores languages without sharing preferences or losing either history', async () => {
+    const at = '2026-11-13T10:00:00.000Z'
+    const placement = (language: 'en' | 'ru') => Object.fromEntries(catalog[language].placement.map(({ exercise }) =>
+      [exercise.id, exercise.kind === 'open' ? exercise.sample :
+        exercise.kind === 'fill' || exercise.kind === 'short' ? exercise.accepted[0] : exercise.accepted]))
+    const russian = finishPlacement(state, catalog.ru, placement('ru'), at)
+    await repository.create(russian)
+    const en = initialState({ ...state.profile, id: 'a305fe5e-2213-45cd-b469-6c56330ef04f',
+      language: 'en', target: 'C1', minutes: 15 })
+    await expect(repository.switchLanguage(state.profile.id, 'en')).resolves.toBeUndefined()
+    await expect(repository.switchLanguage(state.profile.id, 'en', en)).resolves.toEqual(en)
+    await expect(repository.update(state.profile.id, (current) => current)).rejects.toThrow(/değişti/)
+    const changed = await repository.update(en.profile.id, (current) => finishPlacement(
+      { ...current, profile: { ...current.profile, minutes: 30 } }, catalog.en, placement('en'), at))
+    await expect(repository.switchLanguage(en.profile.id, 'ru')).resolves.toEqual(russian)
+    repository.close()
+    await expect(repository.read()).resolves.toEqual(russian)
+    await expect(repository.switchLanguage(state.profile.id, 'en')).resolves.toEqual(changed)
+    const russianBackup = { ...russian, profile: { ...state.profile, minutes: 45 } }
+    await expect(repository.restore(russianBackup, changed)).resolves.toEqual(russianBackup)
+    await expect(repository.switchLanguage(state.profile.id, 'en')).resolves.toEqual(changed)
   })
   it('round trips backups and rejects an unknown version or orphaned data', () => {
     expect(parseBackup(exportBackup(state))).toEqual(state)

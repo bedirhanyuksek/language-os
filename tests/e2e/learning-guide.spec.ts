@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { catalog } from './catalog-fixture'
 
 test('strong recognition and production change the first recommendation on screen', async ({ page }) => {
   await page.clock.setFixedTime(new Date('2026-11-13T10:00:00Z'))
@@ -27,4 +28,54 @@ test('strong recognition and production change the first recommendation on scree
   await page.getByRole('button', { name: 'Pratiğe başla' }).click()
   await expect(page.getByRole('textbox', { name: 'Yanıtın' })).toHaveCount(1)
   await expect(page.getByRole('heading', { name: 'Kural ve kullanım' })).toHaveCount(0)
+})
+test('switching languages preserves independent screening and settings after reload', async ({ page }) => {
+  await page.goto('/')
+  await page.getByLabel('Hedef seviyen').selectOption('C1')
+  await page.getByLabel('Günlük süre (dk)').fill('15')
+  await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
+  await expect(page.getByRole('heading', { name: 'Başlangıç taraması' })).toBeVisible()
+  await page.getByLabel('Çalışma dili').selectOption('ru')
+  await expect(page.getByRole('heading', { name: 'Rusça çalışma planını kur' })).toBeVisible()
+  await page.getByLabel('Hedef seviyen').selectOption('B1')
+  await page.getByLabel('Günlük süre (dk)').fill('60')
+  await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
+  await expect(page.locator('fieldset[id="ru.placement.1"]')).toBeVisible()
+  await page.reload()
+  await expect(page.getByLabel('Çalışma dili')).toHaveValue('ru')
+  await page.getByRole('button', { name: 'Ayarlar' }).click()
+  await expect(page.getByLabel('Günlük süre (dk)')).toHaveValue('60')
+  await page.getByLabel('Çalışma dili').selectOption('en')
+  await expect(page.locator('fieldset[id="en.placement.1"]')).toBeVisible()
+  await page.getByRole('button', { name: 'Ayarlar' }).click()
+  await expect(page.getByLabel('Günlük süre (dk)')).toHaveValue('15')
+  await expect(page.getByLabel('Hedef seviyen')).toHaveValue('C1')
+})
+
+test('English A1 target opens the new beginner sequence and shows the selective C2 scope', async ({ page }) => {
+  const course = catalog.en
+  await page.goto('/')
+  await page.getByLabel('Hedef seviyen').selectOption('A1')
+  await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
+  for (const { exercise } of course.placement) {
+    const field = page.locator(`fieldset[id="${exercise.id}"]`)
+    if (exercise.kind === 'single') await field.getByRole('radio', { name: exercise.accepted, exact: true }).check()
+    else if (exercise.kind === 'fill' || exercise.kind === 'short') await field.getByRole('textbox').fill(exercise.accepted[0])
+    else if (exercise.kind === 'open') await field.getByRole('textbox').fill(exercise.sample)
+    else throw new Error(`Unexpected placement exercise ${exercise.id}`)
+  }
+  await page.getByRole('button', { name: 'Beceri profilimi gör' }).click()
+  await page.getByRole('button', { name: 'Günlük planı aç' }).click()
+  await expect(page.getByRole('heading', { name: 'İlk karşılaşmada kendini tanıt' })).toBeVisible()
+  await page.getByText('A1–C2 kapsamı', { exact: true }).click()
+  await expect(page.getByText('C2', { exact: true }).locator('..')).toContainText('2 yayımlanan ders · Seçili kazanımlar')
+  await expect(page.getByText('C1', { exact: true }).locator('..')).toContainText('6 yayımlanan ders · Seçili kazanımlar')
+  await page.getByRole('button', { name: 'Derse başla' }).click()
+  await expect(page.getByText('Hi, I’m Ece. I’m from Izmir.', { exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Sonraki örnek' }).click()
+  await page.getByRole('button', { name: 'Rehberli pratiğe geç' }).click()
+  await page.locator('fieldset[id="en.identity.form.1.guided.1"]').getByRole('textbox').fill('am')
+  await page.locator('fieldset[id="en.identity.form.2.guided.1"]').getByRole('textbox').fill('Are')
+  await page.getByRole('button', { name: 'Yanıtları değerlendir' }).click()
+  await expect(page.getByText('2 / 2 kesin yanıt doğru')).toBeVisible()
 })

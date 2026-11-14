@@ -1,0 +1,272 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.negotiate",
+      "outcome": "B2.negotiation",
+      "level": "B2",
+      "prerequisite": [
+        "en.interaction",
+        "en.tradeoff"
+      ],
+      "title": "Çok taraflı toplantıda koşullu anlaşma kur",
+      "objective": "Üç tarafın taleplerini ve vazgeçilmezlerini ayır, değiş tokuş öner ve kimin neyi kabul ettiğini teyit et.",
+      "situation": "Bir etkinlik salonunu mahalle grubu, gönüllüler ve kütüphane paylaşıyor. Her grubun farklı saat ve erişim ihtiyacı var.",
+      "bridge": "Önce esnek ve vazgeçilmez noktaları ayır. If you can … we could ile karşı teklif yap. Sonra ortak kararı geri söyle.",
+      "models": [
+        {
+          "phrase": "If you can finish by nine, we could open an extra hour.",
+          "explanation": "If + şimdiki biçim, gerçek olası koşul. Could, karşılıktaki öneriyi kesin söz hâline getirmez. Finish ve extra hour üzerinde ayrı vurgu yap."
+        },
+        {
+          "phrase": "We can agree to a trial, on condition that the main entrance stays open.",
+          "explanation": "On condition that bir vazgeçilmez şartı açıklar. Agree to a trial yalnızca denemeyi kabul eder."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Karşı teklifin koşulu",
+          "incorrect": "If you will finish by nine, we could open an extra hour.",
+          "correct": "If you finish by nine, we could open an extra hour.",
+          "explanation": "Bu gerçek koşulda if ardından geniş zaman. Sonuçta could öneriyi yumuşatır.",
+          "guided": [
+            [
+              "If you ___ (reserve) the room today, we could bring the chairs.",
+              "reserve"
+            ],
+            [
+              "If they ___ (close) the back door, we could move the meeting.",
+              "close"
+            ]
+          ],
+          "transfer": [
+            [
+              "If she ___ (confirm) the timetable, we could swap shifts.",
+              "confirms"
+            ],
+            [
+              "If the club ___ (leave) before nine, we could give them the hall.",
+              "leaves"
+            ]
+          ],
+          "delayed": [
+            [
+              "If the school ___ (pay) for a guard, we could try a later session.",
+              "pays"
+            ],
+            [
+              "If we ___ (keep) the shop door clear, they could permit the trial.",
+              "keep"
+            ]
+          ]
+        },
+        {
+          "label": "Anlaşmanın kapsamını sınırla",
+          "incorrect": "They agreed to a trial, so the change is permanent.",
+          "correct": "They agreed to a trial only. The final decision is still open.",
+          "explanation": "Geçici kabulün neyi kapsadığını kaynakla sınırla.",
+          "guided": [
+            [
+              "“A trial on Fridays, then a review.” Kabul edilen: Friday trial / permanent change",
+              "friday trial"
+            ],
+            [
+              "“You can use one room, not the whole floor.” İzinli: one room / whole floor",
+              "one room"
+            ]
+          ],
+          "transfer": [
+            [
+              "“We’ll lend the tables if they come back before noon.” Şart: return before noon / keep for a day",
+              "return before noon"
+            ],
+            [
+              "“We can share the equipment, but staff must stay.” Koşul: staff stay / staff leave",
+              "staff stay"
+            ]
+          ],
+          "delayed": [
+            [
+              "“Open one weekend, then survey visitors.” Önce yapılacak: opening one weekend / permanent opening",
+              "opening one weekend"
+            ],
+            [
+              "“Sign the agreement after the safety check.” Ön koşul: safety check / a party",
+              "safety check",
+              "the safety check"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "make a concession",
+        "meaning": "bir konuda taviz vermek",
+        "example": "We can make a concession on the date, but not on access.",
+        "usage": "Concession, başlangıç talebinin bir parçasından vazgeçmektir.",
+        "pronunciation": "/meɪk ə kənˈsɛʃən/",
+        "collocations": [
+          "make a concession on timing",
+          "offer a small concession"
+        ],
+        "recognize": [
+          "“make a concession” burada ne anlama gelir?",
+          "bir konuda taviz vermek",
+          "görüşmeyi ertelemek",
+          "koşulu gizlemek",
+          "Concession, başlangıç talebinin bir parçasından vazgeçmektir."
+        ],
+        "recall": [
+          "“bir konuda taviz vermek” anlamındaki hedef ifadeyi yaz.",
+          "make a concession"
+        ],
+        "use": "Hangi noktada esnek olduğunu söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "reach a compromise",
+          "meaning": "uzlaşmaya varmak",
+          "example": "The three groups reached a compromise after checking access.",
+          "usage": "Compromise iki tarafın da kabul edebileceği orta yol.",
+          "pronunciation": "/ɹiːtʃ ə ˈkɑmpɹəmaɪz/",
+          "collocations": [
+            "reach a practical compromise",
+            "reach a compromise on hours"
+          ],
+          "recognize": [
+            "“reach a compromise” burada ne anlama gelir?",
+            "uzlaşmaya varmak",
+            "itirazı reddetmek",
+            "kararı tek başına almak",
+            "Compromise iki tarafın da kabul edebileceği orta yol."
+          ],
+          "recall": [
+            "“uzlaşmaya varmak” anlamındaki hedef ifadeyi yaz.",
+            "reach a compromise"
+          ],
+          "use": "Üç taraf için geçici bir ortak karar öner."
+        },
+        {
+          "term": "a non-negotiable condition",
+          "meaning": "pazarlığa açık olmayan şart",
+          "example": "Keeping the entrance clear is a non-negotiable condition.",
+          "usage": "Bu şart yerine gelmezse teklif kabul edilmeyecektir.",
+          "pronunciation": "/ə ˌnɑnnɪˈɡoʊʃiəbəl kənˈdɪʃən/",
+          "collocations": [
+            "state a non-negotiable condition",
+            "meet a non-negotiable condition"
+          ],
+          "recognize": [
+            "“a non-negotiable condition” burada ne anlama gelir?",
+            "pazarlığa açık olmayan şart",
+            "kolayca değişen saat",
+            "dilek listesi",
+            "Bu şart yerine gelmezse teklif kabul edilmeyecektir."
+          ],
+          "recall": [
+            "“pazarlığa açık olmayan şart” anlamındaki hedef ifadeyi yaz.",
+            "a non-negotiable condition"
+          ],
+          "use": "Bir vazgeçilmez şartı açıkça belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "step-free access",
+          "cue": "basamaksız erişim"
+        },
+        {
+          "term": "steward",
+          "cue": "etkinlik görevlisi"
+        }
+      ],
+      "writing": {
+        "prompt": "Grup A geç saati, B sessizliği, C basamaksız erişimi istiyor. Biri esnek, biri vazgeçilmez koşulu belirt. Önce bir karşı teklif, ardından 110–150 sözcüklük ortak karar notu yaz.",
+        "sample": "The youth group wants a later closing time, the residents want the courtyard quiet after nine, and the access group needs a step-free route. We could offer a Friday trial if visitors leave through the street entrance and the main door remains accessible. The residents are willing to try that for two weeks. The youth group will provide a steward to direct people out, while the library will track visitor numbers and complaints. No permanent extension has been approved. We will meet again after the trial to compare the records and decide whether to change the opening hours. If the accessible door cannot remain open, the trial should be postponed rather than moved to the back entrance.",
+        "revision": "Bir koşulu kimin uygulayacağını ve kesin kararın ne zaman alınacağını ekle.",
+        "criteria": [
+          "En az iki tarafın farklı önceliği korunur.",
+          "Geçici anlaşma, koşul ve sorumluluklar ayrı belirtilir."
+        ]
+      },
+      "input": {
+        "text": "Youth group memo: We can run two Friday sessions if the room stays open until nine. We can provide one steward, but we cannot pay for a second.\n\nResidents’ letter: Our main concern is noise in the courtyard after eight thirty. We could accept a limited trial if visitors enter and leave from the street instead. We want one phone number to report any problems.\n\nAccess team note: The street entrance is level. Step-free access requires that the automatic door is staffed and the lift remains available. A later session is possible only if the automatic door is staffed and the lift remains available. Please record access complaints separately from noise complaints. Review both after two weeks.",
+        "reading": [
+          "Hangi koşul üç tarafın önerisini birlikte karşılar?",
+          "İki haftalık cuma denemesi, açık basamaksız giriş ve ayrı şikâyet takibi",
+          "Arka kapıyla kalıcı açılış",
+          "İkinci görevli olmadan her akşam açılış",
+          "Cuma denemesi, sokak girişi ve erişim/gürültü koşullarını birlikte gözetir.",
+          "only if the automatic door is staffed"
+        ],
+        "transcript": "Chair: Can we open late every Friday? Resident: We could accept two Fridays if people leave from the street, not the courtyard. Youth organiser: We can provide a steward to direct them. Access representative: Only if the street door remains staffed and the lift works. Chair: Then we have a two-week trial, not a permanent extension. Let us record access and noise complaints separately. We will look at both before discussing a third Friday.",
+        "preparation": "Her konuşmacının koşulunu ve son kararın zamanını ayır.",
+        "main": [
+          "Ne kabul ediliyor?",
+          "İki haftalık deneme",
+          "Her cuma kalıcı geç açılış",
+          "Avlu kapısından çıkış",
+          "A two-week trial, not a permanent extension.",
+          "a two-week trial"
+        ],
+        "detail": [
+          "Şikâyetler nasıl tutulacak?",
+          "Erişim ve gürültü ayrı",
+          "Tek bir listede toplam",
+          "Yalnız gürültü kaydedilecek",
+          "Access and noise complaints separately.",
+          "access and noise complaints separately"
+        ]
+      },
+      "retry": {
+        "text": "The sports hall can lend its smaller room for a Saturday trial. The dance group needs a clear floor. The chess club can share the tables only if they are put back by noon.",
+        "reading": [
+          "Hangi koşul satranç kulübüne ait?",
+          "Masaları öğlene kadar geri koymak",
+          "Tüm salonu boşaltmak",
+          "Salonda dansı yasaklamak",
+          "The chess club needs the tables back by noon.",
+          "put back by noon"
+        ],
+        "transcript": "We can lend the tools on Saturday if a volunteer signs for them. The garden group can provide Jo in the morning. We still need someone in the afternoon. Let us try the morning first and postpone the second session.",
+        "preparation": "Sabah ve öğleden sonraki sorumluluğu ayır.",
+        "main": [
+          "Hangi oturum deneniyor?",
+          "Sabah",
+          "Öğleden sonra",
+          "İkisi de",
+          "Try the morning first.",
+          "try the morning first"
+        ],
+        "detail": [
+          "Ödünç alma hangi koşula bağlı?",
+          "Bir gönüllünün imza vermesi",
+          "Aletlerin satın alınması",
+          "Bahçenin kapanması",
+          "A volunteer signs for them.",
+          "if a volunteer signs for them"
+        ]
+      },
+      "readingPurpose": "Üç paydaşın isteği, koşulu ve imkânı için ayrı satır aç.",
+      "readingUse": "Toplantı başkanına uzlaşma ve kontrol planı ver.",
+      "listeningUse": "İki tarafın neyi kabul ettiğini geri söyle.",
+      "speaking": "Üç taraflı salonda karşı teklif yap. Yeni erişim itirazına göre teklifini değiştir ve kararı teyit et.",
+      "genres": {
+        "reading": "üç paydaşlı toplantı dosyası",
+        "listening": "moderatörlü müzakere",
+        "writing": "karar ve sorumluluk notu"
+      },
+      "recovery": {
+        "reading": "Salonun teklifini ve satranç kulübünün eşya şartını ayır.",
+        "main": "Sorumlusu belirli oturumu dinle.",
+        "detail": "If ardından gelen şeyin teslim koşulu mu, tarih mi olduğunu ayır."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "can/could ile gerçek koşullu karşı teklif"
+      ]
+    }
+  ]
+}

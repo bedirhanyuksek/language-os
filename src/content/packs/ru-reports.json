@@ -1,0 +1,272 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.reports",
+      "outcome": "B2.reports",
+      "level": "B2",
+      "prerequisite": [
+        "ru.news",
+        "ru.handover"
+      ],
+      "title": "Karşılaştırılamayan raporları çözümle",
+      "objective": "İki raporun ölçüm birimini, örneklemini ve gözlemini ayır; karşılaştırma için gerekli ek veriyi iste.",
+      "situation": "İki kütüphane erişim çalışmasını okul meclisi tartışıyor. Bir rapor ziyaretleri, diğeri kişileri sayıyor.",
+      "bridge": "Veri birimini önce yaz. Тогда как ile farkı kur. Из этого не следует, что … ile desteklenmeyen sonucu sınırla.",
+      "models": [
+        {
+          "phrase": "Первый отчёт учитывает посещения, тогда как второй считает уникальных читателей.",
+          "explanation": "Тогда как, anlamca paralel iki tümceyi karşılaştırır. Отчёт değil, iki ayrı ölçüm vurgulanır."
+        },
+        {
+          "phrase": "Из этих данных не следует, что вечерний график привлёк новых читателей.",
+          "explanation": "Не следует, что ifadesi gözleme izin verir ama nedensellik iddiasını reddeder."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "İki ölçeği yan yana yerleştir",
+          "incorrect": "Первый опрос касается студентов тогда что второй — сотрудников.",
+          "correct": "Первый опрос касается студентов, тогда как второй — сотрудников.",
+          "explanation": "Тогда как farklı grupları ya da ölçümleri karşılaştırır.",
+          "guided": [
+            [
+              "Первая сводка считает заявки, ___ вторая считает семьи. Karşılaştırma kur.",
+              "тогда как"
+            ],
+            [
+              "Учёт шёл зимой, ___ контроль проводили летом.",
+              "тогда как"
+            ]
+          ],
+          "transfer": [
+            [
+              "В одной анкете были открытые вопросы, ___ в другой были варианты ответа.",
+              "тогда как"
+            ],
+            [
+              "Рейтинг учитывает оценки, ___ журнал фиксирует число звонков.",
+              "тогда как"
+            ]
+          ],
+          "delayed": [
+            [
+              "Отчёт школы охватывает первый курс, ___ опрос библиотеки включает выпускников.",
+              "тогда как"
+            ],
+            [
+              "В столовой считают чеки, ___ на фестивале считают посетителей.",
+              "тогда как"
+            ]
+          ]
+        },
+        {
+          "label": "Yöntem kanıtı sınırlar",
+          "incorrect": "Число заявок выросло. Значит, заявителей стало больше.",
+          "correct": "Число заявок выросло, но мы не знаем числа заявителей.",
+          "explanation": "Aynı kişi birden çok başvuru yapabiliyorsa, başvuru sayısını kişi sayısı gibi yorumlama.",
+          "guided": [
+            [
+              "«80 билетов продано, возвраты не учтены». Altı çizilecek: satış / gerçek katılım.",
+              "satış"
+            ],
+            [
+              "«Опрос только среди владельцев карт». Кого опросили?",
+              "владельцев карт"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Есть данные о звонках, нет данных о клиентах». Чем можно подтвердить рост числа клиентов?",
+              "данными о клиентах"
+            ],
+            [
+              "«Измеряли скорость, а не точность». Что измеряли?",
+              "скорость"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Вопрос задали тем, кто уже пришёл». Кого не охватили?",
+              "тех, кто не пришёл",
+              "тех, кто не пришел"
+            ],
+            [
+              "«Повторные заказы не отделяли». Что считали?",
+              "заказы"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "единица учёта",
+        "meaning": "sayım birimi",
+        "example": "В протоколе отдельно указана единица учёта.",
+        "usage": "Sayıların neyi temsil ettiğini adlandırır.",
+        "pronunciation": "едини́ца учёта",
+        "collocations": [
+          "выбрать единицу учёта",
+          "сменить единицу учёта"
+        ],
+        "recognize": [
+          "“единица учёта” burada ne anlama gelir?",
+          "sayım birimi",
+          "görevli memur",
+          "görüşme tarihi",
+          "Sayıların neyi temsil ettiğini adlandırır."
+        ],
+        "recall": [
+          "“sayım birimi” anlamındaki hedef ifadeyi yaz.",
+          "единица учёта"
+        ],
+        "use": "Bir spor salonu verisinin sayım birimini belirt."
+      },
+      "additionalWords": [
+        {
+          "term": "сопоставимые данные",
+          "meaning": "karşılaştırılabilir veriler",
+          "example": "Без сопоставимых данных нельзя оценить разницу.",
+          "usage": "Aynı tanım, dönem ve kapsama göre kıyaslanabilecek bilgilerdir.",
+          "pronunciation": "сопостави́мые да́нные",
+          "collocations": [
+            "собрать сопоставимые данные",
+            "нужны сопоставимые данные"
+          ],
+          "recognize": [
+            "“сопоставимые данные” burada ne anlama gelir?",
+            "karşılaştırılabilir veriler",
+            "birbirini yalanlayan tanıklar",
+            "taslak öneri",
+            "Aynı tanım, dönem ve kapsama göre kıyaslanabilecek bilgilerdir."
+          ],
+          "recall": [
+            "“karşılaştırılabilir veriler” anlamındaki hedef ifadeyi yaz.",
+            "сопоставимые данные"
+          ],
+          "use": "Bir başka mahalleyi karşılaştırmak için ihtiyacın olan veriyi iste."
+        },
+        {
+          "term": "сделать вывод",
+          "meaning": "sonuca varmak",
+          "example": "Мы не можем сделать вывод без журнала регистрации.",
+          "usage": "Вывод iddiadan önce eldeki kanıtı gerektirir.",
+          "pronunciation": "сде́лать вы́вод",
+          "collocations": [
+            "сделать осторожный вывод",
+            "сделать вывод из отчёта"
+          ],
+          "recognize": [
+            "“сделать вывод” burada ne anlama gelir?",
+            "sonuca varmak",
+            "görüşme planlamak",
+            "soru sormayı bırakmak",
+            "Вывод iddiadan önce eldeki kanıtı gerektirir."
+          ],
+          "recall": [
+            "“sonuca varmak” anlamındaki hedef ifadeyi yaz.",
+            "сделать вывод"
+          ],
+          "use": "Kulüp raporundan hangi sınırlı sonucun çıkarılacağını söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "охват",
+          "cue": "kapsam"
+        },
+        {
+          "term": "журнал посещений",
+          "cue": "ziyaret kayıt defteri"
+        }
+      ],
+      "writing": {
+        "prompt": "Her iki kaynağın ölçümünü ayrı açıklayan ve yeni veri toplanmasını öneren 100–135 sözcüklük bir meclis notu yaz. Kütüphane dışı bir örnek kullan.",
+        "sample": "Мы рассмотрели две сводки о работе спортивного зала. Первая показывает число проходов через турникет, тогда как вторая учитывает людей, которые купили новый абонемент. Охват тоже различается: в первой сводке есть школьные группы, а во второй их нет. Можно сказать, что в феврале через турникет прошло больше людей, если считать каждый проход отдельно. Однако из этого не следует, что число постоянных посетителей выросло. Для проверки нужно одинаково определить посетителя в обеих сводках, выбрать один и тот же месяц и отдельно отметить повторные визиты. До этого я предлагаю сохранить пробный график, но не принимать окончательное решение о расширении расписания.",
+        "revision": "Sayının artması ile eşsiz kişi sayısının artması arasındaki cümleyi keskinleştir. Bir ortak karşılaştırma ölçütü ekle.",
+        "criteria": [
+          "Her kaynağın birimi ve kapsamı ayrılır.",
+          "Öneri, kanıt düzeyini aşmaz."
+        ]
+      },
+      "input": {
+        "text": "Отчёт филиала на Полевой. После перехода на вечерний график журнал посещений показал рост на двадцать процентов. Единица учёта — вход в здание. Читатель, забравший книгу и вернувшийся на лекцию, учтён дважды. Дневные группы школьников из подсчёта не исключены.\n\nЗаписка филиала на Береговой. Число уникальных читателей за тот же месяц почти не изменилось. Регистрация по карточке включает всех, кто взял хотя бы одну книгу. Слушатели лекций без карточки не входят в охват. Более ранний график работы филиал не менял.\n\nОба автора предлагают продлить пилот до июня. Первый связывает рост с новым графиком, второй предлагает сначала одинаково определить, кого считать новым читателем. Городская комиссия попросила предоставить обезличенные данные и указать часы посещений отдельно от числа выданных книг.",
+        "reading": [
+          "İki dosya neden doğrudan karşılaştırılamaz?",
+          "Biri girişleri, diğeri benzersiz kart sahiplerini sayıyor",
+          "Ayrı alfabelerle hazırlandılar",
+          "İkisi de okul gruplarını tamamen dışlıyor",
+          "Birimler ve kapsamlar eşleşmiyor.",
+          "Единица учёта — вход в здание"
+        ],
+        "transcript": "Председатель: В первой сводке прирост двадцать процентов. Можно считать, что пришли новые люди? Аналитик: Нет. Мы знаем число входов, но посетитель мог зайти несколько раз за день. Библиотекарь: А во второй сводке не учтены слушатели без карточек. Председатель: Тогда нам нужен общий способ подсчёта. Аналитик: Да, и одинаковый период. Я бы начала с двух пробных недель и отдельно отметила тех, кто пришёл впервые. Библиотекарь: Договорились. Данные передадим без имён и номеров карточек.",
+        "preparation": "Gözlenen artış, açıklama ve önerilen yeni ölçümü ayrı dinle.",
+        "main": [
+          "Komisyon önce neye ihtiyaç duyuyor?",
+          "Ortak sayım yöntemi",
+          "Yeni kart ücreti",
+          "Akşam düzenini kaldırmaya",
+          "Ölçümler aynı biçimde yapılmalı.",
+          "общий способ подсчёта"
+        ],
+        "detail": [
+          "Denemede kim ayrıca işaretlenecek?",
+          "İlk kez gelenler",
+          "Çalışanlar",
+          "Yalnız çocuklar",
+          "Analist ilk ziyaretleri ayırıyor.",
+          "тех, кто пришёл впервые"
+        ]
+      },
+      "retry": {
+        "text": "Музей сравнил онлайн-продажи с журналом входа. Один заказ может включать несколько билетов. Часть билетов возвращают после продажи, поэтому число заказов не равно числу посещений.",
+        "reading": [
+          "Hangi iki veri birbirine eşitlenmemeli?",
+          "Siparişler ve ziyaretler",
+          "İki serginin çalışma saatleri",
+          "İki müzenin bilet fiyatları",
+          "Tek siparişte birden çok bilet olabilir.",
+          "число заказов не равно числу посещений"
+        ],
+        "transcript": "Я проверила два отчёта столовой. Один считает обеды, второй считает оплативших студентов. Чтобы проверить, сколько людей обедают здесь регулярно, нужно отделить повторные покупки по одной карте.",
+        "preparation": "Yemek adedi ve öğrenci adedini ayır.",
+        "main": [
+          "İkinci rapor kimi sayıyor?",
+          "Ödeme yapan öğrencileri",
+          "Aşçıları",
+          "Bütün ziyaretçileri",
+          "Bu rapor öğrenci sayısını sayıyor.",
+          "считает оплативших студентов"
+        ],
+        "detail": [
+          "Düzenli müşteriler için ne ayrılmalı?",
+          "Aynı karttaki tekrar alışverişler",
+          "Nakit fiyatlar",
+          "Okul gezileri",
+          "Analiz tekrarlanan alışverişleri ayırıyor.",
+          "отделить повторные покупки по одной карте"
+        ]
+      },
+      "readingPurpose": "Kaynaklara ait birim, kapsam, bulgu, yorum sütunları çıkar.",
+      "readingUse": "Ulaşım veya sağlık verisi için aynı dört sütunu kur.",
+      "listeningUse": "Bir yöneticiye tek sayının neden yetmediğini anlat.",
+      "speaking": "Biri başvuru, biri kişi sayısına dayanarak bütçe isteyen iki talebi karşılaştır. Hangi ek veriyi isteyeceğini ve nedenini açıkla.",
+      "genres": {
+        "reading": "karşılaştırmalı iki saha raporu",
+        "listening": "üç kişilik komisyon oturumu",
+        "writing": "kanıt ve veri ihtiyacı notu"
+      },
+      "recovery": {
+        "reading": "Önce her raporda birim tanımını bul.",
+        "main": "Artış değil, ortak yöntem önerisini hedefle.",
+        "detail": "Впервые sözcüğünün kimi ayırdığını dinle."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "тогда как ile karşılaştırma"
+      ]
+    }
+  ]
+}

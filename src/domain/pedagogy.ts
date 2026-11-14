@@ -123,17 +123,25 @@ export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesso
       : 'Kazanımı yeni bir bağlamda, seçenek yardımı olmadan kullan.')
   }
   if (!ready) return
-  for (const [key, reason] of [
+  const phases = [
     ['reading', 'Yapıyı kısa bir metinde anlamlandır.'],
     ['listening', 'Ana fikri ve bir ayrıntıyı metni görmeden yakala.'],
     ['vocabulary', 'Kelimeleri bağlam içinde öğren, sonra hatırla ve bir cümlede kullan.'],
     ['revision', 'İlk yazını rubrikle gözden geçir ve yeni sürümünü kaydet.'],
     ['delayed', 'Önceki üretimin üzerinden en az bir gün geçti. Farklı bir bağlamda hatırla.'],
-  ] as const) {
+  ] as const
+  const listeningSample = state.attempts.filter(({ context, evidence }) =>
+    context === 'diagnostic' && evidence.skill === 'listening').at(-1)
+  const readingTried = state.attempts.some(({ lessonId, context }) => lessonId === lesson.id && context === 'reading')
+  const prioritizeListening = !readingTried && listeningSample?.evidence.outcome === 'incorrect'
+  const ordered = prioritizeListening ? [phases[1], phases[0], ...phases.slice(2)] : phases
+  for (const [key, reason] of ordered) {
     if (!phaseTasks(state, lesson, key, now).length) continue
     const previous = key === 'reading' || key === 'listening' ? receptionTask(state, lesson, key)?.previous[0] : undefined
     return previous ? { ...phase(key, `Önceki yanıtın “${String(previous.answer)}”. İlgili ipucunu incele ve başka bir kaynakla dene.`),
-      evidenceId: previous.id } : phase(key, reason)
+      evidenceId: previous.id } : key === 'listening' && prioritizeListening
+      ? { ...phase(key, 'Başlangıç dinleme örneğinde ayrıntıyı kaçırdın. Önce ana fikri, sonra ayrıntıyı dinle.'), evidenceId: listeningSample.id }
+      : phase(key, reason)
   }
 }
 

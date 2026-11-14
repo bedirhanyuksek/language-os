@@ -8,15 +8,16 @@ const defaults = {
   ru: { estimate: 'A1', target: 'A2' },
 } as const
 
-export function ProfileForm({ initial, onSave, busy }: {
+export function ProfileForm({ initial, onSave, busy, fixedLanguage }: {
   initial?: Profile
   onSave: (profile: Profile) => Promise<boolean>
   busy: boolean
+  fixedLanguage?: Language
 }) {
-  const [language, setLanguage] = useState<Language>(initial?.language ?? 'en')
-  const [estimate, setEstimate] = useState<CEFRLevel>(initial?.estimate ?? defaults.en.estimate)
-  const [target, setTarget] = useState<CEFRLevel>(initial?.target ?? defaults.en.target)
-  const [minutes, setMinutes] = useState(initial?.minutes ?? 125)
+  const [language, setLanguage] = useState<Language>(initial?.language ?? fixedLanguage ?? 'en')
+  const [estimate, setEstimate] = useState<CEFRLevel>(initial?.estimate ?? defaults[language].estimate)
+  const [target, setTarget] = useState<CEFRLevel>(initial?.target ?? defaults[language].target)
+  const [minutes, setMinutes] = useState(initial?.minutes ?? 30)
   const [days, setDays] = useState(initial?.days ?? [0, 1, 2, 3, 4, 5, 6])
   const [goals, setGoals] = useState<LearningGoal[]>(initial?.goals ?? ['general'])
   const [error, setError] = useState('')
@@ -39,7 +40,7 @@ export function ProfileForm({ initial, onSave, busy }: {
   }
 
   return <form onSubmit={submit} className="profile-form">
-    {!initial && <fieldset>
+    {!initial && !fixedLanguage && <fieldset>
       <legend>Hangi dili çalışacaksın?</legend>
       <div className="choice-grid">
         {(['en', 'ru'] as const).map((item) => <label className="language-option" key={item}>

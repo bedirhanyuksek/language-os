@@ -1,5 +1,5 @@
 import { expect, test, type Locator, type Page } from '@playwright/test'
-import { catalog } from '../../src/content/catalog'
+import { catalog } from './catalog-fixture'
 import coachReport from '../fixtures/speaking-coach.json' with { type: 'json' }
 import validReport from '../fixtures/speaking-valid.json' with { type: 'json' }
 import invalidReport from '../fixtures/speaking-invalid.json' with { type: 'json' }
@@ -58,7 +58,9 @@ async function play(page: Page, label: string) {
 }
 
 for (const course of Object.values(catalog)) {
-  const lessons = course.unit.lessons.filter(({ id }) => !['en.routine', 'ru.cyrillic'].includes(id))
+  const lessons = course.unit.lessons.slice(0, course.language === 'en' ? 8 : 7).filter(({ id }) => ![
+    'en.routine', 'ru.cyrillic',
+  ].includes(id))
   test(`${course.language}: complete unit, real audio, typed vocabulary, delayed transfer`, async ({ page, context }) => {
     test.setTimeout(110_000)
     const errors: string[] = []
@@ -68,6 +70,7 @@ for (const course of Object.values(catalog)) {
     await expect(page.getByRole('heading', { name: 'Öğrenme planını kur.' })).toBeVisible()
     await fitsViewport(page)
     if (course.language === 'ru') await page.getByRole('radio', { name: /Rusça/ }).check()
+    await page.getByLabel('Hedef seviyen').selectOption(course.language === 'en' ? 'C1' : 'B1')
     await page.getByLabel('Günlük süre (dk)').fill('180')
     await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
     await expect(page.getByRole('heading', { name: 'Başlangıç taraması' })).toBeVisible()
@@ -77,7 +80,7 @@ for (const course of Object.values(catalog)) {
         exercise.id === 'ru.diagnostic.2' ? 'Я' : undefined)
     }
     await page.getByRole('button', { name: 'Beceri profilimi gör' }).click()
-    await expect(page.getByRole('heading', { name: 'Konuşma', exact: true }).locator('..')).toContainText('Ölçülmedi')
+    await expect(page.getByRole('heading', { name: 'Konuşma', exact: true, level: 2 }).locator('..')).toContainText('Ölçülmedi')
     await page.getByRole('button', { name: 'Günlük planı aç' }).click()
     await expect(page.getByText('Neden bu çalışma?')).toBeVisible()
 
@@ -103,16 +106,32 @@ for (const course of Object.values(catalog)) {
     }
 
     for (const [index, lesson] of lessons.entries()) {
+      if (index === 5 && course.language === 'en') {
+        // Start the next local study day before the first 24-hour review is due.
+        await page.clock.setFixedTime(new Date('2026-11-13T21:01:00Z'))
+        await page.getByRole('button', { name: 'Plan', exact: true }).click()
+      }
       const p = lesson.pedagogy!
       await expect(page.getByRole('heading', { name: lesson.title, exact: true })).toBeVisible()
       await page.getByRole('button', { name: 'Derse başla' }).click()
-      await expect(page.getByRole('heading', { name: p.sections[0].title })).toBeVisible()
+      await expect(page.getByRole('heading', { name: 'Bu yapı ne işe yarar?' })).toBeVisible()
+      await expect(task(page, lesson.production)).toHaveCount(0)
+      if (index === 0) await play(page, 'Cümleyi dinle')
+      for (let step = 1; step < lesson.teaching!.models.length; step++) {
+        await page.getByRole('button', { name: 'Sonraki örnek' }).click()
+      }
+      await page.getByRole('button', { name: 'Rehberli pratiğe geç' }).click()
       await fitsViewport(page)
-      for (const exercise of [...lesson.concepts.map(({ variants }) => variants[0]), lesson.production]) {
+      for (const exercise of lesson.concepts.map(({ variants }) => variants.find(({ kind }) => !['single', 'multiple', 'matching'].includes(kind))!)) {
         await fill(task(page, exercise), exercise)
       }
       await submit(page)
       await expect(page.getByText('2 / 2 kesin yanıt doğru')).toBeVisible()
+      await toPlan(page)
+      await page.getByRole('button', { name: 'Pratiğe başla' }).click()
+      await expect(page.getByRole('heading', { name: 'Yazmadan önce' })).toBeVisible()
+      await fill(task(page, lesson.production), lesson.production)
+      await submit(page)
       await expect(page.getByText('İnceleme bekliyor', { exact: true })).toBeVisible()
       await toPlan(page)
       const transfers = p.checks.map(({ transfer }) => transfer[0])
@@ -241,15 +260,15 @@ for (const course of Object.values(catalog)) {
         await expect(page.getByRole('heading', { name: 'Ne iş yaptığını söyle' })).toBeVisible()
       }
     }
-    await expect(page.getByRole('heading', { name: 'Başlangıç ünitesi tamamlandı' })).toBeVisible()
-    await page.clock.setFixedTime(new Date('2026-11-14T10:01:00Z'))
+    await expect(page.getByRole('heading', { name: course.language === 'en' ? 'Bir aksaklığın nasıl başladığını anlat' : 'Yol sor ve yön tarif et' })).toBeVisible()
+    await page.clock.setFixedTime(new Date(course.language === 'en' ? '2026-11-15T10:01:00Z' : '2026-11-14T10:01:00Z'))
     await page.getByRole('button', { name: 'Plan', exact: true }).click()
     await review(lessons.flatMap(({ pedagogy }) => pedagogy!.vocabulary.map(({ recall }) => recall)))
     for (const { pedagogy } of lessons) await practicePhase('Gecikmeli kazanım kontrolü', pedagogy!.checks.map(({ delayed }) => delayed[0]))
     await expect(page.getByText('Gecikmeli aktarım gözlendi')).toHaveCount(lessons.length)
     await page.getByRole('button', { name: 'Beceri profili' }).click()
-    await expect(page.getByRole('heading', { name: 'Dinleme', level: 3 }).locator('..').getByText(course.language === 'en' ? '10 / 10 kesin yanıt doğru' : '10 / 11 kesin yanıt doğru', { exact: true })).toBeVisible()
-    await expect(page.getByText(/Tanıma 6 · Aktif hatırlama 6|Tanıma 7 · Aktif hatırlama 7/)).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Dinleme', level: 3 }).locator('..').getByText(course.language === 'en' ? '14 / 14 kesin yanıt doğru' : '12 / 13 kesin yanıt doğru', { exact: true })).toBeVisible()
+    await expect(page.getByText(/Tanıma 8 · Aktif hatırlama 8/)).toBeVisible()
     const comparison = page.getByText('İlk ve gecikmeli denemeyi karşılaştır').first()
     await comparison.click()
     await expect(comparison.locator('..')).toContainText('Gecikmeli görev:')

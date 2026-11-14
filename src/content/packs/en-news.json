@@ -1,0 +1,540 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.newsviews",
+      "outcome": "B2.newsviews",
+      "level": "B2",
+      "prerequisite": [
+        "en.news",
+        "en.media"
+      ],
+      "title": "Karşıt görüş yazılarında olgu, değer ve iddiayı ayır",
+      "objective": "İki görüş yazısını karşılaştır, ortak kanıtı ve farklı değerlendirme ölçütlerini ayırarak gerekçeli görüş yaz.",
+      "situation": "İki gazete, aynı bisiklet yolu denemesini farklı manşetlerle değerlendiriyor. Olay, yorum ve öneriyi ayrı tart.",
+      "bridge": "İki yazarın aynı veriden hangi farklı ölçütle sonuç çıkardığını bul. Sonra iki kaynağı adil özetle ve kendi karar koşulunu öner.",
+      "models": [
+        {
+          "phrase": "Both writers accept that cycling increased. They disagree on whether access improved overall.",
+          "explanation": "Whether yan tümcesi tartışılan soruyu açar. Both writers accept ortak zemini, disagree on ayrımı gösterir. Overall sözcüğüne vurgu yap."
+        },
+        {
+          "phrase": "The figures show a change in numbers, not necessarily a change in safety.",
+          "explanation": "Not necessarily ilk verinin ikinci iddiayı kanıtlamadığını belirtir. Yazarın tercih ettiği değer ile ölçümün kapsadığı faktörü ayrı tut."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Anlaşmazlık sorusunu belirt",
+          "incorrect": "They disagree on does it work.",
+          "correct": "They disagree on whether it works.",
+          "explanation": "Disagree on whether sonrasında düz özne-fiil sırası gelir.",
+          "guided": [
+            [
+              "İki yazar, yolun güvenli olup olmadığını tartışıyor: They disagree on ___ the new route is safe.",
+              "whether"
+            ],
+            [
+              "They disagree on ___ the fee should rise.",
+              "whether"
+            ]
+          ],
+          "transfer": [
+            [
+              "They disagree on ___ the exhibition reaches younger visitors.",
+              "whether"
+            ],
+            [
+              "They disagree on ___ the figures represent all pupils.",
+              "whether"
+            ]
+          ],
+          "delayed": [
+            [
+              "They disagree on ___ a trial is long enough.",
+              "whether"
+            ],
+            [
+              "They disagree on ___ the measure improves access.",
+              "whether"
+            ]
+          ]
+        },
+        {
+          "label": "Kanıt ile sonuç arasında sınır koy",
+          "incorrect": "More visitors necessarily mean better access for everyone.",
+          "correct": "More visitors do not necessarily mean better access for everyone.",
+          "explanation": "Not necessarily, olası sonucu tümüyle reddetmeden verinin onu kanıtlamadığını söyler.",
+          "guided": [
+            [
+              "Tek kaydın kesin kanıt olmadığını belirt: A lower count does ___ mean a lower demand.",
+              "not necessarily"
+            ],
+            [
+              "Daha hızlı işlem tüm ziyareti kapsamayabilir: A shorter transaction does ___ mean less waiting outside.",
+              "not necessarily"
+            ]
+          ],
+          "transfer": [
+            [
+              "More bicycles do ___ mean fewer collisions.",
+              "not necessarily"
+            ],
+            [
+              "A full first session does ___ mean stable attendance all year.",
+              "not necessarily"
+            ]
+          ],
+          "delayed": [
+            [
+              "A higher average does ___ mean that every group improved.",
+              "not necessarily"
+            ],
+            [
+              "More online applications do ___ mean that walk-in services are no longer needed.",
+              "not necessarily"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "give weight to",
+        "meaning": "önem ve ağırlık vermek",
+        "example": "The article gives more weight to safety than speed.",
+        "usage": "Bir karar ölçütünün önceliğini bildirir.",
+        "pronunciation": "/ɡɪv weɪt tuː/",
+        "collocations": [
+          "give greater weight to safety",
+          "give equal weight to both views"
+        ],
+        "recognize": [
+          "“give weight to” burada ne anlama gelir?",
+          "önem ve ağırlık vermek",
+          "veriyi silmek",
+          "itirazı reddetmek",
+          "Bir karar ölçütünün önceliğini bildirir."
+        ],
+        "recall": [
+          "“önem ve ağırlık vermek” anlamındaki hedef ifadeyi yaz.",
+          "give weight to"
+        ],
+        "use": "İki ölçütten hangisine neden daha çok önem verdiğini belirt."
+      },
+      "additionalWords": [
+        {
+          "term": "draw a distinction",
+          "meaning": "ayrım yapmak",
+          "example": "The writer draws a distinction between use and safety.",
+          "usage": "İki kavramın aynı şeyi ifade etmediğini açığa çıkarır.",
+          "pronunciation": "/dɹɔː ə dɪˈstɪŋkʃən/",
+          "collocations": [
+            "draw a clear distinction",
+            "draw a distinction between two claims"
+          ],
+          "recognize": [
+            "“draw a distinction” burada ne anlama gelir?",
+            "ayrım yapmak",
+            "aynı kabul etmek",
+            "kanıt toplamak",
+            "İki kavramın aynı şeyi ifade etmediğini açığa çıkarır."
+          ],
+          "recall": [
+            "“ayrım yapmak” anlamındaki hedef ifadeyi yaz.",
+            "draw a distinction"
+          ],
+          "use": "İki kaynak arasındaki ölçüm farkını açıkla."
+        },
+        {
+          "term": "on balance",
+          "meaning": "bütün etkenler tartıldığında",
+          "example": "On balance, I would keep the pilot for another month.",
+          "usage": "Birden fazla ölçütü değerlendirdikten sonra hükmünü gösterir.",
+          "pronunciation": "/ɑn ˈbæləns/",
+          "collocations": [
+            "on balance, I would",
+            "on balance, the proposal"
+          ],
+          "recognize": [
+            "“on balance” burada ne anlama gelir?",
+            "bütün etkenler tartıldığında",
+            "ölçmeden önce",
+            "sadece bu sabah",
+            "Birden fazla ölçütü değerlendirdikten sonra hükmünü gösterir."
+          ],
+          "recall": [
+            "“bütün etkenler tartıldığında” anlamındaki hedef ifadeyi yaz.",
+            "on balance"
+          ],
+          "use": "İki sakıncayı tarttıktan sonra geçici öneri ver."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "loading bay",
+          "cue": "yük indirme alanı"
+        },
+        {
+          "term": "near misses",
+          "cue": "kazaya ramak kalan olaylar"
+        }
+      ],
+      "writing": {
+        "prompt": "Kaynak A: Cycle trips rose and younger riders say they feel safer. Kaynak B: The new route removed a loading bay and traders cannot use the side street early. 110–150 sözcükle ortak olguyu, iki farklı ölçütü ve kararını değiştirecek bir kanıtı yaz.",
+        "sample": "Both pieces accept that more people cycle along the road during the trial. The first gives greater weight to riders’ reported confidence, while the second gives weight to deliveries and access for traders. Neither tells us whether near misses have changed or how many deliveries can move to another time. On balance, I would keep the route for one more month and restore a loading space at an agreed hour. The council should record near misses and delivery delays during that period. If the loading change removes the delays while cyclists continue to use the route, there will be a stronger case for keeping both measures. If not, the proposal should be revised before becoming permanent.",
+        "revision": "Bir karşı görüşü en güçlü biçimiyle özetle, sonra ölçülebilir bir sonraki adım ekle.",
+        "criteria": [
+          "Ortak olgu ile farklı değerler ayrılır.",
+          "Öneri eksik kanıtı hesaba katar."
+        ]
+      },
+      "input": {
+        "text": "Opinion column A: The cycle lane gives schoolchildren a route away from moving traffic. The council counted more cycle trips after the change. Several parents say they feel more comfortable letting children ride. To me, safer access for younger riders matters more than keeping every roadside space.\n\nOpinion column B: It is encouraging that cycling increased. But the change removed a loading bay used by small shops before opening. No one has published counts of near misses, and the side street cannot take delivery vans at that hour. I would judge the trial by safety and whether traders can still receive goods rather than by cycling numbers alone.\n\nThe editor notes that both columns use the same cycle count. Their disagreement is about what the count can establish and which needs the next version must address.",
+        "reading": [
+          "Yazarlar hangi olguda uzlaşıyor?",
+          "Bisiklet yolculukları arttı",
+          "Teslimat artık mümkün değil",
+          "Kazaya ramak kalan olaylar azaldı",
+          "Her iki yazı aynı bisiklet artışı verisini kabul ediyor.",
+          "both columns use the same cycle count"
+        ],
+        "transcript": "Presenter: Both writers accept that the number of cycle trips rose. In the first piece, a parent describes letting her child ride to school for the first time. In the second, a shopkeeper cannot receive goods before opening. Guest: Those experiences can both be true. The count answers a question about use, but does not necessarily prove a change in safety. Presenter: What should go into the next evaluation? Guest: Keep the count. Add reports of near misses and check when businesses need access. A more useful headline would name the gain and the unresolved cost.",
+        "preparation": "Her kaynağın ölçtüğü şeyi ve önerilen ek kanıtı işaretle.",
+        "main": [
+          "Misafir iki deneyim hakkında ne diyor?",
+          "İkisi de doğru olabilir ve farklı ihtiyaçları gösterir",
+          "Biri kesinlikle uydurma",
+          "İkisi de yalnızca kaza sayısını ölçüyor",
+          "Both experiences can coexist.",
+          "Those experiences can both be true"
+        ],
+        "detail": [
+          "Yeni değerlendirmeye ne eklenmeli?",
+          "Ramak kala olaylar ve işletmelerin erişim saatleri",
+          "Yalnız ebeveyn sayısı",
+          "Bisiklet mağazası satışları",
+          "Add reports of near misses and check when businesses need access.",
+          "Add reports of near misses and check when businesses need access"
+        ]
+      },
+      "retry": {
+        "text": "Column one praises a new square because more people sit there at lunchtime. Column two accepts that observation but asks who uses the square after dark. Neither has interviewed evening visitors. The council will sample different times before making the layout permanent.",
+        "reading": [
+          "Hangi ziyaretçilerden bilgi eksik?",
+          "Akşam gelenler",
+          "Öğle gelenler",
+          "Mimarlar",
+          "Neither has interviewed evening visitors.",
+          "Neither has interviewed evening visitors"
+        ],
+        "transcript": "One article supports a late bus because boarding counts rose. The other says drivers wait too long at the end of the route. The manager accepts both concerns. She wants to run the bus for another four weeks while logging actual arrival times, before deciding whether to move the last stop.",
+        "preparation": "Yolcu talebiyle işleyiş ölçütünü ayır.",
+        "main": [
+          "Geç otobüs neden destekleniyor?",
+          "Binen yolcu sayısı arttı",
+          "Son durak taşındı",
+          "Bilet tamamen ücretsiz",
+          "Boarding counts rose.",
+          "boarding counts rose"
+        ],
+        "detail": [
+          "Son durak kararı için ne kaydedilecek?",
+          "Gerçek varış saatleri",
+          "Otobüsün rengi",
+          "Sürücülerin yaşları",
+          "Logging actual arrival times.",
+          "logging actual arrival times"
+        ]
+      },
+      "readingPurpose": "İki sütun aç: ortak olgu ve farklı karar ölçütleri.",
+      "readingUse": "Tartışmanın daha dikkatli bir manşetini ve gerekçesini yaz.",
+      "listeningUse": "Savı adil aktar, sonra ölçülebilir bir karşı soru sor.",
+      "speaking": "Bir şehir forumunda iki görüşü temsil et. Karşı örneği duyunca ölçütünü savun veya daralt.",
+      "genres": {
+        "reading": "karşıt görüş yazıları",
+        "listening": "editör ve konuk değerlendirmesi",
+        "writing": "gerekçeli görüş yazısı"
+      },
+      "recovery": {
+        "reading": "İki yazarın farklı saatleri tarttığını fark et.",
+        "main": "İlk yazının hangi sayıyla otobüsü savunduğunu dinle.",
+        "detail": "Son karardan önce hangi kayıt isteniyor?"
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "whether ile gömülü soru ve not necessarily"
+      ]
+    },
+    {
+      "id": "en.news",
+      "outcome": "B1.news",
+      "level": "B1",
+      "prerequisite": [
+        "en.sequence",
+        "en.story"
+      ],
+      "title": "Yerel haberin ana olayını ve sonucunu aktar",
+      "objective": "Tanık sözü ile duyurulan değişikliği ayırarak kısa bir yerel haberi aktar.",
+      "situation": "Köprü kapanışı hakkında iki komşu farklı şeyler duymuş. Belediye duyurusunda neyin, nerede ve ne zaman değiştiğini bul.",
+      "bridge": "Önce olayı söyle. According to ile kaynağı ver. As a result ile doğrulanmış sonucu bağla.",
+      "models": [
+        {
+          "phrase": "According to the notice, one entrance will remain open.",
+          "explanation": "According to + kaynak, bilgiyi kimin verdiğini gösterir. Kendi yorumunu ayrı söyle."
+        },
+        {
+          "phrase": "The path flooded overnight. As a result, the morning walk was cancelled.",
+          "explanation": "As a result önceki olayın sonucuna geçer. Sonuç bölümüne yeni bir sebep ekleme. Result sözcüğünde ikinci hece vurgulu."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Haberi kaynağına bağla",
+          "incorrect": "According the notice, the library is open.",
+          "correct": "According to the notice, the library is open.",
+          "explanation": "According to + kaynak kullan. The notice veya the reporter gibi kaynağı belirt.",
+          "guided": [
+            [
+              "Duyuruya göre: ___ the notice, one door will stay open.",
+              "according to"
+            ],
+            [
+              "Haritaya göre: ___ the map, the east route is shorter.",
+              "according to"
+            ]
+          ],
+          "transfer": [
+            [
+              "Okulun mesajına göre: ___ the school’s message, lessons start at ten.",
+              "according to"
+            ],
+            [
+              "Muhabire göre: ___ the reporter, no one was hurt.",
+              "according to"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kulübün sitesine göre: ___ the club’s website, visitors can join on Sunday.",
+              "according to"
+            ],
+            [
+              "Program çizelgesine göre: ___ the timetable, the first bus leaves at six.",
+              "according to"
+            ]
+          ]
+        },
+        {
+          "label": "Sonucu as a result ile işaretle",
+          "incorrect": "Rain flooded the path. As result, we turned back.",
+          "correct": "Rain flooded the path. As a result, we turned back.",
+          "explanation": "As a result sonraki cümlenin önceki olayın sonucu olduğunu bildirir.",
+          "guided": [
+            [
+              "Sonuç: The pump stopped. ___, the pool closed.",
+              "as a result",
+              "consequently"
+            ],
+            [
+              "Sonuç: The hall was full. ___, some visitors waited outside.",
+              "as a result",
+              "consequently"
+            ]
+          ],
+          "transfer": [
+            [
+              "Sonuç: The train was cancelled. ___, the pupils arrived late.",
+              "as a result",
+              "consequently"
+            ],
+            [
+              "Sonuç: The river rose overnight. ___, the lower path was closed.",
+              "as a result",
+              "consequently"
+            ]
+          ],
+          "delayed": [
+            [
+              "Sonuç: A display broke. ___, the museum opened a different room.",
+              "as a result",
+              "consequently"
+            ],
+            [
+              "Sonuç: The sound system failed. ___, the outdoor talk was moved indoors.",
+              "as a result",
+              "consequently"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "issue a notice",
+        "meaning": "duyuru yayımlamak",
+        "example": "The council issued a notice about the bridge.",
+        "usage": "Issue burada yayımlamak veya resmen duyurmak demektir.",
+        "pronunciation": "/ˈɪʃuː ə ˈnoʊtɪs/",
+        "collocations": [
+          "issue a public notice",
+          "issue a notice about closures"
+        ],
+        "recognize": [
+          "“issue a notice” burada ne anlama gelir?",
+          "duyuru yayımlamak",
+          "yolu açmak",
+          "haber okumak",
+          "Issue burada yayımlamak veya resmen duyurmak demektir."
+        ],
+        "recall": [
+          "“duyuru yayımlamak” anlamındaki hedef ifadeyi yaz.",
+          "issue a notice"
+        ],
+        "use": "Bir okul yönetiminin hangi konuda duyuru yayımladığını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "remain open",
+          "meaning": "açık kalmak",
+          "example": "The side entrance will remain open.",
+          "usage": "Remain, var olan durumun sürdüğünü söyler.",
+          "pronunciation": "/ɹɪˈmeɪn ˈoʊpən/",
+          "collocations": [
+            "remain open to visitors",
+            "remain open until six"
+          ],
+          "recognize": [
+            "“remain open” burada ne anlama gelir?",
+            "açık kalmak",
+            "erken kapanmak",
+            "ilk kez açılmak",
+            "Remain, var olan durumun sürdüğünü söyler."
+          ],
+          "recall": [
+            "“açık kalmak” anlamındaki hedef ifadeyi yaz.",
+            "remain open"
+          ],
+          "use": "Bir ziyaretçiye hangi girişin açık kaldığını bildir."
+        },
+        {
+          "term": "take effect",
+          "meaning": "yürürlüğe girmek",
+          "example": "The change will take effect on Monday.",
+          "usage": "Take effect değişikliğin uygulanmaya başladığı zamana işaret eder.",
+          "pronunciation": "/teɪk ɪˈfɛkt/",
+          "collocations": [
+            "take effect on Monday",
+            "take effect immediately"
+          ],
+          "recognize": [
+            "“take effect” burada ne anlama gelir?",
+            "yürürlüğe girmek",
+            "iptal edilmek",
+            "ilanı okumak",
+            "Take effect değişikliğin uygulanmaya başladığı zamana işaret eder."
+          ],
+          "recall": [
+            "“yürürlüğe girmek” anlamındaki hedef ifadeyi yaz.",
+            "take effect"
+          ],
+          "use": "Bir rota değişikliğinin ne zaman başlatıldığını söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "footbridge",
+          "cue": "yaya köprüsü"
+        },
+        {
+          "term": "until further notice",
+          "cue": "yeni bir duyuruya kadar"
+        }
+      ],
+      "writing": {
+        "prompt": "Bilgi: The park footbridge is closed from Tuesday; the sports gate stays open. A residents’ group reports long waits at the gate, but the council has not counted queues. Mahalle grubuna 70–100 sözcüklük kaynaklı haber yaz.",
+        "sample": "According to the council notice, the park footbridge will close on Tuesday and the sports gate will remain open. As a result, visitors will need to enter the park from the sports side during the repairs. A residents’ group says people have already waited there, but the council has not published a count. There is no confirmed reopening date. I would check the next council notice before sharing any date for the bridge to open.",
+        "revision": "Kesin duyuru bilgisini ilk iki cümleye al; tanık gözlemi ve belirsizliği ayrı tut.",
+        "criteria": [
+          "Olay, zaman ve etki anlaşılır.",
+          "Bilginin kaynağı ve açık kalan konu belirtilir."
+        ]
+      },
+      "input": {
+        "text": "Council notice: The footbridge beside Mill Road will close from Tuesday until further notice. The sports gate will remain open. As a result, walkers from the station should allow more time. Residents report that the gate gets crowded at three, but the council has not measured waiting times. No reopening date has been set.",
+        "reading": [
+          "Yeni plan ne zaman başlıyor?",
+          "Salı",
+          "Çarşamba",
+          "Cuma",
+          "From Tuesday, geçerli başlangıç günüdür.",
+          "from Tuesday"
+        ],
+        "transcript": "The footbridge at Mill Road is closed. According to the council, walkers should use the sports gate while repairs continue. The bus route has not changed. A resident told us the gate was crowded after school yesterday. We have not been given a reopening date.",
+        "preparation": "Duyuru, tanık gözlemi ve hâlâ bilinmeyen bilgiyi ayır.",
+        "main": [
+          "Yayalar hangi girişi kullanacak?",
+          "Spor kapısı",
+          "İstasyon kapısı",
+          "Köprü girişi",
+          "Use the sports gate.",
+          "use the sports gate"
+        ],
+        "detail": [
+          "Hangi bilgi hâlâ yok?",
+          "Yeniden açılış tarihi",
+          "Otobüs güzergâhı",
+          "Köprünün konumu",
+          "We have not been given a reopening date.",
+          "not been given a reopening date"
+        ]
+      },
+      "retry": {
+        "text": "The town will close the east path on Wednesday to replace lights. Bicycles should use the riverside route. The west path will still be open to walkers.",
+        "reading": [
+          "Bisikletliler nereye yönlendiriliyor?",
+          "Nehir kenarındaki yola",
+          "Batı yoluna",
+          "Doğu yoluna",
+          "Bicycles should use the riverside route.",
+          "use the riverside route"
+        ],
+        "transcript": "The library lift stopped yesterday. As a result, the history talk will take place on the ground floor. According to the library, the starting time stays the same. They will publish a repair update on Friday.",
+        "preparation": "Taşınan etkinlik ve bakım duyurusunun gününü ayır.",
+        "main": [
+          "Konuşma nerede yapılacak?",
+          "Zemin katta",
+          "Bahçede",
+          "İkinci katta",
+          "On the ground floor.",
+          "on the ground floor"
+        ],
+        "detail": [
+          "Bakım bilgisi ne zaman yayımlanacak?",
+          "Cuma",
+          "Salı",
+          "Pazar",
+          "On Friday.",
+          "on Friday"
+        ]
+      },
+      "readingPurpose": "Olay, değişiklik ve doğrulanmamış ayrıntı için ayrı satır tut.",
+      "readingUse": "Bir ziyaretçiye haberi ve alternatif girişi aktar.",
+      "listeningUse": "Bir dinleyiciye doğrulanmamış tarihi uydurmadan kısa haber ver.",
+      "speaking": "Bir yerel haberin kısaltılmış özetini sun ve dinleyicinin takip sorusuna cevap ver.",
+      "genres": {
+        "reading": "yerel duyuru ve tanık notu",
+        "listening": "yerel radyo haberi",
+        "writing": "mahalle haber özeti"
+      },
+      "recovery": {
+        "reading": "Kapatılan yolu ve bisikletler için verilen alternatifi ayrı bul.",
+        "main": "As a result sonrasında etkinliğin yeni yerini dinle.",
+        "detail": "Will publish ifadesinin gününe odaklan."
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "according to ile kaynak ve sonuç belirteci"
+      ]
+    }
+  ]
+}

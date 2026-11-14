@@ -44,7 +44,7 @@ export function Settings({ state, busy, onSave, onRestore, notice }: {
     </section>
     <TutorSettings />
     <section className="surface section">
-      <h2>Yerel kayıtlar</h2><p>Yedek dosyası yanıtlarını ve içe aktardığın konuşma alıntılarını içerir.</p>
+      <h2>Yerel kayıtlar</h2><p>Yedek etkin dili, yanıtlarını ve içe aktardığın konuşma alıntılarını içerir. Her dilin yedeğini o dile geçerek indirebilirsin.</p>
       <div className="button-row">
         <button className="secondary" onClick={download}>Yedeği indir</button>
         <button className="secondary" disabled={busy} onClick={() => fileInput.current?.click()}>Yedek seç</button>
@@ -52,7 +52,7 @@ export function Settings({ state, busy, onSave, onRestore, notice }: {
           onChange={(event) => { void pick(event.target.files?.[0]); event.target.value = '' }} />
       </div>
       {candidate && <div className="notice">
-        <p>Bu yedek etkin yerel profili ve ilerlemeyi değiştirecek.</p>
+        <p>Bu yedek, dosyadaki dile ait yerel profili ve ilerlemeyi değiştirecek ve o dili açacak.</p>
         <div className="button-row">
           <button className="primary" disabled={busy} onClick={() => void onRestore(candidate)}>Yedeği geri yükle</button>
           <button className="link-button" onClick={() => setCandidate(undefined)}>Vazgeç</button>

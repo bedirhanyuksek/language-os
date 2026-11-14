@@ -34,3 +34,11 @@ browser-profile/
 *.sqlite*
 *.db
 *.db-*
+
+# Local service, logs and generated authoring artifacts
+.language-os/
+host.json
+*.log
+coverage/
+playwright/.auth/
+.author-tmp-*/

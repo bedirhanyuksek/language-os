@@ -4,7 +4,7 @@ import { beginSpeaking, dailyPlan, finishLesson, finishPlacement, finishDiagnost
 import { nextDiagnostic } from '../domain/diagnostic'
 import { DiagnosticView } from './DiagnosticView'
 import { phaseTasks, gradeVocabularyRecall, receptionTask } from '../domain/pedagogy'
-import type { ExerciseAttempt, PedagogyPhase } from '../domain/model'
+import type { ExerciseAttempt, Language, PedagogyPhase } from '../domain/model'
 import { initialState, type LearningState } from '../domain/state'
 import { IndexedLearningRepository, localLearningOrigin, parseBackup, type QuarantineNotice } from '../persistence/repository'
 import type { MigrationIssue } from '../persistence/migration'
@@ -15,7 +15,7 @@ import { ProfileForm } from './ProfileForm'
 import { TutorSettings } from './TutorPanel'
 import { Settings } from './Settings'
 import { SpeakingView } from './SpeakingView'
-import { Dashboard, LessonNotes, LessonResults, ReviewCard, SkillProfile } from './StudyViews'
+import { Dashboard, LessonStudy, LessonResults, ReviewCard, SkillProfile } from './StudyViews'
 
 type Screen =
   | { type: 'home' | 'skills' | 'settings' | 'diagnostic' }
@@ -46,6 +46,7 @@ export function App() {
   const [error, setError] = useState('')
   const [notice, setNotice] = useState('')
   const [busy, setBusy] = useState(false)
+  const [newLanguage, setNewLanguage] = useState<Language>()
   const [screen, setScreen] = useState<Screen>(() => ({
     type: new URLSearchParams(window.location.search).get('chatgpt') === 'return' ? 'settings' : 'home',
   }))
@@ -76,6 +77,7 @@ export function App() {
   }, [])
 
   function go(next: Screen) {
+    setNewLanguage(undefined)
     setError('')
     setNotice('')
     setNow(nowISO())
@@ -84,7 +86,7 @@ export function App() {
     mainRef.current?.focus()
   }
 
-  async function save(work: () => Promise<LearningState>, after?: (saved: LearningState) => void) {
+  async function save(work: () => Promise<LearningState | undefined>, after?: (saved: LearningState) => void, missing?: () => void) {
     if (inFlight.current) return false
     inFlight.current = true
     setBusy(true)
@@ -92,6 +94,7 @@ export function App() {
     setNotice('')
     try {
       const saved = await work()
+      if (!saved) { missing?.(); return false }
       setState(saved)
       setNow(nowISO())
       after?.(saved)
@@ -152,6 +155,13 @@ export function App() {
         </details>
       </section>
     </div>
+  } else if (newLanguage) {
+    content = <section className="surface">
+      <h1>{languageLabels[newLanguage]} çalışma planını kur</h1>
+      <ProfileForm key={newLanguage} fixedLanguage={newLanguage} busy={busy} onSave={(profile) =>
+        save(() => repository.switchLanguage(state.profile.id, newLanguage, initialState(profile)), () => go({ type: 'home' }))} />
+      <button className="secondary" disabled={busy} onClick={() => go({ type: 'home' })}>Vazgeç</button>
+    </section>
   } else if (!state.placementAt && screen.type !== 'settings') {
     content = <>
       <header className="page-heading"><div><p className="eyebrow">{languageLabels[course.language]} · {course.placement.length} soru</p>
@@ -180,7 +190,7 @@ export function App() {
       state={state} course={course} busy={busy} back={() => go({ type: 'home' })}
       submit={(id, answer, played) => update((current) => finishDiagnostic(current, course, id, answer, nowISO(), played),
         (saved) => go({ type: nextDiagnostic(course, saved) ? 'diagnostic' : 'skills' }))} />
-    else if (screen.type === 'skills') content = <><SkillProfile state={state} course={course} />
+    else if (screen.type === 'skills') content = <><SkillProfile state={state} course={course} plan={plan} now={now} />
       {diagnostic && <button className="secondary" onClick={() => go({ type: 'diagnostic' })}>Tanılamaya devam et</button>}
       <button className="primary" onClick={() => go({ type: 'home' })}>Günlük planı aç <span aria-hidden>→</span></button></>
     else if (screen.type === 'settings') content = <Settings key={state.profile.id} state={state} busy={busy} notice={setNotice}
@@ -194,16 +204,10 @@ export function App() {
       content = <>
         <header className="page-heading"><div><p className="eyebrow">{languageLabels[course.language]} · {lesson.objective.level}</p>
           <h1>{lesson.title}</h1><p>{lesson.objective.description}</p></div></header>
-        {tasks.some(({ exercise }) => exercise.kind !== 'open') && <LessonNotes lesson={lesson} state={state} />}
-        {lesson.pedagogy && <details><summary>Yazını kontrol etmek için ölçütler</summary>
-          <ul>{lesson.pedagogy.rubric.map(({ criterion }) => <li key={criterion}>{criterion}</li>)}</ul>
-        </details>}
-        <section className="section"><h2>Alıştırma</h2>
-          <ExerciseForm key={tasks.map(({ exercise }) => exercise.id).join('|')} tasks={tasks}
-            language={course.language} busy={busy}
-            onSubmit={(answers) => update((current) => finishLesson(current, course, lesson, answers, nowISO()),
-              (saved) => go({ type: 'results', lessonId: lesson.id, attempts: saved.attempts.slice(-tasks.length) }))} />
-        </section>
+        <LessonStudy key={tasks.map(({ exercise }) => exercise.id).join('|')} tasks={tasks}
+          lesson={lesson} state={state} busy={busy}
+          onSubmit={(answers) => update((current) => finishLesson(current, course, lesson, answers, nowISO()),
+            (saved) => go({ type: 'results', lessonId: lesson.id, attempts: saved.attempts.slice(-tasks.length) }))} />
       </>
     } else if (screen.type === 'results' && lesson) content = <LessonResults lesson={lesson} state={state}
       attempts={screen.attempts} onContinue={() => go({ type: 'home' })} />
@@ -245,7 +249,7 @@ export function App() {
       const pending = state.speakingSessions.find((session) =>
         !state.speakingAssessments.some(({ report }) => report.sessionId === session.id))
       content = <>
-        <Dashboard state={state} course={course} plan={plan} start={start} />
+        <Dashboard state={state} course={course} plan={plan} start={start} now={now} />
         {diagnostic && <button className="link-button" onClick={() => go({ type: 'diagnostic' })}>Tanılamaya devam et</button>}
         {state.speakingAssessments.length > 0 && <details className="section">
           <summary>Kaydedilen konuşma raporları</summary>
@@ -272,7 +276,16 @@ export function App() {
         {state?.placementAt && <button disabled={busy || resetting} onClick={() => go({ type: 'skills' })} aria-current={screen.type === 'skills' ? 'page' : undefined}>Beceri profili</button>}
         <button disabled={busy || resetting} onClick={() => go({ type: 'settings' })} aria-current={screen.type === 'settings' ? 'page' : undefined}>Ayarlar</button>
       </nav>
-      {course && <span className="top-language">{languageLabels[course.language]} · {course.level}</span>}
+      {state && !storageIssue && <label className="top-language">Çalışma dili <select aria-label="Çalışma dili"
+        value={newLanguage ?? state.profile.language} disabled={busy || resetting}
+        onChange={(event) => {
+          const language = event.target.value as Language
+          if (language === state.profile.language) go({ type: 'home' })
+          else void save(() => repository.switchLanguage(state.profile.id, language), () => go({ type: 'home' }),
+            () => { go({ type: 'home' }); setNewLanguage(language) })
+        }}>
+        <option value="en">İngilizce</option><option value="ru">Rusça</option>
+      </select></label>}
     </header>
     <main id="main" tabIndex={-1} ref={mainRef} className={state ? 'workspace' : 'workspace welcome'}>
       {storageIssue && <section className="notice error">

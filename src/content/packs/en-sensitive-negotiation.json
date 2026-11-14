@@ -1,0 +1,278 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.fluency",
+      "outcome": "C1.fluency",
+      "level": "C1",
+      "prerequisite": [
+        "en.negotiate",
+        "en.seminar"
+      ],
+      "title": "Hassas bir müzakerede beklenmedik itiraza yanıt ver",
+      "objective": "Muhatabın kaygısını adını koyarak kabul et, varsayım veya ithamı teyit et ve anlaşma sınırını yeni bilgi karşısında yeniden kur.",
+      "situation": "Bir ağız tarihi sergisinde önceden görüşülen ses kaydına, konuşmacının ailesi yayından bir gün önce itiraz ediyor.",
+      "bridge": "Kişiyi haklı/haksız ilan etmeden kaygısını geri söyle. Even if ile hangi sınırın değişmediğini açıkla. Yine de seçenek sun.",
+      "models": [
+        {
+          "phrase": "I appreciate why that feels intrusive. What I can offer is a private listening session.",
+          "explanation": "Takdir değil, kaygıyı kabul etme. What I can offer önerinin sınırına odaklanır."
+        },
+        {
+          "phrase": "Even if the form allows publication, we need to check that permission still stands.",
+          "explanation": "Even if, belirtilen varsayım doğru olsa bile sonraki şartın değişmediğini söyler. Stand burada geçerliliğini sürdürmek demek."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Bir varsayımı kabul etmeden yanıtla",
+          "incorrect": "Even though the recording may be anonymous, we would still consult her.",
+          "correct": "Even if the recording is anonymous, we would still consult her.",
+          "explanation": "Even though gerçekleşmiş/kabul edilen olguyla, even if açık bir ihtimalle birlikte kullanılabilir. Bu örnekte anonimlik doğrulanmamış. Verilen açık ihtimalleri even if ile kur.",
+          "guided": [
+            [
+              "___ they promise double funding, we will still review consent. Olası, henüz söylenmedi.",
+              "Even if"
+            ],
+            [
+              "We must ask the speaker, ___ a curator says we can go ahead. Henüz böyle bir şey söylenmedi.",
+              "even if"
+            ]
+          ],
+          "transfer": [
+            [
+              "___ a sponsor agrees to wait, the private material stays locked. Henüz teyit yok.",
+              "Even if"
+            ],
+            [
+              "We will contact the participants ___ we find no names in the transcript. Sonuç henüz bilinmiyor.",
+              "even if"
+            ]
+          ],
+          "delayed": [
+            [
+              "___ the landlord reduces the rent, the board will insist on a safety inspection. Varsayım.",
+              "Even if"
+            ],
+            [
+              "I would still run the comparison ___ the new figures look convincing. Veri henüz gelmedi.",
+              "even if"
+            ]
+          ]
+        },
+        {
+          "label": "Bir onayı kapsamına göre oku",
+          "incorrect": "They agreed to hear the clip, so the museum can stream it.",
+          "correct": "They agreed to a private hearing, not to public release.",
+          "explanation": "Dinlemeyi kabul etmek yeniden yayıma izin vermez. Kapsamı ve yetkili kişiyi ayır.",
+          "guided": [
+            [
+              "“I can circulate the draft among the trustees.” Yetki: internal circulation / publication",
+              "internal circulation"
+            ],
+            [
+              "“You can quote me if my name is left out.” Sınır: anonymity / payment",
+              "anonymity"
+            ]
+          ],
+          "transfer": [
+            [
+              "“We can discuss an extended loan, but I cannot promise it.” Açık: discussion / renewal",
+              "discussion"
+            ],
+            [
+              "“I will share the edited version with one reporter under embargo.” Tek alıcı: one reporter / all outlets",
+              "one reporter"
+            ]
+          ],
+          "delayed": [
+            [
+              "“They may archive the printout, but recordings must be returned.” Arşive açık: printout / recording",
+              "printout",
+              "the printout"
+            ],
+            [
+              "“A test group can see the map before the route is announced.” Şimdiki erişim: test group / public",
+              "test group",
+              "the test group"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "withdraw consent",
+        "meaning": "verilmiş onayı geri çekmek",
+        "example": "The narrator may withdraw consent before release.",
+        "usage": "Consent, hakka veya karara ilişkin onaydır; geri çekilmesi önce verilmiş olması demektir.",
+        "pronunciation": "/wɪðˈdɹɔ kənˈsɛnt/",
+        "collocations": [
+          "withdraw consent to publication",
+          "the right to withdraw consent"
+        ],
+        "recognize": [
+          "“withdraw consent” burada ne anlama gelir?",
+          "verilmiş onayı geri çekmek",
+          "eser eklemek",
+          "adres değiştirmek",
+          "Consent, hakka veya karara ilişkin onaydır; geri çekilmesi önce verilmiş olması demektir."
+        ],
+        "recall": [
+          "“verilmiş onayı geri çekmek” anlamındaki hedef ifadeyi yaz.",
+          "withdraw consent"
+        ],
+        "use": "Yeni bir röportajın yayın öncesi seçeneklerini açıkla."
+      },
+      "additionalWords": [
+        {
+          "term": "a workable safeguard",
+          "meaning": "uygulanabilir koruyucu önlem",
+          "example": "A private review might be a workable safeguard.",
+          "usage": "Hem uygulanabilecek hem de belirli bir riski azaltacak önlem.",
+          "pronunciation": "/ə ˈwɜɹkəbəl ˈseɪfɡɑɹd/",
+          "collocations": [
+            "agree on a workable safeguard",
+            "propose a workable safeguard"
+          ],
+          "recognize": [
+            "“a workable safeguard” burada ne anlama gelir?",
+            "uygulanabilir koruyucu önlem",
+            "geri alınamaz onay",
+            "gösterişli başlık",
+            "Hem uygulanabilecek hem de belirli bir riski azaltacak önlem."
+          ],
+          "recall": [
+            "“uygulanabilir koruyucu önlem” anlamındaki hedef ifadeyi yaz.",
+            "a workable safeguard"
+          ],
+          "use": "Bir gençlik atölyesindeki gizlilik kaygısı için önlem öner."
+        },
+        {
+          "term": "reserve judgement",
+          "meaning": "karar vermeyi sonraya bırakmak",
+          "example": "The panel will reserve judgement until it hears from the narrator.",
+          "usage": "Henüz yeterli bilgi yokken hükmü ertelemek. Judgment yazımı da kullanılır.",
+          "pronunciation": "/ɹɪˈzɜɹv ˈdʒʌdʒmənt/",
+          "collocations": [
+            "reserve judgement on the proposal",
+            "reserve judgement until Monday"
+          ],
+          "recognize": [
+            "“reserve judgement” burada ne anlama gelir?",
+            "karar vermeyi sonraya bırakmak",
+            "başvuruyu kabul etmek",
+            "kanıtı yok etmek",
+            "Henüz yeterli bilgi yokken hükmü ertelemek. Judgment yazımı da kullanılır."
+          ],
+          "recall": [
+            "“karar vermeyi sonraya bırakmak” anlamındaki hedef ifadeyi yaz.",
+            "reserve judgement",
+            "reserve judgment"
+          ],
+          "use": "Son kararı hangi bilgi gelene kadar bekleteceğini belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "redaction",
+          "cue": "hassas kısmı çıkarma"
+        },
+        {
+          "term": "anonymity",
+          "cue": "kimliğin gizli tutulması"
+        },
+        {
+          "term": "oral history",
+          "cue": "sözlü tarih"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir yerel gazetenin fotoğraf yayımlama görüşmesinde beklenmedik bir aile itirazına 120–160 sözcüklük yanıt yaz. İtirazı doğru yansıt, bir varsayımı koşullu ele al ve yayın sınırıyla sonraki adımı bildir.",
+        "sample": "I understand that taking the photograph in public does not settle your concern. The caption links a recognisable child to a visit that your family considers private. Even if the original release covers photographs from the event, I would like to check what it says about captions and later reuse. In the meantime, I can hold the photograph and offer the editor a wider shot that does not identify your child. I cannot promise that older copies held by other outlets will be removed, but I can find out which outlets received ours. If you would prefer to review the alternative before publication, I can arrange a private preview this afternoon. Please tell me whether identification in the caption or the image itself is your main concern. We will not use this caption while that question remains open.",
+        "revision": "Kaygıyı kabul eden ifadeyi, karşı tarafa istemeden kesin hukuki güvence vermeyecek şekilde yeniden yaz. Bir gerçekçi B seçeneği ekle.",
+        "criteria": [
+          "Kaygı, yetki ve sonraki adım ayrı tutulur.",
+          "Beklenmedik bilgiye göre değişen teklif, yayın sınırını korur."
+        ]
+      },
+      "input": {
+        "text": "Excerpt from the oral history archive agreement. Permission for a listening appointment does not extend to online distribution. The narrator may withdraw consent before the public release date. A fresh decision is required for any excerpt that identifies another living person. The archive may retain the original file under restricted access while the parties discuss an alternative.\n\nEmail from the curator. The exhibition opens on Friday and we have already printed the labels. A short clip could be replaced by a written quotation, but anonymity would be difficult if the quotation names the factory and the year. I can remove a reference to the family name, though that alone might not protect anyone familiar with the strike.\n\nMessage from the family. We are not asking the archive to remove the interview from its collection. We want to hear the proposed clip before it goes online. The narrator remembers signing a form for visitors to listen in the reading room. She cannot recall agreeing to a website. Please do not treat a redaction as approval. The decision must come from her, and we can help arrange a call.",
+        "reading": [
+          "Hangi adım üç kaynakla uyumlu?",
+          "Yayını beklet, aslı kısıtlı tut ve konuşmacıyla karar için görüş",
+          "Aile adına genel onay ver",
+          "Aile adını çıkar ve hemen yayımla",
+          "Mevcut metin özel dinleme ile yayın iznini ayırıyor.",
+          "A fresh decision is required"
+        ],
+        "transcript": "Curator: If we take out your aunt’s name, could we go ahead? Relative: That would not deal with her concern. Anyone who worked at the factory would know which strike she is describing. Archivist: I see. The question is whether the detail identifies her, even without a name. The recording can stay in the restricted collection while we check. Relative: There is another problem. She heard the draft last night and realised her neighbour is mentioned. Curator: Then permission for this excerpt also depends on what we do with that section. Could I arrange a private listening appointment before we discuss any public version? Relative: Yes. Please keep tomorrow’s website launch separate from the conversation with my aunt.",
+        "preparation": "İlk teklifi, sonradan öğrenilen riski ve hâlâ açık kararı üç sütunda izle.",
+        "main": [
+          "Yeni bilgi hangi kararı değiştiriyor?",
+          "Komşunun tanımlanması nedeniyle yayın için yeni değerlendirme gerekiyor",
+          "Arşiv kesin kapatılıyor",
+          "Aile yazılı alıntıyı kabul ediyor",
+          "İtiraz yalnız konuşmacının adıyla sınırlı değil.",
+          "her neighbour is mentioned"
+        ],
+        "detail": [
+          "Şimdilik ne kabul ediliyor?",
+          "Özel dinleme randevusu",
+          "İnternet yayını",
+          "Yazılı alıntı",
+          "Randevu ile yayın kararı ayrı.",
+          "a private listening appointment"
+        ]
+      },
+      "retry": {
+        "text": "The school invited a student to discuss an edited video in a closed session. The parent agreed to that meeting. Permission to show the video during an open evening will depend on whether another child can be identified in the background.",
+        "reading": [
+          "Hangi karar hâlâ açık?",
+          "Videoyu açık gecede gösterme",
+          "Kapalı görüşme",
+          "Okulun saati",
+          "Veli görüşmeyi kabul etti, genel gösterimi koşula bağladı.",
+          "Permission to show the video during an open evening will depend"
+        ],
+        "transcript": "Trustee: We can open the letter in the study room. Does that mean the researcher can reproduce it? Librarian: We need a separate decision for publication. The last paragraph names a patient, and changing the name might still leave the dates and treatment visible. We can arrange a supervised reading first.",
+        "preparation": "Kimlik riskini ve izin sınırını ayır.",
+        "main": [
+          "Şimdilik ne mümkün?",
+          "Gözetimli okuma",
+          "Mektubu kitapta basmak",
+          "Kayıt defterini yayımlamak",
+          "Okumak ve yeniden basmak ayrı izinler.",
+          "arrange a supervised reading first"
+        ],
+        "detail": [
+          "Adı değiştirmek niçin yetersiz olabilir?",
+          "Tarih ve tedavi bilgisi görülebilir",
+          "Yeni kâğıt gerekir",
+          "Okuma odası kapanır",
+          "Metinde kalan ayrıntılara dikkat et.",
+          "leave the dates and treatment visible"
+        ]
+      },
+      "readingPurpose": "Her kaynağın onay, kaygı ve karar sahibini çıkar.",
+      "readingUse": "Görüntü veya yazılı alıntıyla güvenli geçici seçenek tasarla.",
+      "listeningUse": "Yeni üçüncü taraf bilgisinden önceki ve sonraki teklifini karşılaştır.",
+      "speaking": "Dört dakika hazırlıksız görüş: sergi yarın açılıyor. İlk önerinden sonra partner beklenmedik üçüncü kişi itirazı getirsin. İlk çekinceyi kaybetmeden yeni koşul ve alternatif öner.",
+      "genres": {
+        "reading": "sözleşme ve e-posta dosyası",
+        "listening": "gizlilik itirazlı üç kişilik görüşme",
+        "writing": "hassas yayın kararı yazışması"
+      },
+      "recovery": {
+        "reading": "İzin verilen eylemi sözcük sözcük bul.",
+        "main": "İlk kaygıyla yeni kişiyi ayrı kaydet.",
+        "detail": "Dinleme randevusu yayın onayına dönüşüyor mu kontrol et."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "even if / even though ve koşul kapsamı"
+      ]
+    }
+  ]
+}

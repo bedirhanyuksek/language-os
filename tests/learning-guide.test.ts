@@ -54,7 +54,8 @@ test('local practice advances with no account and keeps unsupported evidence out
   const lesson = course.unit.lessons[0]
   const initial = place(course, { ...practiceAnswers(course.placement), 'ru.diagnostic.2': 'я' })
   const guided = finishLesson(initial, course, lesson, practiceAnswers(lessonTasks(initial, lesson)), start)
-  const transferred = finishPedagogy(guided, course, lesson, 'transfer', {
+  const written = finishLesson(guided, course, lesson, practiceAnswers(lessonTasks(guided, lesson)), start)
+  const transferred = finishPedagogy(written, course, lesson, 'transfer', {
     'ru.intro.name.transfer.1': 'Меня', 'ru.intro.polite.transfer.1': 'вас',
   }, start)
   const read = finishPedagogy(transferred, course, lesson, 'reading', { 'ru.intro.reading': 'Pavel' }, start)
@@ -82,7 +83,8 @@ const zone = 'Europe/Istanbul'
 function speakingSetup() {
   const placed = place(course, { ...practiceAnswers(course.placement), 'en.placement.1': 'have led' })
   const guided = finishLesson(placed, course, lesson, practiceAnswers(lessonTasks(placed, lesson)), start)
-  const transferred = finishPedagogy(guided, course, lesson, 'transfer', practiceAnswers(phaseTasks(guided, lesson, 'transfer', start)), start)
+  const written = finishLesson(guided, course, lesson, practiceAnswers(lessonTasks(guided, lesson)), start)
+  const transferred = finishPedagogy(written, course, lesson, 'transfer', practiceAnswers(phaseTasks(guided, lesson, 'transfer', start)), start)
   const state = beginSpeaking(transferred, lesson, start, coachReport.sessionId)
   return { state, session: state.speakingSessions[0] }
 }

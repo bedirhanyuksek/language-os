@@ -5,13 +5,14 @@ import { pedagogyExercises, receptionExercises } from '../content/schema'
 import { diagnosticTasks } from '../domain/diagnostic'
 import { gradeVocabularyRecall } from '../domain/pedagogy'
 import { assess } from '../domain/assessment'
-import { evidenceSchema } from '../domain/model'
+import { evidenceSchema, type Language } from '../domain/model'
 import { validateSpeakingReport, type SpeakingAssessmentRepository } from '../domain/speaking'
 import { stateSchema, type LearningState } from '../domain/state'
 import { StorageAccessError } from './storage-error'
 import { checkWorkspaceMigration, migrationIssues, normalizeWorkspaceState, type MigrationIssue } from './migration'
 
-type StoredState = { key: 'active'; state: LearningState }
+type WorkspaceKey = 'active' | Language
+type StoredState = { key: WorkspaceKey; state: LearningState }
 type WorkspaceRow = { key: IndexableType; state: unknown }
 export type QuarantineNotice = { id?: number; active: boolean; sourceVersion: 1 | 2; targetVersion: 3; issues: MigrationIssue[] }
 type QuarantinedWorkspace = QuarantineNotice & { original: WorkspaceRow }
@@ -33,7 +34,7 @@ const databaseName = 'language-os'
 const schemaVersion = 3
 
 class LearningDatabase extends Dexie {
-  declare workspace: Table<StoredState, 'active'>
+  declare workspace: Table<StoredState, WorkspaceKey>
   declare quarantine: Table<QuarantinedWorkspace, number>
 
   constructor(name: string) {
@@ -125,6 +126,23 @@ export class IndexedLearningRepository implements LearningRepository {
     return (await this.read())?.speakingAssessments.find(({ report }) => report.sessionId === sessionId)
   }
 
+  async switchLanguage(expectedId: string, language: Language, create?: LearningState) {
+    await this.openDatabase()
+    return this.database.transaction('rw', this.database.workspace, async () => {
+      const current = await this.read()
+      if (!current || current.profile.id !== expectedId) throw new Error('Etkin profil değişti. Sayfayı yeniden yükle.')
+      if (current.profile.language === language) return current
+      const existing = await this.database.workspace.get(language)
+      if (!existing && !create) return undefined
+      const next = stateSchema.parse(existing?.state ?? create)
+      if (next.profile.language !== language) throw new Error('Dil profili doğrulanamadı.')
+      await this.database.workspace.put({ key: current.profile.language, state: current })
+      await this.database.workspace.put({ key: 'active', state: next })
+      await this.database.workspace.delete(language)
+      return next
+    })
+  }
+
   create(state: LearningState) {
     return this.restore(state, undefined)
   }
@@ -135,6 +153,9 @@ export class IndexedLearningRepository implements LearningRepository {
       const current = await this.read()
       if (!current || current.profile.id !== profileId) throw new Error('Etkin profil değişti. Sayfayı yeniden yükle.')
       const state = stateSchema.parse(change(current))
+      if (state.profile.id !== current.profile.id || state.profile.language !== current.profile.language) {
+        throw new Error('Çalışma profilinin kimliği veya dili değiştirilemez.')
+      }
       await this.database.workspace.put({ key: 'active', state })
       return state
     })
@@ -148,7 +169,11 @@ export class IndexedLearningRepository implements LearningRepository {
         throw new Error('Yerel kayıt değişti. Sayfayı yeniden yükleyip tekrar dene.')
       }
       const valid = stateSchema.parse(state)
+      if (current && current.profile.language !== valid.profile.language) {
+        await this.database.workspace.put({ key: current.profile.language, state: current })
+      }
       await this.database.workspace.put({ key: 'active', state: valid })
+      await this.database.workspace.delete(valid.profile.language)
       return valid
     })
   }

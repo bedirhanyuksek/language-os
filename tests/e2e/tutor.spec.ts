@@ -1,8 +1,9 @@
 import { expect, test, type Page } from '@playwright/test'
-import { catalog } from '../../src/content/catalog'
+import { catalog } from './catalog-fixture'
 
 const course = catalog.en
 const lesson = course.unit.lessons[0]
+const guided = lesson.concepts.map(({ variants }) => variants.filter(({ kind }) => !['single', 'multiple', 'matching'].includes(kind)))
 const draft = 'I joined the team last year.'
 const feedback = { task: 'feedback', grammar: 'Simple Past burada doğru.', vocabulary: 'Uygun.',
   naturalness: 'Doğal.', suitability: 'Tarih doğru verilmiş. Tarihsiz bir deneyim de ekleyebilirsin.', corrections: [] }
@@ -22,6 +23,13 @@ async function startLesson(page: Page) {
   await page.getByRole('button', { name: 'Beceri profilimi gör' }).click()
   await page.getByRole('button', { name: 'Günlük planı aç' }).click()
   await page.getByRole('button', { name: 'Derse başla' }).click()
+}
+
+async function openGuidedPractice(page: Page) {
+  for (let step = 1; step < lesson.teaching!.models.length; step++) {
+    await page.getByRole('button', { name: 'Sonraki örnek' }).click()
+  }
+  await page.getByRole('button', { name: 'Rehberli pratiğe geç' }).click()
 }
 
 async function submitLesson(page: Page, tasks: typeof lesson.concepts[number]['variants'], wrong = false) {
@@ -60,9 +68,13 @@ test('coaching follows the explanation and saved draft, with approval per reques
   await page.getByRole('button', { name: 'Soruyu hazırla' }).click()
   await page.getByRole('button', { name: 'Onayla ve gönder' }).click()
   await expect(page.getByText('Bitmiş zamanı söylediğinde Simple Past kullan.')).toBeVisible()
-  await submitLesson(page, [...lesson.concepts.map(({ variants }) => variants[0]), lesson.production])
+  await openGuidedPractice(page)
+  await submitLesson(page, guided.map(([exercise]) => exercise))
   await expect(page.getByText('2 / 2 kesin yanıt doğru')).toBeVisible()
   expect(requests).toHaveLength(1)
+  await page.getByRole('button', { name: 'Günlük plana dön' }).click()
+  await page.getByRole('button', { name: 'Pratiğe başla' }).click()
+  await submitLesson(page, [lesson.production])
   await page.getByRole('button', { name: 'Yanıtım hakkında geri bildirim al' }).click()
   await page.getByRole('button', { name: 'Onayla ve gönder' }).click()
   await expect(page.getByText(feedback.grammar)).toBeVisible()
@@ -97,11 +109,12 @@ for (const failure of ['quota', 'invalid', 'practice'] as const) {
         route.fulfill({ json: { result: { task: 'feedback', grammar: 'unrelated' } } })
     })
     await startLesson(page)
-    await submitLesson(page, [...lesson.concepts.map(({ variants }) => variants[0]), lesson.production], true)
+    await openGuidedPractice(page)
+    await submitLesson(page, guided.map(([exercise]) => exercise), true)
     await expect(page.getByRole('button', { name: 'Bu hatayı farklı bir örnekle çalış' })).toHaveCount(0)
     await page.getByRole('button', { name: 'Günlük plana dön' }).click()
     await page.getByRole('button', { name: 'Pratiğe başla' }).click()
-    await submitLesson(page, [lesson.concepts[0].variants[1]], true)
+    await submitLesson(page, [guided[0][1]], true)
     await page.getByRole('button', { name: 'Bu hatayı farklı bir örnekle çalış' }).click()
     expect(requests).toBe(0)
     await page.getByRole('button', { name: 'Onayla ve gönder' }).click()

@@ -1,0 +1,512 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.doctor",
+      "outcome": "A2.doctor",
+      "level": "A2",
+      "prerequisite": [
+        "ru.meeting",
+        "ru.repair"
+      ],
+      "title": "Belirtiyi, süresini ve randevuyu belirt",
+      "objective": "Bir sağlık görüşmesinde belirtinin yerini ve süresini bildir ve verilen randevuyu teyit et.",
+      "situation": "Bir sağlık merkezini arıyorsun. Danışma görevlisine ağrının yerini ve süresini söyleyeceksin.",
+      "bridge": "У меня болит ile tek bir bölgeyi söyle. Болит уже ile süreyi ekle. Randevu saatini geri söyle.",
+      "models": [
+        {
+          "phrase": "У меня болит голова уже два дня.",
+          "explanation": "У меня, durumun sende olduğunu gösterir. Tekil голова ile болит kullan; уже iki gündür sürdüğünü bildirir."
+        },
+        {
+          "phrase": "У меня болят ноги с понедельника. Можно записаться на пятницу?",
+          "explanation": "Çoğul ноги ile болят. С понедельника başlangıç, на пятницу istenen randevu günüdür. Боля́т son hecede vurgulanır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Болит ve болят uyumu",
+          "incorrect": "У меня болит ноги.",
+          "correct": "У меня болят ноги.",
+          "explanation": "Tekil belirtiyle болит, çoğulla болят kullan.",
+          "guided": [
+            [
+              "У меня ___ горло.",
+              "болит"
+            ],
+            [
+              "У меня ___ ноги.",
+              "болят"
+            ]
+          ],
+          "transfer": [
+            [
+              "У меня ___ спина.",
+              "болит"
+            ],
+            [
+              "У меня ___ глаза.",
+              "болят"
+            ]
+          ],
+          "delayed": [
+            [
+              "У меня ___ рука.",
+              "болит"
+            ],
+            [
+              "У меня ___ зубы.",
+              "болят"
+            ]
+          ]
+        },
+        {
+          "label": "Başlangıcı с ile belirle",
+          "incorrect": "Горло болит в понедельника.",
+          "correct": "Горло болит с понедельника.",
+          "explanation": "С + tamlayan biçimi başlangıç zamanıdır.",
+          "guided": [
+            [
+              "Pazartesiden beri: Горло болит ___ понедельника.",
+              "с"
+            ],
+            [
+              "Sabahtan beri: Голова болит ___ утра.",
+              "с"
+            ]
+          ],
+          "transfer": [
+            [
+              "Cuma gününden beri: У меня кашель ___ пятницы.",
+              "с"
+            ],
+            [
+              "Salıdan beri: У неё болит спина ___ вторника.",
+              "с"
+            ]
+          ],
+          "delayed": [
+            [
+              "Dün akşamdan beri: У него болят ноги ___ вчерашнего вечера.",
+              "с"
+            ],
+            [
+              "Cumartesiden beri: Горло болит ___ субботы.",
+              "с"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "болит горло",
+        "meaning": "boğaz ağrıyor",
+        "example": "У меня второй день болит горло.",
+        "usage": "Болит горло, danışma sırasında ağrının yerini söyler.",
+        "pronunciation": "боли́т го́рло",
+        "collocations": [
+          "у меня болит горло",
+          "горло болит два дня"
+        ],
+        "recognize": [
+          "“болит горло” burada ne anlama gelir?",
+          "boğaz ağrıyor",
+          "baş ağrıyor",
+          "diş ağrıyor",
+          "Болит горло, danışma sırasında ağrının yerini söyler."
+        ],
+        "recall": [
+          "“boğaz ağrıyor” anlamındaki hedef ifadeyi yaz.",
+          "болит горло"
+        ],
+        "use": "Boğaz ağrısının ne zaman başladığını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "записаться на приём",
+          "meaning": "randevu almak",
+          "example": "Можно записаться на приём в пятницу?",
+          "usage": "Записаться на приём, görüşme için randevu istemektir.",
+          "pronunciation": "записа́ться на приём",
+          "collocations": [
+            "записаться на приём к врачу",
+            "записаться на приём утром"
+          ],
+          "recognize": [
+            "“записаться на приём” burada ne anlama gelir?",
+            "randevu almak",
+            "randevuyu iptal etmek",
+            "ilaç almak",
+            "Записаться на приём, görüşme için randevu istemektir."
+          ],
+          "recall": [
+            "“randevu almak” anlamındaki hedef ifadeyi yaz.",
+            "записаться на приём",
+            "записаться на прием"
+          ],
+          "use": "Bir gün önererek randevu iste."
+        },
+        {
+          "term": "со вчерашнего дня",
+          "meaning": "dünden beri",
+          "example": "У меня кашель со вчерашнего дня.",
+          "usage": "Со, burada sonraki sözcükle telaffuzu kolaylaştıran с biçimidir.",
+          "pronunciation": "со вчера́шнего дня",
+          "collocations": [
+            "болит со вчерашнего дня",
+            "кашель со вчерашнего дня"
+          ],
+          "recognize": [
+            "“со вчерашнего дня” burada ne anlama gelir?",
+            "dünden beri",
+            "yarından itibaren",
+            "iki saat sonra",
+            "Со, burada sonraki sözcükle telaffuzu kolaylaştıran с biçimidir."
+          ],
+          "recall": [
+            "“dünden beri” anlamındaki hedef ifadeyi yaz.",
+            "со вчерашнего дня"
+          ],
+          "use": "Bir belirtinin dünden beri sürdüğünü bildir."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "регистратуру",
+          "cue": "hasta kayıt masasına"
+        },
+        {
+          "term": "удобное время",
+          "cue": "uygun saat"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir sağlık merkezine üç cümle yaz: belirti, başlangıç ve uygun randevu günü.",
+        "sample": "У меня болит горло с понедельника. Можно записаться на приём в пятницу? Мне удобно после обеда.",
+        "revision": "Gün ve saati görevliye teyit eden bir cümle ekle.",
+        "criteria": [
+          "Belirti ve başlangıç anlaşılır.",
+          "Gün veya saat ayrı belirtilir."
+        ]
+      },
+      "input": {
+        "text": "Позвоните в регистратуру. Назовите имя и симптом. Если боль началась вчера, скажите когда. Регистратор предложит удобное время: вторник утром или четверг после обеда.",
+        "reading": [
+          "Öğleden sonraki seçenek hangi gün?",
+          "Perşembe",
+          "Salı",
+          "Cuma",
+          "Четверг после обеда.",
+          "четверг после обеда"
+        ],
+        "transcript": "У меня болит горло со вчерашнего дня. Можно записаться на приём после обеда? Есть время в четверг в три. Четверг в три мне подходит.",
+        "preparation": "Belirti, başlangıç ve son saati ayrı dinle.",
+        "main": [
+          "Belirti ne?",
+          "Boğaz ağrısı",
+          "Diş ağrısı",
+          "Göz ağrısı",
+          "Болит горло.",
+          "болит горло"
+        ],
+        "detail": [
+          "Hangi saat kabul ediliyor?",
+          "Perşembe üç",
+          "Salı üç",
+          "Perşembe dört",
+          "В четверг в три.",
+          "Четверг в три мне подходит"
+        ]
+      },
+      "retry": {
+        "text": "На этой неделе есть два времени: среда в девять и пятница в два. Приходите за десять минут до приёма.",
+        "reading": [
+          "Cuma randevusuna ne zaman gelmeli?",
+          "13.50",
+          "14.10",
+          "14.30",
+          "В пятницу в два, за десять минут — 13.50.",
+          "за десять минут до приёма"
+        ],
+        "transcript": "У меня болят глаза с утра. Можно прийти завтра? Завтра есть только утро, в девять. Девять подходит, спасибо.",
+        "preparation": "Başlangıç ile randevuyu ayrı not et.",
+        "main": [
+          "Gözler ne zamandan beri ağrıyor?",
+          "Sabahtan beri",
+          "Dünden beri",
+          "Cuma gününden beri",
+          "С утра.",
+          "глаза с утра"
+        ],
+        "detail": [
+          "Yarın kaçta?",
+          "Dokuz",
+          "On",
+          "On bir",
+          "В девять.",
+          "в девять"
+        ]
+      },
+      "readingPurpose": "İlk aramada verilen bilgi ve önerilen saatleri ayır.",
+      "readingUse": "Görevliye belirtileri ve randevu tercihini bildir.",
+      "listeningUse": "Randevu gün ve saatini geri söyle.",
+      "speaking": "Kurgusal belirtiyi bildir, başka saat iste ve danışmanın yanıtını teyit et.",
+      "genres": {
+        "reading": "sağlık merkezi duyurusu",
+        "listening": "randevu diyaloğu",
+        "writing": "randevu mesajı"
+      },
+      "recovery": {
+        "reading": "Запись ile verilen iki saati ayrı not et.",
+        "main": "Глаза sözcüğünden sonra gelen başlangıç ifadesine odaklan.",
+        "detail": "Son saat yanıtını teyit eden sözü dinle."
+      },
+      "approach": "dialogue",
+      "speakingContext": "daily_conversation",
+      "grammarStrands": [
+        "у меня ve belirti süresi"
+      ]
+    },
+    {
+      "id": "ru.repair",
+      "outcome": "A1.repair",
+      "level": "A1",
+      "prerequisite": [
+        "ru.intro"
+      ],
+      "title": "Yavaşlatma, tekrar ve yazım iste",
+      "objective": "Bir adı veya adresi anlamadığında nazikçe tekrar, yavaş söyleme veya yazma iste.",
+      "situation": "Bir kulüp danışmasında salonun adını duydun ama anlayamadın. Karşındaki kişiden daha yavaş söylemesini iste.",
+      "bridge": "Извините ile araya gir. Повторите veya напишите ile tam olarak neye ihtiyaç duyduğunu söyle.",
+      "models": [
+        {
+          "phrase": "Извините, повторите, пожалуйста, чуть медленнее.",
+          "explanation": "Повторите kibar emir biçimi. Медленнее daha yavaş demektir. Пожалуйста isteği yumuşatır."
+        },
+        {
+          "phrase": "Как пишется это имя? Напишите его, пожалуйста.",
+          "explanation": "Как пишется …? yazımı sorar. Напишите, yazmasını istediğini açıkça söyler. Напиши́те sözcüğünde ikinci и vurgulanır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Tekrar ve yavaşlatma iste",
+          "incorrect": "Повторить, пожалуйста.",
+          "correct": "Повторите, пожалуйста.",
+          "explanation": "Bir yabancıya yönelik kibar istekte повторите kullan.",
+          "guided": [
+            [
+              "Tekrar edin: ___ ещё раз, пожалуйста.",
+              "повторите"
+            ],
+            [
+              "Yavaşlat: Скажите чуть ___, пожалуйста.",
+              "медленнее"
+            ]
+          ],
+          "transfer": [
+            [
+              "Adres için: ___ адрес, пожалуйста.",
+              "повторите"
+            ],
+            [
+              "Telefon için: Скажите номер чуть ___.",
+              "медленнее"
+            ]
+          ],
+          "delayed": [
+            [
+              "Saati tekrar etmesini iste: ___ время, пожалуйста.",
+              "повторите"
+            ],
+            [
+              "Soyadı daha yavaş söyle: Скажите фамилию ___.",
+              "медленнее"
+            ]
+          ]
+        },
+        {
+          "label": "Yazım iste",
+          "incorrect": "Как пишет это слово?",
+          "correct": "Как пишется это слово?",
+          "explanation": "Как пишется bu sözcük/isim nasıl yazılır diye sorar. Yazması için напишите de.",
+          "guided": [
+            [
+              "Как ___ это имя?",
+              "пишется"
+            ],
+            [
+              "Yazın: ___ адрес, пожалуйста.",
+              "напишите"
+            ]
+          ],
+          "transfer": [
+            [
+              "Как ___ эта фамилия?",
+              "пишется"
+            ],
+            [
+              "Yazın: ___ название улицы, пожалуйста.",
+              "напишите"
+            ]
+          ],
+          "delayed": [
+            [
+              "Как ___ название города?",
+              "пишется"
+            ],
+            [
+              "Yazın: ___ номер комнаты, пожалуйста.",
+              "напишите"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "ещё раз",
+        "meaning": "bir kez daha",
+        "example": "Скажите ещё раз, пожалуйста.",
+        "usage": "Ещё раз ikinci bir söyleyiş ister.",
+        "pronunciation": "ещё раз",
+        "collocations": [
+          "сказать ещё раз",
+          "повторить ещё раз"
+        ],
+        "recognize": [
+          "“ещё раз” burada ne anlama gelir?",
+          "bir kez daha",
+          "daha hızlı",
+          "ilk kez",
+          "Ещё раз ikinci bir söyleyiş ister."
+        ],
+        "recall": [
+          "“bir kez daha” anlamındaki hedef ifadeyi yaz.",
+          "ещё раз",
+          "еще раз"
+        ],
+        "use": "Bir ismin tekrar edilmesini iste."
+      },
+      "additionalWords": [
+        {
+          "term": "чуть медленнее",
+          "meaning": "biraz daha yavaş",
+          "example": "Говорите чуть медленнее, пожалуйста.",
+          "usage": "Чуть, isteğin derecesini yumuşatır.",
+          "pronunciation": "чуть ме́дленнее",
+          "collocations": [
+            "сказать чуть медленнее",
+            "говорить чуть медленнее"
+          ],
+          "recognize": [
+            "“чуть медленнее” burada ne anlama gelir?",
+            "biraz daha yavaş",
+            "biraz daha yüksek",
+            "biraz daha erken",
+            "Чуть, isteğin derecesini yumuşatır."
+          ],
+          "recall": [
+            "“biraz daha yavaş” anlamındaki hedef ifadeyi yaz.",
+            "чуть медленнее"
+          ],
+          "use": "Bir telefon numarasını daha yavaş söylemesini iste."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "по буквам",
+          "cue": "harf harf"
+        },
+        {
+          "term": "фамилию",
+          "cue": "soyadını"
+        }
+      ],
+      "writing": {
+        "prompt": "Danışmada soyadını anlayamadın. Kısa bir mesajla tekrar ve yazım iste.",
+        "sample": "Извините, повторите фамилию чуть медленнее. Напишите её, пожалуйста.",
+        "revision": "Bu kez adresin yalnız sokak adını sor.",
+        "criteria": [
+          "Yavaşlatma veya tekrar isteği anlaşılır.",
+          "Yazılacak bilgi belli."
+        ]
+      },
+      "input": {
+        "text": "Анкета: имя, фамилия, номер телефона. Если трудно услышать фамилию, попросите назвать её по буквам.",
+        "reading": [
+          "Soyadını duymak zor olursa ne istiyorsun?",
+          "Harf harf söylemesini",
+          "Telefonu kapatmasını",
+          "Adresi değiştirmesini",
+          "По буквам, harf harf.",
+          "по буквам"
+        ],
+        "transcript": "Как вас зовут? Меня зовут Ира. Извините, повторите чуть медленнее. Ира. Напишите имя, пожалуйста.",
+        "preparation": "İlk soru, tekrar ve son ricayı sırala.",
+        "main": [
+          "Hangi bilgi isteniyor?",
+          "Ad",
+          "Adres",
+          "Yaş",
+          "Как вас зовут?",
+          "Как вас зовут"
+        ],
+        "detail": [
+          "Son rica ne?",
+          "Adı yazma",
+          "Telefonu yazma",
+          "Numarayı tekrar etme",
+          "Напишите имя, пожалуйста.",
+          "Напишите имя"
+        ]
+      },
+      "retry": {
+        "text": "Клуб просит написать имя и номер комнаты. Если номер не слышно, попросите повторить его ещё раз.",
+        "reading": [
+          "Bu kez hangi sayı isteniyor?",
+          "Oda numarası",
+          "Telefon numarası",
+          "Yaş",
+          "Номер комнаты.",
+          "номер комнаты"
+        ],
+        "transcript": "Наш адрес: улица Мира, дом пять. Извините, повторите номер дома. Дом пять. Спасибо, я записал.",
+        "preparation": "Sokak adı ve bina numarasını ayır.",
+        "main": [
+          "Hangi bilgi tekrar ediliyor?",
+          "Bina numarası",
+          "Sokak adı",
+          "Saat",
+          "Повторите номер дома.",
+          "повторите номер дома"
+        ],
+        "detail": [
+          "Bina numarası kaç?",
+          "Beş",
+          "Altı",
+          "Sekiz",
+          "Дом пять.",
+          "Дом пять"
+        ]
+      },
+      "readingPurpose": "İsim, soyadı ve sayıyı ayrı bul.",
+      "readingUse": "Bir yabancıdan bilgiyi harf harf söylemesini iste.",
+      "listeningUse": "Bir sayı isteyip geri söyle.",
+      "speaking": "Danışmada bir ismi kaçır. Tekrar ve yazım iste, sonra duyduğunu teyit et.",
+      "genres": {
+        "reading": "kayıt formu yönergesi",
+        "listening": "danışma diyaloğu",
+        "writing": "kısa teyit mesajı"
+      },
+      "recovery": {
+        "reading": "İsim değil, oda numarası istenen kelimeye bak.",
+        "main": "Повторите ifadesinden sonraki nesneyi dinle.",
+        "detail": "Дом sonrasında gelen sayıyı yakala."
+      },
+      "approach": "dialogue",
+      "speakingContext": "daily_conversation",
+      "grammarStrands": [
+        "kibar emir ve tekrar isteme"
+      ]
+    }
+  ]
+}

@@ -197,3 +197,6 @@ audio { max-width: 100%; }
 .lesson-coaching form, .lesson-coaching dl { margin-block: .75rem; }
 .lesson-coaching textarea, .lesson-coaching input { width: 100%; }
 .lesson-coaching dd { margin-inline-start: 0; margin-block-end: .5rem; }
+
+.top-language { display: inline-flex; align-items: center; gap: .5rem; }
+.top-language select { max-width: 9rem; }

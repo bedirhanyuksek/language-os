@@ -1,0 +1,489 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.news",
+      "outcome": "B1.news",
+      "level": "B1",
+      "prerequisite": [
+        "ru.account"
+      ],
+      "title": "Yerel haberde olay, kaynak ve sonucu ayır",
+      "objective": "Bir haberden ana olayı ve geçici sonucu çıkar; kurum açıklaması ile tanık ifadesini kaynaklarıyla aktar.",
+      "situation": "Mahalledeki su kesintisi hakkında çelişen paylaşımlara karşı kısa bir haber özeti hazırlıyorsun.",
+      "bridge": "Önce ne değiştiğini söyle. По словам ile görüşü kime ait olduğunu belirterek aktar; пока ile geçici durumu belirt.",
+      "models": [
+        {
+          "phrase": "По словам диспетчера, вода вернётся к вечеру.",
+          "explanation": "По словам ardından kişinin tamlayan hâli gelir. Bu, saatin kurumun tahmini olduğunu belirtir."
+        },
+        {
+          "phrase": "Подачу воды пока не восстановили.",
+          "explanation": "Это временное состояние. Пока üzerinde vurgu, durumun değişebileceğini işaretler."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Kaynağı tamlayanla göster",
+          "incorrect": "По словам диспетчер, воду подадут вечером.",
+          "correct": "По словам диспетчера, воду подадут вечером.",
+          "explanation": "По словам ardından источник tamlayan hâlinde gelir.",
+          "guided": [
+            [
+              "По словам ___ (свидетель), автобус уехал.",
+              "свидетеля"
+            ],
+            [
+              "По словам ___ (директор), музей откроется в мае.",
+              "директора"
+            ]
+          ],
+          "transfer": [
+            [
+              "По словам ___ (инженер), мост проверят утром.",
+              "инженера"
+            ],
+            [
+              "По словам ___ (врач), приём перенесли.",
+              "врача"
+            ]
+          ],
+          "delayed": [
+            [
+              "По словам ___ (очевидец), сирена звучала недолго.",
+              "очевидца"
+            ],
+            [
+              "По словам ___ (организатор), вход перенесли.",
+              "организатора"
+            ]
+          ]
+        },
+        {
+          "label": "Tahmini kesinleşmiş sonuçtan ayır",
+          "incorrect": "Аварийная служба ожидает ремонт к восьми. Ремонт точно закончен.",
+          "correct": "Служба ожидает, что ремонт закончится к восьми.",
+          "explanation": "Ожидают ve планируют gelecek hakkında bildirimdir; tamamlandığına kanıt sağlamaz.",
+          "guided": [
+            [
+              "«Поезд уже отправился». Ушёл / только планируется",
+              "ушёл",
+              "ушел"
+            ],
+            [
+              "«Свет рассчитывают включить вечером». Tahmin / doğrulanmış sonuç",
+              "tahmin"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Воду подали в три». Вернули / предполагают вернуть",
+              "вернули"
+            ],
+            [
+              "«Стадион планируют открыть весной». план / выполнено",
+              "план"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Работы продолжаются». закончились / идут",
+              "идут"
+            ],
+            [
+              "«Движение возобновили». открыли / ожидают",
+              "открыли"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "перебои с водой",
+        "meaning": "su arzında kesinti",
+        "example": "Жители жалуются на перебои с водой.",
+        "usage": "Перебои kısa veya tekrarlanan aksama bildirebilir.",
+        "pronunciation": "перебо́и с водо́й",
+        "collocations": [
+          "временные перебои с водой",
+          "жаловаться на перебои"
+        ],
+        "recognize": [
+          "“перебои с водой” burada ne anlama gelir?",
+          "su arzında kesinti",
+          "su faturası",
+          "şiddetli yağmur",
+          "Перебои kısa veya tekrarlanan aksama bildirebilir."
+        ],
+        "recall": [
+          "“su arzında kesinti” anlamındaki hedef ifadeyi yaz.",
+          "перебои с водой"
+        ],
+        "use": "Yeni bir bölgede hizmet aksaması bildir."
+      },
+      "additionalWords": [
+        {
+          "term": "по предварительным данным",
+          "meaning": "ön bilgilere göre",
+          "example": "По предварительным данным, никто не пострадал.",
+          "usage": "Henüz doğrulanmamış, güncellenebilir bilgiye giriş yapar.",
+          "pronunciation": "по предварительным да́нным",
+          "collocations": [
+            "по предварительным данным службы",
+            "уточнить предварительные данные"
+          ],
+          "recognize": [
+            "“по предварительным данным” burada ne anlama gelir?",
+            "ön bilgilere göre",
+            "kesin olarak",
+            "kişisel tercihe göre",
+            "Henüz doğrulanmamış, güncellenebilir bilgiye giriş yapar."
+          ],
+          "recall": [
+            "“ön bilgilere göre” anlamındaki hedef ifadeyi yaz.",
+            "по предварительным данным"
+          ],
+          "use": "Bir haber ayrıntısına belirsizlik işareti ekle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "подвоз воды",
+          "cue": "araçla su tedariği"
+        },
+        {
+          "term": "аварийная бригада",
+          "cue": "arıza ekibi"
+        }
+      ],
+      "writing": {
+        "prompt": "Yol kapanması hakkında bir yerel bülten yaz. Bir doğrulanmış olay, bir kaynaklı tahmin ve halk için bir geçici düzenleme ver.",
+        "sample": "На улице Строителей закрыли северный въезд после повреждения трубы. По словам инженера, ремонт может занять до четырёх часов. Этот срок пока не подтверждён. Автобусы идут через соседнюю улицу, а временная остановка находится у школы. Следующее сообщение обещают опубликовать после осмотра трубы.",
+        "revision": "Tahminin kime ait olduğunu ve okurun şimdi ne yapabileceğini ayrı belirt.",
+        "criteria": [
+          "En az bir ayrıntı kaynağıyla aktarılır.",
+          "Geçici düzenleme tamamlanmış onarımla karıştırılmaz."
+        ]
+      },
+      "input": {
+        "text": "В районе Садовой улицы утром отключили воду после повреждения трубы. Аварийная бригада перекрыла участок и начала ремонт. По словам диспетчера, подачу рассчитывают вернуть к вечеру. Срок ещё может измениться. Пока организован подвоз воды: машина стоит у входа в школу. Следующее обновление опубликуют после осмотра трубы.",
+        "reading": [
+          "Hangi şey şu an doğrulanmış?",
+          "Okulda su dağıtım aracı bulunuyor",
+          "Onarım akşam kesin bitecek",
+          "Bütün kentte su kesik",
+          "Okulda su aracı duruyor.",
+          "машина стоит у входа в школу"
+        ],
+        "transcript": "Ведущая: Что изменилось за последний час? Репортёр: Бригада нашла место повреждения. Подачу пока не восстановили. Диспетчер говорит, что ремонт может закончиться к семи. Ведущая: Жителям ждать дома? Репортёр: У школы уже стоит машина с питьевой водой. Уточнённый срок назовут после проверки трубы.",
+        "preparation": "Kesin eylemleri ve tahmini süreyi ayrı not et.",
+        "main": [
+          "Son durum ne?",
+          "Hasar bulundu, su hâlâ kesik",
+          "Su geri geldi",
+          "Hasarın yeri bilinmiyor",
+          "Подачу пока не восстановили.",
+          "Подачу пока не восстановили"
+        ],
+        "detail": [
+          "В какое время ремонт может закончиться?",
+          "К семи",
+          "К пяти",
+          "Утром",
+          "Bu saat tahmindir.",
+          "может закончиться к семи"
+        ]
+      },
+      "retry": {
+        "text": "После сильного ветра парк на Лесной закрыли. Рабочие убрали две сломанные ветки. По словам директора, ворота могут открыть завтра после проверки дорожек. Сегодня вход закрыт.",
+        "reading": [
+          "Parkın yarın açılması ne durumda?",
+          "Kontrole bağlı tahmin",
+          "Kesin karar",
+          "İptal",
+          "Açılış önce kontrole bağlı.",
+          "могут открыть завтра после проверки дорожек"
+        ],
+        "transcript": "Городская служба перенесла остановку к библиотеке. Это уже действует. По словам водителя, обычный маршрут могут вернуть в пятницу, если ремонт дороги завершится.",
+        "preparation": "Şu anki yer ve muhtemel dönüşü dinle.",
+        "main": [
+          "Durak şimdi nerede?",
+          "Kütüphanede",
+          "Spor salonunda",
+          "Eski yerinde",
+          "Geçici yer kütüphane yanı.",
+          "к библиотеке"
+        ],
+        "detail": [
+          "Cuma neye bağlı?",
+          "Yol onarımının tamamlanmasına",
+          "Otobüs alımına",
+          "Kütüphanenin açılmasına",
+          "Şart onarımın bitmesi.",
+          "если ремонт дороги завершится"
+        ]
+      },
+      "readingPurpose": "Haberdeki eylem, kaynak ve tahmin için ayrı sütun kur.",
+      "readingUse": "Bir okul duyurusunu iki cümlelik habere dönüştür.",
+      "listeningUse": "Yayındaki tahmini bir arkadaşına kaynak belirterek söyle.",
+      "speaking": "Bir ulaşım aksamasını özetle. Dinleyici kesin saat sorunca kaynakta neyin doğrulanmadığını açıkla.",
+      "genres": {
+        "reading": "yerel hizmet haberi",
+        "listening": "haber sunucusu ve muhabir",
+        "writing": "yerel haber bülteni"
+      },
+      "recovery": {
+        "reading": "Durmuş olan hizmetle sağlanan geçici yardımı ayır.",
+        "main": "Пока sonrasındaki eylemi dinle.",
+        "detail": "К семи ifadesini kesin söz gibi aktarma."
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "söz aktarımı ve по словам + tamlayan"
+      ]
+    },
+    {
+      "id": "ru.account",
+      "outcome": "B1.account",
+      "level": "B1",
+      "prerequisite": [
+        "ru.weekend",
+        "ru.doctor"
+      ],
+      "title": "Beklenmedik bir olayı sırayla anlat",
+      "objective": "Olayın arka planı, dönüm noktası ve sonucu arasında bağ kur; dinleyicinin takip sorularını cevapla.",
+      "situation": "Bir bisiklet gezisinin hava değişince nasıl yeniden planlandığını kulüp buluşmasında anlatıyorsun.",
+      "bridge": "Geçmiş zamanla arka planı kur. Когда ile dönüm noktasını yerleştir; в итоге ile sonucu bağla.",
+      "models": [
+        {
+          "phrase": "Пока мы ждали автобус, начался дождь.",
+          "explanation": "Пока süren arka planı, начался ise o sırada başlayan tek olayı gösterir."
+        },
+        {
+          "phrase": "В итоге мы добрались до станции пешком.",
+          "explanation": "В итоге, anlatının vardığı sonucu işaretler. Üç kelimeyi tek vurgu grubu olarak söyle."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Arka plan ve olay",
+          "incorrect": "Пока мы подождали автобус, начался дождь.",
+          "correct": "Пока мы ждали автобус, начался дождь.",
+          "explanation": "Bu arka plan bağlamında süren eylemi ждали ile ver; tamamlanan eylemi ana tümcede söyle.",
+          "guided": [
+            [
+              "Пока мы ___ (ждать) врача, закрыли регистратуру.",
+              "ждали"
+            ],
+            [
+              "Пока она ___ (читать), погас свет.",
+              "читала"
+            ]
+          ],
+          "transfer": [
+            [
+              "Пока дети ___ (играть), началась гроза.",
+              "играли"
+            ],
+            [
+              "Пока мы ___ (обсуждать) карту, подошёл проводник.",
+              "обсуждали"
+            ]
+          ],
+          "delayed": [
+            [
+              "Пока дедушка ___ (готовить) ужин, приехали гости.",
+              "готовил"
+            ],
+            [
+              "Пока я ___ (делать) уроки, пришла сестра. Dişil anlatıcı.",
+              "делала"
+            ]
+          ]
+        },
+        {
+          "label": "Dönüm noktasını zamanla bağla",
+          "incorrect": "Когда погас свет, мы уже начали ждать электрика до этого.",
+          "correct": "Когда погас свет, мы позвонили электрику.",
+          "explanation": "Когда anlatının hangi anda değiştiğini bağlar. Sonucu ayrı cümleye koy.",
+          "guided": [
+            [
+              "___ зазвонил телефон, мы остановились. Начало события.",
+              "Когда"
+            ],
+            [
+              "___ открылся музей, мы вошли.",
+              "Когда"
+            ]
+          ],
+          "transfer": [
+            [
+              "___ сломался лифт, мы поднялись пешком.",
+              "Когда"
+            ],
+            [
+              "___ поезд тронулся, я заметила свою сумку на перроне.",
+              "Когда"
+            ]
+          ],
+          "delayed": [
+            [
+              "___ погас экран, я перезагрузил компьютер.",
+              "Когда"
+            ],
+            [
+              "___ вернулся ключник, мы открыли зал.",
+              "Когда"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "в итоге",
+        "meaning": "sonuçta",
+        "example": "В итоге мы сократили маршрут.",
+        "usage": "Olay dizisinin fiilî sonucunu verir.",
+        "pronunciation": "в ито́ге",
+        "collocations": [
+          "в итоге решили",
+          "в итоге добрались"
+        ],
+        "recognize": [
+          "“в итоге” burada ne anlama gelir?",
+          "sonuçta",
+          "başlangıçta",
+          "aynı anda",
+          "Olay dizisinin fiilî sonucunu verir."
+        ],
+        "recall": [
+          "“sonuçta” anlamındaki hedef ifadeyi yaz.",
+          "в итоге"
+        ],
+        "use": "Yeni bir aksiliğin sonucunu bağla."
+      },
+      "additionalWords": [
+        {
+          "term": "по дороге",
+          "meaning": "yolda",
+          "example": "По дороге мы заметили закрытый мост.",
+          "usage": "Yolculuk sırasında gerçekleşen olaya giriş yapar.",
+          "pronunciation": "по доро́ге",
+          "collocations": [
+            "по дороге домой",
+            "встретить по дороге"
+          ],
+          "recognize": [
+            "“по дороге” burada ne anlama gelir?",
+            "yolda",
+            "evde",
+            "ertesi hafta",
+            "Yolculuk sırasında gerçekleşen olaya giriş yapar."
+          ],
+          "recall": [
+            "“yolda” anlamındaki hedef ifadeyi yaz.",
+            "по дороге"
+          ],
+          "use": "Yakın zamanda yolda olan bir şeyi aktar."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "ливень",
+          "cue": "sağanak"
+        },
+        {
+          "term": "объезд",
+          "cue": "alternatif güzergâh"
+        }
+      ],
+      "writing": {
+        "prompt": "Bisiklet gezisindeki değişikliği, arka planı ve sonucu belirterek 6–8 cümlede anlat. Dinleyiciye sorabileceği bir ayrıntı bırak.",
+        "sample": "Утром нас было пятеро, и мы хотели доехать до озера. Пока мы ехали вдоль реки, начался ливень. Когда мы добрались до моста, там уже стояла машина дорожной службы. Нам показали объезд, но он был слишком длинным. Мы решили добраться до ближайшей станции и вернуться раньше. В итоге до озера мы не доехали, зато нашли хорошее кафе у станции.",
+        "revision": "Önce hangi bilginin bilindiğini, sonra hangi planın değiştiğini netleştir.",
+        "criteria": [
+          "Arka plan ve dönüm noktası ayrılır.",
+          "Sonuç ve plan değişikliğinin nedeni açıktır."
+        ]
+      },
+      "input": {
+        "text": "Утром мы ехали к озеру. По дороге начался ливень, но мы продолжили путь. Когда мы увидели закрытый мост, пришлось остановиться. На табличке был указан объезд через деревню. Он добавлял два часа, а электричка уходила через час. В итоге мы повернули к станции и пообедали там.",
+        "reading": [
+          "Neden göle gidilmedi?",
+          "Alternatif yol çok uzundu",
+          "Bisiklet bozuldu",
+          "Yağmur hiç durmadı",
+          "Ek süre tren saatine uymadı.",
+          "Он добавлял два часа"
+        ],
+        "transcript": "— Вы доехали до озера? — Нет. Пока мы ехали вдоль реки, начался ливень. Дождь быстро прошёл, но мост был закрыт. — А объезд? — Два лишних часа. Мы боялись опоздать на электричку и повернули к станции.",
+        "preparation": "Önce gezi amacı ve son kararı ayır.",
+        "main": [
+          "Son karar ne?",
+          "İstasyona dönmek",
+          "Göl kenarında kalmak",
+          "Köye taşınmak",
+          "Tren için istasyona döndüler.",
+          "повернули к станции"
+        ],
+        "detail": [
+          "Alternatif yol ne kadar ekleyecekti?",
+          "İki saat",
+          "Yarım saat",
+          "Bir gün",
+          "Конкретное время: два часа.",
+          "Два лишних часа"
+        ]
+      },
+      "retry": {
+        "text": "Мы принесли костюмы на репетицию. Когда вошли в зал, там не было света. Пока звонили администратору, соседи предложили другой зал. В итоге репетиция всё-таки состоялась.",
+        "reading": [
+          "Prova nasıl gerçekleşti?",
+          "Başka bir salonda",
+          "Kostümsüz",
+          "Ertesi gün",
+          "Komşular başka salon sağladı.",
+          "соседи предложили другой зал"
+        ],
+        "transcript": "Спектакль начался вовремя. По дороге автобус сломался, но водитель вызвал другую машину. Мы приехали за пять минут до начала.",
+        "preparation": "Sorun ve işe yarayan çözümü dinle.",
+        "main": [
+          "Zamanında varmaya ne yardım etti?",
+          "Başka araç",
+          "Yaya yol",
+          "Kostümlerin erken gelmesi",
+          "Şoför araç çağırdı.",
+          "водитель вызвал другую машину"
+        ],
+        "detail": [
+          "Başlamadan ne kadar önce vardılar?",
+          "Beş dakika",
+          "Bir saat",
+          "Üç dakika",
+          "За пять минут.",
+          "за пять минут до начала"
+        ]
+      },
+      "readingPurpose": "Arka plan, dönüm noktası ve sonuç için üç zaman noktası çıkar.",
+      "readingUse": "Kazanın anlatımını kulüp grubuna özetle.",
+      "listeningUse": "Dönüm noktasına bir takip sorusu sor.",
+      "speaking": "İptal olan bir geziyi anlat: neden, beklenmedik olay ve sonuç. Partner başka bir ayrıntı sorduğunda zaman çizgisine dön.",
+      "genres": {
+        "reading": "kişisel gezi anlatısı",
+        "listening": "iki kişilik deneyim söyleşisi",
+        "writing": "kulüp grubuna olay özeti"
+      },
+      "recovery": {
+        "reading": "Rota kâğıdı ile fiilî sonucu ayır.",
+        "main": "Yağmurla kapanan köprüyü ayrı dinle.",
+        "detail": "Час ifadesinden önceki sayıyı dinle."
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "пока / когда ile olay sırası"
+      ]
+    }
+  ]
+}

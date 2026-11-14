@@ -62,7 +62,14 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
       <h2>İlk yazın</h2><blockquote>{String(draft.answer)}</blockquote>
       <h3>Yazını gözden geçir</h3><ul>{p.rubric.map(({ criterion }) => <li key={criterion}>{criterion}</li>)}</ul>
     </section>}
-    {phase === 'reading' && <div className="surface section"><p lang={p.language} className="passage">{reading.text}</p></div>}
+    {phase === 'reading' && <section className="surface section">
+      <h2>Okumadan önce</h2><p>{lesson.teaching?.readingPurpose ?? 'Metni oku ve bağlamı anlamak için ayrıntıları karşılaştır.'}</p>
+      {!reception?.previous.length && lesson.teaching?.receptive && <details>
+        <summary>Metinde tanıman yeterli olan ifadeler</summary>
+        <dl>{lesson.teaching.receptive.map(({ term, cue }) => <div key={term}><dt lang={p.language}>{term}</dt><dd>{cue}</dd></div>)}</dl>
+      </details>}
+      <p lang={p.language} className="passage">{reading.text}</p>
+    </section>}
     {phase === 'listening' && <section className="surface section">
       <h2>Dinlemeden önce</h2><p>{listening.preparation}</p>
       <AudioPlayer audio={listening.audio} text={listening.transcript}
@@ -75,6 +82,7 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
       <h2 lang={p.language}>{card.term}</h2><p>{card.meaning} · {card.partOfSpeech}</p>
       <p lang={p.language}>{entry.pronunciation}</p><blockquote lang={p.language}>{card.example}</blockquote>
       <p>{card.context}</p><ul>{entry.collocations.map((value) => <li key={value} lang={p.language}>{value}</li>)}</ul>
+      {lesson.teaching?.vocabulary.filter(({ cardId }) => cardId === card.id).map(({ cardId, usage }) => <p key={cardId}>{usage}</p>)}
       <AudioPlayer key={card.id} audio={entry.audio ?? audio} text={card.example} label="Örneği dinle" />
       <div className="button-row"><button className="primary" onClick={() => setStep(step + 1)}>Kelimeyi çalış</button></div>
     </article>}
@@ -140,10 +148,19 @@ export function PedagogyResults({ lesson, phase, attempts, onContinue, state, re
         {wrong && exercise.kind !== 'open' && <p><strong>Beklenen yanıt</strong> {Array.isArray(exercise.accepted) ? exercise.accepted.join(' / ') : exercise.accepted}</p>}
         {exercise.kind === 'open' && <p><strong>Örnek</strong> {exercise.sample}</p>}
         <p>{exercise.explanation}</p>
-        {wrong && check && phase !== 'foundation' && <p>{check.misconception} · <s>{check.incorrectExample}</s> → {check.correctExample}</p>}
+        {wrong && check && phase !== 'foundation' && <>
+          <p>{check.misconception} · <s>{check.incorrectExample}</s> → {check.correctExample}</p>
+          <p>{check.correction}</p>
+        </>}
         {coaching && <InlineCoaching {...coaching} />}
       </article>
     })}
+    {lesson.teaching && (phase === 'reading' || (phase === 'listening' && attempts.length > 0)) &&
+      <article className="surface section">
+        <h2>{phase === 'reading' ? 'Okuduğunu kullan' : 'Duyduğunu kullan'}</h2>
+        <p>{phase === 'reading' ? lesson.teaching.readingUse : lesson.teaching.listeningUse}</p>
+        <p>Bu kısa sözlü prova puanlanmaz.</p>
+      </article>}
     <button className="primary" onClick={onContinue}>Günlük plana dön</button>
   </>
 }

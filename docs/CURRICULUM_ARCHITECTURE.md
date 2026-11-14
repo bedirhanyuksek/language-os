@@ -1,6 +1,6 @@
-# Müfredat mimarisi ve A1–C1 haritası
+# Müfredat mimarisi ve A1–C2 haritası
 
-Bu harita yetişkin genel iletişimi için üretim hedefidir. Aşağıdaki A1–C1 tabloları hedef kapsamdır. Yayımlanan seçili kazanımlar ayrıca listelenir. Bir satırdaki gramer veya kelime örnekleri, öğretim sırası ve görev seçimi Language OS tasarım kararıdır.
+Bu harita yetişkin genel iletişimi için üretim hedefidir. [Güncel kapsam tablosu](MILESTONE_5_INVENTORY.md) yayımlanan dersleri ve C2 açıklarını gösterir. Aşağıdaki A1–C1 tabloları hedef kapsamdır. Yayımlanan seçili kazanımlar ayrıca listelenir. Bir satırdaki gramer veya kelime örnekleri, öğretim sırası ve görev seçimi Language OS tasarım kararıdır.
 
 ## Learning Experience v1 · Derslerle eşleşme
 
@@ -12,7 +12,7 @@ Bu harita yetişkin genel iletişimi için üretim hedefidir. Aşağıdaki A1–
 | RU | A1: koşullu Kiril köprüsü, tanışma, meslek, ikamet ve kafe siparişi | `ru.cyrillic`, `ru.intro`, `ru.roles`, `ru.city`, `ru.order` |
 | RU | A2: buluşmayı başka gün ve saate taşıma | `ru.meeting` |
 
-EN A1/C1 ve RU B1–C1 için ders açılmaz. Diğer bantlarda da yalnızca tablodaki alt kazanımlar bulunur. Tüm yeni içerikler `automated_checked`; uzman incelemesi ve öğrenci pilotu ayrı kaydedilir.
+Bu tablo Learning Experience v1 kapsamını kaydeder. Milestone 4, EN B2+/C1 ve RU B1 için seçili dersler ekledi. Diğer bantlarda da yalnızca tablodaki alt kazanımlar bulunur. Tüm yeni içerikler `automated_checked`; uzman incelemesi ve öğrenci pilotu ayrı kaydedilir.
 
 ## Kaynak ve kapsam yöntemi
 

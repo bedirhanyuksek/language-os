@@ -1,0 +1,270 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.interaction",
+      "outcome": "B1.interaction",
+      "level": "B1",
+      "prerequisite": [
+        "en.clarify",
+        "en.news"
+      ],
+      "title": "Konuşma sırasına gir ve takip sorusuyla ilerlet",
+      "objective": "Bir grup konuşmasında söz al, önceki fikri kısaca geri söyle ve ayrıntı isteyen takip sorusu sor.",
+      "situation": "Bir kitap kulübü üyeleri farklı bölümleri tartışıyor. Sözünü kesmeden katıl ve sözü başka üyeye devret.",
+      "bridge": "Could I add ile söz al; do you mean ile bir yorumu kontrol et. Açık bir takip sorusuyla sözü geri ver.",
+      "models": [
+        {
+          "phrase": "Could I add something to that? Do you mean the last scene or the letter before it?",
+          "explanation": "Could I add, söz almak için kısa bir ricadır. Do you mean iki olası anlamı ayırır. İki seçenek üzerinde ayrı vurgu ver."
+        },
+        {
+          "phrase": "What made you change your mind? I’d like to hear how you read the ending.",
+          "explanation": "What made you + yalın fiil bir gerekçe veya tetikleyici sorar. Açıklamadan sonra yeni bir üyeye sözü verebilirsin."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Söz alırken could I add",
+          "incorrect": "Could I to add something?",
+          "correct": "Could I add something?",
+          "explanation": "Could I ardından yalın fiil. Bir önceki görüşle bağ kur.",
+          "guided": [
+            [
+              "Fikre ek yap: Could I ___ something to that?",
+              "add"
+            ],
+            [
+              "Bir örnek ekle: Could I ___ a quick example?",
+              "add"
+            ]
+          ],
+          "transfer": [
+            [
+              "Kurulda rica: Could I ___ one point about the map?",
+              "add"
+            ],
+            [
+              "Kitap kulübünde: Could I ___ a detail from chapter two?",
+              "add"
+            ]
+          ],
+          "delayed": [
+            [
+              "Ders toplantısında: Could I ___ a point about the timing?",
+              "add"
+            ],
+            [
+              "Gezi grubunda: Could I ___ a suggestion about the meeting place?",
+              "add"
+            ]
+          ]
+        },
+        {
+          "label": "What made you ile gerekçe sor",
+          "incorrect": "What made you to choose it?",
+          "correct": "What made you choose it?",
+          "explanation": "Made you ardından yalın fiil gelir.",
+          "guided": [
+            [
+              "What made you ___ (choose) this book?",
+              "choose"
+            ],
+            [
+              "What made you ___ (change) the date?",
+              "change"
+            ]
+          ],
+          "transfer": [
+            [
+              "What made you ___ (read) the letter again?",
+              "read"
+            ],
+            [
+              "What made you ___ (trust) that source?",
+              "trust"
+            ]
+          ],
+          "delayed": [
+            [
+              "What made you ___ (suggest) another route?",
+              "suggest"
+            ],
+            [
+              "What made you ___ (leave) the group early?",
+              "leave"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "pick up on a point",
+        "meaning": "bir fikre geri dönüp onu geliştirmek",
+        "example": "I’d like to pick up on a point Maya made earlier.",
+        "usage": "Pick up on burada önceki bir ayrıntıyı alıp sürdürmektir.",
+        "pronunciation": "/pɪk ʌp ɑn ə pɔɪnt/",
+        "collocations": [
+          "pick up on a point",
+          "pick up on an earlier comment"
+        ],
+        "recognize": [
+          "“pick up on a point” burada ne anlama gelir?",
+          "bir fikre geri dönüp onu geliştirmek",
+          "konuyu kapatmak",
+          "birini yanlış duymak",
+          "Pick up on burada önceki bir ayrıntıyı alıp sürdürmektir."
+        ],
+        "recall": [
+          "“bir fikre geri dönüp onu geliştirmek” anlamındaki hedef ifadeyi yaz.",
+          "pick up on a point"
+        ],
+        "use": "Önceki konuşmacının görüşünü bir soruyla ilerlet."
+      },
+      "additionalWords": [
+        {
+          "term": "give someone the floor",
+          "meaning": "birine söz vermek",
+          "example": "Let’s give Kim the floor before we decide.",
+          "usage": "The floor burada konuşma sırası veya hakkıdır.",
+          "pronunciation": "/ɡɪv ˈsʌmwʌn ðə flɔɹ/",
+          "collocations": [
+            "give Kim the floor",
+            "give another speaker the floor"
+          ],
+          "recognize": [
+            "“give someone the floor” burada ne anlama gelir?",
+            "birine söz vermek",
+            "sözü kesmek",
+            "kararı yazmak",
+            "The floor burada konuşma sırası veya hakkıdır."
+          ],
+          "recall": [
+            "“birine söz vermek” anlamındaki hedef ifadeyi yaz.",
+            "give someone the floor"
+          ],
+          "use": "Henüz konuşmayan üyeye söz ver."
+        },
+        {
+          "term": "follow up on",
+          "meaning": "bir ayrıntının peşinden gitmek",
+          "example": "Could I follow up on your comment about the ending?",
+          "usage": "Follow up on önceki sözü soru veya araştırmayla sürdürmek.",
+          "pronunciation": "/ˈfɑloʊ ʌp ɑn/",
+          "collocations": [
+            "follow up on a comment",
+            "follow up on a question"
+          ],
+          "recognize": [
+            "“follow up on” burada ne anlama gelir?",
+            "bir ayrıntının peşinden gitmek",
+            "konuyu atlamak",
+            "sessiz kalmak",
+            "Follow up on önceki sözü soru veya araştırmayla sürdürmek."
+          ],
+          "recall": [
+            "“bir ayrıntının peşinden gitmek” anlamındaki hedef ifadeyi yaz.",
+            "follow up on"
+          ],
+          "use": "Bir üyenin önceki yorumuna takip sorusu sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "take turns",
+          "cue": "sırayla konuşmak"
+        },
+        {
+          "term": "interruptions",
+          "cue": "söz kesmeler"
+        }
+      ],
+      "writing": {
+        "prompt": "Biri öykünün sonunu iyimser buluyor, biri kararsız. Her iki görüşü an, bir takip sorusu ve başka üyeye söz veren cümle yaz.",
+        "sample": "Maya, you read the last scene as hopeful. Jo, do you mean that the letter makes the ending less certain? What made you read it that way? I’d like to hear what Lee thinks before we move on.",
+        "revision": "Bir görüşü kesin yargıya çevirmeden geri söyle, ardından hangi ayrıntıya dayandığını sor.",
+        "criteria": [
+          "Önceki görüş doğru özetlenir.",
+          "Takip sorusu ve söz devri yerinde."
+        ]
+      },
+      "input": {
+        "text": "The book club will take turns discussing the last chapter. Ask a follow-up question when someone mentions a scene. Try to avoid interruptions. The organiser will invite anyone who has not spoken before the group chooses the next book.",
+        "reading": [
+          "Kitap seçiminden önce ne yapılacak?",
+          "Henüz konuşmayan üyeler davet edilecek",
+          "Herkes yazılı sınava girecek",
+          "Son bölüm atlanacak",
+          "The organiser will invite anyone who has not spoken.",
+          "invite anyone who has not spoken"
+        ],
+        "transcript": "Maya: I thought the ending was hopeful. Jo: Could I add something? Do you mean the last scene or the letter? Maya: The last scene. Jo: What made you read it as hopeful? Maya: She leaves the door open. Jo: Let’s hear from Lee, too.",
+        "preparation": "Söz alma, takip sorusu ve söz devrini ayır.",
+        "main": [
+          "Jo hangi ayrıntıyı netleştiriyor?",
+          "Son sahne mi mektup mu",
+          "Öykünün yılı",
+          "Yazarın kim olduğu",
+          "The last scene or the letter.",
+          "the last scene or the letter"
+        ],
+        "detail": [
+          "Kime söz veriliyor?",
+          "Lee",
+          "Maya",
+          "Jo",
+          "Let’s hear from Lee, too.",
+          "hear from Lee"
+        ]
+      },
+      "retry": {
+        "text": "In the garden group, Sam suggests opening earlier. Priya wants to hear from volunteers who work in the morning. The group waits for their views before changing the time.",
+        "reading": [
+          "Grup neyi bekliyor?",
+          "Sabah çalışan gönüllülerin görüşünü",
+          "Bahçenin kapanmasını",
+          "Yeni aletleri",
+          "The group waits for their views.",
+          "waits for their views"
+        ],
+        "transcript": "Could I add something about the new plan? Do you mean we would begin at eight every week? No, only on Saturdays. What made you choose Saturday? The volunteers are free then. Could we hear from the people who take the early bus?",
+        "preparation": "İlk yorum ile yapılan düzeltmeyi ayır.",
+        "main": [
+          "Yeni saat hangi günler uygulanacak?",
+          "Sadece cumartesi",
+          "Her gün",
+          "Sadece pazar",
+          "Only on Saturdays.",
+          "only on Saturdays"
+        ],
+        "detail": [
+          "Son olarak kimler dinlenecek?",
+          "Erken otobüsü kullananlar",
+          "Yalnız organizatörler",
+          "Bisikletliler",
+          "The people who take the early bus.",
+          "people who take the early bus"
+        ]
+      },
+      "readingPurpose": "Söz sırası, soru ve kararı ayrı bul.",
+      "readingUse": "Grup kuralına uygun iki takip sorusu öner.",
+      "listeningUse": "Bir görüşü geri söyleyip sözü bir başkasına ver.",
+      "speaking": "Kitap kulübü konuşmasına katıl. Söz al, bir yorumu doğrula ve duyduğun cevaba göre takip sorusu sor.",
+      "genres": {
+        "reading": "kulüp toplantı yönergesi",
+        "listening": "grup diyaloğu",
+        "writing": "kolaylaştırıcı notu"
+      },
+      "recovery": {
+        "reading": "Sam’in önerisinden sonra karardan önce kimin görüşünün istendiğini bul.",
+        "main": "No sonrasında günün nasıl sınırlandığını dinle.",
+        "detail": "Hear from sonrasında gelen grubu yakala."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "söz sırası ve takip soruları"
+      ]
+    }
+  ]
+}
