@@ -1,0 +1,317 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.register-speech",
+      "outcome": "C1.register-speech",
+      "level": "C1",
+      "prerequisite": [
+        "en.brief",
+        "en.intercultural"
+      ],
+      "title": "Aynı görüşü iki dinleyiciye sözlü olarak uyarla",
+      "objective": "Bir öneriyi meslektaşa ve itirazı olan katılımcıya farklı bilgi sırasıyla anlat, ihtiyat düzeyini ve taahhüt sınırını koru.",
+      "situation": "Bir topluluk merkezinin kayıt sistemi deneme aşamasında. Analist kapsamı, katılımcı yarınki seçenekleri öğrenmek istiyor.",
+      "bridge": "Analiste bulgu ve örneklemle başla. Katılımcıya bugünkü işlemle başla. What we can say is … ile dayanağı, We cannot yet tell whether … ile belirsizliği koru.",
+      "models": [
+        {
+          "phrase": "What we can say is that waiting times fell for online applicants in the pilot.",
+          "explanation": "What-clause sınırlı bulguyu odaklar. For online applicants kapsamı bırakmaz."
+        },
+        {
+          "phrase": "If you prefer to register in person, you can still use the desk.",
+          "explanation": "If kişiye uygun bir yolu açar. Still mevcut seçeneğin devam ettiğini gösterir, yeni bir hizmet sözü vermez."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Odak yapısını doğru tamamla",
+          "incorrect": "What can we say is that the queue was shorter.",
+          "correct": "What we can say is that the queue was shorter.",
+          "explanation": "What-clause içinde düz özne-yardımcı sırası. Bağımsız soru sırası başka bağlamda kullanılır.",
+          "guided": [
+            [
+              "Statement: What ___ (we can / can we) say is that fares stayed the same.",
+              "we can"
+            ],
+            [
+              "What ___ (they need / do they need) is a second entrance.",
+              "they need"
+            ]
+          ],
+          "transfer": [
+            [
+              "What ___ (we found / did we find) was a delay at closing time.",
+              "we found"
+            ],
+            [
+              "What ___ (the coach wants / does the coach want) is an early trial.",
+              "the coach wants"
+            ]
+          ],
+          "delayed": [
+            [
+              "What ___ (you should / should you) check is whether a space is available.",
+              "you should"
+            ],
+            [
+              "What ___ (we cannot / cannot we) promise is a Friday delivery.",
+              "we cannot"
+            ]
+          ]
+        },
+        {
+          "label": "Kitleye göre ilk bilgi",
+          "incorrect": "“All calls are now faster.” The pilot measured only web replies.",
+          "correct": "“Online applicants in the pilot received faster replies.”",
+          "explanation": "Hitap ve bilgi sırası değişse de kaynak, kapsam ve ölçüm değişmez.",
+          "guided": [
+            [
+              "“Only evenings were tested.” Hangi kapsam: evening only / all hours?",
+              "evening only"
+            ],
+            [
+              "“Use the desk if the web form fails.” Katılımcı için eylem: use the desk / expand the pilot.",
+              "use the desk"
+            ]
+          ],
+          "transfer": [
+            [
+              "“Both groups were small.” Analist için sınırlama: small groups / desk location.",
+              "small groups"
+            ],
+            [
+              "“Thursday’s slots are available, Friday is unconfirmed.” Bugün teyitli seçenek: Thursday slots / Friday slots.",
+              "Thursday slots"
+            ]
+          ],
+          "delayed": [
+            [
+              "“The team measured waits, not access.” Ölçülen: waits / access.",
+              "waits"
+            ],
+            [
+              "“Week-one data excludes repeat calls.” Korunacak sınırlama: repeat calls excluded / all calls counted.",
+              "repeat calls excluded"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "put someone at ease",
+        "meaning": "birini rahatlatmak",
+        "example": "I gave her a clear next step to put her at ease.",
+        "usage": "Somut bilgiyle kaygıyı azaltmak. Sonuç garantisi verme.",
+        "pronunciation": "/pʊt æt iz/",
+        "collocations": [
+          "put a visitor at ease",
+          "put new members at ease"
+        ],
+        "recognize": [
+          "“put someone at ease” burada ne anlama gelir?",
+          "birini rahatlatmak",
+          "kararı kesinleştirmek",
+          "birini sıraya sokmak",
+          "Somut bilgiyle kaygıyı azaltmak. Sonuç garantisi verme."
+        ],
+        "recall": [
+          "“birini rahatlatmak” anlamındaki hedef ifadeyi yaz.",
+          "put someone at ease"
+        ],
+        "use": "Kayıt sırasında kaygılanan kişiye güvenilir bir sonraki adım ver."
+      },
+      "additionalWords": [
+        {
+          "term": "spell out the implications",
+          "meaning": "sonuçların ne anlama geldiğini açıkça belirtmek",
+          "example": "We should spell out the implications for people who call.",
+          "usage": "Spell out ayrıntıyı açık etmek. For hangi grubun etkilendiğini belirtir.",
+          "pronunciation": "/spel aʊt ði ˌɪmplɪˈkeɪʃənz/",
+          "collocations": [
+            "spell out the implications for staff",
+            "spell out what changes tomorrow"
+          ],
+          "recognize": [
+            "“spell out the implications” burada ne anlama gelir?",
+            "sonuçların ne anlama geldiğini açıkça belirtmek",
+            "heceleyerek okumak",
+            "konuyu değiştirmek",
+            "Spell out ayrıntıyı açık etmek. For hangi grubun etkilendiğini belirtir."
+          ],
+          "recall": [
+            "“sonuçların ne anlama geldiğini açıkça belirtmek” anlamındaki hedef ifadeyi yaz.",
+            "spell out the implications"
+          ],
+          "use": "Bir saat değişiminin veliler için sonucunu açıkla."
+        },
+        {
+          "term": "qualify a claim",
+          "meaning": "bir iddiayı koşulla sınırlamak",
+          "example": "The analyst qualified the claim by naming the sample.",
+          "usage": "Qualify bu kullanımda iddianın kapsamını veya kesinliğini daraltır.",
+          "pronunciation": "/ˈkwɑləfaɪ ə kleɪm/",
+          "collocations": [
+            "qualify a claim with a caveat",
+            "qualify a broad claim"
+          ],
+          "recognize": [
+            "“qualify a claim” burada ne anlama gelir?",
+            "bir iddiayı koşulla sınırlamak",
+            "iddia eklemek",
+            "birini yarışmaya almak",
+            "Qualify bu kullanımda iddianın kapsamını veya kesinliğini daraltır."
+          ],
+          "recall": [
+            "“bir iddiayı koşulla sınırlamak” anlamındaki hedef ifadeyi yaz.",
+            "qualify a claim"
+          ],
+          "use": "Küçük örneklem için iddianı daralt."
+        },
+        {
+          "term": "give a concrete next step",
+          "meaning": "somut bir sonraki adım vermek",
+          "example": "Give a concrete next step before you discuss the full report.",
+          "usage": "Kimin ne yapacağını belirt.",
+          "pronunciation": "/ɡɪv ə ˈkɑŋkɹit nekst step/",
+          "collocations": [
+            "give a concrete next step",
+            "offer a concrete next step"
+          ],
+          "recognize": [
+            "“give a concrete next step” burada ne anlama gelir?",
+            "somut bir sonraki adım vermek",
+            "belirsiz bırakmak",
+            "kararı ertelemek",
+            "Kimin ne yapacağını belirt."
+          ],
+          "recall": [
+            "“somut bir sonraki adım vermek” anlamındaki hedef ifadeyi yaz.",
+            "give a concrete next step"
+          ],
+          "use": "Bir kayıt hatasından sonra uygulanabilir adım söyle."
+        },
+        {
+          "term": "make room for a question",
+          "meaning": "soruya yer açmak",
+          "example": "Pause and make room for a question about access.",
+          "usage": "Kendi anlatımını kısaltıp dinleyicinin soru sormasına fırsat bırak.",
+          "pronunciation": "/meɪk ɹum fəɹ ə ˈkwestʃən/",
+          "collocations": [
+            "make room for a follow-up question",
+            "pause to make room for a question"
+          ],
+          "recognize": [
+            "“make room for a question” burada ne anlama gelir?",
+            "soruya yer açmak",
+            "birini susturmak",
+            "konuyu kapatmak",
+            "Kendi anlatımını kısaltıp dinleyicinin soru sormasına fırsat bırak."
+          ],
+          "recall": [
+            "“soruya yer açmak” anlamındaki hedef ifadeyi yaz.",
+            "make room for a question"
+          ],
+          "use": "Bir itirazdan sonra dur ve muhatabına teyit sorusu bırak."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "desk queue",
+          "cue": "danışma sırası"
+        },
+        {
+          "term": "pilot window",
+          "cue": "deneme dönemi"
+        }
+      ],
+      "writing": {
+        "prompt": "Pilot verisini iki kısa sözlü metin olarak yaz. Analist için kanıt ve eksik grup, ziyaretçi için yarınki seçenek ve bir teyit sorusu ver. Toplam 125–165 sözcük.",
+        "sample": "For the analyst: What we can say is that web applicants spent less time waiting during this trial. The test covered two weekday afternoons and did not include callers who gave up before they reached the desk. We should keep the old channel open and collect comparable figures before deciding whether the change works for everyone. For the visitor: If you need to book tomorrow, the desk will still be open from two until four. You can use the web form, too. If you need someone to read the form with you, call before coming and ask whether a volunteer is free. I can show you where the number is. The shorter wait we saw was for some web applicants, so I cannot promise that the desk will be quicker. Which route would be easier for you tomorrow?",
+        "revision": "İki sürümde kapsam ve kesinlik aynı kalsın. Bir sürümde teknik ayrıntıyı sadeleştir, diğerinde kaynağı belirt. Önceki dersteki check an assumption veya be meant as kalıbıyla ziyaretçinin yorumunu teyit et.",
+        "criteria": [
+          "İki dinleyici için bilgi sırası farklı.",
+          "Hizmet koşulları, örneklem ve belirsizlik korundu."
+        ]
+      },
+      "input": {
+        "text": "Internal note. During the pilot window the median wait for successful web bookings fell from fourteen minutes to eight. The desk queue was counted only after people checked in. No one recorded people who walked away or could not read the sign. A volunteer helped some applicants but was available on only one day. Comparing all applicants would require a count of unfinished bookings and a record of volunteer hours.\n\nVisitor notice. The desk stays open at the usual times tomorrow. If you want help with the form, call first so we can tell you whether a volunteer is in. The web form remains available from home. A faster wait is not guaranteed at the desk. We are still testing these arrangements and will post next week’s hours on Friday.\n\nFollow-up from the evaluation team. A receptionist says the web form may have diverted some callers out of the queue. This is a plausible explanation, but the trial did not track people across channels. The finance team wants to remove one staffed hour next week. Before the visit, decide which fact belongs in a decision meeting and which instruction a visitor can act on tomorrow. Neither version should turn the suggestion to reduce staffing into an announced change.",
+        "reading": [
+          "What limitation must both versions preserve?",
+          "A shorter wait is only established for successful web bookings",
+          "The usual desk is closed",
+          "Volunteer help is guaranteed",
+          "The pilot measured successful web bookings only.",
+          "median wait for successful web bookings"
+        ],
+        "transcript": "Analyst: What we can say is that people who completed the web form waited less during the pilot. We still need figures on unfinished bookings. Visitor: Will I get in faster if I come tomorrow? Adviser: I cannot promise a shorter desk queue. You can still register there, or you can use the form from home. Visitor: I might need help reading it. Adviser: Call in advance and ask if a volunteer will be there. I can give you the number now. Analyst: Shall we call this a permanent improvement? Adviser: I would say it is a promising result for successful web bookings during the trial. Visitor: Then are you cutting the desk hours? Adviser: That is a proposal, not tomorrow’s timetable. Tomorrow’s desk hours are unchanged. Analyst: We can say how the pilot was measured without guessing what happened to callers. Adviser: And I can give the visitor the opening time first.",
+        "preparation": "Kime hangi bilgi önce söyleniyor ve hangi belirsizlik korunuyor?",
+        "main": [
+          "What can the visitor do to ask for assistance?",
+          "Call in advance",
+          "Book an analyst",
+          "Wait until next week",
+          "Adviser önerdiği adımı söylüyor.",
+          "Call in advance"
+        ],
+        "detail": [
+          "Who had shorter waits in the data?",
+          "People who completed the web form",
+          "Every visitor at the desk",
+          "Callers who abandoned a booking",
+          "Ölçülen grubun adı veriliyor.",
+          "people who completed the web form waited less"
+        ]
+      },
+      "retry": {
+        "text": "The late bus ran on two Fridays. A count included only boarding passengers. Staff still need to speak to people who missed it.",
+        "reading": [
+          "Who is missing from the count?",
+          "People who missed the bus",
+          "The passengers who boarded",
+          "The driver",
+          "Only boarding passengers are included.",
+          "included only boarding passengers"
+        ],
+        "transcript": "Manager: The new ramp serves the side entrance, but the main entrance is unchanged. Guide: If you are coming today, use the side door for step-free access. I can show you the route.",
+        "preparation": "Karar ve uygulanabilir yön tarifi arasındaki farkı dinle.",
+        "main": [
+          "Where is the step-free route?",
+          "Side door",
+          "Main entrance",
+          "Back car park",
+          "Güncel yönlendirme yan kapı.",
+          "use the side door"
+        ],
+        "detail": [
+          "What does the guide offer?",
+          "To show the route",
+          "To change the entrance",
+          "To collect the data",
+          "Guide pratik yardım sunar.",
+          "I can show you the route"
+        ]
+      },
+      "readingPurpose": "Bir kaynak cümlesini iki dinleyiciye ayırırken korunacak bilgilerin altını çiz.",
+      "readingUse": "Analist ve ziyaretçi için birer farklı ilk cümle kur.",
+      "listeningUse": "Dinleyicinin yeni kaygısına yanıt verirken sonucun sınırını geri söyle.",
+      "speaking": "Kısa bir okul pilotunu önce yöntem komitesine, sonra yarın kayıt yapacak bir veliye özetle. Veli bir garanti isteyince sınırı koru ve sonraki eylemi belirt.",
+      "genres": {
+        "reading": "kurul notu ve ziyaretçi duyurusu",
+        "listening": "analist ve ziyaretçi görüşmesi",
+        "writing": "iki dinleyici için sözlü taslak"
+      },
+      "recovery": {
+        "reading": "Aynı bulgu kimin için geçerli?",
+        "main": "Kayıt yardımı garanti mi, aramayla mı netleşiyor?",
+        "detail": "Son yanıtta örneklem nasıl korunuyor?"
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "what-clause ile bilgi odağı; koşul ve ihtiyat"
+      ]
+    }
+  ]
+}

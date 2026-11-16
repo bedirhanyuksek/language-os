@@ -1,0 +1,325 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.reformulate",
+      "outcome": "C2.reformulate",
+      "level": "C2",
+      "prerequisite": [
+        "en.evidence",
+        "en.brief"
+      ],
+      "title": "Kaynak dosyasını karar notuna ve kamu duyurusuna dönüştür",
+      "objective": "Bir dosyadaki yetki, kanıt sınırı ve koşulları farklı dil türlerine geçirirken koru.",
+      "situation": "Bir gece otobüsü pilotunun dosyasında sürücü vardiya notu, yolcu temsilcisi görüşü ve kurul kararı farklı şeyler söylüyor. Aynı dosyadan iç karar notu ve yolcu duyurusu gerekiyor.",
+      "bridge": "C1’deki kaynak sınırlamasını bu kez türler arasında taşı: teknik ifadenin pratik sonucunu yaz ama statüyü ve kapsamı değiştirme. Anlaşılırlık için bilgiyi yeniden sırala; belirsizliği silme.",
+      "models": [
+        {
+          "phrase": "The approval extends to two departures, subject to a crew being available.",
+          "explanation": "İşletme notu: subject to + ad veya -ing ile sınır. Yolcu duyurusu: “We can run two trips if both drivers are available.”"
+        },
+        {
+          "phrase": "The survey cannot establish how many passengers had no alternative.",
+          "explanation": "Cannot establish, yöntemin sınırıdır. Kamu dilinde “The survey didn’t tell us how many people had no other way home.” Aynı belirsizliği korur."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Onay, öneri ve koşulu yeniden kur",
+          "incorrect": "The city will run all the late services once funding is discussed.",
+          "correct": "The board authorised two departures, subject to funding being confirmed.",
+          "explanation": "Authorise + nesne onayı verir. Subject to + ad/-ing; gündelik metinde if + tümce ile aynı koşulu tut.",
+          "guided": [
+            [
+              "The extension is subject to the operator ___ a second driver. (providing / provides)",
+              "providing"
+            ],
+            [
+              "The trial can proceed ___ the budget is released. (if / despite)",
+              "if"
+            ]
+          ],
+          "transfer": [
+            [
+              "The transfer is subject to both organisations ___ the waiver. (signing / sign)",
+              "signing"
+            ],
+            [
+              "Public version: the trail will reopen only ___ an engineer checks the bridge. (if / unless)",
+              "if"
+            ]
+          ],
+          "delayed": [
+            [
+              "Approval is conditional ___ written consent. (on / to)",
+              "on"
+            ],
+            [
+              "We can publish the material ___ the rights owner agrees. (provided that / even though)",
+              "provided that"
+            ]
+          ]
+        },
+        {
+          "label": "Ölçüm sınırını farklı dillerde koru",
+          "incorrect": "The questionnaire proves nobody walked home.",
+          "correct": "The questionnaire does not establish how many passengers walked home.",
+          "explanation": "Örneklemin dışındaki kişi veya davranışlar için sayısal çıkarım yapma; public sürümde “we don’t know how many” diyebilirsin.",
+          "guided": [
+            [
+              "The form does not establish ___ non-members used the service. (whether / although)",
+              "whether"
+            ],
+            [
+              "We do not know ___ people tried to book after it closed. (how many / although)",
+              "how many"
+            ]
+          ],
+          "transfer": [
+            [
+              "The interviews cannot establish ___ families without a car were represented. (whether / therefore)",
+              "whether"
+            ],
+            [
+              "Public version: the tally does not tell us ___ arrived before the doors opened. (how many people / although people)",
+              "how many people"
+            ]
+          ],
+          "delayed": [
+            [
+              "The estimates are based ___ records from one site. (on / by)",
+              "on"
+            ],
+            [
+              "The return forms do not tell us ___ checked the notice but did not travel. (who / despite)",
+              "who"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "fall within the remit",
+        "meaning": "yetki kapsamına girmek",
+        "example": "Changing fares does not fall within the panel’s remit.",
+        "usage": "Remit bir kurumun yetki veya görev alanıdır. Kamu dilinde the panel cannot decide fares.",
+        "pronunciation": "fall within the RE-mit",
+        "collocations": [
+          "fall within the remit of the board",
+          "remain outside the remit"
+        ],
+        "recognize": [
+          "“fall within the remit” burada ne anlama gelir?",
+          "yetki kapsamına girmek",
+          "son başvuruya yetişmek",
+          "başka bir kuruma bağlanmak",
+          "Remit bir kurumun yetki veya görev alanıdır. Kamu dilinde the panel cannot decide fares."
+        ],
+        "recall": [
+          "“yetki kapsamına girmek” anlamındaki hedef ifadeyi yaz.",
+          "fall within the remit"
+        ],
+        "use": "Planlayıcı kurulun hangi kararı almaya yetkili olmadığını açıkla."
+      },
+      "additionalWords": [
+        {
+          "term": "for the avoidance of doubt",
+          "meaning": "yanlış anlaşılmayı önlemek için",
+          "example": "For the avoidance of doubt, no additional fare was approved.",
+          "usage": "Resmî açıklık kalıbı. Kamu dilinde To be clear kullanılabilir.",
+          "pronunciation": "for the avoidance of DOUBT",
+          "collocations": [
+            "for the avoidance of doubt, the existing rule applies",
+            "for the avoidance of doubt, no permission was granted"
+          ],
+          "recognize": [
+            "“for the avoidance of doubt” burada ne anlama gelir?",
+            "yanlış anlaşılmayı önlemek için",
+            "tahminde bulunmak için",
+            "olumsuz cevap vermek için",
+            "Resmî açıklık kalıbı. Kamu dilinde To be clear kullanılabilir."
+          ],
+          "recall": [
+            "“yanlış anlaşılmayı önlemek için” anlamındaki hedef ifadeyi yaz.",
+            "for the avoidance of doubt"
+          ],
+          "use": "Duyuruda yeni izinle eski iznin karışmasını önle."
+        },
+        {
+          "term": "carry over a caveat",
+          "meaning": "bir sınırlama notunu yeni metinde korumak",
+          "example": "Carry over the caveat about night travel in the public summary.",
+          "usage": "Caveat iddianın geçerli olduğu sınırı açıklar. Carry over önceki metinden taşımaktır.",
+          "pronunciation": "carry over a CAV-eat",
+          "collocations": [
+            "carry over a methodological caveat",
+            "state a caveat explicitly"
+          ],
+          "recognize": [
+            "“carry over a caveat” burada ne anlama gelir?",
+            "bir sınırlama notunu yeni metinde korumak",
+            "belirsizliği kaldırmak",
+            "bir belgeyi onaylamak",
+            "Caveat iddianın geçerli olduğu sınırı açıklar. Carry over önceki metinden taşımaktır."
+          ],
+          "recall": [
+            "“bir sınırlama notunu yeni metinde korumak” anlamındaki hedef ifadeyi yaz.",
+            "carry over a caveat"
+          ],
+          "use": "Raporu özetlerken hangi sınırlamanın korunacağını editöre söyle."
+        },
+        {
+          "term": "make provision for",
+          "meaning": "bir ihtiyaca yönelik önlem veya düzenleme yapmak",
+          "example": "The proposal makes provision for a backup driver.",
+          "usage": "Karar gerçekleşmeden hazırlık yapılmasını anlatır. Kamu dilinde “we plan to have a backup driver” gibi açıkla.",
+          "pronunciation": "make pro-VI-sion for",
+          "collocations": [
+            "make provision for delays",
+            "make provision for replacement staff"
+          ],
+          "recognize": [
+            "“make provision for” burada ne anlama gelir?",
+            "bir ihtiyaca yönelik önlem veya düzenleme yapmak",
+            "bir koşulu kaldırmak",
+            "bir sonucu kanıtlamak",
+            "Karar gerçekleşmeden hazırlık yapılmasını anlatır. Kamu dilinde “we plan to have a backup driver” gibi açıkla."
+          ],
+          "recall": [
+            "“bir ihtiyaca yönelik önlem veya düzenleme yapmak” anlamındaki hedef ifadeyi yaz.",
+            "make provision for"
+          ],
+          "use": "Geç açılan bir okul salonu için yedek düzeni açıkla."
+        },
+        {
+          "term": "on the strength of",
+          "meaning": "bir kanıtı dayanak alarak",
+          "example": "The board did not extend the trial on the strength of one survey.",
+          "usage": "Bir kararın dayanağını belirtir. Based solely on tek kaynak olduğunda açıklayıcı bir alternatiftir.",
+          "pronunciation": "on the STRENGTH of",
+          "collocations": [
+            "decide on the strength of one report",
+            "act on the strength of preliminary figures"
+          ],
+          "recognize": [
+            "“on the strength of” burada ne anlama gelir?",
+            "bir kanıtı dayanak alarak",
+            "veri olmadan",
+            "daha güçlü bir araçla",
+            "Bir kararın dayanağını belirtir. Based solely on tek kaynak olduğunda açıklayıcı bir alternatiftir."
+          ],
+          "recall": [
+            "“bir kanıtı dayanak alarak” anlamındaki hedef ifadeyi yaz.",
+            "on the strength of"
+          ],
+          "use": "Tek sayımdan kalıcı karar alınmamasının gerekçesini ver."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "standby roster",
+          "cue": "beklemedeki yedek vardiya listesi"
+        },
+        {
+          "term": "boarding tally",
+          "cue": "biniş sayımı"
+        },
+        {
+          "term": "authorisation",
+          "cue": "resmî onay"
+        },
+        {
+          "term": "contingency",
+          "cue": "beklenmedik durum için yedek plan"
+        }
+      ],
+      "writing": {
+        "prompt": "Yeni dosya: Gece arşiv sergisine dört akşam önerildi; kurul iki akşam ve yalnızca bekçi teyidiyle onayladı. Ön anket dokuz kayıtlı gönüllüden geldi. Bir erişilebilir giriş teyit edilmedi. İki metin yaz: görevler ve kanıt sınırı için 85–105 sözcüklük kurul notu, ardından 55–75 sözcüklük ziyaretçi duyurusu.",
+        "sample": "Internal note. Facilities proposed four evening openings. The board authorised two, subject to a named attendant being available for each. Nine registered volunteers answered the questionnaire. Their replies show interest within that group and cannot establish wider demand. Facilities must confirm the rota and make provision for cover. Events should verify that the step-free entrance will be staffed before advertising it. The other evenings remain proposals. If either check fails, refer the matter back to the board before opening bookings. Record both checks in the pilot file.\n\nPublic notice. We are preparing two evening visits. Both depend on having someone on duty. We are checking which entrance visitors can use without steps. Please wait for the booking message before travelling. We asked some volunteers about the idea and still want to hear from other visitors. We will publish the dates and access details together.",
+        "revision": "İki sürümde adet, yetki, personel koşulu ve erişim bilgisi için ayrı kontrol yap. Teknik sözcüğü sadeleştirirken durumun kesinliğini artırma.",
+        "criteria": [
+          "İki metinde onay ve taslak aynı kapsamda; ölçüm sınırı korunur.",
+          "Karar notu yapılacak kontrolleri atar, duyuru ziyaretçiye güvenli sonraki adımı verir."
+        ]
+      },
+      "input": {
+        "text": "File entry 1, depot: Staff proposed a late shuttle from the south station for three weekends. The route was tested without passengers. On the first run a driver could turn outside the station, but the second run took longer because a van was unloading. The standby roster includes a driver for Friday, and a second person may be added for Saturday. That name is missing at the time of this note. The depot can run the Friday departures if it receives the vehicle number on Thursday. Its contingency is to withdraw a departure if no driver is available.\n\nFile entry 2, passenger panel: Twenty-two people on the daytime mailing list responded to a form about the shuttle. Fourteen marked “probably useful.” We did not contact people leaving the night shift, and the form did not ask whether they had another way home. Two respondents asked for a stop by the side entrance. We do not know whether the turning space there is large enough. Their request has been passed to the depot.\n\nFile entry 3, authorisation: Two Friday departures are authorised for the first weekend, subject to written confirmation of the vehicle and driver. Saturday departures remain a proposal. The side entrance is outside the authorised route. For the avoidance of doubt, approval applies only to services shown on the first Friday’s timetable. The depot must check turning clearance before asking for any route change. The public notice should describe the Friday position and invite anyone affected by shift times to comment. A larger boarding tally may support a later decision, but the committee will also need a way to hear from people who never board.",
+        "reading": [
+          "Which Friday service can the public notice describe as provisionally approved?",
+          "Two first-Friday departures pending written confirmation",
+          "The same service on every Friday for three weekends",
+          "Friday and Saturday departures via the side entrance",
+          "İzin iki ilk cuma seferiyle sınırlı ve yazılı teyide bağlı.",
+          "Two Friday departures are authorised for the first weekend"
+        ],
+        "transcript": "Chair: The draft headline reads “Late shuttle to run at weekends.” What would a passenger reasonably infer from that?\nEditor: Both nights, probably, and that either night is safe to plan around. We could start with “We’re preparing two Friday trips.” Then I can tell people to check the timetable before travelling. Are we allowed to say where the pick-up point is?\nDepot planner: At the main gate, if the vehicle is cleared. The side entrance came from a passenger suggestion. We have not checked whether a long vehicle can turn there. That belongs in the internal follow-up, not as a stop on the timetable.\nPanel member: Say who responded to the form. One reply came from a nurse who finishes after midnight, but it was her partner’s account. The panel’s figures cannot tell us how many late workers would actually board. The public note could ask workers on late shifts to tell us what time they need a trip.\nChair: Good. A question to those workers is an invitation to give information. It cannot make an additional service sound imminent. Keep the confirmation condition beside the proposed timetable. In the internal note, put the turning check under actions and give it to the depot.\nEditor: I’ll leave the figure of fourteen in the internal note with the total and the source. The public notice can say how to share a need that the panel may have missed.\nChair: Send me both versions with the authorised departures marked so I can check that they describe the same decision.",
+        "preparation": "İç notla duyuruda içeriğin sırası değişir. Ortak yetki ve koşulu, farklı muhatap eylemlerini iki sütunda izle.",
+        "main": [
+          "Why would the chair change the headline?",
+          "It implies permission for more services than the decision covers",
+          "It announces that the side entrance is already closed",
+          "It uses passenger figures from the wrong city",
+          "Hafta sonu başlığı kesin veya daha geniş sefer iddiası oluşturuyor.",
+          "both nights, probably"
+        ],
+        "detail": [
+          "Who is asked to offer missing information publicly?",
+          "People working late shifts",
+          "The driver on the standby roster",
+          "People who already took the first Friday shuttle",
+          "Gündüz listesi dışındaki ihtiyacı duymak için vardiya çalışanları.",
+          "ask workers on late shifts to tell us"
+        ]
+      },
+      "retry": {
+        "text": "The library staff proposed Sunday opening for a month. The trustees authorised one Sunday, provided a supervisor can cover the afternoon. The staff poll includes twelve responses from current book-club members. It does not cover people who cannot come on weekdays. The front steps are under repair; the side entrance has not yet passed its inspection.",
+        "reading": [
+          "What should remain conditional in both versions?",
+          "Opening on the one authorised Sunday",
+          "Permission for a whole month",
+          "Inspection of the front entrance only",
+          "Bir pazar ve görevli koşulu korunacak.",
+          "authorised one Sunday, provided a supervisor can cover"
+        ],
+        "transcript": "Editor: The notice says anyone can reserve a whole display room. Clerk: The policy lets local clubs request a table for one event. The room itself has a separate application. We still have to check availability before we offer a table. Editor: I will tell readers how to make a request and when they can expect us to reply.",
+        "preparation": "İstek ve izin arasındaki farkı koru.",
+        "main": [
+          "What can a local club request under the policy?",
+          "A table for one event",
+          "A whole display room for the year",
+          "Guaranteed space every week",
+          "İzin sınırlı bir masa başvurusu.",
+          "request a table for one event"
+        ],
+        "detail": [
+          "What happens before a table is offered?",
+          "Availability is checked",
+          "The whole room is reserved",
+          "Every club submits its accounts",
+          "Talep teyit edilmeden yer sözü verilmiyor.",
+          "check availability before we offer a table"
+        ]
+      },
+      "readingPurpose": "Dosyanın hangi bölümleri onay, öneri ve örneklem bilgisi veriyor?",
+      "readingUse": "Kimin hangi kontrolü yapacağını yaz ve kamu metnine taşınması gereken koşulu belirle.",
+      "listeningUse": "Editör konuşmasını dinleyip kamu çağrısı ile kurum içi görevleri ayır.",
+      "speaking": "Bir parkta gece yürüyüşü için duyuru hazırlayan editöre ikinci tarihin neden kesinleşmediğini anlat. Ardından aynı bilgiyi kararı zaten bildiğini sanan bir ziyaretçiye açık dille ver.",
+      "genres": {
+        "reading": "üç kaynaklı gece servisi dosyası",
+        "listening": "karar metni redaksiyon toplantısı",
+        "writing": "kurul notu ve kamu duyurusu"
+      },
+      "recovery": {
+        "reading": "Kurul kararı satırından izin verilen ilk tarihi çıkar.",
+        "main": "Weekend sözcüğünün ima ettiği günlerle izin metnini karşılaştır.",
+        "detail": "Editörün kimden hangi bilgiyi istediğine bak."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "subject to + ad/-ing / if + tümce",
+        "whether / how many ile kanıt sınırını koruma"
+      ]
+    }
+  ]
+}

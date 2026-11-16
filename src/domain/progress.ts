@@ -129,7 +129,20 @@ export function finishLesson(
 export function finishReview(state: LearningState, cardId: string, result: 'again' | 'remembered', now: string, typedAnswer?: string): LearningState {
   const card = state.reviews.find((item) => item.cardId === cardId)
   if (!card || card.dueAt > now) throw new Error('Bu kartın tekrar zamanı değişti.')
-  return spend({ ...state, reviewHistory: [...state.reviewHistory, { cardId, at: now, result, mode: typedAnswer === undefined ? 'self_review' : 'typed', answer: typedAnswer }], reviews: state.reviews.map((item) => item === card ? scheduleReview(item, result, now) : item) }, 'review', cardId, 1, now)
+  let previousMisses = 0
+  if (result === 'again' && card.lastResult === 'again') {
+    for (let index = state.reviewHistory.length - 1; index >= 0; index--) {
+      const entry = state.reviewHistory[index]
+      if (entry.cardId !== cardId) continue
+      if (entry.result === 'remembered') break
+      previousMisses++
+      if (previousMisses === 3) break
+    }
+  }
+  return spend({ ...state,
+    reviewHistory: [...state.reviewHistory, { cardId, at: now, result, mode: typedAnswer === undefined ? 'self_review' : 'typed', answer: typedAnswer }],
+    reviews: state.reviews.map((item) => item === card ? scheduleReview(item, result, now, previousMisses) : item),
+  }, 'review', cardId, 1, now)
 }
 
 export function finishPedagogy(
@@ -155,7 +168,8 @@ export function finishPedagogy(
   if (phase === 'listening' && listening !== 'played') throw new Error('Önce kaydı dinle.')
   const attempts = recordAttempts(state, tasks, answers, now, phase, course.version, lesson.id)
   const newCards = phase === 'vocabulary'
-    ? lesson.vocabulary.filter(({ id }) => !state.reviews.some(({ cardId }) => cardId === id))
+    ? lesson.vocabulary.filter(({ id }) => tasks.some(({ conceptId }) => conceptId === id) &&
+      !state.reviews.some(({ cardId }) => cardId === id))
     : []
   return spend({ ...state, attempts: [...state.attempts, ...attempts], reviews: [
     ...state.reviews, ...newCards.map(({ id }) => ({ cardId: id, step: 0, dueAt: now, introducedAt: now })),
@@ -256,36 +270,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
   const unlocked = eligible.filter((lesson) => isUnlocked(state, course, lesson) &&
     (lesson !== bridge || needsBridge(course, state, lesson)) &&
     (starterPending ? lesson === starter : !bridgePending || lesson === bridge || (course.language === 'en' && lesson.objective.level === 'A1')))
-  const reportCards = new Map<string, number>()
-  for (const { report, importedAt } of state.speakingAssessments) {
-    for (const id of speakingWordGaps(report)) {
-      const lastReviewAt = state.reviews.find(({ cardId }) => cardId === id)?.lastAt
-      if (!lastReviewAt || lastReviewAt < importedAt) {
-        reportCards.set(id, (reportCards.get(id) ?? 0) + 1)
-      }
-    }
-  }
-  const cards = dueCards(state, now).sort((a, b) => (reportCards.get(b) ?? 0) - (reportCards.get(a) ?? 0))
   let task: StudyPlan | undefined
-  if (cards.length && available > 0) {
-    const cardIds = cards.slice(0, available)
-    const fromSpeaking = cardIds.find((id) => reportCards.has(id))
-    if (fromSpeaking) {
-      const term = course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).find(({ id }) => id === fromSpeaking)?.term
-      return { kind: 'review', cardIds, minutes: cardIds.length,
-        reason: `Konuşma raporunda “${term}” için kelime veya kalıp eksiği görüldü. İfadeyi hatırla ve kullanım örneğini incele.` }
-    }
-    const missed = cardIds.find((id) => {
-      const previousReview = state.reviewHistory.filter(({ cardId }) => cardId === id).at(-1)
-      if (previousReview) return previousReview.result === 'again'
-      return state.attempts.some(({ conceptId, context, evidence }) => conceptId === id && context === 'vocabulary' &&
-        evidence.observation === 'controlled_production' && evidence.outcome === 'incorrect')
-    })
-    const term = missed && course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).find(({ id }) => id === missed)?.term
-    return { kind: 'review', cardIds, minutes: cardIds.length, reason: term
-      ? `“${term}” son denemede hatırlanmadı. İpucundan hareketle yeniden yazmayı dene.`
-      : 'Hatırlama zamanı gelen kelimeler önce çalışılır.' }
-  }
   const developing = unlocked.find((lesson) => masteryFor(state, lesson).status === 'developing' &&
     !lesson.concepts.some(({ id }) => {
       const recent = state.attempts.filter(({ at, conceptId, context }) => conceptId === id &&
@@ -331,6 +316,53 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
     else if (next) task = { kind: 'lesson', lessonId: next.id, minutes: next.minutes,
       reason: next === bridge ? 'Tarama, kısa bir temel çalışmanın sonraki görevleri kolaylaştırabileceğini gösterdi.' : misses(next) ? 'Başlangıç taramasında bu kazanım için çalışma fırsatı görüldü.'
         : next.prerequisites.length ? 'Ön koşullar tamamlandı ve sıradaki kazanım açıldı.' : 'Başlangıç ünitesinin ilk kazanımı.' }
+  }
+  const cards = dueCards(state, now)
+  // A five-minute assignment can consume the whole session. Under sustained pressure,
+  // alternate with a review-focused study day so neither queue is starved.
+  let reviewFocus = false
+  if (state.profile.minutes === 5 && cards.length >= 10) {
+    const todayKey = date.format(today)
+    const previous = state.activity.filter(({ at }) => date.format(new Date(at)) !== todayKey)
+    const lastActivity = previous.at(-1)
+    if (lastActivity) {
+      const lastDay = date.format(new Date(lastActivity.at))
+      const overdue = state.reviews.filter(({ dueAt }) => dueAt <= now && date.format(new Date(dueAt)) !== todayKey).length
+      reviewFocus = overdue >= 10 && previous.some(({ at, kind }) => kind !== 'review' && date.format(new Date(at)) === lastDay)
+    }
+  }
+  const reserved = !reviewFocus && task && 'minutes' in task && task.minutes <= available ? task.minutes : 0
+  const reviewSlots = available - reserved
+  if (cards.length && reviewSlots > 0) {
+    const reportCards = new Map<string, number>()
+    for (const { report, importedAt } of state.speakingAssessments) {
+      for (const id of speakingWordGaps(report)) {
+        const lastReviewAt = state.reviews.find(({ cardId }) => cardId === id)?.lastAt
+        if (!lastReviewAt || lastReviewAt < importedAt) {
+          reportCards.set(id, (reportCards.get(id) ?? 0) + 1)
+        }
+      }
+    }
+    const cardIds = cards.sort((a, b) => (reportCards.get(b) ?? 0) - (reportCards.get(a) ?? 0)).slice(0, reviewSlots)
+    const fromSpeaking = cardIds.find((id) => reportCards.has(id))
+    if (fromSpeaking) {
+      const term = course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).find(({ id }) => id === fromSpeaking)?.term
+      return { kind: 'review', cardIds, minutes: cardIds.length,
+        reason: `Konuşma raporunda “${term}” için kelime veya kalıp eksiği görüldü. İfadeyi hatırla ve kullanım örneğini incele.` }
+    }
+    const missed = cardIds.find((id) => {
+      const previousReview = state.reviewHistory.filter(({ cardId }) => cardId === id).at(-1)
+      if (previousReview) return previousReview.result === 'again'
+      return state.attempts.some(({ conceptId, context, evidence }) => conceptId === id && context === 'vocabulary' &&
+        evidence.observation === 'controlled_production' && evidence.outcome === 'incorrect')
+    })
+    const term = missed && course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).find(({ id }) => id === missed)?.term
+    return { kind: 'review', cardIds, minutes: cardIds.length, reason: reviewFocus
+      ? 'Gecikmiş kelime tekrarları birikti. Bugünkü kısa oturumda önce bunları çalış; sıradaki öğretim etkinliği planında kalır.'
+      : term ? `“${term}” son denemede hatırlanmadı. İpucundan hareketle yeniden yazmayı dene.`
+      : reserved > 0 && cardIds.length < cards.length
+        ? 'Hatırlama zamanı gelen kelimelerin bir kısmını çalış. Kalan süre sıradaki çalışma için ayrıldı.'
+        : 'Hatırlama zamanı gelen kelimeleri çalış.' }
   }
   if ((task && 'minutes' in task && task.minutes > available) || (cards.length && available <= 0)) {
     return { kind: 'budget', reason: 'Bugünkü süreye yeni çalışma sığmıyor. Çalışma sırası kaydedildi.' }

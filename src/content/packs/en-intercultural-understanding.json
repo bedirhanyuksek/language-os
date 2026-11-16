@@ -1,0 +1,360 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.intercultural",
+      "outcome": "B2.intercultural",
+      "level": "B2",
+      "prerequisite": [
+        "en.culture-visit",
+        "en.emotion",
+        "en.uncertainty"
+      ],
+      "title": "İki bakıştan kültürlerarası yanlış anlamayı onar",
+      "objective": "Bir sosyal olayın iki yorumunu kaynağına bağla, geçmişe ilişkin olasılık ile daha sonra doğrulanan bilgiyi ayır.",
+      "situation": "Bir komşu yemeğinde sessiz kalmak bir kişi için nezaket, diğeri için isteksizlik gibi görünmüş.",
+      "bridge": "Önce görüleni söyle. May have + geçmiş ortaç ile bir olasılık kur. If I understood you correctly ile yorumu sahibine geri sor. Davranışı bütün bir kültüre yükleme.",
+      "models": [
+        {
+          "phrase": "She may have taken the silence as a sign that we wanted to leave.",
+          "explanation": "May have + past participle geçmişe dair ihtimal verir. Take X as Y, X’i Y olarak yorumlamaktır."
+        },
+        {
+          "phrase": "If I understood you correctly, you were giving people time to think.",
+          "explanation": "Bu giriş, yorumu teyide açar. Giving people time, sessizliğin o konuşmacı için ne işe yaradığını açıklar."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Geçmiş olasılık biçimi",
+          "incorrect": "He may have took the pause as a refusal.",
+          "correct": "He may have taken the pause as a refusal.",
+          "explanation": "May have ardından geçmiş ortaç gerekir. Olasılık çözülmeden kesinlik bildirme.",
+          "guided": [
+            [
+              "At dinner, she may have ___ (took / taken) the silence as a refusal.",
+              "taken"
+            ],
+            [
+              "He may have ___ (heard / hear) a different room number.",
+              "heard"
+            ]
+          ],
+          "transfer": [
+            [
+              "At the club, they may have ___ (mistook / mistaken) the nod for agreement.",
+              "mistaken"
+            ],
+            [
+              "The host might have ___ (given / gave) us time to decide.",
+              "given"
+            ]
+          ],
+          "delayed": [
+            [
+              "Our visitor may have ___ (left / leave) to catch the last bus.",
+              "left"
+            ],
+            [
+              "The child could have ___ (read / reads) the invitation differently.",
+              "read"
+            ]
+          ],
+          "foundation": {
+            "conceptId": "en.uncertainty.form.1",
+            "errorAnswers": [
+              "took",
+              "gave",
+              "mistook",
+              "leave"
+            ],
+            "practice": [
+              "Önceki kanıt dersinin kalıbını kullan: The latch is broken. Someone might have ___ (forced / force) it.",
+              "forced"
+            ],
+            "explanation": "Might have + geçmiş ortaç. Forced bu örnekte çekimli geçmiş değil, have sonrasındaki ortaçtır."
+          }
+        },
+        {
+          "label": "Yorumu kimin yaptığını koru",
+          "incorrect": "“It felt rude to me” → It was rude.",
+          "correct": "“It felt rude to me” → The guest found it rude.",
+          "explanation": "Değerlendirmeyi söyleyene ait tut. Davranış ve atfedilen gerekçeyi ayır.",
+          "guided": [
+            [
+              "“I thought she was bored,” said the host. Kimin yorumu: host / guest?",
+              "host",
+              "the host"
+            ],
+            [
+              "“We paused so that he could translate.” Belirtilen amaç: translation / refusal.",
+              "translation"
+            ]
+          ],
+          "transfer": [
+            [
+              "“They may have wanted privacy.” Doğrulanmamış gerekçe: privacy / a closed door.",
+              "privacy"
+            ],
+            [
+              "“I saw two empty chairs and assumed no one would come.” Gözlem: empty chairs / nobody intended to come.",
+              "empty chairs"
+            ]
+          ],
+          "delayed": [
+            [
+              "“I did not answer because I was making a note.” Kendi açıkladığı neden: taking a note / offence.",
+              "taking a note"
+            ],
+            [
+              "“I felt rushed, but the organiser said the room was closing.” Hangi deneyim konuğa ait: feeling rushed / closing the room?",
+              "feeling rushed"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "read too much into",
+        "meaning": "bir ayrıntıya fazla anlam yüklemek",
+        "example": "I may have read too much into her silence.",
+        "usage": "Read too much into sonra yorumladığın ayrıntıyı getir.",
+        "pronunciation": "/ɹid tu mʌtʃ ˈɪntu/",
+        "collocations": [
+          "read too much into a pause",
+          "read too much into a short reply"
+        ],
+        "recognize": [
+          "“read too much into” burada ne anlama gelir?",
+          "bir ayrıntıya fazla anlam yüklemek",
+          "ayrıntıyı sesli okumak",
+          "tekrar istemek",
+          "Read too much into sonra yorumladığın ayrıntıyı getir."
+        ],
+        "recall": [
+          "“bir ayrıntıya fazla anlam yüklemek” anlamındaki hedef ifadeyi yaz.",
+          "read too much into"
+        ],
+        "use": "Bir yazışmadaki tek kelimeye fazla anlam yüklediğini fark ettiğin anı söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "give someone the benefit of the doubt",
+          "meaning": "belirsizlikte birini iyi niyetli saymak",
+          "example": "Let us give them the benefit of the doubt until we can ask.",
+          "usage": "Kasıt varsaymadan bilgi beklenir. Hasarı yok saymak gerekmez.",
+          "pronunciation": "/ˈbenəfɪt əv ðə daʊt/",
+          "collocations": [
+            "give the host the benefit of the doubt",
+            "give a neighbour the benefit of the doubt"
+          ],
+          "recognize": [
+            "“give someone the benefit of the doubt” burada ne anlama gelir?",
+            "belirsizlikte birini iyi niyetli saymak",
+            "kesin suçlamak",
+            "birini davet etmek",
+            "Kasıt varsaymadan bilgi beklenir. Hasarı yok saymak gerekmez."
+          ],
+          "recall": [
+            "“belirsizlikte birini iyi niyetli saymak” anlamındaki hedef ifadeyi yaz.",
+            "give someone the benefit of the doubt"
+          ],
+          "use": "Önce teyit etmek istediğin bir iddiayı ve kime soracağını söyle."
+        },
+        {
+          "term": "take something as a sign of",
+          "meaning": "bir şeyi bir durumun işareti saymak",
+          "example": "I took his silence as a sign of agreement.",
+          "usage": "Bir yorum çerçevesidir. Sessizlik anlaşmayı teyit etmez.",
+          "pronunciation": "/teɪk æz ə saɪn əv/",
+          "collocations": [
+            "take silence as a sign of agreement",
+            "take a pause as a sign of hesitation"
+          ],
+          "recognize": [
+            "“take something as a sign of” burada ne anlama gelir?",
+            "bir şeyi bir durumun işareti saymak",
+            "bir işareti kaldırmak",
+            "duyuruyu okumak",
+            "Bir yorum çerçevesidir. Sessizlik anlaşmayı teyit etmez."
+          ],
+          "recall": [
+            "“bir şeyi bir durumun işareti saymak” anlamındaki hedef ifadeyi yaz.",
+            "take something as a sign of"
+          ],
+          "use": "Bir el hareketini nasıl yorumladığını ve neyden emin olmadığını söyle."
+        },
+        {
+          "term": "check an assumption",
+          "meaning": "bir varsayımı sınamak",
+          "example": "I should check my assumption before I contact the group.",
+          "usage": "Check with a person ile kişiye danışılır, check an assumption ile inanç sınanır.",
+          "pronunciation": "/tʃek ən əˈsʌmpʃən/",
+          "collocations": [
+            "check an assumption with the organiser",
+            "challenge an assumption"
+          ],
+          "recognize": [
+            "“check an assumption” burada ne anlama gelir?",
+            "bir varsayımı sınamak",
+            "önceden karar vermek",
+            "bir yanıtı ezberlemek",
+            "Check with a person ile kişiye danışılır, check an assumption ile inanç sınanır."
+          ],
+          "recall": [
+            "“bir varsayımı sınamak” anlamındaki hedef ifadeyi yaz.",
+            "check an assumption"
+          ],
+          "use": "Bir ziyaret kuralı için bir varsayım seç ve teyit sorusu yaz."
+        },
+        {
+          "term": "be meant as",
+          "meaning": "bir amaçla söylenmiş olmak",
+          "example": "The invitation was meant as a friendly gesture.",
+          "usage": "Meant as konuşanın amacını verir. Etkiyi ayrı dile getir.",
+          "pronunciation": "/bi ment æz/",
+          "collocations": [
+            "be meant as a joke",
+            "be meant as a welcome"
+          ],
+          "recognize": [
+            "“be meant as” burada ne anlama gelir?",
+            "bir amaçla söylenmiş olmak",
+            "geri çevrilmek",
+            "fazla yorumlanmak",
+            "Meant as konuşanın amacını verir. Etkiyi ayrı dile getir."
+          ],
+          "recall": [
+            "“bir amaçla söylenmiş olmak” anlamındaki hedef ifadeyi yaz.",
+            "be meant as"
+          ],
+          "use": "Bir şakanın amacını ve karşı taraftaki etkisini ayrı açıkla."
+        },
+        {
+          "term": "clear the air",
+          "meaning": "gerginliği açık konuşarak gidermek",
+          "example": "We called the next day to clear the air.",
+          "usage": "Gündelik biçimde ilişkiyi onarmak. Konuyu aç ve diğer kişinin yorumuna yer ver.",
+          "pronunciation": "/klɪɹ ði eɹ/",
+          "collocations": [
+            "meet to clear the air",
+            "clear the air after a disagreement"
+          ],
+          "recognize": [
+            "“clear the air” burada ne anlama gelir?",
+            "gerginliği açık konuşarak gidermek",
+            "odayı havalandırmak (bu bağlamda)",
+            "buluşmayı ertelemek",
+            "Gündelik biçimde ilişkiyi onarmak. Konuyu aç ve diğer kişinin yorumuna yer ver."
+          ],
+          "recall": [
+            "“gerginliği açık konuşarak gidermek” anlamındaki hedef ifadeyi yaz.",
+            "clear the air"
+          ],
+          "use": "Bir kulüpteki yanlış anlaşılmayı görüşmeye nasıl açacağını söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "unspoken expectation",
+          "cue": "söylenmemiş beklenti"
+        },
+        {
+          "term": "a cue to leave",
+          "cue": "ayrılma işareti"
+        },
+        {
+          "term": "a gesture of welcome",
+          "cue": "karşılama hareketi"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir atölye sırasında birinin sessiz kalmasını iki farklı bakışla 120–160 sözcükte açıkla. Bildiğin olayı, iki olasılığı ve teyit edilince önerdiğin davranışı belirt.",
+        "sample": "At the workshop, Omar turned away while the host explained how to share the tools. The host took that as a sign of impatience and ended the explanation early. Omar may have missed the first sentence, or he may have been trying to see what another visitor was doing. We checked our assumption by asking him what he had heard. He said he had moved so that a child could see the table and was still listening. The host’s impression was understandable, but it was not the only reading. Next time, I would ask everyone to point to the tool they need before we move on. That gives the group a way to show what they understood. I would also let Omar choose whether to explain why he moved. He need not speak for anyone else who visits the workshop.",
+        "revision": "Yorumun sahibini belirt. Yeni bilgi geldikten sonra bir varsayımı güncelle ve farklı bir bağlam için teyit sorusu yaz.",
+        "criteria": [
+          "Gözlem, olasılık ve doğrulanmış bilgi ayrı.",
+          "Her bakışa özgü bir gerekçe ve bir sonraki eylem var."
+        ]
+      },
+      "input": {
+        "text": "At a building dinner, Elif stopped speaking when the host asked whether people wanted more food. The host took the pause as a cue to leave and began clearing plates. Elif, who had been translating for a friend, thought everyone was waiting for her to pass on the question. Neither described a rule shared by an entire country. Each described an unspoken expectation about what the next person would do.\n\nThe next afternoon the host called to clear the air. She explained that an extra serving had been meant as a gesture of welcome. Elif answered that she had felt rushed by the plates being removed. They agreed to keep the plates on the table until someone asked to clear them. A neighbour proposed a translation card, but Elif said a short pause would be enough that evening.\n\nAt the next dinner two volunteers interpreted the new pause differently again. One waited for the host to repeat the offer; the other reached for a plate. Instead of announcing one correct way to behave, the host asked who still wanted food and pointed to the serving bowl. To the volunteers, this meant two different things: more time to decide, and permission to serve themselves. Both could continue without choosing an explanation for everyone else.",
+        "reading": [
+          "What helped both neighbours change their reading of the silence?",
+          "Learning why the other person had paused or acted",
+          "Adopting a national rule about silence",
+          "Assuming the invitation was a refusal",
+          "The call reveals each person’s own reason.",
+          "Elif answered that she had felt rushed"
+        ],
+        "transcript": "Interviewer: What did you think the pause meant? Host: I thought they wanted to leave, so I took the plates away. Elif: I was translating the offer. I may have turned away while you were looking for an answer. Host: If I understood you correctly, the offer was welcome. It was the timing of the clearing that bothered you. Elif: Exactly. We can ask for more time next time. Host: And I can check whether people are still eating. I should not have guessed from one person’s silence. Interviewer: Did the next meal settle which custom was right? Elif: We did not settle that question. We changed the signal. The bowl stayed on the table and the host asked anyone who needed a moment to say so. Host: A third neighbour chose to serve herself. We could all finish without reading the pause the same way.",
+        "preparation": "Önce iki yorum, sonra iki kişinin değiştireceği davranışı dinle.",
+        "main": [
+          "Why did Elif pause?",
+          "She was translating",
+          "She wanted to leave",
+          "She needed more plates",
+          "She explains the pause herself.",
+          "I was translating the offer"
+        ],
+        "detail": [
+          "What will the host check next time?",
+          "Whether people are still eating",
+          "Whether everyone read an online message",
+          "Whether the table is full",
+          "She proposes a direct check.",
+          "check whether people are still eating"
+        ]
+      },
+      "retry": {
+        "text": "During a music rehearsal Lee looked at the floor. The conductor thought she wanted to stop. Lee later explained that she was listening for the tempo without looking at the score.",
+        "reading": [
+          "What does Lee’s explanation clarify?",
+          "Her reason for looking down",
+          "A wish to stop",
+          "The length of the score",
+          "She was concentrating on a sound.",
+          "listening for the tempo"
+        ],
+        "transcript": "I took his short answer as an objection. When we spoke, he said his phone was about to lose power. He still wanted a place on the trip. I’ll ask him directly before I change the list.",
+        "preparation": "İlk yorum, yeni bilgi ve planı ayır.",
+        "main": [
+          "Why was the reply short?",
+          "His phone was about to lose power",
+          "He objected",
+          "He missed the trip",
+          "He gave a different reason.",
+          "about to lose power"
+        ],
+        "detail": [
+          "What will the speaker do before changing the list?",
+          "Ask him directly",
+          "Cancel the trip",
+          "Ask everyone else",
+          "The speaker promises a direct question.",
+          "ask him directly"
+        ]
+      },
+      "readingPurpose": "İki kişi için gözlem, tahmin ve teyit satırlarını doldur.",
+      "readingUse": "Ev sahibiyle konuğun bir sonraki konuşmasını kendi ifadelerinle yaz.",
+      "listeningUse": "Bir cümleyi yorum olarak yeniden söyle ve doğrulama iste.",
+      "speaking": "Yeni bir kulüp toplantısında yanlış anlaşılan bir davranışı anlat. Önce iki olası açıklama ver. Partner farklı bir gerekçe ekleyince yorumunu değiştir ve ortak bir adım öner.",
+      "genres": {
+        "reading": "iki bakışlı mahalle anlatısı",
+        "listening": "açıklığa kavuşturan röportaj",
+        "writing": "kültürlerarası arabulucu notu"
+      },
+      "recovery": {
+        "reading": "Herkes için kural yerine iki kişinin beklentilerini bul.",
+        "main": "Elif’in doğrudan açıkladığı işi dinle.",
+        "detail": "Next time ifadesinden sonra ev sahibinin önerisini bul."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "may/might have + geçmiş ortaç; koşullu teyit"
+      ]
+    }
+  ]
+}

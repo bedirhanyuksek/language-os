@@ -6,6 +6,7 @@ type Practice = [prompt: string, answer: string, ...alternatives: string[]]
 type Concept = {
   skill?: 'grammar' | 'reading'; label: string; incorrect: string; correct: string; explanation: string
   guided: [Practice, Practice]; transfer: [Practice, Practice]; delayed: [Practice, Practice]
+  foundation?: { conceptId: string; errorAnswers: string[]; practice: Practice; explanation: string }
 }
 type Question = [prompt: string, answer: string, wrongA: string, wrongB: string, explanation: string]
 type Material = {
@@ -35,10 +36,17 @@ export function author(language: Language, item: Module): Lesson {
       id: `${conceptId}.${part}.${index + 1}`, kind: 'fill' as const, skill: concept.skill ?? 'grammar',
       prompt, accepted, explanation: concept.explanation,
     }))
+    const support = concept.foundation
+    const foundation = support && {
+      conceptId: support.conceptId, errorAnswers: support.errorAnswers,
+      exercise: { id: `${conceptId}.foundation`, kind: 'fill' as const, skill: 'grammar' as const,
+        prompt: support.practice[0], accepted: support.practice.slice(1), explanation: support.explanation },
+    }
     return {
       id: conceptId, label: concept.label, variants: exercises('guided'),
       check: { conceptId, misconception: concept.label, correctExample: concept.correct, incorrectExample: concept.incorrect,
-        correction: concept.explanation, transfer: exercises('transfer'), delayed: exercises('delayed') },
+        correction: concept.explanation, transfer: exercises('transfer'), delayed: exercises('delayed'),
+        ...(foundation && { foundation }) },
     }
   })
   const question = (key: string, skill: 'reading' | 'listening' | 'vocabulary',

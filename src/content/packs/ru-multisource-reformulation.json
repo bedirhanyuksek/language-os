@@ -1,0 +1,277 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.reformulate",
+      "outcome": "C2.reformulate",
+      "level": "C2",
+      "prerequisite": [
+        "ru.genre-synthesis",
+        "ru.mediate"
+      ],
+      "title": "Çok kaynaklı savı farklı kitlelere yeniden kur",
+      "objective": "Birbiriyle gerilimli üç kaynaktan koşullu bir politika savı çıkarıp teknik değerlendirme ve halka açık soru-cevap biçiminde yeniden kur.",
+      "situation": "Bir kent akşam otobüslerini isteğe bağlı minibüsle desteklemeyi planlıyor. Pilot verisi, sürücü notları ve erişim görüşmesi aynı ölçütleri kullanmıyor.",
+      "bridge": "Önce hangi veri ile hangi iddianın kurulabildiğini yaz. Само по себе … не позволяет ile tek kaynağın sınırını göster. Не столько … сколько ile kararın asıl dayanağını, önceki ölçütü tümden silmeden değiştir.",
+      "models": [
+        {
+          "phrase": "Само по себе снижение числа звонков не позволяет судить о спросе.",
+          "explanation": "Tek başına arama azalması talebi açıklamaz. Farklı erişim biçimleri açık kalır."
+        },
+        {
+          "phrase": "Для решения важна не столько средняя длительность поездки, сколько разброс времени ожидания.",
+          "explanation": "Первая мера tamamen reddedilmez; karar odağı bekleme sürelerinin dağılımına kayar."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Karar odağını değiştir",
+          "incorrect": "Решение зависит не столько от средней цены, как от её разброса.",
+          "correct": "Решение зависит не столько от средней цены, сколько от её разброса.",
+          "explanation": "Bu yapıda ikinci, daha ağır ölçüt сколько ile açılır; ilk ölçüt değersiz ilan edilmez.",
+          "guided": [
+            [
+              "Нас интересует не столько охват, ___ доступность вечером.",
+              "сколько"
+            ],
+            [
+              "Для дежурного важен не столько отчёт, ___ короткий сигнал.",
+              "сколько"
+            ]
+          ],
+          "transfer": [
+            [
+              "Вывод зависит не столько от объёма, ___ от способа отбора.",
+              "сколько"
+            ],
+            [
+              "Здесь важна не столько скорость ответа, ___ его точность.",
+              "сколько"
+            ]
+          ],
+          "delayed": [
+            [
+              "Жителям нужен не столько прогноз, ___ точный срок пересмотра.",
+              "сколько"
+            ],
+            [
+              "Комиссия оценивает не столько число жалоб, ___ характер повторов.",
+              "сколько"
+            ]
+          ]
+        },
+        {
+          "label": "Kaynakta ölçülmeyeni açık tut",
+          "incorrect": "Маршрут использовали 50 раз, значит 50 человек ездили.",
+          "correct": "Журнал подтвердил 50 поездок, число отдельных пассажиров неизвестно.",
+          "explanation": "Birim değişirse sav değişir. Yeni kitleye aktarırken aynı sayının anlamını koru.",
+          "guided": [
+            [
+              "«52 записи, повторные обращения не отделяли». Что точно посчитали: записи / люди?",
+              "записи"
+            ],
+            [
+              "«Водителей опросили, пассажиров нет». Чьё мнение неизвестно?",
+              "пассажиров"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Замеры сделаны до рассвета». Что отсутствует: дневные / ранние замеры?",
+              "дневные",
+              "дневные замеры"
+            ],
+            [
+              "«Отложили запуск до проверки». Решение чего нет: проверка / запуск?",
+              "запуск",
+              "запуска"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Среднее указано, границы нет». Какой показатель отсутствует: разброс / среднее?",
+              "разброс"
+            ],
+            [
+              "«Учёт закрыт пятницей, суббота не включена». Какого дня нет?",
+              "субботы"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "сместить акцент",
+        "meaning": "vurguyu başka noktaya taşımak",
+        "example": "В памятке нужно сместить акцент на способ записи.",
+        "usage": "На + nesne ile yeni odağı belirt. Kaynak iddia korunur.",
+        "pronunciation": "смести́ть акце́нт",
+        "collocations": [
+          "сместить акцент на риски",
+          "сместить акцент на условия доступа"
+        ],
+        "recognize": [
+          "“сместить акцент” burada ne anlama gelir?",
+          "vurguyu başka noktaya taşımak",
+          "ayrıntıyı uydurmak",
+          "kararı imzalamak",
+          "На + nesne ile yeni odağı belirt. Kaynak iddia korunur."
+        ],
+        "recall": [
+          "“vurguyu başka noktaya taşımak” anlamındaki hedef ifadeyi yaz.",
+          "сместить акцент"
+        ],
+        "use": "Teknik nottan veli duyurusuna geçerken hangi ayrıntıyı başa alacağını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "сохранить оговорку",
+          "meaning": "çekinceyi korumak",
+          "example": "В краткой версии важно сохранить оговорку о сроках.",
+          "usage": "Kısaltmada kararın koşulunu kaybetmemek.",
+          "pronunciation": "сохрани́ть огово́рку",
+          "collocations": [
+            "сохранить оговорку о данных",
+            "сохранить существенную оговорку"
+          ],
+          "recognize": [
+            "“сохранить оговорку” burada ne anlama gelir?",
+            "çekinceyi korumak",
+            "sonucu garanti etmek",
+            "çekinceyi silmek",
+            "Kısaltmada kararın koşulunu kaybetmemek."
+          ],
+          "recall": [
+            "“çekinceyi korumak” anlamındaki hedef ifadeyi yaz.",
+            "сохранить оговорку"
+          ],
+          "use": "Bir tavsiyeyi halk mesajı hâline getirirken geçerlilik sınırını koru."
+        },
+        {
+          "term": "проверить устойчивость вывода",
+          "meaning": "sonucun değişen koşullarda dayanıklılığını sınamak",
+          "example": "Отдельный анализ поможет проверить устойчивость вывода.",
+          "usage": "Veri alt grubunu veya varsayımı değiştirince sonucun kalıp kalmadığına bak.",
+          "pronunciation": "прове́рить усто́йчивость вы́вода",
+          "collocations": [
+            "проверить устойчивость вывода на другой выборке",
+            "проверить устойчивость вывода к изменению условий"
+          ],
+          "recognize": [
+            "“проверить устойчивость вывода” burada ne anlama gelir?",
+            "sonucun değişen koşullarda dayanıklılığını sınamak",
+            "sonucu ezberlemek",
+            "yalnız örneği büyütmek",
+            "Veri alt grubunu veya varsayımı değiştirince sonucun kalıp kalmadığına bak."
+          ],
+          "recall": [
+            "“sonucun değişen koşullarda dayanıklılığını sınamak” anlamındaki hedef ifadeyi yaz.",
+            "проверить устойчивость вывода"
+          ],
+          "use": "Yağmurlu günleri ayrı ele alacak bir yeniden kontrol öner."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "диспетчерская сводка",
+          "cue": "çağrı merkezi özeti"
+        },
+        {
+          "term": "незавершённая заявка",
+          "cue": "tamamlanmamış talep"
+        },
+        {
+          "term": "крайнее значение",
+          "cue": "uç değer"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir ilçenin cep kütüphanesi için ödünç alma sayısı, erişim görüşmesi ve çalışma saatleri kaydı verilmiş olsun. Aynı savı 135–180 sözcükte teknik karar notu ve halka açık iki soruluk cevap olarak kur. Başarısız talep kaydının karar için neden gerektiğini açıkla.",
+        "sample": "Для комиссии. Журнал киоска показывает рост выдач в будни после переноса к остановке. Однако повторные выдачи не отделены, а сотрудники записывали только завершённые операции. Интервью с двумя вечерними группами указывают на неудобное время закрытия, но не описывают мнения всех посетителей. Для решения важна не столько общая сумма выдач, сколько наличие доступа у людей, которые приходят после работы. Мы предлагаем сохранить место на две недели и записывать незавершённые обращения по часам. Без такого журнала нельзя оценить, стоит ли менять график.\n\nДля жителей. Киоск остаётся у остановки? Да, на две пробные недели. Постоянное место пока не утверждено. Что делать, если вы пришли после закрытия и не смогли получить книгу? Оставьте время визита через городскую форму или сообщите его сотруднику на следующий день. Эти сообщения помогут проверить вечерний график вместе с журналом выдач. Следующее решение объявят после проверки, а часы работы на этой неделе останутся прежними.",
+        "revision": "Her iki biçimde deneme ve kesin karar arasındaki sınırı kontrol et. Halk sorusuna eylemle başla, teknik notta eksik kayıt türünü açıkça adlandır.",
+        "criteria": [
+          "Üç kaynak ve ölçüm kısıtı korunuyor.",
+          "Aynı koşullu sav iki farklı metin türüne uyuyor."
+        ]
+      },
+      "input": {
+        "text": "Диспетчерская сводка. За четыре недели вечерний пилот принял сто сорок звонков. Девяносто поездок завершены, а часть звонков касалась расписания. Незавершённая заявка могла остаться без номера, поэтому по сводке нельзя вычислить долю отказов от всех попыток заказа. Среднее время подачи составило двенадцать минут. Крайнее значение зафиксировано после девяти вечера: сорок минут.\n\nЗаписка водителей. После девяти один автомобиль иногда возвращался из соседнего района без пассажиров, но диспетчер не видел его свободным. Водители предлагают обновлять статус после высадки. Это может сократить простой, однако в записке нет сведений о людях, не дозвонившихся до службы.\n\nГруппа доступности. Двое участников предпочли бы заказывать текстовым сообщением. Один сообщил, что отменил поездку из-за неизвестного времени подачи. Члены группы поддержат продолжение пилота, если оператор даст альтернативный канал и будет записывать все попытки, включая запросы без завершённой поездки.\n\nРедакционный итог. Сохранение пилота не следует представлять как доказательство, что вечерний спрос удовлетворён. Для следующего решения сравните не только среднее, но и ожидание в позднее время. Отдельно измерьте доступность телефона и сообщений. Объявите пассажирам, что уже можно заказать и какие данные ещё проверяются.",
+        "reading": [
+          "Hangi kamu duyurusu teknik sonucun sınırını korur?",
+          "Deneme sürüyor, geç saatlerde ve farklı kanallarda erişim hâlâ ölçülecek",
+          "Gece yolculuğu sorunu kesin çözüldü",
+          "Aramalar azaldığı için gece aracı kalkacak",
+          "Son karar için geç saat ve erişim kanalı kanıtı gerekiyor.",
+          "Отдельно измерьте доступность телефона и сообщений"
+        ],
+        "transcript": "Редактор: Нас просят написать, стало ли ждать легче. Оператор: Среднее — двенадцать минут, но после девяти был заказ с ожиданием сорок минут. Водитель: Мы знаем, где терялся статус свободной машины. Это объяснение относится к части поездок. Представитель группы: А у меня был звонок без присвоенного номера. Такой случай не попадёт в расчёт. Редактор: Тогда можно сообщить, что пилот продолжится, и попросить пассажиров отмечать время даже неудачного заказа. Оператор: Да, но сначала укажем, где сейчас принимают заявки. После запуска сообщений сравним оба канала по одним и тем же вечерним часам. В служебной записке подчеркнём, что пока не знаем точную долю отказов.",
+        "preparation": "Aynı bulgunun kamu mesajında neye, teknik notta neye dönüştüğünü izle.",
+        "main": [
+          "Halktan özellikle hangi ek bilgi istenecek?",
+          "Başarısız siparişin de saati",
+          "Sürücünün ev adresi",
+          "Yalnız tamamlanmış yolculuk ücreti",
+          "Başarısız girişimler kayda girmelidir.",
+          "время даже неудачного заказа"
+        ],
+        "detail": [
+          "Teknik notta ne henüz kesin bilinmiyor?",
+          "Reddedilen talep oranı",
+          "Hattın hangi kentte olduğu",
+          "Ortalama sipariş dakikası",
+          "Tüm girişimlerin paydası bilinmiyor.",
+          "не знаем точную долю отказов"
+        ]
+      },
+      "retry": {
+        "text": "Отдел парковок сообщает о росте числа оплат. Автомат не фиксирует въезд тех, кто развернулся до шлагбаума. В памятке можно объяснить оплату, но отчёт о доступе должен признать пробел.",
+        "reading": [
+          "Hangi iddia ayrıca veri ister?",
+          "Park etmekten vazgeçenlerin sayısı",
+          "Makinenin ödeme alması",
+          "Ödeme sayısının artışı",
+          "Dönen araçlar otomatta görünmüyor.",
+          "не фиксирует въезд тех, кто развернулся"
+        ],
+        "transcript": "По отчёту зал посещают чаще. Дежурная отмечает, что посетители могли входить дважды. Публично сообщим о росте входов, а в записке попросим развести повторные посещения и новых людей.",
+        "preparation": "Gözlenen birim ve yeni analizi ayır.",
+        "main": [
+          "Halka hangi artış aktarılır?",
+          "Giriş sayısı",
+          "Yeni kişi sayısı",
+          "İptal edilen üyelikler",
+          "Yalnız girişler sayılıyor.",
+          "росте входов"
+        ],
+        "detail": [
+          "Raporda ne ayrılacak?",
+          "Tekrar ziyaret ve yeni kişiler",
+          "Sabah ve öğle saati",
+          "Bilet ve kimlik ücreti",
+          "Tekrar girişlerle yeni insan ayrımı isteniyor.",
+          "повторные посещения и новых людей"
+        ]
+      },
+      "readingPurpose": "Kaynak dosyasını sayım birimi, açıklama, erişim ve belirsizlikle işaretle.",
+      "readingUse": "Kamu metninin ilk cümlesini ve teknik savın çerçevesini ayrı kur.",
+      "listeningUse": "Partnerin “başarı kanıtlanmış” yorumunu iki farklı kayıt düzeyinde düzelt.",
+      "speaking": "Bir aktarma istasyonunun deneme kararını yöneticiye ve durağa gelen yolcuya anlat. Yolcu yeni bir erişim sorunu bildirince iki sürümde de kesinlik düzeyini yeniden kur.",
+      "genres": {
+        "reading": "üç kaynaklı ulaşım politika dosyası",
+        "listening": "editörlü uzman tartışması",
+        "writing": "teknik not ve kamusal soru-cevap"
+      },
+      "recovery": {
+        "reading": "Başarısız talep hangi kayıtta görünmüyor?",
+        "main": "Medyan ya da azami süre tartışılıyor mu? Duyulan ölçütü not et.",
+        "detail": "Точная доля cümlesinden önce gelen olumsuzluğu bul."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "не столько … сколько ve ölçüm sınırı söylemi"
+      ]
+    }
+  ]
+}

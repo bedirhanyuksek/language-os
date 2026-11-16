@@ -26,7 +26,8 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
     tasks.some(({ conceptId }) => conceptId === item.conceptId) &&
     all.findIndex(({ conceptId }) => conceptId === item.conceptId) === index) : []
   const draft = state.attempts.find(({ exerciseId }) => exerciseId === lesson.production.id)
-  const card = phase === 'vocabulary' ? lesson.vocabulary[Math.floor(step / 4)] : undefined
+  const activeCardId = tasks[Math.floor(step / 4) * 3]?.conceptId
+  const card = phase === 'vocabulary' ? lesson.vocabulary.find(({ id }) => id === activeCardId) : undefined
   const entry = p.vocabulary.find(({ cardId }) => cardId === card?.id)
   const vocabStep = step % 4
   const audio = { kind: 'synthesis' as const, locale: p.language === 'en' ? 'en-US' as const : 'ru-RU' as const, rate: .85 }

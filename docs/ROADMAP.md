@@ -52,6 +52,22 @@ Standart JSON paketlerinden 11 ders, toplu ses üretimi ve katalog/rota denetiml
 
 İngilizce ve Rusça için 11 yeni dersle 144 hedeften 77’si çalışılabilir. [Öğrenme dizileri ve kapsam](MILESTONE_5_CURRICULUM_EXPANSION.md)
 
+## Milestone 5 · Gündelik iletişim ve kaynak sentezi
+
+Sekiz yeni İngilizce ve Rusça dersle 144 hedeften 85’i çalışılabilir. [Kapsam ve rota ölçümleri](MILESTONE_5_COMMUNICATION_AND_SYNTHESIS.md)
+
+## Milestone 5 · Dilsel derinlik
+
+91 çalışılabilir ders, birikimli hikâye, hareket, duygu ve edebî çözümleme görevleri. [Gramer, söz varlığı ve rota ölçümleri](MILESTONE_5_LANGUAGE_DEPTH.md)
+
+## Milestone 5 · Öğretim sürekliliği
+
+95 çalışılabilir ders, oturumlara yayılan kelime öğretimi ve ön koşul onarımı. [Bant denetimi ve rota ölçümleri](MILESTONE_5_TEACHING_CONTINUITY.md)
+
+## Milestone 5 · Günlük plan dengesi
+
+99 çalışılabilir ders, süreye göre korunan beceri çalışması ve yoğun tekrarda daha az yeni kart. [Plan deneyleri ve rota kapsamı](MILESTONE_5_PLAN_BALANCE.md)
+
 ## Sonraki çalışmalar
 
 - Mevcut derslerin dil uzmanı incelemesi ve öğrenci pilotu. Doğal ses, varyant tükenince yeni onarım, aralıklı beceri kontrolleri, bağımsız yazma ve konuşma değerlendirmesi.
@@ -66,3 +82,7 @@ Standart JSON paketlerinden 11 ders, toplu ses üretimi ve katalog/rota denetiml
 ## Bilinen riskler
 
 Tarayıcı verisi silinebilir. Yedek geri yüklemesi etkin profili değiştirir. Düşük örnek sayısı ve kart öz bildirimi ölçümün güvenini sınırlar. Üç alıştırma varyantı uzun süreli yeniden çalışmada tükenebilir. Dış rapor şema doğrulamasından geçse bile alıntıların doğruluğu kullanıcı kontrolüne dayanır.
+
+## Milestone 5 · Tekrar birikimi ve bağlam aktarımı
+
+42 günlük tekrar yükü denetimi, iki dilde dört yeni ders ve açık hedefler [bu raporda](MILESTONE_5_REVIEW_LOAD.md). Ağır 5 ve 15 dakikalık kuyruklar ile doğal çok konuşmacılı dinleme açık kalıyor.

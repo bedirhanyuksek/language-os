@@ -1,0 +1,297 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.intelligibility",
+      "outcome": "B1.intelligibility",
+      "level": "B1",
+      "prerequisite": [
+        "en.interaction"
+      ],
+      "title": "Yanlış duyulan bilgiyi konuşmada onar",
+      "objective": "Sözü kısa anlam gruplarına ayır, kritik sözcüğü öne çıkar ve duyulan bilgiyi kendi sözlerinle teyit et.",
+      "situation": "Bir komşuya ödünç anahtar bırakacaksın. Karşı taraf masa ve çekmece adlarını karıştırıyor; ilk açıklamayı yalnızca yüksek sesle yinelemek yetmiyor.",
+      "bridge": "Tek bir kritik ayrıntı seç. Metindeki / kısa durak, BÜYÜK harf vurgu önerisidir. Canlı okuduğunda durak için nefes al; karşıdakinin kendi sözleriyle ne duyduğunu söylemesine alan bırak.",
+      "models": [
+        {
+          "phrase": "The key is in the TOP drawer / by the window.",
+          "explanation": "Yer bilgisini iki anlam grubuna ayır. TOP vurgusu alt çekmece seçeneğini dışarıda bırakır."
+        },
+        {
+          "phrase": "Did you say the blue folder, or the green one?",
+          "explanation": "Did you say + duyulan ifade. İki seçenek söyleyince karşı taraf tam olarak neyi doğrulayacağını bilir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Teyit sorusunu kur",
+          "incorrect": "Did you said the west door?",
+          "correct": "Did you say the west door?",
+          "explanation": "Did geçmiş zamanı taşır ve say yalın kalır. Duyduğun ismi kısa soru içinde tekrar et.",
+          "guided": [
+            [
+              "Did you ___ the second floor? (say / said)",
+              "say"
+            ],
+            [
+              "Did she ___ the red switch? (mean / meant)",
+              "mean"
+            ]
+          ],
+          "transfer": [
+            [
+              "Did he ___ upstairs? (say / says)",
+              "say"
+            ],
+            [
+              "Did you ___ the smaller case? (mean / meaning)",
+              "mean"
+            ]
+          ],
+          "delayed": [
+            [
+              "Did they ___ Thursday morning? (say / said)",
+              "say"
+            ],
+            [
+              "Did you ___ the entrance by the lift? (mean / meant)",
+              "mean"
+            ]
+          ]
+        },
+        {
+          "label": "Yanlış duyulan seçenekle karşıtlığı kur",
+          "incorrect": "I meant the last stop, of the first one.",
+          "correct": "I meant the last stop, not the first one.",
+          "explanation": "Önce kastedilen doğru bilgiyi söyle; virgül ve not ile yanlış seçeneği düzelt. Yalnızca tek ayrıntıyı vurgula.",
+          "guided": [
+            [
+              "I meant the FRONT gate, ___ the side gate. (not / to)",
+              "not"
+            ],
+            [
+              "Take the stairs, ___ the lift. The lift is being repaired. (not / on)",
+              "not"
+            ]
+          ],
+          "transfer": [
+            [
+              "The bag is in the LOCKER, ___ on the bench. (not / or)",
+              "not"
+            ],
+            [
+              "They need a PAPER copy, ___ an email. (not / from)",
+              "not"
+            ]
+          ],
+          "delayed": [
+            [
+              "It’s the THIRD stop, ___ the fourth. (not / in)",
+              "not"
+            ],
+            [
+              "I said BEFORE the meeting, ___ after. (not / and)",
+              "not"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "let me put that another way",
+        "meaning": "bunu başka türlü söyleyeyim",
+        "example": "Let me put that another way: go through the gate, then turn right.",
+        "usage": "Aynı kelimeleri yinelemeden bir açıklamayı yeniden kurar.",
+        "pronunciation": "let me PUT that another WAY",
+        "collocations": [
+          "put the instruction another way",
+          "put the question another way"
+        ],
+        "recognize": [
+          "“let me put that another way” burada ne anlama gelir?",
+          "bunu başka türlü söyleyeyim",
+          "beni daha yakından dinle",
+          "fikrimi tamamen değiştirdim",
+          "Aynı kelimeleri yinelemeden bir açıklamayı yeniden kurar."
+        ],
+        "recall": [
+          "“bunu başka türlü söyleyeyim” anlamındaki hedef ifadeyi yaz.",
+          "let me put that another way"
+        ],
+        "use": "Bir yön tarifi anlaşılmadığında başka kelimelerle söylemeye başla."
+      },
+      "additionalWords": [
+        {
+          "term": "just to make sure",
+          "meaning": "emin olmak için",
+          "example": "Just to make sure, do you mean the entrance by the bus stop?",
+          "usage": "Ardından kısa bir teyit sorusu getir. Talimatı didaktik bir tona sokmadan kontrol eder.",
+          "pronunciation": "just to make SURE",
+          "collocations": [
+            "just to make sure, did you say …?",
+            "check again just to make sure"
+          ],
+          "recognize": [
+            "“just to make sure” burada ne anlama gelir?",
+            "emin olmak için",
+            "önce izin almak için",
+            "acele etmeden",
+            "Ardından kısa bir teyit sorusu getir. Talimatı didaktik bir tona sokmadan kontrol eder."
+          ],
+          "recall": [
+            "“emin olmak için” anlamındaki hedef ifadeyi yaz.",
+            "just to make sure"
+          ],
+          "use": "Benzer isimli iki kişiden hangisinin kastedildiğini teyit et."
+        },
+        {
+          "term": "the one next to",
+          "meaning": "… yanındaki",
+          "example": "I meant the one next to the noticeboard.",
+          "usage": "One isim tekrarını önler. Dinleyenin ayırt edebileceği bir referans noktası ekle.",
+          "pronunciation": "the one NEXT to",
+          "collocations": [
+            "the one next to the stairs",
+            "the one next to the printer"
+          ],
+          "recognize": [
+            "“the one next to” burada ne anlama gelir?",
+            "… yanındaki",
+            "en uzaktaki",
+            "önceki",
+            "One isim tekrarını önler. Dinleyenin ayırt edebileceği bir referans noktası ekle."
+          ],
+          "recall": [
+            "“… yanındaki” anlamındaki hedef ifadeyi yaz.",
+            "the one next to"
+          ],
+          "use": "Bir arkadaşına iki dolaptan hangisini kullanacağını anlat."
+        },
+        {
+          "term": "I caught the first part",
+          "meaning": "ilk kısmı duydum ve anladım",
+          "example": "I caught the first part, but I missed the street name.",
+          "usage": "Catch burada konuşmayı duyup anlamak. Eksik kalan kısmı ayrıca belirt.",
+          "pronunciation": "I caught the FIRST part",
+          "collocations": [
+            "catch the name",
+            "catch the first part of the message"
+          ],
+          "recognize": [
+            "“I caught the first part” burada ne anlama gelir?",
+            "ilk kısmı duydum ve anladım",
+            "ilk kısmı unuttum",
+            "ilk kısmı kaydettim",
+            "Catch burada konuşmayı duyup anlamak. Eksik kalan kısmı ayrıca belirt."
+          ],
+          "recall": [
+            "“ilk kısmı duydum ve anladım” anlamındaki hedef ifadeyi yaz.",
+            "I caught the first part"
+          ],
+          "use": "Anlamadığın bir talimatta hangi bölümü duyduğunu söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "spare key",
+          "cue": "yedek anahtar"
+        },
+        {
+          "term": "noticeboard",
+          "cue": "duyuru panosu"
+        },
+        {
+          "term": "landing",
+          "cue": "merdiven sahanlığı"
+        }
+      ],
+      "writing": {
+        "prompt": "Yeni durumda telefonla spor dolabını tarif ediyorsun. Biri soyunma odasında, diğeri merdiven yanında. Merdivenin YANINDAKİ dolabın alt gözüne bakılacak. 65–95 sözcüklük iki kişilik bir diyalog yaz. Durakları / ile göster, bir yanlış duymayı düzelt ve dolabı tarif ederek teyit et.",
+        "sample": "A: Leave the towel in the locker / by the STAIRS. B: Did you say the locker in the changing room? A: I meant the locker by the stairs, not the one in the changing room. Let me put that another way: when you come down the stairs / look straight ahead. Use the BOTTOM shelf. B: Just to make sure, I should put it on the lowest shelf of the locker I can see from the stairs? A: Exactly.",
+        "revision": "Teyidin ilk açıklamayla aynı kelimeleri tekrar edip etmediğine bak. Bir referans noktası ekle ve nerede duraklayacağını seç.",
+        "criteria": [
+          "Yanlış duymanın hangi ayrıntıda olduğu belirgin.",
+          "Kişi bilgiyi kendi sözleriyle ve kısa anlam gruplarıyla teyit eder."
+        ]
+      },
+      "input": {
+        "text": "Note on the studio door: the spare key is in the top drawer of the little desk by the window. There is another desk next to the door, under the noticeboard. The top drawer of that desk contains blank forms. If you get there after six, do not ring the upstairs bell; call me from the landing. Visitor’s phone message: I caught the first part. Did you mean the drawer by the door? I can see a pile of forms. Reply: I meant the desk by the window, not the desk by the door. Leave the forms where they are.",
+        "reading": [
+          "How can the visitor identify the desk with the key?",
+          "It is by the window",
+          "It is next to the door",
+          "It has blank forms in the top drawer",
+          "Yer için ana ayırt edici nokta pencere.",
+          "the little desk by the window"
+        ],
+        "transcript": "Maya: Put the box on the low shelf by the window, please. Jo: Did you say the shelf by the door? Maya: By the window, not the door. Let me put that another way. Stand by the noticeboard and look towards the light. There’s a low shelf under the window. Jo: So it goes on the shelf below the window, beside the empty case? Maya: Yes. Leave the case where it is. Only move the box. Jo: Right. I caught the first part before, but I missed which wall you meant.",
+        "preparation": "İlk duyulan ve sonra teyit edilen yerin farkına odaklan. Modelin vurgu kalitesi ayrıca doğrulanmadı.",
+        "main": [
+          "Where should Jo put the box?",
+          "On the shelf under the window",
+          "By the door on a high shelf",
+          "On the noticeboard",
+          "Konuşmacılar pencere altındaki rafta anlaşıyor.",
+          "a low shelf under the window"
+        ],
+        "detail": [
+          "What should Jo leave where it is?",
+          "The case",
+          "The box",
+          "The noticeboard",
+          "Hareketsiz kalacak olan çanta veya kutu değil, case diye belirtilen kılıf.",
+          "Leave the case where it is"
+        ]
+      },
+      "retry": {
+        "text": "Warehouse message: the trolley is by the loading bay, not by the office. If you see two trolleys there, use the one with the yellow handle. Put it back before the next delivery.",
+        "reading": [
+          "Which trolley should the person use?",
+          "The one with the yellow handle",
+          "The one by the office",
+          "The one with no handle",
+          "Ayırt edici özellik sarı sap.",
+          "the one with the yellow handle"
+        ],
+        "transcript": "Nora: Meet at gate four near the bookshop. Lee: Did you say gate fourteen? Nora: Four, not fourteen. It’s the one by the shop that sells books. Lee: Gate four by the bookshop, then? Nora: Yes. Bring your ticket.",
+        "preparation": "Duyulan ilk numarayı teyit edilen numarayla eşleştir.",
+        "main": [
+          "Which gate will they meet at?",
+          "Gate four",
+          "Gate fourteen",
+          "Gate five",
+          "Doğrulanan numara dört.",
+          "Four, not fourteen"
+        ],
+        "detail": [
+          "What does Nora ask Lee to bring?",
+          "A ticket",
+          "A book",
+          "A map",
+          "Son söz biletle ilgili.",
+          "Bring your ticket"
+        ]
+      },
+      "readingPurpose": "İki masa arasındaki farkı bul ve gereksiz ayrıntıyı at.",
+      "readingUse": "Pencere bilgisi anlaşılmadıysa kısaca başka nasıl tarif edersin?",
+      "listeningUse": "İlk yanlış duymadan sonra hangi sözlerin onarımı sağladığını söyle.",
+      "speaking": "Bir misafire iki benzer otobüs durağından hangisine gideceğini açıkla. Yanlış durağı tekrarlarsa bir durak, bir vurgu ve bir teyit sorusuyla düzelt.",
+      "genres": {
+        "reading": "duyuru ve telefon mesajı",
+        "listening": "iki kişilik yanlış duyma onarımı",
+        "writing": "yer tarifi diyalogu"
+      },
+      "recovery": {
+        "reading": "Pencere ve kapı ifadelerini ayrı işaretle.",
+        "main": "By the window ifadesini arka arkaya iki konuşmacıda izle.",
+        "detail": "Only ile sınırlandırılan eylemden önce neyin kalacağı söyleniyor?"
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "did + yalın say/mean ile teyit",
+        "not ile karşıt odak"
+      ]
+    }
+  ]
+}

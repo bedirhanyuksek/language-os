@@ -1,0 +1,617 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.cultural-visit",
+      "outcome": "B1.cultural-visit",
+      "level": "B1",
+      "prerequisite": [
+        "ru.culture",
+        "ru.routes"
+      ],
+      "title": "Bir ziyaretin yolunu ve yerel uygulamayı açıkla",
+      "objective": "Bir ziyaretçiye mekâna nasıl gidileceğini, karşılaşacağı uygulamayı ve bunun nedenini anlat.",
+      "situation": "Bir gençlik grubu eski bir su değirmenine gidiyor. Misafirler ilk defa geliyor ve hangi girişin yürüyüşe uygun olduğunu bilmiyor.",
+      "bridge": "A2 misafirlik ifadeleriyle kısa rica kur. Yolculuğu идти/ехать к + yönelme hâliyle, giriş ve çıkış yönünü через + belirtme ve из + ilgi hâliyle belirt.",
+      "models": [
+        {
+          "phrase": "Мы идём к мельнице через старую арку.",
+          "explanation": "К + değirmenin yönelme hâli мельнице; через + арку geçiş noktası. Идём şu anki yaya hareketi."
+        },
+        {
+          "phrase": "Мы выйдем из мастерской после показа.",
+          "explanation": "Из + мастерской çıkılan yer. После + показа ile eylemin ne zaman olacağını anlat."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Yönü ve geçiş yerini ayır",
+          "incorrect": "Мы идём к мельницу через арке.",
+          "correct": "Мы идём к мельнице через арку.",
+          "explanation": "К yönelme hâliyle, через belirtme hâliyle kullanılır: к остановке, через площадь.",
+          "guided": [
+            [
+              "Мы идём к ___ (выставка / выставке).",
+              "выставке"
+            ],
+            [
+              "К остановке можно пройти через ___ (арку / арке).",
+              "арку"
+            ]
+          ],
+          "transfer": [
+            [
+              "Группа идёт к ___ (библиотека / библиотеке).",
+              "библиотеке"
+            ],
+            [
+              "К остановке они идут через ___ (площадь / площади).",
+              "площадь"
+            ]
+          ],
+          "delayed": [
+            [
+              "Волонтёр ведёт гостей к ___ (школе / школа).",
+              "школе"
+            ],
+            [
+              "Мы пройдём через ___ (ворота / воротам).",
+              "ворота"
+            ]
+          ]
+        },
+        {
+          "label": "Çıkılan yeri ilgi hâliyle belirt",
+          "incorrect": "Гости вышли из мастерскую.",
+          "correct": "Гости вышли из мастерской.",
+          "explanation": "İçeriden çıkış из + ilgi hâli. Вышли из зала, ancak пришли в зал.",
+          "guided": [
+            [
+              "После экскурсии мы вышли из ___ (зал / зала).",
+              "зала"
+            ],
+            [
+              "Дети вышли из ___ (школу / школы).",
+              "школы"
+            ]
+          ],
+          "transfer": [
+            [
+              "Она вышла из ___ (библиотеку / библиотеки).",
+              "библиотеки"
+            ],
+            [
+              "Гости вышли из ___ (музей / музея).",
+              "музея"
+            ]
+          ],
+          "delayed": [
+            [
+              "Поезд вышел из ___ (тоннеля / тоннель).",
+              "тоннеля"
+            ],
+            [
+              "Они вышли из ___ (квартиру / квартиры).",
+              "квартиры"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "свернуть у ворот",
+        "meaning": "kapının yanında dönmek",
+        "example": "Нужно свернуть у ворот, а не у киоска.",
+        "usage": "У + ilgi hâli dönme noktasını verir. Yön eklemek için свернуть налево denebilir.",
+        "pronunciation": "сверну́ть у воро́т",
+        "collocations": [
+          "свернуть у ворот направо",
+          "свернуть у театра"
+        ],
+        "recognize": [
+          "“свернуть у ворот” burada ne anlama gelir?",
+          "kapının yanında dönmek",
+          "kapıyı açmak",
+          "kapının önünde beklemek",
+          "У + ilgi hâli dönme noktasını verir. Yön eklemek için свернуть налево denebilir."
+        ],
+        "recall": [
+          "“kapının yanında dönmek” anlamındaki hedef ifadeyi yaz.",
+          "свернуть у ворот"
+        ],
+        "use": "Bir gezide dönülecek yeri ve yönü söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "зайти по пути",
+          "meaning": "yol üstünde uğramak",
+          "example": "По пути мы можем зайти в маленькое кафе.",
+          "usage": "Зайти, kısa süreli uğrama; идти к yalnızca yönü anlatır.",
+          "pronunciation": "зайти́ по пути́",
+          "collocations": [
+            "зайти по пути в кафе",
+            "зайти по пути за билетом"
+          ],
+          "recognize": [
+            "“зайти по пути” burada ne anlama gelir?",
+            "yol üstünde uğramak",
+            "eve hemen dönmek",
+            "bütün günü aynı yerde geçirmek",
+            "Зайти, kısa süreli uğrama; идти к yalnızca yönü anlatır."
+          ],
+          "recall": [
+            "“yol üstünde uğramak” anlamındaki hedef ifadeyi yaz.",
+            "зайти по пути"
+          ],
+          "use": "Bir gezi yolunda neden kısa süreli duracağını söyle."
+        },
+        {
+          "term": "оставить вещи у входа",
+          "meaning": "eşyaları girişte bırakmak",
+          "example": "Тяжёлые рюкзаки можно оставить у входа.",
+          "usage": "Оставить burada bir yere bırakmak. Положить, fiziksel koyma hareketine odaklanır.",
+          "pronunciation": "оста́вить ве́щи у вхо́да",
+          "collocations": [
+            "оставить вещи у входа",
+            "оставить пальто в гардеробе"
+          ],
+          "recognize": [
+            "“оставить вещи у входа” burada ne anlama gelir?",
+            "eşyaları girişte bırakmak",
+            "giriş ücreti ödemek",
+            "girişten dönmek",
+            "Оставить burada bir yere bırakmak. Положить, fiziksel koyma hareketine odaklanır."
+          ],
+          "recall": [
+            "“eşyaları girişte bırakmak” anlamındaki hedef ifadeyi yaz.",
+            "оставить вещи у входа"
+          ],
+          "use": "Bir ziyaretçiye çantasını nerede bırakabileceğini söyle."
+        },
+        {
+          "term": "быть в курсе",
+          "meaning": "haberdar olmak",
+          "example": "Напиши в чат, чтобы все были в курсе.",
+          "usage": "Bir durumdan haberdar olmayı anlatan gündelik ifade. Быть в курсе изменений ile konu belirtilebilir.",
+          "pronunciation": "быть в ку́рсе",
+          "collocations": [
+            "быть в курсе изменений",
+            "держать группу в курсе"
+          ],
+          "recognize": [
+            "“быть в курсе” burada ne anlama gelir?",
+            "haberdar olmak",
+            "kurs vermek",
+            "gruptan ayrılmak",
+            "Bir durumdan haberdar olmayı anlatan gündelik ifade. Быть в курсе изменений ile konu belirtilebilir."
+          ],
+          "recall": [
+            "“haberdar olmak” anlamındaki hedef ifadeyi yaz.",
+            "быть в курсе"
+          ],
+          "use": "Değişen buluşma yerinden kimin haberdar olmasını sağlarsın?"
+        }
+      ],
+      "receptive": [
+        {
+          "term": "перила",
+          "cue": "tırabzan"
+        },
+        {
+          "term": "набережная",
+          "cue": "su kıyısındaki yaya yolu"
+        },
+        {
+          "term": "смотритель",
+          "cue": "görevli, gözetmen"
+        }
+      ],
+      "writing": {
+        "prompt": "İlk kez öğrenci sahaf pazarına gelecek birine 75–105 sözcükle yol ve ziyaret bilgisi yaz. Arka kapıdan geç, stüdyoya yürü, büyük çantayı girişte bırak, turun ardından stüdyodan çıkıp avluda bekle. Bir uygulamanın nedenini açıkla.",
+        "sample": "Если ты едешь на трамвае, выходи у театра. Мы идём к студии через задние ворота, потому что главный вход закрыт до обеда. По пути можно зайти в кассу за билетом. У входа в студию лучше оставить большой рюкзак: в проходе мало места. После показа мы выйдем из студии и подождём в маленьком дворе. Если ворота будут закрыты, напиши мне. Я встречу тебя у театра и покажу другой путь. Группе уже отправили сообщение, так что все будут в курсе.",
+        "revision": "К, через, из ardından gelen biçimleri yeniden kontrol et ve neden bilgisinin hangi eylemi açıkladığını belirginleştir.",
+        "criteria": [
+          "Yön ve çıkış ifadelerinin hâlleri doğru.",
+          "Ziyaret uygulamasına somut neden ve alternatif verilir."
+        ]
+      },
+      "input": {
+        "text": "Из записки волонтёра. От трамвайной остановки идите к мельнице через старую арку. У ворот нужно свернуть налево. Набережная сегодня закрыта: там меняют перила. Смотритель просит оставить большие рюкзаки у входа в мастерскую, потому что внутри узкий проход. Пальто можно взять с собой, если в зале прохладно. После показа группа выйдет из мастерской во двор, где обычно отвечают на вопросы. Если вы хотите зайти по пути в кафе, напишите организатору: ему нужно знать, кого ждать у арки.",
+        "reading": [
+          "Почему просят оставить рюкзаки у входа?",
+          "В мастерской узкий проход",
+          "Во дворе идёт ремонт",
+          "Вещи проверяют в кафе",
+          "Sebep atölyedeki dar geçit.",
+          "внутри узкий проход"
+        ],
+        "transcript": "Лена: Я стою у остановки. Мне идти вдоль воды? Андрей: Сегодня нет, на набережной меняют перила. Иди к мельнице через старую арку и сверни у ворот налево. Лена: А где ждать остальных? Андрей: У входа в мастерскую. Там можно оставить рюкзак. Лена: Мы вернёмся к воротам после показа? Андрей: Сначала выйдем из мастерской во двор. Если захочешь уйти раньше, скажи смотрителю. Я напишу в чат, чтобы все были в курсе.",
+        "preparation": "Önce yol değişikliğini, sonra turun bitiş noktasını çıkar.",
+        "main": [
+          "Почему сегодня не идут вдоль воды?",
+          "Там меняют перила",
+          "Там ждёт экскурсовод",
+          "Там закрыто кафе",
+          "Değişiklik tırabzan onarımı yüzünden.",
+          "на набережной меняют перила"
+        ],
+        "detail": [
+          "Где группа окажется сразу после показа?",
+          "Во дворе",
+          "У остановки",
+          "В кафе",
+          "İlk durak avlu.",
+          "выйдем из мастерской во двор"
+        ]
+      },
+      "retry": {
+        "text": "Гостей зовут к школьной теплице через боковую калитку. Грязные зонты оставляют у входа, чтобы пол не был мокрым. После встречи дети выйдут из теплицы к спортивной площадке.",
+        "reading": [
+          "Зачем оставляют зонты у входа?",
+          "Чтобы пол не был мокрым",
+          "Чтобы дети не ушли рано",
+          "Чтобы не закрывать калитку",
+          "Neden чтобы sonrasındaki bölümde.",
+          "чтобы пол не был мокрым"
+        ],
+        "transcript": "Мы идём к причалу через парк. После прогулки выйдем из лодки по одному. У влажной лестницы держитесь за перила. Можно зайти по пути в киоск, но сначала предупредите меня.",
+        "preparation": "Yol ve tekneden çıkış bilgisini ayır.",
+        "main": [
+          "Через что идут к причалу?",
+          "Через парк",
+          "Через вокзал",
+          "Через мастерскую",
+          "Geçilen yer park.",
+          "через парк"
+        ],
+        "detail": [
+          "Как нужно выходить из лодки?",
+          "По одному",
+          "Всем вместе",
+          "Только после обеда",
+          "Tek tek çıkış isteniyor.",
+          "выйдем из лодки по одному"
+        ]
+      },
+      "readingPurpose": "Yönergeyi izleyip rota, uygulama ve neden için ayrı satırlar oluştur.",
+      "readingUse": "Bir ziyaretçiye neden nehir kıyısından gitmediğini açıkla.",
+      "listeningUse": "Konuşmacılardan birinin önceki planını yeni bilgiye göre düzelt.",
+      "speaking": "Bir sanat atölyesine ilk kez gelen misafire yolu ve bir yerel uygulamanın nedenini anlat. Misafir farklı kapıda olduğunu söylerse rota değiştir.",
+      "genres": {
+        "reading": "gönüllü ziyaret notu",
+        "listening": "karşılıklı yol tarifi",
+        "writing": "ziyaret öncesi kişisel mesaj"
+      },
+      "recovery": {
+        "reading": "Потому что sonrasındaki nedeni belirle.",
+        "main": "Меняют fiilinin nesnesini dinle.",
+        "detail": "Сначала ile verilen ilk yeri yaz."
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "к + yönelme / через + belirtme",
+        "из + ilgi hâli ve çıkış hareketi"
+      ]
+    },
+    {
+      "id": "ru.intercultural",
+      "outcome": "B2.intercultural",
+      "level": "B2",
+      "prerequisite": [
+        "ru.cultural-visit",
+        "ru.debate"
+      ],
+      "title": "İki bakıştan kültürel bir anlaşmazlığı çöz",
+      "objective": "Bir yerel uygulama hakkında karışık bir görüşmeyi, iki tarafın gerekçesini ve kabul koşullarını koruyarak yönet.",
+      "situation": "Bir fotoğraf arşivi ziyaretinde ev sahibi, ilk gösterimde telefon kullanılmamasını istiyor. Ziyaretçiler aileleri için bir hatıra çekmek istiyor.",
+      "bridge": "B1’deki “ne yapılır, neden yapılır?” sorularını iki taraf için sor. По словам + ilgi hâli ve göreceli bakış için с точки зрения + ilgi hâli kullan. Была бы готова …, если бы … ile varsayımsal kabulü kesin sözden ayır.",
+      "models": [
+        {
+          "phrase": "По словам хранителя, запрет касается только первого показа.",
+          "explanation": "По словам + хранителя, iddiayı konuşmacıya bağlar. Только ile kısıtın tüm ziyaret için olmadığını göster."
+        },
+        {
+          "phrase": "Группа была бы готова убрать телефоны, если бы после показа выделили время для съёмки.",
+          "explanation": "Была бы готова + mastar isteklilik. Если бы + geçmiş biçimli fiil varsayımsal koşulu belirtir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Görüşü sahibine bağla",
+          "incorrect": "По словам экскурсовод, правило временное.",
+          "correct": "По словам экскурсовода, правило временное.",
+          "explanation": "По словам ve с точки зрения ardından görüş sahibinin ilgi hâli gelir. İlk kalıp sözün kaynağı; ikincisi bakış noktasıdır.",
+          "guided": [
+            [
+              "По словам ___ (организатора / организатор), зал откроют позже.",
+              "организатора"
+            ],
+            [
+              "С точки зрения ___ (гостей / гости), время выбрано неудачно.",
+              "гостей"
+            ]
+          ],
+          "transfer": [
+            [
+              "По словам ___ (дежурного / дежурному), запасной вход работает.",
+              "дежурного"
+            ],
+            [
+              "С точки зрения ___ (врачей / врачи), шум мешает пациентам.",
+              "врачей"
+            ]
+          ],
+          "delayed": [
+            [
+              "По словам ___ (переводчицы / переводчице), записку уже прочитали.",
+              "переводчицы"
+            ],
+            [
+              "С точки зрения ___ (родителей / родителям), ожидание слишком долгое.",
+              "родителей"
+            ]
+          ]
+        },
+        {
+          "label": "Varsayımsal uzlaşmayı açık tut",
+          "incorrect": "Группа согласилась бы, если бы правило объяснят заранее.",
+          "correct": "Группа согласилась бы, если бы правило объяснили заранее.",
+          "explanation": "Если бы varsayımsal koşulda geçmiş biçimini alır. Реальный koşul: если правило объяснят, группа согласится.",
+          "guided": [
+            [
+              "Мы согласились бы, если бы нас ___ (предупредили / предупредят) заранее.",
+              "предупредили"
+            ],
+            [
+              "Гости подождали бы, если бы у входа ___ (были / будут) стулья.",
+              "были"
+            ]
+          ],
+          "transfer": [
+            [
+              "Соседи поддержали бы проект, если бы работы ___ (заканчивались / закончатся) до вечера.",
+              "заканчивались"
+            ],
+            [
+              "Если бы библиотека ___ (открылась / откроется) раньше, мы пришли бы до урока.",
+              "открылась"
+            ]
+          ],
+          "delayed": [
+            [
+              "Мы приняли бы решение, если бы отдел ___ (дал / даст) расписание.",
+              "дал"
+            ],
+            [
+              "Волонтёры остались бы, если бы их ___ (попросили / попросят) помочь.",
+              "попросили"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "сойтись на том, что",
+        "meaning": "şu noktada uzlaşmak",
+        "example": "Мы сошлись на том, что начнём с короткого объяснения.",
+        "usage": "Ortak kararın içeriğini tam tümceyle verir. Сойтись во мнении daha genel görüş birliğidir.",
+        "pronunciation": "сойти́сь на том, что",
+        "collocations": [
+          "сойтись на том, что правила надо объяснить",
+          "сойтись во мнении"
+        ],
+        "recognize": [
+          "“сойтись на том, что” burada ne anlama gelir?",
+          "şu noktada uzlaşmak",
+          "görüşmeyi ertelemek",
+          "bir konu hakkında soru sormak",
+          "Ortak kararın içeriğini tam tümceyle verir. Сойтись во мнении daha genel görüş birliğidir."
+        ],
+        "recall": [
+          "“şu noktada uzlaşmak” anlamındaki hedef ifadeyi yaz.",
+          "сойтись на том, что"
+        ],
+        "use": "Müze ziyaretinde iki tarafın hangi noktada uzlaştığını bildir."
+      },
+      "additionalWords": [
+        {
+          "term": "пойти навстречу",
+          "meaning": "bir isteğe anlayışla karşılık verip kolaylık göstermek",
+          "example": "Организаторы пошли навстречу группе и оставили время для вопросов.",
+          "usage": "Kime kolaylık sağlandığını yönelme hâliyle söyle: пойти навстречу посетителям.",
+          "pronunciation": "пойти́ навстре́чу",
+          "collocations": [
+            "пойти навстречу посетителям",
+            "пойти навстречу просьбе группы"
+          ],
+          "recognize": [
+            "“пойти навстречу” burada ne anlama gelir?",
+            "bir isteğe anlayışla karşılık verip kolaylık göstermek",
+            "yüz yüze karşılaşmak",
+            "bütün talepleri reddetmek",
+            "Kime kolaylık sağlandığını yönelme hâliyle söyle: пойти навстречу посетителям."
+          ],
+          "recall": [
+            "“bir isteğe anlayışla karşılık verip kolaylık göstermek” anlamındaki hedef ifadeyi yaz.",
+            "пойти навстречу"
+          ],
+          "use": "Spor kulübünün üyelerin bir isteğine nasıl kolaylık sağlayabileceğini anlat."
+        },
+        {
+          "term": "заранее оговорить",
+          "meaning": "bir koşulu önceden açıkça konuşup belirlemek",
+          "example": "Нужно заранее оговорить, где разрешена съёмка.",
+          "usage": "Özel bir koşulu baştan belirler. Предупредить kişiyi önceden haberdar etmektir.",
+          "pronunciation": "зара́нее оговори́ть",
+          "collocations": [
+            "заранее оговорить условия",
+            "заранее оговорить исключение"
+          ],
+          "recognize": [
+            "“заранее оговорить” burada ne anlama gelir?",
+            "bir koşulu önceden açıkça konuşup belirlemek",
+            "sonradan tahmin etmek",
+            "fiilen yasaklamak",
+            "Özel bir koşulu baştan belirler. Предупредить kişiyi önceden haberdar etmektir."
+          ],
+          "recall": [
+            "“bir koşulu önceden açıkça konuşup belirlemek” anlamındaki hedef ifadeyi yaz.",
+            "заранее оговорить"
+          ],
+          "use": "Bir gezi için hangi erişim koşulunu önceden konuşman gerektiğini söyle."
+        },
+        {
+          "term": "воспринять как",
+          "meaning": "bir şeyi … olarak algılamak",
+          "example": "Некоторые восприняли просьбу как запрет на весь день.",
+          "usage": "Bir kişinin yorumunu verir. Yorumun doğru olduğunu tek başına göstermez.",
+          "pronunciation": "восприня́ть как",
+          "collocations": [
+            "воспринять просьбу как запрет",
+            "воспринять молчание как согласие"
+          ],
+          "recognize": [
+            "“воспринять как” burada ne anlama gelir?",
+            "bir şeyi … olarak algılamak",
+            "koşulu doğrulamak",
+            "nedenini açıklamak",
+            "Bir kişinin yorumunu verir. Yorumun doğru olduğunu tek başına göstermez."
+          ],
+          "recall": [
+            "“bir şeyi … olarak algılamak” anlamındaki hedef ifadeyi yaz.",
+            "воспринять как"
+          ],
+          "use": "Grup sohbetinde yanlış yorumlanan bir duyuruyu anlat."
+        },
+        {
+          "term": "снять недоразумение",
+          "meaning": "yanlış anlamayı gidermek",
+          "example": "Один уточняющий вопрос мог снять недоразумение.",
+          "usage": "Снять burada gidermek. Снять запрет yerleşik başka kullanımdır; fotoğraf çekmek için снять кадр denebilir.",
+          "pronunciation": "снять недоразуме́ние",
+          "collocations": [
+            "снять недоразумение одним вопросом",
+            "снять недоразумение в начале встречи"
+          ],
+          "recognize": [
+            "“снять недоразумение” burada ne anlama gelir?",
+            "yanlış anlamayı gidermek",
+            "kararı iptal etmek",
+            "yanlış anlamayı büyütmek",
+            "Снять burada gidermek. Снять запрет yerleşik başka kullanımdır; fotoğraf çekmek için снять кадр denebilir."
+          ],
+          "recall": [
+            "“yanlış anlamayı gidermek” anlamındaki hedef ifadeyi yaz.",
+            "снять недоразумение"
+          ],
+          "use": "Bir toplantıda hangi sorunun yanlış anlamayı gidereceğini öner."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "архивный отпечаток",
+          "cue": "arşivdeki fotoğraf baskısı"
+        },
+        {
+          "term": "стойка",
+          "cue": "danışma bankosu veya taşıyıcı ayak"
+        },
+        {
+          "term": "согласие на публикацию",
+          "cue": "yayımlama izni"
+        },
+        {
+          "term": "закрытый показ",
+          "cue": "sınırlı katılımlı gösterim"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir müzik atölyesi ilk provanın kaydını istemiyor. Konuklar prova yöntemini hatırlamak istiyor. 115–150 sözcükle iki tarafın nedenini, varsayımsal çözümü ve çözüm öncesi doğrulanacak koşulu aktar.",
+        "sample": "По словам руководительницы, ведущая просит не записывать первый прогон: участники ещё пробуют разные варианты и не хотят, чтобы черновые записи оказались в общем чате. С точки зрения гостей, короткий отрывок помог бы дома вспомнить упражнение. Некоторые восприняли просьбу как запрет на любые заметки, хотя писать от руки можно. Гости были бы готовы убрать телефоны, если бы после прогона ведущая показала то же упражнение ещё раз и разрешила сделать запись без лиц участников. Чтобы снять недоразумение, я бы сначала уточнила, кто даст согласие на съёмку и кому можно будет отправить файл. Если согласия нет, ведущая могла бы продиктовать порядок действий, а гости — записать его. До ответа обеим сторонам лучше считать запись лишь предложением. В правилах следующей встречи стоит заранее оговорить, разрешены ли личные заметки.",
+        "revision": "İki tarafın sözlerini ilgi hâliyle kaynaklandır. Uzlaşma önerisinde gerçekleşmiş karar varmış gibi yazdığın yerleri değiştir.",
+        "criteria": [
+          "İki görüş adil biçimde kaynağına bağlanır.",
+          "Koşul, teyit ve yedek seçenek ayrı."
+        ]
+      },
+      "input": {
+        "text": "Из протокола встречи. В пятницу в районном архиве показывали семейные фотографии фабричного посёлка. Перед началом хранитель попросил убрать телефоны. Это был закрытый показ для приглашённой группы. Он говорил о первых двадцати минутах: в это время посетители смотрели на архивные отпечатки и записывали имена людей, которых могли узнать. Каждый архивный отпечаток лежал под стеклом, в котором отражался свет от экранов. Кроме того, на отдельных снимках были люди, чьи семьи ещё не дали согласие на публикацию.\n\nС точки зрения посетителей, просьба прозвучала так, будто нельзя фотографировать до закрытия. Две женщины приехали из другого города и хотели отправить снимок своим родным. Они были бы готовы убрать телефоны, если бы после показа можно было выбрать один снимок из открытой части коллекции. По словам хранителя, сам архив может прислать ссылку на опубликованные копии. Но посетители не знали об этом варианте: объявление с адресом сайта висело у выхода, а перед входом его не было. Запись встречи предлагают начать с этих разных толкований. Решение о фотографии на память ещё не принято. Сначала нужно проверить, какие снимки уже опубликованы и кто сможет ответить на вопросы. Стойка для справок находится у входа.",
+        "reading": [
+          "Что вызвало недоразумение?",
+          "Посетители приняли временную просьбу за общий запрет",
+          "Архив отменил показ семейных фотографий",
+          "Телефоны мешали посетителям читать объявление у выхода",
+          "Misafirler geçici isteği genel yasak sandı.",
+          "будто нельзя фотографировать до закрытия"
+        ],
+        "transcript": "Ирина: Вы сказали, что телефоны лучше убрать. Я решила, что в зале вообще нельзя снимать. Мы с сестрой приехали ради фотографии нашей улицы.\nМихаил: Я говорил только о начале показа. В первые двадцать минут мы смотрим отпечатки под стеклом. От экранов идут блики, и соседи видят хуже. Есть ещё снимки, которые семьи пока не разрешили публиковать.\nИрина: Мы могли бы подождать, если бы после показа нам показали хотя бы один снимок, которым можно поделиться. Нам и копия подошла бы.\nЛида: Тогда давайте различим фото на память и публикацию в интернете. По словам хранителя, в открытой части собрания есть несколько копий. Мы ещё не знаем, попала ли туда ваша улица.\nМихаил: После встречи я проверю каталог. На следующем показе можно повесить объявление у входа и взять комплект открыток к стойке.\nИрина: Это помогло бы. Важно сказать о вариантах сразу. Когда нас попросили убрать телефоны, никто не понял, относится ли это к копиям тоже.\nЛида: Запишу предложение об объявлении, а вопрос о конкретной фотографии пока оставлю открытым.",
+        "preparation": "Her kişinin hangi ihtiyacı dile getirdiğini ve hangi konunun açık kaldığını not et.",
+        "main": [
+          "На каком условии Ирина согласилась бы ждать?",
+          "Если после показа ей покажут разрешённый снимок",
+          "Если уберут все фотографии под стеклом",
+          "Если сотрудники откроют ещё один зал",
+          "Koşul daha sonra izinli bir kopya görebilmek.",
+          "нам показали хотя бы один снимок, которым можно поделиться"
+        ],
+        "detail": [
+          "Что Лида оставляет открытым?",
+          "Вопрос о конкретной фотографии",
+          "Время окончания показа",
+          "Адрес архива",
+          "O sokağın fotoğrafı doğrulanmadı.",
+          "вопрос о конкретной фотографии пока оставлю открытым"
+        ]
+      },
+      "retry": {
+        "text": "Гостей попросили сесть у выхода во время репетиции. Организатор имел в виду только первую песню: потом гостей пригласят ближе. Некоторые восприняли просьбу как знак, что их не хотят видеть на концерте. В следующем письме организатор объяснит причину и назовёт момент, когда можно пересесть.",
+        "reading": [
+          "Что уточнит организатор?",
+          "Когда гости смогут пересесть",
+          "Когда отменят концерт",
+          "Почему зрители ушли с репетиции",
+          "Yer değiştirme zamanı açıklanacak.",
+          "момент, когда можно пересесть"
+        ],
+        "transcript": "По словам мастера, посетителей просят не брать глину до объяснения. Иначе заготовки пересохнут. Гости были бы готовы подождать, если бы им дали время попробовать два цвета. Мастер предложил сделать пробные образцы после объяснения, но ещё не проверил, хватит ли материала на всех.",
+        "preparation": "İsteği, gerekçeyi ve doğrulanması gereken bilgiyi ayır.",
+        "main": [
+          "Почему мастер просит подождать?",
+          "Заготовки могут пересохнуть",
+          "Нужно проветрить зал",
+          "Не пришли переводчики",
+          "Kil örnekleri kuruyabilir.",
+          "иначе заготовки пересохнут"
+        ],
+        "detail": [
+          "Что мастер ещё должен проверить?",
+          "Хватит ли материала на всех",
+          "Можно ли открыть окна",
+          "Кто встретит группу у ворот",
+          "Yeterli malzeme henüz teyit edilmedi.",
+          "хватит ли материала на всех"
+        ]
+      },
+      "readingPurpose": "İki tarafın niyetini ayrı belirle ve henüz doğrulanmayan şartın altını çiz.",
+      "readingUse": "İki tarafın da kabul edebileceği bir koşulu öner.",
+      "listeningUse": "Gösterim ve kopya talebini karıştırmadan iki tarafın sözlerini aktar.",
+      "speaking": "Bir yerel müzik etkinliğinde çalgıya dokunma yasağı önce yanlış anlaşılmış. Bir konuğun görüşünü ve ev sahibinin nedenini aktar, esnek bir seçenek sor ve ona kesin tarih verme.",
+      "genres": {
+        "reading": "toplantı tutanağı",
+        "listening": "üç kişilik arabuluculuk görüşmesi",
+        "writing": "koşullu uzlaşma notu"
+      },
+      "recovery": {
+        "reading": "Хранитель ve посетители bölümlerine ayrı gerekçe yaz.",
+        "main": "Если бы ile başlayan koşulu dinle.",
+        "detail": "Открытым sözcüğünden önce hangi soru anılıyor?"
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "по словам / с точки зрения + ilgi hâli",
+        "если бы + geçmiş biçimle varsayımsal koşul"
+      ]
+    }
+  ]
+}

@@ -93,7 +93,9 @@ describe('progress and reviews', () => {
     const late = '2026-11-13T21:15:00.000Z'
     const small = { ...finished, profile: { ...profile, minutes: 5 } }
     expect(plan(small).kind).toBe('budget')
-    expect(plan(small, late).kind).toBe('review')
+    expect(plan(small, late)).toMatchObject({ kind: 'speaking', lessonId: first.id, minutes: 5 })
+    expect(small.reviewHistory).toHaveLength(0)
+    expect(small.reviews.every(({ dueAt }) => dueAt === at)).toBe(true)
   })
 })
 

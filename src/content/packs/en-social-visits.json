@@ -1,0 +1,269 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.culture-visit",
+      "outcome": "B1.culture-visit",
+      "level": "B1",
+      "prerequisite": [
+        "en.story"
+      ],
+      "title": "İki ziyaret deneyimini bağlamıyla karşılaştır",
+      "objective": "Bir ziyaret uygulamasını somut örnekle karşılaştır, ilk beklentini düzelt ve kibar biçimde açık bir soru sor.",
+      "situation": "Bir kütüphanenin onarım buluşmasında bir ziyaretçi doğrudan tezgâha giderken diğeri önce sıraya adını yazıyor.",
+      "bridge": "Bir olayı ve kimlerin böyle davrandığını söyle. Whereas ile iki gözlemi karşılaştır. Tend to ile sıklığı anlatırken tek örnekten genelleme yapma.",
+      "models": [
+        {
+          "phrase": "At the first workshop we found a free bench, whereas at the second we signed in.",
+          "explanation": "Whereas iki paralel bilgiyi karşılaştırır. Her davranışı görüldüğü yere bağla."
+        },
+        {
+          "phrase": "People at this club tend to bring one item each.",
+          "explanation": "Tend to + yalın fiil bir eğilim bildirir. Bütün insanlara veya tek örneğe dayandırma."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Whereas ile iki gözlemi bağla",
+          "incorrect": "The first host brought tea, because the second offered water.",
+          "correct": "The first host brought tea, whereas the second offered water.",
+          "explanation": "Neden değil karşıtlık istendiğinde öğretilen bağlayıcı whereas.",
+          "guided": [
+            [
+              "Karşılaştır: The evening group uses a list, ___ the morning group hands out tickets. (whereas / because)",
+              "whereas"
+            ],
+            [
+              "The old route ended in the square, ___ this one ends at the river. (whereas / so)",
+              "whereas"
+            ]
+          ],
+          "transfer": [
+            [
+              "Sam removed his shoes, ___ Anna waited for the host to ask. (whereas / because)",
+              "whereas"
+            ],
+            [
+              "Their club starts with introductions, ___ ours starts with a short task. (whereas / so)",
+              "whereas"
+            ]
+          ],
+          "delayed": [
+            [
+              "The museum invited questions during the tour, ___ the gallery saved them for the end. (whereas / since)",
+              "whereas"
+            ],
+            [
+              "The Friday market serves lunch, ___ the Saturday one serves breakfast. (whereas / because)",
+              "whereas"
+            ]
+          ]
+        },
+        {
+          "label": "Tend to ve bağlam sınırı",
+          "incorrect": "Visitors tend bringing a bag.",
+          "correct": "Visitors tend to bring a bag.",
+          "explanation": "Tend to ardından yalın fiil. Yer veya grup eklemek gözlemin sınırını belirtir.",
+          "guided": [
+            [
+              "At this café, regulars tend to ___ (share / sharing) a table.",
+              "share"
+            ],
+            [
+              "At our evening class, we tend ___ (to leave / leaving) together.",
+              "to leave"
+            ]
+          ],
+          "transfer": [
+            [
+              "In that choir, people tend to ___ (arrive / arriving) early.",
+              "arrive"
+            ],
+            [
+              "On the ferry, families tend ___ (to sit / sitting) upstairs.",
+              "to sit"
+            ]
+          ],
+          "delayed": [
+            [
+              "At this club, new members tend to ___ (ask / asking) about equipment.",
+              "ask"
+            ],
+            [
+              "At the spring fair, shoppers tend ___ (to pay / paying) in cash.",
+              "to pay"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "sign in",
+        "meaning": "girişte kayıt olmak",
+        "example": "We signed in at the desk first.",
+        "usage": "Sign in orada bulunduğunu kayda geçirmektir. Book önceden yer ayırır.",
+        "pronunciation": "/saɪn ɪn/",
+        "collocations": [
+          "sign in at the desk",
+          "sign in on arrival"
+        ],
+        "recognize": [
+          "“sign in” burada ne anlama gelir?",
+          "girişte kayıt olmak",
+          "önceden bilet almak",
+          "erken ayrılmak",
+          "Sign in orada bulunduğunu kayda geçirmektir. Book önceden yer ayırır."
+        ],
+        "recall": [
+          "“girişte kayıt olmak” anlamındaki hedef ifadeyi yaz.",
+          "sign in"
+        ],
+        "use": "Bir ziyaretçiye kayıt yerini ve zamanını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "take turns",
+          "meaning": "sırayla yapmak",
+          "example": "We took turns using the sewing machine.",
+          "usage": "Take turns + -ing ile sırayla yapılan işi belirt.",
+          "pronunciation": "/teɪk tɜɹnz/",
+          "collocations": [
+            "take turns answering",
+            "take turns using the tools"
+          ],
+          "recognize": [
+            "“take turns” burada ne anlama gelir?",
+            "sırayla yapmak",
+            "aynı anda başlamak",
+            "sırayı iptal etmek",
+            "Take turns + -ing ile sırayla yapılan işi belirt."
+          ],
+          "recall": [
+            "“sırayla yapmak” anlamındaki hedef ifadeyi yaz.",
+            "take turns"
+          ],
+          "use": "İki ziyaretçinin tek bir aracı nasıl kullanacağını açıkla."
+        },
+        {
+          "term": "check with the host",
+          "meaning": "ev sahibine danışmak",
+          "example": "I checked with the host before taking a chair.",
+          "usage": "Check with, ilke veya izni doğru kişiye teyit ettirir.",
+          "pronunciation": "/tʃek wɪð ðə hoʊst/",
+          "collocations": [
+            "check with the host about food",
+            "check with the organiser before entering"
+          ],
+          "recognize": [
+            "“check with the host” burada ne anlama gelir?",
+            "ev sahibine danışmak",
+            "ev sahibini aramak (yerini bulmak)",
+            "ziyareti iptal etmek",
+            "Check with, ilke veya izni doğru kişiye teyit ettirir."
+          ],
+          "recall": [
+            "“ev sahibine danışmak” anlamındaki hedef ifadeyi yaz.",
+            "check with the host"
+          ],
+          "use": "Bir alışkanlığı tahmin etmek yerine ev sahibine kibarca nasıl soracağını söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "tool bench",
+          "cue": "alet tezgâhı"
+        },
+        {
+          "term": "drop-in session",
+          "cue": "randevusuz etkinlik"
+        }
+      ],
+      "writing": {
+        "prompt": "Katıldığın iki sosyal etkinliği 80–110 sözcükle karşılaştır. Bir davranışı yere bağla, değişen bir beklentini ve ev sahibine soracağın soruyu yaz.",
+        "sample": "At my first repair meeting I went straight to a tool bench, whereas at the library I signed in and waited. I thought the list was for people with appointments. It turned out that everyone could join, but visitors took turns using the tools. At the first meeting, people tended to bring their own tools. At the library, most of us borrowed them. If I go to a new workshop next month, I will check with the host: should I bring anything, or can I borrow it there?",
+        "revision": "Bir yerde gözlediğin davranışı bütün insanlar için kural hâline getiren cümleyi daralt. Yeni yer için uygulanabilir bir soru ekle. Yeni bir ziyaret senaryosu seç. Kayıt, ortak ekipman ve sırayla kullanımın nasıl değiştiğini bir arkadaşına açıkla. Sonra duyduğun yanıtı check with the host temasıyla teyit et.",
+        "criteria": [
+          "İki gözlem yer ve ayrıntısıyla ayrı.",
+          "Beklenti değişimi ve açık soru var."
+        ]
+      },
+      "input": {
+        "text": "I thought the library repair club was a drop-in session. It was, but I still had to sign in. A volunteer gave me a place on the list and showed me the tool bench. At my usual club we borrow tools as soon as we arrive. Here we took turns because there was only one sewing machine.",
+        "reading": [
+          "Kütüphanede neden sıra bekleniyordu?",
+          "Tek dikiş makinesi vardı",
+          "Kayıt internetten yapılıyordu",
+          "Aletler üyelere kapalıydı",
+          "Sıranın sebebi tek makine.",
+          "there was only one sewing machine"
+        ],
+        "transcript": "Visitor: At my old group we brought a broken item and sat down. Should I do that here? Host: Please write your name beside the item first. Then we call people in order. Visitor: Do I need to bring tools? Host: No. We share the tools here.",
+        "preparation": "Sırayı ve ziyaretçiden beklenen eşyayı ayrı dinle.",
+        "main": [
+          "İlk adım ne?",
+          "Adı eşyanın yanına yazmak",
+          "Aletleri getirmek",
+          "Bir bilet almak",
+          "Ev sahibi önce kayıt istiyor.",
+          "write your name beside the item first"
+        ],
+        "detail": [
+          "Ziyaretçi alet getirmeli mi?",
+          "Hayır, aletler ortak",
+          "Evet, hepsini",
+          "Sadece dikiş makinesi",
+          "Aletler ortak.",
+          "We share the tools here"
+        ]
+      },
+      "retry": {
+        "text": "At my neighbour’s dinner we served ourselves. At my cousin’s place, the host offered a plate to each guest first. I asked what I could do to help.",
+        "reading": [
+          "İkinci evde tabakları kim sundu?",
+          "Ev sahibi",
+          "Misafirler",
+          "Komşu",
+          "İkinci gözlemde ev sahibi tabak sundu.",
+          "the host offered a plate"
+        ],
+        "transcript": "I thought everyone would bring a snack to the film club. Then I asked the organiser. Tonight the club is providing food, but on Sundays people usually bring something to share.",
+        "preparation": "Bugün ile genel pazar alışkanlığını ayır.",
+        "main": [
+          "Bu akşam yiyeceği kim sağlıyor?",
+          "Kulüp",
+          "Tüm ziyaretçiler",
+          "Sinema",
+          "Tonight özel koşul.",
+          "Tonight the club is providing food"
+        ],
+        "detail": [
+          "Pazar günleri genelde ne oluyor?",
+          "İnsanlar paylaşmak için yiyecek getirir",
+          "İnsanlar evden çıkmaz",
+          "Kulüp kapalı olur",
+          "Usually alışkanlığı bildirir.",
+          "people usually bring something to share"
+        ]
+      },
+      "readingPurpose": "İki mekânda kayıt, ekipman ve sıra kullanımını ayır.",
+      "readingUse": "Kendi deneyiminden bir farkı arkadaşına aktar ve yanlış varsayıma açıklık getir.",
+      "listeningUse": "Başka bir kulübe gitmeden kime ne soracağını söyle.",
+      "speaking": "Partnerin yeni bir yerdeki ev sahibi olsun. Bir önceki deneyimini kısaca karşılaştır. Başta ne beklediğini ve ne öğrendiğini anlatmak için I thought … would ve It turned out that … kullanabilirsin. Yeni kuralı sor ve cevabı teyit et.",
+      "genres": {
+        "reading": "kişisel ziyaret anlatısı",
+        "listening": "gönüllü ve ziyaretçi diyaloğu",
+        "writing": "karşılaştırmalı sosyal deneyim"
+      },
+      "recovery": {
+        "reading": "Liste ile randevunun aynı olmadığını gör.",
+        "main": "First sonrasındaki işi ayır.",
+        "detail": "Share sözcüğünün neyi tanımladığını bul."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "whereas ile karşıtlık; tend to + mastar"
+      ]
+    }
+  ]
+}

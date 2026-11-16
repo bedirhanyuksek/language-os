@@ -1,0 +1,276 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.genre-synthesis",
+      "outcome": "C1.genres",
+      "level": "C1",
+      "prerequisite": [
+        "ru.written",
+        "ru.specialist"
+      ],
+      "title": "Bir araştırmayı akademik özet ve kamu notuna dönüştür",
+      "objective": "Üç kaynaktan bir sav kur, çalışmanın yöntem ve sınırını koruyarak akademik özet ile kamu notunu ayrı yaz.",
+      "situation": "Bir kentin yeni ağaçlandırma programında uydu sıcaklığı, yaya anketi ve bakım kaydı farklı sonuçlar gösteriyor.",
+      "bridge": "Kaynak öznesini görünür bırak. Согласно + yönelme ile atıf yap. В отличие от + tamlayan ile hangi ölçümün farklı olduğunu belirt.",
+      "models": [
+        {
+          "phrase": "Согласно журналу ухода, часть деревьев поливали нерегулярно.",
+          "explanation": "Согласно + yönelme: журналу. Bu yapı iddiayı kayda bağlar."
+        },
+        {
+          "phrase": "В отличие от снимков, опрос описывает ощущения людей.",
+          "explanation": "В отличие от ardından tamlayan gelir. Birbirinden farklı şeylerin ölçüldüğünü gösterir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Atıf ve karşılaştırma hâllerini ayır",
+          "incorrect": "Согласно отчёта, часть деревьев погибла.",
+          "correct": "Согласно отчёту, часть деревьев погибла.",
+          "explanation": "Согласно yönelme, в отличие от tamlayan ister.",
+          "guided": [
+            [
+              "Согласно ___ (доклад), число заявок выросло.",
+              "докладу"
+            ],
+            [
+              "В отличие от ___ (анкета), журнал фиксирует время.",
+              "анкеты"
+            ]
+          ],
+          "transfer": [
+            [
+              "Согласно ___ (сводка), ремонт начался утром.",
+              "сводке"
+            ],
+            [
+              "В отличие от ___ (выборка), реестр охватывает весь район.",
+              "выборки"
+            ]
+          ],
+          "delayed": [
+            [
+              "Согласно ___ (договор), отчёт нужен к июню.",
+              "договору"
+            ],
+            [
+              "В отличие от ___ (наблюдение), интервью записывает мнение.",
+              "наблюдения"
+            ]
+          ]
+        },
+        {
+          "label": "Bulguyla öneri arasındaki mesafeyi koru",
+          "incorrect": "«В парке прохладнее» доказывает, что любые деревья решают проблему.",
+          "correct": "«В парке прохладнее» описывает место и время замера.",
+          "explanation": "Sayıyı, ölçüm hedefini ve uygulanacağı grubu ayrı belirt.",
+          "guided": [
+            [
+              "«Замеры только днём». Какого времени нет?",
+              "ночи",
+              "ночного"
+            ],
+            [
+              "«Опросили водителей». Чьё мнение не измеряли: водителей / пешеходов?",
+              "пешеходов"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Датчик измерял воду, не воздух». Что измеряли?",
+              "воду"
+            ],
+            [
+              "«Регистрировали покупки в мае». Какого месяца нет: мая / июня?",
+              "июня"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Прибор стоял у одного подъезда». Какой охват: один подъезд / весь дом?",
+              "один подъезд"
+            ],
+            [
+              "«Указана доля, но не число ответивших». Какой показатель отсутствует?",
+              "число ответивших"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "свести данные воедино",
+        "meaning": "verileri bir araya getirmek",
+        "example": "Нам надо свести данные трёх источников воедино.",
+        "usage": "Farklı verileri tek toplam yapmadan karşılaştırmalı bir açıklamaya getir.",
+        "pronunciation": "свести́ да́нные воеди́но",
+        "collocations": [
+          "свести данные воедино",
+          "свести наблюдения воедино"
+        ],
+        "recognize": [
+          "“свести данные воедино” burada ne anlama gelir?",
+          "verileri bir araya getirmek",
+          "veriyi yok saymak",
+          "tek kaynağı seçmek",
+          "Farklı verileri tek toplam yapmadan karşılaştırmalı bir açıklamaya getir."
+        ],
+        "recall": [
+          "“verileri bir araya getirmek” anlamındaki hedef ifadeyi yaz.",
+          "свести данные воедино"
+        ],
+        "use": "Bir seminerde hangi farklı kaynakları birleştireceğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "с оговоркой о выборке",
+          "meaning": "örneklem çekincesiyle",
+          "example": "Вывод можно использовать с оговоркой о выборке.",
+          "usage": "Örneklemi sonucu genellemeyi sınırlayan koşul olarak belirt.",
+          "pronunciation": "с огово́ркой о вы́борке",
+          "collocations": [
+            "опубликовать с оговоркой о выборке",
+            "сделать вывод с оговоркой о выборке"
+          ],
+          "recognize": [
+            "“с оговоркой о выборке” burada ne anlama gelir?",
+            "örneklem çekincesiyle",
+            "örneklemi büyütmek",
+            "genel geçer ilan etmek",
+            "Örneklemi sonucu genellemeyi sınırlayan koşul olarak belirt."
+          ],
+          "recall": [
+            "“örneklem çekincesiyle” anlamındaki hedef ifadeyi yaz.",
+            "с оговоркой о выборке"
+          ],
+          "use": "Bir öğrenci anketinin sonucu için sınır koy."
+        },
+        {
+          "term": "довести до сведения",
+          "meaning": "bilgisine sunmak",
+          "example": "Просим довести решение до сведения жителей.",
+          "usage": "Resmî dilde sonucu belirli kişilere iletmek.",
+          "pronunciation": "довести́ до све́дения",
+          "collocations": [
+            "довести до сведения участников",
+            "довести итоги до сведения жителей"
+          ],
+          "recognize": [
+            "“довести до сведения” burada ne anlama gelir?",
+            "bilgisine sunmak",
+            "bilgiyi saklamak",
+            "veriyi ölçmek",
+            "Resmî dilde sonucu belirli kişilere iletmek."
+          ],
+          "recall": [
+            "“bilgisine sunmak” anlamındaki hedef ifadeyi yaz.",
+            "довести до сведения"
+          ],
+          "use": "Geçici yol değişikliğini kime bildireceğini yaz."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "тепловой снимок",
+          "cue": "ısıl görüntü"
+        },
+        {
+          "term": "полуденный замер",
+          "cue": "öğle ölçümü"
+        },
+        {
+          "term": "пешеходный поток",
+          "cue": "yaya akışı"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir parkta su çeşmesi denemesini değerlendiren ölçüm, ziyaretçi görüşmesi ve bakım notunu kullan. Toplam 130–185 sözcükte biri akademik özet, diğeri mahalle notu olsun. Hangi sonucu ancak yeni veriyle söyleyebileceğini belirt.",
+        "sample": "Академическое резюме. Согласно журналу обслуживания, новая питьевая точка работала двадцать дней из тридцати. В отличие от журнала, счётчик показывает число нажатий, а не время доступности. В опросе большинство согласилось сохранить точку, но исследователи разговаривали только с посетителями, которые приходили в выходные. Вместе эти сведения поддерживают продолжение пилота, однако не позволяют оценить спрос в будни. Повторное наблюдение должно отдельно учитывать часы работы и количество уникальных посетителей.\n\nСообщение для жителей. Питьевая точка пока останется у входа. Мы знаем, что ею пользовались и что посетители выходного дня хотят её сохранить. Сколько людей пользуются ею в рабочие дни, пока неизвестно. Пожалуйста, сообщайте дежурному, если кран закрыт или находится на ремонте. В следующем месяце служба сверит время работы с использованием по дням недели, а затем предложит постоянный график. Мы разместим новое объявление у входа и на сайте парка.",
+        "revision": "Özette yöntem ayrımını, kamu notunda ilk yapılabilir eylemi öne al. Hiçbirinde hafta içi talebi kesinleştirme.",
+        "criteria": [
+          "Üç kaynak neyi gösterdiğine göre ayrı tutuluyor.",
+          "Kamu mesajı kısa bir eylem öneriyor ve belirsizliği koruyor."
+        ]
+      },
+      "input": {
+        "text": "Фрагмент исследования. Тепловой снимок в июле показал, что поверхность под взрослыми деревьями была прохладнее открытого асфальта. Полуденный замер сделан в один ясный день. Температуру воздуха ни у остановки, ни во дворах не измеряли.\n\nОпрос района. Участники чаще выбирали теневую сторону улицы, но интервью проводили возле рынка. Продавцы и покупатели составили большую часть выборки. По этим ответам нельзя судить о том, как меняется пешеходный поток в школьное время.\n\nЗаписка службы ухода. Часть молодых деревьев поливали нерегулярно. На центральной улице саженцы выжили лучше, чем у канала. Это наблюдение не объясняет различие: учёт полива неполный, а почву отдельно не сравнивали.\n\nРедакционное задание. В резюме сравните назначение трёх источников. В сообщении для жителей объясните, что именно изучат в августе, и сохраните условный характер решения о посадках. Для новой проверки предложите дневные и вечерние замеры воздуха и повторный опрос на нескольких улицах.",
+        "reading": [
+          "Hangi sonuç henüz uygun değil?",
+          "Kentin hava sıcaklığının düştüğü",
+          "Gölgedeki yüzeyin daha serin olduğu",
+          "Pazar çevresinde görüşme yapıldığı",
+          "Isıl görüntü yüzeyi ölçüyor; hava ölçülmedi.",
+          "Температуру воздуха ни у остановки, ни во дворах не измеряли"
+        ],
+        "transcript": "Ведущая: В отчёте прохладнее под деревьями. Можно написать, что улица стала прохладнее для всех? Исследователь: Только если ясно сказать, что измеряли поверхность, и лишь в полдень. Интервьюер: Мои ответы касаются людей у рынка. Школьный маршрут я не описывала. Работник службы: А наш журнал объясняет, где поливали, хотя часть записей потеряна. Ведущая: Значит, в сообщении попросим жителей назвать самые жаркие места. В исследовании предложим отдельно измерять воздух около школ и рынка, утром и вечером. Исследователь: Да, и не называйте новые посадки утверждёнными, пока мы не сравним улицы.",
+        "preparation": "Araştırma cümlesi ile duyuru eylemini ayrı çıkar.",
+        "main": [
+          "Halktan ne istenecek?",
+          "En sıcak yerleri belirtmek",
+          "Yeni dikimi onaylamak",
+          "Ölçüm cihazı almak",
+          "Duyuru halkın yer bildirimini ister.",
+          "назвать самые жаркие места"
+        ],
+        "detail": [
+          "Hangi iki yerde hava ölçümü önerilir?",
+          "Okul ve pazar çevresinde",
+          "Evlerin içinde",
+          "Yalnız kanalın altında",
+          "Araştırmacılar hava ölçüm noktalarını karşılaştırıyor.",
+          "измерять воздух около школ и рынка"
+        ]
+      },
+      "retry": {
+        "text": "В списке бассейна отмечены продажи билетов. Опрос касается причин отказа от визита; проводили его только онлайн. В объявлении можно описать пилот, но нельзя утверждать, что все жители считают его успешным.",
+        "reading": [
+          "Hangi grup temsil edilmiyor olabilir?",
+          "Çevrim içi ankete katılmayanlar",
+          "Bilet alan bütün kişiler",
+          "Araştırmayı yapanlar",
+          "Örneklem yalnız çevrim içi yanıtları içeriyor.",
+          "проводили его только онлайн"
+        ],
+        "transcript": "По счётчику число открытий выросло. По журналу две двери открывали на уборку. Давайте сравним визиты при одинаковом графике, а жителям пока объясним, где работает вход.",
+        "preparation": "Sayı ve işlem amacını ayır.",
+        "main": [
+          "Karşılaştırmanın koşulu ne?",
+          "Aynı çalışma düzeni",
+          "Her defasında temizlik",
+          "Yalnız bir kapı",
+          "Gözlem aynı çalışma düzeninde olmalı.",
+          "при одинаковом графике"
+        ],
+        "detail": [
+          "Şimdilik halka ne söylenir?",
+          "Açık girişin yeri",
+          "Ziyaretçi sayısı kesin arttı",
+          "İki kapı da kapalı",
+          "Halk mesajının işlevi yer belirtmek.",
+          "где работает вход"
+        ]
+      },
+      "readingPurpose": "Her kaynakta ölçü, örneklem ve açık kalan sonuç için sütun aç.",
+      "readingUse": "Özet ve mahalle notunun ilk cümlesini iki ayrı amaç için seç.",
+      "listeningUse": "Bir araştırmacının açıklamasıyla bültenin isteğini ayır.",
+      "speaking": "Üç kaynağı kullanan araştırmacı ve mahalle sakini gibi sırayla konuş. Sakin başarı garantisi isteyince hangi kanıtın henüz gelmediğini açıkla.",
+      "genres": {
+        "reading": "araştırma, görüşme ve bakım dosyası",
+        "listening": "çok rollü araştırma editörü görüşmesi",
+        "writing": "akademik özet ve yerel bülten"
+      },
+      "recovery": {
+        "reading": "Sıcaklık türünü ve ölçüm anını bul.",
+        "main": "Halkın katkısı araştırmanın sonucu mu?",
+        "detail": "İki ölçüm konumunu birlikte dinle."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "согласно + yönelme, в отличие от + tamlayan"
+      ]
+    }
+  ]
+}

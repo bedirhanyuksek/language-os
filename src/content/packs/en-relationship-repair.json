@@ -1,0 +1,271 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.emotion",
+      "outcome": "B1.emotion",
+      "level": "B1",
+      "prerequisite": [
+        "en.story"
+      ],
+      "title": "Duyguyu, nedenini ve beklentiyi ayır",
+      "objective": "Bir yanlış anlaşılmayı anlat; duygu ifadesini karşı tarafa niyet yüklemeden somut bir istekle bağla.",
+      "situation": "İki arkadaş proje teslimini farklı anladı. Biri habersiz kaldı, diğeri mesajın ulaştığını sandı.",
+      "bridge": "I felt + sıfatla kendi duygunu söyle. I’d hoped + olay ile beklentiyi geçmişe yerleştir. Would you mind + -ing ile uygulanabilir rica yap.",
+      "models": [
+        {
+          "phrase": "I felt left out when I found out that the date had changed.",
+          "explanation": "Felt left out kendi hissini verir. When kısmı gözlemlenebilir olaya döner."
+        },
+        {
+          "phrase": "Would you mind sending me a quick message next time?",
+          "explanation": "Would you mind sonrasında -ing gelir. Rica bir sonraki eyleme odaklanır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Would you mind sonrası -ing",
+          "incorrect": "Would you mind to wait a minute?",
+          "correct": "Would you mind waiting a minute?",
+          "explanation": "Mind sonrası eylem -ing biçiminde gelir.",
+          "guided": [
+            [
+              "Would you mind ___ (call) before you arrive?",
+              "calling"
+            ],
+            [
+              "Would you mind ___ (text) me the new time?",
+              "texting"
+            ]
+          ],
+          "transfer": [
+            [
+              "Would you mind ___ (leave) a note by the door?",
+              "leaving"
+            ],
+            [
+              "Would you mind ___ (check) with me before buying the tickets?",
+              "checking"
+            ]
+          ],
+          "delayed": [
+            [
+              "Would you mind ___ (put) the time in the subject line?",
+              "putting"
+            ],
+            [
+              "Would you mind ___ (send) both of us the new address?",
+              "sending"
+            ]
+          ]
+        },
+        {
+          "label": "Gözlem ile niyet iddiasını ayır",
+          "incorrect": "“You deliberately forgot me.”",
+          "correct": "“I didn’t see my name on the list.”",
+          "explanation": "Gözlenebilen ayrıntıyı ayrı söyle. Niyet için yeni bilgi iste.",
+          "guided": [
+            [
+              "Hangisi gözlem? “The door was locked” / “They wanted me to leave”.",
+              "The door was locked"
+            ],
+            [
+              "Hangisi duygu? “I felt worried” / “You tried to scare me”.",
+              "I felt worried"
+            ]
+          ],
+          "transfer": [
+            [
+              "Hangisi uygulanabilir rica? “Could you add my name?” / “Why are you so careless?”",
+              "Could you add my name?"
+            ],
+            [
+              "Hangisi gözlem? “My phone showed no calls” / “You meant to ignore me”.",
+              "My phone showed no calls"
+            ]
+          ],
+          "delayed": [
+            [
+              "Hangisi beklenti? “I’d hoped for a call” / “You must dislike me”.",
+              "I’d hoped for a call"
+            ],
+            [
+              "Hangisi niyet varsaymadan açık soru? “Did the file come through?” / “Why did you hide it?”",
+              "Did the file come through?"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "feel left out",
+        "meaning": "kendini dışarıda kalmış hissetmek",
+        "example": "I felt left out when my name was missing.",
+        "usage": "Kendi hissini bildir. Başkasının seni dışlamayı amaçladığı sonucuna geçme.",
+        "pronunciation": "/fil left aʊt/",
+        "collocations": [
+          "feel left out of a decision",
+          "feel a bit left out"
+        ],
+        "recognize": [
+          "“feel left out” burada ne anlama gelir?",
+          "kendini dışarıda kalmış hissetmek",
+          "kendini dinç hissetmek",
+          "kararı açıklamak",
+          "Kendi hissini bildir. Başkasının seni dışlamayı amaçladığı sonucuna geçme."
+        ],
+        "recall": [
+          "“kendini dışarıda kalmış hissetmek” anlamındaki hedef ifadeyi yaz.",
+          "feel left out"
+        ],
+        "use": "Bir grup kararında neden kendini dışarıda hissettiğini açıkla."
+      },
+      "additionalWords": [
+        {
+          "term": "clear up a misunderstanding",
+          "meaning": "bir yanlış anlaşılmayı gidermek",
+          "example": "Can we clear up a misunderstanding about Friday?",
+          "usage": "Clear up burada açıklığa kavuşturmak. About ile konuyu ekle.",
+          "pronunciation": "/klɪɹ ʌp ə ˌmɪsʌndəɹˈstændɪŋ/",
+          "collocations": [
+            "clear up a misunderstanding about the plan",
+            "clear up a small misunderstanding"
+          ],
+          "recognize": [
+            "“clear up a misunderstanding” burada ne anlama gelir?",
+            "bir yanlış anlaşılmayı gidermek",
+            "yeni sorun çıkarmak",
+            "bir odayı toplamak",
+            "Clear up burada açıklığa kavuşturmak. About ile konuyu ekle."
+          ],
+          "recall": [
+            "“bir yanlış anlaşılmayı gidermek” anlamındaki hedef ifadeyi yaz.",
+            "clear up a misunderstanding"
+          ],
+          "use": "Buluşma saatindeki yanlış anlaşılmayı konuşmaya aç."
+        },
+        {
+          "term": "give someone a heads-up",
+          "meaning": "birine önceden haber vermek",
+          "example": "Could you give me a heads-up if the location changes?",
+          "usage": "Gündelik bir kalıp. İlgili kişiyi fiilden sonra yaz.",
+          "pronunciation": "/ɡɪv ˈsʌmwʌn ə hedz ʌp/",
+          "collocations": [
+            "give me a heads-up",
+            "give the team a quick heads-up"
+          ],
+          "recognize": [
+            "“give someone a heads-up” burada ne anlama gelir?",
+            "birine önceden haber vermek",
+            "birine emri geri vermek",
+            "biriyle vedalaşmak",
+            "Gündelik bir kalıp. İlgili kişiyi fiilden sonra yaz."
+          ],
+          "recall": [
+            "“birine önceden haber vermek” anlamındaki hedef ifadeyi yaz.",
+            "give someone a heads-up",
+            "give somebody a heads-up"
+          ],
+          "use": "Yarın kulüp yeri değişirse kime haber verilmesini isteyeceğini söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "mix-up",
+          "cue": "karışıklık"
+        },
+        {
+          "term": "short notice",
+          "cue": "çok az önceden bildirim"
+        }
+      ],
+      "writing": {
+        "prompt": "Bilet yeri son anda değişen bir arkadaşına 70–95 sözcüklük mesaj yaz. Bildiğin olay, duygun ve sonraki etkinlik için rica ekle.",
+        "sample": "Hi Dan, I wanted to clear up a misunderstanding about the match. I only saw the new address after I reached the old stadium. I felt frustrated because I thought we had agreed to text each other about changes. I can see that you posted it in the group chat, and perhaps I missed the alert. Would you mind sending me a quick message as well next time? I can do the same if I hear about a change first.",
+        "revision": "Niyet varsayımını kaldır. Son ricaya senin ne yapabileceğini de ekle.",
+        "criteria": [
+          "Duygu olaydan ve niyet varsayımından ayrı.",
+          "Bir sonraki olay için uygulanabilir rica var."
+        ]
+      },
+      "input": {
+        "text": "Malik: Sorry about the mix-up. I told the group at short notice that we were meeting in the hall. I thought you could see the new thread.\n\nRosa: I was still looking at the old address. I felt left out when I realised everyone else was already there. Could you text me if the location changes again? I can check the main thread before I leave as well.",
+        "reading": [
+          "Rosa bir sonraki değişiklik için ne istiyor?",
+          "Ayrı kısa mesaj",
+          "Etkinliğin iptalini",
+          "Bütün grubun ayrılmasını",
+          "Rosa yer değişirse SMS istiyor.",
+          "Could you text me if the location changes again"
+        ],
+        "transcript": "Rosa: I thought we were still meeting outside. I felt a bit left out when I found everyone inside. Malik: I’m sorry. I thought the new message went to both chats. Rosa: Would you mind sending me a text next time? Malik: I can do that. Can you tell me which of the chats you still use?",
+        "preparation": "Duygu, açıklama ve iki ricayı ayır.",
+        "main": [
+          "Rosa ne hissetti?",
+          "Dışarıda kalmış",
+          "Rahatlamış",
+          "Kızgın olduğunu açıkça söyledi",
+          "Konuşmacı dışarıda kalmış hissettiğini söyler.",
+          "felt a bit left out"
+        ],
+        "detail": [
+          "Malik neyi netleştirmek istiyor?",
+          "Hangi sohbeti kullandığı",
+          "Yeni saatin ne olduğu",
+          "Kimin çıkış yaptığı",
+          "Malik hangi sohbetin açık olduğunu soruyor.",
+          "which of the chats you still use"
+        ]
+      },
+      "retry": {
+        "text": "I had hoped we would pick a rehearsal date together. When I saw the date on the noticeboard, I was worried I could not attend. Could we check the timetable together before the next announcement?",
+        "reading": [
+          "Hangi yeni adımı öneriyor?",
+          "Duyurudan önce takvimi birlikte kontrol",
+          "Takvimi kaldırma",
+          "İlk provaya gitmeme",
+          "Together ortak kontrolü anlatır.",
+          "check the timetable together"
+        ],
+        "transcript": "— I was worried when the parcel did not arrive. — The courier sent the notice to the old address. — Could we update the contact before the next delivery? — Yes, I’ll do that today.",
+        "preparation": "Önceki olayla bir sonraki adımı ayır.",
+        "main": [
+          "Bildirim nereye gitmiş?",
+          "Eski adrese",
+          "Yeni kutuya",
+          "İş adresine",
+          "Old address eski adres.",
+          "to the old address"
+        ],
+        "detail": [
+          "Gelecekte neyi güncelleyecekler?",
+          "İletişim bilgisini",
+          "Kurye arabasını",
+          "Paket içeriğini",
+          "Update the contact iletişim bilgilerini güncellemektir.",
+          "update the contact"
+        ]
+      },
+      "readingPurpose": "Her kişinin bildiği ve sandığı bilgiyi ayrı işaretle.",
+      "readingUse": "Bir arkadaşının mesajına kısa bir çözüm öner.",
+      "listeningUse": "Kendi duygunu ve gözlediğin olayı ayrı cümleyle geri söyle.",
+      "speaking": "Arkadaşın spor salonunun saatini değiştirmiş. Bilginin nerede koptuğunu sor, ne hissettiğini söyle ve yeni bir haberleşme adımı öner.",
+      "genres": {
+        "reading": "iki taraflı mesaj dizisi",
+        "listening": "yanlış anlaşılma diyaloğu",
+        "writing": "kişisel çözüm mesajı"
+      },
+      "recovery": {
+        "reading": "İlk ve yeni kanal hangileri?",
+        "main": "Duyguyu bildiren sıfatı dinle.",
+        "detail": "Son konuşmacının takip sorusuna odaklan."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "would you mind + -ing ve duygu/olay ayrımı"
+      ]
+    }
+  ]
+}

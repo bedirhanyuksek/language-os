@@ -1,0 +1,317 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.seminar",
+      "outcome": "B2.seminar",
+      "level": "B2",
+      "prerequisite": [
+        "ru.study",
+        "ru.reports"
+      ],
+      "title": "Seminerde iddia, soru ve örneği birbirine bağla",
+      "objective": "Bir seminerde konuşmacının savını aktar, kapsama dair soru sor ve örneğin hangi iddiayı sınadığını açıkla.",
+      "situation": "Bir yetişkin kursunda prova oturumlarının yararı üzerine üç katılımcı konuşuyor.",
+      "bridge": "Автор утверждает, что … ile savı sahibine bağla. Относится ли … к … ile kapsamı sor. Это пример …, но … ile örneğin sınırını belirt.",
+      "models": [
+        {
+          "phrase": "Относится ли этот вывод к участникам вечерней группы?",
+          "explanation": "Ли, evet/hayır sorusuna odak ekler. Относиться к sonrasında yönelme gerekir."
+        },
+        {
+          "phrase": "Этот пример подтверждает, что запись полезна дома, но ничего не говорит о работе в классе.",
+          "explanation": "Что açıklanan sonucu açar. Но ile kanıtın ulaşmadığı alanı ayır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "К ile kapsam ve yönelme",
+          "incorrect": "Относится ли вывод к вечерняя группа?",
+          "correct": "Относится ли вывод к вечерней группе?",
+          "explanation": "Относиться к yapısında grubun adı yönelme hâli alır.",
+          "guided": [
+            [
+              "Относится ли правило к ___ (новый участник)?",
+              "новому участнику"
+            ],
+            [
+              "Относится ли вывод к ___ (первая группа)?",
+              "первой группе"
+            ]
+          ],
+          "transfer": [
+            [
+              "Относится ли просьба к ___ (все студенты)?",
+              "всем студентам"
+            ],
+            [
+              "Относится ли замечание к ___ (устный ответ)?",
+              "устному ответу"
+            ]
+          ],
+          "delayed": [
+            [
+              "Относится ли вывод к ___ (короткая запись)?",
+              "короткой записи"
+            ],
+            [
+              "Относится ли правило к ___ (другие курсы)?",
+              "другим курсам"
+            ]
+          ]
+        },
+        {
+          "label": "İddiayı gerçekten sınayan örnek",
+          "incorrect": "«Все успели». Пример: опоздал преподаватель.",
+          "correct": "«Все участники успели». Контрпример: один участник опоздал.",
+          "explanation": "Kişinin iddiadaki gruba ait olması ve örneğin sonuçla ilişkisi gerekir.",
+          "guided": [
+            [
+              "«Все слушатели пересдали тест». Контрпример: слушатель не пересдал / ведущий не сдал.",
+              "слушатель не пересдал"
+            ],
+            [
+              "«Никто из волонтёров не ушёл раньше». Контрпример: волонтёр ушёл раньше / директор ушёл раньше.",
+              "волонтёр ушёл раньше"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Обе группы получили записи». Контрпример: одной группе не дали запись / файл был длинный.",
+              "одной группе не дали запись"
+            ],
+            [
+              "«Каждый ученик задал вопрос». Контрпример: ученик не задал вопрос / учитель молчал.",
+              "ученик не задал вопрос"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Все записи прослушали дома». Контрпример: одну запись слушали в классе / файл был новым.",
+              "одну запись слушали в классе"
+            ],
+            [
+              "«Никто из группы не выбрал утро». Контрпример: участник выбрал утро / школа открылась утром.",
+              "участник выбрал утро"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "уточнить границы вывода",
+        "meaning": "sonucun sınırlarını netleştirmek",
+        "example": "Мне хотелось бы уточнить границы вывода.",
+        "usage": "Hangi grup, zaman veya koşula genellenebileceğini sor.",
+        "pronunciation": "уточни́ть грани́цы вы́вода",
+        "collocations": [
+          "уточнить границы вывода",
+          "оговорить границы вывода"
+        ],
+        "recognize": [
+          "“уточнить границы вывода” burada ne anlama gelir?",
+          "sonucun sınırlarını netleştirmek",
+          "sonucu ezberlemek",
+          "oturumu iptal etmek",
+          "Hangi grup, zaman veya koşula genellenebileceğini sor."
+        ],
+        "recall": [
+          "“sonucun sınırlarını netleştirmek” anlamındaki hedef ifadeyi yaz.",
+          "уточнить границы вывода"
+        ],
+        "use": "Bir gece kursu örneğinin hangi öğrencilere uzandığını sor."
+      },
+      "additionalWords": [
+        {
+          "term": "привести контрпример",
+          "meaning": "karşı örnek vermek",
+          "example": "Позвольте привести контрпример из учебной группы.",
+          "usage": "İddianın kapsadığı ama sonucu karşılamayan örnek seç.",
+          "pronunciation": "привести́ контрприме́р",
+          "collocations": [
+            "привести убедительный контрпример",
+            "попросить привести контрпример"
+          ],
+          "recognize": [
+            "“привести контрпример” burada ne anlama gelir?",
+            "karşı örnek vermek",
+            "iddia sahibini değiştirmek",
+            "kanıtı yutmak",
+            "İddianın kapsadığı ama sonucu karşılamayan örnek seç."
+          ],
+          "recall": [
+            "“karşı örnek vermek” anlamındaki hedef ifadeyi yaz.",
+            "привести контрпример"
+          ],
+          "use": "Bir “herkes” iddiasını sınayan örnek kur."
+        },
+        {
+          "term": "развить мысль",
+          "meaning": "düşünceyi geliştirmek",
+          "example": "Я хотел бы развить вашу мысль о подготовке.",
+          "usage": "Önce önceki konuşmacının düşüncesine atıf yap.",
+          "pronunciation": "разви́ть мысль",
+          "collocations": [
+            "развить мысль коллеги",
+            "развить мысль о способе проверки"
+          ],
+          "recognize": [
+            "“развить мысль” burada ne anlama gelir?",
+            "düşünceyi geliştirmek",
+            "görüşmeyi durdurmak",
+            "soruyu ezberlemek",
+            "Önce önceki konuşmacının düşüncesine atıf yap."
+          ],
+          "recall": [
+            "“düşünceyi geliştirmek” anlamındaki hedef ifadeyi yaz.",
+            "развить мысль"
+          ],
+          "use": "Başka bir görüşe tek yeni adım öner."
+        },
+        {
+          "term": "проверить на практике",
+          "meaning": "uygulamada sınamak",
+          "example": "Этот способ стоит проверить на практике.",
+          "usage": "Hangi koşulda ve kiminle çalışacağını belirt.",
+          "pronunciation": "прове́рить на пра́ктике",
+          "collocations": [
+            "проверить идею на практике",
+            "проверить правило на практике"
+          ],
+          "recognize": [
+            "“проверить на практике” burada ne anlama gelir?",
+            "uygulamada sınamak",
+            "sadece duymak",
+            "tekrar etmek",
+            "Hangi koşulda ve kiminle çalışacağını belirt."
+          ],
+          "recall": [
+            "“uygulamada sınamak” anlamındaki hedef ifadeyi yaz.",
+            "проверить на практике"
+          ],
+          "use": "Yeni geribildirim kuralını farklı bir grupta nasıl sınayacağını söyle."
+        },
+        {
+          "term": "сделать предварительный вывод",
+          "meaning": "ön sonuç çıkarmak",
+          "example": "Пока можно сделать лишь предварительный вывод.",
+          "usage": "Belirsiz sonuç hangi ek bilgiyle değişebilir, söyle.",
+          "pronunciation": "сде́лать предварительный вы́вод",
+          "collocations": [
+            "сделать осторожный предварительный вывод",
+            "обсудить предварительный вывод"
+          ],
+          "recognize": [
+            "“сделать предварительный вывод” burada ne anlama gelir?",
+            "ön sonuç çıkarmak",
+            "kesin sonuç ilan etmek",
+            "kayıt olmak",
+            "Belirsiz sonuç hangi ek bilgiyle değişebilir, söyle."
+          ],
+          "recall": [
+            "“ön sonuç çıkarmak” anlamındaki hedef ifadeyi yaz.",
+            "сделать предварительный вывод"
+          ],
+          "use": "Bir günlük ölçümün neden ön sonuç olduğunu açıkla."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "открытая репетиция",
+          "cue": "açık prova"
+        },
+        {
+          "term": "посещаемость",
+          "cue": "katılım sıklığı"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir yetişkin eğitim seminerinde 110–145 sözcüklük konuşma notu yaz. Bulguya atıf yap, kapsam sorusu sor, karşı örneği ve sonraki ölçüm önerini bağla.",
+        "sample": "Автор доклада утверждает, что запись репетиции помогла участникам быстрее подготовиться дома. Этот вывод основан на ответах утренней группы. Относится ли он к тем, кто приходит после работы? Я хотел бы привести контрпример. Одна участница вечерней группы получила запись, но не смогла открыть её на телефоне. Она готовилась по бумажному плану и закончила вовремя. Этот случай не показывает, что запись никому не нужна. Он показывает, почему нельзя считать её единственным объяснением. Чтобы проверить результат на практике, предлагаю дать обеим группам одинаковое время и сравнить доступ к записи отдельно от скорости подготовки. Тогда нам будет проще понять, помогает ли сам материал или возможность заниматься в удобное время. Пока это предварительный вывод, а не основание отменять бумажные планы.",
+        "revision": "Karşı örneğin hangi iddiayı sınadığını kesinleştir. Bir neden ile bir ölçümü ayrı yaz.",
+        "criteria": [
+          "Sav, soru ve örnek aynı iddia etrafında.",
+          "Yeni ölçüm önerisi örneğin sınırlarını koruyor."
+        ]
+      },
+      "input": {
+        "text": "Записка для семинара. Открытая репетиция завершилась утром. После неё восемь слушателей ответили, что дома быстрее нашли нужный фрагмент. Все они учатся утром. Вечерней группе запись отправили позже. Трое ответили, что ссылка не открывалась, а двое пользовались бумажным планом. В журнале отмечена посещаемость, но время подготовки никто не записывал.\n\nВедущая просит обсудить два объяснения. Возможно, помогла сама запись. Возможно, утренняя группа раньше получила любой материал и успела вернуться к нему дважды. Первый докладчик сравнит сроки выдачи. Второй проверит, кому удалось открыть ссылку. Третий предложит новое занятие с одинаковым временем подготовки. Задача слушателей — подобрать вопрос о границах вывода и пример, который ещё не рассмотрели. Решение о замене бумажного плана сегодня не принимается.\n\nПриложение к записке. Преподаватель утренней группы помнит, что раздал ещё и список ключевых слов. Вечером вместо списка на доске оставили схему. Если участники искали нужный фрагмент по словам, результаты могли зависеть от списка, а не от записи. Участники семинара могут предложить сравнение, при котором обе группы получат одни и те же дополнительные материалы. Тогда можно будет спросить, какую работу выполняла сама запись.",
+        "reading": [
+          "Hangi karşılaştırma eksik?",
+          "Aynı hazırlık süresinde iki grup",
+          "İki farklı kurumun binası",
+          "Açılış saatleri",
+          "Süre eşit olmadığından etkiler ayrışmıyor.",
+          "с одинаковым временем подготовки"
+        ],
+        "transcript": "Ведущая: Запись помогла всем, как вы считаете? Докладчик: Пока у нас ответы восьми слушателей утром. Коллега: Относится ли этот вывод к вечерней группе? Один участник подготовился по плану, хотя ссылка не открылась. Докладчик: Это хороший контрпример к слову «всем». Но он не исключает, что запись полезна остальным. Ведущая: Как проверить? Коллега: Сначала выдадим материалы одновременно. Затем отдельно спросим, сколько людей смогли открыть ссылку и сколько времени ушло на подготовку. Докладчик: И сохраним бумажный план до следующего обсуждения. Ведущая: А список ключевых слов был у всех? Докладчик: Нет, только утром. Коллега: Тогда в следующем занятии дадим обеим группам один список. Иначе мы снова сравним не только запись. Ведущая: Запишу это как условие проверки, а не как доказательство эффекта.",
+        "preparation": "Örnek, ölçüm önerisi ve geçici kararı ayır.",
+        "main": [
+          "Karşı örnek hangi sözcüğü sorguluyor?",
+          "Всем",
+          "Утром",
+          "Отдельно",
+          "Örnek herkes iddiasını sınar.",
+          "к слову «всем»"
+        ],
+        "detail": [
+          "İlk değişiklik ne olacak?",
+          "Materyaller aynı anda verilecek",
+          "Kâğıt plan kaldırılacak",
+          "Yalnız sabah grubu sorulacak",
+          "Yeni testin ilk koşulu aynı dağıtım zamanı.",
+          "выдадим материалы одновременно"
+        ]
+      },
+      "retry": {
+        "text": "Ведущий: В коротком курсе анкета заполнялась за три минуты. Эта группа уже знала термины. У новичков время отдельно не измеряли.",
+        "reading": [
+          "Hangi grup için ölçüm açık?",
+          "Yeni başlayanlar",
+          "Kısa kursu verenler",
+          "Terimleri bilenler",
+          "Новички ölçülmemiş.",
+          "У новичков время отдельно не измеряли"
+        ],
+        "transcript": "Коллега: Пример с одним классом не доказывает, что правило работает везде. Давайте проверим его на двух новых курсах и отдельно запишем ошибки утром и вечером.",
+        "preparation": "Örnek ve sonraki ölçümü ayır.",
+        "main": [
+          "Kural nerede sınanacak?",
+          "İki yeni kursta",
+          "Yalnız eski sınıfta",
+          "Toplantı salonunda",
+          "Yeni kurslar seçiliyor.",
+          "на двух новых курсах"
+        ],
+        "detail": [
+          "Ne ayrı kaydedilecek?",
+          "Sabah ve akşam hataları",
+          "Katılımcı fiyatları",
+          "Ders adları",
+          "Hatalar zamanına göre kaydedilecek.",
+          "ошибки утром и вечером"
+        ]
+      },
+      "readingPurpose": "Sav, veri, açık grup ve yöntem önerisini ayrı çıkar.",
+      "readingUse": "Farklı bir ders değerlendirmesinde üç rolün sorusunu yaz.",
+      "listeningUse": "Konuşmacının sonuçtan geri çekildiği noktayı tekrar açıkla.",
+      "speaking": "Yeni bir seminerde konuşmacının genellemesini duy. Önce kapsamı sor, sonra karşı örneği ve ölçülebilir yeni denemeyi öner. Önceki kursta kullanılan уточнить время veya принести с собой kalıplarından biriyle uygulama ayrıntısını da sor.",
+      "genres": {
+        "reading": "seminer hazırlık notu",
+        "listening": "üç rollü araştırma tartışması",
+        "writing": "söz alma notu"
+      },
+      "recovery": {
+        "reading": "Kimin hangi saatte kaynak aldığını işaretle.",
+        "main": "Всем genellemesini sınayan örneği bul.",
+        "detail": "Сначала sonrasındaki yeni koşulu dinle."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "относится ли … к + yönelme; что ile savı aktarma"
+      ]
+    }
+  ]
+}

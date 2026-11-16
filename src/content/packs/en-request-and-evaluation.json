@@ -1,0 +1,297 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.genres",
+      "outcome": "B2.genres",
+      "level": "B2",
+      "prerequisite": [
+        "en.report",
+        "en.intercultural"
+      ],
+      "title": "Bir olayı talep ve değerlendirme olarak yaz",
+      "objective": "Aynı olayın doğrulanmış kısmını bir resmî yazıda çözüm talebine, değerlendirmede kanıta dayalı öneriye dönüştür.",
+      "situation": "Bir pazarın kayıt masası yer değiştirdi. Katılımcılar, yeni yerin duyurulması ve bekleme süresinin değerlendirilmesi için iki ayrı metin hazırlıyor.",
+      "bridge": "Talepte I would appreciate it if … ile tek eylem iste. Değerlendirmede Although … ile karşı kanıtı koru. Duyulan tahmini kaynak cümlesine bağla.",
+      "models": [
+        {
+          "phrase": "I would appreciate it if you could confirm where the desk will be on Saturday.",
+          "explanation": "It, if yan tümcesine işaret eder. Could ile nazik ve yanıtlanabilir bir talep oluşur."
+        },
+        {
+          "phrase": "Although the queue was shorter at noon, the evening wait was not measured.",
+          "explanation": "Although, karşı bilgiyi ana iddiayla birlikte tutar. İki yargı arasına ayrıca but ekleme."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Kibar talebin yapısını kur",
+          "incorrect": "I would appreciate if you can confirm the route.",
+          "correct": "I would appreciate it if you could confirm the route.",
+          "explanation": "Bu modelde appreciate + it if + özne + could. İstenen eylemi açıkça yaz.",
+          "guided": [
+            [
+              "Resmî istek: I would appreciate ___ if you could send the timetable. (it / that)",
+              "it"
+            ],
+            [
+              "I would appreciate it if you ___ confirm the date. (could / to)",
+              "could"
+            ]
+          ],
+          "transfer": [
+            [
+              "I would appreciate it if the office could ___ (reply / replying) in writing.",
+              "reply"
+            ],
+            [
+              "I would appreciate ___ if the manager could clarify the fee. (it / to)",
+              "it"
+            ]
+          ],
+          "delayed": [
+            [
+              "I would appreciate it if you could ___ (check / checked) the entrance before Friday.",
+              "check"
+            ],
+            [
+              "I would appreciate it if someone could ___ (share / shares) the revised notice.",
+              "share"
+            ]
+          ]
+        },
+        {
+          "label": "Tavizden sonra karşı bilgiyi koru",
+          "incorrect": "Although the sign was clear, but two people missed it.",
+          "correct": "Although the sign was clear, two people missed it.",
+          "explanation": "Although yan tümcesi ana tümceye bağlanır. Ana tümcede but eklemek gerekmez.",
+          "guided": [
+            [
+              "Karşıtlık: ___ the desk moved, the fee stayed the same. (Although / Therefore)",
+              "Although"
+            ],
+            [
+              "Although the bus was late, the event started ___ time. (on / at)",
+              "on"
+            ]
+          ],
+          "transfer": [
+            [
+              "___ the reply arrived, it did not answer the question. (Although / Because) Karşıtlık.",
+              "Although"
+            ],
+            [
+              "Although the form was easy, its availability was ___ (limited / unlimited). It worked for one hour only.",
+              "limited"
+            ]
+          ],
+          "delayed": [
+            [
+              "Karşıtlık: ___ the first group finished, the second still needed help. (Although / Since)",
+              "Although"
+            ],
+            [
+              "Although the route looked clear, it ___ marked at the corner. (was not / will) Geçmiş olumsuz.",
+              "was not"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "put in a request",
+        "meaning": "talepte bulunmak",
+        "example": "We put in a request for a clearer sign.",
+        "usage": "Put in a request for bir şey talep etmeyi anlatır. Resmî metinde submit a request de kullanılabilir.",
+        "pronunciation": "/pʊt ɪn ə ɹɪˈkwest/",
+        "collocations": [
+          "put in a request for help",
+          "submit a request in writing"
+        ],
+        "recognize": [
+          "“put in a request” burada ne anlama gelir?",
+          "talepte bulunmak",
+          "isteği iptal etmek",
+          "bir ismi kaydetmek",
+          "Put in a request for bir şey talep etmeyi anlatır. Resmî metinde submit a request de kullanılabilir."
+        ],
+        "recall": [
+          "“talepte bulunmak” anlamındaki hedef ifadeyi yaz.",
+          "put in a request"
+        ],
+        "use": "Bir binanın yazılı yönlendirmesi için talepte bulun."
+      },
+      "additionalWords": [
+        {
+          "term": "follow up in writing",
+          "meaning": "yazılı olarak takip etmek",
+          "example": "I will follow up in writing after the call.",
+          "usage": "Konuşma sonrasında aynı konunun kayda alınması veya yeniden sorulması.",
+          "pronunciation": "/ˈfɑloʊ ʌp ɪn ˈɹaɪtɪŋ/",
+          "collocations": [
+            "follow up in writing after a call",
+            "follow up on a request"
+          ],
+          "recognize": [
+            "“follow up in writing” burada ne anlama gelir?",
+            "yazılı olarak takip etmek",
+            "ilk duyuruyu okumak",
+            "sözlü olarak iptal etmek",
+            "Konuşma sonrasında aynı konunun kayda alınması veya yeniden sorulması."
+          ],
+          "recall": [
+            "“yazılı olarak takip etmek” anlamındaki hedef ifadeyi yaz.",
+            "follow up in writing"
+          ],
+          "use": "Telefonla yanıt alamadığın bir istek için sonraki adımı söyle."
+        },
+        {
+          "term": "a point of comparison",
+          "meaning": "karşılaştırma noktası",
+          "example": "The previous Saturday gives us a point of comparison.",
+          "usage": "İki durumu ortak ölçütle karşılaştırırken dayanak.",
+          "pronunciation": "/ə pɔɪnt əv kəmˈpæɹəsən/",
+          "collocations": [
+            "use a point of comparison",
+            "provide a point of comparison"
+          ],
+          "recognize": [
+            "“a point of comparison” burada ne anlama gelir?",
+            "karşılaştırma noktası",
+            "kesin neden",
+            "açılış saatleri",
+            "İki durumu ortak ölçütle karşılaştırırken dayanak."
+          ],
+          "recall": [
+            "“karşılaştırma noktası” anlamındaki hedef ifadeyi yaz.",
+            "a point of comparison"
+          ],
+          "use": "Bir sırayı başka hangi gün veya ölçütle karşılaştıracağını söyle."
+        },
+        {
+          "term": "draw attention to",
+          "meaning": "dikkat çekmek",
+          "example": "The notice draws attention to the side entrance.",
+          "usage": "To ardından kişilerin fark etmesini istediğin ayrıntı gelir.",
+          "pronunciation": "/dɹɔ əˈtenʃən tu/",
+          "collocations": [
+            "draw attention to a change",
+            "draw attention to a limitation"
+          ],
+          "recognize": [
+            "“draw attention to” burada ne anlama gelir?",
+            "dikkat çekmek",
+            "değişikliği saklamak",
+            "dilekçe yazmak",
+            "To ardından kişilerin fark etmesini istediğin ayrıntı gelir."
+          ],
+          "recall": [
+            "“dikkat çekmek” anlamındaki hedef ifadeyi yaz.",
+            "draw attention to"
+          ],
+          "use": "Gündüz ve akşam arasındaki veri farkına dikkat çek."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "temporary sign",
+          "cue": "geçici tabela"
+        },
+        {
+          "term": "stallholder",
+          "cue": "tezgâh sahibi"
+        },
+        {
+          "term": "logged times",
+          "cue": "kayda alınmış süreler"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir spor merkezinin yeni giriş düzeni hakkında 125–165 sözcük yaz. Önce sorumluya bilgi isteyen resmî mesaj, sonra üyeler için olayın kanıt ve sınırını içeren değerlendirme hazırla.",
+        "sample": "Dear centre manager, I am writing about the evening entrance. Two members reached the side door on Monday and were unable to enter. Could you confirm which door will be staffed this Thursday and where visitors can ask for help? I would appreciate it if you could post the answer before our session. Kind regards, Deniz.\n\nMember bulletin: The trial brought visitors closer to the changing rooms once they were inside. Although the side route was shorter, two people waited outside and had to call the main desk. The log covers one evening, and it does not tell us how many people turned away. We recommend a temporary sign and one staff member at the door before the next trial. Please tell the desk if you cannot enter so that the next review includes unsuccessful visits.",
+        "revision": "İki metindeki ilk cümlenin muhatabına hizmet ettiğinden emin ol. Gözlemi, bilinmeyen bilgiyi ve öneriyi ayrı bırak.",
+        "criteria": [
+          "Talep yanıtlanabilir ve muhataba uygun.",
+          "Değerlendirme dayanak, sınırlama ve öneriyi ayırır."
+        ]
+      },
+      "input": {
+        "text": "Stallholder email. The West Street market has moved its arrival desk from the gate to the library entrance. I saw the change on a temporary sign after I had waited at the gate for ten minutes. Could you confirm where I should register next week? Some stallholders use the gate because it is close to the unloading area. I would appreciate it if you could put the new location in the booking email.\n\nMarket newsletter. Although lunchtime queues were shorter, the stallholder’s account shows that the move caused confusion before ten. The logged times include only people who reached the new desk. They give us a point of comparison for midday, but they cannot show how often somebody waited at the old entrance and left. Next week two volunteers will record questions at the gate and at the desk. The organisers have not decided whether to keep the relocation. They will report what each volunteer observes, how long the temporary signs remain visible, and what visitors who use the unloading bays say about the change. The booking team will also note whether putting the instructions in the confirmation email leads to fewer calls.",
+        "reading": [
+          "What would help the market assess confusion at both locations?",
+          "Recording questions at the gate and the new desk",
+          "Only measuring people who arrived by noon",
+          "Moving the unloading area before collecting data",
+          "İki noktadaki gözlem ilk kaydın boşluğunu kapatabilir.",
+          "record questions at the gate and at the desk"
+        ],
+        "transcript": "Host: The newsletter says the lunchtime queue was shorter. Did the new desk save everyone time? Stallholder: It did not save me time. I went to the old gate first. I would appreciate it if the email could mention the library entrance next week. Volunteer: We can ask the booking team to add it. But some people do not read email on market day. Host: What will you do at the gate? Volunteer: Keep a sign there and write down the questions. We will compare that list with the questions at the new desk. We will not use the shorter queue as the only measure. Stallholder: Could you also check the unloading bay? People may look only at the gate from there. Host: Good point. We can add that location to the observation sheet without changing the market layout yet.",
+        "preparation": "Talep edilen değişikliği ve ölçüm planını ayrı çıkar.",
+        "main": [
+          "What does the stallholder ask the booking team to change?",
+          "Mention the library entrance in the email",
+          "Cancel next week’s market",
+          "Report payment figures",
+          "Talep kayıt e-postasına yeni konumu eklemek.",
+          "email could mention the library entrance"
+        ],
+        "detail": [
+          "What will the volunteer keep at the old gate?",
+          "A sign and a record of questions",
+          "The old booking desk",
+          "The payment register",
+          "Gönüllü tabela bırakıp soruları yazacak.",
+          "Keep a sign there and write down the questions"
+        ]
+      },
+      "retry": {
+        "text": "Library feedback. The room opened ten minutes later than planned. Although the caretaker found a key, two visitors left before the door opened. Please confirm who will hold the spare key on Friday.",
+        "reading": [
+          "Which claim can the report verify?",
+          "Two visitors left before opening",
+          "The room will open late on Friday",
+          "The caretaker lost the key",
+          "Bu kaynak sadece gözlenen ayrılmayı bildirir.",
+          "two visitors left before the door opened"
+        ],
+        "transcript": "I am calling about the late train. I will follow up in writing to ask who will pay the replacement fare. We know the late train missed the connection, but we do not know how many passengers bought a new ticket.",
+        "preparation": "Talep ve belirsiz kalan veriyi ayır.",
+        "main": [
+          "What will the letter ask about?",
+          "Who will pay the replacement fare",
+          "Why the station closed",
+          "When the driver arrived",
+          "İstenen yanıt ücretin kimin tarafından ödeneceği.",
+          "who will pay the replacement fare"
+        ],
+        "detail": [
+          "What is still unknown?",
+          "How many passengers bought a new ticket",
+          "Whether the train missed the connection",
+          "Whether the train was late",
+          "Yolcu sayısı bilinmiyor.",
+          "how many passengers bought a new ticket"
+        ]
+      },
+      "readingPurpose": "Metinlerin muhatabını ve her metnin hangi bilgiyi neden içerdiğini karşılaştır.",
+      "readingUse": "Bir ulaştırma olayı için aynı bilgiden iki farklı açılış yaz.",
+      "listeningUse": "Gözlemi tahmin gibi, tahmini kesin bilgi gibi anlatmadan geri söyle.",
+      "speaking": "Yeni bir konser mekânında erişim sorununu önce yetkiliye talep, sonra üyeye değerlendirme olarak aktar. Partner ilk veriyi bütün ziyaretçilere genellerse sınırı düzelt.",
+      "genres": {
+        "reading": "resmî talep ve topluluk bülteni",
+        "listening": "çok rollü pazar görüşmesi",
+        "writing": "talep ve değerlendirme yazısı"
+      },
+      "recovery": {
+        "reading": "Talep ile ölçüm planını ayrı satıra yaz.",
+        "main": "Konuşmacının e-postaya eklenmesini istediği yeri dinle.",
+        "detail": "Tek ölçüm yeterli görülüyor mu?"
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "appreciate it if + could; although ile taviz"
+      ]
+    }
+  ]
+}

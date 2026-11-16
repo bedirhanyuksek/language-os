@@ -1,0 +1,247 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.feelings-story",
+      "outcome": "B1.feelings-story",
+      "level": "B1",
+      "prerequisite": [
+        "ru.account",
+        "ru.future"
+      ],
+      "title": "Beklenti ve duygu değişimini bir hikâyede anlat",
+      "objective": "İlk beklenti, süre giden hazırlık, dönüm noktası ve his değişimini geçmişte bağlantılı anlat.",
+      "situation": "Bir belgesel gösterimine yetişeceğini sanıyorsun. Yolda bir durak kapanınca kaygılanıyorsun, ama o gün farklı bir gelişme oluyor.",
+      "bridge": "Я думал(а), что … ile eski beklentiyi söyle. Сначала ve потом ile olay sırasını kur. Волновался ve успокоился biçimleri durum ile değişimi ayırır.",
+      "models": [
+        {
+          "phrase": "Я думала, что успею к началу, но автобус остановился.",
+          "explanation": "Geçmişten aktarılan beklentide Rusça успею biçimi kalabilir. Остановился dönüm noktasıdır."
+        },
+        {
+          "phrase": "Я долго волновалась, но успокоилась, когда увидела знакомого.",
+          "explanation": "Волновалась süren duygu, успокоилась duruma geçiş. Успоко́илась vurgusunu dinle."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Duygunun süresi ve değişimi",
+          "incorrect": "Я два часа успокоилась, а потом снова волновалась.",
+          "correct": "Я два часа волновалась, а потом успокоилась.",
+          "explanation": "Bu bağlamda süreç için волноваться, değişim için успокоиться.",
+          "guided": [
+            [
+              "Аня всё утро ___ перед экзаменом. (волновалась / успокоилась)",
+              "волновалась"
+            ],
+            [
+              "Борис наконец ___, когда увидел друга. (волновался / успокоился)",
+              "успокоился"
+            ]
+          ],
+          "transfer": [
+            [
+              "Дети долго ___, пока шёл дождь. (волновались / успокоились)",
+              "волновались"
+            ],
+            [
+              "Мы наконец ___, когда нашли выход. (волновались / успокоились)",
+              "успокоились"
+            ]
+          ],
+          "delayed": [
+            [
+              "Утром Олег всё ещё ___ из-за звонка. (волновался / успокоился)",
+              "волновался"
+            ],
+            [
+              "Она наконец ___, когда поезд тронулся. (волновалась / успокоилась)",
+              "успокоилась"
+            ]
+          ]
+        },
+        {
+          "label": "İlk gelecek beklentisi ve sonraki olay",
+          "incorrect": "Я думал, что успел завтра.",
+          "correct": "Я думал, что успею завтра.",
+          "explanation": "Kişinin o anda henüz gerçekleşmemiş beklentisini gelecek biçimiyle aktar.",
+          "guided": [
+            [
+              "Я думал, что ___ (успею / успел) к началу, но опоздал.",
+              "успею"
+            ],
+            [
+              "Мы думали, что ___ (поедем / поехали) вечером, но автобус отменили.",
+              "поедем"
+            ]
+          ],
+          "transfer": [
+            [
+              "Она думала, что гости ___ (придут / пришли) позже, но они были уже у двери.",
+              "придут"
+            ],
+            [
+              "Ты думала, что ___ (увидишь / увидела) его вечером, а он пришёл утром.",
+              "увидишь"
+            ]
+          ],
+          "delayed": [
+            [
+              "Они думали, что ___ (закончили / закончат) к обеду, но закончили к вечеру.",
+              "закончат"
+            ],
+            [
+              "Я думала, что ___ (смогу / могла) прийти на следующий день, но расписание изменилось.",
+              "смогу"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "успеть к началу",
+        "meaning": "başlangıca yetişmek",
+        "example": "Мы хотели успеть к началу сеанса.",
+        "usage": "К + yönelme, yetişilecek anı belirtir.",
+        "pronunciation": "успе́ть к нача́лу",
+        "collocations": [
+          "успеть к началу урока",
+          "едва успеть к началу"
+        ],
+        "recognize": [
+          "“успеть к началу” burada ne anlama gelir?",
+          "başlangıca yetişmek",
+          "başlangıcı ertelemek",
+          "etkinliği bitirmek",
+          "К + yönelme, yetişilecek anı belirtir."
+        ],
+        "recall": [
+          "“başlangıca yetişmek” anlamındaki hedef ifadeyi yaz.",
+          "успеть к началу"
+        ],
+        "use": "Bir gösterime yetişip yetişemeyeceğini ve nedenini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "почувствовать облегчение",
+          "meaning": "rahatlama hissetmek",
+          "example": "Я почувствовала облегчение, когда автобус приехал.",
+          "usage": "Duygudaki değişimi ve gerçekleştiği anı bildirir.",
+          "pronunciation": "почу́вствовать облегче́ние",
+          "collocations": [
+            "почувствовать огромное облегчение",
+            "вдруг почувствовать облегчение"
+          ],
+          "recognize": [
+            "“почувствовать облегчение” burada ne anlama gelir?",
+            "rahatlama hissetmek",
+            "yolu kaybetmek",
+            "sinirlenmek",
+            "Duygudaki değişimi ve gerçekleştiği anı bildirir."
+          ],
+          "recall": [
+            "“rahatlama hissetmek” anlamındaki hedef ifadeyi yaz.",
+            "почувствовать облегчение"
+          ],
+          "use": "Başka bir olayda kaygının hangi anda geçtiğini anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "показ",
+          "cue": "gösterim"
+        },
+        {
+          "term": "развязка",
+          "cue": "sonuç bölümü"
+        }
+      ],
+      "writing": {
+        "prompt": "İlk kez gittiğin bir etkinlikte beklentinin değiştiği bir anı 65–95 sözcükle anlat. İlk planı, durumu değiştiren olayı ve o anda değişen duyguyu ayrı ver.",
+        "sample": "Я думала, что успею к началу показа. Я поехала на автобусе, но он долго стоял у моста. Сначала я волновалась: у меня не было номера организатора. Потом женщина рядом показала мне сообщение: показ перенесли на полчаса. Я успокоилась и даже помогла ей найти нужный зал. Когда мы вошли, свет ещё не выключили. Я почувствовала облегчение и поняла, что иногда лучше спросить другого пассажира, чем молча смотреть на часы.",
+        "revision": "İlk beklentiden sonra dönüm noktasını görünür yap. Son duygunun hangi gözlemden doğduğunu belirt.",
+        "criteria": [
+          "Beklenti, olay ve duygu değişimi ayrı.",
+          "Süren duygu ve değişim uygun görünüşle aktarılır."
+        ]
+      },
+      "input": {
+        "text": "Я думала, что опоздаю на показ. Остановку закрыли, и автобус ушёл по другой улице. Пока я искала новый маршрут, мне написал знакомый: начало перенесли. Я успокоилась. Сама развязка фильма меня удивила меньше, чем эта дорога.",
+        "reading": [
+          "Kaygıyı hangi bilgi bitirdi?",
+          "Başlangıcın ertelendiğini öğrendi",
+          "Otobüs durakta kaldı",
+          "Film iptal edildi",
+          "Yeni saat yetişme ihtimalini değiştirir.",
+          "начало перенесли"
+        ],
+        "transcript": "— Ты успела на показ? — Да, хотя сначала волновалась. Я думала, что опоздаю, когда закрыли остановку. — Что помогло? — Друг написал, что начало перенесли. Я поехала прямо в кинотеатр и успела купить билет.",
+        "preparation": "Olay, duygu ve düzenleme sırasını dinle.",
+        "main": [
+          "İlk kaygının nedeni ne?",
+          "Durağın kapanması",
+          "Arkadaşın gelmemesi",
+          "Bilet fiyatı",
+          "Durak kapanınca geç kalacağını sandı.",
+          "когда закрыли остановку"
+        ],
+        "detail": [
+          "Sonunda ne yaptı?",
+          "Bilet almaya yetişti",
+          "Eve döndü",
+          "Arkadaşına bilet bıraktı",
+          "Успела + mastar yetişti demek.",
+          "успела купить билет"
+        ]
+      },
+      "retry": {
+        "text": "Перед концертом я волновался. Я думал, что забуду слова. Потом публика начала петь вместе со мной, и я успокоился.",
+        "reading": [
+          "Duyguyu ne değiştirdi?",
+          "Dinleyiciler de söyledi",
+          "Konser iptal oldu",
+          "Sözleri unuttu",
+          "Birlikte söyleme dönüm noktası.",
+          "публика начала петь вместе"
+        ],
+        "transcript": "Я думала, что встреча будет трудной. У входа увидела старую подругу. Мы поговорили до начала, и я почувствовала облегчение.",
+        "preparation": "Süren duygu ve ilk rahatlama anını ayır.",
+        "main": [
+          "Kapıda kimi gördü?",
+          "Eski arkadaşını",
+          "Öğretmeni",
+          "Biletçiyi",
+          "Подругу eski arkadaşı.",
+          "старую подругу"
+        ],
+        "detail": [
+          "Ne zaman konuştular?",
+          "Başlamadan",
+          "Sonrasında",
+          "Dün akşam",
+          "До начала önce demek.",
+          "поговорили до начала"
+        ]
+      },
+      "readingPurpose": "Bir zaman çizgisinde ilk plan ile duygu değişimini ayrı yerleştir.",
+      "readingUse": "Farklı bir konuşmada aynı olayı yeni kişinin gözünden yeniden anlat.",
+      "listeningUse": "İlk kaygıyı ve çözümü bir arkadaşına söyle.",
+      "speaking": "Bir yarışmaya geç kalacağını sandığın anı anlat. Yola çıkış için önceki dersten поехать biçimini hatırla. Partner yeni bir gelişme ekleyince süreyi veya saati düzelt ve duygunun nerede değiştiğini söyle.",
+      "genres": {
+        "reading": "kişisel gösterim anısı",
+        "listening": "arkadaş sohbeti",
+        "writing": "zaman çizgili duygu anlatısı"
+      },
+      "recovery": {
+        "reading": "Son saat bilgisini bul.",
+        "main": "Волновалась çıktığında hemen ardından verilen olayı dinle.",
+        "detail": "Успела sonrasındaki eylemi ayır."
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "geçmişte aktarılan gelecek; duygu durumunda görünüş"
+      ]
+    }
+  ]
+}

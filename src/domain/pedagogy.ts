@@ -56,10 +56,19 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
     ]
   }
   if (phase === 'revision') return p.revision ? pending(p.revision, objective, 'Yazını yeniden düzenle') : []
-  if (phase === 'vocabulary') return p.vocabulary.flatMap(({ cardId, recognize, recall, use }) => {
-    const label = lesson.vocabulary.find(({ id }) => id === cardId)!.term
-    return [...pending(recognize, cardId, label), ...pending(recall, cardId, 'Aktif hatırlama'), ...pending(use, cardId, 'Cümle içinde kullanım')]
-  })
+  if (phase === 'vocabulary') {
+    const pendingCards = p.vocabulary.filter(({ use }) => !previous.some(({ exerciseId }) => exerciseId === use.id))
+    // Repeated misses and cards awaiting a first review represent unfinished work.
+    const unfinished = state.reviews.filter(({ lastResult }) => lastResult !== 'remembered').length
+    // Anchor the batch to saved activity so midnight or a new due time cannot change an open form.
+    const lastActivity = state.activity.at(-1)?.at ?? state.placementAt
+    const due = lastActivity ? state.reviews.filter(({ dueAt }) => dueAt <= lastActivity).length : 0
+    const batchSize = Math.max(unfinished, due) >= state.profile.minutes ? 1 : 3
+    return pendingCards.slice(0, batchSize).flatMap(({ cardId, recognize, recall, use }) => {
+      const label = lesson.vocabulary.find(({ id }) => id === cardId)!.term
+      return [task(recognize, cardId, label), task(recall, cardId, 'Aktif hatırlama'), task(use, cardId, 'Cümle içinde kullanım')]
+    })
+  }
 
   const speakingCorrections = phase === 'transfer' ? pendingSpeakingCorrections(state, lesson) : []
   const priority = [...new Set(speakingCorrections.map(({ conceptId }) => conceptId))]

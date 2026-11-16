@@ -1,0 +1,275 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.online-debate",
+      "outcome": "C1.online-debate",
+      "level": "C1",
+      "prerequisite": [
+        "en.negotiate",
+        "en.persuade"
+      ],
+      "title": "Çevrim içi tartışmayı özetleyip koşullu uzlaşmaya taşı",
+      "objective": "Bir başlıktaki farklı görüşleri sahiplerine bağla, çözülmemiş koşulu görünür tut ve tartışmayı yanıtlanabilir bir sonraki soruyla ilerlet.",
+      "situation": "Bir apartman ortak çalışma odasına uzaktan erişim için çevrim içi oylama konuşuyor. Bazı sakinler telefon veya internet kullanmıyor.",
+      "bridge": "It remains unclear whether … ile açık konuyu, What we can agree on is … ile geçici ortak zemini yaz. İki farklı kişinin aynı eylemi desteklerken sunduğu koşulları ayır.",
+      "models": [
+        {
+          "phrase": "What we can agree on is a two-week trial with two booking channels.",
+          "explanation": "What-clause yeni ortak adımı öne çıkarır. Itirazların hepsinin çözüldüğünü söylemez."
+        },
+        {
+          "phrase": "It remains unclear whether phone bookings will be possible after six.",
+          "explanation": "Whether sonrası soru dizilimi kullanma. Açık kalan koşulun saatini ve kanalını koru."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Dolaylı soruda özne ve yüklem sırası",
+          "incorrect": "It remains unclear whether will staff answer after six.",
+          "correct": "It remains unclear whether staff will answer after six.",
+          "explanation": "Whether yan tümcesinde özne, yardımcı fiilden önce gelir.",
+          "guided": [
+            [
+              "It remains unclear whether ___ (can volunteers / volunteers can) open the room.",
+              "volunteers can"
+            ],
+            [
+              "It is not clear whether ___ (does the contact number change / the contact number changes).",
+              "the contact number changes"
+            ]
+          ],
+          "transfer": [
+            [
+              "We should check whether ___ (will the lift work / the lift will work).",
+              "the lift will work"
+            ],
+            [
+              "It remains unclear whether ___ (are staff / staff are) available on Sundays.",
+              "staff are"
+            ]
+          ],
+          "delayed": [
+            [
+              "Please confirm whether ___ (the site accepts / does the site accept) late forms.",
+              "the site accepts"
+            ],
+            [
+              "Can you find out whether ___ (the charge is / is the charge) refundable?",
+              "the charge is"
+            ]
+          ]
+        },
+        {
+          "label": "Koşulu uzlaşmanın içine kat",
+          "incorrect": "“I can try it if calls remain free” → They agreed to paid calls.",
+          "correct": "They would try it only if calls remain free.",
+          "explanation": "Geçici uzlaşmayı aktarmadan önce vazgeçilmez şartı bul.",
+          "guided": [
+            [
+              "“I can cover Mondays, not every day.” Kapsam: Mondays / all week.",
+              "Mondays"
+            ],
+            [
+              "“Let us test it if paper forms stay.” Şart: paper forms stay / online forms close.",
+              "paper forms stay"
+            ]
+          ],
+          "transfer": [
+            [
+              "“I support moving the door only if the ramp is ready.” Şart: ramp is ready / paint is dry.",
+              "ramp is ready"
+            ],
+            [
+              "“We can hold a session unless the heat warning is extended.” Ne durdurur: extended heat warning / weekend closure.",
+              "extended heat warning"
+            ]
+          ],
+          "delayed": [
+            [
+              "“Count my vote once the route is checked.” Önce: route check / permanent move.",
+              "route check"
+            ],
+            [
+              "“Keep the trial running until we check noise levels.” Sonraki karar önce: noise check / extra publicity.",
+              "noise check"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "find common ground",
+        "meaning": "ortak zemin bulmak",
+        "example": "We found common ground on the length of the pilot.",
+        "usage": "Aynı fikirde olunan belirli noktayı on ile belirt.",
+        "pronunciation": "/faɪnd ˈkɑmən ɡɹaʊnd/",
+        "collocations": [
+          "find common ground on timing",
+          "look for common ground"
+        ],
+        "recognize": [
+          "“find common ground” burada ne anlama gelir?",
+          "ortak zemin bulmak",
+          "oyları gizlemek",
+          "tarih belirlemek",
+          "Aynı fikirde olunan belirli noktayı on ile belirt."
+        ],
+        "recall": [
+          "“ortak zemin bulmak” anlamındaki hedef ifadeyi yaz.",
+          "find common ground"
+        ],
+        "use": "Tarafların aynı düşündüğü en dar ayrıntıyı bul ve söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "leave a point open",
+          "meaning": "bir noktayı karara bağlamamak",
+          "example": "Let us leave the price point open until we have the figures.",
+          "usage": "Leave open, kararı açık bırakır. Sonraki bilgiyi belirt.",
+          "pronunciation": "/liv ə pɔɪnt ˈoʊpən/",
+          "collocations": [
+            "leave the timing open",
+            "leave a question open"
+          ],
+          "recognize": [
+            "“leave a point open” burada ne anlama gelir?",
+            "bir noktayı karara bağlamamak",
+            "kararı ilan etmek",
+            "grubu kapatmak",
+            "Leave open, kararı açık bırakır. Sonraki bilgiyi belirt."
+          ],
+          "recall": [
+            "“bir noktayı karara bağlamamak” anlamındaki hedef ifadeyi yaz.",
+            "leave a point open"
+          ],
+          "use": "İkinci bir ölçüm gelmeden açık kalacak noktayı bildir."
+        },
+        {
+          "term": "take a thread off track",
+          "meaning": "tartışma başlığını konudan saptırmak",
+          "example": "Repeating the fee debate could take this thread off track.",
+          "usage": "Önce mevcut karar sorusunu hatırlat.",
+          "pronunciation": "/teɪk ə θɹed ɔf tɹæk/",
+          "collocations": [
+            "take this thread off track",
+            "keep the thread on track"
+          ],
+          "recognize": [
+            "“take a thread off track” burada ne anlama gelir?",
+            "tartışma başlığını konudan saptırmak",
+            "başlığı toparlamak",
+            "yazıyı arşivlemek",
+            "Önce mevcut karar sorusunu hatırlat."
+          ],
+          "recall": [
+            "“tartışma başlığını konudan saptırmak” anlamındaki hedef ifadeyi yaz.",
+            "take a thread off track"
+          ],
+          "use": "Konu yazışmada dağıldığında hangi soruya dönmek istediğini söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "opt-in list",
+          "cue": "isteğe bağlı kayıt listesi"
+        },
+        {
+          "term": "desk rota",
+          "cue": "görev çizelgesi"
+        },
+        {
+          "term": "binding vote",
+          "cue": "bağlayıcı oylama"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir topluluk bahçesinin iki kanal üzerinden rezervasyon denemesi için 125–165 sözcüklük moderatör mesajı yaz. Üç görüşü kaynaklarıyla özetle, açık koşul ve tek karar sorusu bırak.",
+        "sample": "Several people support testing the garden booking system for two weeks. Mara would use a web form, provided there is another way for members who share a phone. David supports a desk list but says a volunteer cannot answer calls during the morning shift. Elif can cover two evenings, while the Saturday group still needs someone to check the paper list. What we can agree on is a short trial with both a web form and a desk list. It remains unclear whether the evening volunteer can confirm both lists without double booking. I suggest that we test one shared timetable and keep the existing walk-in spaces for now. Please answer one question before Thursday: who can reconcile both lists at six, and on which days? We can then confirm a start date rather than opening a permanent booking system.",
+        "revision": "Taslakta taraflardan birine koşulsuz destek yükleyip yüklemediğini kontrol et. Son soruyu bir kişinin yanıtlayabileceği şekilde daralt.",
+        "criteria": [
+          "Üç görüş ve koşul uygulanabilir ayrıntılarıyla aktarılıyor.",
+          "Mesaj bir ortak adım ve tek açık karar sorusu çıkarıyor."
+        ]
+      },
+      "input": {
+        "text": "Dina: I support a two-week trial if we keep a desk list. Some of our neighbours cannot book on the web.\n\nHarun: The desk rota has gaps after six, so a phone line would only work before then. I would rather test the desk in the afternoon and let people use the web later.\n\nAna: An opt-in list can remind people when spaces open. It should not become a requirement for using the room. We still need a way to cancel a reservation in person.\n\nChair: This thread is collecting conditions for a trial. It is not a binding vote. We agree that there should be a non-web route. We have not decided when it will run or who can manage changes to bookings. Please indicate which desk shifts you can cover next week. I will post a rota on Thursday, then we can decide whether to start on Monday.",
+        "reading": [
+          "Which point is agreed in the thread?",
+          "A route without the web is needed",
+          "The trial starts Monday for certain",
+          "The opt-in list is mandatory",
+          "Kanallar hakkında dar bir ortak zemin var, süre ve sorumlu açık.",
+          "We agree that there should be a non-web route"
+        ],
+        "transcript": "Chair: I see agreement on a short trial. Are we ready to confirm dates? Dina: Only if the desk list stays. Harun: I can cover Tuesday afternoon, but no one has taken the evening shift. Ana: The web form can accept requests then, although we need a separate way to cancel in person. Chair: I’ll summarise both channels and ask who can cover evenings. If the rota has no evening cover, we will say so in the post and keep the trial to staffed hours. Let us settle the opening date only after we see the rota.",
+        "preparation": "Koşulları kişilere bağla ve yeni karar sırasını çıkar.",
+        "main": [
+          "What is still missing?",
+          "Evening cover",
+          "A Tuesday afternoon volunteer",
+          "Agreement to keep a web form",
+          "Akşam görevlisi henüz çıkmadı.",
+          "no one has taken the evening shift"
+        ],
+        "detail": [
+          "When can the opening date be settled?",
+          "After checking the rota",
+          "Before asking about staff",
+          "Only after a permanent vote",
+          "Tarih vardiya listesine göre sonra belirlenir.",
+          "only after we see the rota"
+        ]
+      },
+      "retry": {
+        "text": "Forum note. Everyone supports a Saturday repair table. The electrician can bring tools if the shelter opens. The organiser will confirm the keys on Friday. No time has been announced.",
+        "reading": [
+          "What does the trial still depend on?",
+          "Access to the shelter",
+          "A permanent membership list",
+          "Electricity prices",
+          "Araç desteği ve uygulama yeri koşullu.",
+          "if the shelter opens"
+        ],
+        "transcript": "Moderator: We agree on a paper notice. Are we agreed on its location? Visitor: At the main gate, if the sign can be seen from the street. Librarian: Check that first. If it cannot, use the corner window and keep the sign at eye level.",
+        "preparation": "Ortak nokta, açık konum ve alternatif yer sırasını bul.",
+        "main": [
+          "What is already agreed?",
+          "A paper notice",
+          "The corner window",
+          "Sign height",
+          "Kâğıt duyuru ortak nokta.",
+          "We agree on a paper notice"
+        ],
+        "detail": [
+          "Where should the sign go if the gate fails the check?",
+          "Corner window",
+          "Back gate",
+          "Library desk",
+          "Alternatif köşe penceresi.",
+          "use the corner window"
+        ]
+      },
+      "readingPurpose": "Taslakta her konuşmacının koşulunu ve ortak noktayı farklı satıra yerleştir.",
+      "readingUse": "Başka bir çevrim içi başlıkta geçici karar ve sonraki soruyu ayrı yaz.",
+      "listeningUse": "Bir muhatap kesin başlangıç tarihi duyduğunu söylerse durumu düzelt.",
+      "speaking": "Bir çevrim içi tartışmayı canlı olarak özetle. Son konuşmacı yeni bir kısıt getirsin; ortak adımı koruyup uygulanabilir bir karar sorusu kur.",
+      "genres": {
+        "reading": "çok yazarlı forum başlığı",
+        "listening": "moderatörlü ortak karar toplantısı",
+        "writing": "yazılı moderasyon ve karar sorusu"
+      },
+      "recovery": {
+        "reading": "Son gönderinin oylama mı yoksa koşul toplama mı olduğunu bul.",
+        "main": "Kimin hangi vardiyayı kabul ettiğini işaretle.",
+        "detail": "Tarihi onaydan önce yapılan kontrolü dinle."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "whether ile dolaylı soru ve what-clause ile odak"
+      ]
+    }
+  ]
+}

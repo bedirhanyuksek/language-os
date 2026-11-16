@@ -1,0 +1,275 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.written",
+      "outcome": "B2.written",
+      "level": "B2",
+      "prerequisite": [
+        "ru.complaint",
+        "ru.participle"
+      ],
+      "title": "Bir olayı resmî yazı, rapor ve görüş olarak yeniden kur",
+      "objective": "Aynı hizmet olayını üç türde anlatırken olayı, kanıt sınırını ve yazarın önerisini türün amacına göre düzenle.",
+      "situation": "Bir yüzme havuzunda erişim liftinin çalışmadığı saptandı. İşletmeden tarih istenecek, komite olay kaydı tutacak, üyeler öneri tartışacak.",
+      "bridge": "Resmî yazıda Просим … ile yanıt iste. Raporda По состоянию на … ile zamanı sabitle. Görüşte На мой взгляд ile değerlendirmeyi imzala.",
+      "models": [
+        {
+          "phrase": "Просим сообщить, когда лифт снова заработает.",
+          "explanation": "Просим ardından eylem mastardır; когда sonrasında normal yan tümce gelir."
+        },
+        {
+          "phrase": "По состоянию на пятницу заявка принята, но ремонт не начат.",
+          "explanation": "По состоянию на ile kayıt anı belirtilir. Kısa edilgenler kaydın ve onarımın farklı durumunu gösterir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Resmî istemden sonra mastar",
+          "incorrect": "Просим сообщите дату осмотра.",
+          "correct": "Просим сообщить дату осмотра.",
+          "explanation": "Просим ardından mastar kullan; istemi ayrı emir cümlesine dönüştürme.",
+          "guided": [
+            [
+              "Просим ___ (уточнить) время встречи.",
+              "уточнить"
+            ],
+            [
+              "Просим ___ (подтвердить) получение письма.",
+              "подтвердить"
+            ]
+          ],
+          "transfer": [
+            [
+              "Просим ___ (приложить) список участников.",
+              "приложить"
+            ],
+            [
+              "Просим ___ (объяснить) причину задержки.",
+              "объяснить"
+            ]
+          ],
+          "delayed": [
+            [
+              "Просим ___ (указать) номер заявки.",
+              "указать"
+            ],
+            [
+              "Просим ___ (предоставить) копию протокола.",
+              "предоставить"
+            ]
+          ]
+        },
+        {
+          "label": "Tür ve kanıt sınırı",
+          "incorrect": "«Ремонт назначен» означает «ремонт завершён».",
+          "correct": "Назначен — есть план. Завершён — работа выполнена.",
+          "explanation": "Raporda olay durumunu, görüşte yazarın tercihini temel al.",
+          "guided": [
+            [
+              "«Просим сообщить дату». Tür: запрос / отчёт.",
+              "запрос"
+            ],
+            [
+              "«По состоянию на утро заявки нет». İşlev: статус / совет.",
+              "статус"
+            ]
+          ],
+          "transfer": [
+            [
+              "«На мой взгляд, нужен резерв». İşlev: мнение / факт.",
+              "мнение"
+            ],
+            [
+              "«Указатель повреждён; причина неизвестна». Недостаёт чего?",
+              "причины"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Осмотр запланирован на четверг». Действие: выполнено / запланировано.",
+              "запланировано"
+            ],
+            [
+              "«Предлагаю перенести вход». Tür: предложение / подтверждение.",
+              "предложение"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "направить запрос",
+        "meaning": "yazılı bilgi talebi göndermek",
+        "example": "Мы решили направить запрос администрации.",
+        "usage": "Кому? yönelme; о чём? ile bilgi konusunu belirt.",
+        "pronunciation": "напра́вить запро́с",
+        "collocations": [
+          "направить официальный запрос",
+          "направить запрос о сроках"
+        ],
+        "recognize": [
+          "“направить запрос” burada ne anlama gelir?",
+          "yazılı bilgi talebi göndermek",
+          "birini içeri çağırmak",
+          "tarihi onaylamak",
+          "Кому? yönelme; о чём? ile bilgi konusunu belirt."
+        ],
+        "recall": [
+          "“yazılı bilgi talebi göndermek” anlamındaki hedef ifadeyi yaz.",
+          "направить запрос"
+        ],
+        "use": "Geciken bir bakım işlemi için kime ne talep göndereceğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "зафиксировать сбой",
+          "meaning": "arızayı kayda geçirmek",
+          "example": "Дежурный зафиксировал сбой в журнале.",
+          "usage": "Зафиксировать bir olayı kayda geçirir; nedeni bildiğini ima etmez.",
+          "pronunciation": "зафикси́ровать сбо́й",
+          "collocations": [
+            "зафиксировать повторный сбой",
+            "зафиксировать сбой в отчёте"
+          ],
+          "recognize": [
+            "“зафиксировать сбой” burada ne anlama gelir?",
+            "arızayı kayda geçirmek",
+            "arızayı tamir etmek",
+            "form vermek",
+            "Зафиксировать bir olayı kayda geçirir; nedeni bildiğini ima etmez."
+          ],
+          "recall": [
+            "“arızayı kayda geçirmek” anlamındaki hedef ifadeyi yaz.",
+            "зафиксировать сбой"
+          ],
+          "use": "Bilinmeyen nedenle kesilen bir cihaz olayını tutanağa al."
+        },
+        {
+          "term": "обосновать предложение",
+          "meaning": "öneriyi gerekçelendirmek",
+          "example": "Нужно обосновать предложение данными о посещениях.",
+          "usage": "Görüş yazısında öneriyi eldeki kanıtla bağla.",
+          "pronunciation": "обоснова́ть предложе́ние",
+          "collocations": [
+            "обосновать предложение расчётами",
+            "попросить обосновать предложение"
+          ],
+          "recognize": [
+            "“обосновать предложение” burada ne anlama gelir?",
+            "öneriyi gerekçelendirmek",
+            "öneriyi gizlemek",
+            "randevu almak",
+            "Görüş yazısında öneriyi eldeki kanıtla bağla."
+          ],
+          "recall": [
+            "“öneriyi gerekçelendirmek” anlamındaki hedef ifadeyi yaz.",
+            "обосновать предложение"
+          ],
+          "use": "Acil giriş için önerini tek gözlemle gerekçelendir."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "акт проверки",
+          "cue": "denetim tutanağı"
+        },
+        {
+          "term": "резервный вход",
+          "cue": "yedek giriş"
+        },
+        {
+          "term": "заявка на ремонт",
+          "cue": "onarım başvurusu"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir tiyatronun giriş kapısı arızası için üç bölümde toplam 120–155 sözcük yaz. Yönetimden tarih isteyen resmî yazı, saatli olay kaydı ve gerekçeli kısa görüş ekle.",
+        "sample": "Запрос. Просим сообщить, когда специалисты проверят автоматическую дверь театра. Если осмотр ещё не назначен, просим указать, к кому зрители могут обратиться за помощью при входе.\n\nОтчёт. По состоянию на 18:00 дверь открывалась только вручную. Дежурный записал время сбоя в журнал и поставил указатель. В 18:15 сотрудник проводил двух посетителей к боковым дверям. Причина сбоя пока не установлена. Заявка передана инженеру, но время осмотра ещё не подтверждено. Копия записи передана начальнику смены.\n\nМнение. На мой взгляд, на время проверки стоит оставить у входа сотрудника. Два человека уже не смогли открыть дверь без помощи, а указатель не виден с остановки. Предлагаю проверить, поможет ли временная табличка у остановки, и спросить посетителей, смогли ли они найти обход самостоятельно. После проверки можно будет решить, нужна ли постоянная схема у входа.",
+        "revision": "Üç metinde aynı olay ve saat ayrıntıları kalsın. Öneriyi bitmiş iş gibi gösteren cümleyi düzelt.",
+        "criteria": [
+          "Üç türün amacı giriş cümlesinden belli.",
+          "Gözlem, belirsizlik ve öneri birbirine dönüşmüyor."
+        ]
+      },
+      "input": {
+        "text": "Письмо клуба администрации. Просим сообщить дату осмотра подъёмника у бассейна и назвать сотрудника, который откроет резервный вход. Просим ответить до четверга, чтобы клуб успел предупредить участников.\n\nАкт проверки. По состоянию на 9:20 подъёмник не реагировал на вызов. Дежурный проверил кнопку и зафиксировал сбой. Причина не установлена. Заявка на ремонт зарегистрирована в 9:35. Боковой вход открыли в десять, но у него нет указателя со стороны остановки.\n\nМнение для бюллетеня. Разовое открытие бокового входа помогло утренней группе. Тем не менее полагаться на эту меру весь месяц рискованно: вечерняя смена не получила инструкции. Предлагаю сначала назначить ответственного в каждой смене и записывать время ожидания. После недели наблюдений можно обсудить постоянный резервный вход и проверить, смогут ли люди найти его без предварительного звонка.",
+        "reading": [
+          "Hangi bilgi görüş yazısında bir öneri olarak yer alıyor?",
+          "Her vardiyaya sorumlu atamak",
+          "Liftin 9:20’de çalışmaması",
+          "Başvurunun 9:35’te kaydı",
+          "Üçüncü kaynakta yazar bir sonraki adımı öneriyor.",
+          "назначить ответственного в каждой смене"
+        ],
+        "transcript": "Редактор: Для отчёта какой факт мы можем подтвердить? Дежурный: Кнопка не сработала, время есть в журнале. Причину я не установил. Представитель клуба: В письме я прошу не отчёт о причинах, а дату осмотра и контакт дежурного. Редактор: В заметке можно предложить постоянного сотрудника у входа, если пояснить, почему одной таблички недостаточно. Дежурный: Формулировка «ремонт назначен» пока неверна. Мы передали заявку, а дату ещё не получили. Представитель клуба: Тогда попросим ответ к четвергу и отдельно предупредим вечернюю группу.",
+        "preparation": "Üç tür için çıkarılabilecek cümleleri sınıflandır.",
+        "main": [
+          "Resmî mektupta özellikle ne isteniyor?",
+          "Denetim tarihi ve görevli iletişimi",
+          "Arızanın kesin sebebi",
+          "Yeni lift projesi",
+          "Konuşmacı iki somut bilgi istiyor.",
+          "дату осмотра и контакт дежурного"
+        ],
+        "detail": [
+          "Hangi ifade henüz erken?",
+          "Onarım planlandı",
+          "Başvuru iletildi",
+          "Neden bilinmiyor",
+          "Дата henüz alınmadı.",
+          "дату ещё не получили"
+        ]
+      },
+      "retry": {
+        "text": "Записка о доставке. В 12:30 водитель привёз две из трёх коробок. Причина недостачи неизвестна. Просим перевозчика прислать копию накладной.",
+        "reading": [
+          "Hangi bilgiye yanıt isteniyor?",
+          "Sevk belgesi kopyası",
+          "Sürücünün adı",
+          "Firma adresi",
+          "Просим ile başlayan bölüm talep.",
+          "прислать копию накладной"
+        ],
+        "transcript": "В акте напишем, что зал был закрыт до полудня. В письме попросим назвать причину. В статье я предлагаю опубликовать график проверок.",
+        "preparation": "Saati, bilgi talebini ve görüşü ayır.",
+        "main": [
+          "Tutanakta hangi saat var?",
+          "Öğlene kadar kapalı",
+          "Sabah yedide açıldı",
+          "Akşam hareket var",
+          "До полудня, öğleye kadar.",
+          "закрыт до полудня"
+        ],
+        "detail": [
+          "Yazıdaki öneri ne?",
+          "Denetim takvimini yayımlamak",
+          "Resmî talebi geri çekmek",
+          "Kapıyı açık bırakmak",
+          "Öneri denetim takvimiyle ilgili.",
+          "опубликовать график проверок"
+        ]
+      },
+      "readingPurpose": "Her parçayı talep, ölçülebilir kayıt, değerlendirme olarak etiketle.",
+      "readingUse": "Başka bir ulaşım arızası için üç türün ilk cümlesini yaz.",
+      "listeningUse": "Rapordaki eksik bilgiyi hangi muhataptan isteyeceğini söyle.",
+      "speaking": "Kulüp sözcüsü olarak görevliye bir talep ilet, yönetime aynı olayın kaydını ver, üyelere bir öneri ve dayanağını sun.",
+      "genres": {
+        "reading": "resmî talep, olay kaydı ve bülten",
+        "listening": "editoryal görev görüşmesi",
+        "writing": "üç türde bağımsız yazı"
+      },
+      "recovery": {
+        "reading": "Öneriyi açıktan işaretleyen fiili bul.",
+        "main": "Duyulan isteği kayıttaki eksik bilgiden ayır.",
+        "detail": "Передали ile назначили arasındaki farkı dinle."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "просим + mastar ve raporda kısa edilgen"
+      ]
+    }
+  ]
+}

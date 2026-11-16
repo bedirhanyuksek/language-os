@@ -1,0 +1,277 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.fiction",
+      "outcome": "C1.fiction",
+      "level": "C1",
+      "prerequisite": [
+        "en.creative-response",
+        "en.uncertainty"
+      ],
+      "title": "Anlatıcı ile karakterin bakışını ayır",
+      "objective": "Anlatının görüş alanı ile olayları birbirinden ayır, iki yorumu farklı metin ayrıntılarıyla tart.",
+      "situation": "Bir okuma grubunda kapanan bir sinemanın gişe görevlisi hakkında iki yorum var. Öykü, tek karakterin bildiklerine yakın duruyor.",
+      "bridge": "Önce kesin olayı işaretle. Seemed to + fiil karakterin çıkarımını taşıyabilir. As if + yan tümce benzetme veya izlenim kurar. İkisini de anlatıcının doğrulaması sayma.",
+      "models": [
+        {
+          "phrase": "To Nell, the envelope seemed to contain a complaint.",
+          "explanation": "To Nell bakış sahibini belirler. Seemed to contain, zarfın içeriğini doğrulamaz."
+        },
+        {
+          "phrase": "He kept his gloves on, as if he were about to leave.",
+          "explanation": "As if, görülen davranışın yorumunu açar. Were burada mesafeli varsayımı destekler, gerçek ayrılışı bildirmez."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "To + kişi ve seem + mastar",
+          "incorrect": "To Ren, the room seemed being empty.",
+          "correct": "To Ren, the room seemed to be empty.",
+          "explanation": "Seem ardından to-infinitive kullan. To Ren izlenimi kime bağladığını gösterir.",
+          "guided": [
+            [
+              "To Bea, the boy seemed ___ (to recognise / recognising) the sound.",
+              "to recognise",
+              "to recognize"
+            ],
+            [
+              "The glass seemed ___ (to move / moving) in the dark.",
+              "to move"
+            ]
+          ],
+          "transfer": [
+            [
+              "To the child, the queue seemed ___ (to go / going) on forever.",
+              "to go"
+            ],
+            [
+              "The stranger seemed ___ (to notice / noticing) the key.",
+              "to notice"
+            ]
+          ],
+          "delayed": [
+            [
+              "To Sam, the letter seemed ___ (to come / coming) from abroad.",
+              "to come"
+            ],
+            [
+              "The balcony seemed ___ (to have / having) been left unlocked.",
+              "to have"
+            ]
+          ]
+        },
+        {
+          "label": "Gözlem ve bakış sahibini ayır",
+          "incorrect": "“To Nell, it looked as if he knew her.” He definitely knew her.",
+          "correct": "Nell reads his behaviour as recognition; the text leaves it unconfirmed.",
+          "explanation": "As if veya seemed ifadelerindeki kanıtı, olan bitenle aynı kesinlikte aktarma.",
+          "guided": [
+            [
+              "“Mina heard a tap. It sounded as if someone was at the window.” Kesin: a tap / a visitor.",
+              "a tap"
+            ],
+            [
+              "“To Leo, the smile seemed rehearsed.” Kimin izlenimi: Leo / smiling guest?",
+              "Leo"
+            ]
+          ],
+          "transfer": [
+            [
+              "“It was eight. To June it felt much later.” Kesin: eight / near midnight.",
+              "eight",
+              "eight o’clock"
+            ],
+            [
+              "“She closed the book as if she had given up.” Kesin eylem: closed the book / gave up.",
+              "closed the book"
+            ]
+          ],
+          "delayed": [
+            [
+              "“The man looked as though he expected bad news.” Doğrulanmayan: his expectation / his presence.",
+              "his expectation"
+            ],
+            [
+              "“Nuri heard footsteps and imagined the landlord.” Doğrudan algı: footsteps / landlord.",
+              "footsteps"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "take something at face value",
+        "meaning": "bir şeyi göründüğü gibi kabul etmek",
+        "example": "I would not take his account at face value.",
+        "usage": "Face value, sözün veya görünümün düz anlamı. Bağlamı ayrıca değerlendir.",
+        "pronunciation": "/teɪk ˈsʌmθɪŋ æt feɪs ˈvælju/",
+        "collocations": [
+          "take the explanation at face value",
+          "take a promise at face value"
+        ],
+        "recognize": [
+          "“take something at face value” burada ne anlama gelir?",
+          "bir şeyi göründüğü gibi kabul etmek",
+          "bir ayrıntıyı kanıtlamak",
+          "bir metni sesli okumak",
+          "Face value, sözün veya görünümün düz anlamı. Bağlamı ayrıca değerlendir."
+        ],
+        "recall": [
+          "“bir şeyi göründüğü gibi kabul etmek” anlamındaki hedef ifadeyi yaz.",
+          "take something at face value"
+        ],
+        "use": "Bir anlatıcının açıklamasını neden hemen kabul etmeyeceğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "leave room for doubt",
+          "meaning": "kuşkuya yer bırakmak",
+          "example": "The last line leaves room for doubt.",
+          "usage": "Kesin yargıyı askıda bırakan ayrıntıyla birlikte kullan.",
+          "pronunciation": "/liv ɹum fəɹ daʊt/",
+          "collocations": [
+            "leave room for doubt about his motives",
+            "leave considerable room for doubt"
+          ],
+          "recognize": [
+            "“leave room for doubt” burada ne anlama gelir?",
+            "kuşkuya yer bırakmak",
+            "sonucu kesinleştirmek",
+            "konuyu değiştirmek",
+            "Kesin yargıyı askıda bırakan ayrıntıyla birlikte kullan."
+          ],
+          "recall": [
+            "“kuşkuya yer bırakmak” anlamındaki hedef ifadeyi yaz.",
+            "leave room for doubt"
+          ],
+          "use": "Bir karakterin niyetini açık bırakan ayrıntıyı belirt."
+        },
+        {
+          "term": "a shift in perspective",
+          "meaning": "bakış açısında değişim",
+          "example": "The last scene brings a shift in perspective.",
+          "usage": "Bakış veya bilgi erişimi değişebilir; olayın kendisi aynı kalabilir.",
+          "pronunciation": "/ə ʃɪft ɪn pəɹˈspektɪv/",
+          "collocations": [
+            "notice a shift in perspective",
+            "a subtle shift in perspective"
+          ],
+          "recognize": [
+            "“a shift in perspective” burada ne anlama gelir?",
+            "bakış açısında değişim",
+            "zaman çizelgesini yazmak",
+            "yer değiştirmek",
+            "Bakış veya bilgi erişimi değişebilir; olayın kendisi aynı kalabilir."
+          ],
+          "recall": [
+            "“bakış açısında değişim” anlamındaki hedef ifadeyi yaz.",
+            "a shift in perspective"
+          ],
+          "use": "Aynı sahnenin başka bir kişi tarafından nasıl görüldüğünü anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "ticket stub",
+          "cue": "bilet koçanı"
+        },
+        {
+          "term": "shutter",
+          "cue": "kepenk"
+        },
+        {
+          "term": "carbon copy",
+          "cue": "karbon kopya"
+        }
+      ],
+      "writing": {
+        "prompt": "Aşağıdaki sinema öyküsüne 130–170 sözcüklük okuma grubu yanıtı yaz. İki kısa ayrıntı kullan, iki olası yorumu tart ve hangisinin neden daha güçlü olduğunu savun.",
+        "sample": "Nell treats the envelope as an accusation long before it is opened. Her suspicion is visible in the way she slides it under the till instead of asking for a name. Yet the description never confirms that the visitor shares her account of the closing. His gloves and his place near the door might suggest a wish to leave quickly. They could also mean that he knows the cinema is cold. The carbon copy matters because it contains Nell’s own signature, rather than a demand in the visitor’s handwriting. I read the visit as an awkward offer of company: he asks for the lights to stay on and leaves a ticket stub, two small actions directed toward a shared past. Still, the last line leaves room for doubt. Nell hears him on the stairs, but neither she nor the reader learns whether he comes back.",
+        "revision": "Bir cümlende gözlemle olasılığı karıştırdıysan kesinliği değiştir. Karşı yorumu çürüten veya açık bırakan bir ayrıntı ekle.",
+        "criteria": [
+          "İki yorum ilgili ayrıntılara bağlanır.",
+          "Karakter çıkarımı, anlatıdaki olay ve okuyucu savı ayrı."
+        ]
+      },
+      "input": {
+        "text": "The cinema was due to close at seven, although the clock above the till had stopped at twenty past six. Nell had put the takings away when the last visitor arrived. He stayed by the door, in his gloves, and set an envelope on the counter. To Nell it seemed to contain a complaint. She had signed dozens of replies since the closing was announced, and the paper looked like the same cheap stock. She slid it beneath the till.\n\nThe visitor asked whether she could leave the lights on for another minute. Through the glass she watched the mechanic lower the shutter over the empty ticket booth. Finally she opened the envelope. Inside lay a carbon copy of her first shift sheet, her signature heavier than she remembered, and a ticket stub folded into a neat square. Across the back someone had written, “Second seat from the aisle.” She could not decide whether that was an instruction, a joke, or simply where he used to sit. On the stairs she heard a slow step, then another. The lights stayed on.",
+        "reading": [
+          "Which information is confirmed only after Nell opens the envelope?",
+          "It contains a copy of her first shift sheet",
+          "The visitor has come to accuse her",
+          "The cinema has closed permanently by seven",
+          "Nell’s initial interpretation changes when the object is seen.",
+          "Inside lay a carbon copy"
+        ],
+        "transcript": "Host: Some readers say the visitor came to accuse Nell. Is that what the story tells us? Imogen: It tells us she expects a complaint. When the man keeps his gloves on, I think he might be nervous, but we never follow him outside or hear what he thinks. Leon: I read it differently. He asks for the lights to stay on, and he leaves a ticket stub. To me that feels like an invitation to remember the place. Host: Does the note about the seat settle that? Leon: No. It could be where he used to sit. It could also be an instruction Nell does not yet understand. The sound on the stairs leaves both readings open.",
+        "preparation": "Çıkarımın kime ait olduğunu ve hangi ayrıntıya dayandığını not et.",
+        "main": [
+          "What does Imogen think the gloves might show?",
+          "Nervousness",
+          "Anger confirmed by the narrator",
+          "A wish to turn off the lights",
+          "She suggests a possibility.",
+          "he might be nervous"
+        ],
+        "detail": [
+          "Which detail does Leon connect to remembering the place?",
+          "The ticket stub",
+          "The amount in the till",
+          "The mechanic’s gloves",
+          "He reads the ticket as a reminder.",
+          "he leaves a ticket stub"
+        ]
+      },
+      "retry": {
+        "text": "To Aya, the tea seemed to have been left untouched. Then she noticed a wet ring beside the cup and a second chair pulled out. The visitor had gone before she arrived.",
+        "reading": [
+          "What leaves Aya’s first impression open to doubt?",
+          "A wet ring and a pulled-out chair",
+          "Her arrival time alone",
+          "A fresh note by the window",
+          "The later details invite a different reading.",
+          "a wet ring beside the cup"
+        ],
+        "transcript": "Review host: We hear a key turn, but we never see the hall. I read the sound as Ben leaving. My colleague thinks someone has just arrived. We agree that the scene never tells us which side of the door the key is on.",
+        "preparation": "Duyulan olayla iki yorumu ayır.",
+        "main": [
+          "What is actually heard?",
+          "A key turning",
+          "Ben speaking",
+          "A doorbell",
+          "Both readings share the same sound.",
+          "a key turn"
+        ],
+        "detail": [
+          "What is unresolved?",
+          "Which side of the door the key is on",
+          "Whether there is a door",
+          "Who recorded the scene",
+          "The sound alone gives no side.",
+          "which side of the door the key is on"
+        ]
+      },
+      "readingPurpose": "Karakterin bildiği, okuyucunun gördüğü ve açık kalan noktaları üç sütuna yaz.",
+      "readingUse": "Aynı son paragrafı ziyaretçinin gözünden yaz; eklediğin bilgiyi yeni anlatıcının tercihi olarak işaretle.",
+      "listeningUse": "İki yorumun aynı kanıttan nasıl doğduğunu kulüp arkadaşına aktar.",
+      "speaking": "Bir öyküde belirsiz bir sonu iki biçimde yorumla. Önce seni etkileyen ayrıntıyı ve tepkini açıkla. Sonra seem veya as if ile bakış sahibini belirt. Partner yorumlardan birini kesinleştirince metinde doğrulanmayan bilgiyi göster ve kendi okumanı savun.",
+      "genres": {
+        "reading": "özgün kısa kurmaca",
+        "listening": "edebiyat programında farklı yorumlar",
+        "writing": "kanıtlı edebî değerlendirme"
+      },
+      "recovery": {
+        "reading": "Zarfın açılmasından önce ve sonra bildiğimizi ayır.",
+        "main": "Might ile verilen yorum kime ait?",
+        "detail": "İki yorumun hangisi bilet koçanını kullanıyor?"
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "seem + to-infinitive ve as if ile bakış"
+      ]
+    }
+  ]
+}

@@ -3,6 +3,11 @@ import { catalog } from './catalog-fixture'
 import coachReport from '../fixtures/speaking-coach.json' with { type: 'json' }
 import validReport from '../fixtures/speaking-valid.json' with { type: 'json' }
 import invalidReport from '../fixtures/speaking-invalid.json' with { type: 'json' }
+import type { Exercise } from '../../src/content/schema'
+import { phaseTasks } from '../../src/domain/pedagogy'
+import { finishLesson, finishPedagogy, finishPlacement, lessonTasks } from '../../src/domain/progress'
+import { initialState } from '../../src/domain/state'
+import { exportBackup } from '../../src/persistence/repository'
 
 type TestExercise = { id: string; kind: string; accepted?: string | string[]; sample?: string; prompts?: string[] }
 
@@ -37,6 +42,67 @@ async function toPlan(page: Page) {
 async function submit(page: Page) {
   await page.getByRole('button', { name: 'Yanıtları değerlendir' }).click()
 }
+
+test('restoring a partial word lesson opens the next three cards', async ({ page }) => {
+  const course = catalog.en
+  const lesson = course.unit.lessons.find(({ id }) => id === 'en.intercultural')!
+  const date = '2026-11-13T10:00:00.000Z'
+  const preparedAnswers = (items: { exercise: Exercise }[]) => Object.fromEntries(items.map(({ exercise }) => [
+    exercise.id, exercise.kind === 'open' ? exercise.sample :
+      exercise.kind === 'fill' || exercise.kind === 'short' ? exercise.accepted[0] : exercise.accepted,
+  ]))
+  let state = finishPlacement(initialState({
+    id: '50bc1969-350a-47a1-9b76-3036732c74d0', language: 'en', estimate: 'B1',
+    target: 'C1', goals: ['general'], days: [5], minutes: 60,
+  }), course, preparedAnswers(course.placement), date)
+  // Use the normal assessment operations to prepare a backup just after saving the first batch.
+  const ready = new Set<string>()
+  const prepare = (item: typeof lesson) => {
+    if (ready.has(item.id)) return
+    for (const prerequisite of item.prerequisites) prepare(course.unit.lessons.find(({ objective }) => objective.id === prerequisite)!)
+    for (let block = 0; block < 3; block++) {
+      const tasks = lessonTasks(state, item)
+      if (!tasks.length) break
+      state = finishLesson(state, course, item, preparedAnswers(tasks), date)
+    }
+    state = finishPedagogy(state, course, item, 'transfer', preparedAnswers(phaseTasks(state, item, 'transfer', date)), date)
+    const phases = item.id === lesson.id
+      ? ['reading', 'listening', 'vocabulary'] as const
+      : ['reading', 'listening', 'vocabulary', 'revision'] as const
+    for (const phase of phases) {
+      const tasks = phaseTasks(state, item, phase, date)
+      if (tasks.length) state = finishPedagogy(state, course, item, phase, preparedAnswers(tasks), date,
+        phase === 'listening' ? 'played' : undefined)
+    }
+    ready.add(item.id)
+  }
+  prepare(lesson)
+  state = {
+    ...state,
+    activity: [],
+    skippedSpeaking: course.unit.lessons.filter(({ id, speaking }) => id !== lesson.id && speaking && ready.has(id))
+      .map(({ id }) => id),
+    reviews: state.reviews.map((card) => ({ ...card, dueAt: '2026-11-14T10:00:00.000Z' })),
+  }
+  await page.clock.setFixedTime(new Date(date))
+  await page.goto('/')
+  await page.getByText('Önceden kaydedilmiş bir yedeğin var mı?').click()
+  await page.getByLabel('Yedek dosyası').setInputFiles({
+    name: 'partial-vocabulary.json', mimeType: 'application/json', buffer: Buffer.from(exportBackup(state)),
+  })
+  await page.getByRole('button', { name: 'Yedeği geri yükle' }).click()
+  await expect(page.getByRole('heading', { name: 'Bugünkü plan' })).toBeVisible()
+  await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
+  for (const [index, vocabulary] of lesson.pedagogy!.vocabulary.slice(3).entries()) {
+    await expect(page.getByRole('heading', { name: lesson.vocabulary[index + 3].term, exact: true })).toBeVisible()
+    await page.getByRole('button', { name: 'Kelimeyi çalış' }).click()
+    for (const exercise of [vocabulary.recognize, vocabulary.recall, vocabulary.use]) {
+      await fill(task(page, exercise), exercise)
+      await page.getByRole('button', { name: 'Yanıtı kaydet' }).click()
+    }
+  }
+  await expect(page.getByText('İnceleme bekliyor', { exact: true })).toHaveCount(3)
+})
 
 async function play(page: Page, label: string) {
   const player = page.locator(`audio[aria-label="${label}"]`)

@@ -1,0 +1,294 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.public-media",
+      "outcome": "B2.public-media",
+      "level": "B2",
+      "prerequisite": [
+        "ru.news",
+        "ru.seminar"
+      ],
+      "title": "Haberi yorumdan ayır, kaynağı ve kesinliği koru",
+      "objective": "Bir haber metni, tanık sesi ve yorum yazısındaki iddiaların kaynağını ayır, teyitli bilgiyi ve henüz bilinmeyeni ayrı ilet.",
+      "situation": "Bir mahalle otobüs durağı taşındı. Sosyal medyada “kimse biniş yerini bulamadı” deniyor, ancak ulaşım kaydı başka bir şey ölçüyor.",
+      "bridge": "По словам ile tanığa, согласно ile belgeye atıf yap. Утверждает, что iddianın sahibini gösterir. Судя по … ile çıkarımı açıklarken verinin sınırını koru.",
+      "models": [
+        {
+          "phrase": "По словам пассажирки, указатель было трудно заметить.",
+          "explanation": "По словам + tamlayan. Bu söz kişinin deneyimini aktarır; kimsenin tabelayı göremediğini ileri sürmez."
+        },
+        {
+          "phrase": "Судя по журналу, маршрут работал, но число потерявшихся пассажиров неизвестно.",
+          "explanation": "Судя по + yönelme, çıkarımın dayanağını gösterir. Kayıt işlemi gösterir, ulaşamayan insanları saymaz."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Atıf kalıbına uygun hâli seç",
+          "incorrect": "Судя по отчёта, рейс состоялся.",
+          "correct": "Судя по отчёту, рейс состоялся.",
+          "explanation": "Судя по ve согласно + yönelme, по словам + tamlayan.",
+          "guided": [
+            [
+              "Судя по ___ (сводка), поезд шёл по графику.",
+              "сводке"
+            ],
+            [
+              "По словам ___ (сотрудница), вход открылся поздно.",
+              "сотрудницы"
+            ]
+          ],
+          "transfer": [
+            [
+              "Согласно ___ (журнал), заявку приняли утром.",
+              "журналу"
+            ],
+            [
+              "По словам ___ (водитель), дорогу закрыли в восемь.",
+              "водителя"
+            ]
+          ],
+          "delayed": [
+            [
+              "Судя по ___ (запись), часть посетителей ушла.",
+              "записи"
+            ],
+            [
+              "Согласно ___ (план), проверка будет в пятницу.",
+              "плану"
+            ]
+          ]
+        },
+        {
+          "label": "Gözlem ve yargının kaynağını ayır",
+          "incorrect": "«Комментатор считает, что никому не помогли». Значит, никому не помогли.",
+          "correct": "Это оценка комментатора; журнал обращений ещё не проверили.",
+          "explanation": "Kim söyledi, hangi dayanak ve hangi sınır sorularını ayrı yanıtla.",
+          "guided": [
+            [
+              "«В журнале три звонка; автор считает, что позвонили все». Ölçülen: звонки / все пассажиры.",
+              "звонки"
+            ],
+            [
+              "«На видео одна очередь; редактор пишет о двух». Doğrudan kaynak: одна очередь / две очереди.",
+              "одна очередь"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Кассир утверждает, что приехал первый автобус». Kaynak kim: кассир / оператор?",
+              "кассир"
+            ],
+            [
+              "«Объявление обещает ремонт; рабочие ещё не приехали». Teyitli metin: обещание / выполненная работа.",
+              "обещание"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Гость не нашёл вход; статья говорит, что его не нашёл никто». Genelleme kimin: гостя / автора статьи?",
+              "автора статьи"
+            ],
+            [
+              "«На карте красная линия; читатель называет её опасной». Yorumu kim yapıyor: читатель / картограф?",
+              "читатель"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "проверить источник",
+        "meaning": "kaynağı doğrulamak",
+        "example": "Перед публикацией нужно проверить источник.",
+        "usage": "Kaynağın neyi doğrudan gördüğü ve neyi başka yerden duyduğu ayrı sorulur.",
+        "pronunciation": "прове́рить исто́чник",
+        "collocations": [
+          "проверить источник сообщения",
+          "проверить независимый источник"
+        ],
+        "recognize": [
+          "“проверить источник” burada ne anlama gelir?",
+          "kaynağı doğrulamak",
+          "haberi kopyalamak",
+          "alıntıyı kısaltmak",
+          "Kaynağın neyi doğrudan gördüğü ve neyi başka yerden duyduğu ayrı sorulur."
+        ],
+        "recall": [
+          "“kaynağı doğrulamak” anlamındaki hedef ifadeyi yaz.",
+          "проверить источник"
+        ],
+        "use": "Bir mahalle mesajında kime veya hangi kayda döneceğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "сослаться на запись",
+          "meaning": "kayda atıf yapmak",
+          "example": "Редактор сослался на запись диспетчера.",
+          "usage": "Сослаться на + nesne. Kaydın hangi veriyi kapsadığını açıkla.",
+          "pronunciation": "сосла́ться на за́пись",
+          "collocations": [
+            "сослаться на запись разговора",
+            "сослаться на запись в журнале"
+          ],
+          "recognize": [
+            "“сослаться на запись” burada ne anlama gelir?",
+            "kayda atıf yapmak",
+            "bir kaydı silmek",
+            "bir şeyi unutmak",
+            "Сослаться на + nesne. Kaydın hangi veriyi kapsadığını açıkla."
+          ],
+          "recall": [
+            "“kayda atıf yapmak” anlamındaki hedef ifadeyi yaz.",
+            "сослаться на запись"
+          ],
+          "use": "Kütüphane kapanma saatini hangi kayda bağlayacağını söyle."
+        },
+        {
+          "term": "отделить оценку от факта",
+          "meaning": "yorum ile olguyu ayırmak",
+          "example": "В коротком выпуске трудно отделить оценку от факта.",
+          "usage": "Отделить что от чего? От + tamlayan kullan.",
+          "pronunciation": "отдели́ть оце́нку от фа́кта",
+          "collocations": [
+            "отделить оценку от факта",
+            "отделить слух от подтверждённого сообщения"
+          ],
+          "recognize": [
+            "“отделить оценку от факта” burada ne anlama gelir?",
+            "yorum ile olguyu ayırmak",
+            "yorumu büyütmek",
+            "aynı kişiyi aramak",
+            "Отделить что от чего? От + tamlayan kullan."
+          ],
+          "recall": [
+            "“yorum ile olguyu ayırmak” anlamındaki hedef ifadeyi yaz.",
+            "отделить оценку от факта"
+          ],
+          "use": "Tek iddiayı olgu ve yorum diye iki cümlede yeniden ifade et."
+        },
+        {
+          "term": "оставить вопрос открытым",
+          "meaning": "soruyu açık bırakmak",
+          "example": "Сколько людей не нашли остановку, пока лучше оставить вопрос открытым.",
+          "usage": "Gerekli veri gelene kadar kesin sonuca gitme.",
+          "pronunciation": "оста́вить вопро́с откры́тым",
+          "collocations": [
+            "оставить вопрос о причинах открытым",
+            "оставить вопрос открытым до проверки"
+          ],
+          "recognize": [
+            "“оставить вопрос открытым” burada ne anlama gelir?",
+            "soruyu açık bırakmak",
+            "soruyu unutmak",
+            "yanıtı yayımlamak",
+            "Gerekli veri gelene kadar kesin sonuca gitme."
+          ],
+          "recall": [
+            "“soruyu açık bırakmak” anlamındaki hedef ifadeyi yaz.",
+            "оставить вопрос открытым"
+          ],
+          "use": "Bir haberde hangi ayrıntıyı sonraki doğrulamaya bırakacağını söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "перенос остановки",
+          "cue": "durağın taşınması"
+        },
+        {
+          "term": "временный указатель",
+          "cue": "geçici yön tabelası"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir etkinlik girişindeki aksaklık için 105–145 sözcüklük haber yaz. Bir gözlem kaydı, bir kişinin deneyimi, bir yorum ve bir takip sorusu kullan.",
+        "sample": "В субботу вход на выставку перенесли к боковым воротам. Согласно записи охраны, ворота открыли в десять, и через них вошли шестьдесят человек. По словам одной посетительницы, указатель с главной улицы она не заметила и потеряла пятнадцать минут. Автор местного блога назвал перенос провалом. Эта оценка опирается на её рассказ и на фотографию пустых главных ворот. Судя по записи, боковой вход работал, но журнал не показывает, сколько людей ушли до открытия. Поэтому мы пока оставляем вопрос о доступности открытым. На следующей выставке стоит поставить наблюдателя у обоих входов и записывать вопросы посетителей отдельно от числа проходов. Организатор обещал проверить указатели утром и опубликовать схему до открытия.",
+        "revision": "Yorumcunun yargısı doğrulanmış haber gibi görünüyorsa kaynağı ekle. Takip sorusu eksik veriye karşılık gelsin.",
+        "criteria": [
+          "Her iddia haber, tanık ya da yorum kaynağıyla işaretli.",
+          "Kayıt sınırı ve doğrulanabilir takip sorusu var."
+        ]
+      },
+      "input": {
+        "text": "Городская сводка. Перенос остановки на соседнюю улицу действует с понедельника. Временный указатель установили у старого павильона. Диспетчер зафиксировал двенадцать обращений с вопросом о новом месте, но его журнал не включает разговоры с прохожими.\n\nСлова пассажирки. «Я шла с коляской, увидела знак у павильона, но не поняла, по какой стороне улицы идти. Дошла до остановки только со второй попытки». Она не утверждала, что другие пассажиры тоже заблудились.\n\nКолонка. Автор назвал перенос полной неудачей и привёл фотографию пустого павильона в качестве доказательства. По времени съёмки видно, что снимок сделан после окончания работы маршрута. Поэтому фотография подтверждает только то, что павильон тогда был пуст.\n\nПримечание редактора. Мы можем сообщить, когда началось изменение и какие обращения принимал диспетчер. Узнать, сколько людей так и не нашли новый павильон, по этим данным нельзя. Во вторник корреспондент запишет наблюдения в часы пик у обоих мест, а затем спросит у службы, где и когда обновляли схему.",
+        "reading": [
+          "Hangi iddia henüz doğrulanmadı?",
+          "Durağı hiç bulamayanların sayısı",
+          "Durağın pazartesi taşınması",
+          "Operatörün on iki soru kaydetmesi",
+          "Kayıt kullanıcıların tümünü içermiyor.",
+          "сколько людей так и не нашли новый павильон"
+        ],
+        "transcript": "Ведущая: В колонке сказано, что пересадка не удалась. Что мы знаем точно? Корреспондент: Остановку перенесли. По словам пассажирки, знак не объяснял, по какой стороне идти. Диспетчер: У нас двенадцать вопросов, но в журнале только те, кто позвонил. Ведущая: А фото пустой остановки? Корреспондент: Его сделали вечером после последнего рейса. Это изображение старого места, но оно не доказывает, что люди не нашли новое. Диспетчер: Во вторник проверим обе стороны улицы утром. Ведущая: Тогда скажем зрителям, что маршрут работает, а ясность указателей ещё проверяется. Корреспондент: И дадим им номер, по которому можно сообщить о непонятном знаке.",
+        "preparation": "Varsayımı, tanıklığı ve kısıtlı sayımı üç başlıkla dinle.",
+        "main": [
+          "Operatör kaydında kimler var?",
+          "Arayan kişiler",
+          "Durakta bekleyen herkes",
+          "Tabelayı görenler",
+          "Günlük yalnız arama içeriyor.",
+          "в журнале только те, кто позвонил"
+        ],
+        "detail": [
+          "Fotoğraf ne zaman çekilmiş?",
+          "Son seferden sonra",
+          "İlk sefer öncesinde",
+          "Öğle saatinde",
+          "Fotoğrafın saati yorumun dayanağını sınırlar.",
+          "вечером после последнего рейса"
+        ]
+      },
+      "retry": {
+        "text": "Галерея открылась в субботу. В отзыве сказано, что карта была непонятной. Охрана записала четыре вопроса, но не записывала тех, кто прошёл без помощи.",
+        "reading": [
+          "Kayıt neyi saydı?",
+          "Dört soru",
+          "Dört ziyaretçi",
+          "Dört çıkış",
+          "Soru sayısı kişi sayısı değildir.",
+          "записала четыре вопроса"
+        ],
+        "transcript": "Фотография показывает очередь у нового входа. Редактор утверждает, что она стала длиннее, но прошлую очередь никто не измерял. Спросим у дежурного, когда началось ожидание.",
+        "preparation": "Fotoğraf ile iddianın gerektirdiği karşılaştırmayı ayır.",
+        "main": [
+          "Görülen olay ne?",
+          "Yeni girişte sıra",
+          "Sıranın kısalması",
+          "İki kapının kapanması",
+          "Tek fotoğraf yalnız o sırayı gösterir.",
+          "показывает очередь у нового входа"
+        ],
+        "detail": [
+          "Ne ölçülmemiş?",
+          "Eski sıra",
+          "Fotoğrafın rengi",
+          "Yeni kapı",
+          "Önceki sıranın ölçümü yok.",
+          "прошлую очередь никто не измерял"
+        ]
+      },
+      "readingPurpose": "Her kaynak için gözlem, yorum ve eksik bilgi yaz.",
+      "readingUse": "Farklı bir ulaşım olayı hakkında iki cümlelik teyitli haber oluştur.",
+      "listeningUse": "Bir yorumdaki kesinliği düşür ve gözlenebilen bir takip sorusu hazırla.",
+      "speaking": "Yeni bir olayda tanık, editör ve görevli sözünü karşılaştır. Partner bir fotoğrafı kesin neden sayınca hangi bilgiyi teyit etmek gerektiğini açıkla.",
+      "genres": {
+        "reading": "yerel haber dosyası ve köşe yazısı",
+        "listening": "çok rollü canlı haber görüşmesi",
+        "writing": "kısa kaynaklı haber"
+      },
+      "recovery": {
+        "reading": "Pavilyonu kullanmayanların hangi kayıtta görünmediğini bul.",
+        "main": "Hangi gözlem telefonla sınırlı?",
+        "detail": "Fotoğrafın çekildiği zamanı tekrar dinle."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "по словам + tamlayan; судя по / согласно + yönelme"
+      ]
+    }
+  ]
+}

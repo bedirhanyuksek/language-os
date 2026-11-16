@@ -1,0 +1,298 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.nuance",
+      "outcome": "C2.nuance",
+      "level": "C2",
+      "prerequisite": [
+        "en.fluency",
+        "en.genres"
+      ],
+      "title": "İnce bir anlaşmazlığı koşul ve taahhütleri ayırarak yönet",
+      "objective": "Hassas bir tartışmada itirazın hedefini belirle, koşullu bir öneriyi karşı tarafların kabul ettiği kapsamda yeniden kur.",
+      "situation": "Bir mahalle için sözlü tarih panosu hazırlanıyor. Bir taraf metnin yayınlanmasına, diğeri anlatıcının adının arşivde saklanmasına dair farklı çekinceler taşıyor.",
+      "bridge": "Önce hangi şeye itiraz edildiğini sor. My concern is less about X than about Y ile önceliği belirt. I can live with X provided that Y ile sınırlı kabul ver; bu koşulu sonraki metne de taşı.",
+      "models": [
+        {
+          "phrase": "My concern is less about keeping the recording than about who can hear it.",
+          "explanation": "Less about … than about …, iki konuyu ağırlık bakımından karşılaştırır. İlk konunun önemsiz olduğunu söylemez."
+        },
+        {
+          "phrase": "I can live with an internal copy provided that the contributor can still withdraw it.",
+          "explanation": "Can live with gönülsüz ama uygulanabilir kabulü, provided that ise kabulün koşulunu verir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Karşılaştırmada öğelerin biçimini eşleştir",
+          "incorrect": "My concern is less about the date than whether can we withdraw consent.",
+          "correct": "My concern is less about the date than about whether we can withdraw consent.",
+          "explanation": "İkinci about karşılaştırmayı görünür kılar. Whether yan tümcesinde özne yardımcı fiilden önce gelir.",
+          "guided": [
+            [
+              "My concern is less about the wording than ___ who can change it. (about / which)",
+              "about"
+            ],
+            [
+              "It is less about the route than about whether ___ (can visitors / visitors can) find it.",
+              "visitors can"
+            ]
+          ],
+          "transfer": [
+            [
+              "We are less concerned about cost than ___ access. (about / despite)",
+              "about"
+            ],
+            [
+              "The issue is less about delivery than about how ___ (we can / can we) track it.",
+              "we can"
+            ]
+          ],
+          "delayed": [
+            [
+              "The debate is less about the fee than about which applicants ___ (can get / get can) help.",
+              "can get"
+            ],
+            [
+              "My question is less about the date than about whether ___ (it will / will it) change before the vote.",
+              "it will"
+            ]
+          ]
+        },
+        {
+          "label": "Dar kapsamlı kabulü doğru geri söyle",
+          "incorrect": "“We can keep a copy if it remains private.” → The recording is approved for public release.",
+          "correct": "“We can keep a private copy, subject to withdrawal.”",
+          "explanation": "Kabul edilen eylem, koşul ve açık kalan karar için ayrı satır yaz.",
+          "guided": [
+            [
+              "“Test it only with volunteers.” Scope: volunteers only / everyone.",
+              "volunteers only"
+            ],
+            [
+              "“Keep the street open if the emergency gate stays clear.” Condition: clear gate / full closure.",
+              "clear gate"
+            ]
+          ],
+          "transfer": [
+            [
+              "“Publish the photo if the child cannot be identified.” Condition: child not identifiable / family unnamed only.",
+              "child not identifiable"
+            ],
+            [
+              "“The fee is acceptable for this month.” Scope: this month / all year.",
+              "this month"
+            ]
+          ],
+          "delayed": [
+            [
+              "“I can help bring chairs, provided someone opens the hall.” Dependency: someone opens the hall / chair delivery confirmed.",
+              "someone opens the hall"
+            ],
+            [
+              "“We agreed to share the figures internally until the review.” Permission: internal sharing / final publication.",
+              "internal sharing"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "draw a distinction between",
+        "meaning": "iki şeyi birbirinden ayırmak",
+        "example": "We should draw a distinction between access and publication.",
+        "usage": "Between sonrasında iki ayrı kavram ver ve farkın sonucu nasıl değiştirdiğini açıkla.",
+        "pronunciation": "/dɹɔ ə dɪˈstɪŋkʃən/",
+        "collocations": [
+          "draw a distinction between access and consent",
+          "draw a clear distinction"
+        ],
+        "recognize": [
+          "“draw a distinction between” burada ne anlama gelir?",
+          "iki şeyi birbirinden ayırmak",
+          "iki konuyu eşitlemek",
+          "bir öneri kabul etmek",
+          "Between sonrasında iki ayrı kavram ver ve farkın sonucu nasıl değiştirdiğini açıkla."
+        ],
+        "recall": [
+          "“iki şeyi birbirinden ayırmak” anlamındaki hedef ifadeyi yaz.",
+          "draw a distinction between"
+        ],
+        "use": "Bir kararda izin ve uygulama arasındaki ayrımı anlat."
+      },
+      "additionalWords": [
+        {
+          "term": "on the understanding that",
+          "meaning": "şu koşul kabul edilerek",
+          "example": "We accepted on the understanding that the report would remain private.",
+          "usage": "Önceden anlaşılan şartı verir; kişinin tek başına garanti veremeyeceği yeri belirt.",
+          "pronunciation": "/ɑn ði ˌʌndəɹˈstændɪŋ ðæt/",
+          "collocations": [
+            "agree on the understanding that",
+            "accept on the understanding that"
+          ],
+          "recognize": [
+            "“on the understanding that” burada ne anlama gelir?",
+            "şu koşul kabul edilerek",
+            "kararı yeniden okuduktan sonra",
+            "koşulsuz olarak",
+            "Önceden anlaşılan şartı verir; kişinin tek başına garanti veremeyeceği yeri belirt."
+          ],
+          "recall": [
+            "“şu koşul kabul edilerek” anlamındaki hedef ifadeyi yaz.",
+            "on the understanding that"
+          ],
+          "use": "Bir salonun paylaşılması için kabul koşulunu belirt."
+        },
+        {
+          "term": "reserve the right to",
+          "meaning": "bir hakkı saklı tutmak",
+          "example": "The contributors reserve the right to amend their account.",
+          "usage": "To + yalın fiil. Kişinin sonradan kullanabileceği hakkı adlandır.",
+          "pronunciation": "/ɹɪˈzɜɹv ðə ɹaɪt tu/",
+          "collocations": [
+            "reserve the right to withdraw",
+            "reserve the right to amend"
+          ],
+          "recognize": [
+            "“reserve the right to” burada ne anlama gelir?",
+            "bir hakkı saklı tutmak",
+            "hakkından vazgeçmek",
+            "otomatik onaylamak",
+            "To + yalın fiil. Kişinin sonradan kullanabileceği hakkı adlandır."
+          ],
+          "recall": [
+            "“bir hakkı saklı tutmak” anlamındaki hedef ifadeyi yaz.",
+            "reserve the right to"
+          ],
+          "use": "Bir pilotta hangi karar hakkının saklı kalacağını söyle."
+        },
+        {
+          "term": "leave the door open to",
+          "meaning": "bir olasılığı açık bırakmak",
+          "example": "We can leave the door open to later publication.",
+          "usage": "To + isim veya -ing. Olasılık kalır, henüz taahhüt verilmez.",
+          "pronunciation": "/liv ðə dɔɹ ˈoʊpən tu/",
+          "collocations": [
+            "leave the door open to later discussion",
+            "leave the door open to an appeal"
+          ],
+          "recognize": [
+            "“leave the door open to” burada ne anlama gelir?",
+            "bir olasılığı açık bırakmak",
+            "kapıyı kilitlemek",
+            "kesin sonuç duyurmak",
+            "To + isim veya -ing. Olasılık kalır, henüz taahhüt verilmez."
+          ],
+          "recall": [
+            "“bir olasılığı açık bırakmak” anlamındaki hedef ifadeyi yaz.",
+            "leave the door open to"
+          ],
+          "use": "Uzlaşmadan sonra hangi seçeneğin tartışmaya açık kalacağını belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "sealed envelope",
+          "cue": "mühürlü zarf"
+        },
+        {
+          "term": "public panel",
+          "cue": "halka açık pano"
+        },
+        {
+          "term": "withdrawal request",
+          "cue": "geri çekme talebi"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir işçi arşivinin özel erişim kararı için 125–165 sözcüklük tutanak yaz. İtirazın hedefini, koşullu kabulü ve geri çekme yolunu ayrı tut. Kararı iki cümleyle katılımcıya da aktar.",
+        "sample": "The panel agreed to keep the interviews in a restricted archive. This is less about stopping research than about allowing contributors to check how their words are used. Two members support researcher access on the understanding that excerpts are not copied into public materials. Another member wants a contact named for withdrawal requests. The custodian will be that contact and will record any change to the permission before the next visit. We can leave the door open to publication later, but the archive will ask again before any interview appears on a public panel. To contributors: We will keep a private copy for now. You can ask the custodian to change or withdraw permission. Please tell us if you would like to see the current record before you decide.",
+        "revision": "Bir kişi genel yayın için onay verilmiş gibi anlarsa hangi cümleyi değiştireceğini seç. Sorumluyu iki metinde aynı tut.",
+        "criteria": [
+          "İtirazın hedefi ve dar kabul tutarlı.",
+          "Hangi kararın hâlâ açık olduğu iki muhatap için anlaşılır."
+        ]
+      },
+      "input": {
+        "text": "Meeting papers. The recording was made for a local history exhibition. It includes a story that identifies a third person through the name of a small factory. The contributor has accepted private cataloguing, but has kept the right to review any excerpt used on a public panel. The archivist proposes to store the contributor’s name in a sealed envelope, with a withdrawal request sent directly to the custodian.\n\nCommittee discussion. One member says that removing the name might make a short clip suitable for the exhibition. Another replies that place and dates may still identify the people involved. Both would accept a copy for the internal archive. They disagree over what the public should hear and whether editing the clip is enough. The chair asks for separate decisions on preservation, research access and publication. A volunteer offers to take the first request, but the contributor wants a permanent contact. The chair decides to record a named custodian, retain the current restrictions, and return to the public panel only after the review. The brochure deadline remains unchanged. It will list the display without naming any contributor whose excerpts are still under discussion.",
+        "reading": [
+          "Which decision is explicitly left open?",
+          "Whether excerpts can be played on the public panel",
+          "Whether the archive may store a restricted copy",
+          "Whether there will be a named custodian",
+          "The chair separates preservation, access and publication.",
+          "return to the public panel only after the review"
+        ],
+        "transcript": "Chair: Can we play the edited clip at the opening? Archivist: My concern is less about the name than about the detail that gives away the factory. Contributor: I can live with an internal copy provided that I can withdraw it through one person. Volunteer: I can take requests this week. Contributor: I need a permanent contact, not a name that changes every Friday. Chair: Then the custodian is the contact. We can keep the copy, and we will ask again before any public use. Archivist: Can the brochure list the exhibition? Chair: Yes, but not the contributor whose excerpt is still under discussion. Contributor: That works for me if the brochure makes no promise about the clip. Chair: Agreed. The exhibition date is separate from permission to release the recording.",
+        "preparation": "Üç tarafın kabul ettiği eylemi, koşulu ve ertelenen kararı ayrı not et.",
+        "main": [
+          "What matters besides the contributor’s name?",
+          "A detail that could identify the factory",
+          "The age of the recording",
+          "The length of the brochure",
+          "Archival concern is identification by details.",
+          "detail that gives away the factory"
+        ],
+        "detail": [
+          "Who becomes the permanent contact?",
+          "The custodian",
+          "The weekly volunteer",
+          "The exhibition visitor",
+          "The chair names the permanent contact.",
+          "the custodian is the contact"
+        ]
+      },
+      "retry": {
+        "text": "The club can store members’ forms internally until the audit. It agreed to review two sections for possible publication, subject to written consent from each person quoted.",
+        "reading": [
+          "What is required for possible publication?",
+          "Written consent from each person quoted",
+          "Removal of the internal copies",
+          "Closing the club archive",
+          "The proposal depends on the people quoted.",
+          "written consent from each person quoted"
+        ],
+        "transcript": "We can test the generator on site provided that the neighbour is warned first. If they raise a concern, we can keep the trial indoors while the operator checks the noise. We have not agreed to night use.",
+        "preparation": "Deneme ve ilerideki kullanım arasındaki ayrımı dinle.",
+        "main": [
+          "What comes before a site trial?",
+          "A warning to the neighbour",
+          "Night use",
+          "A permanent decision",
+          "Provided that sonrası ön koşul.",
+          "the neighbour is warned first"
+        ],
+        "detail": [
+          "What remains unagreed?",
+          "Night use",
+          "Whether noise exists",
+          "Who operates the generator",
+          "Son cümle kapsamı sınırlar.",
+          "not agreed to night use"
+        ]
+      },
+      "readingPurpose": "Kararları saklama, erişim ve yayın olarak ayrı çıkar.",
+      "readingUse": "Bir tarafın koşulunu, öbür tarafın sözcükleriyle yeniden kur.",
+      "listeningUse": "Kabulü en dar kapsamıyla geri söyle ve dinleyiciden teyit iste.",
+      "speaking": "Bir serginin fotoğrafları konusunda iki kişinin beklentisini uzlaştır. Yeni üçüncü taraf itirazı geldiğinde kalıcı kabul, geçici kabul ve açık kararı ayrı söyle.",
+      "genres": {
+        "reading": "kurul dosyası ve karar notu",
+        "listening": "çok taraflı arşiv uzlaşması",
+        "writing": "çekinceli tutanak ve katılımcı mesajı"
+      },
+      "recovery": {
+        "reading": "Saklama izniyle halka açık yayını ayır.",
+        "main": "Kişinin adı ve yer ayrıntısı için ayrı not tut.",
+        "detail": "İtirazın çözümü geçici mi sürekli mi?"
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "less … than ile itiraz odağı; provided that ile dar kabul"
+      ]
+    }
+  ]
+}

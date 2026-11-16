@@ -1,0 +1,293 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.culture",
+      "outcome": "A2.culture",
+      "level": "A2",
+      "prerequisite": [
+        "ru.meeting",
+        "ru.future"
+      ],
+      "title": "Misafirlikte davet, ikram ve adetleri konuş",
+      "objective": "Bir daveti kabul et veya alternatif sun, misafirlikte getirilecek şey ve ikram hakkında kibarca soru sor.",
+      "situation": "Yeni bir komşu seni akşam çayına çağırdı. Bir şey getirmek gerekip gerekmediğini ve saatini öğrenmek istiyorsun.",
+      "bridge": "К + yönelme ile kime gittiğini söyle. Что-нибудь belirsiz bir nesne. Чем ile ikramın ne olduğunu sor, sonra uygun cevabı ver.",
+      "models": [
+        {
+          "phrase": "В субботу мы идём к соседке на чай.",
+          "explanation": "К yönelme hâli ister: соседка → соседке. На чай ziyaretin amacını belirtir."
+        },
+        {
+          "phrase": "Чем вас угостить? Чаем или соком?",
+          "explanation": "Угостить чем? Sonraki yiyecek veya içecek araç hâli alır: чай → чаем, сок → соком."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "К ile ziyaret edilen kişiyi belirt",
+          "incorrect": "Мы идём к соседка.",
+          "correct": "Мы идём к соседке.",
+          "explanation": "Kişiye doğru hareketi к + yönelme ile ver.",
+          "guided": [
+            [
+              "Я иду к ___ (подруга) на ужин.",
+              "подруге"
+            ],
+            [
+              "Мы поедем к ___ (дедушка) в воскресенье.",
+              "дедушке"
+            ]
+          ],
+          "transfer": [
+            [
+              "Они едут к ___ (бабушка) на чай.",
+              "бабушке"
+            ],
+            [
+              "Лена идёт к ___ (новая соседка).",
+              "новой соседке"
+            ]
+          ],
+          "delayed": [
+            [
+              "Вечером зайдём к ___ (друг).",
+              "другу"
+            ],
+            [
+              "Я собираюсь к ___ (родители).",
+              "родителям"
+            ]
+          ]
+        },
+        {
+          "label": "İkramda araç hâli",
+          "incorrect": "Они угощают нас чай.",
+          "correct": "Они угощают нас чаем.",
+          "explanation": "Угощать кого чем? Kişi nesne, yiyecek araç hâlinde.",
+          "guided": [
+            [
+              "Нас угостили ___ (сок).",
+              "соком"
+            ],
+            [
+              "Она угостит гостей ___ (пирог).",
+              "пирогом"
+            ]
+          ],
+          "transfer": [
+            [
+              "Сосед угостил меня ___ (кофе).",
+              "кофе"
+            ],
+            [
+              "Давайте угостим гостей ___ (суп).",
+              "супом"
+            ]
+          ],
+          "delayed": [
+            [
+              "В кафе нас угощали ___ (блины).",
+              "блинами"
+            ],
+            [
+              "Я угощу друга ___ (лимонад).",
+              "лимонадом"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "зайти на чай",
+        "meaning": "çaya uğramak",
+        "example": "Хочешь зайти на чай после работы?",
+        "usage": "Зайти, kısa süreli uğrama. Идти в гости daha genel.",
+        "pronunciation": "зайти́ на чай",
+        "collocations": [
+          "зайти на чай вечером",
+          "зайти к другу на чай"
+        ],
+        "recognize": [
+          "“зайти на чай” burada ne anlama gelir?",
+          "çaya uğramak",
+          "çay satın almak",
+          "ziyareti iptal etmek",
+          "Зайти, kısa süreli uğrama. Идти в гости daha genel."
+        ],
+        "recall": [
+          "“çaya uğramak” anlamındaki hedef ifadeyi yaz.",
+          "зайти на чай"
+        ],
+        "use": "Bir komşunu kısa bir çaya çağır."
+      },
+      "additionalWords": [
+        {
+          "term": "принести что-нибудь к чаю",
+          "meaning": "çay için bir şey getirmek",
+          "example": "Мне принести что-нибудь к чаю?",
+          "usage": "Yiyecek belirsizken что-нибудь. К чаю eşlik eden şeyi sorar.",
+          "pronunciation": "принести́ что́-нибудь к ча́ю",
+          "collocations": [
+            "принести пирог к чаю",
+            "купить что-нибудь к чаю"
+          ],
+          "recognize": [
+            "“принести что-нибудь к чаю” burada ne anlama gelir?",
+            "çay için bir şey getirmek",
+            "çayı içmemek",
+            "randevu almak",
+            "Yiyecek belirsizken что-нибудь. К чаю eşlik eden şeyi sorar."
+          ],
+          "recall": [
+            "“çay için bir şey getirmek” anlamındaki hedef ifadeyi yaz.",
+            "принести что-нибудь к чаю"
+          ],
+          "use": "Yeni bir misafirlik için yanında bir şey getirmen gerekip gerekmediğini sor."
+        },
+        {
+          "term": "спасибо за угощение",
+          "meaning": "ikram için teşekkürler",
+          "example": "Спасибо за угощение! Всё было очень вкусно.",
+          "usage": "За + nesne teşekkürün nedenini verir.",
+          "pronunciation": "спаси́бо за угоще́ние",
+          "collocations": [
+            "спасибо за угощение и за приглашение",
+            "поблагодарить за угощение"
+          ],
+          "recognize": [
+            "“спасибо за угощение” burada ne anlama gelir?",
+            "ikram için teşekkürler",
+            "davet için özür",
+            "çay istemek",
+            "За + nesne teşekkürün nedenini verir."
+          ],
+          "recall": [
+            "“ikram için teşekkürler” anlamındaki hedef ifadeyi yaz.",
+            "спасибо за угощение"
+          ],
+          "use": "Evden ayrılmadan ikram için teşekkür et."
+        },
+        {
+          "term": "мне пора",
+          "meaning": "artık gitmem gerek",
+          "example": "Спасибо, мне пора домой.",
+          "usage": "Мне пора ayrılman gerekirken söylenebilir.",
+          "pronunciation": "мне пора́",
+          "collocations": [
+            "мне пора идти",
+            "мне уже пора"
+          ],
+          "recognize": [
+            "“мне пора” burada ne anlama gelir?",
+            "artık gitmem gerek",
+            "bana uygun",
+            "daha çay istiyorum",
+            "Мне пора ayrılman gerekirken söylenebilir."
+          ],
+          "recall": [
+            "“artık gitmem gerek” anlamındaki hedef ifadeyi yaz.",
+            "мне пора"
+          ],
+          "use": "Bir davette ne zaman ayrılman gerektiğini kibarca söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "приглашение",
+          "cue": "davet"
+        },
+        {
+          "term": "домофон",
+          "cue": "kapı telefonu"
+        }
+      ],
+      "writing": {
+        "prompt": "İkram davetine kısa cevap yaz. Yeri ve saati teyit et, yiyecek getirmeniz gerekip gerekmediğini sor.",
+        "sample": "Спасибо за приглашение! Я зайду к вам в семь. Мне принести что-нибудь к чаю? Или лучше прийти без угощения?",
+        "revision": "Saat değişirse yeni saati ve ev sahibine bir sorunu ayrı yaz.",
+        "criteria": [
+          "Yer veya kişi yönelme ile anlaşılır.",
+          "İkram sorusu ve davete cevap tamam."
+        ]
+      },
+      "input": {
+        "text": "Приглашение от Иры. Заходи в субботу после шести. Домофон справа от двери. Я угощу тебя чаем и пирогом. Ничего приносить не нужно.",
+        "reading": [
+          "Ne getirmek gerekiyor?",
+          "Hiçbir şey",
+          "Çay",
+          "Pasta",
+          "Ира bir şey gerekmiyor diyor.",
+          "Ничего приносить не нужно"
+        ],
+        "transcript": "— Зайдёшь на чай? — Да, я могу в семь. Тебе принести пирог? — Спасибо, пирог уже есть. Лучше приходи без еды. Я угощу тебя чаем или соком.",
+        "preparation": "Saat, yiyecek ve sunulan içeceği ayrı dinle.",
+        "main": [
+          "Konuk saat kaçta uygun?",
+          "Yedi",
+          "Altı",
+          "Sekiz",
+          "В семь saat yedide.",
+          "я могу в семь"
+        ],
+        "detail": [
+          "Ev sahibi hangi içecekleri öneriyor?",
+          "Çay veya meyve suyu",
+          "Kahve veya su",
+          "Yalnız su",
+          "Чаем или соком seçenekleri verir.",
+          "чаем или соком"
+        ]
+      },
+      "retry": {
+        "text": "Письмо от Лены. Приходи ко мне вечером. Угощу тебя супом. Напиши, если закончишь работу поздно.",
+        "reading": [
+          "Hangi ikram belirtiliyor?",
+          "Çorba",
+          "Pasta",
+          "Çay",
+          "Супом, çorba demek.",
+          "Угощу тебя супом"
+        ],
+        "transcript": "— В пятницу не могу. Можно в воскресенье? — Конечно. Приходи к нам в шесть. Будем пить чай.",
+        "preparation": "İlk gün reddedildiğinde yeni günü dinle.",
+        "main": [
+          "Hangi gün seçildi?",
+          "Pazar",
+          "Cuma",
+          "Cumartesi",
+          "İkinci gün воскресенье.",
+          "Можно в воскресенье"
+        ],
+        "detail": [
+          "Saat ne?",
+          "Altı",
+          "Yedi",
+          "Beş",
+          "В шесть, altıda.",
+          "к нам в шесть"
+        ]
+      },
+      "readingPurpose": "Gün, ikram, konum ve getirilecek şey için not al.",
+      "readingUse": "Davet bilgilerini başka bir konuğa anlat.",
+      "listeningUse": "Ev sahibine saat ve ikramı kibarca geri sor.",
+      "speaking": "Yeni bir komşu ikram öneriyor. Kabul et veya bir alternatif sor. Sonra ne götüreceğini ve ayrılırken ne söyleyeceğini kendi cümlelerinle belirt.",
+      "genres": {
+        "reading": "ev ziyareti mesajı",
+        "listening": "davet ve ikram diyaloğu",
+        "writing": "kısa davet yanıtı"
+      },
+      "recovery": {
+        "reading": "Son cümlede getirilecek nesne isteniyor mu?",
+        "main": "Saat için в ifadesini dinle.",
+        "detail": "Угощу ardından araç hâlindeki içecekleri ayır."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "к + yönelme ve угостить + araç hâli"
+      ]
+    }
+  ]
+}

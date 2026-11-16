@@ -1,0 +1,275 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.persuade",
+      "outcome": "B2.persuade",
+      "level": "B2",
+      "prerequisite": [
+        "en.negotiate",
+        "en.emotion"
+      ],
+      "title": "Bir kamusal öneriyi karşı itiraza rağmen gerekçelendir",
+      "objective": "Bir topluluk önerisini kaynak ve ölçütle savun, en güçlü itirazı doğru aktardıktan sonra önerini sınırla.",
+      "situation": "Bir mahalle ikinci el eşya günü planlıyor. Sergileyiciler yeterli alan, sakinler açık kaldırımlar istiyor.",
+      "bridge": "Admittedly ile itirazı kabul et. Even so ile gerekçeli karşılık ver. İtirazı ciddiye alacak bir tasarım değişikliği öner.",
+      "models": [
+        {
+          "phrase": "Admittedly, an extra stall could narrow the path.",
+          "explanation": "Admittedly sınırlı bir itirazı açıkça tanır. Could olasılık bırakır."
+        },
+        {
+          "phrase": "Even so, a marked walkway would let us test the plan safely.",
+          "explanation": "Even so itirazı koruyup yanıta geçer. Would önerilen düzenlemenin beklenen etkisini verir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Taviz ve gerekçe bağlayıcıları",
+          "incorrect": "Admittedly the path is narrow. Therefore, there is room for more stalls.",
+          "correct": "Admittedly, the path is narrow. Even so, we can test one smaller stall.",
+          "explanation": "Taviz karşıt bir yanıta açılır; therefore neden-sonuç ister.",
+          "guided": [
+            [
+              "İtirazı kabul et: ___, the venue is expensive. (Admittedly / Therefore)",
+              "Admittedly"
+            ],
+            [
+              "İtiraza rağmen çözüm: The room is small. ___, a short session could work. (Even so / As a result)",
+              "Even so"
+            ]
+          ],
+          "transfer": [
+            [
+              "There are fewer seats. ___, we should test timed entry. (Even so / In the meantime) İtirazı koru.",
+              "Even so"
+            ],
+            [
+              "___, the northern route is longer. (Admittedly / Similarly)",
+              "Admittedly"
+            ]
+          ],
+          "delayed": [
+            [
+              "Bookings rose. ___, the board kept the fee. (As a result / Admittedly)",
+              "As a result"
+            ],
+            [
+              "The proposal has risks. ___, a smaller trial is worth considering. (Even so / For example)",
+              "Even so"
+            ]
+          ]
+        },
+        {
+          "label": "İtiraz ile koşullu çözümü eşleştir",
+          "incorrect": "“Wheelchairs cannot pass.” “We could print better posters.”",
+          "correct": "“Wheelchairs cannot pass.” “We could keep a wider lane clear.”",
+          "explanation": "Çözüm itirazın ölçütünü doğrudan etkiler.",
+          "guided": [
+            [
+              "“Residents cannot sleep.” Uygun cevap: end earlier / hire a pianist.",
+              "end earlier"
+            ],
+            [
+              "“Some people never see online notices.” Cevap: paper notice / longer link.",
+              "paper notice"
+            ]
+          ],
+          "transfer": [
+            [
+              "“Queues block the pavement.” Cevap: stagger arrivals / add a banner.",
+              "stagger arrivals"
+            ],
+            [
+              "“Visitors may trip in the dark.” Cevap: light the route / redraw the price list.",
+              "light the route"
+            ]
+          ],
+          "delayed": [
+            [
+              "“One volunteer cannot count entries and answer calls.” Cevap: split the tasks / change the sign.",
+              "split the tasks"
+            ],
+            [
+              "“The cheapest tickets sell out before people leave work.” Cevap: reserve an evening batch / shorten the poster.",
+              "reserve an evening batch"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "address a concern",
+        "meaning": "bir kaygıyı ele almak",
+        "example": "We can address a concern about crowding by limiting the trial.",
+        "usage": "Concern ile kaygıyı açıkça adlandır. By ile çözüm yolunu ekle.",
+        "pronunciation": "/əˈdɹes ə kənˈsɜɹn/",
+        "collocations": [
+          "address a safety concern",
+          "address objections about access"
+        ],
+        "recognize": [
+          "“address a concern” burada ne anlama gelir?",
+          "bir kaygıyı ele almak",
+          "kaygıyı büyütmek",
+          "bir adresi bulmak",
+          "Concern ile kaygıyı açıkça adlandır. By ile çözüm yolunu ekle."
+        ],
+        "recall": [
+          "“bir kaygıyı ele almak” anlamındaki hedef ifadeyi yaz.",
+          "address a concern"
+        ],
+        "use": "Bir komşunun güvenlik kaygısına uygun bir çözüm söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "strike a balance",
+          "meaning": "denge kurmak",
+          "example": "We need to strike a balance between access and capacity.",
+          "usage": "Between ile iki ihtiyacı da görünür kıl.",
+          "pronunciation": "/stɹaɪk ə ˈbæləns/",
+          "collocations": [
+            "strike a fair balance",
+            "strike a balance between cost and access"
+          ],
+          "recognize": [
+            "“strike a balance” burada ne anlama gelir?",
+            "denge kurmak",
+            "tek görüsü zorlamak",
+            "sonucu ölçmek",
+            "Between ile iki ihtiyacı da görünür kıl."
+          ],
+          "recall": [
+            "“denge kurmak” anlamındaki hedef ifadeyi yaz.",
+            "strike a balance"
+          ],
+          "use": "Bir parkta sessizlik ile oyun alanı arasında denge öner."
+        },
+        {
+          "term": "gather evidence",
+          "meaning": "kanıt toplamak",
+          "example": "Let us gather evidence before extending the trial.",
+          "usage": "Belirli bir ölçüm ve süre planı kurulunca işe yarar.",
+          "pronunciation": "/ˈɡæðəɹ ˈevɪdəns/",
+          "collocations": [
+            "gather evidence on waiting times",
+            "gather evidence before a decision"
+          ],
+          "recognize": [
+            "“gather evidence” burada ne anlama gelir?",
+            "kanıt toplamak",
+            "itirazı silmek",
+            "kararı hızlandırmak",
+            "Belirli bir ölçüm ve süre planı kurulunca işe yarar."
+          ],
+          "recall": [
+            "“kanıt toplamak” anlamındaki hedef ifadeyi yaz.",
+            "gather evidence"
+          ],
+          "use": "Yeni güzergâh için neyi ve nasıl ölçeceğini söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "clear passage",
+          "cue": "engelsiz geçiş"
+        },
+        {
+          "term": "bottleneck",
+          "cue": "darboğaz"
+        },
+        {
+          "term": "trial period",
+          "cue": "deneme dönemi"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir gençlik etkinliği için 115–155 sözcüklük savunu yaz. İtiraz akşam gürültüsü olsun. Teklifi yeniden sınırla ve hangi gözlemden sonra uzatma isteyeceğini söyle.",
+        "sample": "I support a short outdoor music trial because young people have few places to perform and rehearsals inside the centre are already crowded. Admittedly, somebody who lives next to the gate could be disturbed even by one performance. I would therefore limit the trial to two early evenings and keep the speakers away from the houses. The centre could give neighbours a number to call while the event is running, when staff can still turn the sound down. A comment made the next morning would also be recorded. If both evenings end on time and the nearest households report no repeated disturbance, the committee could consider another trial. If the same problem is reported twice, it should move the performances indoors.",
+        "revision": "İtirazı yanıtlamayan önerileri çıkar. Kimin, neyi, ne zaman gözleyeceğini ekle.",
+        "criteria": [
+          "Karşı görüş sahibi ve gerçek kaygısı açık.",
+          "Koşullu öneri yeni bilgi gelirse değişebilir."
+        ]
+      },
+      "input": {
+        "text": "Neighbourhood proposal. The swap day would let residents exchange children’s clothes and furniture. The organisers want eight stalls near the bus stop because it has shelter. A residents’ note asks for a clear passage along the pavement. When prams and wheelchairs meet at the corner, the kerb already creates a bottleneck. The organisers suggest keeping the first two stalls away from the corner and limiting larger items to a room inside the library.\n\nAccess team response. A daytime trial period could show whether a marked lane stays clear at busy times. Volunteers should count blockages rather than record only total visitor numbers. Before the second event, check the layout with residents who use the route daily. Moving a table is reversible; promising eight stalls to traders before that check is harder to undo.",
+        "reading": [
+          "Which feedback fits the access team’s concern?",
+          "Count blocked passages, then review the layout",
+          "Count all visitors without noting access",
+          "Add two stalls at the corner",
+          "Ölçüm doğrudan erişime odaklanıyor.",
+          "count blockages"
+        ],
+        "transcript": "Chair: The market could bring useful services closer to residents. Jo: Admittedly, more stalls could make the corner harder to cross. Lena: Could we put the bulky things inside the library? Jo: That addresses space, but should we also mark a clear lane? Chair: Yes, and before promising a second Saturday, ask someone to count how often the lane is blocked. Lena: If the route stays clear, we can invite volunteers back. If it does not, we must move the corner stalls.",
+        "preparation": "İtirazın iki cevabını ve karar için ölçümü dinle.",
+        "main": [
+          "What moves into the library?",
+          "Bulky items",
+          "All stalls",
+          "The bus stop",
+          "Büyük eşyalar taşınır.",
+          "bulky things inside the library"
+        ],
+        "detail": [
+          "What happens if the lane is blocked?",
+          "The corner stalls must move",
+          "The market immediately goes permanent",
+          "The library closes",
+          "Başarısız denemenin yeni eylemi köşe tezgâhlarını taşımak.",
+          "move the corner stalls"
+        ]
+      },
+      "retry": {
+        "text": "A local library will test deliveries at 7 a.m. Residents worry about noise. The team will use the rear yard only and record complaints before making the time permanent.",
+        "reading": [
+          "Which action answers the objection?",
+          "Use the rear yard and record complaints",
+          "Expand the trial to midnight",
+          "Close the library",
+          "Erken teslimatı arka avluda sınırlandırır ve şikâyeti ölçer.",
+          "use the rear yard only"
+        ],
+        "transcript": "Two neighbours support a book exchange but worry about boxes on the stairs. We could put one shelf by the side door. If it blocks the exit, we will move it inside.",
+        "preparation": "What problem and exit condition does the speaker name?",
+        "main": [
+          "Where is the proposed shelf?",
+          "Side door",
+          "On the stairs",
+          "Outside the park",
+          "Shelf by the side door.",
+          "shelf by the side door"
+        ],
+        "detail": [
+          "When would they move it?",
+          "If it blocks the exit",
+          "After winter",
+          "If it gets full",
+          "Çıkışın kapanması taşınma koşuludur.",
+          "If it blocks the exit"
+        ]
+      },
+      "readingPurpose": "Öneri, karşı görüş, koşullu uyarlama ve yeniden karar için dört madde yaz.",
+      "readingUse": "Bir gürültü veya erişim sorununa hedefli değişiklik öner.",
+      "listeningUse": "Karşı görüşü önce muhatabın kabul edeceği biçimde geri söyle.",
+      "speaking": "Bir gece yürüyüşü öner. Partner güvenlik itirazı getirsin. Ölçülebilir bir değişiklik ve uzatma şartı öner.",
+      "genres": {
+        "reading": "kamusal öneri ve erişim değerlendirmesi",
+        "listening": "itirazlı topluluk toplantısı",
+        "writing": "gerekçeli topluluk savunusu"
+      },
+      "recovery": {
+        "reading": "Gözlem ölçütü ziyaretçi toplamı mı, kapanan geçiş mi?",
+        "main": "İlk öneri ile erişim önlemini ayır.",
+        "detail": "If sonrasındaki başarısızlık koşulunu dinle."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "admittedly, even so ve gerekçeli taviz"
+      ]
+    }
+  ]
+}

@@ -63,7 +63,7 @@ export const russianMovement: Module[] = [
     additionalWords: [expression('сделать пересадку', 'aktarma yapmak', 'На этой станции нужно сделать пересадку.', 'Пересадка, hat veya araç değiştirmeyi anlatır.', 'сде́лать переса́дку', ['сделать пересадку на станции', 'ехать без пересадки'], ['bilet almak', 'yürüyerek gitmek'], 'Bir yolcuya aktarma yapacağı yeri söyle.')],
     receptive: [{ term: 'ремонт', cue: 'onarım veya tadilat' }],
     writing: { prompt: 'Bugün ve normalde işe nasıl gittiğini iki ayrı cümleyle anlat.', sample: 'Сегодня я иду на работу пешком. Обычно я езжу на работу на метро.',
-      revision: 'Bir ulaşım değişikliği ve sebebi ekle.', criteria: ['Bugünkü hareket ile alışkanlık ayrı.', 'Ulaşım biçimi belirgin.'] },
+      revision: 'Şimdi yolculuğu bir arkadaşına sesli mesaj gibi yeniden yaz. Bugün ve genellikle için еду/езжу ya da иду/хожу çiftini seç. Aktarma gerekiyorsa nerede olduğunu, gerekmiyorsa без пересадки ile bunu söyle.', criteria: ['Bugünkü hareket ile alışkanlık ayrı.', 'Ulaşım biçimi belirgin.'] },
     input: { text: 'Обычно мы ездим в центр на метро. Сегодня на линии ремонт, поэтому мы едем в центр на автобусе. Пересадка не нужна.',
       reading: ['Bugün nasıl gidiyorlar?', 'Otobüsle', 'Metroyla', 'Yürüyerek', 'Сегодня … на автобусе.'],
       transcript: 'Я обычно хожу в офис пешком. Сегодня идёт дождь, и я еду на автобусе. Выйду у банка.',

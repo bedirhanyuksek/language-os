@@ -183,7 +183,7 @@
       "writing": {
         "prompt": "Bir müzede sesli rehber ödünç alma adımlarını dört cümleyle aktar. Bir ön koşul ve bir arıza alternatifi ekle.",
         "sample": "Сначала поднесите билет к экрану. Перед выдачей выберите язык. Потом заберите плеер из лотка. Если лоток пуст, обратитесь к дежурному.",
-        "revision": "Arıza adı ve izlenecek adımı ayrı cümlede koru.",
+        "revision": "Arıza adı ve izlenecek adımı ayrı cümlede koru. Bu defa yönergeyi tek başına gelen kursiyere sesli mesaj olarak aktar: hangi adımı önce yapacağını, arızada kime başvuracağını ve bir kurs materyalini ne zaman teslim edeceğini söyle.",
         "criteria": [
           "Normal işlem doğru sırada.",
           "Arıza adımında doğru yardım yolu var."

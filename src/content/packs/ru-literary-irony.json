@@ -1,0 +1,277 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.literary",
+      "outcome": "C2.literary",
+      "level": "C2",
+      "prerequisite": [
+        "ru.genre-synthesis",
+        "ru.fiction"
+      ],
+      "title": "Edebî ironiyi ve anlatıcı mesafesini yorumla",
+      "objective": "Öyküde kimin dili duyuluyor, resmî sözle maddi ayrıntı nasıl çatışıyor ve anlatıcı kime mesafe alıyor sorularını tart.",
+      "situation": "Bir mahalle fırınının kapanışı, dosya dili ve bir komşunun ironik gözlemleriyle anlatılıyor.",
+      "bridge": "Övgüyü alıntıla, hemen yanındaki somut ayrıntıyla karşılaştır. Якобы iddiaya mesafe ekler. Даже ile beklenmedik örneği öne al; bunları tek başına ironi kanıtı sayma.",
+      "models": [
+        {
+          "phrase": "Комиссия якобы сохранила доступ, но ручку с двери сняли.",
+          "explanation": "Я́кобы, iddianın aktarıldığını ve konuşanın ona mesafe aldığını işaretler. İddia mutlaka yanlış demek değildir."
+        },
+        {
+          "phrase": "Всё устроено образцово: даже ключ лежит под новым замком.",
+          "explanation": "Да́же burada erişilemeyen anahtarı vurgular. Övgü ile gerçek ayrıntı çatışır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "İddia ve anlatıcı mesafesi",
+          "incorrect": "Якобы означает, что рассказчик точно знает причину.",
+          "correct": "Якобы отдаляет голос рассказчика от переданного утверждения.",
+          "explanation": "Neyi kimin ileri sürdüğünü ve metinde neyin gözlendiğini ayır.",
+          "guided": [
+            [
+              "«Зал якобы открыт, но дверь заперта». Что наблюдается?",
+              "дверь заперта"
+            ],
+            [
+              "«По отчёту все согласны; даже ответов нет». Что отсутствует?",
+              "ответы",
+              "ответов нет"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Будто бы встречу отменили, но подтверждения нет». Что не подтверждено?",
+              "отмена встречи"
+            ],
+            [
+              "«Открыли даже запасной вход» — искреннее удивление. Что выделено?",
+              "запасной вход"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Сотрудник якобы видел поезд; журнал фиксирует туман». Чьё утверждение передано?",
+              "сотрудника"
+            ],
+            [
+              "«Чудесный вид: перед окном поставили щит». Что расходится с оценкой?",
+              "щит",
+              "щит перед окном"
+            ]
+          ],
+          "skill": "reading"
+        },
+        {
+          "label": "Uyarıcı çelişkiyi bağla",
+          "incorrect": "Несмотря на, что лампу сняли, в акте написали «освещено».",
+          "correct": "Несмотря на то что лампу сняли, в акте написали «освещено».",
+          "explanation": "Несмотря на то что yan tümce alır; несмотря на + isim nesne hâli alır.",
+          "guided": [
+            [
+              "Несмотря на ___ что дверь заперта, в письме её назвали открытой.",
+              "то"
+            ],
+            [
+              "Несмотря на ___ (засуха), в сводке обещали богатый урожай.",
+              "засуху"
+            ]
+          ],
+          "transfer": [
+            [
+              "Несмотря на то ___ очередь росла, табличку сняли.",
+              "что"
+            ],
+            [
+              "Несмотря на ___ (задержка), ведущий объявил «точно по графику».",
+              "задержку"
+            ]
+          ],
+          "delayed": [
+            [
+              "Несмотря на ___ что чашки убрали, в письме обещали чай.",
+              "то"
+            ],
+            [
+              "Несмотря на ___ (темнота), отчёт называет площадку освещённой.",
+              "темноту"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "читать между строк",
+        "meaning": "satır aralarını okumak",
+        "example": "В этом письме приходится читать между строк.",
+        "usage": "Metnin açık anlamından örtük tutumu çıkar; hangi ayrıntıya dayandığını söyle.",
+        "pronunciation": "чита́ть ме́жду строк",
+        "collocations": [
+          "читать между строк письма",
+          "уметь читать между строк"
+        ],
+        "recognize": [
+          "“читать между строк” burada ne anlama gelir?",
+          "satır aralarını okumak",
+          "sesli tekrar etmek",
+          "bir cümleyi atlamak",
+          "Metnin açık anlamından örtük tutumu çıkar; hangi ayrıntıya dayandığını söyle."
+        ],
+        "recall": [
+          "“satır aralarını okumak” anlamındaki hedef ifadeyi yaz.",
+          "читать между строк"
+        ],
+        "use": "Bir övgünün aslında hangi çekinceyi ima ettiğini açıklayıp kanıt göster."
+      },
+      "additionalWords": [
+        {
+          "term": "намеренный контраст",
+          "meaning": "kasıtlı karşıtlık",
+          "example": "Намеренный контраст между объявлением и сценой создаёт иронию.",
+          "usage": "İki dil düzeyi veya görüntü seçiminin etkisini açıkla.",
+          "pronunciation": "наме́ренный контра́ст",
+          "collocations": [
+            "построить намеренный контраст",
+            "намеренный контраст между голосами"
+          ],
+          "recognize": [
+            "“намеренный контраст” burada ne anlama gelir?",
+            "kasıtlı karşıtlık",
+            "tesadüfî ses",
+            "sessiz paragraf",
+            "İki dil düzeyi veya görüntü seçiminin etkisini açıkla."
+          ],
+          "recall": [
+            "“kasıtlı karşıtlık” anlamındaki hedef ifadeyi yaz.",
+            "намеренный контраст"
+          ],
+          "use": "Bir anlatıda iki sesin hangi ayrıntıyla karşı karşıya geldiğini söyle."
+        },
+        {
+          "term": "отстранённый тон",
+          "meaning": "mesafeli ton",
+          "example": "Отстранённый тон не исчезает даже в последней реплике.",
+          "usage": "Anlatıcının açık hüküm vermeyip davranışları izlediği ton.",
+          "pronunciation": "отстранённый тон",
+          "collocations": [
+            "поддерживать отстранённый тон",
+            "заметить отстранённый тон"
+          ],
+          "recognize": [
+            "“отстранённый тон” burada ne anlama gelir?",
+            "mesafeli ton",
+            "samimi rica",
+            "yüksek ses",
+            "Anlatıcının açık hüküm vermeyip davranışları izlediği ton."
+          ],
+          "recall": [
+            "“mesafeli ton” anlamındaki hedef ifadeyi yaz.",
+            "отстранённый тон"
+          ],
+          "use": "Bir sahneyi mesafeli ve yakın tonla iki biçimde anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "пломба",
+          "cue": "mühür"
+        },
+        {
+          "term": "витрина",
+          "cue": "vitrin"
+        },
+        {
+          "term": "инвентарная ведомость",
+          "cue": "envanter çizelgesi"
+        }
+      ],
+      "writing": {
+        "prompt": "Fırın öyküsünden iki ayrıntıyla 130–170 sözcüklük bir çözümleme yaz. Son cümledeki mesafenin kişiye mi kurumun diline mi yöneldiğini tart. Bir ayrıntıyı övgü tonu ve ironiyle ayrı biçimde yeniden yaz.",
+        "sample": "Ирония в рассказе направлена прежде всего на язык учреждения. Объявление благодарит жителей за терпение, хотя ни одной очереди уже не видно: за витриной осталась только инвентарная ведомость. Эта бумага описывает вещи, но не объясняет, куда идти за хлебом. Слово «полностью» звучит как готовый отчёт об успехе. Оно не совпадает с наблюдением женщины, которая пробует открыть дверь и видит пломбу. При этом рассказчик не высмеивает женщину. Он замечает, как она возвращает пакет в сумку, и оставляет ей право ничего не сказать. Можно прочитать финал и как упрёк соседям, привыкшим отвечать шуткой. Однако фарфоровая чашка принадлежит не соседу, а самой пекарне, и вопрос о доступе остаётся у тех, кто повесил объявление. В нейтральном варианте я бы написал: «Служба сохранила витрину и закрыла вход». В ироническом: «Для жителей сохранили всё, что можно увидеть с улицы». Так предмет остаётся одним и тем же, но оценка меняется.",
+        "revision": "Açık olay ve ironik yoruma ayrı kanıtlar ver. Aynı ayrıntıyla iki kayıt düzeyi kur.",
+        "criteria": [
+          "Resmî ses ve anlatıcının tutumu ayrılır.",
+          "İki okuma somut ayrıntılarla tartılır."
+        ]
+      },
+      "input": {
+        "text": "Утром над дверью повесили объявление. «Пекарня полностью сохраняет своё присутствие в районе. Благодарим жителей за терпение». За широкой витриной лежала инвентарная ведомость. На верхней полке стояла фарфоровая чашка, в которой раньше держали мелочь на сдачу. Печи уже вынесли.\n\nУ входа остановилась женщина с матерчатым пакетом. Она потянула дверь на себя, увидела, что пломба цела, и убрала пакет в сумку. Сосед прочёл последнюю строчку объявления вслух. «Как хорошо, что нас заранее поблагодарили», — сказал он и отступил, чтобы дать ей пройти. Но проходить было некуда.\n\nК полудню пришёл человек с папкой. Он сверил чашку с ведомостью и поставил галочку. Женщина спросила, не знает ли он, где теперь продают такой хлеб. Человек перевернул лист, поискал адрес и показал ей пустую оборотную сторону. Потом он аккуратно проверил пломбу и записал, что замечаний нет. Ни женщина, ни сосед не попросили его объяснить, к чему относится эта последняя запись.\n\nК вечеру витрина была вымыта. Листок с обещанием висел там, где прежде мелом писали, когда будет готов ржаной хлеб. Снаружи улица отражалась так ясно, что чашка казалась стоящей прямо посреди тротуара. Увидеть её теперь мог каждый.",
+        "reading": [
+          "What most directly undermines the promise of a continued presence?",
+          "The ovens were removed and the door was sealed",
+          "The old cup remained visible",
+          "The street appeared in the window",
+          "The material details distinguish visible presence from access.",
+          "Печи уже вынесли"
+        ],
+        "transcript": "Ведущая: Сосед говорит, что жителей заранее поблагодарили. Вы слышите в этом упрёк женщине? Первый читатель: Нет, это ответ бумаге. Благодарность ничего не меняет, если дверь теперь заперта. Вторая читательница: Я согласна насчёт бумаги, но он мог и сам смутиться: он отступил, как будто ещё можно уступить дорогу. Ведущая: Значит, ирония не сводится к интонации одной фразы? Первый читатель: Именно. Вещи остаются видимыми, но ими больше нельзя пользоваться. Вторая читательница: И в конце рассказчик даёт нам отражение, а не готовый вывод. Чашка кажется доступной только благодаря стеклу. Ведущая: И что делать с человеком, который ставит галочку? Вторая читательница: Не считать его автором объявления. Он проверяет то, что ему поручили. Именно поэтому его запись может быть верной и при этом ничего не говорить о хлебе.",
+        "preparation": "Her yorumun seçtiği nesne veya hareketi not al.",
+        "main": [
+          "İlk yorumcuya göre komşu kime yanıt veriyor?",
+          "Duyurunun resmî diline",
+          "Kadına",
+          "Yeni fırıncıya",
+          "İlk okuma cevabı duyuruya bağlar.",
+          "это ответ бумаге"
+        ],
+        "detail": [
+          "İkinci yorumcunun son ayrıntısı neyi vurgular?",
+          "Camın erişilebilirlik izlenimi yaratması",
+          "Kadının dükkâna dönmesi",
+          "Sokağın karanlık olması",
+          "Cam, fiziksel erişim yerine görüntü sağlar.",
+          "кажется доступной только благодаря стеклу"
+        ]
+      },
+      "retry": {
+        "text": "На новом стенде висело слово «тишина». За стендом слесарь испытывал дрель. Смотритель поправил стенд и попросил говорить тише.",
+        "reading": [
+          "Hangi çelişki ironiye açılır?",
+          "Sessizlik duyurusu ve arkasındaki matkap",
+          "Görevlinin tabela düzeltmesi",
+          "Tabelanın yeni olması",
+          "Gözlenen ses duyuruyla çatışır.",
+          "слесарь испытывал дрель"
+        ],
+        "transcript": "Расписание обещало запас времени. Ведущая перечитала строку, пока последний автобус уходил без неё. Мы знаем, что она улыбнулась, но не знаем, над собой или над расписанием.",
+        "preparation": "Eylemi ve açık kalan hedefi ayrı dinle.",
+        "main": [
+          "Kesin olay ne?",
+          "Son otobüs onsuz gitti",
+          "Programı hazırlayan geldi",
+          "İlk otobüs kalkmadı",
+          "Otobüsün gidişi doğrudan anlatılır.",
+          "последний автобус уходил без неё"
+        ],
+        "detail": [
+          "Gülümsemenin hangi ayrıntısı açık kalıyor?",
+          "Kime veya neye yöneldiği",
+          "Gülümseyip gülümsemediği",
+          "Otobüsün rengi",
+          "İki olası hedef verilir.",
+          "над собой или над расписанием"
+        ]
+      },
+      "readingPurpose": "Övgü, görünür nesne ve erişim arasındaki ayrımı metin üzerinde işaretle.",
+      "readingUse": "Aynı sahneyi resmî dille ve dolaylı ironiyle ayrı yaz.",
+      "listeningUse": "Karşı yorumun dayandığı davranışı onun adına adil biçimde özetle.",
+      "speaking": "Bir ortak alanın kapanışını anlatan yeni sahneyi yorumla. Partner ironiyi tek kişiye yüklerse kurum dilini de hesaba katan kanıtlı bir görüş sun.",
+      "genres": {
+        "reading": "özgün kısa edebî anlatı",
+        "listening": "iki okurlu edebî tartışma",
+        "writing": "kanıtlı yorum ve üslup dönüşümü"
+      },
+      "recovery": {
+        "reading": "Erişime dair somut olayları duyuru sözlerinden ayır.",
+        "main": "İlk okurun yanıtı bir kişiye mi yazıya mı?",
+        "detail": "Camdan görülen ile kullanılabilen nesneyi ayır."
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "якобы ve даже ile söylem tutumu; несмотря на (то что)"
+      ]
+    }
+  ]
+}

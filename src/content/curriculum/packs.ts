@@ -20,6 +20,7 @@ const concept = z.strictObject({
   label: line, incorrect: line, correct: line, explanation: line,
   skill: z.enum(['grammar', 'reading']).optional(),
   guided: variants, transfer: variants, delayed: variants,
+  foundation: z.strictObject({ conceptId: line, errorAnswers: z.array(line).min(1), practice, explanation: line }).optional(),
 })
 const lesson = z.strictObject({
   id: z.string().regex(/^(en|ru)\.[a-z][a-z0-9-]+$/),
@@ -29,7 +30,7 @@ const lesson = z.strictObject({
   situation: line, bridge: line,
   models: z.tuple([teachingSchema.shape.models.element, teachingSchema.shape.models.element]),
   concepts: z.tuple([concept, concept]),
-  word: expression, additionalWords: z.array(expression).min(1).max(2), receptive: teachingSchema.shape.receptive.unwrap().min(1),
+  word: expression, additionalWords: z.array(expression).min(1).max(5), receptive: teachingSchema.shape.receptive.unwrap().min(1),
   writing: z.strictObject({ prompt: line, sample: line, revision: line, criteria: z.tuple([line, line]) }),
   input: material, retry: material, readingUse: line, listeningUse: line,
   speaking: line, speakingContext: z.enum(['daily_conversation', 'job_interviews', 'workplace', 'technical',

@@ -1,0 +1,249 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.short-message",
+      "outcome": "A1.short-message",
+      "level": "A1",
+      "prerequisite": [
+        "ru.repair"
+      ],
+      "title": "Kısa mesaja yer ve saat teyidiyle yanıt ver",
+      "objective": "Davet mesajından yer ve saati çıkar, gelemiyorsan kısa bir alternatif sor.",
+      "situation": "Bir arkadaşın parka buluşmaya çağırıyor. Mesajı okuyup saati geri sormalısın.",
+      "bridge": "В ile saat, у ile buluşma noktası iste. Могу ve не могу ile uygunluğunu söyle.",
+      "models": [
+        {
+          "phrase": "Я могу в шесть.",
+          "explanation": "Могу yapabilirim, в шесть saat altıda."
+        },
+        {
+          "phrase": "У входа? Можно в семь?",
+          "explanation": "İlk soru yeri teyit eder. İkinci soru farklı saat önerir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "У sonrasında yer",
+          "incorrect": "Жду у вход.",
+          "correct": "Жду у входа.",
+          "explanation": "У yakınlık bildirirken tamlayan hâli ister.",
+          "guided": [
+            [
+              "У ___ (вход).",
+              "входа"
+            ],
+            [
+              "У ___ (музей).",
+              "музея"
+            ]
+          ],
+          "transfer": [
+            [
+              "У ___ (парк).",
+              "парка"
+            ],
+            [
+              "У ___ (школа).",
+              "школы"
+            ]
+          ],
+          "delayed": [
+            [
+              "У ___ (банк).",
+              "банка"
+            ],
+            [
+              "У ___ (театр).",
+              "театра"
+            ]
+          ]
+        },
+        {
+          "label": "Olay ve alternatifi ayır",
+          "incorrect": "«В шесть не могу. В семь могу». Время: шесть.",
+          "correct": "Время: семь.",
+          "explanation": "Не могу ilk saati eler. Olumlu zaman seçeneğini söyle.",
+          "guided": [
+            [
+              "«В пять не могу. В шесть могу». Когда может?",
+              "в шесть",
+              "в 6"
+            ],
+            [
+              "«Не у входа, а у кассы». Где?",
+              "у кассы"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Не в парке, а у музея». Где?",
+              "у музея"
+            ],
+            [
+              "«В семь не могу. Можно в восемь?» Новое время?",
+              "в восемь",
+              "в 8"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Завтра не могу. Могу в пятницу». Когда может?",
+              "в пятницу"
+            ],
+            [
+              "«Встреча не у дома, а у школы». Где?",
+              "у школы"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "давай встретимся",
+        "meaning": "hadi buluşalım",
+        "example": "Давай встретимся у входа.",
+        "usage": "Давай tek kişiye samimi bir öneri.",
+        "pronunciation": "дава́й встре́тимся",
+        "collocations": [
+          "давай встретимся после урока",
+          "давай встретимся завтра"
+        ],
+        "recognize": [
+          "“давай встретимся” burada ne anlama gelir?",
+          "hadi buluşalım",
+          "görüşmeyi iptal et",
+          "adını yaz",
+          "Давай tek kişiye samimi bir öneri."
+        ],
+        "recall": [
+          "“hadi buluşalım” anlamındaki hedef ifadeyi yaz.",
+          "давай встретимся"
+        ],
+        "use": "Bir arkadaşına okuldan sonra buluşma öner."
+      },
+      "additionalWords": [
+        {
+          "term": "мне удобно",
+          "meaning": "bana uygun",
+          "example": "Мне удобно в семь.",
+          "usage": "Saat veya yer için kullanılabilir.",
+          "pronunciation": "мне удо́бно",
+          "collocations": [
+            "мне удобно утром",
+            "мне удобно в пятницу"
+          ],
+          "recognize": [
+            "“мне удобно” burada ne anlama gelir?",
+            "bana uygun",
+            "çok uzakta",
+            "adresi bilmiyorum",
+            "Saat veya yer için kullanılabilir."
+          ],
+          "recall": [
+            "“bana uygun” anlamındaki hedef ifadeyi yaz.",
+            "мне удобно"
+          ],
+          "use": "Yarın için uygun bir saat bildir."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "встреча",
+          "cue": "buluşma"
+        },
+        {
+          "term": "фонтан",
+          "cue": "çeşme"
+        }
+      ],
+      "writing": {
+        "prompt": "Mesaj: «У парка в пять?» Beşte gelemiyorsun. Altıyı öner ve buluşma yerini teyit et.",
+        "sample": "В пять не могу. Можно в шесть? У парка?",
+        "revision": "Önerdiğin saat ile ilk saati ayrı söyle.",
+        "criteria": [
+          "Cevapta uygun olmayan saat ayrılıyor.",
+          "Yer veya yeni saat teyidi var."
+        ]
+      },
+      "input": {
+        "text": "Встреча в шесть у входа в парк. Фонтан закрыт. Лена, напиши, если не можешь.",
+        "reading": [
+          "Buluşma nerede?",
+          "Park girişinde",
+          "Çeşmede",
+          "Okulda",
+          "У входа в парк, park girişinde.",
+          "у входа в парк"
+        ],
+        "transcript": "— Лена, в шесть у парка? — В шесть не могу. Можно в семь? — Да, в семь у входа.",
+        "preparation": "İlk teklif ve son saati ayrı dinle.",
+        "main": [
+          "Teyit edilen saat hangisi?",
+          "7",
+          "6",
+          "8",
+          "İki kişi sonunda yedide anlaşır.",
+          "Да, в семь"
+        ],
+        "detail": [
+          "Teyit edilen yer neresi?",
+          "Giriş",
+          "Çeşme",
+          "Müze",
+          "У входа girişin yanı.",
+          "в семь у входа"
+        ]
+      },
+      "retry": {
+        "text": "Давай встретимся у музея. В пять? У музея два входа. Я у главного.",
+        "reading": [
+          "Hangi giriş?",
+          "Ana giriş",
+          "Arka giriş",
+          "Çıkış",
+          "Главный ana demek.",
+          "Я у главного"
+        ],
+        "transcript": "— Ты можешь завтра в три? — В три нет, но я могу в четыре. — Хорошо. У школы.",
+        "preparation": "Нет sonrası yeni saati dinle.",
+        "main": [
+          "Yeni saat ne?",
+          "4",
+          "3",
+          "5",
+          "В четыре dörtte.",
+          "могу в четыре"
+        ],
+        "detail": [
+          "Nerede buluşacaklar?",
+          "Okulun yanında",
+          "Parkta",
+          "Evde",
+          "У школы, okulun yanında.",
+          "У школы"
+        ]
+      },
+      "readingPurpose": "Mesajda yer ve saatin altını ayrı çiz.",
+      "readingUse": "Yeni saati tek satırda başka birine ilet.",
+      "listeningUse": "Son teklifi geri söyle.",
+      "speaking": "Arkadaşın bir yer ve saat göndersin. O saat uygun değilse yeni saat öner, yeri ayrıca kontrol et.",
+      "genres": {
+        "reading": "kısa davet mesajı",
+        "listening": "saat değiştirme konuşması",
+        "writing": "kısa teyit"
+      },
+      "recovery": {
+        "reading": "Çeşme kapalı; gerçek yer neresi?",
+        "main": "İkinci saat ilkinden farklı mı?",
+        "detail": "У kelimesinden sonra gelen yeri bul."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "у + tamlayan ve могу ile uygunluk"
+      ]
+    }
+  ]
+}

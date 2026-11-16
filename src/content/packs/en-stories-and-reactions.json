@@ -1,0 +1,249 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.creative-response",
+      "outcome": "B1.creative-response",
+      "level": "B1",
+      "prerequisite": [
+        "en.story",
+        "en.emotion"
+      ],
+      "title": "Film ve öyküye gerekçeli kişisel tepki ver",
+      "objective": "Bir sahneyi kısaca aktar, duygunun ne zaman değiştiğini ve bunu hangi ayrıntının sağladığını açıkla.",
+      "situation": "Bir film kulübünde aynı kısa filmi izleyen iki kişinin farklı tepkileri var.",
+      "bridge": "Önce sahneyi bir cümlede ver. I was surprised by ile tepkini, because ile somut gerekçeyi söyle. At first ve by the end ile değişimi göster.",
+      "models": [
+        {
+          "phrase": "I was surprised by the ending because Mira left the key behind.",
+          "explanation": "Surprised duyguyu yaşayanı, surprising etki yaratan şeyi niteler. By ile nedeni adlandır."
+        },
+        {
+          "phrase": "At first I felt sorry for Mira. By the end I was relieved that she had left.",
+          "explanation": "At first ilk tepkiyi, by the end son bölümdeki tepkiyi işaretler. Relieved, bir kaygı ortadan kalktığında kullanılır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Tepki ve etkiyi ayır",
+          "incorrect": "I was surprising by the empty room.",
+          "correct": "I was surprised by the empty room.",
+          "explanation": "Kişinin tepkisi -ed; tepkiye yol açan şey -ing.",
+          "guided": [
+            [
+              "I was ___ by the last scene. (surprised / surprising)",
+              "surprised"
+            ],
+            [
+              "The first speech was ___. (confused / confusing)",
+              "confusing"
+            ]
+          ],
+          "transfer": [
+            [
+              "The children were ___ by the sudden noise. (frightened / frightening)",
+              "frightened"
+            ],
+            [
+              "The ending of the radio play was ___. (moved / moving)",
+              "moving"
+            ]
+          ],
+          "delayed": [
+            [
+              "The audience looked ___ when the doors closed. (disappointed / disappointing)",
+              "disappointed"
+            ],
+            [
+              "The museum guide told a ___ story. (fascinated / fascinating)",
+              "fascinating"
+            ]
+          ]
+        },
+        {
+          "label": "Tepkiyi sahnedeki ayrıntıya bağla",
+          "incorrect": "It was moving because it was nice.",
+          "correct": "It was moving because Mira set a second place for someone who would never come.",
+          "explanation": "Duygu sıfatını açıklamak için görülen ya da işitilen bir ayrıntı belirt.",
+          "guided": [
+            [
+              "“I felt worried when the lights went out.” Hangi ayrıntı: lights went out / felt worried?",
+              "lights went out"
+            ],
+            [
+              "“The joke worked because he read the wrong letter.” Neden: wrong letter / joke worked?",
+              "wrong letter",
+              "the wrong letter"
+            ]
+          ],
+          "transfer": [
+            [
+              "“I was relieved when she found the child.” Neden: found the child / relieved?",
+              "found the child"
+            ],
+            [
+              "“The scene confused me because both voices sounded alike.” Neden: voices sounded alike / confused?",
+              "voices sounded alike"
+            ]
+          ],
+          "delayed": [
+            [
+              "“I lost interest when the same chase started again.” Neden: chase started again / lost interest?",
+              "chase started again"
+            ],
+            [
+              "“I felt sorry for him when nobody answered.” Ayrıntı: nobody answered / sorry?",
+              "nobody answered"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "feel sorry for",
+        "meaning": "birine üzülmek",
+        "example": "I felt sorry for the boy at the gate.",
+        "usage": "Feel sorry for birine empati duymaktır. I am sorry about bir olay için üzüntü bildirir.",
+        "pronunciation": "/fil ˈsɑɹi fəɹ/",
+        "collocations": [
+          "feel sorry for the main character",
+          "feel sorry for a stranger"
+        ],
+        "recognize": [
+          "“feel sorry for” burada ne anlama gelir?",
+          "birine üzülmek",
+          "birine kızmak",
+          "sahneyi unutmak",
+          "Feel sorry for birine empati duymaktır. I am sorry about bir olay için üzüntü bildirir."
+        ],
+        "recall": [
+          "“birine üzülmek” anlamındaki hedef ifadeyi yaz.",
+          "feel sorry for"
+        ],
+        "use": "Bir öyküde yaptığını onaylamasan da üzüldüğün kişiyi anlat."
+      },
+      "additionalWords": [
+        {
+          "term": "stay with me",
+          "meaning": "aklımda kalmak",
+          "example": "The final image stayed with me.",
+          "usage": "Anı veya izlenimin sürmesi. Geçmişi stayed with me.",
+          "pronunciation": "/steɪ wɪð mi/",
+          "collocations": [
+            "an image stayed with me",
+            "the line will stay with me"
+          ],
+          "recognize": [
+            "“stay with me” burada ne anlama gelir?",
+            "aklımda kalmak",
+            "yanımda oturmak (bu bağlamda)",
+            "olayı kaçırmak",
+            "Anı veya izlenimin sürmesi. Geçmişi stayed with me."
+          ],
+          "recall": [
+            "“aklımda kalmak” anlamındaki hedef ifadeyi yaz.",
+            "stay with me"
+          ],
+          "use": "Aklında kalan bir görüntünün somut özelliğini söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "empty frame",
+          "cue": "boş çerçeve"
+        },
+        {
+          "term": "credits",
+          "cue": "film sonu jenerik"
+        }
+      ],
+      "writing": {
+        "prompt": "Gördüğün bir kısa film veya okuduğun bir öyküden 80–110 sözcüklük kulüp mesajı yaz. Önceki ve sonraki tepkini bir sahneyle gerekçelendir.",
+        "sample": "At first I was puzzled by the old man at the station. He kept placing his umbrella on an empty seat. I thought he was afraid someone might sit too close. Then the guard brought him a cup and asked about his brother. I realised the umbrella had belonged to his brother. The station had been their meeting place. By the end I felt sorry for the man. The empty seat stayed with me because the film let us notice his loss before anyone explained it.",
+        "revision": "İki tepkiyi ayır. İkinci tepkiyi doğuran işitsel ya da görsel ayrıntıyı ekle.",
+        "criteria": [
+          "Bir ayrıntı doğrudan tepkiye bağlanır.",
+          "İlk ve sonraki yorum arasında değişim görünür."
+        ]
+      },
+      "input": {
+        "text": "Film club note. When Mira takes the picture off the wall, we see an empty frame on the table. I expected her to hang a new photo. Instead, she wrapped the old one in a clean cloth. That small action stayed with me, even after the credits. She had left the house, but she was not leaving everything behind.",
+        "reading": [
+          "İzleyicinin aklında kalan hareket ne?",
+          "Fotoğrafı kumaşa sarması",
+          "Yeni fotoğraf asması",
+          "Çerçeveyi atması",
+          "Beklenti yerine gördüğü eylemi anlatıyor.",
+          "wrapped the old one in a clean cloth"
+        ],
+        "transcript": "Jo: At first I felt sorry for Mira. Everyone seemed to be telling her what to do. Pat: I liked the moment when she put the kettle on. She was finally doing something at her own pace. Jo: I was relieved when she did not answer the last call. The room was quiet for the first time.",
+        "preparation": "Kimin hangi anda fikrinin değiştiğini ayır.",
+        "main": [
+          "Pat hangi ayrıntıyı seçti?",
+          "Çaydanlığı ocağa koyması",
+          "Son aramayı yanıtlaması",
+          "Kapıyı kilitlemesi",
+          "Pat günlük hareketi vurguluyor.",
+          "put the kettle on"
+        ],
+        "detail": [
+          "Jo ne zaman rahatladı?",
+          "Son arama yanıtlanmayınca",
+          "Herkes gelince",
+          "Çerçeve kırılınca",
+          "Jo, çağrının karşılıksız kalmasını anlatıyor.",
+          "did not answer the last call"
+        ]
+      },
+      "retry": {
+        "text": "The first letter made me laugh, but the second felt cruel. By then I knew who had written both of them.",
+        "reading": [
+          "Tepki neden değişti?",
+          "İki mektubun yazarını öğrendi",
+          "İlk mektup kayboldu",
+          "İki kişi ayrıldı",
+          "Yeni bilgi yazarı açığa çıkarıyor.",
+          "knew who had written both"
+        ],
+        "transcript": "I was confused by the last picture. Then I heard the same whistle as in the opening scene. I thought the boy might have returned.",
+        "preparation": "Anlatıcının duyduğu ile çıkardığı sonucu ayır.",
+        "main": [
+          "Hangi ses geri geliyor?",
+          "Islık",
+          "Telefon",
+          "Kapı zili",
+          "İlk sahnedeki ıslık duyulur.",
+          "the same whistle"
+        ],
+        "detail": [
+          "Çocuğun dönüşü kesin mi?",
+          "Hayır, olasılık",
+          "Evet, gösteriliyor",
+          "Hayır, dönüş imkânsız",
+          "Might olasılık bildirir.",
+          "might have returned"
+        ]
+      },
+      "readingPurpose": "Duygu, kanıt ve tahmin için ayrı not al.",
+      "readingUse": "Kendi yorumunu yaz ve başka bir yoruma açık bir ayrıntı seç.",
+      "listeningUse": "Arkadaşına bir konuşmacının yorumunu gerekçesiyle aktar.",
+      "speaking": "Bir öykü kapanışına tepki ver. Partner başka bir yorumu savunursa onun seçtiği ayrıntıyı geri söyle, ardından kendi kanıtını sun.",
+      "genres": {
+        "reading": "film kulübü notu",
+        "listening": "karşılıklı film yorumu",
+        "writing": "kişisel gerekçeli eleştiri"
+      },
+      "recovery": {
+        "reading": "Beklenen hareketi gerçekleşen hareketten ayır.",
+        "main": "Pat’in seçtiği günlük sesi veya eylemi dinle.",
+        "detail": "Jo relieved dedikten sonra hangi yan tümce geliyor?"
+      },
+      "approach": "contrast",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "tepki sıfatlarında -ed/-ing ve by ile neden"
+      ]
+    }
+  ]
+}

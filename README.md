@@ -21,10 +21,10 @@ Normal kullanım için `.env`, API anahtarı, ChatGPT hesabı veya harici verita
 
 | Dil | A1 | A2 | B1 | B2/B2+ | C1 | C2 | Çalışılabilir hedef |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| İngilizce | 5 | 8 | 10 | 8 | 7 | 2 | 40 / 74 |
-| Rusça | 10 | 7 | 8 | 5 | 4 | 3 | 37 / 70 |
+| İngilizce | 6 | 8 | 14 | 11 | 10 | 4 | 53 / 74 |
+| Rusça | 11 | 10 | 10 | 9 | 5 | 5 | 50 / 70 |
 
-144 iletişim hedefinden 77’si çalışılabilir. A1–C2 bantlarındaki dersler seçili hedefleri kapsar. Özellikle Rusça B2 ve her iki dilde C2’de içerik seyrek. Güncel gramer, sözcük ve beceri açıkları [kapsam raporunda](docs/MILESTONE_5_CURRICULUM_EXPANSION.md) listelenir.
+144 iletişim hedefinden 103’ü çalışılabilir. A1–C2 bantlarındaki dersler seçili hedefleri kapsar. Özellikle Rusça B2 ve her iki dilde C2’de içerik seyrek. Güncel gramer, sözcük ve beceri açıkları [kapsam raporunda](docs/MILESTONE_5_REVIEW_LOAD.md) listelenir.
 
 - Dil başına yerel profil, başlangıç taraması, hedef seviye ve süreye göre açıklamalı günlük plan
 - Rehberli öğretim, yeni bağlamda pratik, okuma ve sentetik dinleme, hata sonrasında ayrı onarım kaynakları

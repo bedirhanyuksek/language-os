@@ -1,0 +1,316 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.study",
+      "outcome": "A2.study",
+      "level": "A2",
+      "prerequisite": [
+        "ru.instructions",
+        "ru.future"
+      ],
+      "title": "Kursun saatini, kuralını ve gereksinimini öğren",
+      "objective": "Bir kursun saatini ve kayıt şartını doğrula; kime ne sormak gerektiğini söyle.",
+      "situation": "Hafta sonu fotoğraf kursuna hazırlanıyorsun. İlan iki farklı ekipman kuralı veriyor.",
+      "bridge": "Мне нужно ile kendi gereksinimini söyle. Для + tamlayan “bir şey için” anlamında. С + tamlayan ve до + tamlayanla saat aralığını sor.",
+      "models": [
+        {
+          "phrase": "Для регистрации мне нужно заполнить анкету.",
+          "explanation": "Для регистрации kayıt için demek. Мне yönelme hâli; нужно ardından mastar gelir."
+        },
+        {
+          "phrase": "Занятие идёт с десяти до двенадцати.",
+          "explanation": "С ve до saat aralığının başlangıcını ve bitişini bağlar. До двена́дцати biçimini dinle."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Для + tamlayan",
+          "incorrect": "Для урок нужно принести тетрадь.",
+          "correct": "Для урока нужно принести тетрадь.",
+          "explanation": "Для sonrasında tamlayan; урок → урока.",
+          "guided": [
+            [
+              "Для ___ (курс) нужен паспорт.",
+              "курса"
+            ],
+            [
+              "Для ___ (запись) нужен номер телефона.",
+              "записи"
+            ]
+          ],
+          "transfer": [
+            [
+              "Для ___ (урок) нужно принести карандаш.",
+              "урока"
+            ],
+            [
+              "Для ___ (экскурсия) нужен билет.",
+              "экскурсии"
+            ]
+          ],
+          "delayed": [
+            [
+              "Для ___ (оплата) нужна карта.",
+              "оплаты"
+            ],
+            [
+              "Для ___ (занятие) нужны наушники.",
+              "занятия"
+            ]
+          ]
+        },
+        {
+          "label": "С / до ile sınır",
+          "incorrect": "Зал открыт с десять до двенадцать.",
+          "correct": "Зал открыт с десяти до двенадцати.",
+          "explanation": "Saat aralığında iki taraf da tamlayan biçiminde.",
+          "guided": [
+            [
+              "Урок с ___ (пять) до шести.",
+              "пяти"
+            ],
+            [
+              "Студия открыта до ___ (восемь).",
+              "восьми"
+            ]
+          ],
+          "transfer": [
+            [
+              "Курс идёт с ___ (девять) до одиннадцати.",
+              "девяти"
+            ],
+            [
+              "Перерыв с десяти до ___ (одиннадцать).",
+              "одиннадцати"
+            ]
+          ],
+          "delayed": [
+            [
+              "Будем здесь до ___ (семь).",
+              "семи"
+            ],
+            [
+              "Касса работает с ___ (шесть) до восьми.",
+              "шести"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "записаться на курс",
+        "meaning": "kursa kaydolmak",
+        "example": "Я хочу записаться на курс фотографии.",
+        "usage": "На + nesne kayıt olduğun şeyi gösterir.",
+        "pronunciation": "записа́ться на курс",
+        "collocations": [
+          "записаться на курс заранее",
+          "записаться на новый курс"
+        ],
+        "recognize": [
+          "“записаться на курс” burada ne anlama gelir?",
+          "kursa kaydolmak",
+          "dersi iptal etmek",
+          "bir arkadaşını aramak",
+          "На + nesne kayıt olduğun şeyi gösterir."
+        ],
+        "recall": [
+          "“kursa kaydolmak” anlamındaki hedef ifadeyi yaz.",
+          "записаться на курс"
+        ],
+        "use": "Yüzme dersine kaydolmak istediğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "принести с собой",
+          "meaning": "yanında getirmek",
+          "example": "Что нужно принести с собой?",
+          "usage": "С собой eşyayı yanında getirme anlamı verir.",
+          "pronunciation": "принести́ с собо́й",
+          "collocations": [
+            "принести с собой паспорт",
+            "принести с собой блокнот"
+          ],
+          "recognize": [
+            "“принести с собой” burada ne anlama gelir?",
+            "yanında getirmek",
+            "evde bırakmak",
+            "birine geri vermek",
+            "С собой eşyayı yanında getirme anlamı verir."
+          ],
+          "recall": [
+            "“yanında getirmek” anlamındaki hedef ifadeyi yaz.",
+            "принести с собой"
+          ],
+          "use": "Bir atölyeye hangi malzemeyi getirmen gerektiğini sor."
+        },
+        {
+          "term": "уточнить время",
+          "meaning": "saati netleştirmek",
+          "example": "Я хочу уточнить время занятия.",
+          "usage": "Уточнить ile duyuru ve mesaj arasındaki farkı sorabilirsin.",
+          "pronunciation": "уточни́ть вре́мя",
+          "collocations": [
+            "уточнить время начала",
+            "уточнить время встречи"
+          ],
+          "recognize": [
+            "“уточнить время” burada ne anlama gelir?",
+            "saati netleştirmek",
+            "katılımı reddetmek",
+            "fotoğraf çekmek",
+            "Уточнить ile duyuru ve mesaj arasındaki farkı sorabilirsin."
+          ],
+          "recall": [
+            "“saati netleştirmek” anlamındaki hedef ifadeyi yaz.",
+            "уточнить время"
+          ],
+          "use": "Bir toplantının tam başlangıç saatini teyit et."
+        },
+        {
+          "term": "взять напрокат",
+          "meaning": "kiralamak",
+          "example": "Камеру можно взять напрокат.",
+          "usage": "Взять напрокат ücretli kısa kullanım anlatabilir.",
+          "pronunciation": "взять напрока́т",
+          "collocations": [
+            "взять напрокат камеру",
+            "взять напрокат велосипед"
+          ],
+          "recognize": [
+            "“взять напрокат” burada ne anlama gelir?",
+            "kiralamak",
+            "satın almak",
+            "yanında getirmek",
+            "Взять напрокат ücretli kısa kullanım anlatabilir."
+          ],
+          "recall": [
+            "“kiralamak” anlamındaki hedef ifadeyi yaz.",
+            "взять напрокат"
+          ],
+          "use": "Bisikleti satın almadan nasıl edineceğini sor."
+        },
+        {
+          "term": "свободное место",
+          "meaning": "boş yer",
+          "example": "На курсе ещё есть свободное место?",
+          "usage": "Yer sayısı için свободные места biçimini de dinle.",
+          "pronunciation": "свобо́дное ме́сто",
+          "collocations": [
+            "найти свободное место",
+            "есть свободное место"
+          ],
+          "recognize": [
+            "“свободное место” burada ne anlama gelir?",
+            "boş yer",
+            "sabit süre",
+            "ders ücreti",
+            "Yer sayısı için свободные места biçimini de dinle."
+          ],
+          "recall": [
+            "“boş yer” anlamındaki hedef ifadeyi yaz.",
+            "свободное место"
+          ],
+          "use": "Bir mutfak kursunda yer kalıp kalmadığını sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "пробное занятие",
+          "cue": "deneme dersi"
+        },
+        {
+          "term": "оборудование",
+          "cue": "ekipman"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir resim atölyesine dört cümlelik mesaj yaz. Kayıt, saat aralığı ve getirilecek malzemeyi sor.",
+        "sample": "Здравствуйте! Хочу записаться на курс. Занятие идёт с девяти до одиннадцати? Что нужно принести с собой для первого урока?",
+        "revision": "Cevapta araç ödünç veriliyorsa kişisel gereksinimini yeniden yaz.",
+        "criteria": [
+          "Saat aralığı ve malzeme sorusu ayrı.",
+          "Tamlayan ve gerek bildiren yapı anlaşılır."
+        ]
+      },
+      "input": {
+        "text": "Пробное занятие по фотографии в субботу с десяти до двенадцати. Для записи заполните анкету. Камеру и другое оборудование можно взять напрокат. Возьмите с собой паспорт.",
+        "reading": [
+          "Kayıt için ne yapılır?",
+          "Form doldurulur",
+          "Kamera alınır",
+          "Pasaport satın alınır",
+          "Для записи kayıt amacını gösterir.",
+          "Для записи заполните анкету"
+        ],
+        "transcript": "— Есть свободное место на курсе? — Да, в субботу с десяти до двенадцати. — Мне нужно принести камеру? — Нет, её можно взять напрокат. Но не забудьте паспорт.",
+        "preparation": "Kayıt, zaman ve malzemeyi ayrı dinle.",
+        "main": [
+          "Ders hangi saate kadar?",
+          "12",
+          "10",
+          "11",
+          "До bitişi verir.",
+          "до двенадцати"
+        ],
+        "detail": [
+          "Yanında ne getirmeli?",
+          "Pasaport",
+          "Kamera",
+          "Kitap",
+          "Görevli pasaportu unutma diyor.",
+          "не забудьте паспорт"
+        ]
+      },
+      "retry": {
+        "text": "Для оплаты курса нужна карта. Пробный урок бесплатный, но для него тоже нужна запись.",
+        "reading": [
+          "Ücretsiz derse kayıt gerekli mi?",
+          "Evet",
+          "Hayır",
+          "Yalnız kart gerek",
+          "Тоже aynı kuralı belirtir.",
+          "тоже нужна запись"
+        ],
+        "transcript": "Сегодня урок с пяти до семи. Для занятия нужен карандаш. Бумагу дадут в классе.",
+        "preparation": "Saat aralığı ve malzeme farkını dinle.",
+        "main": [
+          "Ders ne zaman başlıyor?",
+          "5",
+          "7",
+          "6",
+          "С пяти başlangıç.",
+          "с пяти"
+        ],
+        "detail": [
+          "Sınıfta ne verilerek hazırlanır?",
+          "Kâğıt",
+          "Kalem",
+          "Kitap",
+          "Бумагу дадут.",
+          "Бумагу дадут"
+        ]
+      },
+      "readingPurpose": "Saat, kayıt ve malzeme olarak üç not yaz.",
+      "readingUse": "Kursu yeni bir öğrenciye özetle.",
+      "listeningUse": "Satın alınması ve kiralanması gerekenleri ayır.",
+      "speaking": "Başka bir kursta saat ve malzemeyi sor. Kural değişirse kendi planını yeniden söyle.",
+      "genres": {
+        "reading": "kurs ilanı",
+        "listening": "telefonla kayıt",
+        "writing": "hazırlık mesajı"
+      },
+      "recovery": {
+        "reading": "Для записи ifadesinden sonra gereken eylemi bul.",
+        "main": "С ve до iki ayrı saat verir.",
+        "detail": "Но sonrasında gelen zorunlu eşyaya odaklan."
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "для + tamlayan; saat aralığında с/до + tamlayan"
+      ]
+    }
+  ]
+}

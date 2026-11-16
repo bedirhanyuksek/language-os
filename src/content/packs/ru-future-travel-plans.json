@@ -1,0 +1,270 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.future",
+      "outcome": "A2.future",
+      "level": "A2",
+      "prerequisite": [
+        "ru.meeting",
+        "ru.directions"
+      ],
+      "title": "Planın başlayacağı zamanı ve süresini anlat",
+      "objective": "Bir kurs veya kısa ziyaret için gelecek eylemi, başlangıç ve süreyi söyle.",
+      "situation": "Bir haftalık fotoğraf kursuna başka şehirden gidiyorsun. Bir arkadaşın ulaşım ve kurs sürelerini soruyor.",
+      "bridge": "Буду + bitmemiş mastar, sürmesi planlanan işi verir. Поеду gibi tek biçim, yola çıkma kararını verir. Через başlangıca kalan süreyi, два часа işin uzunluğunu söyler.",
+      "models": [
+        {
+          "phrase": "Через неделю мы поедем в Тулу.",
+          "explanation": "Через неделю bir hafta sonra. Поедем araçla yola çıkacağımızı bildirir; пое́дем vurgusunu dinle."
+        },
+        {
+          "phrase": "Я буду заниматься два часа.",
+          "explanation": "Бу́ду + заниматься sürece odaklanır. Два часа, etkinliğin ne kadar süreceği."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Gelecekte süreç ve yola çıkış",
+          "incorrect": "Буду поеду на курс.",
+          "correct": "Я поеду на курс.",
+          "explanation": "Поеду tek başına gelecek zaman. Буду ile заниматься, читать, ждать gibi bitmemiş mastar kullan.",
+          "guided": [
+            [
+              "Я ___ заниматься вечером. (буду / будет)",
+              "буду"
+            ],
+            [
+              "Мы ___ читать до обеда. (будет / будем)",
+              "будем"
+            ]
+          ],
+          "transfer": [
+            [
+              "Завтра она ___ в город на автобусе. (поедет / будет поедет)",
+              "поедет"
+            ],
+            [
+              "Они будут ___ у входа. (ждать / подождут)",
+              "ждать"
+            ]
+          ],
+          "delayed": [
+            [
+              "В пятницу мы ___ в Казань на поезде. (поедем / будем поедем)",
+              "поедем"
+            ],
+            [
+              "Ты ___ заниматься утром? (будешь / будешь занялся)",
+              "будешь"
+            ]
+          ]
+        },
+        {
+          "label": "Başlangıca kadar ve süre",
+          "incorrect": "Занятие длится через два часа.",
+          "correct": "Занятие длится два часа.",
+          "explanation": "Через ne kadar sonra başlayacağını; süre ifadesi eylemin uzunluğunu anlatır.",
+          "guided": [
+            [
+              "Урок начнётся ___ час. (через / без)",
+              "через"
+            ],
+            [
+              "Будем заниматься ___ . (два часа / через два часа) Süre.",
+              "два часа"
+            ]
+          ],
+          "transfer": [
+            [
+              "Встреча начнётся ___ три дня. (через / в)",
+              "через"
+            ],
+            [
+              "Я буду читать ___ . (час / через час) Süre.",
+              "час"
+            ]
+          ],
+          "delayed": [
+            [
+              "Мы поедем в гости ___ неделю. (через / из) Başlangıç.",
+              "через"
+            ],
+            [
+              "В студии будем работать ___ . (три дня / через три дня) Süre.",
+              "три дня"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "через неделю",
+        "meaning": "bir hafta sonra",
+        "example": "Через неделю начнётся курс.",
+        "usage": "Через + nesne hâli, bekleme aralığı. Неделю sözcüğünde ikinci hece vurgulu.",
+        "pronunciation": "че́рез неде́лю",
+        "collocations": [
+          "через неделю после встречи",
+          "закончить через неделю"
+        ],
+        "recognize": [
+          "“через неделю” burada ne anlama gelir?",
+          "bir hafta sonra",
+          "bir hafta boyunca",
+          "geçen hafta",
+          "Через + nesne hâli, bekleme aralığı. Неделю sözcüğünde ikinci hece vurgulu."
+        ],
+        "recall": [
+          "“bir hafta sonra” anlamındaki hedef ifadeyi yaz.",
+          "через неделю"
+        ],
+        "use": "Bir serginin ne kadar sonra açılacağını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "поехать на поезде",
+          "meaning": "trenle yola çıkmak",
+          "example": "Мы поедем на поезде.",
+          "usage": "Поехать araçla yola çıkmak. На поезде ulaşım biçiminde bulunma hâli alır.",
+          "pronunciation": "пое́хать на по́езде",
+          "collocations": [
+            "поехать в город на поезде",
+            "поехать утром на поезде"
+          ],
+          "recognize": [
+            "“поехать на поезде” burada ne anlama gelir?",
+            "trenle yola çıkmak",
+            "treni kaçırmak",
+            "yürüyerek varmak",
+            "Поехать araçla yola çıkmak. На поезде ulaşım biçiminde bulunma hâli alır."
+          ],
+          "recall": [
+            "“trenle yola çıkmak” anlamındaki hedef ifadeyi yaz.",
+            "поехать на поезде"
+          ],
+          "use": "Bir şehir gezisinde ulaşımını ve kalkış zamanını söyle."
+        },
+        {
+          "term": "заниматься два часа",
+          "meaning": "iki saat boyunca çalışmak",
+          "example": "Я буду заниматься два часа.",
+          "usage": "Буду заниматься bir süreci, два часа uzunluğunu verir.",
+          "pronunciation": "занима́ться два часа́",
+          "collocations": [
+            "заниматься дома два часа",
+            "заниматься каждый день"
+          ],
+          "recognize": [
+            "“заниматься два часа” burada ne anlama gelir?",
+            "iki saat boyunca çalışmak",
+            "iki saat sonra başlamak",
+            "dersi iptal etmek",
+            "Буду заниматься bir süreci, два часа uzunluğunu verir."
+          ],
+          "recall": [
+            "“iki saat boyunca çalışmak” anlamındaki hedef ifadeyi yaz.",
+            "заниматься два часа"
+          ],
+          "use": "Evde ne kadar çalışacağını ve hangi saatte başlayacağını ayrı söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "расписание",
+          "cue": "çalışma çizelgesi"
+        },
+        {
+          "term": "перерыв",
+          "cue": "ara"
+        }
+      ],
+      "writing": {
+        "prompt": "Başka şehirde resim kursunu planla. Ne zaman ve nasıl yola çıkacağını, ne zaman çalışacağını ve kaç saat süreceğini yaz.",
+        "sample": "Через неделю я поеду в Псков на поезде. В первый день я буду заниматься с десяти. Занятие будет длиться два часа. Потом будет перерыв.",
+        "revision": "Yola çıkma ve çalışma süresi değiştiğinde iki ifadeyi ayrı düzelt.",
+        "criteria": [
+          "Süre ile başlangıca kalan zaman ayrı.",
+          "Gelecek biçimleri eylemin türüne uygun."
+        ]
+      },
+      "input": {
+        "text": "Расписание фотокурса. Первый урок начнётся через неделю. Он будет длиться два часа. Потом перерыв. На второй день будем работать в парке.",
+        "reading": [
+          "İlk ders ne kadar sürecek?",
+          "İki saat",
+          "Bir hafta",
+          "Bir saat",
+          "Длиться sürenin fiili.",
+          "длиться два часа"
+        ],
+        "transcript": "— Когда поедем в Тулу? — Через неделю, на поезде. Там я буду заниматься два часа утром. — А вечером? — Вечером мы пойдём в музей.",
+        "preparation": "Yolculuk, kurs ve yürüyüşü ayır.",
+        "main": [
+          "Hangi araçla gidecekler?",
+          "Tren",
+          "Otobüs",
+          "Metro",
+          "На поезде trenle.",
+          "на поезде"
+        ],
+        "detail": [
+          "Akşam nereye gidecekler?",
+          "Müzeye",
+          "Kursa",
+          "Parka",
+          "В музей akşam hedefi.",
+          "Вечером мы пойдём в музей"
+        ]
+      },
+      "retry": {
+        "text": "В субботу будем заниматься в студии три часа. После перерыва поедем на вокзал.",
+        "reading": [
+          "Ne kadar çalışacaklar?",
+          "Üç saat",
+          "Bir saat",
+          "Bütün gün",
+          "Три часа süreyi verir.",
+          "в студии три часа"
+        ],
+        "transcript": "Через два дня она поедет в Орёл на автобусе. В первый вечер будет ждать друзей у театра.",
+        "preparation": "Başlangıç aralığını ve buluşma yerini dinle.",
+        "main": [
+          "Ne zaman yola çıkacak?",
+          "İki gün sonra",
+          "İki saat sonra",
+          "Yarın",
+          "Через два дня iki gün sonra.",
+          "Через два дня"
+        ],
+        "detail": [
+          "Arkadaşlarını nerede bekleyecek?",
+          "Tiyatro yanında",
+          "İstasyonda",
+          "Parkta",
+          "У театра tiyatro yanında.",
+          "у театра"
+        ]
+      },
+      "readingPurpose": "Через ve длиться ifadelerini ayrı işaretle.",
+      "readingUse": "Bir arkadaşına başlangıç gününü ve çalışma süresini aktar.",
+      "listeningUse": "Yolculuk aracını ve akşam planını geri söyle.",
+      "speaking": "Bir hafta sonu gezisi planla. Muhatap günü değiştirirse yeni zaman, ulaşım ve çalışma süresini ayrı teyit et.",
+      "genres": {
+        "reading": "kurs çizelgesi",
+        "listening": "seyahat ve kurs planlama diyaloğu",
+        "writing": "kısa plan mesajı"
+      },
+      "recovery": {
+        "reading": "Длиться ile başlayan süreyi bul.",
+        "main": "На sonrası ulaşım biçimini dinle.",
+        "detail": "Akşam için пойдём fiilini ayır."
+      },
+      "approach": "sequence",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "буду + bitmemiş mastar; поехать ve через + nesne hâli"
+      ]
+    }
+  ]
+}

@@ -26,6 +26,89 @@ function start(course: Course, minutes: number, overrides: Record<string, Answer
   }), course, { ...answers(course.placement), ...overrides }, at)
 }
 
+test.each([5, 15, 30, 60])('%i minute plan advances while overdue cards compete for time', (minutes) => {
+  for (const course of Object.values(catalog)) {
+    let state = start(course, minutes)
+    state = { ...state, profile: { ...state.profile, days: [0, 1, 2, 3, 4, 5, 6], target: 'C1' } }
+    const recallById = new Map(course.unit.lessons.flatMap(({ pedagogy }) => pedagogy?.vocabulary ?? [])
+      .map(({ cardId, recall }) => [cardId, recall]))
+    const overdue = '2026-11-12T10:00:00.000Z'
+    const backlog = [...recallById.keys()].slice(-65).map((cardId) => ({
+      cardId, step: 0, dueAt: overdue, introducedAt: overdue, lastAt: overdue, lastResult: 'again' as const,
+    }))
+    state = { ...state, reviews: backlog }
+    let constrainedBatches = 0
+    let previousNonReview = true
+    let speakingOffers = 0
+    const totals = { review: 0, instruction: 0, skills: 0, vocabulary: 0, delayed: 0 }
+    const days = minutes === 5 ? 28 : 14
+    for (let elapsed = 0; elapsed < days; elapsed++) {
+      const now = new Date(Date.parse(at) + elapsed * day).toISOString()
+      let nonReview = 0
+      for (let block = 0; block < minutes; block++) {
+        const plan = dailyPlan(state, course, now, zone)
+        if (!('minutes' in plan)) break
+        expect(dailyMinutes(state, now, zone) + plan.minutes).toBeLessThanOrEqual(minutes)
+        if (plan.kind === 'review') {
+          totals.review += plan.minutes
+          for (const id of plan.cardIds) {
+            const response = backlog.slice(0, 8).some(({ cardId }) => cardId === id)
+              ? '___' : String(answer(recallById.get(id)!))
+            state = finishTypedReview(state, course, id, response, now)
+          }
+          continue
+        }
+        const lesson = course.unit.lessons.find(({ id }) => id === plan.lessonId)!
+        if (plan.kind === 'speaking') {
+          speakingOffers++
+          state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
+          continue
+        }
+        nonReview += plan.minutes
+        if (plan.kind === 'pedagogy') {
+          const tasks = phaseTasks(state, lesson, plan.phase, now)
+          if (plan.phase === 'vocabulary') {
+            totals.vocabulary += plan.minutes
+            const batch = new Set(tasks.map(({ conceptId }) => conceptId))
+            if (state.reviews.filter(({ lastResult }) => lastResult !== 'remembered').length >= minutes) {
+              expect(batch.size).toBe(1)
+              constrainedBatches++
+            }
+            expect(tasks).toHaveLength(batch.size * 3)
+          } else if (plan.phase === 'delayed') totals.delayed += plan.minutes
+          else totals.skills += plan.minutes
+          state = finishPedagogy(state, course, lesson, plan.phase, answers(tasks), now, plan.phase === 'listening' ? 'played' : undefined)
+        } else {
+          const tasks = lessonTasks(state, lesson)
+          totals[tasks.some(({ exercise }) => exercise.kind === 'open') ? 'skills' : 'instruction'] += plan.minutes
+          state = finishLesson(state, course, lesson, answers(tasks), now)
+        }
+      }
+      expect(nonReview > 0 || (minutes === 5 && previousNonReview), `${course.language}, gün ${elapsed + 1}`).toBe(true)
+      previousNonReview = nonReview > 0
+    }
+    expect(totals.review).toBeGreaterThan(0)
+    expect(totals.instruction).toBeGreaterThan(0)
+    expect(totals.skills).toBeGreaterThan(0)
+    expect(totals.vocabulary).toBeGreaterThan(0)
+    if (minutes === 5) expect(constrainedBatches).toBeGreaterThan(0)
+    const wrong = backlog[0].cardId
+    expect(state.reviewHistory.some(({ cardId, result }) => cardId === wrong && result === 'again')).toBe(true)
+    expect(vocabularyEvidence(course, state).find(({ term }) =>
+      course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).some((card) => card.id === wrong && card.term === term))?.delayedRecall).toBe(false)
+    for (const original of backlog.filter(({ cardId }) => !state.reviewHistory.some((entry) => entry.cardId === cardId))) {
+      expect(state.reviews.find(({ cardId }) => cardId === original.cardId)).toEqual(original)
+    }
+    for (const lesson of course.unit.lessons.filter(({ objective }) => objective.level === 'C2')) {
+      expect(masteryFor(state, lesson).status).toBe('not_assessed')
+    }
+    expect(parseBackup(exportBackup(state))).toEqual(state)
+    if (process.env.npm_lifecycle_event === 'curriculum:report') {
+      console.log(JSON.stringify({ balance: course.language, minutes, days, constrainedBatches, speakingOffers, ...totals }))
+    }
+  }
+})
+
 test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
   'B1-like learner with %i minutes progresses toward a %s target', (minutes, target) => {
   const course = catalog.en
@@ -50,8 +133,12 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
   let reviewMinutes = 0
   let missedRecall = false
   const missedPhases = new Set<string>()
+  const cultureVocabularyBatches: number[] = []
+  let cultureTransferMiss = false
+  let cultureRepair = false
   let reachedPublishedEnd = false
-  for (let elapsed = 0; elapsed < 140 && !reachedPublishedEnd; elapsed++) {
+  const horizon = target === 'C2' ? 200 : 170
+  for (let elapsed = 0; elapsed < horizon && !reachedPublishedEnd; elapsed++) {
     const now = new Date(Date.parse(at) + elapsed * day).toISOString()
     for (let count = 0; count < 60; count++) {
       const plan = dailyPlan(state, course, now, zone)
@@ -60,7 +147,9 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
       expect(dailyMinutes(state, now, zone) + plan.minutes).toBeLessThanOrEqual(minutes)
       if (plan.kind === 'review' || (plan.kind === 'pedagogy' && plan.phase === 'delayed')) reviewMinutes += plan.minutes
       else if (plan.kind !== 'speaking' && !(plan.kind === 'pedagogy' && plan.phase === 'foundation')) {
-        const key = plan.kind === 'pedagogy' ? `${plan.lessonId}:${plan.phase}` :
+        const vocabularyBatch = plan.kind === 'pedagogy' && plan.phase === 'vocabulary'
+          ? phaseTasks(state, course.unit.lessons.find(({ id }) => id === plan.lessonId)!, plan.phase, now)[0]?.conceptId : undefined
+        const key = plan.kind === 'pedagogy' ? [plan.lessonId, plan.phase, vocabularyBatch].filter(Boolean).join(':') :
           `${plan.lessonId}:${lessonTasks(state, course.unit.lessons.find(({ id }) => id === plan.lessonId)!)
             .some(({ exercise }) => exercise.kind === 'open') ? 'draft' : 'instruction'}`
         if (!newStudy.has(key)) newStudy.set(key, plan.minutes)
@@ -83,16 +172,40 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
       } else if (plan.kind === 'pedagogy') {
         const tasks = phaseTasks(state, lesson, plan.phase, now)
         const response = answers(tasks)
+        if (lesson.id === 'en.intercultural' && plan.phase === 'transfer' && !cultureTransferMiss) {
+          response[tasks[0].exercise.id] = 'mistook'
+          cultureTransferMiss = true
+        }
+        if (lesson.id === 'en.intercultural' && plan.phase === 'foundation') {
+          expect(tasks[0].exercise.id).toBe('en.intercultural.form.1.foundation')
+          cultureRepair = true
+        }
+        const cultureVocabulary = lesson.id === 'en.intercultural' && plan.phase === 'vocabulary'
+        const cardIds = new Set(tasks.map(({ conceptId }) => conceptId))
+        if (cultureVocabulary) {
+          expect(state.reviews.some(({ cardId }) => cardIds.has(cardId))).toBe(false)
+          expect(tasks).toHaveLength(cardIds.size * 3)
+          cultureVocabularyBatches.push(cardIds.size)
+        }
         if (lesson.id === 'en.uncertainty' && ['transfer', 'reading', 'delayed'].includes(plan.phase) && !missedPhases.has(plan.phase)) {
           response[tasks[0].exercise.id] = 'Uncertain'
           missedPhases.add(plan.phase)
         }
         state = finishPedagogy(state, course, lesson, plan.phase, response,
           now, plan.phase === 'listening' ? 'played' : undefined)
+        if (cultureVocabulary) {
+          expect(state.reviews.filter(({ cardId }) => cardId.startsWith('en.intercultural.word.')))
+            .toHaveLength(cultureVocabularyBatches.reduce((total, count) => total + count, 0))
+        }
       } else state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), now)
     }
   }
   expect(reachedPublishedEnd).toBe(true)
+  expect(cultureRepair).toBe(true)
+  expect(cultureVocabularyBatches).toEqual([3, 3])
+  const cultureUses = state.attempts.filter(({ exerciseId }) => /^en\.intercultural\.word(?:\.\d+)?\.use$/.test(exerciseId))
+  expect(cultureUses).toHaveLength(6)
+  expect(cultureUses.every(({ evidence }) => evidence.observation === 'free_production' && evidence.outcome === 'review_required')).toBe(true)
   expect(seen.has('en.routine')).toBe(false)
   expect(seen.has('en.identity')).toBe(false)
   expect(seen.has('en.rebuttal')).toBe(true)
@@ -170,7 +283,8 @@ test.each(Object.values(catalog))('$language beginner reaches the end of the ava
       const tasks = plan.kind === 'pedagogy' ? phaseTasks(state, lesson, plan.phase, now) : lessonTasks(state, lesson)
       if (plan.kind === 'pedagogy' && plan.phase === 'delayed') reviewMinutes += plan.minutes
       else {
-        const key = `${lesson.id}:${plan.kind === 'pedagogy' ? plan.phase : tasks.some(({ exercise }) => exercise.kind === 'open') ? 'draft' : 'instruction'}`
+        const phase = plan.kind === 'pedagogy' ? plan.phase : tasks.some(({ exercise }) => exercise.kind === 'open') ? 'draft' : 'instruction'
+        const key = [lesson.id, phase, phase === 'vocabulary' ? tasks[0]?.conceptId : undefined].filter(Boolean).join(':')
         if (!studies.has(key)) studies.set(key, plan.minutes)
       }
       if (plan.kind === 'pedagogy') state = finishPedagogy(state, course, lesson, plan.phase, answers(tasks),
@@ -270,6 +384,9 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
   state = { ...state, profile: { ...state.profile, estimate: 'A1', target } }
   const order: string[] = []
   const studied = new Set<string>()
+  let firstStudyMinutes = 0
+  let reviewMinutes = 0
+  const firstBlocks = new Set<string>()
   let reachedPublishedEnd = false
   for (let elapsed = 0; elapsed < 150 && !reachedPublishedEnd; elapsed++) {
     const now = new Date(Date.parse(at) + elapsed * day).toISOString()
@@ -279,6 +396,7 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
       if (!('minutes' in plan)) break
       expect(dailyMinutes(state, now, zone) + plan.minutes).toBeLessThanOrEqual(30)
       if (plan.kind === 'review') {
+        reviewMinutes += plan.minutes
         for (const id of plan.cardIds) {
           const item = course.unit.lessons.flatMap(({ pedagogy }) => pedagogy?.vocabulary ?? []).find(({ cardId }) => cardId === id)!
           state = finishTypedReview(state, course, id, String(answer(item.recall)), now)
@@ -287,6 +405,14 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
       }
       const lesson = course.unit.lessons.find(({ id }) => id === plan.lessonId)!
       if (plan.kind === 'lesson') studied.add(lesson.id)
+      if (plan.kind === 'pedagogy' && plan.phase === 'delayed') reviewMinutes += plan.minutes
+      else if (plan.kind !== 'speaking') {
+        const phase = plan.kind === 'pedagogy' ? plan.phase : plan.kind
+        const batch = phase === 'vocabulary' && phaseTasks(state, lesson, phase, now)[0]?.conceptId
+        const key = [lesson.id, phase, batch].filter(Boolean).join(':')
+        if (!firstBlocks.has(key)) firstStudyMinutes += plan.minutes
+        firstBlocks.add(key)
+      }
       if (targets.includes(lesson.id) && !order.includes(lesson.id)) order.push(lesson.id)
       if (plan.kind === 'speaking') state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
       else if (plan.kind === 'pedagogy') state = finishPedagogy(state, course, lesson, plan.phase,
@@ -315,6 +441,6 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
   expect(parseBackup(exportBackup(state))).toEqual(state)
   expect(state.profile.estimate).toBe('A1')
   if (process.env.npm_lifecycle_event === 'curriculum:report') {
-    console.log(JSON.stringify({ russianFromA1: target, newLessons: studied.size, introducedCards: state.reviews.length }))
+    console.log(JSON.stringify({ russianFromA1: target, newLessons: studied.size, introducedCards: state.reviews.length, firstStudyMinutes, reviewMinutes }))
   }
 })

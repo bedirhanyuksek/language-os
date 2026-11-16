@@ -171,17 +171,30 @@ export function measureCurriculum(course: Course) {
     const activeTerms = lessons.flatMap(({ vocabulary }) => vocabulary.map(({ term }) => term))
     const receptiveTerms = lessons.flatMap(({ teaching }) => teaching?.receptive?.map(({ term }) => term) ?? [])
     const audio = materials.map(({ listening }) => listening.audio)
+    const concepts = lessons.flatMap((lesson) => lesson.concepts
+      .filter(({ variants }) => variants.some(({ skill }) => skill === 'grammar'))
+      .map(({ id }) => ({ id, check: lesson.pedagogy?.checks.find(({ conceptId }) => conceptId === id) })))
+    const vocabulary = lessons.flatMap(({ pedagogy }) => pedagogy?.vocabulary ?? [])
     return {
       band, baseline, planned: outcomes.length, playable: lessons.length,
       open: outcomes.filter(({ activeLesson }) => !activeLesson).map(({ id, task, prerequisite }) => ({ id, task, prerequisite })),
       active: distinct(activeTerms), receptive: distinct(receptiveTerms),
       reading: materials.length, listening: materials.length,
       syntheticListening: audio.filter((clip) => clip.kind === 'synthesis' || clip.synthetic === true).length,
+      readingSourceLengths: materials.map(({ reading }) => wordCount(reading.text)),
       listeningSourceLengths: materials.map(({ listening }) => wordCount(listening.transcript)),
       readingWords: Math.max(0, ...materials.map(({ reading }) => wordCount(reading.text))),
       listeningWords: Math.max(0, ...materials.map(({ listening }) => wordCount(listening.transcript))),
       writing: lessons.length, speaking: lessons.filter(({ speaking }) => speaking).length,
       revisions: lessons.filter(({ pedagogy }) => pedagogy?.revision).length,
+      practiceOpportunities: {
+        grammarGuided: concepts.length,
+        grammarTransfer: concepts.filter(({ check }) => check?.transfer.length).length,
+        grammarDelayed: concepts.filter(({ check }) => check?.delayed.length).length,
+        vocabularyControlled: vocabulary.length,
+        vocabularyOpenProduction: vocabulary.filter(({ use }) => use.kind === 'open').length,
+        vocabularyScheduledReview: vocabulary.length,
+      },
     }
   })
 }

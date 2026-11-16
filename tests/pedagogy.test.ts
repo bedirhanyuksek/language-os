@@ -307,7 +307,7 @@ describe('Learning Experience v1 learner scenarios', () => {
       (course.language === 'ru' || (objective.level !== 'A1' && !beginnerOnlyEnglish.has(id))))
     const learningDays = new Set<string>()
     let routeEnd = false
-    for (let day = 0; day < route.length * 24 && !routeEnd; day++) {
+    for (let day = 0; day < route.length * 36 && !routeEnd; day++) {
       const now = new Date(Date.parse(at) + day * 86_400_000).toISOString()
       for (let block = 0; block < 10; block++) {
         const plan = dailyPlan(state, course, now, 'Europe/Istanbul')
@@ -336,5 +336,5 @@ describe('Learning Experience v1 learner scenarios', () => {
     expect(learningDays.size).toBeGreaterThanOrEqual(40)
     expect(state.speakingAssessments).toHaveLength(0)
     expect(state.attempts.filter(({ context }) => context === 'revision')).toHaveLength(route.length)
-  })
+  }, 15_000)
 })

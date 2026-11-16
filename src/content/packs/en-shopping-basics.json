@@ -1,0 +1,249 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.shopping",
+      "outcome": "A1.shopping",
+      "level": "A1",
+      "prerequisite": [
+        "en.cafe"
+      ],
+      "title": "Mağazada beden, renk ve adet iste",
+      "objective": "İstenen giysiyi, beden ve rengi belirt; stok değişince uygun alternatifi teyit et.",
+      "situation": "Bir mağazada iki okul tişörtü alacaksın. Raf etiketleri beden ve rengi gösteriyor.",
+      "bridge": "Do you have + ürün ile başla. In + beden veya renk ekle. Tek ürün için this, birden fazla ürün için these kullan.",
+      "models": [
+        {
+          "phrase": "Do you have this shirt in blue?",
+          "explanation": "This tek gömlek için. In blue rengini söyler."
+        },
+        {
+          "phrase": "Do you have these socks in size six?",
+          "explanation": "These çoğul. In size six bedeni/numarayı belirtir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "This ve these",
+          "incorrect": "Do you have this shoes in black?",
+          "correct": "Do you have these shoes in black?",
+          "explanation": "This tekil, these çoğul.",
+          "guided": [
+            [
+              "Can I try ___ coat? (this / these)",
+              "this"
+            ],
+            [
+              "I like ___ socks. (this / these)",
+              "these"
+            ]
+          ],
+          "transfer": [
+            [
+              "Do you have ___ hat in green? (this / these)",
+              "this"
+            ],
+            [
+              "How much are ___ gloves? (this / these)",
+              "these"
+            ]
+          ],
+          "delayed": [
+            [
+              "Is ___ dress size ten? (this / these)",
+              "this"
+            ],
+            [
+              "Are ___ trousers too long? (this / these)",
+              "these"
+            ]
+          ]
+        },
+        {
+          "label": "Stok ve alternatif",
+          "incorrect": "“Small is sold out.” I can buy a small one here.",
+          "correct": "I can ask for another size.",
+          "explanation": "Sold out istenen ürünün kalmadığını bildirir.",
+          "guided": [
+            [
+              "“Blue: two. Green: zero.” Hangi renk var?",
+              "blue"
+            ],
+            [
+              "“Size six only.” Hangi numara var?",
+              "six",
+              "6"
+            ]
+          ],
+          "transfer": [
+            [
+              "“Black coats are sold out. Brown coats are here.” Hangi renk alınabilir?",
+              "brown"
+            ],
+            [
+              "“Red, size ten: one left.” Kaç tane var?",
+              "one",
+              "1"
+            ]
+          ],
+          "delayed": [
+            [
+              "“Small yellow shirts only.” Beden ne?",
+              "small"
+            ],
+            [
+              "“No medium. Large is in stock.” Hangi beden var?",
+              "large"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "try it on",
+        "meaning": "üzerinde denemek",
+        "example": "Can I try it on?",
+        "usage": "Tekil ürün için it kullan. Çoğul için try them on.",
+        "pronunciation": "/tɹaɪ ɪt ɑn/",
+        "collocations": [
+          "try on a coat",
+          "try them on"
+        ],
+        "recognize": [
+          "“try it on” burada ne anlama gelir?",
+          "üzerinde denemek",
+          "iade etmek",
+          "hediye vermek",
+          "Tekil ürün için it kullan. Çoğul için try them on."
+        ],
+        "recall": [
+          "“üzerinde denemek” anlamındaki hedef ifadeyi yaz.",
+          "try it on"
+        ],
+        "use": "Şapka aldıktan önce bir deneme rica et."
+      },
+      "additionalWords": [
+        {
+          "term": "in stock",
+          "meaning": "stokta",
+          "example": "Is this size in stock?",
+          "usage": "Mağazada satın alınabilir durumda.",
+          "pronunciation": "/ɪn stɑk/",
+          "collocations": [
+            "back in stock",
+            "in stock today"
+          ],
+          "recognize": [
+            "“in stock” burada ne anlama gelir?",
+            "stokta",
+            "mağaza kapalı",
+            "fiyatı yüksek",
+            "Mağazada satın alınabilir durumda."
+          ],
+          "recall": [
+            "“stokta” anlamındaki hedef ifadeyi yaz.",
+            "in stock"
+          ],
+          "use": "Yeşil gömleğin bugün bulunup bulunmadığını sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "changing room",
+          "cue": "deneme kabini"
+        },
+        {
+          "term": "shelf",
+          "cue": "raf"
+        }
+      ],
+      "writing": {
+        "prompt": "Küçük, yeşil bir mont sor. Mağazadaki tek küçük mont griyse denemek istediğini yaz.",
+        "sample": "Do you have this coat in green, in a small? I can try the grey one.",
+        "revision": "Ürün, renk ve bedeni ayrı kontrol et.",
+        "criteria": [
+          "İstenen beden ve ilk renk açık.",
+          "Alternatif aynı bedende kalıyor."
+        ]
+      },
+      "input": {
+        "text": "Shop notice. The shelf by the changing room has blue shirts in small and medium. There are no green shirts in small. Ask at the desk for large shirts.",
+        "reading": [
+          "Yeşil küçük tişört var mı?",
+          "Hayır",
+          "Evet, bir tane",
+          "Evet, iki tane",
+          "No green shirts in small ifadesine bak.",
+          "no green shirts in small"
+        ],
+        "transcript": "— Do you have these shirts in blue? — Yes, in small or medium. — Two small shirts, please. Can I try one on? — Yes, the changing room is by the desk.",
+        "preparation": "Rengi, bedeni ve adedi ayrı dinle.",
+        "main": [
+          "Hangi beden seçiliyor?",
+          "Small",
+          "Medium",
+          "Large",
+          "Two small shirts ifadesini dinle.",
+          "Two small shirts"
+        ],
+        "detail": [
+          "Kaç tişört istiyor?",
+          "2",
+          "1",
+          "3",
+          "Try one on yalnız denenecek adedi gösteriyor.",
+          "Two small shirts"
+        ]
+      },
+      "retry": {
+        "text": "Only black gloves are in stock today. Small gloves are by the door. Large gloves are at the desk.",
+        "reading": [
+          "Büyük eldiven nerede?",
+          "Masada",
+          "Kapıda",
+          "Depoda",
+          "Large gloves ardından konum gelir.",
+          "Large gloves are at the desk"
+        ],
+        "transcript": "— Is the grey hat in stock? — No, but we have a brown one. — Can I try it on? — Yes, of course.",
+        "preparation": "İlk seçimi ve sunulanı ayır.",
+        "main": [
+          "Mağazada hangi renk var?",
+          "Kahverengi",
+          "Gri",
+          "Mavi",
+          "Brown ikinci seçenek.",
+          "have a brown one"
+        ],
+        "detail": [
+          "Müşteri ne yapmak istiyor?",
+          "Şapkayı denemek",
+          "Ödemek",
+          "İade etmek",
+          "Try it on denemektir.",
+          "Can I try it on"
+        ]
+      },
+      "readingPurpose": "Etikette beden, konum ve rengi ayrı yaz.",
+      "readingUse": "Bir müşteri için mevcut bedenleri özetle.",
+      "listeningUse": "Bir adet deneme ile iki adet satın almayı ayır.",
+      "speaking": "Farklı bir mağazada iki çift eldiven iste. İlk renk yoksa başka renk sor ve aynı bedeni teyit et.",
+      "genres": {
+        "reading": "stok duyurusu",
+        "listening": "mağaza diyaloğu",
+        "writing": "ürün talebi"
+      },
+      "recovery": {
+        "reading": "Bedeni renk ile birlikte bul.",
+        "main": "Rica içeren cümlede small kelimesini dinle.",
+        "detail": "Satın alınan ile denenen adedi ayır."
+      },
+      "approach": "dialogue",
+      "speakingContext": "discussion",
+      "grammarStrands": [
+        "this/these ve in ile renk/beden"
+      ]
+    }
+  ]
+}
