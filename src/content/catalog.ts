@@ -25,6 +25,7 @@ import { additionsFor, packedLessons } from './curriculum/packs'
 import { author, continuity } from './continuity'
 import { guidedAlternatives, teaching } from './teaching'
 import type { Language } from '../domain/model'
+import { spanishCourse, spanishLegacyCourse } from './curriculum/es'
 
 export function publishCourse(data: unknown): Course {
   const course = courseSchema.parse(data)
@@ -38,6 +39,7 @@ export function publishCourse(data: unknown): Course {
 export const legacyCatalog: Record<Language, Course> = {
   en: publishCourse(en),
   ru: publishCourse(ru),
+  es: publishCourse(spanishLegacyCourse),
 }
 
 function revise(language: Language, overlay: typeof enPedagogy | typeof ruPedagogy) {
@@ -59,11 +61,12 @@ function revise(language: Language, overlay: typeof enPedagogy | typeof ruPedago
 export const baselineCatalog: Record<Language, Course> = {
   en: revise('en', enPedagogy),
   ru: revise('ru', ruPedagogy),
+  es: publishCourse(spanishCourse),
 }
 
 const batch = { en: [...englishBatch, ...englishTravel, ...englishAdvanced, ...englishInteraction, ...englishHealth, ...englishLife, ...englishSocial, ...englishSeminar, ...englishHome], ru: [...russianBatch, ...russianMovement, ...russianAdvanced, ...russianNarrative, ...russianCommunity, ...russianHome, ...russianSeminar] }
 
-function extend(language: Language, extension: typeof enExperience | typeof ruExperience, packs: typeof packedLessons) {
+function extend(language: 'en' | 'ru', extension: typeof enExperience | typeof ruExperience, packs: typeof packedLessons) {
   const course = baselineCatalog[language]
   const lessons = course.unit.lessons.map((lesson) => {
     const patch = extension.patches.find(({ lessonId }) => lessonId === lesson.id)
@@ -86,7 +89,9 @@ function extend(language: Language, extension: typeof enExperience | typeof ruEx
 }
 
 export function createCatalog(packs: typeof packedLessons): Record<Language, Course> {
-  return { en: extend('en', enExperience, packs), ru: extend('ru', ruExperience, packs) }
+  return { en: extend('en', enExperience, packs), ru: extend('ru', ruExperience, packs),
+    es: publishCourse({ ...spanishCourse, unit: { ...spanishCourse.unit,
+      lessons: [...spanishCourse.unit.lessons, ...additionsFor('es', spanishCourse.unit.lessons.map(({ id }) => id), packs)] } }) }
 }
 
 export const catalog = createCatalog(packedLessons)

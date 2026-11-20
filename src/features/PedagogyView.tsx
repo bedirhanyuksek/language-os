@@ -10,6 +10,7 @@ import { AudioPlayer } from './AudioPlayer'
 import { ExerciseForm } from './ExerciseForm'
 import { TextAnswer } from './TextAnswer'
 import { phaseLabels } from './labels'
+import { audioLocales } from '../content/teaching'
 
 export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state }: {
   course: Course; lesson: Lesson; phase: PedagogyPhase; state: LearningState; tasks: ExerciseTask[]; busy: boolean
@@ -31,7 +32,7 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
   const card = phase === 'vocabulary' ? lesson.vocabulary.find(({ id }) => id === activeCardId) : undefined
   const entry = p.vocabulary.find(({ cardId }) => cardId === card?.id)
   const vocabStep = step % 4
-  const audio = { kind: 'synthesis' as const, locale: p.language === 'en' ? 'en-US' as const : 'ru-RU' as const, rate: .85 }
+  const audio = { kind: 'synthesis' as const, locale: audioLocales[p.language], rate: .85 }
 
   async function next(answers: Record<string, Answer>) {
     const all = { ...collected, ...answers }

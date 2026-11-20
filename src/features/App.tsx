@@ -10,6 +10,7 @@ import { IndexedLearningRepository, localLearningOrigin, parseBackup, type Quara
 import type { MigrationIssue } from '../persistence/migration'
 import { StorageAccessError, storageIssue as describeStorageIssue, type StorageIssue } from '../persistence/storage-error'
 import { ExerciseForm } from './ExerciseForm'
+import { SpanishPlacement } from './SpanishPlacement'
 import { languageLabels, skillLabels } from './labels'
 import { ProfileForm } from './ProfileForm'
 import { TutorSettings } from './TutorPanel'
@@ -172,9 +173,11 @@ export function App() {
     content = <>
       <header className="page-heading"><div><p className="eyebrow">{languageLabels[course.language]} · {course.placement.length} soru</p>
         <h1>Başlangıç taraması</h1><p>Elinden geldiğince yanıtla. Sonuçlar çalışma planın için ilk ipuçlarını verir.</p></div></header>
+      {course.language === 'es' ? <SpanishPlacement course={course} busy={busy}
+        onSubmit={(answers) => update((current) => finishPlacement(current, course, answers, nowISO()), () => go({ type: 'skills' }))} /> :
       <ExerciseForm key={course.id} placement language={course.language} busy={busy}
         tasks={course.placement.map(({ exercise, objectiveId }) => ({ exercise, conceptId: objectiveId, label: skillLabels[exercise.skill] }))}
-        onSubmit={(answers) => update((current) => finishPlacement(current, course, answers, nowISO()), () => go({ type: 'skills' }))} />
+        onSubmit={(answers) => update((current) => finishPlacement(current, course, answers, nowISO()), () => go({ type: 'skills' }))} />}
     </>
   } else {
     const plan = dailyPlan(state, course, now, Intl.DateTimeFormat().resolvedOptions().timeZone)
@@ -290,7 +293,7 @@ export function App() {
           else void save(() => repository.switchLanguage(state.profile.id, language), () => go({ type: 'home' }),
             () => { go({ type: 'home' }); setNewLanguage(language) })
         }}>
-        <option value="en">İngilizce</option><option value="ru">Rusça</option>
+        <option value="en">İngilizce</option><option value="ru">Rusça</option><option value="es">İspanyolca</option>
       </select></label>}
     </header>
     <main id="main" tabIndex={-1} ref={mainRef} className={state ? 'workspace' : 'workspace welcome'}>

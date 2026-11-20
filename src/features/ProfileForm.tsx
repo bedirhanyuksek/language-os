@@ -1,11 +1,12 @@
 import { useState, type FormEvent } from 'react'
-import { goalSchema, levelSchema, profileSchema, type CEFRLevel, type Language, type LearningGoal } from '../domain/model'
+import { goalSchema, languageSchema, levelSchema, profileSchema, type CEFRLevel, type Language, type LearningGoal } from '../domain/model'
 import type { Profile } from '../domain/state'
-import { dayLabels, goalLabels, languageLabels } from './labels'
+import { dayLabels, goalLabels, languageLabels, languageMarks } from './labels'
 
 const defaults = {
   en: { estimate: 'B1', target: 'B2+' },
   ru: { estimate: 'A1', target: 'A2' },
+  es: { estimate: 'A1', target: 'A2' },
 } as const
 
 export function ProfileForm({ initial, onSave, busy, fixedLanguage }: {
@@ -43,9 +44,9 @@ export function ProfileForm({ initial, onSave, busy, fixedLanguage }: {
     {!initial && !fixedLanguage && <fieldset>
       <legend>Hangi dili çalışacaksın?</legend>
       <div className="choice-grid">
-        {(['en', 'ru'] as const).map((item) => <label className="language-option" key={item}>
+        {languageSchema.options.map((item) => <label className="language-option" key={item}>
           <input type="radio" name="language" value={item} checked={language === item} onChange={() => changeLanguage(item)} />
-          <span className="language-mark" lang={item}>{item === 'en' ? 'Aa' : 'Яя'}</span>
+          <span className="language-mark" lang={item}>{languageMarks[item]}</span>
           <span><strong>{languageLabels[item]}</strong><small>{item === 'en' ? 'B1 başlangıç ünitesi' : 'A1 başlangıç ünitesi'}</small></span>
         </label>)}
       </div>

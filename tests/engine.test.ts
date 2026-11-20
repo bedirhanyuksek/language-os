@@ -57,7 +57,8 @@ describe('course and assessments', () => {
     expect(assess(textExercise('Меня'), 'Menya', 'ru').outcome).toBe('incorrect')
   })
   it('loads six linked reviewed lessons and rejects unpublished packs', () => {
-    expect(Object.values(catalog).flatMap((item) => item.unit.lessons)).toHaveLength(6)
+    expect([catalog.en, catalog.ru].flatMap((item) => item.unit.lessons)).toHaveLength(6)
+    expect(catalog.es.unit.lessons).toHaveLength(9)
     expect(() => publishCourse({ ...course, reviewStatus: 'draft' })).toThrow()
   })
   it('rejects invalid prerequisite graphs and invalid answers', () => {

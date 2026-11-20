@@ -108,7 +108,7 @@ test('every packed lesson has an inventory binding, stage evidence, source ancho
     for (const [audio, phrase] of clips) {
       expect(audio?.kind, lesson.id).toBe('recording')
       if (audio?.kind === 'recording') {
-        const options = ['-b', '1', '-v', language === 'en' ? 'en-us' : 'ru', '-s', language === 'en' ? '153' : '140']
+        const options = ['-b', '1', '-v', { en: 'en-us', ru: 'ru', es: 'es' }[language], '-s', language === 'en' ? '153' : '140']
         const hash = createHash('sha256').update(JSON.stringify([options, phrase])).digest('hex')
         expect(readFileSync(`src/content${audio.src}`).includes(hash), audio.src).toBe(true)
       }

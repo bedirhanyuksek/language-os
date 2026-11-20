@@ -40,11 +40,11 @@ test.each(Object.values(catalog))('$language planning graph and playable catalog
     }
   }
   expect(live.sort()).toEqual(course.unit.lessons.map(({ id }) => id).sort())
-  expect(groups.reduce((sum, group) => sum + group.baseline, 0)).toBe(course.language === 'en' ? 48 : 44)
-  expect(rows).toHaveLength(course.language === 'en' ? 74 : 70)
+  expect(groups.reduce((sum, group) => sum + group.baseline, 0)).toBe({ en: 48, ru: 44, es: 9 }[course.language])
+  expect(rows).toHaveLength({ en: 74, ru: 70, es: 9 }[course.language])
   for (const { band, grammar, vocabulary } of languageAudit(course)) {
-    expect(grammar.length).toBeGreaterThanOrEqual(5)
-    expect(vocabulary.targetDomains.length).toBeGreaterThanOrEqual(5)
+    expect(grammar.length).toBeGreaterThanOrEqual(course.language === 'es' ? (band === 'A1' ? 6 : band === 'A2' ? 3 : 0) : 5)
+    expect(vocabulary.targetDomains.length).toBeGreaterThanOrEqual(course.language === 'es' && !['A1', 'A2'].includes(band) ? 0 : 5)
     for (const { taughtBy, encounteredIn } of grammar) {
       for (const id of [...taughtBy, ...encounteredIn]) expect(course.unit.lessons.some((item) => item.id === id), id).toBe(true)
       for (const id of taughtBy) expect(course.unit.lessons.find((item) => item.id === id)!.objective.level.replace('+', ''), id).toBe(band)
@@ -99,7 +99,7 @@ test('checks new task keys, genuinely separate contexts, and the advanced source
   const exclusion = inference.pedagogy!.checks[1].transfer[0]
   expect(assess(exclusion, "can't have used", 'en').outcome).toBe('correct')
   expect(assess(exclusion, 'may have used', 'en').outcome).toBe('incorrect')
-  for (const course of Object.values(catalog)) {
+  for (const course of Object.values(catalog).filter(({ unit }) => unit.lessons.some(({ objective }) => objective.level === 'C2'))) {
     const implication = course.unit.lessons.find(({ objective }) => objective.level === 'C2')!
     expect(implication.pedagogy!.reading.text.split(/\s+/).length).toBeGreaterThanOrEqual(105)
     expect(implication.pedagogy!.listening.transcript.split(/\s+/).length).toBeGreaterThanOrEqual(85)
