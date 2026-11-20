@@ -2,12 +2,13 @@ import { coachingForAnswer } from '../domain/lesson-coaching'
 import { InlineCoaching } from './TutorPanel'
 import { useState } from 'react'
 import { receptionExercises, type Course, type Lesson } from '../content/schema'
-import type { Answer, ExerciseAttempt, PedagogyPhase } from '../domain/model'
+import type { Answer, ExerciseAttempt, Language, PedagogyPhase } from '../domain/model'
 import { receptionTask, type ExerciseTask } from '../domain/pedagogy'
 import { pendingSpeakingCorrections } from '../domain/speaking'
 import type { LearningState } from '../domain/state'
 import { AudioPlayer } from './AudioPlayer'
 import { ExerciseForm } from './ExerciseForm'
+import { TextAnswer } from './TextAnswer'
 import { phaseLabels } from './labels'
 
 export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state }: {
@@ -166,7 +167,8 @@ export function PedagogyResults({ lesson, phase, attempts, onContinue, state, re
   </>
 }
 
-export function TypedReview({ card, learning, busy, grade, onRate }: {
+export function TypedReview({ card, learning, language, busy, grade, onRate }: {
+  language: Language
   card: Lesson['vocabulary'][number]
   learning: NonNullable<Lesson['pedagogy']>['vocabulary'][number]
   busy: boolean
@@ -178,7 +180,7 @@ export function TypedReview({ card, learning, busy, grade, onRate }: {
   return <article className="surface review-card">
     <h2>İfadeyi hatırla</h2><p>{learning.recall.prompt}</p>
     {!feedback ? <form onSubmit={(event) => { event.preventDefault(); setFeedback(true) }}>
-      <input type="text" aria-label="Hatırladığın ifade" value={answer} maxLength={2000} onChange={(event) => setAnswer(event.target.value)} required />
+      <TextAnswer language={language} label="Hatırladığın ifade" value={answer} onChange={setAnswer} required />
       <div className="button-row"><button className="primary" disabled={!answer.trim()}>Yanıtı karşılaştır</button></div>
     </form> : <>
       <p>{grade(answer) === 'remembered' ? 'Doğru hatırladın.' : 'Bu ifade için kısa bir tekrar planlanacak.'}</p>

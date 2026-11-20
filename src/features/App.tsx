@@ -237,7 +237,7 @@ export function App() {
         }
         content = <>
           <header className="page-heading"><div><h1>Kelime tekrarı</h1><p>Kart {screen.index + 1} / {screen.cardIds.length}</p></div></header>
-          {learning ? <TypedReview key={card.id} card={card} learning={learning} busy={busy}
+          {learning ? <TypedReview key={card.id} card={card} learning={learning} language={course.language} busy={busy}
             grade={(answer) => gradeVocabularyRecall(learning.recall, answer, course.language)}
             onRate={(answer) => update((current) => finishTypedReview(current, course, card.id, answer, nowISO()), afterReview)} />
             : <ReviewCard key={card.id} card={card} index={screen.index} total={screen.cardIds.length} busy={busy}

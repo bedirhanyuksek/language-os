@@ -3,6 +3,7 @@ import Dexie from 'dexie'
 import { IDBObjectStore } from 'fake-indexeddb'
 import { catalog, legacyCatalog } from '../src/content/catalog'
 import type { Answer } from '../src/domain/model'
+import { assess } from '../src/domain/assessment'
 import { finishPlacement } from '../src/domain/progress'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { IndexedLearningRepository, exportBackup, parseBackup } from '../src/persistence/repository'
@@ -56,6 +57,30 @@ describe('IndexedDB and backup', () => {
     expect(parseBackup(exportBackup(state))).toEqual(state)
     expect(() => parseBackup(exportBackup(state).replace('"schemaVersion": 2', '"schemaVersion": 99'))).toThrow()
     expect(() => parseBackup(exportBackup({ ...state, placementAt: new Date().toISOString() }))).toThrow(/tarama/)
+  })
+  it('imports an old incorrect еще attempt without rewriting its stored evidence', () => {
+    const original = catalog.ru
+    const course = structuredClone(original)
+    // Use a ё-only fixture independently of live curriculum spelling alternatives.
+    const exercise = course.placement.find(({ exercise }) => exercise.kind === 'fill')!.exercise
+    if (exercise.kind !== 'fill') throw new Error('Expected a typed placement question')
+    exercise.accepted = ['ещё']
+    const at = '2026-11-13T10:00:00.000Z'
+    const answers = Object.fromEntries(course.placement.map(({ exercise }) => [exercise.id,
+      exercise.kind === 'open' ? exercise.sample : exercise.kind === 'fill' || exercise.kind === 'short'
+        ? exercise.accepted[0] : exercise.accepted]))
+    answers[exercise.id] = 'еще'
+    const old = finishPlacement(state, course, answers, at)
+    const attempt = old.attempts.find(({ exerciseId }) => exerciseId === exercise.id)!
+    expect(attempt.evidence.outcome).toBe('correct')
+    attempt.evidence = assess(exercise, 'еще', 'ru', 'legacy')
+    expect(attempt.evidence.outcome).toBe('incorrect')
+    catalog.ru = course
+    try {
+      expect(parseBackup(exportBackup(old))).toEqual(old)
+    } finally {
+      catalog.ru = original
+    }
   })
   it('serializes concurrent changes and rejects stale replacement', async () => {
     const current = await repository.create(state)
