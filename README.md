@@ -47,6 +47,14 @@ Başlangıç taraması az sayıda örneğe dayanır ve konuşmayı ölçmez. Aç
 
 Bu entegrasyon loopback için tasarlandı. GitHub Pages, `npm run preview` veya herkese açık bir tünel yerel OAuth sunucusunun çalışma biçimi değildir. AI geri bildirimi resmi seviye veya kazanım kararı vermez. Speaking Coach’un talimat kopyalama ve kullanıcı onaylı rapor akışı OAuth bağlantısından bağımsızdır. [Entegrasyon ve kısıtlar](docs/CHATGPT_INTEGRATION_FEASIBILITY.md)
 
+## Android APK
+
+Capacitor Android projesi `android/` altında bulunur. Android Studio/Android SDK ve JDK 21 gerekir. Web dosyalarını yenilemek için `npm run android:sync`, debug APK üretmek için `npm run android:apk` çalıştır. Bu komutlar web arayüzünü `vite build` ile derler.
+
+APK çıktısı: `android/app/build/outputs/apk/debug/app-debug.apk`. Android Studio'da açmak için `npx cap open android` kullan. Gradle wrapper 8.14.3 kullanır. Gradle ve Android bağımlılıkları ilk derlemede indirme gerektirebilir; çevrimdışı APK derlemesi için bunların önceden önbelleğe alınmış olması gerekir. `android/local.properties` ve derleme çıktıları depoya eklenmez.
+
+Mobil uygulamada web dosyaları APK ile gelir ve service worker kaydedilmez. ChatGPT OAuth bağlantısı yalnızca masaüstündeki `http://127.0.0.1:4173` yerel sunucusunda kullanılabilir. ChatGPT bağlantısı mobil uygulamada henüz yok. Speaking Coach'un kopyala/yapıştır akışı çalışır. Tarayıcıdaki ilerlemeyi mobil uygulamaya taşımak için Ayarlar'dan JSON yedeğini dışa aktarıp uygulamada içe aktar.
+
 ## Müfredat katkısı
 
 `src/content/packs/*.json` dosyaları sürüm, dil ve ders listesi içerir. Ders; sabit kimlik, envanter hedefi, ön koşullar, öğretim örnekleri, rehberli/aktarım/gecikmeli görevler, kelime ve kalıplar, okuma/dinleme kaynakları ve açıklamalı cevaplar, yazı/revizyon ve konuşma görevi içerir. Mevcut açık hedefe ders eklemek için uygun JSON paketini düzenle. Ses değiştiğinde eSpeak NG ve FFmpeg ile ilgili klipleri üret.

@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react'
 import type { LearningState, Profile } from '../domain/state'
 import { exportBackup, parseBackup } from '../persistence/repository'
-import { TutorSettings } from './TutorPanel'
+import { TutorSettings, TutorUnavailableNote } from './TutorPanel'
+import { isLocalTutorAvailable } from '../runtime'
 import { ProfileForm } from './ProfileForm'
 
 export function Settings({ state, busy, onSave, onRestore, notice }: {
@@ -42,7 +43,8 @@ export function Settings({ state, busy, onSave, onRestore, notice }: {
         return saved
       }} />
     </section>
-    <TutorSettings />
+    {isLocalTutorAvailable() ? <TutorSettings /> :
+      <section className="surface section"><TutorUnavailableNote /></section>}
     <section className="surface section">
       <h2>Yerel kayıtlar</h2><p>Yedek etkin dili, yanıtlarını ve içe aktardığın konuşma alıntılarını içerir. Her dilin yedeğini o dile geçerek indirebilirsin.</p>
       <div className="button-row">
