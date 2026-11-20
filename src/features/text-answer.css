@@ -1,0 +1,8 @@
+.text-answer { min-width: 0; }
+.text-answer-warning { margin: 10px 0 0; padding: 10px 12px; border-left: 3px solid var(--blue); color: var(--ink); background: var(--sheet); font-size: .9rem; }
+.cyrillic-keyboard { margin-top: 12px; }
+.cyrillic-keyboard > summary { min-height: 44px; color: var(--blue); }
+.cyrillic-keyboard-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.cyrillic-keyboard-row button { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 2px; color: var(--ink); background: var(--sheet); font-family: var(--mono); }
+.cyrillic-keyboard-row button:hover { border-color: var(--blue); color: var(--blue); }
+.cyrillic-keyboard-row button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }

@@ -1,6 +1,6 @@
 import type { Course, Exercise, Lesson } from '../content/schema'
 import { pendingSpeakingCorrections } from './speaking'
-import { assess } from './assessment'
+import { assess, type AssessmentRules } from './assessment'
 import type { ExerciseAttempt, PedagogyPhase, StudyPlan } from './model'
 import type { LearningState } from './state'
 
@@ -154,6 +154,6 @@ export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesso
   }
 }
 
-export function gradeVocabularyRecall(exercise: Exercise, answer: string, language: Course['language']) {
-  return assess(exercise, answer, language).outcome === 'correct' ? 'remembered' : 'again'
+export function gradeVocabularyRecall(exercise: Exercise, answer: string, language: Course['language'], rules: AssessmentRules = 'current') {
+  return assess(exercise, answer, language, rules).outcome === 'correct' ? 'remembered' : 'again'
 }

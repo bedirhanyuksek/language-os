@@ -4,7 +4,7 @@ import { catalog, legacyCatalog } from '../content/catalog'
 import { pedagogyExercises, receptionExercises } from '../content/schema'
 import { diagnosticTasks } from '../domain/diagnostic'
 import { gradeVocabularyRecall } from '../domain/pedagogy'
-import { assess } from '../domain/assessment'
+import { assess, type AssessmentRules } from '../domain/assessment'
 import { evidenceSchema, type Language } from '../domain/model'
 import { validateSpeakingReport, type SpeakingAssessmentRepository } from '../domain/speaking'
 import { stateSchema, type LearningState } from '../domain/state'
@@ -250,8 +250,10 @@ export function parseBackup(raw: string): LearningState {
           .find(matches)?.exercise
       } else definition = checks.find(matches)?.exercise
     }
-    if (!definition || definition.id !== attempt.exerciseId ||
-      JSON.stringify(attempt.evidence) !== JSON.stringify(evidenceSchema.parse(assess(definition, attempt.answer, state.profile.language)))) {
+    const stored = JSON.stringify(attempt.evidence)
+    const matchesRules = (rules: AssessmentRules) =>
+      stored === JSON.stringify(evidenceSchema.parse(assess(definition!, attempt.answer, state.profile.language, rules)))
+    if (!definition || definition.id !== attempt.exerciseId || !(matchesRules('current') || matchesRules('legacy'))) {
       throw new Error('Alıştırma kaydı içerik veya değerlendirme kurallarıyla eşleşmiyor.')
     }
   }
@@ -268,7 +270,8 @@ export function parseBackup(raw: string): LearningState {
       const schedule = state.reviews.find((card) => card.cardId === cardId)
       const recall = lessons.flatMap(({ pedagogy }) => pedagogy?.vocabulary ?? []).find((item) => item.cardId === cardId)?.recall
       return !schedule || at < schedule.introducedAt || (mode === 'typed' &&
-        (!recall || !answer || gradeVocabularyRecall(recall, answer, course.language) !== result))
+        (!recall || !answer || (gradeVocabularyRecall(recall, answer, course.language) !== result &&
+          gradeVocabularyRecall(recall, answer, course.language, 'legacy') !== result)))
     }) ||
     state.reviews.some(({ cardId }) => !cards.has(cardId)) ||
     state.skippedSpeaking.some((id) => !lessons.some((lesson) => lesson.id === id && lesson.speaking)) ||
