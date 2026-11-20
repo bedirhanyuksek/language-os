@@ -1,0 +1,1979 @@
+{
+  "format": 1,
+  "language": "es",
+  "lessons": [
+    {
+      "id": "es.saludos",
+      "level": "A1",
+      "title": "Selamlaş ve kendini tanıt · Saludos y presentarse",
+      "objective": "Selam ver, adını söyle ve karşındakinin adını sor.",
+      "situation": "Bir kursa ilk kez geliyorsun. Önce sesleri tanı: a, e, i, o, u kısa ve nettir; h okunmaz. Ñ, “ny” sesine yakındır. Hola “ola” diye okunur. Vurgu işareti sesin yerini gösterir; ¿ ve ¡ cümlenin başında da kullanılır. Ll sesi bölgeye göre değişebilir.",
+      "bridge": "Hola ile selam ver. Adını me llamo ile söyle. Karşındakine ¿Cómo te llamas? diye sor; bilmiyorsan örnekleri önce dinle veya öğretim notunu oku.",
+      "models": [
+        {
+          "phrase": "Hola, me llamo Ana.",
+          "explanation": "Hola her saatte merhaba demektir. Sabah buenos días, öğleden sonra buenas tardes, akşam/gece buenas noches kullanılır. Me llamo + ad, adını söylemenin doğal yoludur. Özne yo çoğunlukla söylenmez."
+        },
+        {
+          "phrase": "¿Cómo te llamas? — Me llamo Luis. Mucho gusto.",
+          "explanation": "Cómo üzerindeki vurgu işaretini koru. Te llamas karşındakinin adını sorar; me llamo kendini tanıtır. Mucho gusto memnun oldum demektir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Selamlaşma ve günün zamanı",
+          "incorrect": "Buenos noches.",
+          "correct": "Buenas noches.",
+          "explanation": "Hola her saatte kullanılabilir. Días ile buenos, tardes ve noches ile buenas kullanılır.",
+          "guided": [
+            [
+              "Sabah selamı: ___ días.",
+              "Buenos"
+            ],
+            [
+              "Akşam/gece selamı: ___ noches.",
+              "Buenas"
+            ]
+          ],
+          "transfer": [
+            [
+              "Öğleden sonra resepsiyonda selam ver: ___ tardes.",
+              "Buenas"
+            ],
+            [
+              "Her saatte “merhaba” de; tek sözcük yaz: ___.",
+              "Hola"
+            ]
+          ],
+          "delayed": [
+            [
+              "Yeni bir sabah, iş arkadaşını selamla: ___ días, Marta.",
+              "Buenos"
+            ],
+            [
+              "Gece komşuna selam ver: ___ noches, Pedro.",
+              "Buenas"
+            ]
+          ]
+        },
+        {
+          "label": "Me llamo / te llamas",
+          "incorrect": "Me llamas Eva.",
+          "correct": "Me llamo Eva.",
+          "explanation": "Kendi adın için me llamo; karşıdakine soru sorarken te llamas kullan. Llamo ve llamas kişiyle birlikte değişir.",
+          "guided": [
+            [
+              "Adını söyle: Me ___ Deniz.",
+              "llamo"
+            ],
+            [
+              "Karşındakine adını sor: ¿Cómo te ___?",
+              "llamas"
+            ]
+          ],
+          "transfer": [
+            [
+              "Yeni üyeyi tanı: ¿Cómo ___ llamas?",
+              "te"
+            ],
+            [
+              "Kartında Ece yazıyor; kendini tanıt: ___ llamo Ece.",
+              "Me"
+            ]
+          ],
+          "delayed": [
+            [
+              "Telefonda kendini tanıt: Me ___ Selin.",
+              "llamo"
+            ],
+            [
+              "Sınıftaki yeni arkadaşına sor: ¿Cómo te ___?",
+              "llamas"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "hola",
+        "meaning": "merhaba",
+        "example": "Hola, soy Eva.",
+        "usage": "Hola resmî ve gündelik durumlarda kısa bir selamdır. H okunmaz.",
+        "pronunciation": "/ˈola/",
+        "collocations": [
+          "hola, Ana",
+          "hola a todos"
+        ],
+        "recognize": [
+          "Bu derste “hola” ne anlama gelir?",
+          "merhaba",
+          "dün",
+          "uzakta",
+          "Hola resmî ve gündelik durumlarda kısa bir selamdır. H okunmaz."
+        ],
+        "recall": [
+          "“Merhaba” anlamındaki tek sözcüğü yaz.",
+          "hola"
+        ],
+        "use": "Yeni komşuna selam veren bir cümle yaz."
+      },
+      "additionalWords": [
+        {
+          "term": "mucho gusto",
+          "meaning": "memnun oldum",
+          "example": "Me llamo Pablo. Mucho gusto.",
+          "usage": "İlk tanışmada mucho gusto kullanılır. Encantado/encantada da yaygındır.",
+          "pronunciation": "/ˈmutʃo ˈɡusto/",
+          "collocations": [
+            "mucho gusto, Ana",
+            "hola, mucho gusto"
+          ],
+          "recognize": [
+            "Bu derste “mucho gusto” ne anlama gelir?",
+            "memnun oldum",
+            "dün",
+            "uzakta",
+            "İlk tanışmada mucho gusto kullanılır. Encantado/encantada da yaygındır."
+          ],
+          "recall": [
+            "Tanışırken “memnun oldum” anlamındaki iki sözcüklü kalıbı yaz.",
+            "mucho gusto"
+          ],
+          "use": "Yeni bir kurs arkadaşıyla tanışırken bu kalıbı kullan."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "soy",
+          "cue": "Soy, “ben ...-im” anlamındadır; ikinci derste ayrıntılı çalışılacak."
+        }
+      ],
+      "writing": {
+        "prompt": "Bir kurs arkadaşına selam ver, adını söyle ve adını sor.",
+        "sample": "Hola, me llamo Elif. ¿Cómo te llamas? Mucho gusto.",
+        "revision": "Adını değiştirmeden selamı günün başka bir zamanına uyarla; me/te kullanımını kontrol et.",
+        "criteria": [
+          "Selam bağlama uygun.",
+          "Kendi adı ve karşıdakinin adı doğru kişiyle kurulmuş."
+        ]
+      },
+      "input": {
+        "text": "Hola. Me llamo Sara. Soy estudiante. Mucho gusto.",
+        "reading": [
+          "Metindeki kişinin adı ne?",
+          "Sara",
+          "Ana",
+          "Luis",
+          "Me llamo Sara cümlesi adı açıkça verir."
+        ],
+        "transcript": "Buenos días. Me llamo Diego. ¿Cómo te llamas?",
+        "main": [
+          "Konuşan kişi ne yapıyor?",
+          "Tanışıyor",
+          "Sipariş veriyor",
+          "Yol soruyor",
+          "Adını söyleyip karşıdakinin adını soruyor."
+        ],
+        "detail": [
+          "Konuşanın adı ne?",
+          "Diego",
+          "Sara",
+          "Pablo",
+          "Me llamo Diego ifadesi adı verir."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "Buenas tardes. Me llamo Carmen. Hola a todos.",
+        "reading": [
+          "Kendini kim tanıtıyor?",
+          "Carmen",
+          "Sara",
+          "Diego",
+          "Me llamo Carmen ifadesini bul."
+        ],
+        "transcript": "Hola, me llamo Rosa. Mucho gusto.",
+        "main": [
+          "Bu kısa mesajın amacı ne?",
+          "Kendini tanıtmak",
+          "Fiyat sormak",
+          "Vedalaşmak",
+          "Me llamo ile ad söylenir."
+        ],
+        "detail": [
+          "Duyduğun ad hangisi?",
+          "Rosa",
+          "Carmen",
+          "Ana",
+          "Me llamo Rosa deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Bir kursun kapısında ilk kez karşılaşıyoruz. Selam ver, adını söyle ve benim adımı sor. Ardından farklı bir saatte yeniden karşılaşalım.",
+      "speakingContext": "daily_conversation",
+      "approach": "decoding",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    },
+    {
+      "id": "es.ser-estar",
+      "level": "A1",
+      "title": "Kimlik ve durum · Ser / estar básicos",
+      "objective": "Kimlik, geçici durum ve konumu ser/estar ile ayır.",
+      "prerequisite": "es.saludos",
+      "situation": "Yeni arkadaşına kim olduğunu ve bugün nerede olduğunu anlatıyorsun. Ser kimlik ve meslek; estar durum ve yer için kullanılır. “Kalıcı/geçici” kuralı her örneği açıklamaz: bir binanın yeri de estar ile söylenir.",
+      "bridge": "Soy/eres/es ile kimliği; estoy/estás/está ile durumu veya yeri anlat. Türkçedeki ek yerine İspanyolcada çekimli fiili yaz.",
+      "models": [
+        {
+          "phrase": "Soy estudiante. Mi amiga es médica.",
+          "explanation": "Ser: yo soy, tú eres, él/ella es. Mesleği tek başına söylerken genellikle un/una gerekmez."
+        },
+        {
+          "phrase": "Estoy bien. La escuela está en el centro.",
+          "explanation": "Estar: yo estoy, tú estás, él/ella está. Durum ve konum için kullanılır; estás ve está vurgularını koru."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Ser ile kimlik",
+          "incorrect": "Yo es estudiante.",
+          "correct": "Yo soy estudiante.",
+          "explanation": "Soy ben, eres sen, es o için kimlik ve meslek bildirir.",
+          "guided": [
+            [
+              "Kendini öğrenci olarak tanıt: Yo ___ estudiante.",
+              "soy"
+            ],
+            [
+              "Arkadaşına kimliğini sor: ¿Tú ___ profesor?",
+              "eres"
+            ]
+          ],
+          "transfer": [
+            [
+              "Lucía’nın mesleği: Ella ___ médica.",
+              "es"
+            ],
+            [
+              "Kendini aşçı olarak tanıt: ___ cocinero.",
+              "Soy"
+            ]
+          ],
+          "delayed": [
+            [
+              "Raúl kim? Raúl ___ profesor.",
+              "es"
+            ],
+            [
+              "Yeni tanıştığın birine sor: ¿___ estudiante? (tú)",
+              "Eres"
+            ]
+          ]
+        },
+        {
+          "label": "Estar ile durum ve konum",
+          "incorrect": "La farmacia es aquí.",
+          "correct": "La farmacia está aquí.",
+          "explanation": "Konum estar ile kurulur. Está bir kişi/nesne, estoy ben, estás sen için kullanılır.",
+          "guided": [
+            [
+              "Kendi durumun: Yo ___ bien.",
+              "estoy"
+            ],
+            [
+              "Okulun yeri: La escuela ___ aquí.",
+              "está"
+            ]
+          ],
+          "transfer": [
+            [
+              "Karşındakinin durumunu sor: ¿Cómo ___? (tú)",
+              "estás"
+            ],
+            [
+              "Pedro’nun yeri: Pedro ___ en casa.",
+              "está"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kendi yerin: ___ en el café.",
+              "Estoy"
+            ],
+            [
+              "Müzenin konumu: El museo ___ en el centro.",
+              "está"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "estudiante",
+        "meaning": "öğrenci",
+        "example": "Mi hermano es estudiante.",
+        "usage": "Estudiante hem kadın hem erkek için aynı biçimdedir; artículo el/la değişebilir.",
+        "pronunciation": "/estuˈðjante/",
+        "collocations": [
+          "soy estudiante",
+          "una estudiante"
+        ],
+        "recognize": [
+          "Bu derste “estudiante” ne anlama gelir?",
+          "öğrenci",
+          "dün",
+          "uzakta",
+          "Estudiante hem kadın hem erkek için aynı biçimdedir; artículo el/la değişebilir."
+        ],
+        "recall": [
+          "“Öğrenci” sözcüğünü İspanyolca yaz.",
+          "estudiante"
+        ],
+        "use": "Bir arkadaşının öğrenci olduğunu söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "bien",
+          "meaning": "iyi",
+          "example": "Hoy estoy bien.",
+          "usage": "Durum sorusuna estoy bien denir; soy bien kullanılmaz.",
+          "pronunciation": "/bjen/",
+          "collocations": [
+            "estoy bien",
+            "muy bien"
+          ],
+          "recognize": [
+            "Bu derste “bien” ne anlama gelir?",
+            "iyi",
+            "dün",
+            "uzakta",
+            "Durum sorusuna estoy bien denir; soy bien kullanılmaz."
+          ],
+          "recall": [
+            "Durumunu anlatırken “iyi” anlamındaki sözcüğü yaz.",
+            "bien"
+          ],
+          "use": "Bugünkü durumunu estar ve bu sözcükle anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "aquí",
+          "cue": "Burada demektir; yazılı vurgusu son hecededir."
+        }
+      ],
+      "writing": {
+        "prompt": "Kim olduğunu ve bugün nerede olduğunu iki kısa cümleyle anlat.",
+        "sample": "Soy estudiante. Hoy estoy en casa y estoy bien.",
+        "revision": "Kimlik cümleni koru; konumu değiştir. Her fiilin ser mi estar mı olduğunu kontrol et.",
+        "criteria": [
+          "Kimlik ser ile verilmiş.",
+          "Durum veya konum estar ile verilmiş."
+        ]
+      },
+      "input": {
+        "text": "Soy Elena. Soy médica. Hoy estoy en el hospital. Mi casa no está aquí.",
+        "reading": [
+          "Elena’nın mesleği ne?",
+          "Doktor",
+          "Öğretmen",
+          "Aşçı",
+          "Soy médica meslek bildirir."
+        ],
+        "transcript": "Hola, soy Marcos. Soy profesor. Hoy estoy en casa y estoy bien.",
+        "main": [
+          "Marcos ne anlatıyor?",
+          "Kimliğini ve bugünkü durumunu",
+          "Kafe fiyatlarını",
+          "Ailesinin yaşlarını",
+          "Soy profesor ile kimlik, estoy ile durum veriliyor."
+        ],
+        "detail": [
+          "Marcos bugün nerede?",
+          "Evde",
+          "Hastanede",
+          "Okulda",
+          "Hoy estoy en casa deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "Me llamo Inés. Soy profesora. Mi escuela está aquí, en el centro.",
+        "reading": [
+          "Inés’in okulu nerede?",
+          "Merkezde",
+          "Evde",
+          "Hastanede",
+          "En el centro yer bildirir."
+        ],
+        "transcript": "Soy Andrés, estudiante. Hoy estoy en la escuela. Estoy muy bien.",
+        "main": [
+          "Andrés’in mesajı hangi konuda?",
+          "Kendisini ve yerini tanıtma",
+          "Bir siparişi iptal etme",
+          "Geçmiş bir gezi",
+          "Soy estudiante ve estoy en la escuela ipuçlarıdır."
+        ],
+        "detail": [
+          "Andrés nerede?",
+          "Okulda",
+          "Kafede",
+          "Evde",
+          "Estoy en la escuela deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Bir kurs arkadaşın rolündeyim. Kim olduğunu, bugün nasıl olduğunu ve nerede olduğunu soracağım. Sonra üçüncü bir kişiyi tanıtmanı isteyeceğim.",
+      "speakingContext": "daily_conversation",
+      "approach": "dialogue",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    },
+    {
+      "id": "es.numeros",
+      "level": "A1",
+      "title": "Sayılar ve fiyatlar · Números y precios",
+      "objective": "Birden yirmiye kadar sayıları ve basit avro fiyatlarını söyle ve sor.",
+      "prerequisite": "es.ser-estar",
+      "situation": "Bir tezgâhta fiyat etiketlerini karşılaştırıyorsun. Uno, dos, tres, cuatro, cinco; seis, siete, ocho, nueve, diez. Sonra once, doce, trece, catorce, quince, dieciséis, diecisiete, dieciocho, diecinueve, veinte. Ürün fiyatı için cuesta; birden çok ürün için cuestan kullanılır.",
+      "bridge": "Önce fiyatı ¿Cuánto cuesta? ile sor. Tek ürünün toplam fiyatını cuesta + sayı + euros ile söyle. Un euro tekildir; dos euros çoğuldur.",
+      "models": [
+        {
+          "phrase": "¿Cuánto cuesta el pan? — Cuesta dos euros.",
+          "explanation": "Cuánto fiyat sorar. Bir ürün için cuesta kullanılır; fiyatın iki olması fiili çoğul yapmaz."
+        },
+        {
+          "phrase": "Los dos cuadernos cuestan diez euros.",
+          "explanation": "Birden çok ürün özne olduğunda cuestan kullanılır. Uno, eril tekil isim önünde un olur: un euro."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Sayıyı yazıyla söyle",
+          "incorrect": "tres euro",
+          "correct": "tres euros",
+          "explanation": "Bir avro un euro, iki ve üstü euros olur. Sayı sözcüğünü etiketle eşleştir.",
+          "guided": [
+            [
+              "Etikette 3 € var; sayıyı yazıyla yaz: ___ euros.",
+              "tres"
+            ],
+            [
+              "Etikette 7 € var: ___ euros.",
+              "siete"
+            ]
+          ],
+          "transfer": [
+            [
+              "Bilet 12 €; sayıyı yazıyla yaz: ___ euros.",
+              "doce"
+            ],
+            [
+              "Bir kalem 1 €; isim önünde kullan: ___ euro.",
+              "un"
+            ]
+          ],
+          "delayed": [
+            [
+              "Harita 16 €; sayıyı yazıyla yaz: ___ euros.",
+              "dieciséis"
+            ],
+            [
+              "Çanta 20 €; sayıyı yazıyla yaz: ___ euros.",
+              "veinte"
+            ]
+          ]
+        },
+        {
+          "label": "Cuesta / cuestan ve fiyat sorusu",
+          "incorrect": "El libro cuestan cinco euros.",
+          "correct": "El libro cuesta cinco euros.",
+          "explanation": "Fiil fiyatın sayısına değil, ürün öznesinin tekil veya çoğul oluşuna uyar. Cuánto tekil ürünün fiyatını sorar.",
+          "guided": [
+            [
+              "Tek kitabın fiyatı: El libro ___ cinco euros.",
+              "cuesta"
+            ],
+            [
+              "İki defterin toplamı: Los cuadernos ___ ocho euros.",
+              "cuestan"
+            ]
+          ],
+          "transfer": [
+            [
+              "Tek bilete fiyat sor: ¿___ cuesta el billete?",
+              "Cuánto"
+            ],
+            [
+              "İki kalemin toplam fiyatı: Los bolígrafos ___ cuatro euros.",
+              "cuestan"
+            ]
+          ],
+          "delayed": [
+            [
+              "Tek sandviçin fiyatı: El bocadillo ___ seis euros.",
+              "cuesta"
+            ],
+            [
+              "Fiyatını sor: ¿Cuánto ___ la mochila?",
+              "cuesta"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "euro",
+        "meaning": "avro",
+        "example": "El mapa cuesta un euro.",
+        "usage": "Bir için un euro; diğer sayılarda euros kullanılır.",
+        "pronunciation": "/ˈewɾo/",
+        "collocations": [
+          "un euro",
+          "dos euros"
+        ],
+        "recognize": [
+          "Bu derste “euro” ne anlama gelir?",
+          "avro",
+          "dün",
+          "uzakta",
+          "Bir için un euro; diğer sayılarda euros kullanılır."
+        ],
+        "recall": [
+          "“Avro” sözcüğünün tekil İspanyolca biçimini yaz.",
+          "euro"
+        ],
+        "use": "Bir ürünün avro cinsinden fiyatını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "cuánto",
+          "meaning": "ne kadar",
+          "example": "¿Cuánto cuesta el libro?",
+          "usage": "Soru sözcüğü cuánto vurgu işareti alır. Fiyat sormak için kullanılır.",
+          "pronunciation": "/ˈkwanto/",
+          "collocations": [
+            "cuánto cuesta",
+            "cuánto cuestan"
+          ],
+          "recognize": [
+            "Bu derste “cuánto” ne anlama gelir?",
+            "ne kadar",
+            "dün",
+            "uzakta",
+            "Soru sözcüğü cuánto vurgu işareti alır. Fiyat sormak için kullanılır."
+          ],
+          "recall": [
+            "Fiyat sorarken “ne kadar” anlamındaki soru sözcüğünü yaz.",
+            "cuánto"
+          ],
+          "use": "Bir kalemin fiyatını sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "libro",
+          "cue": "Kitap demektir; el libro tekildir."
+        }
+      ],
+      "writing": {
+        "prompt": "Bir kitap ve iki kalem için fiyat sorup fiyatlarını yazıyla söyle.",
+        "sample": "¿Cuánto cuesta el libro? Cuesta nueve euros. Los dos bolígrafos cuestan cuatro euros.",
+        "revision": "Ürünleri değiştir; bir tekil ve bir çoğul fiyat cümlesini kontrol et.",
+        "criteria": [
+          "Sayı ve para birimi doğru.",
+          "Cuesta/cuestan ürün sayısına uygun."
+        ]
+      },
+      "input": {
+        "text": "El libro cuesta ocho euros. El mapa cuesta tres euros. Los dos bolígrafos cuestan cinco euros.",
+        "reading": [
+          "Harita kaç avro?",
+          "3",
+          "8",
+          "5",
+          "El mapa cuesta tres euros cümlesi fiyatı verir."
+        ],
+        "transcript": "Buenos días. El cuaderno cuesta seis euros. El libro cuesta once euros.",
+        "main": [
+          "Konuşmada ne bildiriliyor?",
+          "Ürün fiyatları",
+          "Aile üyeleri",
+          "Bir adres",
+          "Cuesta ve euros fiyat bilgisidir."
+        ],
+        "detail": [
+          "Defter kaç avro?",
+          "6",
+          "11",
+          "16",
+          "El cuaderno cuesta seis euros deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "La mochila cuesta veinte euros. El libro cuesta doce euros. El pan cuesta dos euros.",
+        "reading": [
+          "Kitap kaç avro?",
+          "12",
+          "20",
+          "2",
+          "El libro cuesta doce euros cümlesine bak."
+        ],
+        "transcript": "El mapa cuesta cuatro euros. Los dos cuadernos cuestan quince euros.",
+        "main": [
+          "Konuşan ne yapıyor?",
+          "İki ürün grubunun fiyatını söylüyor",
+          "Kendini tanıtıyor",
+          "Günün saatini soruyor",
+          "Ürünler ve euros ile fiyat veriliyor."
+        ],
+        "detail": [
+          "İki defterin toplam fiyatı kaç avro?",
+          "15",
+          "4",
+          "14",
+          "Los dos cuadernos cuestan quince euros deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Bir kırtasiyedeyiz. Bana tek ürün ve iki ürün için fiyat sor. Fiyatları duyduktan sonra toplamı tekrar ederek doğrula.",
+      "speakingContext": "daily_conversation",
+      "approach": "dialogue",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    },
+    {
+      "id": "es.familia",
+      "level": "A1",
+      "title": "Aileni tanıt · La familia",
+      "objective": "Aile üyelerini iyelik, cinsiyet ve yaşla tanıt.",
+      "prerequisite": "es.numeros",
+      "situation": "Bir aile fotoğrafını anlatıyorsun. Madre anne, padre baba, hermana kız kardeş, hermano erkek kardeştir. Mi/tu tekil isimle, mis/tus çoğul isimle kullanılır; sahibin cinsiyetine göre değişmez. Yaş için tener kullanılır.",
+      "bridge": "Mi hermana / mis hermanos ayrımını yap. Yaşını tengo + sayı + años ile söyle; ser ile yaş kurulmaz.",
+      "models": [
+        {
+          "phrase": "Esta es mi madre. Estos son mis hermanos.",
+          "explanation": "Mi tek aile üyesiyle, mis birden çok üyeyle kullanılır. Esta kadın tekil, estos erkek veya karma çoğul için kullanılır."
+        },
+        {
+          "phrase": "Tengo veinte años. Mi hermana tiene doce años.",
+          "explanation": "Tener yaş bildirir: yo tengo, tú tienes, él/ella tiene. Yaşın çoğul birimi años olur; ñ harfini koru."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Mi / mis ile iyelik",
+          "incorrect": "mis madre",
+          "correct": "mi madre",
+          "explanation": "Mi tekil isimden önce, mis çoğul isimden önce gelir. Türkçedeki benim anlamını taşır.",
+          "guided": [
+            [
+              "Tek aile üyesi: Esta es ___ hermana.",
+              "mi"
+            ],
+            [
+              "İki aile üyesi: Estos son ___ padres.",
+              "mis"
+            ]
+          ],
+          "transfer": [
+            [
+              "Fotoğraftaki erkek kardeşler: Son ___ hermanos.",
+              "mis"
+            ],
+            [
+              "Babanı tanıt: Este es ___ padre.",
+              "mi"
+            ]
+          ],
+          "delayed": [
+            [
+              "Annenden söz et: ___ madre es médica.",
+              "Mi"
+            ],
+            [
+              "Kız kardeşlerinden söz et: ___ hermanas son estudiantes.",
+              "Mis"
+            ]
+          ]
+        },
+        {
+          "label": "Tener ile yaş",
+          "incorrect": "Soy veinte años.",
+          "correct": "Tengo veinte años.",
+          "explanation": "Yaş için tengo/tienes/tiene + sayı + años kullanılır; soy kullanılmaz.",
+          "guided": [
+            [
+              "Kendi yaşın: Yo ___ veinte años.",
+              "tengo"
+            ],
+            [
+              "Ana’nın yaşı: Ana ___ diez años.",
+              "tiene"
+            ]
+          ],
+          "transfer": [
+            [
+              "Arkadaşına yaşını sor: ¿Cuántos años ___? (tú)",
+              "tienes"
+            ],
+            [
+              "Erkek kardeşin: Mi hermano ___ quince años.",
+              "tiene"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kendini tanıt: ___ diecinueve años.",
+              "Tengo"
+            ],
+            [
+              "Kız kardeşinin yaşı: Mi hermana ___ ocho años.",
+              "tiene"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "hermana",
+        "meaning": "kız kardeş",
+        "example": "Mi hermana tiene dieciséis años.",
+        "usage": "Hermana kız kardeş, hermano erkek kardeştir; yaş sırası bu sözcükte belirtilmez.",
+        "pronunciation": "/eɾˈmana/",
+        "collocations": [
+          "mi hermana",
+          "hermana mayor"
+        ],
+        "recognize": [
+          "Bu derste “hermana” ne anlama gelir?",
+          "kız kardeş",
+          "dün",
+          "uzakta",
+          "Hermana kız kardeş, hermano erkek kardeştir; yaş sırası bu sözcükte belirtilmez."
+        ],
+        "recall": [
+          "“Kız kardeş” anlamındaki tekil sözcüğü yaz.",
+          "hermana"
+        ],
+        "use": "Kız kardeşini veya hayalî bir kız kardeşi tanıt."
+      },
+      "additionalWords": [
+        {
+          "term": "años",
+          "meaning": "yaş / yıllar",
+          "example": "Mi padre tiene cuarenta años.",
+          "usage": "Yaş kalıbında sayıdan sonra años kullan. Ñ yerine n yazmak sözcüğün anlamını değiştirir.",
+          "pronunciation": "/ˈaɲos/",
+          "collocations": [
+            "tengo veinte años",
+            "cuántos años"
+          ],
+          "recognize": [
+            "Bu derste “años” ne anlama gelir?",
+            "yaş / yıllar",
+            "dün",
+            "uzakta",
+            "Yaş kalıbında sayıdan sonra años kullan. Ñ yerine n yazmak sözcüğün anlamını değiştirir."
+          ],
+          "recall": [
+            "Yaş kalıbının sonunu tamamla: Tengo veinte ___.",
+            "años"
+          ],
+          "use": "Bir aile üyesinin yaşını años ile söyle; gerekirse 1–20 arasında hayalî bir yaş seç."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "madre",
+          "cue": "Anne demektir; mi madre, annem anlamındadır."
+        }
+      ],
+      "writing": {
+        "prompt": "İki aile üyesini tanıt; birinin yaşını ve birinin mesleğini söyle.",
+        "sample": "Esta es mi madre. Es médica. Mi hermano tiene diecisiete años.",
+        "revision": "Yaşı veya mesleği değiştir; mi/mis ve tener çekimini kontrol et.",
+        "criteria": [
+          "Aile ve iyelik biçimleri uyumlu.",
+          "Yaş tener ile verilmiş."
+        ]
+      },
+      "input": {
+        "text": "Esta es mi familia. Mi madre es profesora. Mi hermana Laura tiene catorce años. Mi padre es médico.",
+        "reading": [
+          "Laura kaç yaşında?",
+          "14",
+          "4",
+          "16",
+          "Laura tiene catorce años ifadesine bak."
+        ],
+        "transcript": "Me llamo Eva. Mi hermano se llama Tomás. Tiene dieciocho años. Mi madre es médica.",
+        "main": [
+          "Eva hangi konudan söz ediyor?",
+          "Ailesinden",
+          "Bir fiyat listesinden",
+          "Yol tarifinden",
+          "Hermano ve madre aile üyeleridir."
+        ],
+        "detail": [
+          "Tomás kaç yaşında?",
+          "18",
+          "8",
+          "20",
+          "Tiene dieciocho años deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "Mi hermana se llama Clara. Tiene once años. Mi madre está en casa. Mi padre es profesor.",
+        "reading": [
+          "Clara’nın yaşı ne?",
+          "11",
+          "12",
+          "19",
+          "Tiene once años cümlesine bak."
+        ],
+        "transcript": "Soy Pablo. Esta es mi hermana, Julia. Tiene trece años. Mi padre es cocinero.",
+        "main": [
+          "Pablo ne yapıyor?",
+          "Aile üyelerini tanıtıyor",
+          "Kafede sipariş veriyor",
+          "Bir yönü doğruluyor",
+          "Hermana ve padre aileyi tanıtıyor."
+        ],
+        "detail": [
+          "Julia kaç yaşında?",
+          "13",
+          "3",
+          "15",
+          "Tiene trece años deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Bir fotoğraf gösterdiğini hayal et. İki aile üyesini tanıt. İsimlerini, bir yaşı ve bir mesleği soracağım; gerçek kişisel bilgi vermen gerekmiyor.",
+      "speakingContext": "daily_conversation",
+      "approach": "dialogue",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    },
+    {
+      "id": "es.rutina",
+      "level": "A1",
+      "title": "Günlük rutin · Presente regular",
+      "objective": "Düzenli -ar, -er ve -ir fiilleriyle günlük rutin anlat.",
+      "prerequisite": "es.familia",
+      "situation": "Bir kurs arkadaşın gününü merak ediyor. Şimdiki/geniş zamanda düzenli -ar fiillerinde hablo/hablas/habla; -er fiillerinde como/comes/come; -ir fiillerinde vivo/vives/vive kullanılır. Özneyi bağlam açıksa söylemeyebilirsin. No fiilden önce gelir.",
+      "bridge": "Kendi rutinin için -o; karşındakine soru için -as veya -es seç. Nosotros için -amos/-emos/-imos, ellos/ellas için -an/-en kullanılır.",
+      "models": [
+        {
+          "phrase": "Trabajo por la mañana y estudio por la tarde.",
+          "explanation": "Trabajar ve estudiar düzenli -ar fiilleridir; yo için köke -o gelir. Por la mañana sabahları, por la tarde öğleden sonra, por la noche gece demektir. Cenar akşam yemeği yemek anlamındadır."
+        },
+        {
+          "phrase": "Mi hermana come en casa y vive en Madrid.",
+          "explanation": "Comer ve vivir için él/ella sonu -e olur. Nosotros comemos/vivimos; tú comes/vives biçimleri farklıdır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Düzenli -ar çekimi",
+          "incorrect": "Yo trabaja por la mañana.",
+          "correct": "Yo trabajo por la mañana.",
+          "explanation": "-Ar köküyle yo -o, tú -as, él/ella -a, nosotros -amos, ellos/ellas -an kullanılır.",
+          "guided": [
+            [
+              "Kendi işin: Yo ___ en casa. (trabajar)",
+              "trabajo"
+            ],
+            [
+              "Bir arkadaşına sor: ¿___ español? (tú, estudiar)",
+              "estudias"
+            ]
+          ],
+          "transfer": [
+            [
+              "İki kişi birlikte: Nosotros ___ por la tarde. (estudiar)",
+              "estudiamos"
+            ],
+            [
+              "Marta’nın rutini: Marta ___ en un café. (trabajar)",
+              "trabaja"
+            ]
+          ],
+          "delayed": [
+            [
+              "Arkadaşların: Ellos ___ español. (estudiar)",
+              "estudian"
+            ],
+            [
+              "Kendini anlat: ___ con mi familia. (cenar, yo)",
+              "Ceno"
+            ]
+          ]
+        },
+        {
+          "label": "Düzenli -er / -ir ve olumsuzluk",
+          "incorrect": "Yo come en casa.",
+          "correct": "Yo como en casa.",
+          "explanation": "-Er/-ir için yo -o, tú -es, él/ella -e; nosotros -emos/-imos kullanılır. Olumsuzlukta no fiilden önce gelir.",
+          "guided": [
+            [
+              "Kendi öğünün: Yo ___ en casa. (comer)",
+              "como"
+            ],
+            [
+              "Kız kardeşinin yeri: Ella ___ en Sevilla. (vivir)",
+              "vive"
+            ]
+          ],
+          "transfer": [
+            [
+              "Birlikte öğle yemeği: Nosotros ___ a las dos. (comer)",
+              "comemos"
+            ],
+            [
+              "Kendi yaşadığın yer: ___ en Ankara. (vivir, yo)",
+              "Vivo"
+            ]
+          ],
+          "delayed": [
+            [
+              "Karşındakine sor: ¿___ aquí? (tú, vivir)",
+              "Vives"
+            ],
+            [
+              "Olumsuz kur: Yo ___ como carne.",
+              "no"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "trabajar",
+        "meaning": "çalışmak",
+        "example": "Trabajo por la mañana.",
+        "usage": "Trabajar düzenli -ar fiilidir. Yo trabajo, tú trabajas, ella trabaja.",
+        "pronunciation": "/tɾaβaˈxaɾ/",
+        "collocations": [
+          "trabajar en casa",
+          "trabajar por la mañana"
+        ],
+        "recognize": [
+          "Bu derste “trabajar” ne anlama gelir?",
+          "çalışmak",
+          "dün",
+          "uzakta",
+          "Trabajar düzenli -ar fiilidir. Yo trabajo, tú trabajas, ella trabaja."
+        ],
+        "recall": [
+          "İş yapmak anlamındaki “çalışmak” fiilini mastar olarak yaz.",
+          "trabajar"
+        ],
+        "use": "Birinin nerede çalıştığını bu fiili çekerek anlat."
+      },
+      "additionalWords": [
+        {
+          "term": "comer",
+          "meaning": "yemek yemek",
+          "example": "Comemos en casa por la tarde.",
+          "usage": "Comer düzenli -er fiilidir. Yo como; nosotros comemos.",
+          "pronunciation": "/koˈmeɾ/",
+          "collocations": [
+            "comer en casa",
+            "comer con amigos"
+          ],
+          "recognize": [
+            "Bu derste “comer” ne anlama gelir?",
+            "yemek yemek",
+            "dün",
+            "uzakta",
+            "Comer düzenli -er fiilidir. Yo como; nosotros comemos."
+          ],
+          "recall": [
+            "“Yemek yemek” fiilini mastar olarak yaz.",
+            "comer"
+          ],
+          "use": "Günlük öğününü bu fiili çekerek anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "por la mañana",
+          "cue": "Sabahları anlamına gelir; rutinin zamanını verir."
+        }
+      ],
+      "writing": {
+        "prompt": "Kendi veya hayalî bir kişinin rutinini üç cümleyle yaz; bir -ar, bir -er/-ir ve bir olumsuz fiil kullan.",
+        "sample": "Trabajo por la mañana. Como con mi familia. No vivo en Madrid.",
+        "revision": "Bir cümleyi nosotros öznesiyle yeniden yaz. Ekleri ve no sözcüğünün yerini kontrol et.",
+        "criteria": [
+          "Kişi ve fiil eki uyumlu.",
+          "Olumsuzluk fiilden önce."
+        ]
+      },
+      "input": {
+        "text": "Soy Lucía. Trabajo por la mañana. Como en casa. Por la tarde estudio español con mi hermana.",
+        "reading": [
+          "Lucía ne zaman İspanyolca çalışıyor?",
+          "Öğleden sonra",
+          "Sabah",
+          "Gece",
+          "Por la tarde estudio español ifadesine bak."
+        ],
+        "transcript": "Vivo en Valencia. Trabajo en una escuela. Como con mis amigos y estudio por la noche.",
+        "main": [
+          "Konuşmanın konusu ne?",
+          "Günlük rutin",
+          "Dün biten bir iş",
+          "Bir kafe hesabı",
+          "Vivo, trabajo, como, estudio günlük alışkanlıkları sıralar."
+        ],
+        "detail": [
+          "Konuşan ne zaman ders çalışıyor?",
+          "Gece",
+          "Sabah",
+          "Öğlen",
+          "Estudio por la noche deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "Pedro vive en Bilbao. No trabaja por la mañana. Estudia por la mañana y trabaja por la tarde.",
+        "reading": [
+          "Pedro ne zaman çalışıyor?",
+          "Öğleden sonra",
+          "Sabah",
+          "Her gece",
+          "Trabaja por la tarde bilgisine bak."
+        ],
+        "transcript": "Somos Ana y Luis. Vivimos en Granada. Comemos en casa y estudiamos por la tarde.",
+        "main": [
+          "İki kişi ne anlatıyor?",
+          "Ortak rutinlerini",
+          "Bir yolculuğun fiyatını",
+          "Kafedeki siparişlerini",
+          "Çoğul vivimos, comemos, estudiamos kullanılıyor."
+        ],
+        "detail": [
+          "Nerede yemek yiyorlar?",
+          "Evde",
+          "Okulda",
+          "Kafede",
+          "Comemos en casa deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Hafta içindeki rutinini soracağım. Nerede çalıştığını/okuduğunu, ne zaman yemek yediğini söyle. Sonra aynı soruyu bir aile üyen için yanıtla.",
+      "speakingContext": "daily_conversation",
+      "approach": "dialogue",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    },
+    {
+      "id": "es.cafe",
+      "level": "A1",
+      "title": "Kafede sipariş · Pedir en un café",
+      "objective": "Kibarca içecek iste, ek tercihini söyle ve hesap sor.",
+      "prerequisite": "es.rutina",
+      "situation": "Bir kafede sipariş veriyorsun. Quiero + ürün isteği açıkça bildirir; quisiera daha yumuşak bir rica kalıbıdır. Por favor ve gracias nezaket ekler. Con ile eklenen, sin ile çıkarılan malzemeyi söylersin.",
+      "bridge": "Bir içecek seç. Con leche / sin azúcar ile ayrıntı ekle. Sonunda la cuenta, por favor diyerek hesabı iste.",
+      "models": [
+        {
+          "phrase": "Quisiera un café con leche, por favor.",
+          "explanation": "Quisiera burada “... rica ediyorum/isterdim” kalıbıdır. Quiero veya para mí + ürün de yaygındır. Un café, una botella de agua biçimlerini öğren."
+        },
+        {
+          "phrase": "Un té sin azúcar, por favor. La cuenta, por favor.",
+          "explanation": "Sin azúcar şekersiz demektir. Siparişte kısa isim grubu doğaldır. La cuenta hesabı istemenin kalıbıdır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Kibar sipariş kalıbı",
+          "incorrect": "Quiero una café.",
+          "correct": "Quiero un café.",
+          "explanation": "Café eril olduğu için un café denir. Quiero ve quisiera kibar bir por favor ile doğal isteklerdir.",
+          "guided": [
+            [
+              "“İstiyorum/isterdim” fiiliyle başla: ___ un té, por favor.",
+              "Quiero",
+              "Quisiera"
+            ],
+            [
+              "Eril café için artikel: Quisiera ___ café.",
+              "un"
+            ]
+          ],
+          "transfer": [
+            [
+              "Bir şişe su iste: Quiero ___ botella de agua.",
+              "una"
+            ],
+            [
+              "Kahve rica et; “istiyorum/isterdim” yaz: ___ un café, por favor.",
+              "Quisiera",
+              "Quiero"
+            ]
+          ],
+          "delayed": [
+            [
+              "Yeni sipariş, çay için artikel: Quiero ___ té.",
+              "un"
+            ],
+            [
+              "Hesabı iste; isim grubunu yaz: ___, por favor.",
+              "La cuenta"
+            ]
+          ]
+        },
+        {
+          "label": "Con / sin ile tercih",
+          "incorrect": "Un café sin leche y con leche.",
+          "correct": "Un café con leche y sin azúcar.",
+          "explanation": "Con eklenmesini, sin olmamasını ister. Aynı malzeme için aynı anda ikisini söyleme.",
+          "guided": [
+            [
+              "Süt ekle: Un café ___ leche.",
+              "con"
+            ],
+            [
+              "Şekersiz iste: Un té ___ azúcar.",
+              "sin"
+            ]
+          ],
+          "transfer": [
+            [
+              "Sütsüz iste: Un café ___ leche, por favor.",
+              "sin"
+            ],
+            [
+              "Şeker ekle: Un té ___ azúcar, por favor.",
+              "con"
+            ]
+          ],
+          "delayed": [
+            [
+              "Şeker olmasın: Quisiera un café ___ azúcar.",
+              "sin"
+            ],
+            [
+              "Sütlü çay iste: Un té ___ leche.",
+              "con"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "la cuenta",
+        "meaning": "hesap",
+        "example": "La cuenta, por favor.",
+        "usage": "Hesabı istemek için artikel ile la cuenta kalıbını kullan.",
+        "pronunciation": "/la ˈkwenta/",
+        "collocations": [
+          "la cuenta, por favor",
+          "pedir la cuenta"
+        ],
+        "recognize": [
+          "Bu derste “la cuenta” ne anlama gelir?",
+          "hesap",
+          "dün",
+          "uzakta",
+          "Hesabı istemek için artikel ile la cuenta kalıbını kullan."
+        ],
+        "recall": [
+          "Kafede “hesap” istemek için artikel ve ismi yaz.",
+          "la cuenta"
+        ],
+        "use": "Bir garsondan hesabı kibarca iste."
+      },
+      "additionalWords": [
+        {
+          "term": "sin azúcar",
+          "meaning": "şekersiz",
+          "example": "Quisiera un té sin azúcar.",
+          "usage": "Sin “-sız” anlamını katar. Azúcar sözcüğünün vurgusu zú hecesindedir.",
+          "pronunciation": "/sin aˈsukaɾ/ (seseo)",
+          "collocations": [
+            "café sin azúcar",
+            "té sin azúcar"
+          ],
+          "recognize": [
+            "Bu derste “sin azúcar” ne anlama gelir?",
+            "şekersiz",
+            "dün",
+            "uzakta",
+            "Sin “-sız” anlamını katar. Azúcar sözcüğünün vurgusu zú hecesindedir."
+          ],
+          "recall": [
+            "“Şekersiz” anlamındaki iki sözcüklü kalıbı yaz.",
+            "sin azúcar"
+          ],
+          "use": "Şekersiz bir içecek sipariş et."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "leche",
+          "cue": "Süt demektir; con leche sütlü, sin leche sütsüzdür."
+        }
+      ],
+      "writing": {
+        "prompt": "Bir içecek, ek tercihi ve hesap isteğini içeren kısa diyalog yaz.",
+        "sample": "Quisiera un café con leche y sin azúcar, por favor. La cuenta, por favor. Gracias.",
+        "revision": "İçeceği veya süt tercihini değiştir; un/una ve con/sin kullanımını kontrol et.",
+        "criteria": [
+          "İstek anlaşılır ve kibar.",
+          "Malzeme tercihi açık."
+        ]
+      },
+      "input": {
+        "text": "Para mí, un café con leche y sin azúcar. Para Ana, un té. La cuenta, por favor.",
+        "reading": [
+          "İlk kişi kahvesini nasıl istiyor?",
+          "Sütlü ve şekersiz",
+          "Sütsüz ve şekerli",
+          "Yalnız su",
+          "Con leche y sin azúcar ifadesine bak."
+        ],
+        "transcript": "Buenos días. Quisiera un té sin azúcar y una botella de agua, por favor.",
+        "main": [
+          "Müşteri ne yapıyor?",
+          "İçecek siparişi veriyor",
+          "Ailesini tanıtıyor",
+          "Yol soruyor",
+          "Quisiera ile içecekler isteniyor."
+        ],
+        "detail": [
+          "Çayı nasıl istiyor?",
+          "Şekersiz",
+          "Sütlü",
+          "Şekerli",
+          "Un té sin azúcar deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "Quiero un café sin leche. Para mi hermana, un té con leche. Gracias.",
+        "reading": [
+          "Kız kardeş ne içecek?",
+          "Sütlü çay",
+          "Sütsüz kahve",
+          "Su",
+          "Para mi hermana, un té con leche cümlesine bak."
+        ],
+        "transcript": "Un café con leche, por favor. ¿Cuánto cuesta? ¿Tres euros? Gracias. La cuenta, por favor.",
+        "main": [
+          "Müşterinin son isteği ne?",
+          "Hesap",
+          "Bir çay daha",
+          "Yol tarifi",
+          "Son kalıp la cuenta, por favor."
+        ],
+        "detail": [
+          "Söylenen fiyat kaç avro?",
+          "3",
+          "2",
+          "13",
+          "Tres euros deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Garson rolündeyim. Bir içecek sipariş et, süt veya şeker tercihini belirt. Bir ürün yoksa başka bir seçim yap ve sonunda hesabı iste.",
+      "speakingContext": "daily_conversation",
+      "approach": "dialogue",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    },
+    {
+      "id": "es.direcciones",
+      "level": "A2",
+      "title": "Yönler ve yerler · Direcciones y lugares",
+      "objective": "Bir yerin konumunu sor ve iki adımlı basit yol tarifi ver.",
+      "prerequisite": "es.cafe",
+      "situation": "Bir ziyaretçi eczaneyi arıyor. ¿Dónde está ...? konumu sorar. Está al lado de yanında; enfrente de karşısında demektir. Gira a la derecha/izquierda sağa/sola dön; sigue recto düz devam et kalıplarıdır.",
+      "bridge": "Önce aranan yeri sor. Sonra bir dönüş ve bir konum bilgisi ver. De + el, del olur: al lado del banco.",
+      "models": [
+        {
+          "phrase": "¿Dónde está la farmacia? — Está al lado del banco.",
+          "explanation": "Dónde soru sözcüğüdür. Konumda estar kullan. De + el birleşerek del olur; de la ayrı kalır."
+        },
+        {
+          "phrase": "Sigue recto y gira a la izquierda. El café está enfrente de la plaza.",
+          "explanation": "Sigue ve gira, tek kişiye gündelik yönergelerdir. A la izquierda sola, a la derecha sağa demektir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Konum: dónde / al lado de",
+          "incorrect": "La farmacia es al lado de el banco.",
+          "correct": "La farmacia está al lado del banco.",
+          "explanation": "Konum estar ile verilir. Al lado de + el, al lado del olur; dişil isimde de la korunur.",
+          "guided": [
+            [
+              "Bir yerin konumunu sor: ¿___ está el museo?",
+              "Dónde"
+            ],
+            [
+              "Eril banco önünde birleştir: al lado ___ banco.",
+              "del"
+            ]
+          ],
+          "transfer": [
+            [
+              "Dişil escuela önünde tamamla: enfrente ___ escuela.",
+              "de la"
+            ],
+            [
+              "Eczanenin konumu: La farmacia ___ cerca.",
+              "está"
+            ]
+          ],
+          "delayed": [
+            [
+              "Eril parque önünde tamamla: enfrente ___ parque.",
+              "del"
+            ],
+            [
+              "Yeni bir yer sor: ¿Dónde ___ la estación?",
+              "está"
+            ]
+          ]
+        },
+        {
+          "label": "Yön kalıpları",
+          "incorrect": "Gira la derecha.",
+          "correct": "Gira a la derecha.",
+          "explanation": "Dönüş yönü için a la derecha/izquierda; düz devam için sigue recto kullanılır.",
+          "guided": [
+            [
+              "Sağa dön: Gira ___ derecha.",
+              "a la"
+            ],
+            [
+              "Düz devam et: Sigue ___.",
+              "recto"
+            ]
+          ],
+          "transfer": [
+            [
+              "Sola dön: Gira a la ___.",
+              "izquierda"
+            ],
+            [
+              "Sağa dönüşü tamamla: Gira a la ___.",
+              "derecha"
+            ]
+          ],
+          "delayed": [
+            [
+              "Düz gitme yönergesi: ___ recto.",
+              "Sigue"
+            ],
+            [
+              "Sola dönme yönergesi: Gira ___ izquierda.",
+              "a la"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "a la derecha",
+        "meaning": "sağa / sağda",
+        "example": "Gira a la derecha en la plaza.",
+        "usage": "Gira ile yön, está ile konum anlatır. A la bütününü koru.",
+        "pronunciation": "/a la ðeˈɾetʃa/",
+        "collocations": [
+          "gira a la derecha",
+          "está a la derecha"
+        ],
+        "recognize": [
+          "Bu derste “a la derecha” ne anlama gelir?",
+          "sağa / sağda",
+          "dün",
+          "uzakta",
+          "Gira ile yön, está ile konum anlatır. A la bütününü koru."
+        ],
+        "recall": [
+          "“Sağa” kalıbını üç sözcükle yaz.",
+          "a la derecha"
+        ],
+        "use": "Bir ziyaretçiye sağa dönmesini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "al lado de",
+          "meaning": "yanında",
+          "example": "La farmacia está al lado de la escuela.",
+          "usage": "Sonraki isim el alırsa de + el → del olur.",
+          "pronunciation": "/al ˈlaðo ðe/",
+          "collocations": [
+            "al lado de la plaza",
+            "al lado del banco"
+          ],
+          "recognize": [
+            "Bu derste “al lado de” ne anlama gelir?",
+            "yanında",
+            "dün",
+            "uzakta",
+            "Sonraki isim el alırsa de + el → del olur."
+          ],
+          "recall": [
+            "“Yanında” anlamındaki kalıbı de ile bitirerek yaz.",
+            "al lado de"
+          ],
+          "use": "İki binanın yan yana olduğunu anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "farmacia",
+          "cue": "Eczane demektir; la farmacia dişildir."
+        }
+      ],
+      "writing": {
+        "prompt": "Bir arkadaşına kafeyi bulması için iki adımlı yol tarifi ve bir konum ipucu yaz.",
+        "sample": "Sigue recto y gira a la derecha. El café está al lado del museo.",
+        "revision": "Dönüş yönünü ve referans binasını değiştir; a la ve de/del biçimlerini kontrol et.",
+        "criteria": [
+          "Tarifte iki anlaşılır adım var.",
+          "Konum ve edat birleşimi doğru."
+        ]
+      },
+      "input": {
+        "text": "La farmacia está al lado del banco. Desde la plaza, sigue recto y gira a la derecha.",
+        "reading": [
+          "Eczane hangi binanın yanında?",
+          "Bankanın",
+          "Okulun",
+          "Müzenin",
+          "Al lado del banco konumu verir."
+        ],
+        "transcript": "Para ir al museo, sigue recto. Después gira a la izquierda. El museo está enfrente de la escuela.",
+        "main": [
+          "Konuşmanın amacı ne?",
+          "Müzeye yol tarif etmek",
+          "Bilet fiyatı söylemek",
+          "İçecek istemek",
+          "Para ir al museo ile yol hedefi veriliyor."
+        ],
+        "detail": [
+          "Hangi yöne dönülmeli?",
+          "Sola",
+          "Sağa",
+          "Geriye",
+          "Gira a la izquierda deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "El café está enfrente del parque. Desde la escuela, gira a la izquierda y sigue recto.",
+        "reading": [
+          "Kafe neyin karşısında?",
+          "Parkın",
+          "Bankanın",
+          "Eczanenin",
+          "Enfrente del parque konumu verir."
+        ],
+        "transcript": "La estación está al lado del hospital. Sigue recto y gira a la derecha. Está a la izquierda.",
+        "main": [
+          "Bu konuşma hangi bilgiyi veriyor?",
+          "İstasyona giden yolu",
+          "Bir kişinin rutinini",
+          "Ailenin yaşlarını",
+          "Estación hedefi ve yön kalıpları var."
+        ],
+        "detail": [
+          "İstasyon hangi binanın yanında?",
+          "Hastanenin",
+          "Müzenin",
+          "Okulun",
+          "Al lado del hospital deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Yeni bir mahallede yol soran ziyaretçiyim. Bana iki adımda bir yer tarif et. Sonra yönü yanlış tekrar edeceğim; doğru yönü açıkça düzelt.",
+      "speakingContext": "daily_conversation",
+      "approach": "dialogue",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    },
+    {
+      "id": "es.gustos",
+      "level": "A2",
+      "title": "Beğeniler · Gustos con gustar",
+      "objective": "Gustar ile tekil, çoğul ve eylem beğenisini söyle ve sor.",
+      "prerequisite": "es.direcciones",
+      "situation": "Bir arkadaşınla hafta sonu için ortak bir etkinlik seçiyorsun. Me gusta el café, kahve hoşuma gider anlamındadır. Beğenilen şey çoğulsa me gustan los libros olur. Eylem mastarıyla gusta kullanılır: me gusta leer.",
+      "bridge": "Me/te/le beğenen kişiyi gösterir; gusta/gustan beğenilen şeye uyar. A mí ve a ti vurgu ekleyebilir ama me/te yerine geçmez.",
+      "models": [
+        {
+          "phrase": "Me gusta el té, pero no me gusta el café.",
+          "explanation": "Tekil isim veya mastar için gusta kullan. Olumsuzluk no me gusta sırasındadır; yo gusto el té bu anlamı vermez."
+        },
+        {
+          "phrase": "¿Te gustan los libros? — Sí, me gusta leer.",
+          "explanation": "Çoğul los libros ile gustan, mastar leer ile gusta gelir. Te karşıdaki, me konuşan kişiyi gösterir; le ona, nos bize karşılık gelir. A las dos nos gusta la música, ikimiz de müziği severiz demektir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Gusta / gustan uyumu",
+          "incorrect": "Me gusta los libros.",
+          "correct": "Me gustan los libros.",
+          "explanation": "Gustar beğenilen şeyin sayısına uyar: tekil veya mastar gusta; çoğul gustan.",
+          "guided": [
+            [
+              "Tek içecek: Me ___ el café.",
+              "gusta"
+            ],
+            [
+              "Çoğul meyve: Me ___ las manzanas.",
+              "gustan"
+            ]
+          ],
+          "transfer": [
+            [
+              "Etkinlik mastarı: Me ___ bailar.",
+              "gusta"
+            ],
+            [
+              "Çoğul kitaplar: Me ___ los libros.",
+              "gustan"
+            ]
+          ],
+          "delayed": [
+            [
+              "Müzik tekil: Me ___ la música.",
+              "gusta"
+            ],
+            [
+              "Çoğul filmler: Me ___ las películas.",
+              "gustan"
+            ]
+          ]
+        },
+        {
+          "label": "Me / te / le ve olumsuzluk",
+          "incorrect": "No gusta me el té.",
+          "correct": "No me gusta el té.",
+          "explanation": "Me bana, te sana, le ona karşılık gelir. No, zamir ve fiilden önce yazılır. A mí kullanılsa da me korunur.",
+          "guided": [
+            [
+              "Kendi beğenin: A mí ___ gusta leer.",
+              "me"
+            ],
+            [
+              "Arkadaşına sor: ¿___ gusta la música? (tú)",
+              "Te"
+            ]
+          ],
+          "transfer": [
+            [
+              "Ana’nın beğenisi: A Ana ___ gusta el té.",
+              "le"
+            ],
+            [
+              "Olumsuz yaz: ___ me gusta bailar.",
+              "No"
+            ]
+          ],
+          "delayed": [
+            [
+              "Karşındakini vurgula: A ti ___ gustan los libros.",
+              "te"
+            ],
+            [
+              "Kendi olumsuz beğenin: No ___ gusta el café.",
+              "me"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "leer",
+        "meaning": "okumak",
+        "example": "Me gusta leer por la noche.",
+        "usage": "Leer mastardır. Gustar sonrasında mastar olduğu için gusta kullanılır.",
+        "pronunciation": "/leˈeɾ/",
+        "collocations": [
+          "leer libros",
+          "me gusta leer"
+        ],
+        "recognize": [
+          "Bu derste “leer” ne anlama gelir?",
+          "okumak",
+          "dün",
+          "uzakta",
+          "Leer mastardır. Gustar sonrasında mastar olduğu için gusta kullanılır."
+        ],
+        "recall": [
+          "“Okumak” fiilini mastar olarak yaz.",
+          "leer"
+        ],
+        "use": "Okumayı sevdiğini veya sevmediğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "también",
+          "meaning": "de / da, ayrıca",
+          "example": "A mí también me gusta la música.",
+          "usage": "También olumlu cümleye katılmak için kullanılır; olumsuza katılmada tampoco kullanılır.",
+          "pronunciation": "/tamˈbjen/",
+          "collocations": [
+            "a mí también",
+            "también me gusta"
+          ],
+          "recognize": [
+            "Bu derste “también” ne anlama gelir?",
+            "de / da, ayrıca",
+            "dün",
+            "uzakta",
+            "También olumlu cümleye katılmak için kullanılır; olumsuza katılmada tampoco kullanılır."
+          ],
+          "recall": [
+            "Olumlu bir beğeniye katılırken “ben de” kalıbındaki A mí ___ boşluğunu tamamla.",
+            "también"
+          ],
+          "use": "Bir arkadaşının olumlu beğenisine también ile katıl."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "música",
+          "cue": "Müzik demektir; tekil olduğu için gusta kullanılır."
+        }
+      ],
+      "writing": {
+        "prompt": "Bir tekil şey, bir çoğul şey ve bir etkinlik hakkında beğenini yaz. Birini olumsuz kur.",
+        "sample": "Me gusta la música. Me gustan los libros. No me gusta bailar.",
+        "revision": "Bir cümleyi arkadaşına yöneltilen soruya çevir; me/te ve gusta/gustan uyumunu kontrol et.",
+        "criteria": [
+          "Fiil beğenilen şeye uyuyor.",
+          "Kişi zamiri ve olumsuzluk doğru."
+        ]
+      },
+      "input": {
+        "text": "A Eva le gusta la música. Le gustan los libros, pero no le gusta bailar. A Luis le gusta bailar.",
+        "reading": [
+          "Dans etmeyi kim seviyor?",
+          "Luis",
+          "Eva",
+          "İkisi de",
+          "Eva için no le gusta, Luis için le gusta bailar deniyor."
+        ],
+        "transcript": "Me llamo Sofía. Me gusta leer y me gustan las películas. No me gusta el café.",
+        "main": [
+          "Sofía ne anlatıyor?",
+          "Beğenilerini",
+          "Ailesinin işlerini",
+          "Bir ürünün fiyatını",
+          "Me gusta ve me gustan tercihleri verir."
+        ],
+        "detail": [
+          "Sofía neyi sevmiyor?",
+          "Kahveyi",
+          "Kitap okumayı",
+          "Filmleri",
+          "No me gusta el café deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "A mí me gusta el té. A mi hermana le gusta el café. A las dos nos gusta la música.",
+        "reading": [
+          "Kız kardeş hangi içeceği seviyor?",
+          "Kahve",
+          "Çay",
+          "Su",
+          "A mi hermana le gusta el café cümlesi bunu söyler."
+        ],
+        "transcript": "Soy Daniel. Me gusta cocinar. Me gustan las manzanas, pero no me gusta el té.",
+        "main": [
+          "Daniel hangi konuda konuşuyor?",
+          "Sevdiği ve sevmediği şeyler",
+          "Yeni adresi",
+          "Dünkü yolculuğu",
+          "Gusta/gustan ile tercihler sıralanıyor."
+        ],
+        "detail": [
+          "Daniel hangi etkinliği seviyor?",
+          "Yemek yapmak",
+          "Dans etmek",
+          "Kitap okumak",
+          "Me gusta cocinar deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Hafta sonu birlikte bir etkinlik seçelim. Sevdiğin bir etkinlik ve sevmediğin bir şeyi söyle; benim beğenimi sor. Ortak tercih bulunca también ile katıl.",
+      "speakingContext": "daily_conversation",
+      "approach": "dialogue",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    },
+    {
+      "id": "es.perfect",
+      "level": "A2",
+      "title": "Bugüne bağlı geçmiş · Pretérito perfecto",
+      "objective": "Bugün veya bu hafta yapılan işleri haber + participio ile anlat.",
+      "prerequisite": "es.gustos",
+      "situation": "Bir arkadaşına bugünkü işleri anlatıyorsun. Pretérito perfecto compuesto, haber fiilinin şimdiki çekimi ve geçmiş ortaçla kurulur: he, has, ha, hemos, habéis, han + participio. -Ar → -ado; -er/-ir → -ido. He comido, he vivido. He hecho yaygın düzensiz biçimdir.",
+      "bridge": "Hoy, esta semana gibi bugüne bağlı zamanlarla pratik yap. Birçok Latin Amerika bölgesinde bu bağlamda comí gibi basit geçmiş de doğaldır; bu dersteki boşluklar özellikle haber + participio biçimini ister. Yakın geçmiş tek başına bu zamanı zorunlu kılmaz; acabo de + mastar ayrı bir yapıdır.",
+      "models": [
+        {
+          "phrase": "Hoy he estudiado español y he comido en casa.",
+          "explanation": "Yo için he + değişmeyen participio kullan. Ortaç öznenin cinsiyetine veya sayısına uymaz: ellas han comido."
+        },
+        {
+          "phrase": "¿Has hecho la tarea? — Sí, ya la he hecho.",
+          "explanation": "Tú için has; hacer fiilinin ortacı hecho olur. Leer fiilinde vurgu korunur: leído. Ya tamamlandığını, todavía no veya aún no henüz yapılmadığını belirtir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Haber + düzenli participio",
+          "incorrect": "Yo he estudiar.",
+          "correct": "Yo he estudiado.",
+          "explanation": "He/has/ha/hemos/han ile -ado veya -ido ortaç kullanılır; haber sonrası mastar kullanılmaz.",
+          "guided": [
+            [
+              "Perfecto kullan; estudiar fiilinin ortacı: Hoy he ___.",
+              "estudiado"
+            ],
+            [
+              "Perfecto kullan; comer fiilinin ortacı: He ___ en casa.",
+              "comido"
+            ]
+          ],
+          "transfer": [
+            [
+              "Perfecto, nosotros: Esta semana ___ trabajado mucho.",
+              "hemos"
+            ],
+            [
+              "Perfecto, tú: ¿___ vivido aquí?",
+              "Has"
+            ]
+          ],
+          "delayed": [
+            [
+              "Perfecto, ella: Hoy ___ comprado pan.",
+              "ha"
+            ],
+            [
+              "Perfecto, ellos: Esta semana ___ estudiado español.",
+              "han"
+            ]
+          ]
+        },
+        {
+          "label": "Hecho ve ya / todavía no",
+          "incorrect": "He hacido la tarea.",
+          "correct": "He hecho la tarea.",
+          "explanation": "Hacer fiilinin ortacı hecho olur. Ya tamamlandı; todavía no henüz olmadı demektir. Olumsuzluk haber fiilinden önce gelir.",
+          "guided": [
+            [
+              "Hacer fiilinin ortacı: He ___ la tarea.",
+              "hecho"
+            ],
+            [
+              "“Henüz değil”: Todavía ___ he comido.",
+              "no"
+            ]
+          ],
+          "transfer": [
+            [
+              "Tamamlandığını belirt: ___ he comprado el pan. (artık/çoktan)",
+              "Ya"
+            ],
+            [
+              "Perfecto ile sor: ¿Has ___ un café? (hacer)",
+              "hecho"
+            ]
+          ],
+          "delayed": [
+            [
+              "Henüz bitmedi: ___ no he estudiado. (henüz)",
+              "Todavía",
+              "Aún"
+            ],
+            [
+              "Aynı düzensiz ortacı kullan: Mi hermana ha ___ la cena. (hacer)",
+              "hecho"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "hoy",
+        "meaning": "bugün",
+        "example": "Hoy he trabajado en casa.",
+        "usage": "Hoy bugünü belirtir. Bu derste bugünle bağı olan tamamlanmış işleri perfecto ile çalışıyoruz.",
+        "pronunciation": "/oi/",
+        "collocations": [
+          "hoy he comido",
+          "hoy he estudiado"
+        ],
+        "recognize": [
+          "Bu derste “hoy” ne anlama gelir?",
+          "bugün",
+          "dün",
+          "uzakta",
+          "Hoy bugünü belirtir. Bu derste bugünle bağı olan tamamlanmış işleri perfecto ile çalışıyoruz."
+        ],
+        "recall": [
+          "“Bugün” anlamındaki sözcüğü İspanyolca yaz.",
+          "hoy"
+        ],
+        "use": "Hoy ile bugün tamamladığın bir işi perfecto kullanarak söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "todavía no",
+          "meaning": "henüz değil",
+          "example": "Todavía no he hecho la tarea.",
+          "usage": "Todavía no + haber + ortaç, işin şimdiye kadar yapılmadığını anlatır. Aún no eşdeğer bir kalıptır.",
+          "pronunciation": "/toðaˈβia no/",
+          "collocations": [
+            "todavía no he comido",
+            "todavía no ha llegado"
+          ],
+          "recognize": [
+            "Bu derste “todavía no” ne anlama gelir?",
+            "henüz değil",
+            "dün",
+            "uzakta",
+            "Todavía no + haber + ortaç, işin şimdiye kadar yapılmadığını anlatır. Aún no eşdeğer bir kalıptır."
+          ],
+          "recall": [
+            "“Henüz değil” kalıbını todavía ile başlayarak yaz.",
+            "todavía no"
+          ],
+          "use": "Henüz yapmadığın bir işi bu kalıpla anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "esta semana",
+          "cue": "Bu hafta demektir; bugünü içeren zaman dilimidir."
+        }
+      ],
+      "writing": {
+        "prompt": "Bugün veya bu hafta yaptığın iki işi ve henüz yapmadığın bir işi perfecto ile yaz.",
+        "sample": "Esta semana he estudiado español. Hoy he comido en casa. Todavía no he hecho la tarea.",
+        "revision": "Bir cümleyi nosotros ile yeniden kur; haber çekimini değiştir ve ortacı aynı bırak.",
+        "criteria": [
+          "Haber kişiyle uyumlu ve ortaç doğru.",
+          "Zaman ve henüz/tamamlanmış ayrımı anlaşılır."
+        ]
+      },
+      "input": {
+        "text": "Esta semana he trabajado en casa. Hoy he hecho la tarea y he estudiado español. Todavía no he comprado el pan.",
+        "reading": [
+          "Kişi henüz ne yapmamış?",
+          "Ekmek almamış",
+          "Ders çalışmamış",
+          "Ödevini yapmamış",
+          "Todavía no he comprado el pan olumsuz bilgidir."
+        ],
+        "transcript": "Hoy he preparado un café. He comido con mi hermana. Todavía no he hecho la tarea.",
+        "main": [
+          "Konuşan ne anlatıyor?",
+          "Bugünkü tamamlanan ve bekleyen işleri",
+          "Her günkü rutinini",
+          "Gelecek yılın planını",
+          "Hoy ve he + participio bugüne bağlı geçmişi verir."
+        ],
+        "detail": [
+          "Henüz yapılmayan iş ne?",
+          "Ödev",
+          "Kahve hazırlamak",
+          "Yemek yemek",
+          "Todavía no he hecho la tarea deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "retry": {
+        "text": "Hoy hemos estudiado en la biblioteca. Ya hemos comido. Esta semana no hemos trabajado en el café.",
+        "reading": [
+          "Bugün nerede ders çalışmışlar?",
+          "Kütüphanede",
+          "Kafede",
+          "Evde",
+          "Hemos estudiado en la biblioteca cümlesine bak."
+        ],
+        "transcript": "Esta semana he comprado un libro. Ya he leído dos páginas. Hoy no he preparado la cena.",
+        "main": [
+          "Mesaj hangi zaman çerçevesinde?",
+          "Bu hafta ve bugün",
+          "Yalnız geçen yıl",
+          "Gelecek hafta",
+          "Esta semana ve hoy ipuçlarıdır."
+        ],
+        "detail": [
+          "Bugün ne yapılmamış?",
+          "Akşam yemeği hazırlanmamış",
+          "Kitap alınmamış",
+          "İki sayfa okunmamış",
+          "No he preparado la cena deniyor."
+        ],
+        "preparation": "İlk dinlemede konuşmanın amacını bul. İkinci dinlemede sorudaki kişi, yer veya sayıya odaklan."
+      },
+      "readingPurpose": "Kısa metinde sorulan bilgiyi bul; kişi, yer ve zaman ipuçlarını ayrı düşün.",
+      "readingUse": "Metni kapat. Sorudaki bilgiyi kendi sözcüklerinle bir arkadaşına aktar.",
+      "listeningUse": "Dinlemeyi kapat. Duyduğun ana bilgiyi sesli söyle, sonra ayrıntıyı doğrula.",
+      "speaking": "Günün sonunda konuşuyoruz. Bugün yaptığın iki işi ve henüz yapmadığın bir işi söyle. Sonra aynı işleri bir arkadaşın için soracağım; haber çekimini değiştir.",
+      "speakingContext": "daily_conversation",
+      "approach": "dialogue",
+      "recovery": {
+        "reading": "Yeni metinde önce sorudaki kişiyi veya nesneyi bul. Yanındaki bilgiyi izle.",
+        "main": "Konuşan kişinin ne yapmak istediğine odaklan.",
+        "detail": "Bu kez yalnız sorulan ayrıntıyı dinle; isim ve sayıları ayır."
+      }
+    }
+  ]
+}

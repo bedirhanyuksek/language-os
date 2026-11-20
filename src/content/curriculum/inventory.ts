@@ -7,6 +7,22 @@ type Outcome = [id: string, task: string, prerequisite: string, lesson?: string]
 
 // The denominator is the authored planning inventory, not a count of CEFR descriptors.
 const inventory: Record<Language, Record<Band, Outcome[]>> = {
+  es: {
+    A1: [
+      ['saludos', 'Selam ver, kendini tanıt ve ad sor', '', 'es.saludos'],
+      ['ser-estar', 'Kimlik, durum ve konumu ayır', 'saludos', 'es.ser-estar'],
+      ['numeros', 'Sayı ve fiyat sor ve söyle', 'ser-estar', 'es.numeros'],
+      ['familia', 'Aileni iyelik ve yaşla tanıt', 'numeros', 'es.familia'],
+      ['rutina', 'Düzenli şimdiki zamanla rutin anlat', 'familia', 'es.rutina'],
+      ['cafe', 'Kafede kibarca sipariş ver', 'rutina', 'es.cafe'],
+    ],
+    A2: [
+      ['direcciones', 'Konum sor ve basit yol tarifi ver', 'cafe', 'es.direcciones'],
+      ['gustos', 'Gustar ile beğenini söyle ve sor', 'direcciones', 'es.gustos'],
+      ['perfect', 'Bugüne bağlı geçmiş işleri perfecto ile anlat', 'gustos', 'es.perfect'],
+    ],
+    B1: [], B2: [], C1: [], C2: [],
+  },
   en: {
     A1: [
       ['identity', 'Tanış, ad ve şehir sor', '', 'en.identity'], ['cafe', 'Menüden sipariş ver ve fiyat sor', 'identity', 'en.cafe'],
@@ -87,6 +103,7 @@ const inventory: Record<Language, Record<Band, Outcome[]>> = {
 
 // Additive, separately counted audit targets. Existing outcome identifiers remain stable.
 const auditTargets: typeof inventory = {
+  es: { A1: [], A2: [], B1: [], B2: [], C1: [], C2: [] },
   en: {
     A1: [
       ['feelings', 'Gündelik duyguyu veya basit tercihi söyle', 'identity'], ['forms', 'Bir kurs veya etkinlik formunda temel veriyi yaz', 'identity'],

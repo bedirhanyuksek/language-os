@@ -26,9 +26,10 @@ const answer = (exercise: Exercise): Answer => exercise.kind === 'open' ? exerci
 const answers = (tasks: { exercise: Exercise }[]) =>
   Object.fromEntries(tasks.map(({ exercise }) => [exercise.id, answer(exercise)]))
 
-// Extend the dormant C2 branch only in the stress fixture. Both shipped catalogues have fewer than 250 cards.
+// Extend a dormant branch only in the stress fixture. For a starter course,
+// move its final lesson above the target before adding the 250-card backlog.
 function stressCourse(course: Course): Course {
-  const lesson = course.unit.lessons.find(({ objective, pedagogy }) => objective.level === 'C2' && pedagogy)!
+  const lesson = course.unit.lessons.find(({ objective, pedagogy }) => objective.level === 'C2' && pedagogy) ?? course.unit.lessons.at(-1)!
   const card = lesson.vocabulary[0]
   const entry = lesson.pedagogy!.vocabulary[0]
   const copies = Array.from({ length: 250 }, (_, index) => {
@@ -36,8 +37,8 @@ function stressCourse(course: Course): Course {
     return { card: { ...card, id }, entry: { ...entry, cardId: id } }
   })
   return { ...course, unit: { ...course.unit, lessons: course.unit.lessons.map((item) => item !== lesson ? item :
-    { ...lesson, vocabulary: copies.map(({ card }) => card),
-      pedagogy: { ...lesson.pedagogy!, vocabulary: copies.map(({ entry }) => entry) } }) } }
+    { ...lesson, objective: { ...lesson.objective, level: 'C2' }, vocabulary: copies.map(({ card }) => card),
+      pedagogy: { ...lesson.pedagogy!, target: 'C2', vocabulary: copies.map(({ entry }) => entry) } }) } }
 }
 
 test('failure spacing preserves the failed result and a later correct recall restarts at step one', () => {
@@ -157,7 +158,7 @@ test.each([5, 15, 30, 60])('%i minute queues stay honest across 42 days', (minut
         const missedEvidence = evidence.filter((_, index) => persistent.has(vocabulary[index].id))
         expect(missedEvidence).toHaveLength(persistent.size)
         expect(missedEvidence.every(({ delayedRecall }) => !delayedRecall)).toBe(true)
-        if (minutes === 30) expect(learningMinutes).toBeGreaterThan(420)
+        if (minutes === 30) expect(learningMinutes).toBeGreaterThan(Math.min(420, course.unit.lessons.length * 20))
       }
     }
   }

@@ -15,6 +15,21 @@ type Strand = {
   check: string
 }
 const goals: Record<Language, Record<Band, Strand>> = {
+  es: {
+    A1: { function: 'Selamlaş, kendini ve aileyi tanıt, rutin ve fiyat anlat, kafede sipariş ver',
+      grammar: 'me llamo, ser/estar, sayılar, mi/mis, tener, düzenli presente, con/sin',
+      vocabulary: 'selam, kişi, aile, sayı ve fiyat, rutin, içecek', reading: 'kısa tanışma, fiyat listesi ve sipariş',
+      listening: 'açık ad, fiyat ve tercih; yerel cihaz sesi gerekir', writing: 'kısa profil ve sipariş',
+      speaking: 'tanış, günlük rutin ve sipariş konuş', pronunciation: 'beş ünlü, sessiz h, ñ, yazılı vurgu ve soru işaretleri',
+      check: 'Yeni kişi ve fiyatlarla bağımsız görev; en az 24 saat sonra farklı bağlam' },
+    A2: { function: 'Yol sor ve tarif et, beğenilerini ve bugün yapılan işleri anlat',
+      grammar: 'dónde/estar, del, yön kalıpları, gusta/gustan, haber + participio',
+      vocabulary: 'yerler ve yön, beğeni ve etkinlik, hoy/ya/todavía no', reading: 'kısa yol tarifi ve kişisel not',
+      listening: 'dönüş, tercih ve tamamlanan iş; yerel cihaz sesi gerekir', writing: 'yön tarifi, beğeni ve bugünkü işler',
+      speaking: 'tarifi düzelt, ortak tercih seç, yapılan işi sor', pronunciation: 'dónde, música, todavía ve fiil vurgusu',
+      check: 'Yeni rota ve etkinlikte aktarım; gecikmeli farklı kişi ve zaman' },
+    B1: plannedSpanish('B1'), B2: plannedSpanish('B2'), C1: plannedSpanish('C1'), C2: plannedSpanish('C2'),
+  },
   en: {
     A1: { function: 'Tanışma, temel ihtiyaç, fiyat ve yer sorma', grammar: 'be, temel soru ve olumsuzluk, çoğul, yer edatları',
       vocabulary: 'ad, şehir, sayı, ürün ve fiyat kalıpları', reading: 'menü, tabela, kısa profil', listening: 'açık fiyat ve yön mesajı',
@@ -67,6 +82,12 @@ const goals: Record<Language, Record<Band, Strand>> = {
       writing: 'farklı kitlelere çok kaynaklı sentez', speaking: 'örtük itirazı aç, nüansla yanıt ver', pronunciation: 'konuşma temposu, vurgu ve pragmatik tonlama',
       check: 'Farklı türde bağımsız üretim ve gecikmeli uzman değerlendirmesi' },
   },
+}
+
+function plannedSpanish(level: Band): Strand {
+  return { function: `İspanyolca ${level} içeriği henüz yayımlanmadı`, grammar: 'Kapsam planlanmadı',
+    vocabulary: 'Kapsam planlanmadı', reading: 'Yayımlanmadı', listening: 'Yayımlanmadı', writing: 'Yayımlanmadı',
+    speaking: 'Yayımlanmadı', pronunciation: 'Yayımlanmadı', check: 'Bu bant için değerlendirme görevi yok' }
 }
 
 function band(level: CEFRLevel): Band {

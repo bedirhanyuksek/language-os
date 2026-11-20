@@ -57,6 +57,7 @@ export function SpeakingView({ lesson, session, state, plan, busy, onImport, onS
       <h2>Konuşma hedeflerin</h2>
       <p>{focus.reason}</p>
       {session.language === 'en' && <p>Sorular İngilizce. Önemli hatalar için kısa Türkçe açıklama isteyebilirsin.</p>}
+      {session.language === 'es' && <p>Sorular İspanyolca. Önemli hatalar için kısa Türkçe açıklama isteyebilirsin.</p>}
       <ul className="goals-list">{lesson.speaking?.goals.map((goal) => <li key={goal}>{goal}</li>)}</ul>
       <h3>Hesap açmadan sesli prova</h3>
       <p>Durumu canlandır ve yukarıdaki hedefleri tek seferde sesli yanıtla. Sonra hedefleri kontrol et ve yanıtını farklı bir ayrıntıyla bir kez daha söyle. Bu prova konuşma puanı oluşturmaz.</p>

@@ -84,7 +84,10 @@ test.each([5, 15, 30, 60])('%i minute plan advances while overdue cards compete 
           state = finishLesson(state, course, lesson, answers(tasks), now)
         }
       }
-      expect(nonReview > 0 || (minutes === 5 && previousNonReview), `${course.language}, gün ${elapsed + 1}`).toBe(true)
+      const finishedStarter = course.language === 'es' && course.unit.lessons.every((lesson) =>
+        ['ready', 'retained'].includes(masteryFor(state, lesson).status) &&
+        state.attempts.some(({ lessonId, context }) => lessonId === lesson.id && context === 'revision'))
+      expect(nonReview > 0 || (minutes === 5 && previousNonReview) || finishedStarter, `${course.language}, gün ${elapsed + 1}`).toBe(true)
       previousNonReview = nonReview > 0
     }
     expect(totals.review).toBeGreaterThan(0)
@@ -256,7 +259,7 @@ test.each(Object.values(catalog))('$language beginner reaches the end of the ava
   let state = start(course, 30, misses)
   state = { ...state, profile: { ...state.profile, estimate: 'A1', target: 'A2' } }
   const first = dailyPlan(state, course, at, zone)
-  expect(first).toMatchObject({ kind: 'lesson', lessonId: course.language === 'en' ? 'en.identity' : 'ru.cyrillic' })
+  expect(first).toMatchObject({ kind: 'lesson', lessonId: { en: 'en.identity', ru: 'ru.cyrillic', es: 'es.saludos' }[course.language] })
   const studies = new Map<string, number>()
   let reviewMinutes = 0
   let exhausted = false
@@ -296,9 +299,9 @@ test.each(Object.values(catalog))('$language beginner reaches the end of the ava
   const phases = [...new Set([...studies.keys()].map((key) => key.split(':')[1]))].sort()
   expect(exhausted).toBe(true)
   const routePack = packedLessons.filter(({ language, entry }) => language === course.language && ['A1', 'A2'].includes(entry.level))
-  expect(reached.size).toBe((course.language === 'en' ? 11 : 12) + routePack.length)
+  expect(reached.size).toBe({ en: 11, ru: 12, es: 9 }[course.language] + routePack.length)
   for (const { entry } of routePack) expect(reached.has(entry.id), entry.id).toBe(true)
-  expect(reached.has(course.language === 'en' ? 'en.host' : 'ru.housing')).toBe(true)
+  expect(reached.has({ en: 'en.host', ru: 'ru.housing', es: 'es.perfect' }[course.language])).toBe(true)
   expect(phases).toEqual(['draft', 'instruction', 'listening', 'reading', 'revision', 'transfer', 'vocabulary'])
   expect(parseBackup(exportBackup(state))).toEqual(state)
   if (process.env.npm_lifecycle_event === 'curriculum:report') {

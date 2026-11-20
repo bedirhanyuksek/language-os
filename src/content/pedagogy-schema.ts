@@ -7,7 +7,7 @@ export const controlledExercise = exerciseSchema.refine((item) =>
   ['fill', 'short', 'word_order', 'sentence_order'].includes(item.kind), 'Üretim görevi kesin bir açık yanıt veya sıralama istemeli.')
 
 const audioSchema = z.discriminatedUnion('kind', [
-      z.strictObject({ kind: z.literal('synthesis'), locale: z.enum(['en-US', 'ru-RU']), rate: z.number().min(0.5).max(1.2) }),
+      z.strictObject({ kind: z.literal('synthesis'), locale: z.enum(['en-US', 'ru-RU', 'es-ES']), rate: z.number().min(0.5).max(1.2) }),
       z.strictObject({ kind: z.literal('recording'), src: z.string().regex(/^\/audio\/[\w.-]+$/),
         license: text, source: z.url({ protocol: /^https$/ }), locale: text, synthetic: z.boolean().optional() }),
     ])

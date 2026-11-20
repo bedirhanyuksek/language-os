@@ -1,6 +1,6 @@
 # Language OS
 
-Language OS, İngilizce ve Rusça öğrenenler için Türkçe arayüzlü, yerel çalışan bir dil çalışma uygulamasıdır. Başlangıç örneklerinden ve önceki çalışmalardan yararlanarak kişisel bir günlük yol önerir. Rehberli öğretim, farklı bağlamda üretim ve gecikmeli hatırlama için ayrı görevler sunar.
+Language OS, İngilizce, Rusça ve İspanyolca öğrenenler için Türkçe arayüzlü, yerel çalışan bir dil çalışma uygulamasıdır. Başlangıç örneklerinden ve önceki çalışmalardan yararlanarak kişisel bir günlük yol önerir. Rehberli öğretim, farklı bağlamda üretim ve gecikmeli hatırlama için ayrı görevler sunar.
 
 ## Başlangıç
 
@@ -15,7 +15,7 @@ npm start
 
 Tarayıcıda [http://127.0.0.1:4173/](http://127.0.0.1:4173/) adresini aç. `npm start` üretim derlemesini ve yerel ChatGPT bağlantı servisini birlikte başlatır. `npm run dev` aynı komutu çalıştırır. Kod veya içerik değişince terminalde Ctrl+C ile durdurup yeniden başlat. HMR kapalıdır ve port doluysa komut hata verir.
 
-Normal kullanım için `.env`, API anahtarı, ChatGPT hesabı veya harici veritabanı gerekmez. Ders sesleri depodan gelir. Tarayıcı testleri için ayrı Chromium kurulumu aşağıda yer alıyor.
+Normal kullanım için `.env`, API anahtarı, ChatGPT hesabı veya harici veritabanı gerekmez. İngilizce/Rusça ders sesleri depodan gelir. İspanyolca başlangıç dersleri cihazdaki yerel İspanyolca sesi kullanır; uygun ses yoksa metinle devam edilir ve dinleme kanıtı oluşmaz. Tarayıcı testleri için ayrı Chromium kurulumu aşağıda yer alıyor.
 
 ## Çalışan kapsam
 
@@ -23,8 +23,9 @@ Normal kullanım için `.env`, API anahtarı, ChatGPT hesabı veya harici verita
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | İngilizce | 6 | 8 | 14 | 11 | 10 | 4 | 53 / 74 |
 | Rusça | 11 | 10 | 10 | 9 | 5 | 5 | 50 / 70 |
+| İspanyolca | 6 | 3 | 0 | 0 | 0 | 0 | 9 / 9 başlangıç hedefi |
 
-144 iletişim hedefinden 103’ü çalışılabilir. A1–C2 bantlarındaki dersler seçili hedefleri kapsar. Özellikle Rusça B2 ve her iki dilde C2’de içerik seyrek. Güncel gramer, sözcük ve beceri açıkları [kapsam raporunda](docs/MILESTONE_5_REVIEW_LOAD.md) listelenir.
+İngilizce/Rusça envanterinde 144 iletişim hedefinden 103’ü çalışılabilir. İspanyolca buna ek dokuz A1–A2 başlangıç hedefi sunar; tam A1/A2 kapsamı veya seviye sertifikası değildir. Sıra: selamlaşma ve tanışma, ser/estar, sayılar/fiyatlar, aile, düzenli presente ile rutin, kafe, yön/yer, gustar, pretérito perfecto. Sıfırdan başlayanlar İspanyolca soru görmeden temellerden başlar; önceden çalışanlar isteğe bağlı altı soruluk taramayı açar. İspanyolca B1–C2 henüz yayımlanmadı. İngilizce/Rusça gramer, sözcük ve beceri açıkları [kapsam raporunda](docs/MILESTONE_5_REVIEW_LOAD.md), bekleyen İspanyolca sesleri [ses listesinde](docs/SPANISH_AUDIO_TODO.md) yer alır.
 
 - Dil başına yerel profil, başlangıç taraması, hedef seviye ve süreye göre açıklamalı günlük plan
 - Rehberli öğretim, yeni bağlamda pratik, okuma ve sentetik dinleme, hata sonrasında ayrı onarım kaynakları
