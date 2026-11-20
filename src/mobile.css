@@ -1,0 +1,45 @@
+/* Keep content clear of Android's edge-to-edge system bars and cutouts. */
+:root {
+  /* Capacitor SystemBars supplies these variables on older Android WebViews. */
+  --app-inset-top: max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px));
+  --app-inset-right: max(env(safe-area-inset-right, 0px), var(--safe-area-inset-right, 0px));
+  --app-inset-bottom: max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px));
+  --app-inset-left: max(env(safe-area-inset-left, 0px), var(--safe-area-inset-left, 0px));
+}
+
+.topbar {
+  padding-top: calc(10px + var(--app-inset-top));
+  padding-left: max(clamp(20px, 4vw, 64px), var(--app-inset-left));
+  padding-right: max(clamp(20px, 4vw, 64px), var(--app-inset-right));
+}
+
+footer {
+  padding-bottom: calc(28px + var(--app-inset-bottom));
+  padding-left: var(--app-inset-left);
+  padding-right: var(--app-inset-right);
+}
+
+@media (max-width: 1000px) {
+  .topbar {
+    padding-left: max(24px, var(--app-inset-left));
+    padding-right: max(24px, var(--app-inset-right));
+  }
+}
+
+@media (max-width: 719px) {
+  .topbar {
+    padding-top: calc(12px + var(--app-inset-top));
+    padding-left: max(16px, var(--app-inset-left));
+    padding-right: max(16px, var(--app-inset-right));
+  }
+
+  .topbar nav { flex-wrap: wrap; gap: 0 16px; min-width: 0; }
+  .topbar > *, .workspace, footer > * { min-width: 0; }
+  .workspace, footer { overflow-wrap: anywhere; }
+  .workspace, .workspace.welcome {
+    padding-left: var(--app-inset-left);
+    padding-right: var(--app-inset-right);
+  }
+  .section-heading { flex-wrap: wrap; }
+  img, video, canvas { max-width: 100%; }
+}
