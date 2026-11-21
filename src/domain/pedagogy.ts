@@ -1,7 +1,9 @@
 import type { Course, Exercise, Lesson } from '../content/schema'
 import { pendingSpeakingCorrections } from './speaking'
 import { assess } from './assessment'
+import { wordsPrepared, wordPreparation } from './instruction'
 import type { ExerciseAttempt, PedagogyPhase, StudyPlan } from './model'
+import { phaseMinutes } from './study-session'
 import type { LearningState } from './state'
 
 export type ExerciseTask = { exercise: Exercise; conceptId: string; label: string }
@@ -57,7 +59,8 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
   }
   if (phase === 'revision') return p.revision ? pending(p.revision, objective, 'Yazını yeniden düzenle') : []
   if (phase === 'vocabulary') {
-    const pendingCards = p.vocabulary.filter(({ use }) => !previous.some(({ exerciseId }) => exerciseId === use.id))
+    const prepared = new Set(wordPreparation(state, lesson).filter(({ prepared }) => prepared).map(({ card }) => card.id))
+    const pendingCards = p.vocabulary.filter(({ cardId }) => !prepared.has(cardId))
     // Repeated misses and cards awaiting a first review represent unfinished work.
     const unfinished = state.reviews.filter(({ lastResult }) => lastResult !== 'remembered').length
     // Anchor the batch to saved activity so midnight or a new due time cannot change an open form.
@@ -83,7 +86,7 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
     const related = state.attempts.filter((item) => item.lessonId === lesson.id && item.conceptId === concept.id)
     if (phase === 'foundation') {
       const foundation = check.foundation
-      if (!foundation || last?.evidence.outcome === 'correct') return []
+      if (!foundation || last) return []
       const triggered = related.some(({ context, answer, evidence }) =>
         (context === 'transfer' || context === 'lesson') && evidence.outcome === 'incorrect' &&
         typeof answer === 'string' && foundation.errorAnswers.some((key) =>
@@ -94,8 +97,10 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
       const latest = related.filter(({ context }) => context === 'transfer' || context === 'lesson').at(-1)
       const needsSpeakingCheck = priority.includes(concept.id)
       if (latest === last && last?.evidence.outcome === 'correct' && !needsSpeakingCheck) return []
-      const fresh = needsSpeakingCheck && check.transfer.find(({ id }) => !history.some(({ exerciseId }) => exerciseId === id))
-      return [task(fresh || check.transfer[history.length % check.transfer.length], concept.id, concept.label)]
+      const guided = related.filter(({ context }) => context === 'lesson')
+      if (lesson.teaching && guided.length && !guided.some(({ evidence }) => evidence.outcome === 'correct')) return []
+      const fresh = check.transfer.find(({ id }) => !history.some(({ exerciseId }) => exerciseId === id))
+      return fresh ? [task(fresh, concept.id, concept.label)] : []
     }
     const transfer = related.filter(({ context, evidence }) => context === 'transfer' && evidence.outcome === 'correct').at(-1)
     const anchor = last && (!transfer || state.attempts.indexOf(last) > state.attempts.indexOf(transfer)) ? last : transfer
@@ -108,14 +113,24 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
 
 export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesson, now: string, ready: boolean): Extract<StudyPlan, { kind: 'pedagogy' }> | undefined {
   const phase = (phase: PedagogyPhase, reason: string) => ({ kind: 'pedagogy' as const, phase, lessonId: lesson.id, reason,
-    minutes: { foundation: 3, transfer: 4, reading: 2, listening: 3, vocabulary: 5, delayed: 3, revision: 3 }[phase] })
+    minutes: phaseMinutes[phase] })
   const foundation = phaseTasks(state, lesson, 'foundation', now)[0]
   if (foundation) {
     const id = lesson.pedagogy?.checks.find(({ conceptId }) => conceptId === foundation.conceptId)?.foundation?.conceptId
     const prior = course.unit.lessons.find((item) => item.concepts.some((concept) => concept.id === id))
     return phase('foundation', `Yanıtın önceki kazanımda bir eksik gösterdi. Önce “${prior?.title}” konusuna dön.`)
   }
-  const transfer = phaseTasks(state, lesson, 'transfer', now)
+  const hasGuided = lesson.concepts.every(({ id }) => state.attempts.some(({ lessonId, conceptId, context, evidence }) =>
+    lessonId === lesson.id && conceptId === id && ['lesson', 'transfer'].includes(context) && evidence.outcome === 'correct'))
+  if ((hasGuided || canAccelerate(state, course, lesson)) && !wordsPrepared(state, lesson)) {
+    return phase('vocabulary', 'Kendi mesajından önce gerekli ifadeleri anlam, hatırlama ve kullanım ile çalış.')
+  }
+  const triedTransfer = state.attempts.some(({ lessonId, context }) => lessonId === lesson.id && context === 'transfer')
+  const guidedReady = !lesson.teaching || triedTransfer || canAccelerate(state, course, lesson) ||
+    lesson.concepts.every(({ id }) => state.attempts.some(({ lessonId, conceptId, context, evidence }) =>
+      lessonId === lesson.id && conceptId === id && context === 'lesson' &&
+      evidence.observation === 'controlled_production' && evidence.outcome === 'correct'))
+  const transfer = guidedReady ? phaseTasks(state, lesson, 'transfer', now) : []
   if (transfer.length) {
     const relevant = new Set(transfer.map(({ conceptId }) => conceptId))
     const previous = state.attempts.filter(({ lessonId, conceptId, context }) => lessonId === lesson.id &&
@@ -136,7 +151,8 @@ export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesso
     ['reading', 'Yapıyı kısa bir metinde anlamlandır.'],
     ['listening', 'Ana fikri ve bir ayrıntıyı metni görmeden yakala.'],
     ['vocabulary', 'Kelimeleri bağlam içinde öğren, sonra hatırla ve bir cümlede kullan.'],
-    ['revision', 'İlk yazını rubrikle gözden geçir ve yeni sürümünü kaydet.'],
+    ...(state.attempts.some(({ exerciseId }) => exerciseId === lesson.production.id)
+      ? [['revision', 'İlk yazını rubrikle gözden geçir ve yeni sürümünü kaydet.'] as const] : []),
     ['delayed', 'Önceki üretimin üzerinden en az bir gün geçti. Farklı bir bağlamda hatırla.'],
   ] as const
   const listeningSample = state.attempts.filter(({ context, evidence }) =>

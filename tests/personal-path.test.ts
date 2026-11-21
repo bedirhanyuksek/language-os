@@ -1,3 +1,4 @@
+import { teachWords } from './teaching-fixture'
 import { expect, test } from 'vitest'
 import { catalog, publishCourse } from '../src/content/catalog'
 import { vocabularyEvidence } from '../src/content/curriculum/language-audit'
@@ -202,7 +203,8 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
   }
   expect(reachedPublishedEnd).toBe(true)
   expect(cultureRepair).toBe(true)
-  expect(cultureVocabularyBatches).toEqual([3, 3])
+  expect(cultureVocabularyBatches.reduce((sum, size) => sum + size, 0)).toBe(6)
+  expect(cultureVocabularyBatches.every((size) => size >= 1 && size <= 3)).toBe(true)
   const cultureUses = state.attempts.filter(({ exerciseId }) => /^en\.intercultural\.word(?:\.\d+)?\.use$/.test(exerciseId))
   expect(cultureUses).toHaveLength(6)
   expect(cultureUses.every(({ evidence }) => evidence.observation === 'free_production' && evidence.outcome === 'review_required')).toBe(true)
@@ -317,26 +319,32 @@ test('weak listening triggers listening practice without sending a successful re
   state = finishDiagnostic(state, course, listening.exercise.id, 'Uncertain', at, true)
   expect(nextDiagnostic(course, state)).toBeUndefined()
   const lesson = course.unit.lessons[0]
+  state = teachWords(state, course, lesson, at)
   state = finishPedagogy(state, course, lesson, 'transfer', answers(phaseTasks(state, lesson, 'transfer', at)), at)
   state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), at)
-  expect(dailyPlan(state, course, at, zone)).toMatchObject({ phase: 'listening', lessonId: lesson.id, evidenceId: expect.any(String) })
+  expect(dailyPlan(state, course, at, zone, false)).toMatchObject({ phase: 'listening', lessonId: lesson.id, evidenceId: expect.any(String) })
 })
 
-test('three misses defer the same target while an unrelated unlocked lesson can proceed', () => {
+test('exhausted variants stay closed while an unrelated unlocked lesson can proceed', () => {
   const course = catalog.en
   const lesson = course.unit.lessons[0]
   const extra = course.unit.lessons.find(({ id }) => id === 'en.opinion')!
   const independent = publishCourse({ ...course, unit: { ...course.unit, lessons: course.unit.lessons.map((item) =>
     item === extra ? { ...item, prerequisites: [] } : item) } })
   let state = start(course, 60, { 'en.diagnostic.2': 'have lead' })
+  const tried = new Set<string>()
   for (let attempt = 0; attempt < 3; attempt++) {
     const tasks = lessonTasks(state, lesson)
+    if (!tasks.length) break
+    expect(tried.has(tasks[0].exercise.id)).toBe(false)
+    tried.add(tasks[0].exercise.id)
     state = finishLesson(state, course, lesson, { ...answers(tasks), [tasks[0].exercise.id]: 'wrong' }, at)
   }
+  expect(tried.size).toBeGreaterThan(1)
   expect(dailyPlan(state, independent, at, zone)).toMatchObject({ kind: 'lesson', lessonId: extra.id })
-  expect(dailyPlan(state, course, at, zone)).toMatchObject({ kind: 'budget' })
+  expect(dailyPlan(state, course, at, zone)).toMatchObject({ kind: 'assessment_gap' })
   const monday = '2026-11-16T10:00:00.000Z'
-  expect(dailyPlan(state, course, monday, zone)).toMatchObject({ kind: 'practice', lessonId: lesson.id })
+  expect(dailyPlan(state, course, monday, zone)).toMatchObject({ kind: 'assessment_gap' })
   expect(masteryFor(state, lesson).status).toBe('developing')
 })
 
@@ -370,6 +378,7 @@ test.each(['A1', 'A2'] as const)('%s target starts with a real English lesson an
   expect(dailyPlan(state, course, at, zone)).toMatchObject({ kind: 'lesson', lessonId: identity.id })
   expect(() => finishLesson(state, course, cafe, answers(lessonTasks(state, cafe)), at)).toThrow(/ön koşul/)
   state = finishLesson(state, course, identity, answers(lessonTasks(state, identity)), at)
+  state = teachWords(state, course, identity, at)
   state = finishLesson(state, course, identity, answers(lessonTasks(state, identity)), at)
   state = finishPedagogy(state, course, identity, 'transfer', answers(phaseTasks(state, identity, 'transfer', at)), at)
   expect(lessonTasks(state, cafe).length).toBeGreaterThan(0)

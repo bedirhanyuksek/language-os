@@ -35,6 +35,7 @@ export const attemptSchema = z.strictObject({
   context: z.enum(['placement', 'lesson', 'transfer', 'foundation', 'reading', 'listening', 'vocabulary', 'delayed', 'revision', 'diagnostic' ]), lessonId: idSchema.optional(),
   conceptId: idSchema, exerciseId: idSchema, answer: answerSchema,
   at: dateSchema, evidence: evidenceSchema,
+  study: z.strictObject({ sessionId: z.uuid(), supports: z.array(idSchema), plays: z.number().int().nonnegative() }).optional(),
 })
 export type ExerciseAttempt = z.infer<typeof attemptSchema>
 export type Assessment = {
@@ -56,6 +57,7 @@ export type StudyPlan =
   | { kind: 'pedagogy'; phase: PedagogyPhase; lessonId: string; minutes: number; reason: string; evidenceId?: string }
   | { kind: 'lesson' | 'practice' | 'speaking'; lessonId: string; minutes: number; reason: string }
   | { kind: 'review'; cardIds: string[]; minutes: number; reason: string }
+  | { kind: 'assessment_gap'; lessonId: string; reason: string }
   | { kind: 'rest' | 'complete' | 'budget' | 'out_of_scope'; reason: string }
 
 export type CommunicationContext =

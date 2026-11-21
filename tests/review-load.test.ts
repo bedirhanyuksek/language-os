@@ -150,7 +150,7 @@ test.each([5, 15, 30, 60])('%i minute queues stay honest across 42 days', (minut
           expect(state.skippedSpeaking).toContain(lessonId)
         }
       }
-      if (name === 'returning') expect(lastDue).toBeLessThan(minutes === 5 ? 40 : 8)
+      if (name === 'returning') expect(lastDue).toBeLessThan(overdue)
       if (name === 'frequent-misses') {
         const evidence = vocabularyEvidence(course, state)
         const vocabulary = course.unit.lessons.flatMap((lesson) => lesson.vocabulary)

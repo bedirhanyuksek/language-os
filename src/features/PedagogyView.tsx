@@ -1,6 +1,5 @@
 import { coachingForAnswer } from '../domain/lesson-coaching'
 import { InlineCoaching } from './TutorPanel'
-import { useState } from 'react'
 import { receptionExercises, type Course, type Lesson } from '../content/schema'
 import type { Answer, ExerciseAttempt, PedagogyPhase } from '../domain/model'
 import { receptionTask, type ExerciseTask } from '../domain/pedagogy'
@@ -9,15 +8,15 @@ import type { LearningState } from '../domain/state'
 import { AudioPlayer } from './AudioPlayer'
 import { ExerciseForm } from './ExerciseForm'
 import { phaseLabels } from './labels'
+import { useStudySession } from './study-session-context'
 
 export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state }: {
   course: Course; lesson: Lesson; phase: PedagogyPhase; state: LearningState; tasks: ExerciseTask[]; busy: boolean
   submit: (answers: Record<string, Answer>, listening?: 'played' | 'unavailable') => Promise<boolean>
 }) {
-  const [step, setStep] = useState(0)
-  const [collected, setCollected] = useState<Record<string, Answer>>({})
-  const [plays, setPlays] = useState(0)
-  const [unavailable, setUnavailable] = useState(false)
+  const session = useStudySession()
+  const { step, plays, answers: collected, supports } = session.draft
+  const unavailable = supports.audioUnavailable
   const p = lesson.pedagogy!
   const reception = phase === 'reading' || phase === 'listening' ? receptionTask(state, lesson, phase) : undefined
   const reading = reception && 'text' in reception.material ? reception.material : p.reading
@@ -35,8 +34,7 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
   async function next(answers: Record<string, Answer>) {
     const all = { ...collected, ...answers }
     if (Object.keys(all).length === tasks.length) return submit(all, phase === 'listening' ? 'played' : undefined)
-    setCollected(all)
-    setStep(step + 1)
+    session.change({ answers: all, step: step + 1 })
     return true
   }
 
@@ -48,7 +46,9 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
         <p>Önceki yanıtın: {String(answer)}</p><p>{reception.coaching[index]}</p>
       </div>)}
     </section>}
-    {transferCorrections.length > 0 && <details className="surface section">
+    {transferCorrections.length > 0 && <details className="surface section" open={supports.correction ?? false} onToggle={(event) => {
+      if (event.currentTarget.open !== (supports.correction ?? false)) session.change({ supports: { correction: event.currentTarget.open } })
+    }}>
       <summary>Konuşma hatalarını gözden geçir</summary>
       {transferCorrections.map(({ conceptId, quote, description, explanation, correction }) => {
         const check = p.checks.find((item) => item.conceptId === conceptId)
@@ -65,7 +65,9 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
     </section>}
     {phase === 'reading' && <section className="surface section">
       <h2>Okumadan önce</h2><p>{lesson.teaching?.readingPurpose ?? 'Metni oku ve bağlamı anlamak için ayrıntıları karşılaştır.'}</p>
-      {!reception?.previous.length && lesson.teaching?.receptive && <details>
+      {!reception?.previous.length && lesson.teaching?.receptive && <details open={supports.glossary ?? false} onToggle={(event) => {
+        if (event.currentTarget.open !== (supports.glossary ?? false)) session.change({ supports: { glossary: event.currentTarget.open } })
+      }}>
         <summary>Metinde tanıman yeterli olan ifadeler</summary>
         <dl>{lesson.teaching.receptive.map(({ term, cue }) => <div key={term}><dt lang={p.language}>{term}</dt><dd>{cue}</dd></div>)}</dl>
       </details>}
@@ -74,9 +76,9 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
     {phase === 'listening' && <section className="surface section">
       <h2>Dinlemeden önce</h2><p>{listening.preparation}</p>
       <AudioPlayer audio={listening.audio} text={listening.transcript}
-        label={plays ? 'Tekrar dinle' : 'Kaydı dinle'} onEnd={() => { setPlays(plays + 1); setUnavailable(false) }}
-        onUnavailable={() => setUnavailable(true)} />
-      {unavailable && <button className="link-button" disabled={busy} onClick={() => void submit({}, 'unavailable')}>Metinle çalış ve dinlemeyi atla</button>}
+        label={plays ? 'Tekrar dinle' : 'Kaydı dinle'} onEnd={() => session.change({ plays: plays + 1, supports: { audioUnavailable: false } })}
+        onUnavailable={() => session.change({ supports: { audioUnavailable: true } })} />
+      {unavailable && <><blockquote lang={p.language}>{listening.transcript}</blockquote><p>Metinli inceleme · sesli dinleme sonucu kaydedilmez.</p><button className="link-button" disabled={busy} onClick={() => void submit({}, 'unavailable')}>Metinle çalış ve dinlemeyi atla</button></>}
       {plays > 0 && tasks.length > 1 && <p className="section">İlk dinlemede ana fikre, tekrar dinlerken ayrıntıya odaklan.</p>}
     </section>}
     {phase === 'vocabulary' && card && entry && vocabStep === 0 && <article className="surface section word-card">
@@ -85,7 +87,7 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
       <p>{card.context}</p><ul>{entry.collocations.map((value) => <li key={value} lang={p.language}>{value}</li>)}</ul>
       {lesson.teaching?.vocabulary.filter(({ cardId }) => cardId === card.id).map(({ cardId, usage }) => <p key={cardId}>{usage}</p>)}
       <AudioPlayer key={card.id} audio={entry.audio ?? audio} text={card.example} label="Örneği dinle" />
-      <div className="button-row"><button className="primary" onClick={() => setStep(step + 1)}>Kelimeyi çalış</button></div>
+      <div className="button-row"><button className="primary" onClick={() => session.change({ step: step + 1, supports: { wordInstruction: true } })}>Kelimeyi çalış</button></div>
     </article>}
     {phase === 'vocabulary' && card && vocabStep > 0 && <section className="section">
       <ExerciseForm key={step} tasks={[tasks[(Math.floor(step / 4) * 3) + vocabStep - 1]]}
@@ -173,12 +175,13 @@ export function TypedReview({ card, learning, busy, grade, onRate }: {
   grade: (answer: string) => 'remembered' | 'again'
   onRate: (answer: string) => Promise<boolean>
 }) {
-  const [answer, setAnswer] = useState('')
-  const [feedback, setFeedback] = useState(false)
+  const { draft, change } = useStudySession()
+  const answer = String(draft.answers[card.id] ?? '')
+  const feedback = draft.supports.feedback
   return <article className="surface review-card">
     <h2>İfadeyi hatırla</h2><p>{learning.recall.prompt}</p>
-    {!feedback ? <form onSubmit={(event) => { event.preventDefault(); setFeedback(true) }}>
-      <input type="text" aria-label="Hatırladığın ifade" value={answer} maxLength={2000} onChange={(event) => setAnswer(event.target.value)} required />
+    {!feedback ? <form onSubmit={(event) => { event.preventDefault(); change({ supports: { feedback: true } }) }}>
+      <input type="text" aria-label="Hatırladığın ifade" value={answer} maxLength={2000} onChange={(event) => change({ answers: { [card.id]: event.target.value } })} required />
       <div className="button-row"><button className="primary" disabled={!answer.trim()}>Yanıtı karşılaştır</button></div>
     </form> : <>
       <p>{grade(answer) === 'remembered' ? 'Doğru hatırladın.' : 'Bu ifade için kısa bir tekrar planlanacak.'}</p>

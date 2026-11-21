@@ -13,3 +13,5 @@ Yayın öncesi FFprobe ile tek ses kanalı ve süre, FFmpeg ile tam çözümleme
 Milestone 5 partilerinde model metni `curriculum/en.ts` veya `curriculum/ru.ts` içindeki `models[].phrase`, dinleme metinleri `input.transcript` ve `retry.transcript`, kelime sesi `word.example` alanındadır. Dosyalar sırasıyla `<id>.model.<sıra>.mp3`, `<id>.input.mp3`, `<id>.retry.mp3` ve `<id>.word.1.mp3` olarak paketlenir.
 
 JSON paketlerindeki model, kart ve transkriptler için `npm run curriculum:audio -- paket.json` kullan. Yeni paket hızı EN 153 ve RU 140; MP3 48 kb/s. Ses kaynağı veya ayarları değişince komut klibi günceller. [Paket üretim akışı](../../../docs/MILESTONE_5_SCALABLE.md)
+
+Aşama 2 değerlendirme kayıtlarının metinleri `../assessment/bank.ts` içindeki `transcript` değerleridir. Dosya adı `<madde kimliği>.mp3`. İngilizce için `-b 1 -v en-us -s 150`, Rusça için `-b 1 -v ru -s 135` kullanıldı. MP3 etiketindeki kaynak özeti, bu parametrelerle ve değişmemiş transkriptle eşleşmelidir. `tests/adaptive-placement.test.ts` bu eşleşmeyi doğrular.

@@ -1,3 +1,4 @@
+import { teachWords } from './teaching-fixture'
 import { expect, test } from 'vitest'
 import { catalog } from '../src/content/catalog'
 import type { Course, Exercise } from '../src/content/schema'
@@ -42,7 +43,7 @@ test('same goal and estimate lead to different first recommendations from learne
   const recognitionOnly = place(course, { ...shared, 'en.diagnostic.2': 'have lead' })
   expect(ready.profile).toEqual(recognitionOnly.profile)
   expect(dailyPlan(ready, course, start, 'Europe/Istanbul')).toMatchObject({
-    kind: 'pedagogy', phase: 'transfer', reason: expect.stringContaining('hem tanıma hem üretim'),
+    kind: 'pedagogy', phase: 'vocabulary', reason: expect.stringContaining('gerekli ifadeleri'),
   })
   expect(dailyPlan(recognitionOnly, course, start, 'Europe/Istanbul')).toMatchObject({
     kind: 'lesson', lessonId: 'en.experience', reason: expect.stringContaining('taramasında'),
@@ -54,7 +55,8 @@ test('local practice advances with no account and keeps unsupported evidence out
   const lesson = course.unit.lessons[0]
   const initial = place(course, { ...practiceAnswers(course.placement), 'ru.diagnostic.2': 'я' })
   const guided = finishLesson(initial, course, lesson, practiceAnswers(lessonTasks(initial, lesson)), start)
-  const written = finishLesson(guided, course, lesson, practiceAnswers(lessonTasks(guided, lesson)), start)
+  const prepared = teachWords(guided, course, lesson, start)
+  const written = finishLesson(prepared, course, lesson, practiceAnswers(lessonTasks(prepared, lesson)), start)
   const transferred = finishPedagogy(written, course, lesson, 'transfer', {
     'ru.intro.name.transfer.1': 'Меня', 'ru.intro.polite.transfer.1': 'вас',
   }, start)
@@ -67,7 +69,7 @@ test('local practice advances with no account and keeps unsupported evidence out
     expect.objectContaining({ skill: 'speaking', status: 'not_assessed' }),
     expect.objectContaining({ skill: 'writing', status: 'review_required' }),
   ]))
-  expect(dailyPlan(skipped, course, start, 'Europe/Istanbul')).toMatchObject({ phase: 'vocabulary' })
+  expect(dailyPlan(skipped, course, start, 'Europe/Istanbul', false)).toMatchObject({ phase: 'revision' })
   expect(masteryFor(skipped, lesson).status).toBe('ready')
   expect(phaseTasks(skipped, lesson, 'delayed', start)).toEqual([])
   expect(phaseTasks(skipped, lesson, 'delayed', tomorrow).map(({ exercise }) => exercise.id)).toEqual([
@@ -83,7 +85,8 @@ const zone = 'Europe/Istanbul'
 function speakingSetup() {
   const placed = place(course, { ...practiceAnswers(course.placement), 'en.placement.1': 'have led' })
   const guided = finishLesson(placed, course, lesson, practiceAnswers(lessonTasks(placed, lesson)), start)
-  const written = finishLesson(guided, course, lesson, practiceAnswers(lessonTasks(guided, lesson)), start)
+  const prepared = teachWords(guided, course, lesson, start)
+  const written = finishLesson(prepared, course, lesson, practiceAnswers(lessonTasks(prepared, lesson)), start)
   const transferred = finishPedagogy(written, course, lesson, 'transfer', practiceAnswers(phaseTasks(guided, lesson, 'transfer', start)), start)
   const state = beginSpeaking(transferred, lesson, start, coachReport.sessionId)
   return { state, session: state.speakingSessions[0] }
@@ -125,14 +128,14 @@ test('only independently produced evidence contributes to the speaking observati
 
 test('confirmed report schedules the mapped collocation and a new grammar check and round-trips without loss', () => {
   const { state, session } = speakingSetup()
-  const before = dailyPlan(state, course, now, zone)
+  const before = dailyPlan(state, course, now, zone, false)
   const report = parseSpeakingReport(JSON.stringify(coachReport), session, lesson)
   const saved = importReport(state, lesson, report, now)
   const [{ cardId, recall }] = lesson.pedagogy!.vocabulary
   expect(before.kind).not.toBe('review')
   expect(dailyPlan(saved, course, now, zone)).toMatchObject({ kind: 'review', cardIds: [cardId], reason: expect.stringContaining('Konuşma raporunda') })
   const typed = finishTypedReview(saved, course, cardId, String(practiceAnswers([{ exercise: recall }])[recall.id]), now)
-  expect(dailyPlan(typed, course, now, zone)).toMatchObject({ kind: 'pedagogy', lessonId: lesson.id, phase: 'transfer' })
+  expect(dailyPlan(typed, course, now, zone, false)).toMatchObject({ kind: 'pedagogy', lessonId: lesson.id, phase: 'transfer' })
   expect(phaseTasks(typed, lesson, 'transfer', now).map(({ exercise }) => exercise.id)).toEqual([lesson.pedagogy!.checks[1].transfer[1].id])
   expect(parseBackup(exportBackup(typed))).toEqual(typed)
   expect(() => importReport(typed, lesson, report, now)).toThrow(/daha önce kaydedildi/)

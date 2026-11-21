@@ -1,40 +1,103 @@
-# Kişisel Öğrenme Rehberi · Deneyim tasarımı
+# Öğrenme deneyimi sözleşmesi
 
-Bu belge hedef deneyimi tanımlar. Bugün çalışan kapsam [ürün vizyonunda](PRODUCT_VISION.md). Rehberin temel önerileri yerel kanıt ve kurallardan hesaplanır. AI, öğrenci istediğinde aynı hedefe farklı açıklama, örnek veya geri bildirim getirebilir.
+Bu belge hedeflenen deneyimi tanımlar. Bugünkü davranış [ürün denetiminde](PRODUCT_LEARNING_BLUEPRINT.md) ve doğrulama kapsamı kayıtlı. Aşağıdaki görevler tasarım örnekleridir. İçerik kimlikleri, gerçek görev eşdeğerliği ve önerilen süreler uygulama ve pilotta doğrulanır.
 
-## v1 uygulaması
+## İlk açılıştan sonraki güne
 
-İlk tarama tamamlanınca çalışma hemen açılır. Ek okuma ve dinleme tanılaması plan veya beceri profilinden başlatılır. İlk örneklerdeki okuma veya dil bilgisi hataları temel örnek kümesini seçer. Yanlış ek örnek de köprü önerisi oluşturabilir; tamamlanmamış ek soru sonraki ziyarette devam eder. Tanılama ders başarısına eklenmez. Ana tarama şu anda tek gönderimde tamamlanır; atlanan madde veya taslak kaydı yoktur.
+Öğrenci bir dil ve iletişim amacı seçer, çalışma günlerini ve dakikasını ayarlar. Uygulama ilk yararlı etkinliğe en kısa sürede geçer. İlk tarama, yarım kalan çalışma ve yardımcı araçlar için “daha sonra” yolu vardır. Bir çalışma gününde ana öneri, kısa neden, beklenen somut kullanım, tahmini süre ve uygun alternatif görünür. Diğer etkinlikler ön koşulu belli bir sırada gösterilebilir ve gün içinde yeni kanıta göre güncellenir. Kullanıcı önceki çalışmanın hangi adımında kaldığını, yardımın açık olup olmadığını ve neyin kaydedildiğini anlar.
 
-Öğretimde önce açıklama ve örnek, ardından rehberli deneme ve yeni bağlam gelir. Ön koşul hatası önceki kazanımın ayrı örneğini açabilir. Alımlamada ilk yanlış cevap plan gerekçesinde görünür ve ilgili boyut yeni metin veya kayıtla kontrol edilir. Son örnek de yanlışsa eksik kanıt olarak kalır. Yazıda ilk metinle revizyon ayrı saklanır; yerel sesli prova gözlem veya puan üretmez. Rapor aktarımı isteğe bağlıdır. AI öneri sözleşmesi ileride kullanılabilir; uygulama şu anda AI öğretmen çağırmaz.
+### Rusça A1 · Sıfırdan · 15 dakika
 
-## Hedef ekranlar ve veri akışı
+| Adım | Öğrencinin deneyimi ve plan kararı |
+| --- | --- |
+| 1. İlk açılış | Rusça seçer, Kiril deneyimi sorulur, örnek ses düğmesiyle erişim kontrol edilir. |
+| 2. Hedef | Seyahatte tanışmak ve isimleri anlamak. 15 dakika ve uygun günler ayarlanır. |
+| 3. Aşamalı tarama | Örneğin iki harf-ses ve bir isim ayırımı. Ses yoksa erişilemedi kaydedilir; Kiril okuma kısa örneği ve yerel öğretim sürer. Yazı veya konuşma için yapay seviye üretilmez. |
+| 4. İlk gün | Örnek plan: rota taraması 4 dk, birkaç Kiril harfi ve isim modeli 6 dk, farklı isimler üzerinde 3 dk alımlama, 2 dk geri çağırma. Ses yoksa aynı süreye harf tanıma ve yazılı karşılaştırma sığdırılır. |
+| 5. Ders içi öğretim | `М / Н` gibi seçilmiş harfleri örnek isimlerde çözer, selam ve isim kalıbını duyup anlamlandırır, örneğe bakarak bir tanışma cümlesi kurar. Sıradaki yardımsız görevde yalnızca çalıştığı harf ve kalıp zorunludur. |
+| 6. Hata ve destek | Harf karışınca şekil-ses karşılaştırması ve yeni isim sunulur. Ses ile yazı iki ayrı kanıt olarak saklanır. |
+| 7. Gün sonu | “Yeni iki isimde harfleri ayırdın. Kendi adını sözlü söyleme henüz ölçülmedi.” Eksik kalan etkinliğin adı ve nedeni görünür. |
+| 8. Sonraki gün | Önceki adımla kısa hatırlama, yeni isimlerin yer aldığı tanışma diyaloğu ve “Benim adım…” yardımsız mesajı. Önceki form kapanmadan kaldıysa devam adımı önde. |
+| 9. Haftalık ilerleme | Yeni isim kaynakları ve farklı muhatapla tanışma. Hangi harflerin iki görevde kalıcı ayrıldığı, nerede yardım gerektiği özetlenir. |
+| 10. Geçiş kararı | Tanışma bağımsız gerçekleştiyse sonraki selamlaşma/temel soru dizisi açılır. Kısmen edinilmiş Kiril veya ölçülmemiş ses becerisi için ayrı paralel görev eklenir. |
 
-| Ekran | Öğrenci deneyimi | Okunan ve yazılan veri | Sonraki karar |
-| --- | --- | --- | --- |
-| Hedef ve kapsam | Dil, günlük/mesleki hedef, kullanacağı ortam, çalışma süresi. Yayımlanan kapsamı ve tanılamanın sınırını görür | Hedef profili, kendi seviye tahmini, gün ve zaman tercihi, içerik kapsamı | Öz beyan ölçüm veya rota kararı üretmez. Önceki kanıt, geçerli pakette başlangıç aralığını daraltır. |
-| Tanılama ve beceri profili | Birkaç farklı türde kısa görev. “Bilmiyorum”, ses erişimi ve erteleme seçenekleri. Her beceride gözlem, güven ve eksik veri görünür | Madde sürümü, bağlam, yardım, sonuç, kaynağa bağlı kanıt. Eksik görev için neden | Yeterli, çelişkili veya yetersiz kanıt ayrılır. Kararsız bantta komşu banttan bir görev verilir. Uygun içerik yoksa mevcut kapsam ve devam seçenekleri gösterilir. |
-| Bugünkü rehber | Bir öneri, nedeni, iletişim getirisi, tahmini süre. Örneğin “Yer adını tanıyorsun. Sesli tanışmada kimin nerede yaşadığını ayırmayı dene.” Başka uygun çalışma seçilebilir | Hedef, ön koşullar, kanıt açığı, ertelenmiş işler, son benzer hata ve bütçe | Küçük bir öğretim bloğu seçilir. Geciken kontroller, zorunlu onarım ve yeni içerik arasında bütçe bölünür. |
-| Öğretim oturumu | Örnek üzerinden farkı görür, bir adımı yardımla yapar, yardım azalınca yeni duruma geçer. Kelime ve kalıp ilgili görevden önce öğretilir | Kullanılan ipucu/örnek, rehberli deneme, açıklama türü, anlam ve söz dizimi hatası | Yanıt örüntüsü yöntemi değiştirir. Örneğin iki zaman çerçevesi karışırsa zaman çizgisi, Rusça hitap karışırsa konuşmacı rollerini karşılaştıran diyalog gelir. |
-| Okuma ve dinleme | Bir amaçla okur/dinler. Ana fikir ve ayrıntıyı ayırır. Zorlandığında kısa bölüm, yeniden dinleme ve açıklama alır | Görev ve kaynak kimliği, metin/ses modu, yardım, soru türü, gözlem | Ana fikir ile ayrıntı hatası farklı onarıma gider. Sonraki kontrol yeni metin veya ses kullanır. Transkript modu okuma/çalışma kaydı üretir. |
-| Yazma ve konuşma | Gerçekçi bir görev tamamlar. Örnek ve rubrikle kendi yanıtını gözden geçirir. Konuşma görevini bir tekrar veya takip sorusuyla geliştirir | İlk deneme, revizyon, rubrik, izin verilmişse ses ve değerlendirici notları. Self-review, AI ve uzman kaynakları ayrı | Kanıt varsa anlaşılabilirlik, görevi tamamlama ve hedef kullanım için ayrı geri bildirim. Belirsiz sonuç incelemeye kalır veya yeni görev önerir. |
-| Açıklamalı sonuç ve tekrar | Neyin işe yaradığını, hangi hatanın anlamı etkilediğini, tekrarın nedenini görür | Sonuç ve kanıt, önceki benzer gözlem, sonraki kontrol zamanı ve farklı bağlam kimliği | Başarısızlıkta açıklama ve paralel görev. Başarıda gecikmeli hatırlama. Bekleyen çalışma izinli şekilde ertelenebilir. |
-| Gelişim değerlendirmesi | Önceki ve son örneği yan yana görür. “Bir iş güncellemesinde geçmiş olayı doğru tarihlendirebiliyorsun. Bunu takip sorusuna hazırlıksız yanıtta henüz gözlemlemedik.” | Eşdeğer zorlukta görev çifti, yardım farkı, rubrik sürümü, aralık ve kanıt örnekleri | Hedef güncellenir, kalıcılık yeniden örneklenir. Karşılaştırılamayan örnek için fark iddiası üretilmez. |
+### İngilizce yaklaşık B1 · C1 hedefi · 30 dakika
 
-## Hedef karar sözleşmesi
+| Adım | Öğrencinin deneyimi ve plan kararı |
+| --- | --- |
+| 1. İlk açılış | İngilizce, önceki çalışma ve güçlü dinleme bilgisi alınır. Bu ön bilgi taramada ilk örneği seçer. |
+| 2. Hedef | İş toplantısında gelişmeyi anlatma, takip sorusunu anlama ve hazırlıksız cevap verme. C1 uzun vadeli hedef. |
+| 3. Aşamalı tarama | Bir B1 kontrollü zaman örneği, kalıp hatırlama, kısa okuma ve dinleme. Dinleme güçlü görünüyorsa sonraki uygun günde bir üst banttan ses. İlk açık yazı ve kısa sözlü görev ayrı toplanır. |
+| 4. İlk gün | Örnek plan: 6 dk tanılama, 8 dk geçmiş olay/güncel sonuç ayrımı ve iki iş kalıbı, 5 dk rehberli örnek, 5 dk yeni ses ile özet, 6 dk bağımsız kısa güncelleme ve kapanış. Tekrar vadesi varsa uygun esnek blok değişir. |
+| 5. Ders içi öğretim | Çalışılmış geçmiş olaylar ve bitmiş zaman işaretleri, güncel sonuçla karşılaştırılır. “Raise an issue” ve “follow up on” önce anlam/eşdizim ve rehberli kullanımda görülür. İlk yazı yeni toplantı bağlamındadır. |
+| 6. Hata ve destek | “Last week” ile bitmiş zamanı yanlış kurarsa zaman çizgisi ve yeni olay verilir. Tanıdığı kalıbı getiremiyorsa kapalı ipucuyla yeniden getirip başka cümlede kullanır. AI açıklaması isteğe bağlı. |
+| 7. Gün sonu | Dinlemedeki güçlü ana fikir gözlemi, gramerde destekli doğru ve inceleme bekleyen yazı ayrı görünür. Konuşmada örnek yoksa durum açık kalır. |
+| 8. Sonraki gün | Benzer kısa gramer onarımı, vadesi gelen kelime, yeni bağlamda tarihli bir açıklama ve isteğe bağlı sesli takip sorusu. Başarılı dinleme gereksiz kolay görevleri kısaltır; daha zor dinleme kanıtı gelene kadar varsayım geçici kalır. |
+| 9. Haftalık ilerleme | İki farklı toplantı örneğinde bağımsız güncelleme ve gecikmeli kalıp kullanımı. Dinleme ile sözlü etkileşim ayrı gösterilir; örnek yoksa sonraki kısa konuşma görevi önerilir. |
+| 10. Geçiş kararı | Güçlü dinleme için B2 bandından örnek açılabilir. B1 gramer/kelime eksikleri ilgili dizide yerel olarak sürer. B2/C1 hedefindeki ilerleme bağımsız yazı ve konuşma kanıtına göre ayrı değerlendirilir. |
 
-1. Görev adayları yayımlanmış kapsam, kullanıcının hedefi, ön koşul, son kanıt, gecikme ve erişim üzerinden çıkarılır. Zorunlu sesin mevcut olmaması veya bütçenin daralması durumunda daha kısa yerel görev seçilebilir. Erteleme ilerlemeyi saklar.
-2. Aynı öğrenme amacı için önceki etkinliği tekrar sunmadan önce hatanın nerede olduğunu değerlendir. **Tanıyor, üretemiyor:** destekli kurma → yardım azaltma → yeni üretim. **Ana fikir var, ayrıntı kaçıyor:** belirli işareti fark ettir → doğal bir paralel parçada ayrıntıyı sor. **Ön koşul zayıf:** alt göreve dön → ana göreve bağlam değiştirerek geri gel. **Yeterli kanıt:** örnek anlatımı kısalt, iletişim görevini koru. **Bir hata tekrarlanıyor:** yeni yöntem, farklı bağlam veya inceleme öner. Her yöntem seçiminin bir gerekçesi ve kanıt referansı olur.
-3. Sonuç yeni bir deneme olarak kaydedilir. Kanıt görünümünde tür, doğru/yanlış veya rubrik sonucu, destek, kaynak, tarih ve sınırlar korunur. Gecikmeli kontrol aynı maddeyi ezberleyerek geçilemez. Karar, gözlem sayısını başarı yerine kullanmaz.
-4. Haftalık veya birkaç çalışma oturumundan sonra gelişim özeti önerilir. İlk sıklık pilot varsayımıdır. Yeterli eşdeğer kanıt yoksa özet örnekleri ve eksik boyutu gösterir. Her karşılaştırma görev zorluğu ve destek farkını açıkça belirtir.
+### İngilizce B2/C1 civarı · C2 hedefi · 60 dakika
 
-Mevcut `ExerciseAttempt`, `AssessmentEvidence`, tekrar geçmişi ve repository korunur. Eklenecek en küçük alanlar görev bağlamı, yardım düzeyi, ayrı sonuç durumları ve değerlendirici kaynağıdır. Plan kararı bir sonraki önerinin gerekçesini ve kaynak deneme kimliklerini üretir. Her ekranda aynı kararın farklı yorumunu kodlamak yerine bu çıktıyı kullan. Oturumda ara adım, ertelenmiş görev ve tekrar çizelgesi yerel kayıttan geri yüklenir.
+| Adım | Öğrencinin deneyimi ve plan kararı |
+| --- | --- |
+| 1. İlk açılış | İngilizce ve ileri görev tercihi alınır. Yayımlanmış C2 kapsamı ve testin belirsizliği görünür. |
+| 2. Hedef | Çelişkili kaynakları farklı kitlelere aktarma ve hassas görüşmede belirsizliği koruma. |
+| 3. Aşamalı tarama | Bir kısa çelişkili dosya okuması, kaynak tutumuna dönük ses ve kısa sentez yazısı. Gerekirse ikinci yeni örnek ve hazırlıksız takip sorusu 2–4. çalışma gününe taşınır. |
+| 4. İlk gün | Örnek plan: 7 dk rota taraması, 12 dk iki kaynaklı okuma, 8 dk tutum/atıf örneği ve kelime, 10 dk ses ve not alma, 15 dk bağımsız çift muhataplı yazı, 8 dk rubrik ve sonraki görev. Ağ veya ses eksikse başka yerel görev seçilir. |
+| 5. Ders içi öğretim | İddia, dayanak ve kaynak sınırı işaretlenir. Akademik ifade ve sade kamu ifadesi karşılaştırılır. Referansın, belirsizlik derecesinin ve kararın tür değişiminde nasıl korunduğu gösterilir. |
+| 6. Hata ve destek | Öneriyi kanıtlanmış sonuç gibi yazarsa hangi kaynak cümlesini genişlettiği gösterilir; yeni karşı kaynakla yeniden formüle eder. Dil doğruluğu ve kaynak sadakati ayrı geri bildirim alır. |
+| 7. Gün sonu | “Kaynak kapsamı bağımsız taslakta görüldü; üslup rubriği inceleme bekliyor. Doğal çok konuşmacılı ses örneği yoksa dinleme kanıtı sınırlı.” |
+| 8. Sonraki gün | Başka türde kısa kaynak, gecikmeli atıf/kalıp ve bir paydaşın takip sorusuna konuşma provası. Sonraki yazı yeni muhataba hazırlanır. |
+| 9. Haftalık ilerleme | Karşılaştırılabilir iki dosyada sınırlamaların korunması, yardımsız dil ve yeni sözlü itiraza cevap. Sıradaki müfredat boşluğu varsa açık olarak belirtilir. |
+| 10. Geçiş kararı | Güvenilir C1 davranışı görülen alt beceriler C2 göreviyle örneklenir. Rota bitişi ve C2 iddiası iki ayrı durumdur; uzman doğrulaması olmayan beceri öneri düzeyinde kalır. |
 
-## İsteğe bağlı öğretmen ve ses
+## Öğretim biçimini beceriye göre seç
 
-- **Yerel rehber:** Alternatif açıklama, karşılaştırmalı örnek ve hata geri bildirimi editoryal paketten gelir. Kullanıcı gerçek bir iletişim görevi üzerinde ilerleyebilir. Hesap açma, çevrimiçi servis ve mikrofon temel yolun şartı değildir.
-- **AI öğretmen:** İzinli istekle seçili kazanımı, önceki ilgili hatayı ve öğrenci tarafından seçilen yanıtı kullanır. Önce ipucu, sonra gerekirse örnek verir. Yazıda rubrikle ilişkili gözlem ve revizyon önerir. Çıktı öneri olarak işaretlenir. İçerik bankasına kendiliğinden eklenmez, plan kanıtını tek başına yükseltmez. Reddetme, kota ve bağlantı hatasında taslak yerelde kalır ve aynı hedefin yerel açıklaması açılır.
-- **Konuşma:** İlk yerel sürüm için cihaz destekliyorsa kayıt, oynatma, görev ve öz değerlendirme. Mikrofon izni yoksa plan devam eder ve konuşma kanıtı eksik kalır. ChatGPT Voice’a seçili bağlam elle aktarılır. İçeri alınan rapor kullanıcı onayına tabi. Önceki hatalar konuşma görevi ve takip sorusunu seçebilir. Doğrudan Live başlatma, gerçek hesapta özel MCP ve otomatik aktarım için [2A’nın doğrulama koşulları](CHATGPT_INTEGRATION_FEASIBILITY.md) geçerli.
-- **Dinleme:** Lisanslı doğal sesler ve yerel MP3; hedefe ve önceki hataya göre parça seçimi. Hız değişikliği, yeniden dinleme ve transkript yardım olarak kaydedilir. Sentetik ses etiketli destek seçeneğidir. Ses olmadan dinleme puanı oluşmaz.
+| Beceri | Öğretim ve geri bildirim | Bağımsız kontrol ve kalıcılık |
+| --- | --- | --- |
+| Gramer | Anlam karşılaştırması, model, tipik hata ve kontrollü kurma. Kiril sonrasında hâl seçiminde hareketi şemayla ayır. İleri İngilizcede kip ve kanıt derecesini aynı olgunun iki anlatımıyla karşılaştır. | Yeni iletişimde gerekli yapıyı yardım olmadan kullanma. Sonraki kontrolde farklı kişi, yer veya görev kullanılır. |
+| Kelime ve kalıp | Anlam, bağlam, telaffuz/biçim, eşdizim, benzer sözcük farkı. Öğrenci ifadeyi görmeden yazar, hata olursa ipucu ve başka örnek alır. | Önce bağlam içinde hatırlama, sonra yeni metin ve konuşmada kullanım. Gecikmeli hatırlama ve bağlamlı üretim ayrı. |
+| Okuma | Okuma amacı belirle. Başlangıçta başlık ve yer/zaman, üst bantta kaynak/ima/çıkarım. Yanıttan sonra metin dayanağını açıkla. | Ayrı kaynaktan aynı alt beceriyi yokla. Scanning ile çıkarımı aynı başarı yerine geçirme. |
+| Dinleme | İlk dinlemede amaç, sonraki dinlemede odak. Metin görünürlüğü, hız, yardım kaydedilir. Yavaşlatma veya transkript öğrenme için açılabilir. | Yeni sesle ana fikir, ayrıntı veya tutum. Ses yoksa ertele; transkript üzerinden yapılan işi yardımlı olarak göster. |
+| Yazma | Muhatap ve amaç, gerektiğinde kısa model, plan ve kontrollü ön çalışma. Anlamı koruyan en etkili bir veya iki değişikliği seç. | Yeni bağlamın ilk taslağı, destekli revizyon ve rubrik değerlendirmesi ayrı. Örnek cümleyi kopyalamak prova. |
+| Konuşma | Hazırlık, kısa üretim, geri dönüş ve yeni takip sorusu. Başlangıçta temel senaryo, ileri bantta sıra alma, onarım, vurgu ve tutum. | Yardımsız takip sorusu ve anlaşılırlık. Yerel prova ile ChatGPT Live raporunun kanıt kaynaklarını ayrı göster. |
 
-Ölçülebilir senaryolar [Kalite kapılarında](EDUCATIONAL_QUALITY_GATES.md), uygulama sırası [Uygulama planında](IMPLEMENTATION_PLAN.md).
+Hedef kelime, dil yapısı ve strateji ön koşulları bağımsız etkinlik açılmadan denetlenir. Öğrenci bunları öğretimle veya eşdeğer önceki kanıtla karşılayabilir. Okuma/dinleme keşfi ilk adım olabilir; bağlamdan çıkarılabilen alımlama öğeleri ipucuyla tanıtılır. Başarılı güçlü öğrencide örnek kısalır. Hata veya çelişkide anlam, biçim veya üretim desteği önce gelir. Açık görevde kullanılabilecek bilinmeyen sözcük seçimlik ipucu olarak gösterilebilir.
+
+## Aynı soruya dönmenin ölçütü
+
+| Durum | Öğrenci ve sistem davranışı |
+| --- | --- |
+| Yarım kalan görev | Aynı görev ve yanıt taslağı “Devam et” ile açılır. İşaretlenen ipuçları ve aşama durur. Yeni çalışma olayı veya tekrar puanı yazılmaz. |
+| Öğrenmek için aynı örnek | Hata sonrası, öğrenci isteğiyle veya açıklama amacıyla olabilir. Neden görünür; “prova” olarak kayıt edilir. |
+| Yeni deneme veya dönemsel kontrol | Başka madde, kaynak veya görev ailesi seçilir. Öğrenilen cevap ezberini ölçen tekrar bağımsız/gecikmeli kanıt üretmez. Kart hatırlamada aynı hedef kelime vadesinde tekrar edilir; arada ayrı bağlamlı kullanım gerekir. |
+| Çözüldü, açık neden yok | Önceki başarılı madde otomatik sunulmaz. Uygun yeni görev yoksa rota açığı, öğretim ya da daha kısa alternatif görünür. |
+
+Bir görev ailesi içinde ilk hata açıklamalı yeni örneğe, art arda ikinci hata farklı öğretim yöntemine veya ön koşul onarımına gider. Onarım sonrası yeni madde yoksa tekrar döngüsü durur ve ölçüm beklemede kalır. Bu sayılar ilk deneme kurallarıdır; [pilot](IMPLEMENTATION_ROADMAP.md) ile yeniden değerlendirilecek.
+
+## Günlük plan ve ağır tekrar borcu
+
+| Bütçe | Oturum tasarımı | Baskı altında davranış |
+| --- | --- | --- |
+| 5 dk | Tek tamamlanabilir blok. Kısa öğretim veya beceri/hatırlama. Beceri çeşitliliği günlere yayılır. | Yoğun eski borçta öğretim ve tekrar öncelikleri çalışma günlerine bölünebilir. Bir blok sığmıyorsa mini ön koşul veya sonraki güne açık randevu. |
+| 15 dk | Bir odaklı öğretim ve bir kısa uygulama veya alımlama. Yer varsa küçük tekrar. | İlk hedefi koru, yüksek öncelikli tekrarları sırala, yeni kart girişini azalt. İsteğe bağlı uzun üretimi sonraki güne taşı. |
+| 30 dk | Gerekli öğretim, beceri görevi, seçili vadesi gelen tekrar ve kısa sonuç. Birikim düşükse aynı hedef üzerinde üretim ve revizyon da açılır. | Tekrar öğeleri yeni bir beceri görevini günlerce engelliyorsa sonraki uygun güne küçük öğretim bloğu ayır. Bekleyenlerin vadesi korunur. |
+| 60 dk | Zorunlu olduğunda iki kaynak, bağımsız üretim, rubrik ve tekrar için ayrı bloklar. Uzun üretim taslakla iki güne bölünebilir. | Yük saatleri büyürse yeni kartı azalt, tekrarı önceliklendir, öğrenciyi hedefli alternatiflerden haberdar et. Uygun çalışma bittiyse süreyi doldurmak için aynı maddeyi çoğaltma. |
+
+Süreler tahmindir. Öğrencinin hızına göre işlem sonunda plan yeniden hesaplanır. Kullanıcı erteler, takvimi değiştirir veya devamı seçer. Kaydedilmiş görev ilerlemesi, bütçe değişiminde kaybolmaz. Daha önce gecikmiş ve hâlâ unutulan kartlar, ön koşul ve hedefle ilişkisine göre öncelik alır. Ekran gecikmiş kart adedini ve bugünkü etkinliklerden neyin yer değiştirdiğini gösterir. “Vadesi gelmiş” ile “hatırlanamadı” ayrı sayılır. Kartı yeniden zamanlamak hatayı doğruya dönüştürmez. 42 günlük testte 250 kartlık kuyruk kısa bütçelerde kalıcıydı. Tekrar adedi hedefi, gerçek öğrenmeyi azaltıyorsa öğrenciye uygun ödünleşim açıkça gösterilmeli. [Tekrar yükü ölçümü](MILESTONE_5_REVIEW_LOAD.md)
+
+## Ekranların ürün gereksinimleri
+
+| Ekran | Gösterilecek bilgi | Gerekli durum ve geçiş |
+| --- | --- | --- |
+| İlk açılış | Dil, hedef, çalışma ritmi ve yayımlanmış kapsam | Yeni profil, mevcut profile devam veya doğrulanmış yedek geri yükleme. |
+| Başlangıç değerlendirmesi | Beceri amacı, örnek türü, geçme/devam ve erişim durumu | Taslak geri gelir; ses yokluğu yanlış puanlanmaz. Mini tarama tamamlanınca ilk öğretim açılır. |
+| Günlük plan | Bir ana iş, gerekçe, süre, sıra, kalan bütçe ve uygun alternatif | Yeni gün, yarım işe dönüş, tekrar yoğunluğu, dinlenme, duraklama ve içerik açığı ayrı görünür. |
+| Ders | İletişim kazanımı, öğretim adımı ve örneğin neden geçerli olduğu | İpucu, hata, alternatif açıklama, bağımsız uygulama ve sonraki adım. |
+| Kelime | Anlam, örnek, eşdizim, erişilebilir telaffuz, hatırlama ve kullanım | İlk karşılaşma, vade, hata ve yeni bağlam ayrı. Uygulama hazır cümleyi kapalı tutabilir. |
+| Reading ve Listening | Amaç, kaynak, ses/prosodi niteliği ve erişim seçenekleri | Cevap sonrası dayanak; farklı kaynakla onarım; yardımın etiketlenmesi. |
+| Writing ve Speaking | Muhatap, görev, zaman, rubrik ve taslak durumu | Yerel kayıt, yardım, inceleme, onaylı rapor veya AI isteği. Gönderim ve değerlendirme ayrı durumlar. |
+| Beceri profili | Yetkinliği destekleyen örnek ve sıradaki ihtiyaç | Haftalık karşılaştırma, eksik kanıt ve ayrıntı açma. Açık üretim ve rapor kaynağı görünür. |
+| Müfredat keşfi | Yayımlanmış, uygun, kilitli ve henüz içeriksiz görevler | Kilidin açıklaması, uygun başlangıç ve rota açığı. Envanter doluluk oranı seviye göstergesi sayılmaz. |
+
+Öğrenme ekibi veri, karar ve görünen metin anlamını belirler. UI/UX ekibi görsel hiyerarşi, düzen, mobil sunum, klavye ve ekran okuyucu davranışlarını bu sözleşmeden geliştirir. Uçtan uca testler düzenin piksel değerleri yerine öğrencinin bir sonraki eylemini ve kaydedilen kanıtı doğrular.

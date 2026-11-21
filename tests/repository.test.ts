@@ -3,7 +3,7 @@ import Dexie from 'dexie'
 import { IDBObjectStore } from 'fake-indexeddb'
 import { catalog, legacyCatalog } from '../src/content/catalog'
 import type { Answer } from '../src/domain/model'
-import { finishPlacement } from '../src/domain/progress'
+import { finishPlacement, finishReview } from '../src/domain/progress'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { IndexedLearningRepository, exportBackup, parseBackup } from '../src/persistence/repository'
 import reportV1 from './fixtures/speaking-valid.json'
@@ -228,13 +228,92 @@ describe('storage diagnostics preserve existing records', () => {
     }
     repository.close()
     const newer = new Dexie(name)
-    newer.version(4).stores({ workspace: 'key', quarantine: '++id' })
+    newer.version(6).stores({ workspace: 'key', quarantine: '++id' })
     try {
       await newer.open()
       repository = new IndexedLearningRepository(name)
       await expect(repository.read()).rejects.toMatchObject({ operation: 'open', cause: { name: 'VersionError' } })
     } finally {
       newer.close()
+    }
+  })
+})
+
+describe('study draft transactions', () => {
+  const at = '2026-11-13T10:00:00.000Z'
+  const definition = { task: { kind: 'placement' as const }, reason: 'new_assessment' as const, contentVersion: 2 as const, contentRevision: 'fixture-2026',
+    itemIds: catalog.ru.placement.map(({ exercise }) => exercise.id), budget: 15, minutes: 0 }
+
+  it('preserves a partial unscored draft in a v3 backup and still opens an older v2 without a draft', async () => {
+    await repository.create(state)
+    const draft = await repository.openStudy(state.profile.id, definition, '0:0:0', at)
+    const edited = await repository.saveStudy(state.profile.id, draft.id, 0, {
+      answers: { 'ru.placement.5': '  Меня зовут ' }, step: 1, supports: { rubric: true, 'opened:rubric': true },
+    }, at)
+    expect(edited.attempts).toEqual([])
+    expect(edited.activity).toEqual([])
+    const backup = exportBackup(edited)
+    expect(JSON.parse(backup).schemaVersion).toBe(3)
+    expect(parseBackup(backup)).toEqual(edited)
+    expect(JSON.parse(exportBackup(state)).schemaVersion).toBe(2)
+    expect(parseBackup(exportBackup(state))).toEqual(state)
+  })
+
+  it('keeps an incompatible material revision as a separate unscored draft', async () => {
+    await repository.create(state)
+    const older = await repository.openStudy(state.profile.id, definition, '0:0:0', at)
+    await repository.saveStudy(state.profile.id, older.id, 0, { answers: { 'ru.placement.5': 'Старый ответ' } }, at)
+    const newer = await repository.openStudy(state.profile.id, { ...definition, contentRevision: 'edited-material' }, '0:0:0', at)
+    expect(newer.id).not.toBe(older.id)
+    expect(newer.answers).toEqual({})
+    const backup = parseBackup(exportBackup((await repository.read())!))
+    expect(backup.studyDrafts?.map(({ answers }) => answers)).toEqual([{ 'ru.placement.5': 'Старый ответ' }, {}])
+    expect(backup.attempts).toEqual([])
+  })
+
+  it('rejects a stale review even when the card is genuinely due again on the next day', async () => {
+    const cardId = 'ru.cyrillic.word.1'
+    const later = '2026-11-14T10:01:00.000Z'
+    const course = catalog.ru
+    const placed = finishPlacement(state, course, Object.fromEntries(course.placement.map(({ exercise }) =>
+      [exercise.id, exercise.kind === 'open' ? exercise.sample :
+        exercise.kind === 'short' || exercise.kind === 'fill' ? exercise.accepted[0] : exercise.accepted])), at)
+    const initial = { ...placed, reviews: [{ cardId, step: 0, introducedAt: at, dueAt: at }] }
+    await repository.create(initial)
+    const draft = await repository.openStudy(state.profile.id, {
+      ...definition, task: { kind: 'review', cardId }, itemIds: [cardId], reason: 'due_review', minutes: 1,
+    }, `${placed.attempts.length}:0:0`, at)
+    const completed = await repository.completeStudy(state.profile.id, draft.id, 0, 9,
+      (current) => finishReview(current, cardId, 'remembered', at))
+    // The old screen called this grading operation directly. Once due again, it accepted the stale form.
+    expect(finishReview(completed, cardId, 'remembered', later).reviewHistory).toHaveLength(2)
+    await expect(repository.completeStudy(state.profile.id, draft.id, 0, 9,
+      (current) => finishReview(current, cardId, 'remembered', later))).rejects.toThrow(/başka bir sekmede/)
+    expect((await repository.read())?.reviewHistory).toHaveLength(1)
+    expect((await repository.read())?.activity).toHaveLength(1)
+  })
+
+  it('keeps the newest saved edit and commits the same work once across two connections', async () => {
+    await repository.create(state)
+    const other = new IndexedLearningRepository(name)
+    try {
+      const [a, b] = await Promise.all([repository, other].map((repo) =>
+        repo.openStudy(state.profile.id, definition, '0:0:0', at)))
+      expect(a.id).toBe(b.id)
+      const next = await repository.saveStudy(state.profile.id, a.id, a.revision, { elapsedSeconds: 8 }, at)
+      await expect(other.saveStudy(state.profile.id, b.id, b.revision, { step: 4 }, at)).rejects.toThrow(/başka bir sekmede/)
+      const payload = Object.fromEntries(catalog.ru.placement.map(({ exercise }) =>
+        [exercise.id, exercise.kind === 'open' ? exercise.sample :
+          exercise.kind === 'short' || exercise.kind === 'fill' ? exercise.accepted[0] : exercise.accepted]))
+      const result = await Promise.allSettled([repository, other].map((repo) =>
+        repo.completeStudy(state.profile.id, a.id, next.studyDrafts![0].revision, 12,
+          (current) => finishPlacement(current, catalog.ru, payload, at))))
+      expect(result.filter(({ status }) => status === 'fulfilled')).toHaveLength(1)
+      expect((await repository.read())?.attempts).toHaveLength(catalog.ru.placement.length)
+      expect((await repository.read())?.studyDrafts).toEqual([])
+      await expect(other.openStudy(state.profile.id, definition, '0:0:0', at)).rejects.toThrow(/planı değişti/)
+    } finally {
+      other.close()
     }
   })
 })

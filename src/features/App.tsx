@@ -1,12 +1,18 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import { useCallback, type ReactNode, lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { catalog } from '../content/catalog'
-import { beginSpeaking, dailyPlan, finishLesson, finishPlacement, finishDiagnostic, finishReview, finishPedagogy, finishTypedReview, importReport, lessonTasks } from '../domain/progress'
+import { beginSpeaking, dailyPlan, finishLesson, finishPlacement, finishDiagnostic, finishReview, finishPedagogy, finishTypedReview, importReport, lessonTasks, isUnlocked } from '../domain/progress'
+import { assessmentItem, beginPlacementTrack, finishMiniPlacement, nextPlacementItem, recordPlacementSample, upcomingPlacement } from '../domain/adaptive-placement'
+import { PlacementView } from './PlacementView'
 import { nextDiagnostic } from '../domain/diagnostic'
+import type { Course } from '../content/schema'
+import { phaseMinutes, studyContentRevision, studyKey, type StudyDefinition, type StudyDraft, type StudyTask } from '../domain/study-session'
+import { StudySession } from './StudySession'
+import type { StudyControls } from './study-session-context'
 import { DiagnosticView } from './DiagnosticView'
 import { phaseTasks, gradeVocabularyRecall, receptionTask } from '../domain/pedagogy'
 import type { ExerciseAttempt, Language, PedagogyPhase } from '../domain/model'
 import { initialState, type LearningState } from '../domain/state'
-import { IndexedLearningRepository, localLearningOrigin, parseBackup, type QuarantineNotice } from '../persistence/repository'
+import { IndexedLearningRepository, localLearningOrigin, parseBackup, studyCursor, type QuarantineNotice } from '../persistence/repository'
 import type { MigrationIssue } from '../persistence/migration'
 import { StorageAccessError, storageIssue as describeStorageIssue, type StorageIssue } from '../persistence/storage-error'
 import { ExerciseForm } from './ExerciseForm'
@@ -15,11 +21,11 @@ import { ProfileForm } from './ProfileForm'
 import { TutorSettings } from './TutorPanel'
 import { Settings } from './Settings'
 import { SpeakingView } from './SpeakingView'
-import { Dashboard, LessonStudy, LessonResults, ReviewCard, SkillProfile } from './StudyViews'
+import { Dashboard, LessonStudy, LessonNotes, LessonResults, ReviewCard, SkillProfile } from './StudyViews'
 
 type Screen =
-  | { type: 'home' | 'skills' | 'settings' | 'diagnostic' }
-  | { type: 'lesson' | 'speaking'; lessonId: string }
+  | { type: 'home' | 'skills' | 'settings' | 'diagnostic' | 'assessment' | 'assessment-paused' }
+  | { type: 'lesson' | 'speaking' | 'explanation'; lessonId: string }
   | { type: 'pedagogy'; phase: PedagogyPhase; lessonId: string }
   | { type: 'pedagogy-results'; phase: PedagogyPhase; lessonId: string; attempts: ExerciseAttempt[]; retryListening?: boolean }
   | { type: 'results'; lessonId: string; attempts: ExerciseAttempt[] }
@@ -31,6 +37,82 @@ const TypedReview = lazy(() => import('./PedagogyView').then((module) => ({ defa
 
 const repository = new IndexedLearningRepository()
 const nowISO = () => new Date().toISOString()
+
+function withStudyBudget(state: LearningState, budget: number) {
+  return state.profile.minutes === budget ? state : { ...state, profile: { ...state.profile, minutes: budget } }
+}
+
+function defineStudy(state: LearningState, course: Course, task: StudyTask, now: string): StudyDefinition | undefined {
+  const lesson = 'lessonId' in task ? course.unit.lessons.find(({ id }) => id === task.lessonId) : undefined
+  if (lesson && !isUnlocked(state, course, lesson)) return
+  let itemIds: string[] = []
+  let minutes = 0
+  let content: unknown
+  let reason: StudyDefinition['reason'] = 'new_learning'
+  if (task.kind === 'placement' && !state.placementAt) {
+    itemIds = course.placement.map(({ exercise }) => exercise.id)
+    content = course.placement
+  }
+  if (task.kind === 'placement') reason = 'new_assessment'
+  if (task.kind === 'assessment') {
+    const item = assessmentItem(task.itemId)
+    if (item && item.route === state.placementTrack?.route && !state.placementTrack.samples.some(({ itemId }) => itemId === item.id)) {
+      itemIds = [item.id]
+      content = item
+      reason = 'new_assessment'
+    }
+  }
+  if (task.kind === 'diagnostic' && state.placementAt) {
+    reason = 'new_assessment'
+    const diagnostic = nextDiagnostic(course, state)
+    if (diagnostic) {
+      itemIds = [diagnostic.exercise.id]
+      content = [diagnostic.exercise, diagnostic.passage, diagnostic.audio]
+    }
+  }
+  if (task.kind === 'lesson' && lesson) {
+    const tasks = lessonTasks(state, lesson)
+    itemIds = tasks.map(({ exercise }) => exercise.id)
+    content = [tasks, lesson.teaching, lesson.pedagogy?.rubric]
+    const writing = tasks.every(({ exercise }) => exercise.kind === 'open')
+    minutes = writing ? 3 : lesson.minutes
+    if (writing) reason = 'new_assessment'
+    else if (state.attempts.some(({ lessonId, context, evidence }) =>
+      lessonId === lesson.id && context === 'lesson' && evidence.outcome === 'incorrect')) reason = 'guided_repair'
+  }
+  if (task.kind === 'pedagogy' && lesson) {
+    const tasks = phaseTasks(state, lesson, task.phase, now)
+    itemIds = tasks.map(({ exercise }) => exercise.id)
+    const reception = task.phase === 'reading' || task.phase === 'listening' ? receptionTask(state, lesson, task.phase) : undefined
+    content = [tasks, reception?.material, lesson.teaching, task.phase === 'vocabulary' ? lesson.vocabulary : undefined]
+    minutes = phaseMinutes[task.phase]
+    reason = task.phase === 'foundation' ? 'prerequisite' : task.phase === 'delayed' ? 'due_review' :
+      task.phase === 'revision' ? 'writing_revision' : task.phase === 'vocabulary' ? 'new_learning' : 'new_assessment'
+  }
+  if (task.kind === 'review' && state.reviews.some(({ cardId, dueAt }) => cardId === task.cardId && dueAt <= now)) {
+    const owner = course.unit.lessons.find(({ vocabulary }) => vocabulary.some(({ id }) => id === task.cardId))
+    const card = owner?.vocabulary.find(({ id }) => id === task.cardId)
+    if (card) {
+      itemIds = [task.cardId]
+      content = [card, owner?.pedagogy?.vocabulary.find(({ cardId }) => cardId === task.cardId)]
+    }
+    minutes = 1
+    reason = 'due_review'
+  }
+  return itemIds.length ? { task, itemIds, minutes, reason, budget: state.profile.minutes, contentVersion: course.version, contentRevision: studyContentRevision(content) } : undefined
+}
+
+function canResume(state: LearningState, course: Course, draft: StudyDraft) {
+  const current = defineStudy(withStudyBudget(state, draft.budget), course, draft.task, draft.openedAt)
+  return Boolean(current && studyKey(current) === studyKey(draft))
+}
+
+function resumeScreen(task: StudyTask): Screen {
+  if (task.kind === 'review') return { type: 'review', cardIds: [task.cardId], index: 0 }
+  if (task.kind === 'lesson' || task.kind === 'pedagogy') return task.kind === 'lesson' ? { type: 'lesson', lessonId: task.lessonId } : { type: 'pedagogy', lessonId: task.lessonId, phase: task.phase }
+  return { type: task.kind === 'diagnostic' || task.kind === 'assessment' ? task.kind : 'home' }
+}
+
 
 export function App() {
   const [state, setState] = useState<LearningState>()
@@ -52,6 +134,16 @@ export function App() {
   }))
   const [now, setNow] = useState(nowISO)
   const inFlight = useRef(false)
+  const studyQueue = useRef(Promise.resolve())
+  const onStoredDraft = useCallback((profileId: string, draft: StudyDraft) => {
+    setState((current) => {
+      if (!current || current.profile.id !== profileId) return current
+      const drafts = current.studyDrafts ?? []
+      const prior = drafts.find(({ id }) => id === draft.id)
+      if (prior && prior.revision >= draft.revision) return current
+      return { ...current, studyDrafts: [...drafts.filter(({ id }) => id !== draft.id), draft] }
+    })
+  }, [])
   const mainRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -93,6 +185,7 @@ export function App() {
     setError('')
     setNotice('')
     try {
+      await studyQueue.current
       const saved = await work()
       if (!saved) { missing?.(); return false }
       setState(saved)
@@ -128,7 +221,45 @@ export function App() {
     }
   }
 
-  const course = state && catalog[state.profile.language]
+  const course = catalog[state?.profile.language ?? 'en']
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const assessment = state && nextPlacementItem(state, now, timeZone)
+  function study(task: StudyTask, render: (session: StudyControls) => ReactNode) {
+    if (!state) return
+    const existing = [...(state.studyDrafts ?? [])].reverse().find((draft) =>
+      JSON.stringify(draft.task) === JSON.stringify(task) && canResume(state, course, draft))
+    const definition = existing ? { task, contentVersion: existing.contentVersion, contentRevision: existing.contentRevision, itemIds: existing.itemIds,
+      minutes: existing.minutes, budget: existing.budget, reason: existing.reason } : defineStudy(state, course, task, now)
+    if (!definition) return <p className="notice">Bu çalışma değişti. Günlük plana dönüp yeni çalışmayı açabilirsin.</p>
+    return <StudySession key={`${state.profile.id}:${studyKey(definition)}`} profileId={state.profile.id}
+      definition={definition} cursor={studyCursor(state)} repository={repository} queue={studyQueue} onStored={onStoredDraft}>
+      {render}
+    </StudySession>
+  }
+
+  function completeStudy(session: StudyControls, change: (current: LearningState) => LearningState,
+    after: (saved: LearningState) => void) {
+    if (!state) return Promise.resolve(false)
+    return save(() => {
+      const draft = session.snapshot()
+      return repository.completeStudy(state.profile.id, draft.id, draft.revision, draft.elapsedSeconds, (current, stored) => {
+        if (!canResume(current, course, stored)) throw new Error('Bu çalışma değişti. Günlük planı yeniden aç.')
+        return { ...change(withStudyBudget(current, stored.budget)), profile: current.profile }
+      })
+    }, after)
+  }
+
+  function placement(item: NonNullable<typeof assessment>, mini: boolean) {
+    return study({ kind: 'assessment', itemId: item.id }, (session) => <PlacementView
+      item={item} language={course.language} busy={busy} mini={mini}
+      submit={(status, answer, audioPlayed, transcript) => completeStudy(session, (current) =>
+        recordPlacementSample(current, item.id, { status, answer, audioPlayed, transcript }, nowISO(), timeZone),
+        (saved) => go(mini && !saved.placementAt ? { type: 'assessment' } : { type: 'skills' }))}
+      leave={() => go({ type: mini ? 'assessment-paused' : 'home' })}
+      startLearning={mini ? () => void update((current) => finishMiniPlacement(current, nowISO()), () => go({ type: 'skills' })) : undefined}
+    />)
+  }
+
   let content
   if (resetting) {
     content = <p role="status">{resetBlocked
@@ -155,7 +286,7 @@ export function App() {
           <span className="specimen-note specimen-note-cyrillic" lang="ru">Кириллица · 33 буквы</span>
         </div></header>
       <section className="surface onboarding-form">
-        <ProfileForm busy={busy} onSave={(profile) => save(() => repository.create(initialState(profile)), () => go({ type: 'home' }))} />
+        <ProfileForm busy={busy} onSave={(profile) => save(() => repository.create(beginPlacementTrack(initialState(profile), nowISO())), () => go({ type: 'home' }))} />
         <details><summary>Önceden kaydedilmiş bir yedeğin var mı?</summary>
           <SettingsRestore busy={busy} restore={(candidate) => save(() => repository.restore(candidate, undefined), () => go({ type: 'home' }))} />
         </details>
@@ -165,24 +296,34 @@ export function App() {
     content = <section className="surface">
       <h1>{languageLabels[newLanguage]} çalışma planını kur</h1>
       <ProfileForm key={newLanguage} fixedLanguage={newLanguage} busy={busy} onSave={(profile) =>
-        save(() => repository.switchLanguage(state.profile.id, newLanguage, initialState(profile)), () => go({ type: 'home' }))} />
+        save(() => repository.switchLanguage(state.profile.id, newLanguage, beginPlacementTrack(initialState(profile), nowISO())), () => go({ type: 'home' }))} />
       <button className="secondary" disabled={busy} onClick={() => go({ type: 'home' })}>Vazgeç</button>
     </section>
+  } else if (state.placementTrack && !state.placementAt && screen.type !== 'settings') {
+    content = screen.type === 'assessment-paused' || !assessment
+      ? <section className="surface section"><h1>Başlangıç taraması</h1>
+        <p>Yerel kaydın saklandı. Tarama hazır olduğunda devam edebilir veya ilk dersi açabilirsin.</p>
+        {assessment && <button className="primary" onClick={() => go({ type: 'assessment' })}>Devam et</button>}
+        <button className="secondary" disabled={busy}
+          onClick={() => void update((current) => finishMiniPlacement(current, nowISO()), () => go({ type: 'skills' }))}>Öğretime geç</button>
+      </section> : placement(assessment, true)
   } else if (!state.placementAt && screen.type !== 'settings') {
     content = <>
       <header className="page-heading"><div><p className="eyebrow">{languageLabels[course.language]} · {course.placement.length} soru</p>
         <h1>Başlangıç taraması</h1><p>Elinden geldiğince yanıtla. Sonuçlar çalışma planın için ilk ipuçlarını verir.</p></div></header>
-      <ExerciseForm key={course.id} placement language={course.language} busy={busy}
+      {study({ kind: 'placement' }, (session) => <ExerciseForm key={course.id} placement language={course.language} busy={busy}
         tasks={course.placement.map(({ exercise, objectiveId }) => ({ exercise, conceptId: objectiveId, label: skillLabels[exercise.skill] }))}
-        onSubmit={(answers) => update((current) => finishPlacement(current, course, answers, nowISO()), () => go({ type: 'skills' }))} />
+        onSubmit={(answers) => completeStudy(session, (current) => finishPlacement(current, course, answers, nowISO()), () => go({ type: 'skills' }))} />)}
     </>
   } else {
-    const plan = dailyPlan(state, course, now, Intl.DateTimeFormat().resolvedOptions().timeZone)
+    const plan = dailyPlan(state, course, now, timeZone)
     const lesson = 'lessonId' in screen ? course.unit.lessons.find(({ id }) => id === screen.lessonId) : undefined
     const speakingSession = lesson && state.speakingSessions.find(({ lessonId }) => lessonId === lesson.id)
 
-    function start() {
-      if (plan.kind === 'review') go({ type: 'review', cardIds: plan.cardIds, index: 0 })
+    function start(selectedPlan = plan) {
+      const plan = selectedPlan
+      if (plan.kind === 'assessment_gap') go({ type: 'explanation', lessonId: plan.lessonId })
+      else if (plan.kind === 'review') go({ type: 'review', cardIds: plan.cardIds, index: 0 })
       else if (plan.kind === 'pedagogy') go({ type: 'pedagogy', phase: plan.phase, lessonId: plan.lessonId })
       else if (plan.kind === 'lesson' || plan.kind === 'practice') go({ type: 'lesson', lessonId: plan.lessonId })
       else if (plan.kind === 'speaking') {
@@ -191,12 +332,23 @@ export function App() {
       }
     }
 
-    const diagnostic = nextDiagnostic(course, state)
-    if (screen.type === 'diagnostic' && diagnostic) content = <DiagnosticView key={diagnostic.exercise.id}
+    const diagnostic = state.placementTrack?.origin === 'new' ? undefined : nextDiagnostic(course, state)
+    const upcoming = state.placementTrack && upcomingPlacement(state, now, timeZone)
+    const assessmentAction = assessment
+      ? <section className="surface section"><p>Sıradaki ek örnek · {skillLabels[assessment.skill]} · {assessment.focus}</p>
+        <button className="secondary" onClick={() => go({ type: 'assessment' })}>Ek değerlendirmeyi aç</button></section>
+      : upcoming ? <p className="notice">Sonraki uygun çalışma gününde {skillLabels[upcoming.item.skill].toLocaleLowerCase('tr')} için farklı bir örnek açılacak.</p>
+      : !state.placementTrack ? <button className="link-button" disabled={busy}
+        onClick={() => void update((current) => beginPlacementTrack(current, nowISO()), () => go({ type: 'assessment' }))}>
+        İsteğe bağlı ek değerlendirmeyi başlat
+      </button> : null
+    if (screen.type === 'assessment' && assessment) content = placement(assessment, false)
+    else if (screen.type === 'diagnostic' && diagnostic) content = study({ kind: 'diagnostic' }, (session) => <DiagnosticView key={diagnostic.exercise.id}
       state={state} course={course} busy={busy} back={() => go({ type: 'home' })}
-      submit={(id, answer, played) => update((current) => finishDiagnostic(current, course, id, answer, nowISO(), played),
-        (saved) => go({ type: nextDiagnostic(course, saved) ? 'diagnostic' : 'skills' }))} />
+      submit={(id, answer, played) => completeStudy(session, (current) => finishDiagnostic(current, course, id, answer, nowISO(), played),
+        (saved) => go({ type: nextDiagnostic(course, saved) ? 'diagnostic' : 'skills' }))} />)
     else if (screen.type === 'skills') content = <><SkillProfile state={state} course={course} plan={plan} now={now} />
+      {assessmentAction}
       {diagnostic && <button className="secondary" onClick={() => go({ type: 'diagnostic' })}>Tanılamaya devam et</button>}
       <button className="primary" onClick={() => go({ type: 'home' })}>Günlük planı aç <span aria-hidden>→</span></button></>
     else if (screen.type === 'settings') content = <Settings key={state.profile.id} state={state} busy={busy} notice={setNotice}
@@ -205,26 +357,34 @@ export function App() {
         go({ type: 'home' })
         setNotice('Yedek geri yüklendi.')
       })} />
+    else if (screen.type === 'explanation' && lesson) content = <>
+      <header className="page-heading"><div><h1>{lesson.title}</h1>
+        <p>Önceki örnekleri gözden geçir. Yeni değerlendirme örneği bekleniyor; bu gözden geçirme puanlanmaz.</p></div></header>
+      <LessonNotes lesson={lesson} state={state} />
+      <button className="primary" onClick={() => go({ type: 'home' })}>Günlük plana dön</button>
+    </>
     else if (screen.type === 'lesson' && lesson) {
       const tasks = lessonTasks(state, lesson)
-      content = <>
+      content = study({ kind: 'lesson', lessonId: lesson.id }, (session) => <>
         <header className="page-heading"><div><p className="eyebrow">{languageLabels[course.language]} · {lesson.objective.level}</p>
           <h1>{lesson.title}</h1><p>{lesson.objective.description}</p></div></header>
         <LessonStudy key={tasks.map(({ exercise }) => exercise.id).join('|')} tasks={tasks}
           lesson={lesson} state={state} busy={busy}
-          onSubmit={(answers) => update((current) => finishLesson(current, course, lesson, answers, nowISO()),
+          onSubmit={(answers) => completeStudy(session, (current) => finishLesson(current, course, lesson, answers, nowISO()),
             (saved) => go({ type: 'results', lessonId: lesson.id, attempts: saved.attempts.slice(-tasks.length) }))} />
-      </>
+      </>)
     } else if (screen.type === 'results' && lesson) content = <LessonResults lesson={lesson} state={state}
       attempts={screen.attempts} onContinue={() => go({ type: 'home' })} />
     else if (screen.type === 'pedagogy' && lesson && lesson.pedagogy) {
-      const tasks = phaseTasks(state, lesson, screen.phase, now)
-      content = <PedagogyView course={course} key={`${lesson.id}:${screen.phase}`} lesson={lesson} phase={screen.phase} tasks={tasks} state={state}
-        busy={busy} submit={(answers, listening) => update((current) =>
-          finishPedagogy(current, course, lesson, screen.phase, answers, nowISO(), listening),
-          (saved) => go({ type: 'pedagogy-results', phase: screen.phase, lessonId: lesson.id,
-            retryListening: screen.phase === 'listening' && Boolean(receptionTask(state, lesson, 'listening')?.previous.length),
-            attempts: listening === 'unavailable' ? [] : saved.attempts.slice(-tasks.length) }))} />
+      content = study({ kind: 'pedagogy', lessonId: lesson.id, phase: screen.phase }, (session) => {
+        const tasks = phaseTasks(withStudyBudget(state, session.draft.budget), lesson, screen.phase, session.draft.openedAt)
+        return <PedagogyView course={course} lesson={lesson} phase={screen.phase} tasks={tasks} state={state}
+          busy={busy} submit={(answers, listening) => completeStudy(session, (current) =>
+            finishPedagogy(current, course, lesson, screen.phase, answers, nowISO(), listening, session.draft.openedAt),
+            (saved) => go({ type: 'pedagogy-results', phase: screen.phase, lessonId: lesson.id,
+              retryListening: screen.phase === 'listening' && Boolean(receptionTask(state, lesson, 'listening')?.previous.length),
+              attempts: listening === 'unavailable' ? [] : saved.attempts.slice(-tasks.length) }))} />
+      })
     } else if (screen.type === 'pedagogy-results' && lesson && lesson.pedagogy) {
       content = <PedagogyResults lesson={lesson} phase={screen.phase} state={state} attempts={screen.attempts} retryListening={screen.retryListening} onContinue={() => go({ type: 'home' })} />
     } else if (screen.type === 'review') {
@@ -235,14 +395,14 @@ export function App() {
           if (screen.index + 1 < screen.cardIds.length) go({ ...screen, index: screen.index + 1 })
           else { go({ type: 'home' }); setNotice('Kelime tekrarları kaydedildi.') }
         }
-        content = <>
+        content = study({ kind: 'review', cardId: card.id }, (session) => <>
           <header className="page-heading"><div><h1>Kelime tekrarı</h1><p>Kart {screen.index + 1} / {screen.cardIds.length}</p></div></header>
           {learning ? <TypedReview key={card.id} card={card} learning={learning} busy={busy}
             grade={(answer) => gradeVocabularyRecall(learning.recall, answer, course.language)}
-            onRate={(answer) => update((current) => finishTypedReview(current, course, card.id, answer, nowISO()), afterReview)} />
+            onRate={(answer) => completeStudy(session, (current) => finishTypedReview(current, course, card.id, answer, nowISO()), afterReview)} />
             : <ReviewCard key={card.id} card={card} index={screen.index} total={screen.cardIds.length} busy={busy}
-              onRate={async (result) => { await update((current) => finishReview(current, card.id, result, nowISO()), afterReview) }} />}
-        </>
+              onRate={async (result) => { await completeStudy(session, (current) => finishReview(current, card.id, result, nowISO()), afterReview) }} />}
+        </>)
       }
     } else if (screen.type === 'speaking' && lesson && speakingSession) {
       content = <SpeakingView key={speakingSession.id} lesson={lesson} session={speakingSession} state={state} plan={plan} busy={busy}
@@ -254,8 +414,22 @@ export function App() {
     } else {
       const pending = state.speakingSessions.find((session) =>
         !state.speakingAssessments.some(({ report }) => report.sessionId === session.id))
+      const savedDrafts = [...(state.studyDrafts ?? [])].reverse()
+      const resume = savedDrafts.find((draft) => canResume(state, course, draft) &&
+        (draft.task.kind !== 'assessment' || draft.task.itemId === assessment?.id))
+      const resumeLessonId = resume && 'lessonId' in resume.task ? resume.task.lessonId : undefined
       content = <>
-        <Dashboard state={state} course={course} plan={plan} start={start} now={now} />
+        {resume && <section className="surface section">
+          <h2>Yarım kalan çalışma</h2>
+          <p>{resumeLessonId ? course.unit.lessons.find(({ id }) => id === resumeLessonId)?.title :
+            resume.task.kind === 'review' ? 'Kelime tekrarı' : 'Başlangıç tanılaması'}
+            {resume.minutes > 0 && ` · Yaklaşık ${resume.minutes} dk`}</p>
+          <p>Kaydedilen adım, taslak ve açtığın desteklerle devam et.</p>
+          <button className="primary" onClick={() => go(resumeScreen(resume.task))}>Devam et</button>
+        </section>}
+        {!resume && savedDrafts.some((draft) => !canResume(state, course, draft)) && <p className="notice">Bir taslağın içeriği veya öğretim ön koşulu değişti. Taslak yerel kayıtta ve yedekte korundu; gerekli öğretimden sonra yeniden değerlendirilecek.</p>}
+        <Dashboard state={state} course={course} plan={plan} start={() => start()} choose={start} now={now} />
+        {assessmentAction}
         {diagnostic && <button className="link-button" onClick={() => go({ type: 'diagnostic' })}>Tanılamaya devam et</button>}
         {state.speakingAssessments.length > 0 && <details className="section">
           <summary>Kaydedilen konuşma raporları</summary>

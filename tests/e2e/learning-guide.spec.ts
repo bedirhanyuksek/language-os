@@ -1,23 +1,16 @@
+import { teachVocabulary } from './teaching'
 import { expect, test } from '@playwright/test'
 import { catalog } from './catalog-fixture'
+import { restoreLegacy } from './legacy-profile'
 
 test('strong recognition and production change the first recommendation on screen', async ({ page }) => {
   await page.clock.setFixedTime(new Date('2026-11-13T10:00:00Z'))
   await page.goto('/')
-  await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
+  await restoreLegacy(page, catalog.en)
   const field = (id: string) => page.locator(`fieldset[id="${id}"]`)
-  await field('en.placement.1').getByRole('radio', { name: 'led', exact: true }).check()
-  await field('en.placement.2').getByRole('textbox').fill('had already sent')
-  await field('en.placement.3').getByRole('radio', { name: 'a handover', exact: true }).check()
-  await field('en.placement.4').getByRole('radio', { name: 'On Thursday', exact: true }).check()
-  await field('en.placement.5').getByRole('textbox').fill('I have trained volunteers. I trained two people last May.')
-  await field('en.diagnostic.1').getByRole('radio', { name: 'I have led several sessions.', exact: true }).check()
-  await field('en.diagnostic.2').getByRole('textbox').fill('have led')
-  await field('en.diagnostic.3').getByRole('textbox').fill('joined')
-  await page.getByRole('button', { name: 'Beceri profilimi gör' }).click()
-  await page.getByRole('button', { name: 'Günlük planı aç' }).click()
   await expect(page.getByText('Neden bu çalışma?')).toBeVisible()
-  await expect(page.getByText(/hem tanıma hem üretim kanıtın var/)).toBeVisible()
+  await expect(page.getByText(/Kendi mesajından önce gerekli ifadeleri/).first()).toBeVisible()
+  await teachVocabulary(page, catalog.en, catalog.en.unit.lessons[0])
   await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
   await expect(page.getByRole('heading', { name: 'Yeni bağlamda üretim' })).toBeVisible()
   await field('en.experience.overview.transfer.1').getByRole('textbox').fill('has led')
@@ -40,13 +33,13 @@ test('switching languages preserves independent screening and settings after rel
   await page.getByLabel('Hedef seviyen').selectOption('B1')
   await page.getByLabel('Günlük süre (dk)').fill('60')
   await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
-  await expect(page.locator('fieldset[id="ru.placement.1"]')).toBeVisible()
+  await expect(page.locator('fieldset[id="ru.assess.a1.r1"]')).toBeVisible()
   await page.reload()
   await expect(page.getByLabel('Çalışma dili')).toHaveValue('ru')
   await page.getByRole('button', { name: 'Ayarlar' }).click()
   await expect(page.getByLabel('Günlük süre (dk)')).toHaveValue('60')
   await page.getByLabel('Çalışma dili').selectOption('en')
-  await expect(page.locator('fieldset[id="en.placement.1"]')).toBeVisible()
+  await expect(page.locator('fieldset[id="en.assess.b1.g1"]')).toBeVisible()
   await page.getByRole('button', { name: 'Ayarlar' }).click()
   await expect(page.getByLabel('Günlük süre (dk)')).toHaveValue('15')
   await expect(page.getByLabel('Hedef seviyen')).toHaveValue('C1')
@@ -55,17 +48,7 @@ test('switching languages preserves independent screening and settings after rel
 test('English A1 target opens the new beginner sequence and shows the selective C2 scope', async ({ page }) => {
   const course = catalog.en
   await page.goto('/')
-  await page.getByLabel('Hedef seviyen').selectOption('A1')
-  await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
-  for (const { exercise } of course.placement) {
-    const field = page.locator(`fieldset[id="${exercise.id}"]`)
-    if (exercise.kind === 'single') await field.getByRole('radio', { name: exercise.accepted, exact: true }).check()
-    else if (exercise.kind === 'fill' || exercise.kind === 'short') await field.getByRole('textbox').fill(exercise.accepted[0])
-    else if (exercise.kind === 'open') await field.getByRole('textbox').fill(exercise.sample)
-    else throw new Error(`Unexpected placement exercise ${exercise.id}`)
-  }
-  await page.getByRole('button', { name: 'Beceri profilimi gör' }).click()
-  await page.getByRole('button', { name: 'Günlük planı aç' }).click()
+  await restoreLegacy(page, course, { target: 'A1' })
   await expect(page.getByRole('heading', { name: 'İlk karşılaşmada kendini tanıt' })).toBeVisible()
   await page.getByText('A1–C2 kapsamı', { exact: true }).click()
   await expect(page.getByText('C2', { exact: true }).locator('..')).toContainText('4 yayımlanan ders · Seçili kazanımlar')

@@ -1,5 +1,7 @@
+import { teachVocabulary } from './teaching'
 import { expect, test, type Page } from '@playwright/test'
 import { catalog } from './catalog-fixture'
+import { restoreLegacy } from './legacy-profile'
 
 const course = catalog.en
 const lesson = course.unit.lessons[0]
@@ -10,18 +12,7 @@ const feedback = { task: 'feedback', grammar: 'Simple Past burada doğru.', voca
 
 async function startLesson(page: Page) {
   await page.goto('/')
-  await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
-  for (const { exercise } of course.placement) {
-    const group = page.locator(`fieldset[id="${exercise.id}"]`)
-    if (exercise.kind === 'open') await group.getByRole('textbox').fill(exercise.sample)
-    else if (exercise.kind === 'single') {
-      const option = exercise.id === 'en.placement.1' ? 'have led' : exercise.accepted
-      await group.getByRole('radio', { name: option, exact: true }).check()
-    } else if (exercise.kind === 'fill' || exercise.kind === 'short') await group.getByRole('textbox').fill(exercise.accepted[0])
-    else throw new Error('Unexpected placement exercise type')
-  }
-  await page.getByRole('button', { name: 'Beceri profilimi gör' }).click()
-  await page.getByRole('button', { name: 'Günlük planı aç' }).click()
+  await restoreLegacy(page, course, {}, { 'en.placement.1': 'have led' })
   await page.getByRole('button', { name: 'Derse başla' }).click()
 }
 
@@ -73,6 +64,7 @@ test('coaching follows the explanation and saved draft, with approval per reques
   await expect(page.getByText('2 / 2 kesin yanıt doğru')).toBeVisible()
   expect(requests).toHaveLength(1)
   await page.getByRole('button', { name: 'Günlük plana dön' }).click()
+  await teachVocabulary(page, course, lesson)
   await page.getByRole('button', { name: 'Pratiğe başla' }).click()
   await submitLesson(page, [lesson.production])
   await page.getByRole('button', { name: 'Yanıtım hakkında geri bildirim al' }).click()
@@ -124,6 +116,10 @@ for (const failure of ['quota', 'invalid', 'practice'] as const) {
       await expect(page.getByText('Tarih vermeden bir deneyimi anlat.')).toBeVisible()
     } else await expect(page.getByRole('alert')).toContainText(failure === 'quota' ? 'Kullanım sınırına' : 'doğrulanamadı')
     await page.getByRole('button', { name: 'Günlük plana dön' }).click()
-    await expect(page.getByRole('button', { name: 'Pratiğe başla' })).toBeVisible()
+    await expect(page.getByRole('heading', { name: 'Yeni değerlendirme örneği gerekli' })).toBeVisible()
+    await page.getByRole('button', { name: 'Açıklamayı yeniden aç' }).click()
+    await expect(page.getByText(/bu gözden geçirme puanlanmaz/)).toBeVisible()
+    await expect(page.locator('form.exercise-form')).toHaveCount(0)
+    expect(requests).toBe(1)
   })
 }

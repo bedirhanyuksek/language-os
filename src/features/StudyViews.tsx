@@ -1,6 +1,10 @@
+import { skillProfile } from '../domain/skill-profile'
+import { activityLabel, dailyProgram } from '../domain/daily-program'
+import { productionRequirements } from '../domain/instruction'
+import { placementSkills } from '../domain/adaptive-placement'
+import { useStudySession } from './study-session-context'
 import { coachingForAnswer } from '../domain/lesson-coaching'
 import { InlineCoaching, LessonHelp } from './TutorPanel'
-import { useState } from 'react'
 import type { Course, Lesson, VocabularyItem } from '../content/schema'
 import { curriculumCoverage } from '../content/curriculum/coverage'
 import { modelRecording } from '../content/teaching'
@@ -37,14 +41,15 @@ export function Curriculum({ course, state }: { course: Course; state: LearningS
   </div>
 }
 
-export function Dashboard({ state, course, plan, start, now }: {
-  state: LearningState; course: Course; plan: StudyPlan; start: () => void; now: string
+export function Dashboard({ state, course, plan, start, choose, now }: {
+  state: LearningState; course: Course; plan: StudyPlan; start: () => void; choose: (task: StudyPlan) => void; now: string
 }) {
   const lesson = 'lessonId' in plan ? course.unit.lessons.find(({ id }) => id === plan.lessonId) : undefined
   const headline = plan.kind === 'pedagogy' ? phaseLabels[plan.phase] : {
     lesson: lesson?.title, practice: 'Hedefli pratik', speaking: 'Sesli pratik',
-    review: 'Kelime tekrarı', out_of_scope: 'Hedef seviyende ders yok', rest: 'Dinlenme günü', budget: 'Bugünkü çalışma tamamlandı', complete: 'Başlangıç ünitesi tamamlandı',
+    review: 'Kelime tekrarı', out_of_scope: 'Hedef seviyende ders yok', rest: 'Dinlenme günü', budget: 'Bugünkü çalışma tamamlandı', complete: 'Başlangıç ünitesi tamamlandı', assessment_gap: 'Yeni değerlendirme örneği gerekli',
   }[plan.kind]
+  const program = dailyProgram(state, course, now, Intl.DateTimeFormat().resolvedOptions().timeZone)
   const action = { lesson: 'Derse başla', practice: 'Pratiğe başla', speaking: 'Konuşmayı hazırla', review: 'Kelimeleri tekrar et' }
   const date = new Intl.DateTimeFormat('tr-TR', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date())
   const used = dailyMinutes(state, now, Intl.DateTimeFormat().resolvedOptions().timeZone)
@@ -58,8 +63,25 @@ export function Dashboard({ state, course, plan, start, now }: {
         <p className="plan-reason">{'minutes' in plan && <strong>Neden bu çalışma? </strong>}{plan.reason}</p>
         <p className="plan-budget">Bugün {used} dk çalıştın · {Math.max(0, state.profile.minutes - used)} dk kaldı · Hedef {state.profile.target}</p>
         {'minutes' in plan && <button className="light-button" onClick={start}>{plan.kind === 'pedagogy' ? 'Çalışmayı aç' : action[plan.kind]} <span aria-hidden>↗</span></button>}
+        {plan.kind === 'assessment_gap' && <button className="light-button" onClick={start}>Açıklamayı yeniden aç</button>}
       </div>
       <div className="cover-type" aria-hidden="true" lang={course.language}>{course.language === 'en' ? 'Aa' : 'Яя'}</div>
+    </section>
+    <section className="surface section" aria-label="Günlük çalışma sırası">
+      <h2>Bugünkü çalışma sırası</h2>
+      <ol>{program.sequence.filter((item) => 'minutes' in item).map((item, index) => <li key={index}>
+        <strong>{activityLabel(item)}</strong>{'minutes' in item && ` · ${item.minutes} dk`}
+        {index > 0 && <p>{item.reason}</p>}
+      </li>)}{program.conditional.map((block) => <li key={block.label}>
+        <strong>{block.label}</strong> · {block.minutes} dk · Yanıtına bağlı
+        <p>{block.dependency}</p>
+      </li>)}</ol>
+      <p>Sıra ve koşullu adımlar için ayrılan {program.scheduled} dk · Kalan bütçe {program.remaining} dk</p>
+      <p>Sıradaki adım · {program.next}</p>
+      <p>Her yanıttan sonra kalan sıra güncellenir. Henüz açılmayan adım yanıtına bağlıdır.</p>
+      {program.due > 0 && <p>Vadesi gelen {program.due} kart · Bugün sırada bekleyen {program.deferred} kart. Bekleyen kartların vadesi korunur.</p>}
+      {program.alternatives.map((alternative, index) => <button className="secondary" key={index}
+        onClick={() => choose(alternative)}>{activityLabel(alternative)} ile devam et</button>)}
     </section>
     <section className="section">
       <div className="section-heading"><div><p className="eyebrow">Yayımlanan dersler</p><h2>{course.unit.title}</h2></div></div>
@@ -85,7 +107,8 @@ export function LessonStudy({ lesson, state, tasks, busy, onSubmit }: {
   const repairs = lesson.pedagogy?.checks.filter(({ conceptId }) => tasks.some((task) => task.conceptId === conceptId) &&
     state.attempts.filter((attempt) => attempt.lessonId === lesson.id && attempt.conceptId === conceptId &&
       attempt.context === 'lesson').at(-1)?.evidence.outcome === 'incorrect') ?? []
-  const [step, setStep] = useState(0)
+  const session = useStudySession()
+  const { step, supports } = session.draft
   const guided = !teaching || repairs.length > 0 || step >= teaching.models.length
   const language = state.profile.language
   const model = teaching?.models[step]
@@ -98,8 +121,8 @@ export function LessonStudy({ lesson, state, tasks, busy, onSubmit }: {
       <AudioPlayer key={step} audio={modelRecording(lesson.id, step, language)}
         text={model.phrase} label="Cümleyi dinle" />
       <div className="button-row">
-        {step > 0 && <button className="secondary" onClick={() => setStep(step - 1)}>Önceki örnek</button>}
-        <button className="primary" onClick={() => setStep(step + 1)}>
+        {step > 0 && <button className="secondary" onClick={() => session.change({ step: step - 1 })}>Önceki örnek</button>}
+        <button className="primary" onClick={() => session.change({ step: step + 1, supports: { instruction: true } })}>
           {step === teaching.models.length - 1 ? 'Rehberli pratiğe geç' : 'Sonraki örnek'}
         </button>
       </div>
@@ -112,14 +135,21 @@ export function LessonStudy({ lesson, state, tasks, busy, onSubmit }: {
         <h3>{check.misconception}</h3>
         <p lang={language}><s>{check.incorrectExample}</s> → {check.correctExample}</p><p>{check.correction}</p>
       </section>)}
-      {writing && <><h3>Kullanabileceğin ifadeler</h3><ul>{teaching.vocabulary.map(({ cardId, usage }) =>
-        <li key={cardId}>{usage}</li>)}</ul></>}
-      {!writing && !repairs.length && <button className="secondary" onClick={() => setStep(0)}>Örneklere dön</button>}
+      {writing && <><p>Önceki kontrollü pratik tamamlandı. Bu yeni metin inceleme bekleyecek.</p><details open={supports.vocabulary ?? false} onToggle={(event) => {
+        if (event.currentTarget.open !== Boolean(supports.vocabulary)) session.change({ supports: { vocabulary: event.currentTarget.open } })
+      }}><summary>Kullanabileceğin ifadeler</summary><ul>{teaching.vocabulary.map(({ cardId, usage }) =>
+        <li key={cardId}>{usage}</li>)}</ul></details></>}
+      {writing && <p>{productionRequirements(state, lesson).vocabulary.filter(({ recalled }) => !recalled).length > 0
+        ? 'Bazı ifadelerin yardımsız hatırlanması henüz doğrulanmadı. İfadelerden yararlanırsan bunu destek kullanımı olarak kaydet.'
+        : 'İfadeleri kontrollü olarak hatırladın. Yeni metindeki kullanımın ayrıca incelenecek.'}</p>}
+      {!writing && !repairs.length && <button className="secondary" onClick={() => session.change({ step: 0 })}>Örneklere dön</button>}
       <LessonHelp state={state} lesson={lesson} />
     </article>}
     {!teaching && !writing && <LessonNotes lesson={lesson} state={state} />}
     {(writing || guided) && <section className="section"><h2>{writing ? 'Kendi mesajını yaz' : 'Rehberli pratik'}</h2>
-      {writing && lesson.pedagogy && <details><summary>Yazını kontrol etmek için ölçütler</summary>
+      {writing && lesson.pedagogy && <details open={supports.rubric ?? false} onToggle={(event) => {
+        if (event.currentTarget.open !== (supports.rubric ?? false)) session.change({ supports: { rubric: event.currentTarget.open } })
+      }}><summary>Yazını kontrol etmek için ölçütler</summary>
         <ul>{lesson.pedagogy.rubric.map(({ criterion }) => <li key={criterion}>{criterion}</li>)}</ul>
       </details>}
       <ExerciseForm tasks={tasks} language={language} busy={busy} onSubmit={onSubmit} />
@@ -127,7 +157,7 @@ export function LessonStudy({ lesson, state, tasks, busy, onSubmit }: {
   </>
 }
 
-function LessonNotes({ lesson, state }: { lesson: Lesson; state: LearningState }) {
+export function LessonNotes({ lesson, state }: { lesson: Lesson; state: LearningState }) {
   return <article className="surface notes">
     <h2>Önce hatırla</h2><p>{lesson.recall}</p>
     <h2>Kural ve kullanım</h2>
@@ -180,11 +210,12 @@ export function ReviewCard({ card, index, total, busy, onRate }: {
   card: VocabularyItem; index: number; total: number; busy: boolean
   onRate: (result: 'again' | 'remembered') => Promise<void>
 }) {
-  const [revealed, setRevealed] = useState(false)
+  const { draft, change } = useStudySession()
+  const revealed = draft.supports.revealed
   return <article className="surface review-card">
     <p className="eyebrow">Kart {index + 1} / {total} · {card.partOfSpeech}</p>
     <h2>{card.term}</h2>
-    {!revealed ? <button className="primary" onClick={() => setRevealed(true)}>Anlamı göster</button> : <>
+    {!revealed ? <button className="primary" onClick={() => change({ supports: { revealed: true } })}>Anlamı göster</button> : <>
       <p className="meaning">{card.meaning}</p>
       <blockquote>{card.example}</blockquote>
       <p>{card.context} · {card.grammar}</p>
@@ -213,12 +244,39 @@ export function SkillProfile({ state, course, plan, now }: { state: LearningStat
       {due.length > 0 && <p>Tekrar bekleyen ifadeler: {course.unit.lessons.flatMap(({ vocabulary }) => vocabulary)
         .filter(({ id }) => due.includes(id)).map(({ term }) => term).join(', ')}</p>}
     </section>
-    <div className="skill-grid">{mapPlacement(state.attempts).map((item) => <article className="surface skill-card" key={item.skill}>
+    <section className="section"><h2>Becerilerdeki son çalışmalar</h2><div className="skill-grid">{skillProfile(state, course, now).map((summary) => <article className="surface skill-card" key={summary.skill}>
+      <h3>{skillLabels[summary.skill]}</h3>
+      {!summary.measured && <p>Henüz ölçülmedi</p>}
+      {summary.instruction.length > 0 && <p>Öğretim örneğiyle çalışıldı · {summary.instruction.at(-1)}. Bağımsız kullanım ayrıca kontrol edilir.</p>}
+      {summary.latest.map((row) => <p key={row.id}><strong>{row.label}</strong><br />{row.stage} · {row.result} · {row.help}</p>)}
+      <p>Sıradaki ihtiyaç · {summary.next}</p>
+      {summary.comparison ? <p>Son haftanın karşılaştırılabilir örnekleri · {summary.comparison.first.result} → {summary.comparison.latest.result}. Yeni bağlam ve yardım koşulları eşleşiyor.</p>
+        : <p>Haftalık karşılaştırma için eşleşen iki örnek henüz yok.</p>}
+    </article>)}</div></section>
+    <details className="section"><summary>Başlangıç kanıtlarının ayrıntısı</summary>
+    {state.placementTrack && <section className="section">
+      <h2>Beceriye göre başlangıç kanıtı</h2>
+      <p>Ek örnekler çalışma takvimine yayılır. Günlük ders planını açabilirsin.</p>
+      <div className="skill-grid">{placementSkills(state).map(({ skill, rows, pending }) => <article className="surface skill-card" key={skill}>
+        <h3>{skillLabels[skill]}</h3>
+        {!rows.some(({ sample }) => sample.status === 'answered') && <p>Ölçülmedi</p>}
+        <ul>{rows.map(({ item, sample }) => <li key={item.id}>
+          {item.focus} · {{ answered: sample.result === 'review_required' ? 'İnceleme bekliyor' :
+            sample.result === 'correct' ? 'Doğru örnek' : 'Destek gerekiyor', unavailable: 'Ses erişilemedi',
+            unknown: 'Bilmiyorum', skipped: 'Ertelendi', practiced: 'Puanlanmayan prova' }[sample.status]}
+          {sample.mode === 'transcript' && ' · Metin yardımıyla'}
+          {sample.mode === 'audio' && ' · Sentetik ses örneği'}
+          {sample.timing === 'after_teaching' && ' · Öğretim sonrası örnek'}
+        </li>)}</ul>
+        {pending && <p>Uygun çalışma gününde ek örnek alınabilir.</p>}
+      </article>)}</div>
+    </section>}
+    {state.placementTrack?.origin !== 'new' && <div className="skill-grid">{mapPlacement(state.attempts).map((item) => <article className="surface skill-card" key={item.skill}>
       <h2>{skillLabels[item.skill]}</h2><p>{
         item.status === 'sampled' ? `${item.correct} / ${item.total} doğru · Düşük güven` :
           item.status === 'review_required' ? 'Yazılı örnek inceleme bekliyor' : 'Ölçülmedi'
       }</p>
-    </article>)}</div>
+    </article>)}</div>}
     {course.placement.filter(({ exercise }) => exercise.kind === 'open').map(({ exercise }) => {
       if (exercise.kind !== 'open') return null
       const answer = state.attempts.find(({ exerciseId }) => exerciseId === exercise.id)?.answer
@@ -228,8 +286,8 @@ export function SkillProfile({ state, course, plan, now }: { state: LearningStat
         <p className="expected"><strong>Örnek yanıt</strong> {exercise.sample}</p><p>{exercise.explanation}</p>
       </article>
     })}
-    <section className="section">
-      <h2>Uygulamada toplanan kanıtlar</h2>
+    </details>
+    <details className="section"><summary>Uygulamada toplanan kanıtların ayrıntısı</summary>
       <div className="skill-grid">
         <article className="surface skill-card"><h3>Yazma</h3><p>{writing.length
           ? `${writing.length} inceleme bekleyen yazı · ${writing.filter(({ context }) => context === 'revision').length} revizyon`
@@ -256,10 +314,9 @@ export function SkillProfile({ state, course, plan, now }: { state: LearningStat
           {' '}{result === 'remembered' ? 'Hatırlandı' : 'Tekrar gerekiyor'} · {mode === 'typed' ? 'Yazılı hatırlama' : 'Öz bildirim'}
         </li>)}
       </ul></details>}
-    </section>
-    <section className="section">
-      <h2>Derslerde toplanan kanıtlar</h2>
-      <div className="curriculum">{course.unit.lessons.map((lesson) => {
+    </details>
+    <details className="section"><summary>Derslerde toplanan kanıtlar</summary>
+      <div className="curriculum">{course.unit.lessons.filter((lesson) => state.attempts.some(({ lessonId }) => lessonId === lesson.id)).map((lesson) => {
         const { observations } = masteryFor(state, lesson)
         const attempts = state.attempts.filter((item) => item.lessonId === lesson.id && item.context !== 'diagnostic')
         const comparison = lesson.pedagogy?.checks.flatMap(({ conceptId, transfer, delayed }) => {
@@ -283,7 +340,8 @@ export function SkillProfile({ state, course, plan, now }: { state: LearningStat
               if (!latest) return null
               return <small key={id}>{label} · {latest.evidence.outcome === 'incorrect' ? 'Destek gerekiyor' :
                 latest.context === 'delayed' ? 'Gecikmeli doğru kullanım' :
-                  latest.context === 'transfer' ? 'Yeni bağlamda doğru kullanım' : 'Rehberli çalışma'}</small>
+                  latest.context === 'transfer' ? 'Yeni bağlamda doğru kullanım' : 'Rehberli çalışma'}
+                {latest.study?.supports.length ? ' · Destek kullanıldı' : ''}</small>
             })}
             {comparison.length > 0 && <details><summary>İlk ve gecikmeli denemeyi karşılaştır</summary>
               {comparison.map(({ concept, first, latest }) => <p key={concept.id}>
@@ -295,6 +353,6 @@ export function SkillProfile({ state, course, plan, now }: { state: LearningStat
           </div>
         </div>
       })}</div>
-    </section>
+    </details>
   </>
 }

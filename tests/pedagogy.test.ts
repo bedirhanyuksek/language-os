@@ -1,3 +1,4 @@
+import { teachWords } from './teaching-fixture'
 import { existsSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { baselineCatalog, catalog, publishCourse } from '../src/content/catalog'
@@ -40,6 +41,7 @@ function runPhase(state: LearningState, lesson: Lesson, phase: PedagogyPhase, da
 }
 
 function write(state: LearningState, lesson = first) {
+  state = teachWords(state, en, lesson, at)
   return finishLesson(state, en, lesson, { [lesson.production.id]: correct(lesson.production) }, at)
 }
 
@@ -52,7 +54,7 @@ function teachFirst() {
 function finishInput(state: LearningState, lesson = first) {
   const read = runPhase(state, lesson, 'reading')
   const listen = runPhase(read, lesson, 'listening')
-  return runPhase(runPhase(listen, lesson, 'vocabulary'), lesson, 'revision')
+  return runPhase(listen, lesson, 'revision')
 }
 
 describe('adaptive evidence', () => {
@@ -76,9 +78,12 @@ describe('adaptive evidence', () => {
     const retry = lessonTasks(failed, lesson)
     expect(retry.map(({ exercise }) => exercise.id)).not.toContain(firstTask.exercise.id)
     const failedAgain = finishLesson(failed, course, lesson, { [retry[0].exercise.id]: 'Bilmiyorum' }, next)
-    expect(dailyPlan(failedAgain, course, later, 'Europe/Istanbul')).toMatchObject({ kind: 'practice', lessonId: lesson.id })
+    expect(dailyPlan(failedAgain, course, later, 'Europe/Istanbul')).toMatchObject({ kind: 'assessment_gap' })
+    expect(lessonTasks(failedAgain, lesson)).toEqual([])
     expect(() => finishLesson(failedAgain, course, lesson, draft, later)).toThrow()
-    const repaired = finishLesson(failedAgain, course, lesson, answers(lessonTasks(failedAgain, lesson)), later)
+    const guided = finishLesson(failed, course, lesson, answers(retry), later)
+    expect(lessonTasks(guided, lesson)).toEqual([])
+    const repaired = teachWords(guided, course, lesson, later)
     expect(lessonTasks(repaired, lesson).map(({ exercise }) => exercise.id)).toEqual([lesson.production.id])
     const written = finishLesson(repaired, course, lesson, draft, later)
     expect(written.attempts.at(-1)?.evidence).toMatchObject({ observation: 'free_production', outcome: 'review_required' })
@@ -89,8 +94,9 @@ describe('adaptive evidence', () => {
     const state = start(course)
     const lesson = course.unit.lessons[0]
     expect(canAccelerate(state, course, lesson)).toBe(true)
-    expect(dailyPlan(state, course, at, 'Europe/Istanbul')).toMatchObject({ kind: 'pedagogy', phase: 'transfer', reason: expect.stringContaining('hem tanıma hem üretim') })
-    const tested = runPhase(state, lesson, 'transfer', at, {}, course)
+    expect(dailyPlan(state, course, at, 'Europe/Istanbul')).toMatchObject({ kind: 'pedagogy', phase: 'vocabulary' })
+    const prepared = teachWords(state, course, lesson, at)
+    const tested = runPhase(prepared, lesson, 'transfer', at, {}, course)
     expect(lessonTasks(tested, lesson).map(({ exercise }) => exercise.kind)).toEqual(['open'])
     expect(masteryFor(tested, lesson).status).toBe('ready')
   })
@@ -112,7 +118,7 @@ describe('adaptive evidence', () => {
     const state = teachFirst()
     const guided = finishLesson(state, en, second, answers(lessonTasks(state, second)), at)
     const mistaken = runPhase(write(guided, second), second, 'transfer', at, { 'en.sequence.prior.transfer.1': 'have put' })
-    expect(dailyPlan(mistaken, en, at, 'Europe/Istanbul')).toMatchObject({ phase: 'foundation', reason: expect.stringContaining(first.title) })
+    expect(dailyPlan(mistaken, en, at, 'Europe/Istanbul', false)).toMatchObject({ phase: 'foundation', reason: expect.stringContaining(first.title) })
     const repaired = runPhase(mistaken, second, 'foundation')
     expect(phaseTasks(repaired, second, 'transfer', at)[0].exercise.id).toBe('en.sequence.prior.transfer.2')
   })
@@ -132,7 +138,8 @@ describe('adaptive evidence', () => {
 
 describe('vocabulary, listening and content checks', () => {
   it('records recognition, failed active recall and unscored use separately', () => {
-    const state = runPhase(runPhase(teachFirst(), first, 'reading'), first, 'listening')
+    const placed = start(en, { 'en.placement.1': 'have led' })
+    const state = finishLesson(placed, en, first, answers(lessonTasks(placed, first)), at)
     expect(state.reviews).toHaveLength(0)
     const learned = runPhase(state, first, 'vocabulary', at, { 'en.experience.word.1.recall': 'run a project' })
     const evidence = learned.attempts.filter(({ conceptId }) => conceptId === 'en.experience.word.1').map(({ evidence }) =>
@@ -265,7 +272,9 @@ describe('Learning Experience v1 learner scenarios', () => {
     const [lesson] = previous.unit.lessons
     const placed = start(previous, { 'en.placement.1': 'have led' })
     let state = finishLesson(placed, previous, lesson, answers(lessonTasks(placed, lesson)), at)
-    for (const phase of ['transfer', 'reading', 'listening', 'vocabulary'] as const) {
+    state = teachWords(state, previous, lesson, at)
+    state = finishLesson(state, previous, lesson, answers(lessonTasks(state, lesson)), at)
+    for (const phase of ['transfer', 'reading', 'listening'] as const) {
       state = runPhase(state, lesson, phase, at, {}, previous)
     }
     const restored = parseBackup(exportBackup(state))
@@ -281,18 +290,17 @@ describe('Learning Experience v1 learner scenarios', () => {
     const p = first.pedagogy!
     const initial = teachFirst()
     const read = runPhase(initial, first, 'reading', at, { [p.reading.question.id]: 'Gelecek yıl' })
-    expect(dailyPlan(read, en, at, 'Europe/Istanbul')).toMatchObject({ phase: 'reading', evidenceId: read.attempts.at(-1)?.id })
+    expect(dailyPlan(read, en, at, 'Europe/Istanbul', false)).toMatchObject({ phase: 'reading', evidenceId: read.attempts.at(-1)?.id })
     expect(phaseTasks(read, first, 'reading', at).map(({ exercise }) => exercise.id)).toEqual([p.receptionRetry!.reading.question.id])
     const repaired = runPhase(read, first, 'reading')
     const heard = runPhase(repaired, first, 'listening', at, { [p.listening.detail.id]: 'Gelecek yıl' })
     const detail = p.receptionRetry!.listening.detail
     expect(phaseTasks(heard, first, 'listening', at).map(({ exercise }) => exercise.id)).toEqual([detail.id])
     const failedAgain = runPhase(heard, first, 'listening', at, { [detail.id]: 'Gelecek yıl' })
-    expect(dailyPlan(failedAgain, en, at, 'Europe/Istanbul')).toMatchObject({ phase: 'vocabulary' })
+    expect(dailyPlan(failedAgain, en, at, 'Europe/Istanbul', false)).toMatchObject({ phase: 'revision' })
     expect(failedAgain.attempts.filter(({ context }) => context === 'listening').map(({ evidence }) => evidence.outcome))
       .toEqual(['correct', 'incorrect', 'incorrect'])
-    const words = runPhase(failedAgain, first, 'vocabulary')
-    const revision = runPhase(words, first, 'revision')
+    const revision = runPhase(failedAgain, first, 'revision')
     expect(revision.attempts.at(-1)?.evidence.outcome).toBe('review_required')
     expect(parseBackup(exportBackup(revision))).toEqual(revision)
   })

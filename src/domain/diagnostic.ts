@@ -1,6 +1,7 @@
 import type { Course, Exercise, Lesson } from '../content/schema'
 import type { ListeningActivity } from '../content/pedagogy-schema'
 import type { ExerciseAttempt } from './model'
+import { placementEntry } from './adaptive-placement'
 import type { LearningState } from './state'
 
 export function bridgeLesson(course: Course) {
@@ -62,6 +63,7 @@ export function needsBridge(course: Course, state: LearningState, lesson: Lesson
   if (state.attempts.some((item) => item.lessonId === lesson.id && item.context !== 'diagnostic')) return true
   if (!course.unit.lessons.some((item) => item !== lesson && item.objective.level === state.profile.target) &&
     state.profile.target === lesson.objective.level) return true
+  if (state.placementTrack?.origin === 'new') return placementEntry(state)?.id === lesson.id
   return needsFoundation(state) || state.attempts.some((item) =>
     item.context === 'diagnostic' && item.evidence.skill === 'reading' && item.evidence.outcome === 'incorrect')
 }

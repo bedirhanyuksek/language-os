@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import type { Exercise } from '../content/schema'
 import { answerSchema, type Answer, type Language } from '../domain/model'
+import { useStudySession } from './study-session-context'
 import type { ExerciseTask } from '../domain/progress'
 
 function ExerciseInput({ exercise, language, answer, change }: {
@@ -59,7 +60,8 @@ export function ExerciseForm({ tasks, language, busy, onSubmit, placement = fals
   submitLabel?: string
   initialAnswers?: Record<string, Answer>
 }) {
-  const [answers, setAnswers] = useState<Record<string, Answer>>(initialAnswers ?? {})
+  const { draft, change } = useStudySession()
+  const answers = { ...initialAnswers, ...draft.answers }
   const [error, setError] = useState('')
   async function submit(event: FormEvent) {
     event.preventDefault()
@@ -82,7 +84,7 @@ export function ExerciseForm({ tasks, language, busy, onSubmit, placement = fals
       <legend>{index + 1}. {label}</legend>
       <p className="exercise-prompt">{exercise.prompt}</p>
       <ExerciseInput exercise={exercise} language={language} answer={answers[exercise.id]}
-        change={(answer) => setAnswers({ ...answers, [exercise.id]: answer })} />
+        change={(answer) => change({ answers: { [exercise.id]: answer } })} />
     </fieldset>)}
     {error && <p className="notice error" role="alert">{error}</p>}
     <button className="primary" disabled={busy}>{submitLabel ?? (placement ? 'Beceri profilimi gör' : 'Yanıtları değerlendir')} <span aria-hidden>→</span></button>

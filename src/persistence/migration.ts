@@ -29,7 +29,7 @@ const recordTypes: Record<string, string> = {
   profile: 'Öğrenci profili', attempts: 'Alıştırma denemesi', reviews: 'Kelime tekrar planı',
   reviewHistory: 'Kelime tekrar geçmişi', speakingSessions: 'Konuşma oturumu',
   speakingAssessments: 'Konuşma raporu', activity: 'Çalışma geçmişi',
-  skippedListening: 'Atlanan dinleme', skippedSpeaking: 'Atlanan konuşma',
+  placementTrack: 'Adaptif başlangıç kaydı', studyDrafts: 'Çalışma taslağı', skippedListening: 'Atlanan dinleme', skippedSpeaking: 'Atlanan konuşma',
 }
 
 function knownVersion(value: unknown): 1 | 2 | undefined {

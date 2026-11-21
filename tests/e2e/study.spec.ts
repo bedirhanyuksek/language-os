@@ -1,5 +1,8 @@
+import { teachWords } from '../teaching-fixture'
+import { teachVocabulary, clearPlannedReviews } from './teaching'
 import { expect, test, type Locator, type Page } from '@playwright/test'
 import { catalog } from './catalog-fixture'
+import { restoreLegacy } from './legacy-profile'
 import coachReport from '../fixtures/speaking-coach.json' with { type: 'json' }
 import validReport from '../fixtures/speaking-valid.json' with { type: 'json' }
 import invalidReport from '../fixtures/speaking-invalid.json' with { type: 'json' }
@@ -65,10 +68,19 @@ test('restoring a partial word lesson opens the next three cards', async ({ page
       if (!tasks.length) break
       state = finishLesson(state, course, item, preparedAnswers(tasks), date)
     }
+    if (item.id === lesson.id) {
+      const tasks = phaseTasks(state, item, 'vocabulary', date)
+      state = finishPedagogy(state, course, item, 'vocabulary', preparedAnswers(tasks), date)
+      ready.add(item.id)
+      return
+    }
+    state = teachWords(state, course, item, date)
+    const writing = lessonTasks(state, item)
+    if (writing.length) state = finishLesson(state, course, item, preparedAnswers(writing), date)
     state = finishPedagogy(state, course, item, 'transfer', preparedAnswers(phaseTasks(state, item, 'transfer', date)), date)
     const phases = item.id === lesson.id
-      ? ['reading', 'listening', 'vocabulary'] as const
-      : ['reading', 'listening', 'vocabulary', 'revision'] as const
+      ? ['reading', 'listening'] as const
+      : ['reading', 'listening', 'revision'] as const
     for (const phase of phases) {
       const tasks = phaseTasks(state, item, phase, date)
       if (tasks.length) state = finishPedagogy(state, course, item, phase, preparedAnswers(tasks), date,
@@ -135,18 +147,9 @@ for (const course of Object.values(catalog)) {
     await page.goto('/')
     await expect(page.getByRole('heading', { name: 'Öğrenme planını kur.' })).toBeVisible()
     await fitsViewport(page)
-    if (course.language === 'ru') await page.getByRole('radio', { name: /Rusça/ }).check()
-    await page.getByLabel('Hedef seviyen').selectOption(course.language === 'en' ? 'C1' : 'B1')
-    await page.getByLabel('Günlük süre (dk)').fill('180')
-    await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
-    await expect(page.getByRole('heading', { name: 'Başlangıç taraması' })).toBeVisible()
-    await fitsViewport(page)
-    for (const { exercise } of course.placement) {
-      await fill(task(page, exercise), exercise, exercise.id === 'en.placement.1' ? 'have led' :
-        exercise.id === 'ru.diagnostic.2' ? 'Я' : undefined)
-    }
-    await page.getByRole('button', { name: 'Beceri profilimi gör' }).click()
-    await expect(page.getByRole('heading', { name: 'Konuşma', exact: true, level: 2 }).locator('..')).toContainText('Ölçülmedi')
+    await restoreLegacy(page, course, { minutes: 180 }, course.language === 'en' ? { 'en.placement.1': 'have led' } : { 'ru.diagnostic.2': 'Я' })
+    await page.getByRole('button', { name: 'Beceri profili', exact: true }).click()
+    await expect(page.getByRole('heading', { name: 'Konuşma', exact: true, level: 3 }).first().locator('..')).toContainText('Henüz ölçülmedi')
     await page.getByRole('button', { name: 'Günlük planı aç' }).click()
     await expect(page.getByText('Neden bu çalışma?')).toBeVisible()
 
@@ -161,14 +164,8 @@ for (const course of Object.values(catalog)) {
     }
 
     async function review(recalls: TestExercise[]) {
-      await page.getByRole('button', { name: 'Kelimeleri tekrar et' }).click()
-      for (const exercise of recalls) {
-        await page.getByRole('textbox', { name: 'Hatırladığın ifade' }).fill(exercise.accepted![0])
-        await page.getByRole('button', { name: 'Yanıtı karşılaştır' }).click()
-        await expect(page.getByText('Doğru hatırladın.')).toBeVisible()
-        await page.getByRole('button', { name: 'Tekrarı kaydet' }).click()
-      }
-      await expect(page.getByRole('heading', { name: 'Bugünkü plan' })).toBeVisible()
+      expect(recalls.length).toBeGreaterThan(0)
+      await clearPlannedReviews(page, course)
     }
 
     for (const [index, lesson] of lessons.entries()) {
@@ -177,6 +174,7 @@ for (const course of Object.values(catalog)) {
         await page.clock.setFixedTime(new Date('2026-11-13T21:01:00Z'))
         await page.getByRole('button', { name: 'Plan', exact: true }).click()
       }
+      await clearPlannedReviews(page, course)
       const p = lesson.pedagogy!
       await expect(page.getByRole('heading', { name: lesson.title, exact: true })).toBeVisible()
       await page.getByRole('button', { name: 'Derse başla' }).click()
@@ -194,6 +192,7 @@ for (const course of Object.values(catalog)) {
       await submit(page)
       await expect(page.getByText('2 / 2 kesin yanıt doğru')).toBeVisible()
       await toPlan(page)
+      await teachVocabulary(page, course, lesson)
       await page.getByRole('button', { name: 'Pratiğe başla' }).click()
       await expect(page.getByRole('heading', { name: 'Yazmadan önce' })).toBeVisible()
       await fill(task(page, lesson.production), lesson.production)
@@ -251,19 +250,7 @@ for (const course of Object.values(catalog)) {
         await toPlan(page)
       }
 
-      await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
-      for (const [cardIndex, vocab] of p.vocabulary.entries()) {
-        await expect(page.getByRole('heading', { name: lesson.vocabulary[cardIndex].term, exact: true })).toBeVisible()
-        await expect(page.locator('audio[aria-label="Örneği dinle"]')).toBeVisible()
-        await page.getByRole('button', { name: 'Kelimeyi çalış' }).click()
-        for (const item of [vocab.recognize, vocab.recall, vocab.use]) {
-          await fill(task(page, item), item)
-          await page.getByRole('button', { name: 'Yanıtı kaydet' }).click()
-        }
-      }
-      await expect(page.getByText('İnceleme bekliyor', { exact: true })).toHaveCount(p.vocabulary.length)
-      await toPlan(page)
-      await review(p.vocabulary.map(({ recall }) => recall))
+      await clearPlannedReviews(page, course)
       await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
       await expect(page.getByRole('heading', { name: 'İlk yazın' })).toBeVisible()
       await expect(page.getByRole('heading', { name: 'Yazını gözden geçir' })).toBeVisible()
@@ -333,8 +320,10 @@ for (const course of Object.values(catalog)) {
     for (const { pedagogy } of lessons) await practicePhase('Gecikmeli kazanım kontrolü', pedagogy!.checks.map(({ delayed }) => delayed[0]))
     await expect(page.getByText('Gecikmeli aktarım gözlendi')).toHaveCount(lessons.length)
     await page.getByRole('button', { name: 'Beceri profili' }).click()
-    await expect(page.getByRole('heading', { name: 'Dinleme', level: 3 }).locator('..').getByText(course.language === 'en' ? '14 / 14 kesin yanıt doğru' : '12 / 13 kesin yanıt doğru', { exact: true })).toBeVisible()
+    await page.getByText('Uygulamada toplanan kanıtların ayrıntısı', { exact: true }).click()
+    await expect(page.getByRole('heading', { name: 'Dinleme', level: 3 }).last().locator('..').getByText(course.language === 'en' ? '14 / 14 kesin yanıt doğru' : '12 / 13 kesin yanıt doğru', { exact: true })).toBeVisible()
     await expect(page.getByText(/Tanıma 8 · Aktif hatırlama 8/)).toBeVisible()
+    await page.getByText('Derslerde toplanan kanıtlar', { exact: true }).click()
     const comparison = page.getByText('İlk ve gecikmeli denemeyi karşılaştır').first()
     await comparison.click()
     await expect(comparison.locator('..')).toContainText('Gecikmeli görev:')
@@ -360,16 +349,9 @@ for (const course of Object.values(catalog)) {
 test('beginner: reading changes the route and listening diagnosis resumes after reload', async ({ page }) => {
   const course = catalog.ru
   await page.goto('/')
-  await page.getByRole('radio', { name: /Rusça/ }).check()
-  await page.getByLabel('Tahmini seviyen').selectOption('C1')
-  await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
-  for (const { exercise } of course.placement) {
-    const wrong = exercise.skill === 'reading' && exercise.kind === 'single'
-      ? exercise.options.find((option) => option !== exercise.accepted) : undefined
-    await fill(task(page, exercise), exercise, wrong)
-  }
-  await page.getByRole('button', { name: 'Beceri profilimi gör' }).click()
-  await page.getByRole('button', { name: 'Günlük planı aç' }).click()
+  const reading = course.placement.find(({ exercise }) => exercise.skill === 'reading')!.exercise
+  if (reading.kind !== 'single') throw new Error('Beklenen eski okuma biçimi bulunamadı.')
+  await restoreLegacy(page, course, { estimate: 'C1' }, { [reading.id]: reading.options.find((option) => option !== reading.accepted)! })
   const bridge = course.unit.lessons.find(({ id }) => id === 'ru.cyrillic')!
   await expect(page.getByRole('heading', { name: bridge.title, exact: true })).toBeVisible()
   const diagnostic = bridge.pedagogy!.diagnostic!
@@ -385,6 +367,6 @@ test('beginner: reading changes the route and listening diagnosis resumes after 
   await play(page, 'Tanılama kaydını dinle')
   await fill(task(page, diagnostic.listening.detail), diagnostic.listening.detail)
   await page.getByRole('button', { name: 'Örneği kaydet' }).click()
-  await expect(page.getByRole('heading', { name: 'Dinleme', exact: true, level: 2 }).locator('..')).toContainText('1 / 1 doğru · Düşük güven')
-  await expect(page.getByRole('heading', { name: 'Konuşma', exact: true, level: 2 }).locator('..')).toContainText('Ölçülmedi')
+  await expect(page.getByRole('heading', { name: 'Dinleme', exact: true, level: 3 }).first().locator('..')).toContainText('Doğru')
+  await expect(page.getByRole('heading', { name: 'Konuşma', exact: true, level: 3 }).first().locator('..')).toContainText('Henüz ölçülmedi')
 })

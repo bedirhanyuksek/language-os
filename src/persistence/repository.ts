@@ -4,9 +4,11 @@ import { catalog, legacyCatalog } from '../content/catalog'
 import { pedagogyExercises, receptionExercises } from '../content/schema'
 import { diagnosticTasks } from '../domain/diagnostic'
 import { gradeVocabularyRecall } from '../domain/pedagogy'
+import { validPlacementTrack } from '../domain/adaptive-placement'
 import { assess } from '../domain/assessment'
 import { evidenceSchema, type Language } from '../domain/model'
 import { validateSpeakingReport, type SpeakingAssessmentRepository } from '../domain/speaking'
+import { studyKey, type StudyDefinition, type StudyDraft, type StudyPatch } from '../domain/study-session'
 import { stateSchema, type LearningState } from '../domain/state'
 import { StorageAccessError } from './storage-error'
 import { checkWorkspaceMigration, migrationIssues, normalizeWorkspaceState, type MigrationIssue } from './migration'
@@ -20,6 +22,8 @@ type QuarantinedWorkspace = QuarantineNotice & { original: WorkspaceRow }
 const backupSchema = z.discriminatedUnion('schemaVersion', [
   z.strictObject({ schemaVersion: z.literal(1), state: z.unknown() }),
   z.strictObject({ schemaVersion: z.literal(2), state: stateSchema }),
+  z.strictObject({ schemaVersion: z.literal(3), state: stateSchema }),
+  z.strictObject({ schemaVersion: z.literal(4), state: stateSchema }),
 ])
 
 export interface LearningRepository extends SpeakingAssessmentRepository {
@@ -31,7 +35,7 @@ export interface LearningRepository extends SpeakingAssessmentRepository {
 
 export const localLearningOrigin = 'http://127.0.0.1:4173'
 const databaseName = 'language-os'
-const schemaVersion = 3
+const schemaVersion = 5
 
 class LearningDatabase extends Dexie {
   declare workspace: Table<StoredState, WorkspaceKey>
@@ -45,7 +49,7 @@ class LearningDatabase extends Dexie {
       // Defer v1 validation until quarantine is available in the same native transaction.
       upgradingFromV1.add(transaction.idbtrans)
     })
-    this.version(schemaVersion).stores({ workspace: 'key', quarantine: '++id' }).upgrade(async (transaction) => {
+    this.version(3).stores({ workspace: 'key', quarantine: '++id' }).upgrade(async (transaction) => {
       const sourceVersion = upgradingFromV1.has(transaction.idbtrans) ? 1 : 2
       const workspace = transaction.table<WorkspaceRow, IndexableType>('workspace')
       const quarantine = transaction.table<QuarantinedWorkspace, number>('quarantine')
@@ -58,7 +62,7 @@ class LearningDatabase extends Dexie {
           }
           // The original row and its removal from active use commit together.
           await quarantine.add({
-            original: row, active: row.key === 'active', sourceVersion, targetVersion: schemaVersion, issues: result.issues,
+            original: row, active: row.key === 'active', sourceVersion, targetVersion: 3, issues: result.issues,
           })
           await workspace.delete(row.key)
         }
@@ -67,6 +71,9 @@ class LearningDatabase extends Dexie {
         throw new StorageAccessError('upgrade', cause)
       }
     })
+    // Existing rows need no rewrite. The native version blocks older clients from writing the new shape.
+    this.version(4).stores({ workspace: 'key', quarantine: '++id' })
+    this.version(schemaVersion).stores({ workspace: 'key', quarantine: '++id' })
   }
 }
 
@@ -161,6 +168,44 @@ export class IndexedLearningRepository implements LearningRepository {
     })
   }
 
+  async openStudy(profileId: string, definition: StudyDefinition, cursor: string, now: string) {
+    let opened: StudyDraft | undefined
+    await this.update(profileId, (state) => {
+      if (studyCursor(state) !== cursor) throw new Error('Çalışma planı değişti. Sayfayı yeniden yükle.')
+      opened = state.studyDrafts?.find((draft) => studyKey(draft) === studyKey(definition))
+      if (opened) return state
+      opened = { ...definition, id: crypto.randomUUID(), revision: 0, openedAt: now, updatedAt: now,
+        answers: {}, supports: {}, step: 0, plays: 0, elapsedSeconds: 0 }
+      return { ...state, studyDrafts: [...(state.studyDrafts ?? []), opened] }
+    })
+    return opened!
+  }
+
+  async saveStudy(profileId: string, id: string, revision: number, patch: StudyPatch, now: string) {
+    return this.update(profileId, (state) => {
+      const draft = currentStudy(state, id, revision)
+      const next = { ...draft, ...patch, revision: revision + 1, updatedAt: now }
+      return { ...state, studyDrafts: [...(state.studyDrafts ?? []).filter((item) => item !== draft), next] }
+    })
+  }
+
+  async completeStudy(profileId: string, id: string, revision: number, elapsedSeconds: number,
+    change: (state: LearningState, draft: StudyDraft) => LearningState) {
+    return this.update(profileId, (state) => {
+      const draft = currentStudy(state, id, revision)
+      const next = change(state, draft)
+      const activity = next.activity.length > state.activity.length
+        ? next.activity.map((item, index) => index === next.activity.length - 1
+          ? { ...item, elapsedSeconds: Math.max(draft.elapsedSeconds, elapsedSeconds) } : item)
+        : next.activity
+      const study = { sessionId: id, plays: draft.plays,
+        supports: Object.keys(draft.supports).filter((key) => key.startsWith('opened:')).map((key) => key.slice(7)) }
+      const attempts = next.attempts.map((attempt, index) => index < state.attempts.length ? attempt : { ...attempt, study })
+      const studyDrafts = (state.studyDrafts ?? []).filter((item) => item.id !== id)
+      return { ...next, activity, attempts, studyDrafts }
+    })
+  }
+
   async restore(state: LearningState, expected: LearningState | undefined) {
     await this.openDatabase()
     return this.database.transaction('rw', this.database.workspace, async () => {
@@ -196,8 +241,21 @@ export class IndexedLearningRepository implements LearningRepository {
   }
 }
 
+export function studyCursor(state: LearningState) {
+  return `${state.attempts.length}:${state.reviewHistory.length}:${state.activity.length}` +
+    (state.placementTrack ? `:${state.placementTrack.samples.length}:${state.placementTrack.finishedAt ?? ''}` : '')
+}
+
+function currentStudy(state: LearningState, id: string, revision: number) {
+  const draft = state.studyDrafts?.find((item) => item.id === id)
+  if (!draft) throw new Error('Bu çalışma başka bir sekmede tamamlanmış veya değiştirilmiş. Sayfayı yeniden yükle.')
+  if (draft.revision !== revision) throw new Error('Taslak başka bir sekmede değişti. Sayfayı yeniden yükle.')
+  return draft
+}
+
 export function exportBackup(state: LearningState) {
-  return JSON.stringify({ schemaVersion: 2, state }, null, 2)
+  const schemaVersion = state.placementTrack ? 4 : state.studyDrafts?.length || state.attempts.some(({ study }) => study) || state.activity.some(({ elapsedSeconds }) => elapsedSeconds !== undefined) ? 3 : 2
+  return JSON.stringify({ schemaVersion, state }, null, 2)
 }
 
 export function parseBackup(raw: string): LearningState {
@@ -209,7 +267,9 @@ export function parseBackup(raw: string): LearningState {
   const placement = state.attempts.filter((attempt) => attempt.context === 'placement')
   const placementVersion = placement[0]?.contentVersion
   const placementCourse = placementVersion === 1 ? legacyCatalog[state.profile.language] : course
-  if (state.placementAt ? placement.length !== placementCourse.placement.length ||
+  if (!validPlacementTrack(state)) throw new Error('Adaptif başlangıç kanıtı geçersiz.')
+  if (state.placementAt && state.placementTrack?.origin === 'new' ? placement.length !== 0 :
+    state.placementAt ? placement.length !== placementCourse.placement.length ||
     placement.some((attempt) => attempt.contentVersion !== placementVersion) ||
     !placementCourse.placement.every(({ exercise }) => placement.some((attempt) => attempt.exerciseId === exercise.id))
     : state.attempts.length || state.reviews.length || state.speakingSessions.length || state.activity.length || state.reviewHistory.length || state.skippedListening.length) {
