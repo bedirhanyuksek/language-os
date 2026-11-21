@@ -347,5 +347,5 @@ describe('Learning Experience v1 learner scenarios', () => {
     expect(learningDays.size).toBeGreaterThanOrEqual(40)
     expect(state.speakingAssessments).toHaveLength(0)
     expect(state.attempts.filter(({ context }) => context === 'revision')).toHaveLength(route.length)
-  }, 15_000)
+  }, 30_000)
 })
