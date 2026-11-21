@@ -324,3 +324,9 @@ audio { display: block; width: 100%; max-width: 520px; margin-block: 16px; }
   @keyframes cover-enter { from { transform: translateX(24px); opacity: 0; } to { transform: translateX(0); } }
   @keyframes caret-blink { 50% { opacity: 0; } }
 }
+
+.spanish-keyboard { margin-top: 12px; }
+.spanish-keyboard .cyrillic-keyboard-row { gap: 4px; }
+.spanish-keyboard button { min-width: 44px; min-height: 44px; padding: 8px; }
+.cyrillic-keyboard-row button { touch-action: manipulation; }
+.cyrillic-keyboard-row button[aria-pressed="true"] { border-color: var(--blue); color: var(--blue); background: var(--paper); }
