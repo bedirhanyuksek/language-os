@@ -7,7 +7,7 @@ import { coachingForAnswer } from '../domain/lesson-coaching'
 import { InlineCoaching, LessonHelp } from './TutorPanel'
 import type { Course, Lesson, VocabularyItem } from '../content/schema'
 import { curriculumCoverage } from '../content/curriculum/coverage'
-import { modelRecording } from '../content/teaching'
+import { modelAudio } from '../content/teaching'
 import { mapPlacement } from '../domain/assessment'
 import { levelSchema, type Answer, type ExerciseAttempt, type StudyPlan } from '../domain/model'
 import type { ExerciseTask } from '../domain/pedagogy'
@@ -15,7 +15,7 @@ import { bridgeLesson, needsBridge } from '../domain/diagnostic'
 import { dailyMinutes, dueCards, isUnlocked, masteryFor, needsEnglishStarter } from '../domain/progress'
 import { speakingSuccesses } from '../domain/speaking'
 import type { LearningState } from '../domain/state'
-import { goalLabels, languageLabels, phaseLabels, skillLabels } from './labels'
+import { goalLabels, languageLabels, languageMarks, phaseLabels, skillLabels } from './labels'
 import { AudioPlayer } from './AudioPlayer'
 import { ExerciseForm } from './ExerciseForm'
 
@@ -65,7 +65,7 @@ export function Dashboard({ state, course, plan, start, choose, now }: {
         {'minutes' in plan && <button className="light-button" onClick={start}>{plan.kind === 'pedagogy' ? 'Çalışmayı aç' : action[plan.kind]} <span aria-hidden>↗</span></button>}
         {plan.kind === 'assessment_gap' && <button className="light-button" onClick={start}>Açıklamayı yeniden aç</button>}
       </div>
-      <div className="cover-type" aria-hidden="true" lang={course.language}>{course.language === 'en' ? 'Aa' : 'Яя'}</div>
+      <div className="cover-type" aria-hidden="true" lang={course.language}>{languageMarks[course.language]}</div>
     </section>
     <section className="surface section" aria-label="Günlük çalışma sırası">
       <h2>Bugünkü çalışma sırası</h2>
@@ -118,7 +118,7 @@ export function LessonStudy({ lesson, state, tasks, busy, onSubmit }: {
       <h2>{{ contrast: 'Anlam farkını gör', dialogue: 'Diyalogda nasıl kullanılır?', decoding: 'Harf ile sesi eşleştir',
         sequence: 'Olayları sıraya koy' }[teaching.approach]}</h2>
       <blockquote lang={language}>{model.phrase}</blockquote><p>{model.explanation}</p>
-      <AudioPlayer key={step} audio={modelRecording(lesson.id, step, language)}
+      <AudioPlayer key={step} audio={modelAudio(lesson.id, step, language)}
         text={model.phrase} label="Cümleyi dinle" />
       <div className="button-row">
         {step > 0 && <button className="secondary" onClick={() => session.change({ step: step - 1 })}>Önceki örnek</button>}

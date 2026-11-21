@@ -26,8 +26,14 @@ function recordAttempts(
   })
 }
 
-export function finishPlacement(state: LearningState, course: Course, answers: Record<string, Answer>, now: string): LearningState {
+export function finishPlacement(state: LearningState, course: Course, answers: Record<string, Answer> | null, now: string): LearningState {
   if (state.placementAt) throw new Error('Başlangıç taraması zaten tamamlandı.')
+  if (answers === null) {
+    if (course.language !== 'es' || state.profile.language !== 'es' || state.placementTrack) {
+      throw new Error('Bu başlangıç rotasında kısa taramayı kullan.')
+    }
+    return { ...state, placementAt: now }
+  }
   const tasks = course.placement.map(({ exercise, objectiveId }) => ({ exercise, conceptId: objectiveId }))
   return { ...state, placementAt: now, attempts: recordAttempts(state, tasks, answers, now, 'placement', course.version) }
 }

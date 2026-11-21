@@ -3,6 +3,7 @@ import type { Exercise } from '../content/schema'
 import { answerSchema, type Answer, type Language } from '../domain/model'
 import { useStudySession } from './study-session-context'
 import type { ExerciseTask } from '../domain/progress'
+import { TextAnswer } from './TextAnswer'
 
 function ExerciseInput({ exercise, language, answer, change }: {
   exercise: Exercise
@@ -46,8 +47,8 @@ function ExerciseInput({ exercise, language, answer, change }: {
       return <textarea aria-label="Yanıtın" lang={language} rows={4} maxLength={2000}
         placeholder="Cümleni yaz…" value={text} onChange={(event) => change(event.target.value)} />
     default:
-      return <input aria-label="Yanıtın" lang={language} type="text" maxLength={2000}
-        placeholder="Yanıtını yaz…" value={text} onChange={(event) => change(event.target.value)} />
+      return <TextAnswer language={language} requireCyrillic={exercise.accepted.every((value) => /\p{Script=Cyrillic}/u.test(value))}
+        placeholder="Yanıtını yaz…" value={text} onChange={change} />
   }
 }
 

@@ -43,3 +43,19 @@ host.json
 coverage/
 playwright/.auth/
 .author-tmp-*/
+
+# Android project sources stay tracked; generated assets and build state do not.
+android/.gradle/
+android/.kotlin/
+android/.idea/
+android/**/build/
+android/local.properties
+android/captures/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+android/capacitor-cordova-android-plugins/
+*.apk
+*.aab
+*.jks
+*.keystore

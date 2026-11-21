@@ -5,7 +5,8 @@ import { placementEntry } from './adaptive-placement'
 import type { LearningState } from './state'
 
 export function bridgeLesson(course: Course) {
-  return course.unit.lessons.find(({ id }) => id === (course.language === 'ru' ? 'ru.cyrillic' : 'en.routine'))
+  const bridges = { en: 'en.routine', ru: 'ru.cyrillic', es: undefined }
+  return course.unit.lessons.find(({ id }) => id === bridges[course.language])
 }
 
 function needsFoundation(state: LearningState) {
@@ -44,6 +45,7 @@ export function diagnosticTasks(course: Course, state: LearningState): Diagnosti
 }
 
 const advancedSamples: Record<Course['language'], { lessonId: string; exercises: Exercise[] }> = {
+  es: { lessonId: 'es.perfect', exercises: [] },
   en: { lessonId: 'en.conditional', exercises: [
     { id: 'en.route.condition', kind: 'fill', skill: 'grammar', prompt: 'If the venue does not confirm, we won’t book it. We won’t book it ___ the venue confirms.',
       accepted: ['unless'], explanation: 'Unless aynı olumsuz koşulu tek bağlaçla ifade eder.' },

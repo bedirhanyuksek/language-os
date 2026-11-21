@@ -135,7 +135,9 @@ async function play(page: Page, label: string) {
   expect(duration).toBeGreaterThan(2)
 }
 
-for (const course of Object.values(catalog)) {
+// This scenario verifies the pre-existing recorded-audio units. Spanish has a
+// separate beginner/synthesis scenario in spanish.spec.ts.
+for (const course of [catalog.en, catalog.ru]) {
   const lessons = course.unit.lessons.slice(0, course.language === 'en' ? 8 : 7).filter(({ id }) => ![
     'en.routine', 'ru.cyrillic',
   ].includes(id))

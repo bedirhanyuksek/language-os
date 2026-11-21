@@ -1,6 +1,7 @@
 import { expect, test } from 'vitest'
 import { catalog } from '../src/content/catalog'
 import type { Exercise } from '../src/content/schema'
+import type { Language } from '../src/domain/model'
 import { initialState } from '../src/domain/state'
 import { dailyPlan, finishLesson, finishPlacement, lessonTasks } from '../src/domain/progress'
 
@@ -27,11 +28,12 @@ import { phaseTasks } from '../src/domain/pedagogy'
 import { finishPedagogy } from '../src/domain/progress'
 import { teachWords } from './teaching-fixture'
 
-function learner(language: 'en' | 'ru', minutes = 30) {
+function learner(language: Language, minutes = 30) {
   const course = catalog[language]
+  const diagnostic = language === 'en' ? 'en.diagnostic.2' : language === 'ru' ? 'ru.diagnostic.2' : undefined
   return finishPlacement(initialState({ id: '76380dc0-83b3-4295-8346-7ccbf58ac6ca', language,
     estimate: course.level, target: 'C2', minutes, days: [0,1,2,3,4,5,6], goals: ['general'] }), course,
-  { ...answers(course.placement), [language === 'en' ? 'en.diagnostic.2' : 'ru.diagnostic.2']: '___' }, at)
+  { ...answers(course.placement), ...(diagnostic ? { [diagnostic]: '___' } : {}) }, at)
 }
 
 test('all published lessons bind their active vocabulary, grammar, strategy and separate transfer checks', () => {

@@ -8,6 +8,14 @@ import { packedLessons } from './packs'
 type Strand = [area: string, taughtBy?: string[], encounteredIn?: string[]]
 
 const grammar: Record<Course['language'], Strand[][]> = {
+  es: [
+    [['selam ve me llamo/te llamas', ['es.saludos']], ['ser ve estar', ['es.ser-estar']],
+      ['sayı, cuesta/cuestan', ['es.numeros']], ['mi/mis ve tener ile yaş', ['es.familia']],
+      ['düzenli presente ve no', ['es.rutina']], ['sipariş, con/sin', ['es.cafe']]],
+    [['dónde, konum, del ve yön emirleri', ['es.direcciones']], ['gustar ve kişi zamirleri', ['es.gustos']],
+      ['haber ve düzenli/düzensiz participio', ['es.perfect']]],
+    [], [], [], [],
+  ],
   en: [
     [['be, kişi ve temel soru',['en.identity']],['saat, at ve does ile soru',['en.station']],['kibar istek',['en.cafe']],['artikeller ve çoğul'],['sahiplik ve işaret zamirleri'],['there is/are ve konum',['en.home']],['can ve temel olumsuzluk']],
     [['present simple / continuous',['en.routine']],['past simple ve kibar could',['en.rebook']],['for/since ve başlangıç',['en.symptoms']],['need to ve zaman edatı',['en.appointment']],['emir ve yön edatları',['en.detour']],['davet ve kibar rica',['en.invite','en.host']],['karşılaştırma'],['sayılabilirlik ve miktar'],['going to / plan gelecek',[],['en.update']],['fiil + -ing / to dizileri']],
@@ -27,6 +35,11 @@ const grammar: Record<Course['language'], Strand[][]> = {
 }
 
 export const vocabularyDomains: Record<Course['language'], string[][]> = {
+  es: [
+    ['selam ve kimlik', 'aile ve yaş', 'sayı ve fiyat', 'günlük rutin', 'içecek ve sipariş'],
+    ['yerler ve yön', 'beğeni ve etkinlik', 'zaman', 'tamamlanan iş', 'henüz yapılmayan iş'],
+    [], [], [], [],
+  ],
   en: [
     ['kimlik ve yakınlar','ev ve eşyalar','gündelik eylem','sayı, fiyat ve ürün','mekân, saat ve ulaşım','duygu ve beğeni'],
     ['sağlık ve randevu','konut ve masraf','hizmet ve alışveriş','davet ve ilişki','eğitim ve etkinlik','rota ve seyahat'],

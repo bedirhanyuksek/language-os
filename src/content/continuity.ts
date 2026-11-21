@@ -1,6 +1,6 @@
 import type { CEFRLevel, Language } from '../domain/model'
 import type { Exercise, Lesson } from './schema'
-import { modelRecording, type Teaching } from './teaching'
+import { modelAudio, modelRecording, type Teaching } from './teaching'
 
 type Practice = [prompt: string, answer: string, ...alternatives: string[]]
 type Concept = {
@@ -61,7 +61,7 @@ export function author(language: Language, item: Module): Lesson {
     return {
       reading: { text: material.text, question: question(`${key}.reading`, 'reading', material.reading) },
       listening: { transcript: material.transcript, preparation: material.preparation,
-        audio: { ...modelRecording(id, 0, language), src: `/audio/${id}.${key}.mp3` },
+        audio: language === 'es' ? modelAudio(id, 0, language) : { ...modelRecording(id, 0, language), src: `/audio/${id}.${key}.mp3` },
         main: question(`${key}.main`, 'listening', material.main), detail: question(`${key}.detail`, 'listening', material.detail) },
     }
   }
@@ -104,7 +104,7 @@ export function author(language: Language, item: Module): Lesson {
         const key = index === 0 ? 'word' : `word.${index + 1}`
         return {
           cardId: entry.cardId, collocations: entry.collocations, pronunciation: entry.pronunciation,
-          audio: { ...modelRecording(id, 0, language), src: `/audio/${entry.cardId}.mp3` },
+          audio: language === 'es' ? modelAudio(id, 0, language) : { ...modelRecording(id, 0, language), src: `/audio/${entry.cardId}.mp3` },
           recognize: question(`${key}.recognize`, 'vocabulary', entry.recognize),
           recall: { id: `${id}.${key}.recall`, kind: 'fill', skill: 'vocabulary', prompt: recall, accepted, explanation: entry.usage },
           use: production(`${key}.use`, entry.use, entry.example, 'vocabulary'),
@@ -273,6 +273,7 @@ const russian: Module[] = [
 ]
 
 export const continuity: Record<Language, Lesson[]> = {
+  es: [],
   en: english.map((item) => author('en', item)),
   ru: russian.map((item) => author('ru', item)),
 }

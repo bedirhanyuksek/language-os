@@ -5,7 +5,7 @@ import { pedagogyExercises, receptionExercises } from '../content/schema'
 import { diagnosticTasks } from '../domain/diagnostic'
 import { gradeVocabularyRecall } from '../domain/pedagogy'
 import { validPlacementTrack } from '../domain/adaptive-placement'
-import { assess } from '../domain/assessment'
+import { assess, type AssessmentRules } from '../domain/assessment'
 import { evidenceSchema, type Language } from '../domain/model'
 import { validateSpeakingReport, type SpeakingAssessmentRepository } from '../domain/speaking'
 import { studyKey, type StudyDefinition, type StudyDraft, type StudyPatch } from '../domain/study-session'
@@ -268,7 +268,9 @@ export function parseBackup(raw: string): LearningState {
   const placementVersion = placement[0]?.contentVersion
   const placementCourse = placementVersion === 1 ? legacyCatalog[state.profile.language] : course
   if (!validPlacementTrack(state)) throw new Error('Adaptif başlangıç kanıtı geçersiz.')
-  if (state.placementAt && state.placementTrack?.origin === 'new' ? placement.length !== 0 :
+  const placementWithoutLegacyAnswers = state.placementTrack?.origin === 'new' ||
+    (course.language === 'es' && placement.length === 0)
+  if (state.placementAt && placementWithoutLegacyAnswers ? placement.length !== 0 :
     state.placementAt ? placement.length !== placementCourse.placement.length ||
     placement.some((attempt) => attempt.contentVersion !== placementVersion) ||
     !placementCourse.placement.every(({ exercise }) => placement.some((attempt) => attempt.exerciseId === exercise.id))
@@ -310,8 +312,10 @@ export function parseBackup(raw: string): LearningState {
           .find(matches)?.exercise
       } else definition = checks.find(matches)?.exercise
     }
-    if (!definition || definition.id !== attempt.exerciseId ||
-      JSON.stringify(attempt.evidence) !== JSON.stringify(evidenceSchema.parse(assess(definition, attempt.answer, state.profile.language)))) {
+    const stored = JSON.stringify(attempt.evidence)
+    const matchesRules = (rules: AssessmentRules) =>
+      stored === JSON.stringify(evidenceSchema.parse(assess(definition!, attempt.answer, state.profile.language, rules)))
+    if (!definition || definition.id !== attempt.exerciseId || !(matchesRules('current') || matchesRules('legacy'))) {
       throw new Error('Alıştırma kaydı içerik veya değerlendirme kurallarıyla eşleşmiyor.')
     }
   }
@@ -328,7 +332,8 @@ export function parseBackup(raw: string): LearningState {
       const schedule = state.reviews.find((card) => card.cardId === cardId)
       const recall = lessons.flatMap(({ pedagogy }) => pedagogy?.vocabulary ?? []).find((item) => item.cardId === cardId)?.recall
       return !schedule || at < schedule.introducedAt || (mode === 'typed' &&
-        (!recall || !answer || gradeVocabularyRecall(recall, answer, course.language) !== result))
+        (!recall || !answer || (gradeVocabularyRecall(recall, answer, course.language) !== result &&
+          gradeVocabularyRecall(recall, answer, course.language, 'legacy') !== result)))
     }) ||
     state.reviews.some(({ cardId }) => !cards.has(cardId)) ||
     state.skippedSpeaking.some((id) => !lessons.some((lesson) => lesson.id === id && lesson.speaking)) ||

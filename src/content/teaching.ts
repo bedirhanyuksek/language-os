@@ -1,5 +1,6 @@
 import { z } from 'zod'
 import { idSchema } from '../domain/model'
+import type { Language } from '../domain/model'
 import type { ListeningActivity } from './pedagogy-schema'
 import type { Exercise } from './schema'
 
@@ -17,9 +18,17 @@ export const teachingSchema = z.strictObject({
 })
 export type Teaching = z.infer<typeof teachingSchema>
 
-export function modelRecording(lessonId: string, index: number, language: 'en' | 'ru'): Extract<ListeningActivity['audio'], { kind: 'recording' }> {
+export const audioLocales = { en: 'en-US', ru: 'ru-RU', es: 'es-ES' } as const
+
+export function modelRecording(lessonId: string, index: number, language: Language): Extract<ListeningActivity['audio'], { kind: 'recording' }> {
   return { kind: 'recording', src: `/audio/${lessonId}.model.${index + 1}.mp3`, license: 'MIT',
-    source: 'https://github.com/espeak-ng/espeak-ng', locale: language === 'en' ? 'en-US' : 'ru-RU', synthetic: true }
+    source: 'https://github.com/espeak-ng/espeak-ng', locale: audioLocales[language], synthetic: true }
+}
+
+// Spanish recordings are pending; use the existing local-device synthesis path.
+export function modelAudio(lessonId: string, index: number, language: Language): ListeningActivity['audio'] {
+  return language === 'es' ? { kind: 'synthesis', locale: audioLocales.es, rate: .85 }
+    : modelRecording(lessonId, index, language)
 }
 
 export const guidedAlternatives: Record<string, Exercise> = {

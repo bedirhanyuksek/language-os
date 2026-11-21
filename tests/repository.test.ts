@@ -2,8 +2,10 @@ import 'fake-indexeddb/auto'
 import Dexie from 'dexie'
 import { IDBObjectStore } from 'fake-indexeddb'
 import { catalog, legacyCatalog } from '../src/content/catalog'
+import { assessmentItem } from '../src/domain/adaptive-placement'
 import type { Answer } from '../src/domain/model'
 import { finishPlacement, finishReview } from '../src/domain/progress'
+import { beginPlacementTrack, nextPlacementItem, recordPlacementSample } from '../src/domain/adaptive-placement'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { IndexedLearningRepository, exportBackup, parseBackup } from '../src/persistence/repository'
 import reportV1 from './fixtures/speaking-valid.json'
@@ -56,6 +58,47 @@ describe('IndexedDB and backup', () => {
     expect(parseBackup(exportBackup(state))).toEqual(state)
     expect(() => parseBackup(exportBackup(state).replace('"schemaVersion": 2', '"schemaVersion": 99'))).toThrow()
     expect(() => parseBackup(exportBackup({ ...state, placementAt: new Date().toISOString() }))).toThrow(/tarama/)
+  })
+  it('round trips current Spanish profile data and accepted mixed-script Russian adaptive evidence', async () => {
+    const spanish = initialState({ ...state.profile, id: '08a23f13-d80c-4e18-8047-36d9a20c88fb', language: 'es',
+      estimate: 'A1', target: 'A2', minutes: 30 })
+    const spanishAnswers = Object.fromEntries(catalog.es.placement.map(({ exercise }) => [exercise.id,
+      exercise.kind === 'open' ? exercise.sample : exercise.kind === 'fill' || exercise.kind === 'short'
+        ? exercise.accepted[0] : exercise.accepted])) as Record<string, Answer>
+    const spanishPlaced = finishPlacement(spanish, catalog.es, spanishAnswers, '2026-11-13T10:00:00.000Z')
+    const savedSpanish = await repository.create(spanishPlaced)
+    expect(parseBackup(exportBackup(savedSpanish))).toEqual(savedSpanish)
+    const restored = await repository.restore(savedSpanish, savedSpanish)
+    expect(restored).toEqual(savedSpanish)
+
+    const russianProfile = { ...state, profile: { ...state.profile, days: [0, 1, 2, 3, 4, 5, 6] } }
+    let russian = beginPlacementTrack(russianProfile, '2026-11-13T10:00:00.000Z')
+    const first = nextPlacementItem(russian, '2026-11-13T10:00:00.000Z', 'Europe/Istanbul')!
+    expect(first.id).toBe('ru.assess.a1.r1')
+    russian = recordPlacementSample(russian, first.id, { status: 'answered', answer: 'МЕТРО' },
+      '2026-11-13T10:00:00.000Z', 'Europe/Istanbul')
+    const grammar = nextPlacementItem(russian, '2026-11-13T10:00:00.000Z', 'Europe/Istanbul')!
+    expect(grammar.id).toBe('ru.assess.a1.g1')
+    const grammarExercise = grammar.exercise
+    if (grammarExercise?.kind !== 'single') throw new Error('Expected a Russian recognition question')
+    russian = recordPlacementSample(russian, grammar.id, { status: 'answered', answer: grammarExercise.options[0] },
+      '2026-11-13T10:01:00.000Z', 'Europe/Istanbul')
+    const listening = nextPlacementItem(russian, '2026-11-13T10:01:00.000Z', 'Europe/Istanbul')!
+    expect(listening.id).toBe('ru.assess.a1.l1')
+    russian = recordPlacementSample(russian, listening.id, { status: 'unavailable' },
+      '2026-11-13T10:02:00.000Z', 'Europe/Istanbul')
+    const readingFollowup = nextPlacementItem(russian, '2026-11-14T10:00:00.000Z', 'Europe/Istanbul')!
+    expect(readingFollowup.id).toBe('ru.assess.a1.r2')
+    russian = recordPlacementSample(russian, readingFollowup.id, { status: 'unknown' },
+      '2026-11-14T10:00:00.000Z', 'Europe/Istanbul')
+    const next = nextPlacementItem(russian, '2026-11-14T10:01:00.000Z', 'Europe/Istanbul')!
+    expect(next.id).toBe('ru.assess.a1.g2')
+    const mixedScriptAnswer = 'Мeня' // Latin e among otherwise Cyrillic letters.
+    russian = recordPlacementSample(russian, next.id, { status: 'answered', answer: mixedScriptAnswer },
+      '2026-11-14T10:01:00.000Z', 'Europe/Istanbul')
+    expect(russian.placementTrack?.samples.at(-1)).toMatchObject({ itemId: next.id, answer: mixedScriptAnswer, result: 'correct' })
+    expect(assessmentItem(next.id)?.exercise?.kind).toBe('short')
+    expect(parseBackup(exportBackup(russian))).toEqual(russian)
   })
   it('serializes concurrent changes and rejects stale replacement', async () => {
     const current = await repository.create(state)

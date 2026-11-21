@@ -10,12 +10,13 @@ import { StudySession } from './StudySession'
 import type { StudyControls } from './study-session-context'
 import { DiagnosticView } from './DiagnosticView'
 import { phaseTasks, gradeVocabularyRecall, receptionTask } from '../domain/pedagogy'
-import type { ExerciseAttempt, Language, PedagogyPhase } from '../domain/model'
+import type { Answer, ExerciseAttempt, Language, PedagogyPhase } from '../domain/model'
 import { initialState, type LearningState } from '../domain/state'
 import { IndexedLearningRepository, localLearningOrigin, parseBackup, studyCursor, type QuarantineNotice } from '../persistence/repository'
 import type { MigrationIssue } from '../persistence/migration'
 import { StorageAccessError, storageIssue as describeStorageIssue, type StorageIssue } from '../persistence/storage-error'
 import { ExerciseForm } from './ExerciseForm'
+import { SpanishPlacement } from './SpanishPlacement'
 import { languageLabels, skillLabels } from './labels'
 import { ProfileForm } from './ProfileForm'
 import { TutorSettings } from './TutorPanel'
@@ -311,9 +312,15 @@ export function App() {
     content = <>
       <header className="page-heading"><div><p className="eyebrow">{languageLabels[course.language]} · {course.placement.length} soru</p>
         <h1>Başlangıç taraması</h1><p>Elinden geldiğince yanıtla. Sonuçlar çalışma planın için ilk ipuçlarını verir.</p></div></header>
-      {study({ kind: 'placement' }, (session) => <ExerciseForm key={course.id} placement language={course.language} busy={busy}
-        tasks={course.placement.map(({ exercise, objectiveId }) => ({ exercise, conceptId: objectiveId, label: skillLabels[exercise.skill] }))}
-        onSubmit={(answers) => completeStudy(session, (current) => finishPlacement(current, course, answers, nowISO()), () => go({ type: 'skills' }))} />)}
+      {study({ kind: 'placement' }, (session) => {
+        const submit = (answers: Record<string, Answer> | null) => completeStudy(session,
+          (current) => finishPlacement(current, course, answers, nowISO()), () => go({ type: 'skills' }))
+        return course.language === 'es'
+          ? <SpanishPlacement course={course} busy={busy} onSubmit={submit} />
+          : <ExerciseForm key={course.id} placement language={course.language} busy={busy}
+            tasks={course.placement.map(({ exercise, objectiveId }) => ({ exercise, conceptId: objectiveId, label: skillLabels[exercise.skill] }))}
+            onSubmit={submit} />
+      })}
     </>
   } else {
     const plan = dailyPlan(state, course, now, timeZone)
@@ -338,7 +345,7 @@ export function App() {
       ? <section className="surface section"><p>Sıradaki ek örnek · {skillLabels[assessment.skill]} · {assessment.focus}</p>
         <button className="secondary" onClick={() => go({ type: 'assessment' })}>Ek değerlendirmeyi aç</button></section>
       : upcoming ? <p className="notice">Sonraki uygun çalışma gününde {skillLabels[upcoming.item.skill].toLocaleLowerCase('tr')} için farklı bir örnek açılacak.</p>
-      : !state.placementTrack ? <button className="link-button" disabled={busy}
+      : !state.placementTrack && course.language !== 'es' ? <button className="link-button" disabled={busy}
         onClick={() => void update((current) => beginPlacementTrack(current, nowISO()), () => go({ type: 'assessment' }))}>
         İsteğe bağlı ek değerlendirmeyi başlat
       </button> : null
@@ -397,7 +404,7 @@ export function App() {
         }
         content = study({ kind: 'review', cardId: card.id }, (session) => <>
           <header className="page-heading"><div><h1>Kelime tekrarı</h1><p>Kart {screen.index + 1} / {screen.cardIds.length}</p></div></header>
-          {learning ? <TypedReview key={card.id} card={card} learning={learning} busy={busy}
+          {learning ? <TypedReview key={card.id} card={card} learning={learning} language={course.language} busy={busy}
             grade={(answer) => gradeVocabularyRecall(learning.recall, answer, course.language)}
             onRate={(answer) => completeStudy(session, (current) => finishTypedReview(current, course, card.id, answer, nowISO()), afterReview)} />
             : <ReviewCard key={card.id} card={card} index={screen.index} total={screen.cardIds.length} busy={busy}
@@ -464,7 +471,7 @@ export function App() {
           else void save(() => repository.switchLanguage(state.profile.id, language), () => go({ type: 'home' }),
             () => { go({ type: 'home' }); setNewLanguage(language) })
         }}>
-        <option value="en">İngilizce</option><option value="ru">Rusça</option>
+        <option value="en">İngilizce</option><option value="ru">Rusça</option><option value="es">İspanyolca</option>
       </select></label>}
     </header>
     <main id="main" tabIndex={-1} ref={mainRef} className={state ? 'workspace' : 'workspace welcome'}>

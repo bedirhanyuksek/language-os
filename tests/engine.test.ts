@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { legacyCatalog as catalog, publishCourse } from '../src/content/catalog'
-import { assess, mapPlacement } from '../src/domain/assessment'
+import { assess, mapPlacement, missingCyrillic } from '../src/domain/assessment'
+import type { Exercise } from '../src/content/schema'
 import type { Answer } from '../src/domain/model'
 import { beginSpeaking, dailyPlan, finishLesson, finishPlacement, finishReview, importReport, isUnlocked, lessonTasks, masteryFor } from '../src/domain/progress'
 import { dayMs, scheduleReview } from '../src/domain/review'
@@ -26,8 +27,38 @@ const finished = finishLesson(placement, course, first, answers, at)
 const plan = (state = finished, date = at) => dailyPlan(state, course, date, 'Europe/Istanbul')
 
 describe('course and assessments', () => {
+  const textExercise = (accepted: string): Exercise => ({
+    id: 'normalization', kind: 'short', skill: 'vocabulary', prompt: 'Yanıtla', accepted: [accepted], explanation: 'Örnek',
+  })
+  it.each([
+    ['ещё', 'еще'], ['еще', 'ЕЩЁ'], ['Меня', 'Mеня'], ['меня', 'меня\u0301'],
+    ['Привет мир', 'Привет, мир'], ['Привет мир', 'Привет,мир'],
+    ['Меня зовут Анна', '«Меня» зовут "Анна"'], ['ещё', '  ещё,  '],
+    ['ещё', 'еще\u0301'], ['мой', 'мой'],
+  ])('accepts Russian spelling and punctuation variants: %s / %s', (expected, answer) => {
+    expect(assess(textExercise(expected), answer, 'ru').outcome).toBe('correct')
+  })
+  it.each([
+    ['café', 'cafe'], ['résumé', 'resume'],
+    ['my', 'mу'], ['well-known', 'well known'], ['cant', "can't"], ['мой', 'мои'],
+  ])('preserves significant letters and word boundaries: %s / %s', (expected, answer) => {
+    expect(assess(textExercise(expected), answer, expected === 'мой' ? 'ru' : 'en').outcome).toBe('incorrect')
+  })
+  it.each([
+    ['I have led', '  I HAVE LED! '], ["don't", 'don’t'], ["don't", 'don‘t'],
+    ['Hello world', '"Hello", world!'], ['café', 'CAFÉ'], ['café', 'cafe\u0301'],
+  ])('keeps English case, whitespace and harmless punctuation leniency: %s / %s', (expected, answer) => {
+    expect(assess(textExercise(expected), answer, 'en').outcome).toBe('correct')
+  })
+  it('retains legacy rules and detects answers with letters but no Cyrillic', () => {
+    expect(assess(textExercise('ещё'), 'еще', 'ru', 'legacy').outcome).toBe('incorrect')
+    for (const answer of ['Menya', 'hello', 'Türkçe']) expect(missingCyrillic(answer)).toBe(true)
+    for (const answer of ['', '123 !', 'Меня', 'Mеня']) expect(missingCyrillic(answer)).toBe(false)
+    expect(assess(textExercise('Меня'), 'Menya', 'ru').outcome).toBe('incorrect')
+  })
   it('loads six linked reviewed lessons and rejects unpublished packs', () => {
-    expect(Object.values(catalog).flatMap((item) => item.unit.lessons)).toHaveLength(6)
+    expect([catalog.en, catalog.ru].flatMap((item) => item.unit.lessons)).toHaveLength(6)
+    expect(catalog.es.unit.lessons).toHaveLength(9)
     expect(() => publishCourse({ ...course, reviewStatus: 'draft' })).toThrow()
   })
   it('rejects invalid prerequisite graphs and invalid answers', () => {

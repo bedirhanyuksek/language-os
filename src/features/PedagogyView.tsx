@@ -1,14 +1,16 @@
 import { coachingForAnswer } from '../domain/lesson-coaching'
 import { InlineCoaching } from './TutorPanel'
 import { receptionExercises, type Course, type Lesson } from '../content/schema'
-import type { Answer, ExerciseAttempt, PedagogyPhase } from '../domain/model'
+import type { Answer, ExerciseAttempt, Language, PedagogyPhase } from '../domain/model'
 import { receptionTask, type ExerciseTask } from '../domain/pedagogy'
 import { pendingSpeakingCorrections } from '../domain/speaking'
 import type { LearningState } from '../domain/state'
 import { AudioPlayer } from './AudioPlayer'
 import { ExerciseForm } from './ExerciseForm'
+import { TextAnswer } from './TextAnswer'
 import { phaseLabels } from './labels'
 import { useStudySession } from './study-session-context'
+import { audioLocales } from '../content/teaching'
 
 export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state }: {
   course: Course; lesson: Lesson; phase: PedagogyPhase; state: LearningState; tasks: ExerciseTask[]; busy: boolean
@@ -29,7 +31,7 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
   const card = phase === 'vocabulary' ? lesson.vocabulary.find(({ id }) => id === activeCardId) : undefined
   const entry = p.vocabulary.find(({ cardId }) => cardId === card?.id)
   const vocabStep = step % 4
-  const audio = { kind: 'synthesis' as const, locale: p.language === 'en' ? 'en-US' as const : 'ru-RU' as const, rate: .85 }
+  const audio = { kind: 'synthesis' as const, locale: audioLocales[p.language], rate: .85 }
 
   async function next(answers: Record<string, Answer>) {
     const all = { ...collected, ...answers }
@@ -168,7 +170,8 @@ export function PedagogyResults({ lesson, phase, attempts, onContinue, state, re
   </>
 }
 
-export function TypedReview({ card, learning, busy, grade, onRate }: {
+export function TypedReview({ card, learning, language, busy, grade, onRate }: {
+  language: Language
   card: Lesson['vocabulary'][number]
   learning: NonNullable<Lesson['pedagogy']>['vocabulary'][number]
   busy: boolean
@@ -181,7 +184,8 @@ export function TypedReview({ card, learning, busy, grade, onRate }: {
   return <article className="surface review-card">
     <h2>İfadeyi hatırla</h2><p>{learning.recall.prompt}</p>
     {!feedback ? <form onSubmit={(event) => { event.preventDefault(); change({ supports: { feedback: true } }) }}>
-      <input type="text" aria-label="Hatırladığın ifade" value={answer} maxLength={2000} onChange={(event) => change({ answers: { [card.id]: event.target.value } })} required />
+      <TextAnswer language={language} label="Hatırladığın ifade" value={answer}
+        onChange={(value) => change({ answers: { [card.id]: value } })} required />
       <div className="button-row"><button className="primary" disabled={!answer.trim()}>Yanıtı karşılaştır</button></div>
     </form> : <>
       <p>{grade(answer) === 'remembered' ? 'Doğru hatırladın.' : 'Bu ifade için kısa bir tekrar planlanacak.'}</p>

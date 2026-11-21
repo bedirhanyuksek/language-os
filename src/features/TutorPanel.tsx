@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { z } from 'zod'
+import { isLocalTutorAvailable, mobileTutorNotice } from '../runtime'
 import type { Lesson } from '../content/schema'
 import type { LearningState } from '../domain/state'
 import { buildTutorRequest, validateTutorResponse, type TutorProvider, type TutorRequest, type TutorResponse } from '../domain/tutor'
@@ -22,6 +23,7 @@ class LocalTutorError extends Error {
 }
 
 async function local(path: string, csrf?: string, body: object = {}, signal?: AbortSignal) {
+  if (!isLocalTutorAvailable()) throw new LocalTutorError(mobileTutorNotice)
   const response = await fetch('/local-tutor/' + path, {
     method: csrf ? 'POST' : 'GET', cache: 'no-store', signal, credentials: 'same-origin',
     headers: csrf ? { 'X-Language-OS-CSRF': csrf, 'Content-Type': 'application/json' } : { 'X-Language-OS': '1' },
@@ -41,7 +43,7 @@ function useConnection(enabled = true) {
   const [connection, setConnection] = useState<Connection>()
   const [unavailable, setUnavailable] = useState(false)
   useEffect(() => {
-    if (!enabled) return
+    if (!enabled || !isLocalTutorAvailable()) return
     const controller = new AbortController()
     void local('status', undefined, {}, controller.signal).then((data) => {
       setConnection(connectionSchema.parse(data))
@@ -62,7 +64,16 @@ function useConnection(enabled = true) {
   return { connection, unavailable, call }
 }
 
+export function TutorUnavailableNote() {
+  return <p>{mobileTutorNotice}</p>
+}
+
 export function TutorSettings() {
+  return isLocalTutorAvailable() ? <LocalTutorSettings /> :
+    <section className="surface section"><TutorUnavailableNote /></section>
+}
+
+function LocalTutorSettings() {
   const { connection, unavailable, call } = useConnection()
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
@@ -105,6 +116,7 @@ export function TutorSettings() {
 export function LessonHelp({ state, lesson }: { state: LearningState; lesson: Lesson }) {
   const [question, setQuestion] = useState('')
   const [help, setHelp] = useState<{ label: string; request: TutorRequest }>()
+  if (!isLocalTutorAvailable()) return <div className="lesson-coaching"><TutorUnavailableNote /></div>
   return <div className="lesson-coaching">
     <div className="button-row">
       <button type="button" className="link-button" onClick={() => setHelp({
@@ -163,6 +175,7 @@ export function InlineCoaching({ label, request, initiallyOpen = false, onDismis
     }
   }
 
+  if (!isLocalTutorAvailable()) return <div className="lesson-coaching"><TutorUnavailableNote /></div>
   if (!open) return <button type="button" className="link-button" onClick={() => setOpen(true)}>{label}</button>
   return <section className="lesson-coaching" aria-label={label}>
     {request.question && <p><strong>Sorun</strong> {request.question}</p>}

@@ -5,7 +5,7 @@ import type { PlacementResponse, PlacementSample } from './placement-state'
 import type { LearningState, Profile } from './state'
 
 export function beginPlacementTrack(state: LearningState, now: string): LearningState {
-  if (state.placementTrack) return state
+  if (state.placementTrack || state.profile.language === 'es') return state
   const profile = state.profile
   const route = profile.language === 'ru' ? (profile.estimate === 'A1' || profile.target === 'A1' ? 'ru-start' : 'ru-a2')
     : ['A1', 'A2'].includes(profile.target) || ['A1', 'A2'].includes(profile.estimate) ? 'en-start'
