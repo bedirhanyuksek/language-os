@@ -25,9 +25,10 @@ import { TutorSettings } from './TutorPanel'
 import { Settings } from './Settings'
 import { SpeakingView } from './SpeakingView'
 import { Dashboard, LessonStudy, LessonNotes, LessonResults, ReviewCard, SkillProfile } from './StudyViews'
+import { RoadmapView } from './RoadmapView'
 
 type Screen =
-  | { type: 'home' | 'skills' | 'settings' | 'diagnostic' | 'assessment' | 'assessment-paused' }
+  | { type: 'home' | 'roadmap' | 'skills' | 'settings' | 'diagnostic' | 'assessment' | 'assessment-paused' }
   | { type: 'lesson' | 'speaking' | 'explanation'; lessonId: string }
   | { type: 'pedagogy'; phase: PedagogyPhase; lessonId: string; vocabularyCardIds?: string[] }
   | { type: 'pedagogy-results'; phase: PedagogyPhase; lessonId: string; attempts: ExerciseAttempt[]; retryListening?: boolean }
@@ -358,7 +359,8 @@ export function App() {
         onClick={() => void update((current) => beginPlacementTrack(current, nowISO()), () => go({ type: 'assessment' }))}>
         İsteğe bağlı ek değerlendirmeyi başlat
       </button> : null
-    if (screen.type === 'assessment' && assessment) content = placement(assessment, false)
+    if (screen.type === 'roadmap') content = <RoadmapView state={state} course={course} plan={plan} />
+    else if (screen.type === 'assessment' && assessment) content = placement(assessment, false)
     else if (screen.type === 'diagnostic' && diagnostic) content = study({ kind: 'diagnostic' }, (session) => <DiagnosticView key={diagnostic.exercise.id}
       state={state} course={course} busy={busy} back={() => go({ type: 'home' })}
       submit={(id, answer, played) => completeStudy(session, (current) => finishDiagnostic(current, course, id, answer, nowISO(), played),
@@ -470,6 +472,7 @@ export function App() {
       </button>
       <nav aria-label="Ana menü">
         {state && <button disabled={busy || resetting} onClick={() => go({ type: 'home' })} aria-current={screen.type === 'home' ? 'page' : undefined}>Plan</button>}
+        {state?.placementAt && <button className="roadmap-nav" disabled={busy || resetting} onClick={() => go({ type: 'roadmap' })} aria-current={screen.type === 'roadmap' ? 'page' : undefined}>Yol haritam</button>}
         {state?.placementAt && <button disabled={busy || resetting} onClick={() => go({ type: 'skills' })} aria-current={screen.type === 'skills' ? 'page' : undefined}>Beceri profili</button>}
         <button disabled={busy || resetting} onClick={() => go({ type: 'settings' })} aria-current={screen.type === 'settings' ? 'page' : undefined}>Ayarlar</button>
       </nav>
