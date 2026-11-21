@@ -17,7 +17,7 @@ Bu dalda gelenler: Rusça cevap kontrolü ve Kiril klavyesi, Android APK (Capaci
 ## 2. İspanyolca
 
 - [ ] **"Sıfırdan başla" düzeltmesi.** Şu an bütün tarama soruları "Bilmiyorum" metniyle kaydediliyor. Beceri profilinde "0/5 doğru · Düşük güven" görünüyor. Atlanan tarama, yanlış cevap gibi sayılmamalı. Yukarıdaki "Bilmiyorum / Atla" durumuyla birlikte çözülecek.
-- [ ] **Sesleri kayda geçir.** 54 MP3 bu dalda üretildi (`src/content/audio/es.*`, eSpeak NG 1.52 + FFmpeg). Uygulama hâlâ cihaz sentezini kullanıyor. `src/content/teaching.ts` (`modelAudio()`) ve `src/content/continuity.ts` (`author()`) içindeki İspanyolca `synthesis` dallarını `recording`'e çevir. Ayrıntılar: [SPANISH_AUDIO_TODO.md](SPANISH_AUDIO_TODO.md).
+- [x] **Sesleri kayda geçir.** 54 MP3 (`src/content/audio/es.*`, eSpeak NG 1.52 + FFmpeg), model, ilk/onarım dinlemesi ve kelime seslerinde kullanılıyor. Dosya, sıra ve metin eşleşmeleri test ediliyor. Anadili İspanyolca olan birinin incelemesi bekleniyor. Ayrıntılar: [SPANISH_AUDIO_TODO.md](SPANISH_AUDIO_TODO.md).
 - [ ] **Ekran klavyesi.** `TextAnswer` bileşenine İspanyolca için ñ, á, é, í, ó, ú, ü, ¿, ¡ tuşları eklenecek.
 - [ ] Sesleri dinleyerek kontrol et; içerik doğallığı için anadili İspanyolca biri incelesin.
 

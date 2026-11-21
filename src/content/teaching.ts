@@ -25,10 +25,8 @@ export function modelRecording(lessonId: string, index: number, language: Langua
     source: 'https://github.com/espeak-ng/espeak-ng', locale: audioLocales[language], synthetic: true }
 }
 
-// Spanish recordings are pending; use the existing local-device synthesis path.
 export function modelAudio(lessonId: string, index: number, language: Language): ListeningActivity['audio'] {
-  return language === 'es' ? { kind: 'synthesis', locale: audioLocales.es, rate: .85 }
-    : modelRecording(lessonId, index, language)
+  return modelRecording(lessonId, index, language)
 }
 
 export const guidedAlternatives: Record<string, Exercise> = {
