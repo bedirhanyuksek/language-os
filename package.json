@@ -19,6 +19,7 @@
     "curriculum:check": "vitest run tests/content-packs.test.ts tests/curriculum.test.ts tests/curriculum-inventory.test.ts tests/pedagogy.test.ts tests/personal-path.test.ts tests/spanish.test.ts",
     "curriculum:report": "vitest run --no-file-parallelism --disableConsoleIntercept tests/content-packs.test.ts tests/curriculum-inventory.test.ts tests/personal-path.test.ts",
     "test:e2e": "playwright test",
+    "verify": "npm run typecheck && npm run lint && npm test && npm run build && npm run test:e2e",
     "curriculum:audio": "node scripts/curriculum-audio.mjs"
   },
   "license": "MIT",

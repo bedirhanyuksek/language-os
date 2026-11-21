@@ -111,7 +111,7 @@ async function solvePhase(page: Page, course: Course, phase: 'transfer' | 'readi
   if (proposal.kind !== 'pedagogy') throw new Error('Beklenen öğrenme aşaması açılmadı.')
   const lesson = course.unit.lessons.find(({ id }) => id === proposal.lessonId)!
   await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
-  const items = phaseTasks(state, lesson, phase, now)
+  const items = phaseTasks(state, lesson, phase, now, proposal.vocabularyCardIds)
   for (const [index, { exercise }] of items.entries()) {
     if (phase === 'listening') await playAudio(page, index === 0 ? 'Kaydı dinle' : 'Tekrar dinle')
     await fill(page, exercise)

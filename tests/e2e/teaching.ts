@@ -44,7 +44,8 @@ export async function teachVocabulary(page: Page, course: Course, lesson: Lesson
     const at = await page.evaluate(() => new Date().toISOString())
     const plan = dailyPlan(state, course, at, 'Europe/Istanbul')
     expect(plan).toMatchObject({ kind: 'pedagogy', phase: 'vocabulary', lessonId: lesson.id })
-    const tasks = phaseTasks(state, lesson, 'vocabulary', at)
+    if (plan.kind !== 'pedagogy') throw new Error('Beklenen kelime grubu planlanmadı.')
+    const tasks = phaseTasks(state, lesson, 'vocabulary', at, plan.vocabularyCardIds)
     await page.getByRole('button', { name: 'Çalışmayı aç', exact: true }).click()
     for (const [index, { conceptId, exercise }] of tasks.entries()) {
       if (index % 3 === 0) {

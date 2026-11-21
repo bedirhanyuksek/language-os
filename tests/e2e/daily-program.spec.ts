@@ -24,7 +24,7 @@ test('choosing instruction preserves overdue reviews and distinguishes an opened
   })
   await page.getByRole('button', { name: 'Yedeği geri yükle' }).click()
   await expect(page.getByRole('region', { name: 'Günlük çalışma sırası' })).toContainText('Vadesi gelen tekrar')
-  await page.getByRole('button', { name: 'Kelime edinimi ile devam et', exact: true }).click()
+  await page.getByRole('button', { name: /Kelime edinimi · \d+ ifade ile devam et/ }).click()
   await expect(page.getByRole('heading', { name: 'lead a workshop', exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Kelimeyi çalış' }).click()
   await expect(page.getByText('Taslak bu cihazda kaydedildi.', { exact: true })).toBeVisible()

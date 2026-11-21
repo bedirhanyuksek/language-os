@@ -27,7 +27,7 @@ import { guidedAlternatives, teaching } from './teaching'
 import type { Language } from '../domain/model'
 import { spanishCourse, spanishLegacyCourse } from './curriculum/es'
 import { registerVocabularySenses } from './vocabulary'
-import vocabularyPilot from './vocabulary-pilot.json'
+import vocabularyPilot from './vocabulary-pilot.json' with { type: 'json' }
 
 export function publishCourse(data: unknown): Course {
   const course = courseSchema.parse(data)
