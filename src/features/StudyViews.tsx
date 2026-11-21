@@ -190,7 +190,7 @@ export function LessonResults({ lesson, attempts, onContinue, state }: {
       return <article className="surface feedback" key={attempt.id}>
         <span className={`status ${outcome}`}>{outcome === 'correct' ? 'Doğru' : outcome === 'incorrect' ? 'Tekrar çalışılacak' : 'İnceleme bekliyor'}</span>
         <h2>{exercise.prompt}</h2>
-        <p className="yours"><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
+        <p className="yours" lang={state.profile.language}><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
         {exercise.kind === 'open' && <p className="expected"><strong>Örnek yanıt</strong> {exercise.sample}</p>}
         {outcome === 'incorrect' && exercise.kind !== 'open' && <p className="expected"><strong>Beklenen yanıt</strong> {
           Array.isArray(exercise.accepted) ? exercise.accepted.join(exercise.kind === 'fill' || exercise.kind === 'short' ? ' / ' : ' · ') : exercise.accepted}</p>}
@@ -282,7 +282,7 @@ export function SkillProfile({ state, course, plan, now }: { state: LearningStat
       const answer = state.attempts.find(({ exerciseId }) => exerciseId === exercise.id)?.answer
       if (!answer) return null
       return <article className="surface feedback" key={exercise.id}>
-        <h2>Yazılı üretim örneği</h2><p className="yours"><strong>Yanıtın</strong> {answer}</p>
+        <h2>Yazılı üretim örneği</h2><p className="yours" lang={state.profile.language}><strong>Yanıtın</strong> {answer}</p>
         <p className="expected"><strong>Örnek yanıt</strong> {exercise.sample}</p><p>{exercise.explanation}</p>
       </article>
     })}

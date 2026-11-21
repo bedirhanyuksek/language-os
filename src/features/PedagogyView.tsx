@@ -149,7 +149,7 @@ export function PedagogyResults({ lesson, phase, attempts, onContinue, state, re
       return <article key={attempt.id} className="surface feedback section">
         <p className={`status ${attempt.evidence.outcome}`}>{wrong ? (finalFailure ? 'Kanıt eksik' : 'Tekrar çalışılacak') :
           attempt.evidence.outcome === 'correct' ? 'Doğru' : 'İnceleme bekliyor'}</p>
-        <h2>{exercise.prompt}</h2><p className="yours"><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
+        <h2>{exercise.prompt}</h2><p className="yours" lang={state.profile.language}><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
         {wrong && exercise.kind !== 'open' && <p className="expected"><strong>Beklenen yanıt</strong> {Array.isArray(exercise.accepted) ? exercise.accepted.join(' / ') : exercise.accepted}</p>}
         {exercise.kind === 'open' && <p className="expected"><strong>Örnek</strong> {exercise.sample}</p>}
         <p>{exercise.explanation}</p>
@@ -189,7 +189,7 @@ export function TypedReview({ card, learning, language, busy, grade, onRate }: {
       <div className="button-row"><button className="primary" disabled={!answer.trim()}>Yanıtı karşılaştır</button></div>
     </form> : <>
       <p>{grade(answer) === 'remembered' ? 'Doğru hatırladın.' : 'Bu ifade için kısa bir tekrar planlanacak.'}</p>
-      <p className="yours"><strong>Yanıtın</strong> {answer}</p><p className="expected"><strong>Hedef ifade</strong> {card.term}</p>
+      <p className="yours" lang={language}><strong>Yanıtın</strong> {answer}</p><p className="expected"><strong>Hedef ifade</strong> {card.term}</p>
       <blockquote>{card.example}</blockquote>
       <p><strong>Birlikte kullanılan ifadeler</strong> {learning.collocations.join(' · ')}</p>
       <button className="primary" disabled={busy} onClick={() => void onRate(answer)}>Tekrarı kaydet</button>
