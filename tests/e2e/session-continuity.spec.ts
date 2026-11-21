@@ -91,6 +91,18 @@ async function submitPractice(page: Page) {
   await page.getByRole('button', { name: 'Yanıtları değerlendir' }).click()
 }
 
+async function playAudio(page: Page, label: string) {
+  const player = page.locator('audio')
+  await expect(player).toHaveAttribute('aria-label', label)
+  await player.evaluate(async (element) => {
+    const audio = element as HTMLAudioElement
+    audio.muted = true
+    audio.playbackRate = 4
+    await audio.play()
+  })
+  await expect(player).toHaveJSProperty('ended', true)
+}
+
 async function solvePhase(page: Page, course: Course, phase: 'transfer' | 'reading' | 'listening' | 'delayed', now = firstDay) {
   await clearPlannedReviews(page, course)
   const state = await stored(page)
@@ -101,7 +113,7 @@ async function solvePhase(page: Page, course: Course, phase: 'transfer' | 'readi
   await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
   const items = phaseTasks(state, lesson, phase, now)
   for (const [index, { exercise }] of items.entries()) {
-    if (phase === 'listening') await page.getByLabel(index === 0 ? 'Kaydı dinle' : 'Tekrar dinle').dispatchEvent('ended')
+    if (phase === 'listening') await playAudio(page, index === 0 ? 'Kaydı dinle' : 'Tekrar dinle')
     await fill(page, exercise)
     if (phase === 'listening' && index === 0 && items.length > 1) await page.getByRole('button', { name: 'Ana fikri kaydet' }).click()
   }
@@ -167,6 +179,13 @@ test('Russian A1 at fifteen minutes resumes Kiril repair offline and proceeds to
   await page.clock.setFixedTime(new Date(third))
   await page.reload()
   await solvePhase(page, course, 'listening', third)
+  const { main, detail } = kiril.pedagogy!.listening
+  const listeningAttempts = (await stored(page)).attempts.filter(({ exerciseId }) =>
+    exerciseId === main.id || exerciseId === detail.id)
+  expect(listeningAttempts.map(({ exerciseId, evidence, study }) => [exerciseId, evidence.outcome, study?.plays])).toEqual([
+    [main.id, 'correct', 2],
+    [detail.id, 'correct', 2],
+  ])
   await reviews(page, course, third)
   const state = await stored(page)
   const plan = dailyPlan(state, course, third, zone)
