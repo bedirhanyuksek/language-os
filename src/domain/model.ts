@@ -54,7 +54,7 @@ export type SkillMastery = {
 export type ErrorRecord = { id: string; lessonId: string; label: string; example: string }
 export type PedagogyPhase = 'foundation' | 'transfer' | 'reading' | 'listening' | 'vocabulary' | 'delayed' | 'revision'
 export type StudyPlan =
-  | { kind: 'pedagogy'; phase: PedagogyPhase; lessonId: string; minutes: number; reason: string; evidenceId?: string }
+  | { kind: 'pedagogy'; phase: PedagogyPhase; lessonId: string; minutes: number; reason: string; evidenceId?: string; vocabularyCardIds?: string[] }
   | { kind: 'lesson' | 'practice' | 'speaking'; lessonId: string; minutes: number; reason: string }
   | { kind: 'review'; cardIds: string[]; minutes: number; reason: string }
   | { kind: 'assessment_gap'; lessonId: string; reason: string }

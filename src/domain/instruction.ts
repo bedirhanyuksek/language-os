@@ -23,8 +23,9 @@ export function wordsPrepared(state: LearningState, lesson: Lesson) {
   if (!vocabulary) return true
   const used = new Set(state.attempts.filter(({ lessonId, context }) => lessonId === lesson.id && context === 'vocabulary')
     .map(({ exerciseId }) => exerciseId))
+  const supplemental = new Set(lesson.vocabulary.filter((card) => card.supplemental).map(({ id }) => id))
   return vocabulary.every((entry) => {
-    if (used.has(entry.use.id)) return true
+    if (supplemental.has(entry.cardId) || used.has(entry.use.id)) return true
     const review = [...state.reviewHistory].reverse().find(({ cardId }) => cardId === entry.cardId)
     return review?.mode === 'typed' && review.result === 'remembered' && typeof review.answer === 'string' &&
       assess(entry.recall, review.answer, state.profile.language).outcome === 'correct'

@@ -9,6 +9,8 @@ import { phaseMinutes } from './study-session'
 import { dayMs, scheduleReview } from './review'
 import { reportSchema, validateSpeakingReport, pendingSpeakingCorrections, speakingFocus, speakingSuccesses, speakingWordGaps, type SpeakingReport, type SpeakingSession } from './speaking'
 import type { LearningState, StudySession } from './state'
+import { vocabularyIndex } from '../content/vocabulary'
+import { vocabularyLoad, vocabularyMinutes } from './vocabulary-load'
 
 type AnsweredExercise = { exercise: Exercise; conceptId: string }
 export type { ExerciseTask } from './pedagogy'
@@ -157,6 +159,7 @@ export function finishReview(state: LearningState, cardId: string, result: 'agai
 export function finishPedagogy(
   state: LearningState, course: Course, lesson: Lesson, phase: PedagogyPhase,
   answers: Record<string, Answer>, now: string, listening?: 'played' | 'unavailable', taskAt = now,
+  vocabularyCardIds?: readonly string[],
 ): LearningState {
   if (!state.placementAt || !lesson.pedagogy || !isUnlocked(state, course, lesson)) throw new Error('Çalışma ön koşullarını tamamla.')
   const mastery = masteryFor(state, lesson).status
@@ -168,7 +171,8 @@ export function finishPedagogy(
     lessonTasks(state, lesson).length) {
     throw new Error('Önce rehberli pratiği ve ilk yazını tamamla.')
   }
-  const tasks = phaseTasks(state, lesson, phase, taskAt)
+  if (vocabularyCardIds && phase !== 'vocabulary') throw new Error('Kelime grubu bu çalışmaya ait değil.')
+  const tasks = phaseTasks(state, lesson, phase, taskAt, vocabularyCardIds)
   const plan = pedagogyPlan(state, course, lesson, taskAt, ['ready', 'retained'].includes(mastery))
   const alternateReception = (phase === 'reading' || phase === 'listening') &&
     (plan?.phase === 'reading' || plan?.phase === 'listening')
@@ -177,6 +181,7 @@ export function finishPedagogy(
     return { ...state, skippedListening: [...state.skippedListening, lesson.id] }
   }
   if (phase === 'listening' && listening !== 'played') throw new Error('Önce kaydı dinle.')
+  if (vocabularyCardIds && Object.keys(answers).length !== tasks.length) throw new Error('Kelime grubu değişti.')
   const attempts = recordAttempts(state, tasks, answers, now, phase, course.version, lesson.id)
   const newCards = phase === 'vocabulary'
     ? lesson.vocabulary.filter(({ id }) => tasks.some(({ conceptId }) => conceptId === id) &&
@@ -184,13 +189,12 @@ export function finishPedagogy(
     : []
   return spend({ ...state, attempts: [...state.attempts, ...attempts], reviews: [
     ...state.reviews, ...newCards.map(({ id }) => ({ cardId: id, step: 0, dueAt: now, introducedAt: now })),
-  ] }, 'lesson', lesson.id, phaseMinutes[phase], now)
+  ] }, 'lesson', lesson.id, vocabularyCardIds ? vocabularyMinutes(vocabularyCardIds.length) : phaseMinutes[phase], now)
 }
 
 export function finishTypedReview(state: LearningState, course: Course, cardId: string, answer: string, now: string) {
   if (!answer.trim() || answer.length > 2000) throw new Error('Geçerli bir hatırlama yanıtı yaz.')
-  const exercise = course.unit.lessons.flatMap((lesson) => lesson.pedagogy?.vocabulary ?? [])
-    .find((entry) => entry.cardId === cardId)?.recall
+  const exercise = vocabularyIndex(course).get(cardId)?.learning?.recall
   if (!exercise) throw new Error('Kelime üretim görevi bulunamadı.')
   return finishReview(state, cardId, gradeVocabularyRecall(exercise, answer, course.language), now, answer.trim())
 }
@@ -272,6 +276,15 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
   }
   const used = dailyMinutes(state, now, timeZone)
   const available = state.profile.minutes - used
+  const load = vocabularyLoad(state, course, now, timeZone, available)
+  let deferredVocabulary = false
+  const planPedagogy = (lesson: Lesson, ready: boolean) => {
+    const plan = pedagogyPlan(state, course, lesson, now, ready, load)
+    if (!plan && load.availableNew === 0 && pedagogyPlan(state, course, lesson, now, ready)?.phase === 'vocabulary') {
+      deferredVocabulary = true
+    }
+    return plan
+  }
   const targetIndex = levelSchema.options.indexOf(state.profile.target)
   const eligible = course.unit.lessons.filter((lesson) => levelSchema.options.indexOf(lesson.objective.level) <= targetIndex &&
     (course.language !== 'en' || lesson.objective.level !== 'A1' || needsEnglishStarter(state)))
@@ -292,10 +305,11 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
   })
   let assessmentGap: Lesson | undefined
   for (const developing of developingLessons) {
+    const vocabularyWasDeferred = deferredVocabulary
     const tasks = lessonTasks(state, developing)
     const onlyProduction = tasks.length === 1 && tasks[0].exercise.kind === 'open'
     if (developing.pedagogy) {
-      task = pedagogyPlan(state, course, developing, now, false)
+      task = planPedagogy(developing, false)
       if (task?.kind === 'pedagogy' && task.phase === 'transfer' && tasks.length &&
         !canAccelerate(state, course, developing) && (developing.teaching || !onlyProduction) &&
         !state.attempts.some(({ lessonId, context }) => lessonId === developing.id && context === 'transfer')) task = undefined
@@ -304,7 +318,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
       reason: onlyProduction ? 'Rehberli pratiği tamamladın. Şimdi öğrendiğin yapıyla kendi mesajını yaz.'
         : `Önceki yanıtın için açıklamalı prova ve yeni soru. Çalışılacak konular ${tasks.map(({ label }) => label).join(', ')}.` }
     if (task && !pausedToday(developing)) break
-    if (!task) assessmentGap ??= developing
+    if (!task && !vocabularyWasDeferred && !deferredVocabulary) assessmentGap ??= developing
     task = undefined
   }
   if (!task) {
@@ -312,10 +326,10 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
       const mastery = masteryFor(state, lesson).status
       if (mastery !== 'ready' && mastery !== 'retained') continue
       if (lesson.pedagogy && !wordsPrepared(state, lesson)) {
-        task = pedagogyPlan(state, course, lesson, now, true)
+        task = planPedagogy(lesson, true)
       } else if (lesson.pedagogy && !state.attempts.some(({ exerciseId }) => exerciseId === lesson.production.id)) {
         task = { kind: 'practice', lessonId: lesson.id, minutes: 3, reason: 'Yeni bağlamı çözdün. Şimdi kendi cümleni kur ve örnek ölçütlerle karşılaştır.' }
-      } else if (lesson.pedagogy) task = pedagogyPlan(state, course, lesson, now, true)
+      } else if (lesson.pedagogy) task = planPedagogy(lesson, true)
       if (!task && lesson.speaking && !state.skippedSpeaking.includes(lesson.id) &&
         !state.speakingAssessments.some(({ report }) => report.lessonId === lesson.id)) {
         task = { kind: 'speaking', lessonId: lesson.id, minutes: 5,
@@ -334,7 +348,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
       .sort((a, b) => misses(b) - misses(a) || goalWeight(b) - goalWeight(a))
     const next = choices.find(({ id }) => id === entry?.id && !state.attempts.some(({ context }) =>
       context === 'lesson' || context === 'transfer')) ?? choices[0]
-    if (next && canAccelerate(state, course, next)) task = pedagogyPlan(state, course, next, now, false)
+    if (next && canAccelerate(state, course, next)) task = planPedagogy(next, false)
     else if (next) task = { kind: 'lesson', lessonId: next.id, minutes: next.minutes,
       reason: next.id === entry?.id ? entry.reason : next === bridge ? 'Tarama, kısa bir temel çalışmanın sonraki görevleri kolaylaştırabileceğini gösterdi.' : misses(next) ? 'Başlangıç taramasında bu kazanım için çalışma fırsatı görüldü.'
         : next.prerequisites.length ? 'Ön koşullar tamamlandı ve sıradaki kazanım açıldı.' : 'Başlangıç ünitesinin ilk kazanımı.' }
@@ -378,7 +392,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
     const cardIds = cards.sort((a, b) => (reportCards.get(b) ?? 0) - (reportCards.get(a) ?? 0) || Number(failed.has(b)) - Number(failed.has(a))).slice(0, reviewSlots)
     const fromSpeaking = cardIds.find((id) => reportCards.has(id))
     if (fromSpeaking) {
-      const term = course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).find(({ id }) => id === fromSpeaking)?.term
+      const term = vocabularyIndex(course).get(fromSpeaking)?.card.term
       return { kind: 'review', cardIds, minutes: cardIds.length,
         reason: `Konuşma raporunda “${term}” için kelime veya kalıp eksiği görüldü. İfadeyi hatırla ve kullanım örneğini incele.` }
     }
@@ -388,7 +402,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
       return state.attempts.some(({ conceptId, context, evidence }) => conceptId === id && context === 'vocabulary' &&
         evidence.observation === 'controlled_production' && evidence.outcome === 'incorrect')
     })
-    const term = missed && course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).find(({ id }) => id === missed)?.term
+    const term = missed && vocabularyIndex(course).get(missed)?.card.term
     return { kind: 'review', cardIds, minutes: cardIds.length, reason: reviewFocus
       ? 'Gecikmiş kelime tekrarları birikti. Bugünkü kısa oturumda önce bunları çalış; sıradaki öğretim etkinliği planında kalır.'
       : term ? `“${term}” son denemede hatırlanmadı. İpucundan hareketle yeniden yazmayı dene.`
@@ -402,6 +416,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
   if (task) return assessmentGap
     ? { ...task, reason: `Önceki kazanım için yeni değerlendirme örneği kalmadı. ${task.reason}` }
     : task
+  if (deferredVocabulary) return { kind: 'budget', reason: 'Yeni kelimeler için bugünkü süre veya çalışma yükü sınırına ulaştın. Kalan kelimeler sırada.' }
   if (assessmentGap) return { kind: 'assessment_gap', lessonId: assessmentGap.id,
     reason: 'Bu kazanım için yeni değerlendirme örneği kalmadı. Önceki denemelerin saklandı; yeni soru eklenene kadar diğer uygun çalışmalara dönebilirsin.' }
   if (unlocked.some((lesson) => masteryFor(state, lesson).status === 'developing')) {

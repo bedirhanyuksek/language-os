@@ -8,7 +8,9 @@ export const studyTaskSchema = z.discriminatedUnion('kind', [
   z.strictObject({ kind: z.literal('diagnostic') }),
   z.strictObject({ kind: z.literal('assessment'), itemId: idSchema }),
   z.strictObject({ kind: z.literal('lesson'), lessonId: idSchema }),
-  z.strictObject({ kind: z.literal('pedagogy'), lessonId: idSchema, phase: z.enum(['foundation', 'transfer', 'reading', 'listening', 'vocabulary', 'delayed', 'revision']) }),
+  z.strictObject({ kind: z.literal('pedagogy'), lessonId: idSchema, phase: z.enum(['foundation', 'transfer', 'reading', 'listening', 'vocabulary', 'delayed', 'revision']),
+    vocabularyCardIds: z.array(idSchema).min(1).refine((ids) => new Set(ids).size === ids.length).optional(),
+  }).refine((task) => !task.vocabularyCardIds || task.phase === 'vocabulary'),
   z.strictObject({ kind: z.literal('review'), cardId: idSchema }),
 ])
 

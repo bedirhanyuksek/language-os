@@ -26,6 +26,8 @@ import { author, continuity } from './continuity'
 import { guidedAlternatives, teaching } from './teaching'
 import type { Language } from '../domain/model'
 import { spanishCourse, spanishLegacyCourse } from './curriculum/es'
+import { registerVocabularySenses } from './vocabulary'
+import vocabularyPilot from './vocabulary-pilot.json'
 
 export function publishCourse(data: unknown): Course {
   const course = courseSchema.parse(data)
@@ -95,3 +97,4 @@ export function createCatalog(packs: typeof packedLessons): Record<Language, Cou
 }
 
 export const catalog = createCatalog(packedLessons)
+registerVocabularySenses(catalog, vocabularyPilot)

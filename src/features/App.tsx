@@ -1,11 +1,13 @@
 import { useCallback, type ReactNode, lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { catalog } from '../content/catalog'
+import { vocabularyIndex } from '../content/vocabulary'
 import { beginSpeaking, dailyPlan, finishLesson, finishPlacement, finishDiagnostic, finishReview, finishPedagogy, finishTypedReview, importReport, lessonTasks, isUnlocked } from '../domain/progress'
 import { assessmentItem, beginPlacementTrack, finishMiniPlacement, nextPlacementItem, recordPlacementSample, upcomingPlacement } from '../domain/adaptive-placement'
 import { PlacementView } from './PlacementView'
 import { nextDiagnostic } from '../domain/diagnostic'
 import type { Course } from '../content/schema'
 import { phaseMinutes, studyContentRevision, studyKey, type StudyDefinition, type StudyDraft, type StudyTask } from '../domain/study-session'
+import { vocabularyMinutes } from '../domain/vocabulary-load'
 import { StudySession } from './StudySession'
 import type { StudyControls } from './study-session-context'
 import { DiagnosticView } from './DiagnosticView'
@@ -27,7 +29,7 @@ import { Dashboard, LessonStudy, LessonNotes, LessonResults, ReviewCard, SkillPr
 type Screen =
   | { type: 'home' | 'skills' | 'settings' | 'diagnostic' | 'assessment' | 'assessment-paused' }
   | { type: 'lesson' | 'speaking' | 'explanation'; lessonId: string }
-  | { type: 'pedagogy'; phase: PedagogyPhase; lessonId: string }
+  | { type: 'pedagogy'; phase: PedagogyPhase; lessonId: string; vocabularyCardIds?: string[] }
   | { type: 'pedagogy-results'; phase: PedagogyPhase; lessonId: string; attempts: ExerciseAttempt[]; retryListening?: boolean }
   | { type: 'results'; lessonId: string; attempts: ExerciseAttempt[] }
   | { type: 'review'; cardIds: string[]; index: number }
@@ -46,6 +48,12 @@ function withStudyBudget(state: LearningState, budget: number) {
 function defineStudy(state: LearningState, course: Course, task: StudyTask, now: string): StudyDefinition | undefined {
   const lesson = 'lessonId' in task ? course.unit.lessons.find(({ id }) => id === task.lessonId) : undefined
   if (lesson && !isUnlocked(state, course, lesson)) return
+  const selected = task.kind === 'pedagogy' ? task.vocabularyCardIds : undefined
+  const supplemental = new Set(lesson?.vocabulary.filter((card) => card.supplemental).map(({ id }) => id))
+  // Supplemental cards do not change the content revision of pre-existing lesson drafts.
+  const teaching = lesson?.teaching && supplemental.size
+    ? { ...lesson.teaching, vocabulary: lesson.teaching.vocabulary.filter(({ cardId }) => !supplemental.has(cardId) || selected?.includes(cardId)) }
+    : lesson?.teaching
   let itemIds: string[] = []
   let minutes = 0
   let content: unknown
@@ -74,7 +82,7 @@ function defineStudy(state: LearningState, course: Course, task: StudyTask, now:
   if (task.kind === 'lesson' && lesson) {
     const tasks = lessonTasks(state, lesson)
     itemIds = tasks.map(({ exercise }) => exercise.id)
-    content = [tasks, lesson.teaching, lesson.pedagogy?.rubric]
+    content = [tasks, teaching, lesson.pedagogy?.rubric]
     const writing = tasks.every(({ exercise }) => exercise.kind === 'open')
     minutes = writing ? 3 : lesson.minutes
     if (writing) reason = 'new_assessment'
@@ -82,20 +90,20 @@ function defineStudy(state: LearningState, course: Course, task: StudyTask, now:
       lessonId === lesson.id && context === 'lesson' && evidence.outcome === 'incorrect')) reason = 'guided_repair'
   }
   if (task.kind === 'pedagogy' && lesson) {
-    const tasks = phaseTasks(state, lesson, task.phase, now)
+    const tasks = phaseTasks(state, lesson, task.phase, now, selected)
     itemIds = tasks.map(({ exercise }) => exercise.id)
     const reception = task.phase === 'reading' || task.phase === 'listening' ? receptionTask(state, lesson, task.phase) : undefined
-    content = [tasks, reception?.material, lesson.teaching, task.phase === 'vocabulary' ? lesson.vocabulary : undefined]
-    minutes = phaseMinutes[task.phase]
+    const vocabulary = task.phase === 'vocabulary' ? lesson.vocabulary.filter(({ id }) => !supplemental.has(id) || selected?.includes(id)) : undefined
+    content = [tasks, reception?.material, teaching, vocabulary]
+    minutes = selected ? vocabularyMinutes(selected.length) : phaseMinutes[task.phase]
     reason = task.phase === 'foundation' ? 'prerequisite' : task.phase === 'delayed' ? 'due_review' :
       task.phase === 'revision' ? 'writing_revision' : task.phase === 'vocabulary' ? 'new_learning' : 'new_assessment'
   }
   if (task.kind === 'review' && state.reviews.some(({ cardId, dueAt }) => cardId === task.cardId && dueAt <= now)) {
-    const owner = course.unit.lessons.find(({ vocabulary }) => vocabulary.some(({ id }) => id === task.cardId))
-    const card = owner?.vocabulary.find(({ id }) => id === task.cardId)
-    if (card) {
+    const entry = vocabularyIndex(course).get(task.cardId)
+    if (entry) {
       itemIds = [task.cardId]
-      content = [card, owner?.pedagogy?.vocabulary.find(({ cardId }) => cardId === task.cardId)]
+      content = [entry.card, entry.learning]
     }
     minutes = 1
     reason = 'due_review'
@@ -110,7 +118,8 @@ function canResume(state: LearningState, course: Course, draft: StudyDraft) {
 
 function resumeScreen(task: StudyTask): Screen {
   if (task.kind === 'review') return { type: 'review', cardIds: [task.cardId], index: 0 }
-  if (task.kind === 'lesson' || task.kind === 'pedagogy') return task.kind === 'lesson' ? { type: 'lesson', lessonId: task.lessonId } : { type: 'pedagogy', lessonId: task.lessonId, phase: task.phase }
+  if (task.kind === 'lesson') return { type: 'lesson', lessonId: task.lessonId }
+  if (task.kind === 'pedagogy') return { type: 'pedagogy', lessonId: task.lessonId, phase: task.phase, vocabularyCardIds: task.vocabularyCardIds }
   return { type: task.kind === 'diagnostic' || task.kind === 'assessment' ? task.kind : 'home' }
 }
 
@@ -331,7 +340,7 @@ export function App() {
       const plan = selectedPlan
       if (plan.kind === 'assessment_gap') go({ type: 'explanation', lessonId: plan.lessonId })
       else if (plan.kind === 'review') go({ type: 'review', cardIds: plan.cardIds, index: 0 })
-      else if (plan.kind === 'pedagogy') go({ type: 'pedagogy', phase: plan.phase, lessonId: plan.lessonId })
+      else if (plan.kind === 'pedagogy') go({ type: 'pedagogy', phase: plan.phase, lessonId: plan.lessonId, vocabularyCardIds: plan.vocabularyCardIds })
       else if (plan.kind === 'lesson' || plan.kind === 'practice') go({ type: 'lesson', lessonId: plan.lessonId })
       else if (plan.kind === 'speaking') {
         const selected = course?.unit.lessons.find(({ id }) => id === plan.lessonId)
@@ -383,11 +392,12 @@ export function App() {
     } else if (screen.type === 'results' && lesson) content = <LessonResults lesson={lesson} state={state}
       attempts={screen.attempts} onContinue={() => go({ type: 'home' })} />
     else if (screen.type === 'pedagogy' && lesson && lesson.pedagogy) {
-      content = study({ kind: 'pedagogy', lessonId: lesson.id, phase: screen.phase }, (session) => {
-        const tasks = phaseTasks(withStudyBudget(state, session.draft.budget), lesson, screen.phase, session.draft.openedAt)
+      const selected = screen.vocabularyCardIds
+      content = study({ kind: 'pedagogy', lessonId: lesson.id, phase: screen.phase, ...(selected && { vocabularyCardIds: selected }) }, (session) => {
+        const tasks = phaseTasks(withStudyBudget(state, session.draft.budget), lesson, screen.phase, session.draft.openedAt, selected)
         return <PedagogyView course={course} lesson={lesson} phase={screen.phase} tasks={tasks} state={state}
           busy={busy} submit={(answers, listening) => completeStudy(session, (current) =>
-            finishPedagogy(current, course, lesson, screen.phase, answers, nowISO(), listening, session.draft.openedAt),
+            finishPedagogy(current, course, lesson, screen.phase, answers, nowISO(), listening, session.draft.openedAt, selected),
             (saved) => go({ type: 'pedagogy-results', phase: screen.phase, lessonId: lesson.id,
               retryListening: screen.phase === 'listening' && Boolean(receptionTask(state, lesson, 'listening')?.previous.length),
               attempts: listening === 'unavailable' ? [] : saved.attempts.slice(-tasks.length) }))} />
@@ -395,9 +405,9 @@ export function App() {
     } else if (screen.type === 'pedagogy-results' && lesson && lesson.pedagogy) {
       content = <PedagogyResults lesson={lesson} phase={screen.phase} state={state} attempts={screen.attempts} retryListening={screen.retryListening} onContinue={() => go({ type: 'home' })} />
     } else if (screen.type === 'review') {
-      const card = course.unit.lessons.flatMap((item) => item.vocabulary).find(({ id }) => id === screen.cardIds[screen.index])
-      if (card) {
-        const learning = course.unit.lessons.flatMap((item) => item.pedagogy?.vocabulary ?? []).find(({ cardId }) => cardId === card.id)
+      const entry = vocabularyIndex(course).get(screen.cardIds[screen.index])
+      if (entry) {
+        const { card, learning } = entry
         const afterReview = () => {
           if (screen.index + 1 < screen.cardIds.length) go({ ...screen, index: screen.index + 1 })
           else { go({ type: 'home' }); setNotice('Kelime tekrarları kaydedildi.') }

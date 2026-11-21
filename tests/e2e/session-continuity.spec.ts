@@ -304,7 +304,7 @@ function advancedHistory() {
       const lesson = course.unit.lessons.find(({ id }) => id === plan.lessonId)!
       if (plan.kind === 'speaking') state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
       else if (plan.kind === 'pedagogy') state = finishPedagogy(state, course, lesson, plan.phase,
-        answers(phaseTasks(state, lesson, plan.phase, now)), now, plan.phase === 'listening' ? 'played' : undefined)
+        answers(phaseTasks(state, lesson, plan.phase, now, plan.vocabularyCardIds)), now, plan.phase === 'listening' ? 'played' : undefined, now, plan.vocabularyCardIds)
       else state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), now)
     }
   }

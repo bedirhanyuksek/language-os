@@ -1,6 +1,7 @@
 import type { CEFRLevel, Language } from '../domain/model'
 import type { Exercise, Lesson } from './schema'
 import { modelAudio, modelRecording, type Teaching } from './teaching'
+import type { ListeningActivity } from './pedagogy-schema'
 
 type Practice = [prompt: string, answer: string, ...alternatives: string[]]
 type Concept = {
@@ -14,7 +15,7 @@ type Material = {
   transcript: string; preparation: string; main: Question; detail: Question
 }
 export type Word = { term: string; meaning: string; example: string; usage: string; pronunciation: string; collocations: string[]
-  recognize: Question; recall: Practice; use: string }
+  recognize: Question; recall: Practice; use: string; supplemental?: true; audio?: ListeningActivity['audio'] }
 
 export type Module = {
   id: string; level: CEFRLevel; prerequisite?: string | string[]; title: string; objective: string
@@ -80,8 +81,9 @@ export function author(language: Language, item: Module): Lesson {
     examples: concepts.map(({ correct, incorrect, explanation }) => ({ correct, incorrect, note: explanation })),
     concepts: lessonConcepts.map(({ id, label, variants }) => ({ id, label, variants })),
     production: production('writing', writing.prompt, writing.sample),
-    vocabulary: words.map(({ cardId, term, meaning, example, usage, pronunciation }) => ({
+    vocabulary: words.map(({ cardId, term, meaning, example, usage, pronunciation, supplemental }) => ({
       id: cardId, term, meaning, example, context: item.situation, partOfSpeech: 'kalıp', grammar: usage, pronunciation,
+      ...(supplemental && { supplemental }),
     })),
     speaking: { scenario: item.speaking, grammar: concepts.map(({ label }) => label).join(' · '),
       goals: [item.objective], rubric: writing.criteria, context: item.speakingContext ??
@@ -104,7 +106,8 @@ export function author(language: Language, item: Module): Lesson {
         const key = index === 0 ? 'word' : `word.${index + 1}`
         return {
           cardId: entry.cardId, collocations: entry.collocations, pronunciation: entry.pronunciation,
-          audio: language === 'es' ? modelAudio(id, 0, language) : { ...modelRecording(id, 0, language), src: `/audio/${entry.cardId}.mp3` },
+          audio: entry.audio ?? (language === 'es' ? modelAudio(id, 0, language)
+            : { ...modelRecording(id, 0, language), src: `/audio/${entry.cardId}.mp3` }),
           recognize: question(`${key}.recognize`, 'vocabulary', entry.recognize),
           recall: { id: `${id}.${key}.recall`, kind: 'fill', skill: 'vocabulary', prompt: recall, accepted, explanation: entry.usage },
           use: production(`${key}.use`, entry.use, entry.example, 'vocabulary'),

@@ -4,6 +4,7 @@ import { dayMs } from '../../domain/review'
 import { speakingSuccesses } from '../../domain/speaking'
 import { outcomesFor } from './inventory'
 import { packedLessons } from './packs'
+import { vocabularyIndex } from '../vocabulary'
 
 type Strand = [area: string, taughtBy?: string[], encounteredIn?: string[]]
 
@@ -83,13 +84,31 @@ export function languageAudit(course: Course) {
 export function vocabularyEvidence(course: Course, state: LearningState) {
   const reportedUse = new Set(state.speakingAssessments.flatMap(({ report }) => speakingSuccesses(report))
     .flatMap(({ target }) => target.kind === 'card' ? [target.id] : []))
-  return course.unit.lessons.flatMap(({ vocabulary }) => vocabulary.map(({ id, term }) => {
-    const attempts = state.attempts.filter(({ conceptId }) => conceptId === id)
-    const schedule = state.reviews.find(({ cardId }) => cardId === id)
-    const typedReviews = state.reviewHistory.filter(({ cardId, mode }) => cardId === id && mode === 'typed')
+  const attemptsByCard = new Map<string, LearningState['attempts']>()
+  for (const attempt of state.attempts) {
+    if (attempt.context !== 'vocabulary') continue
+    const items = attemptsByCard.get(attempt.conceptId)
+    if (items) items.push(attempt)
+    else attemptsByCard.set(attempt.conceptId, [attempt])
+  }
+  const histories = new Map<string, LearningState['reviewHistory']>()
+  for (const review of state.reviewHistory) {
+    if (review.mode !== 'typed') continue
+    const items = histories.get(review.cardId)
+    if (items) items.push(review)
+    else histories.set(review.cardId, [review])
+  }
+  const schedules = new Map(state.reviews.map((card) => [card.cardId, card]))
+  return [...vocabularyIndex(course).values()].map(({ card: { id, term }, senseId }) => {
+    const attempts = attemptsByCard.get(id) ?? []
+    const schedule = schedules.get(id)
+    const typedReviews = histories.get(id) ?? []
     return {
+      cardId: id,
+      senseId,
       term,
       encountered: attempts.length > 0 || Boolean(schedule),
+      recognized: attempts.some(({ evidence }) => evidence.observation === 'recognition' && evidence.outcome === 'correct'),
       recalled: attempts.some(({ evidence }) => evidence.observation === 'controlled_production' && evidence.outcome === 'correct'),
       productionSubmitted: attempts.some(({ evidence }) => evidence.observation === 'free_production'),
       independentUseReported: reportedUse.has(id),
@@ -97,5 +116,5 @@ export function vocabularyEvidence(course: Course, state: LearningState) {
       delayedRecall: Boolean(schedule && typedReviews.some(({ at, result }) =>
         result === 'remembered' && Date.parse(at) - Date.parse(schedule.introducedAt) >= dayMs)),
     }
-  }))
+  })
 }
