@@ -11,6 +11,7 @@
     "start": "node server/start.mjs",
     "build": "tsc --noEmit && vite build",
     "android:sync": "vite build && cap sync android",
+    "android:icons": "node scripts/android-icons.mjs",
     "android:apk": "npm run android:sync && node scripts/android-apk.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",

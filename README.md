@@ -48,6 +48,46 @@ VITE_PILOT_AUDIO_REVIEW=1 LANGUAGE_OS_PILOT_AUDIO_REVIEW_DIR=/absolute/path/to/p
 
 ## Android / Capacitor
 
+Uygulama simgesi ve açılış görselleri `public/icon.svg` içindeki defterden üretilir. Arka plan renkleri `src/style.css` içindeki `:root` değişkenlerinden alınır: kâğıt `--paper`, yuvarlak simgenin zemini `--ink`. Yeniden üretmek için yerel Playwright Chromium kurulumu ile çalıştırın:
+
+```sh
+npm run android:icons
+```
+
+Bu komut araç veya tarayıcı indirmez, APK derlemez. Beklenen Chromium sürümü yerelde yoksa `ANDROID_ICONS_CHROMIUM_EXECUTABLE` değişkenine kurulu Chromium'un tam yolunu verin. Örneğin PowerShell'de:
+
+```powershell
+$env:ANDROID_ICONS_CHROMIUM_EXECUTABLE = 'C:\yerel\chromium\chrome.exe'
+npm run android:icons
+```
+
+Üretilen PNG dosyaları `android/app/src/main/res/` altında tutulur ve kaynak kodla birlikte commit edilir:
+
+| Yoğunluk | Normal ve yuvarlak simge | Adaptive ön plan | Ön plandaki defter alanı |
+| --- | --- | --- | --- |
+| mdpi | 48×48 px | 108×108 px | 66×66 px |
+| hdpi | 72×72 px | 162×162 px | 99×99 px |
+| xhdpi | 96×96 px | 216×216 px | 132×132 px |
+| xxhdpi | 144×144 px | 324×324 px | 198×198 px |
+| xxxhdpi | 192×192 px | 432×432 px | 264×264 px |
+
+Adaptive ön planın çevresi saydamdır; 108dp tuvalde defter ortadaki 66dp alanda kalır. Her iki `mipmap-anydpi-v26` XML'i `@mipmap/ic_launcher_foreground` ve `@color/ic_launcher_background` kaynaklarını kullanır. Android 12 ve sonrasının sistem açılışı da aynı ön planı ve kâğıt rengini kullanır.
+
+| Splash kaynağı | Yatay | Dikey |
+| --- | --- | --- |
+| mdpi | 480×320 px | 320×480 px |
+| hdpi | 800×480 px | 480×800 px |
+| xhdpi | 1280×720 px | 720×1280 px |
+| xxhdpi | 1600×960 px | 960×1600 px |
+| xxxhdpi | 1920×1280 px | 1280×1920 px |
+
+Genel `drawable/splash.png` 480×320 px boyutundadır. Betik mevcut tüm `drawable*/splash.png` dosyalarının boyutunu korur; defteri kâğıt zeminde ortalar (96dp; genel kaynakta 96px). Aynı Chromium sürümüyle dosyaların birebir yeniden üretildiğini, ikon renklerini, güvenli alanı ve splash boyutlarını doğrulamak için:
+
+```sh
+npm run android:icons -- --check
+node --test scripts/android-icons.test.mjs
+```
+
 Depoda Capacitor Android projesi `android/` altında bulunur. Android derlemesi için Android Studio, Android SDK ve uyumlu bir JDK kurun. Web varlıklarını Android projesine aktarmak ve platform dosyalarını eşitlemek için:
 
 ```sh
