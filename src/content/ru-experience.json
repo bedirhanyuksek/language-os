@@ -214,10 +214,10 @@
   "lessons": [
     {
       "id": "ru.cyrillic",
-      "title": "Kiril yazısıyla ilk kelimeler",
+      "title": "Alfabe 1: Tanıdık harflerle başla",
       "objective": {
         "id": "ru.cyrillic.objective",
-        "description": "Kısa tabela ve isimlerde sık Kiril harflerini ayırt et.",
+        "description": "А, К, М, О, Т ve Е harflerini kısa adlarda ve tabelalarda oku.",
         "level": "A1"
       },
       "prerequisites": [],
@@ -225,73 +225,99 @@
       "goals": [
         "general"
       ],
-      "recall": "Bu iletişim durumunda daha önce hangi ifadeyi kullandığını düşün.",
+      "recall": "Alfabeye sıfırdan başlayabilirsin. Önce А а, К к, М м, О о, Т т harflerini tanı; sonra Е е ile tanış.",
       "explanation": [
-        "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir.",
-        "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+        "А а = a, К к = k, М м = m, Т т = t. О о vurgulu hecede o okunur. Ма́ма, кот ve Том örneklerini soldan sağa birleştir. Küçük т basılı yazıda т biçimindedir; el yazısını sonra çalışacağız.",
+        "Е е, sözcük başında ye gibi duyulur; ünsüzden sonra onu yumuşatır ve e sesi verir: те́ма. Bu yüzden Türkçe E ile her yerde aynı değildir. МЕТРО tabelasını bütün olarak tanı: Р = r, sonraki derste çalışılacak."
       ],
       "examples": [
         {
-          "correct": "сон: s-o-n",
-          "incorrect": "сон: k-o-h",
-          "note": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+          "correct": "КОТ → k-o-t",
+          "incorrect": "КОТ → k-o-m",
+          "note": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma."
         },
         {
-          "correct": "том: t-o-m",
-          "incorrect": "том: m-o-t",
-          "note": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+          "correct": "ма́ма → ma-ma",
+          "incorrect": "ма́ма → am-am",
+          "note": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır."
         }
       ],
       "concepts": [
         {
           "id": "ru.cyrillic.concept.1",
-          "label": "Görünüşü benzer harfler",
+          "label": "Tanıdık harflerin sesleri",
           "variants": [
             {
               "id": "ru.cyrillic.concept.1.1",
               "kind": "fill",
-              "skill": "grammar",
-              "prompt": "Kiril Н hangi Latin ses harfiyle karşılanır?",
+              "skill": "reading",
+              "prompt": "КОТ sözcüğünün son harfini Kiril yazısıyla yaz.",
               "accepted": [
-                "n"
+                "т"
               ],
-              "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+              "explanation": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma."
             },
             {
               "id": "ru.cyrillic.concept.1.2",
               "kind": "fill",
-              "skill": "grammar",
-              "prompt": "Kiril Р hangi Latin ses harfiyle karşılanır?",
+              "skill": "reading",
+              "prompt": "МАМА sözcüğünün ilk harfini Kiril yazısıyla yaz.",
               "accepted": [
-                "r"
+                "м"
               ],
-              "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+              "explanation": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma."
+            },
+            {
+              "id": "ru.cyrillic.concept.1.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "КОТ sözcüğünün son sesi hangisi?",
+              "options": [
+                "m",
+                "t",
+                "k"
+              ],
+              "accepted": "t",
+              "explanation": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma."
             }
           ]
         },
         {
           "id": "ru.cyrillic.concept.2",
-          "label": "Sesleri birleştir",
+          "label": "Harfleri kısa kelimelerde birleştir",
           "variants": [
             {
               "id": "ru.cyrillic.concept.2.1",
               "kind": "fill",
-              "skill": "grammar",
-              "prompt": "t-o-m dizisini Kiril yazısıyla yaz.",
+              "skill": "reading",
+              "prompt": "m-a-m-a seslerini Kiril yazısıyla yaz.",
               "accepted": [
-                "том"
+                "мама"
               ],
-              "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+              "explanation": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır."
             },
             {
               "id": "ru.cyrillic.concept.2.2",
               "kind": "fill",
-              "skill": "grammar",
-              "prompt": "r-o-m dizisini Kiril yazısıyla yaz.",
+              "skill": "reading",
+              "prompt": "t-o-m seslerinden oluşan kişi adını Kiril yazısıyla yaz.",
               "accepted": [
-                "ром"
+                "Том"
               ],
-              "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+              "explanation": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır."
+            },
+            {
+              "id": "ru.cyrillic.concept.2.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Hangi sözcük ma-ma diye okunur?",
+              "options": [
+                "атом",
+                "мама",
+                "тема"
+              ],
+              "accepted": "мама",
+              "explanation": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır."
             }
           ]
         }
@@ -300,19 +326,30 @@
         "id": "ru.cyrillic.write",
         "kind": "open",
         "skill": "writing",
-        "prompt": "Kiril yazısıyla iki kişi adı ve bir tabela sözcüğü yaz.",
-        "sample": "Нина. Роман. Метро.",
-        "explanation": "Örnek ile kendi mesajını iki ölçüte göre karşılaştır."
+        "prompt": "Bir isim etiketi için Tom adını, ardından kedi anlamındaki sözcüğü Kiril yazısıyla yaz.",
+        "sample": "Том. Кот.",
+        "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
       },
       "vocabulary": [
         {
           "id": "ru.cyrillic.word.1",
           "term": "метро",
           "meaning": "metro",
-          "example": "Это метро.",
-          "context": "Kısa tabela ve isimlerde sık Kiril harflerini ayırt et.",
-          "partOfSpeech": "Kalıp",
-          "grammar": "станция метро"
+          "example": "МЕТРО",
+          "pronunciation": "метро́",
+          "context": "Alfabeye sıfırdan başlayabilirsin. Önce А а, К к, М м, О о, Т т harflerini tanı; sonra Е е ile tanış.",
+          "partOfSpeech": "isim",
+          "grammar": "Metro girişinde tabelayı bütün olarak tanı. Р harfinin r sesini sonraki derste pekiştireceksin."
+        },
+        {
+          "id": "ru.cyrillic.word.2",
+          "term": "кот",
+          "meaning": "kedi",
+          "example": "КОТ",
+          "pronunciation": "кот",
+          "context": "Alfabeye sıfırdan başlayabilirsin. Önce А а, К к, М м, О о, Т т harflerini tanı; sonra Е е ile tanış.",
+          "partOfSpeech": "isim",
+          "grammar": "Кот erkek kedi için kullanılır. Bu aşamada к-о-т seslerini birleştir."
         }
       ],
       "pedagogy": {
@@ -321,156 +358,154 @@
         "version": 2,
         "quality": "automated_checked",
         "sources": [
-          "https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4",
-          "https://mezhdunami.org/unit01/1_4/language.shtml",
-          "https://mezhdunami.org/unit03/3_7/language.shtml"
+          "https://mezhdunami.org/unit01/1_1/language.shtml"
         ],
         "sections": [
           {
-            "title": "Görünüşü benzer harfler",
-            "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir.",
-            "example": "сон: s-o-n"
+            "title": "Tanıdık harflerin sesleri",
+            "example": "МАМА · КОТ · ТОМ",
+            "explanation": "А а = a, К к = k, М м = m, Т т = t. О о vurgulu hecede o okunur. Ма́ма, кот ve Том örneklerini soldan sağa birleştir. Küçük т basılı yazıda т biçimindedir; el yazısını sonra çalışacağız."
           },
           {
-            "title": "Sesleri birleştir",
-            "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir.",
-            "example": "том: t-o-m"
+            "title": "Harfleri kısa kelimelerde birleştir",
+            "example": "ТЕМА · МЕТРО",
+            "explanation": "Е е, sözcük başında ye gibi duyulur; ünsüzden sonra onu yumuşatır ve e sesi verir: те́ма. Bu yüzden Türkçe E ile her yerde aynı değildir. МЕТРО tabelasını bütün olarak tanı: Р = r, sonraki derste çalışılacak."
           }
         ],
         "rubric": [
           {
-            "criterion": "Görevde istenen bilgileri ver.",
-            "example": "Нина. Роман. Метро."
+            "criterion": "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+            "example": "МАМА · КОТ · ТОМ"
           },
           {
-            "criterion": "Hedef kalıpları amaca uygun kullan.",
-            "example": "сон: s-o-n"
+            "criterion": "Sözcükleri önce seslere ayır, sonra birleştirerek oku.",
+            "example": "ТЕМА · МЕТРО"
           }
         ],
         "checks": [
           {
             "conceptId": "ru.cyrillic.concept.1",
-            "misconception": "Görünüşü benzer harfler",
-            "incorrectExample": "сон: k-o-h",
-            "correctExample": "сон: s-o-n",
-            "correction": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir.",
+            "misconception": "Tanıdık harflerin sesleri",
+            "correctExample": "КОТ → k-o-t",
+            "incorrectExample": "КОТ → k-o-m",
+            "correction": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma.",
             "transfer": [
               {
                 "id": "ru.cyrillic.concept.1.3",
                 "kind": "fill",
-                "skill": "grammar",
-                "prompt": "Kiril С hangi Latin ses harfiyle karşılanır?",
+                "skill": "reading",
+                "prompt": "ТОМ adının ilk harfini Kiril yazısıyla yaz.",
                 "accepted": [
-                  "s"
+                  "т"
                 ],
-                "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+                "explanation": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma."
               },
               {
                 "id": "ru.cyrillic.concept.1.4",
                 "kind": "fill",
-                "skill": "grammar",
-                "prompt": "“сон” sözcüğünün ilk sesi hangi Latin harfle yazılır?",
+                "skill": "reading",
+                "prompt": "МАК (haşhaş) sözcüğünün son harfini Kiril yazısıyla yaz.",
                 "accepted": [
-                  "s"
+                  "к"
                 ],
-                "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+                "explanation": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma."
               }
             ],
             "delayed": [
               {
                 "id": "ru.cyrillic.concept.1.5",
                 "kind": "fill",
-                "skill": "grammar",
-                "prompt": "“нос” sözcüğünün ilk sesi hangi Latin harfle yazılır?",
+                "skill": "reading",
+                "prompt": "КОТ yazısındaki ortadaki harfi yaz.",
                 "accepted": [
-                  "n"
+                  "о"
                 ],
-                "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+                "explanation": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma."
               },
               {
                 "id": "ru.cyrillic.concept.1.6",
                 "kind": "fill",
-                "skill": "grammar",
-                "prompt": "“рот” sözcüğünün ilk sesi hangi Latin harfle yazılır?",
+                "skill": "reading",
+                "prompt": "МАТ (mat) sözcüğünün ortadaki harfini yaz.",
                 "accepted": [
-                  "r"
+                  "а"
                 ],
-                "explanation": "Н, Р ve С, Latin H, P ve C ile aynı görünse de n, r ve s seslerini verir. Harfi kelimede seslendir."
+                "explanation": "К = k, О vurguluyken o, Т = t. КОТ sözcüğü kedi demektir; son harfi М ile karıştırma."
               }
             ]
           },
           {
             "conceptId": "ru.cyrillic.concept.2",
-            "misconception": "Sesleri birleştir",
-            "incorrectExample": "том: m-o-t",
-            "correctExample": "том: t-o-m",
-            "correction": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir.",
+            "misconception": "Harfleri kısa kelimelerde birleştir",
+            "correctExample": "ма́ма → ma-ma",
+            "incorrectExample": "ма́ма → am-am",
+            "correction": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır.",
             "transfer": [
               {
                 "id": "ru.cyrillic.concept.2.3",
                 "kind": "fill",
-                "skill": "grammar",
-                "prompt": "s-o-m dizisini Kiril yazısıyla yaz.",
+                "skill": "reading",
+                "prompt": "k-o-t seslerinden oluşan “kedi” sözcüğünü Kiril yazısıyla yaz.",
                 "accepted": [
-                  "сом"
+                  "кот"
                 ],
-                "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+                "explanation": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır."
               },
               {
                 "id": "ru.cyrillic.concept.2.4",
                 "kind": "fill",
-                "skill": "grammar",
-                "prompt": "n-o-s dizisini Kiril yazısıyla yaz.",
+                "skill": "reading",
+                "prompt": "m-a-k seslerinden oluşan “haşhaş” sözcüğünü Kiril yazısıyla yaz.",
                 "accepted": [
-                  "нос"
+                  "мак"
                 ],
-                "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+                "explanation": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır."
               }
             ],
             "delayed": [
               {
                 "id": "ru.cyrillic.concept.2.5",
                 "kind": "fill",
-                "skill": "grammar",
-                "prompt": "r-o-t dizisini Kiril yazısıyla yaz.",
+                "skill": "reading",
+                "prompt": "t-e-m-a seslerinden oluşan “konu” sözcüğünü Kiril yazısıyla yaz.",
                 "accepted": [
-                  "рот"
+                  "тема"
                 ],
-                "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+                "explanation": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır."
               },
               {
                 "id": "ru.cyrillic.concept.2.6",
                 "kind": "fill",
-                "skill": "grammar",
-                "prompt": "s-o-n dizisini Kiril yazısıyla yaz.",
+                "skill": "reading",
+                "prompt": "k-o-m seslerinden oluşan “yumak” sözcüğünü Kiril yazısıyla yaz.",
                 "accepted": [
-                  "сон"
+                  "ком"
                 ],
-                "explanation": "М sesi m, О harfi vurgulu konumda o, Т sesi t verir. Harfleri sırayla birleştir."
+                "explanation": "Ма́ма, anne demektir. М ve А harflerini yazılış sırasıyla birleştir. Те́ма sözcüğündeki е, önceki т sesini yumuşatır."
               }
             ]
           }
         ],
         "reviewAfterHours": 24,
         "reading": {
-          "text": "На́дя · Рома́н · Софи́я",
+          "text": "КОТ · МАМА · ТОМ",
           "question": {
             "id": "ru.cyrillic.reading",
             "kind": "single",
             "skill": "reading",
-            "prompt": "Hangi isim Kiril Р harfiyle başlıyor?",
+            "prompt": "Kedi anlamındaki sözcük hangisi?",
             "options": [
-              "Надя",
-              "Роман",
-              "София"
+              "МАМА",
+              "КОТ",
+              "ТОМ"
             ],
-            "accepted": "Роман",
-            "explanation": "Р Roman adının ilk harfi ve r sesidir."
+            "accepted": "КОТ",
+            "explanation": "КОТ, metinde istenen sözcüktür."
           }
         },
         "listening": {
-          "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
-          "transcript": "Нина. Роман. Соня.",
+          "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+          "transcript": "Мама. Том. Кот.",
           "audio": {
             "kind": "recording",
             "src": "/audio/ru.cyrillic.mp3",
@@ -483,50 +518,50 @@
             "id": "ru.cyrillic.listen.main",
             "kind": "single",
             "skill": "listening",
-            "prompt": "Kayıtta ne duyuyorsun?",
+            "prompt": "İlk duyduğun sözcük hangisi?",
             "options": [
-              "Şehir adları",
-              "Kişi adları",
-              "Sayılar"
+              "Том",
+              "Мама",
+              "Кот"
             ],
-            "accepted": "Kişi adları",
-            "explanation": "Nina, Roman ve Sonya kişi adlarıdır."
+            "accepted": "Мама",
+            "explanation": "İlk sözcük Мама."
           },
           "detail": {
             "id": "ru.cyrillic.listen.detail",
             "kind": "single",
             "skill": "listening",
-            "prompt": "İkinci ad hangisi?",
+            "prompt": "İkinci duyduğun sözcük hangisi?",
             "options": [
-              "Нина",
-              "Роман",
-              "Соня"
+              "Мама",
+              "Том",
+              "Кот"
             ],
-            "accepted": "Роман",
-            "explanation": "İkinci sözcük Роман."
+            "accepted": "Том",
+            "explanation": "İstenen sıradaki sözcük Том."
           }
         },
         "receptionRetry": {
           "reading": {
-            "text": "Саша · Нина · Рита",
+            "text": "МАК · ТОМ · МАМА",
             "question": {
               "id": "ru.cyrillic.retry.reading",
               "kind": "single",
               "skill": "reading",
-              "prompt": "Hangi ad С ile başlıyor?",
+              "prompt": "Kişi adı olan sözcük hangisi?",
               "options": [
-                "Нина",
-                "Саша",
-                "Рита"
+                "МАК",
+                "ТОМ",
+                "МАМА"
               ],
-              "accepted": "Саша",
-              "explanation": "С, s sesine karşılık gelir."
+              "accepted": "ТОМ",
+              "explanation": "ТОМ, metinde istenen sözcüktür."
             },
-            "coaching": "Sorulan bilgiyi önce adlandır. Metinde bu bilgiyi taşıyan kişi, zaman ya da eylemi aynı cümlede bul."
+            "coaching": "Sözcükleri harf harf oku. Sorulan anlamı taşıyan sözcüğü seç."
           },
           "listening": {
-            "preparation": "İlk dinlemede amacı, ikinci dinlemede sorulan ayrıntıyı yakala.",
-            "transcript": "Рита. Соня. Нина.",
+            "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+            "transcript": "Кот. Мама. Том.",
             "audio": {
               "kind": "recording",
               "src": "/audio/ru.cyrillic.retry.mp3",
@@ -539,45 +574,45 @@
               "id": "ru.cyrillic.retry.listen.main",
               "kind": "single",
               "skill": "listening",
-              "prompt": "Ne duyuyorsun?",
+              "prompt": "İlk sözcük hangisi?",
               "options": [
-                "Ürün fiyatları",
-                "Kişi adları",
-                "Çalışma saatleri"
+                "Мама",
+                "Кот",
+                "Том"
               ],
-              "accepted": "Kişi adları",
-              "explanation": "Üç sözcük de kişi adıdır."
+              "accepted": "Кот",
+              "explanation": "İlk sözcük Кот."
             },
             "detail": {
               "id": "ru.cyrillic.retry.listen.detail",
               "kind": "single",
               "skill": "listening",
-              "prompt": "İkinci ad hangisi?",
+              "prompt": "Son sözcük hangisi?",
               "options": [
-                "Рита",
-                "Соня",
-                "Нина"
+                "Кот",
+                "Том",
+                "Мама"
               ],
-              "accepted": "Соня",
-              "explanation": "Ortadaki ad Соня."
+              "accepted": "Том",
+              "explanation": "İstenen sıradaki sözcük Том."
             },
-            "mainCoaching": "İlk dinlemede konu ile amacı ayır. Tek tek kelimelere takılmadan konuşmanın ne yaptığını düşün.",
-            "detailCoaching": "Sorunun istediği kişi, sayı veya eylemi belirle. İkinci dinlemede ilgili bölüme odaklan."
+            "mainCoaching": "İlk sözcüğü bitene kadar dinle; yazıdaki ilk harfiyle eşleştir.",
+            "detailCoaching": "Sözcükleri parmağınla sayarak dinle; sorulan sırayı bul."
           }
         },
         "revision": {
           "id": "ru.cyrillic.revision",
           "kind": "open",
           "skill": "writing",
-          "prompt": "İlk metnini kontrol et. Bağlam ve hedef kalıp bakımından yeni bir sürüm yaz.",
-          "sample": "Нина. Роман. Метро.",
-          "explanation": "Görevin bilgi ve kullanım ölçütleriyle karşılaştır."
+          "prompt": "Yazdığın kısa listeyi kontrol et. Karışan harfleri düzeltip yeniden yaz.",
+          "sample": "Том. Кот.",
+          "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
         },
         "vocabulary": [
           {
             "cardId": "ru.cyrillic.word.1",
             "collocations": [
-              "станция метро"
+              "метро"
             ],
             "pronunciation": "метро́",
             "audio": {
@@ -592,45 +627,2255 @@
               "id": "ru.cyrillic.word.1.recognize",
               "kind": "single",
               "skill": "vocabulary",
-              "prompt": "“метро” ne demek?",
+              "prompt": "метро ne demek?",
               "options": [
-                "bugün erken",
+                "bilet",
                 "metro",
-                "uzun bir yol"
+                "saat"
               ],
               "accepted": "metro",
-              "explanation": "Kalıbın anlamını örnek cümleye bağla."
+              "explanation": "Metro girişinde tabelayı bütün olarak tanı. Р harfinin r sesini sonraki derste pekiştireceksin."
             },
             "recall": {
               "id": "ru.cyrillic.word.1.recall",
               "kind": "short",
               "skill": "vocabulary",
-              "prompt": "“metro” için öğrendiğin ifadeyi yaz.",
+              "prompt": "“metro” sözcüğünü Kiril yazısıyla yaz.",
               "accepted": [
                 "метро"
               ],
-              "explanation": "Kalıbı örnekteki anlamıyla hatırla."
+              "explanation": "Metro girişinde tabelayı bütün olarak tanı. Р harfinin r sesini sonraki derste pekiştireceksin."
             },
             "use": {
               "id": "ru.cyrillic.word.1.use",
               "kind": "open",
               "skill": "vocabulary",
-              "prompt": "“метро” ifadesini kısa bir cümlede kullan.",
-              "sample": "Это метро.",
-              "explanation": "İfadenin bağlamına ve anlamına bak."
+              "prompt": "Bir etiket veya menü için “metro” sözcüğünü yaz.",
+              "sample": "МЕТРО",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          },
+          {
+            "cardId": "ru.cyrillic.word.2",
+            "collocations": [
+              "кот"
+            ],
+            "pronunciation": "кот",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic.word.2.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic.word.2.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "кот ne demek?",
+              "options": [
+                "bilet",
+                "kedi",
+                "saat"
+              ],
+              "accepted": "kedi",
+              "explanation": "Кот erkek kedi için kullanılır. Bu aşamada к-о-т seslerini birleştir."
+            },
+            "recall": {
+              "id": "ru.cyrillic.word.2.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“kedi” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "кот"
+              ],
+              "explanation": "Кот erkek kedi için kullanılır. Bu aşamada к-о-т seslerini birleştir."
+            },
+            "use": {
+              "id": "ru.cyrillic.word.2.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “kedi” sözcüğünü yaz.",
+              "sample": "КОТ",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
             }
           }
         ]
       },
       "speaking": {
-        "scenario": "Bir isim listesinden Нина ve Роман adlarını, sonra сон ve рот sözcüklerini sesli oku.",
-        "grammar": "Görünüşü benzer harfler; Sesleri birleştir",
+        "scenario": "Örneklerdeki sözcükleri önce yavaşça, sonra birleştirerek sesli oku.",
+        "grammar": "Tanıdık harflerin sesleri · Harfleri kısa kelimelerde birleştir",
         "goals": [
-          "Kısa tabela ve isimlerde sık Kiril harflerini ayırt et."
+          "А, К, М, О, Т ve Е harflerini kısa adlarda ve tabelalarda oku."
         ],
         "rubric": [
-          "Н ve Р harflerini Latin harfleriyle karıştırmadan seslendir.",
-          "Sözcükleri önce harf harf, sonra kesmeden birleştir."
+          "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+          "Sözcükleri önce seslere ayır, sonra birleştirerek oku."
+        ],
+        "context": "daily_conversation"
+      },
+      "teaching": {
+        "situation": "Alfabeye sıfırdan başlayabilirsin. Önce А а, К к, М м, О о, Т т harflerini tanı; sonra Е е ile tanış.",
+        "approach": "decoding",
+        "models": [
+          {
+            "phrase": "МАМА · КОТ · ТОМ",
+            "explanation": "А а = a, К к = k, М м = m, Т т = t. О о vurgulu hecede o okunur. Ма́ма, кот ve Том örneklerini soldan sağa birleştir. Küçük т basılı yazıda т biçimindedir; el yazısını sonra çalışacağız."
+          },
+          {
+            "phrase": "ТЕМА · МЕТРО",
+            "explanation": "Е е, sözcük başında ye gibi duyulur; ünsüzden sonra onu yumuşatır ve e sesi verir: те́ма. Bu yüzden Türkçe E ile her yerde aynı değildir. МЕТРО tabelasını bütün olarak tanı: Р = r, sonraki derste çalışılacak."
+          }
+        ],
+        "bridge": "Önce örnekleri oku ve dinle. Harfleri tanıyorsan kısa kontrolü çöz; takıldığında açıklamaya dön.",
+        "readingPurpose": "Sözcükleri harf ve ses sırasıyla çöz, sorulan anlamı veya adı bul.",
+        "readingUse": "Seçtiğin sözcüğü sesli oku.",
+        "listeningUse": "Duyduğun sözcüğü yazılı biçimiyle eşleştir.",
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic.word.1",
+            "usage": "Metro girişinde tabelayı bütün olarak tanı. Р harfinin r sesini sonraki derste pekiştireceksin."
+          },
+          {
+            "cardId": "ru.cyrillic.word.2",
+            "usage": "Кот erkek kedi için kullanılır. Bu aşamada к-о-т seslerini birleştir."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ru.cyrillic-false-friends",
+      "title": "Alfabe 2: Benzer görünüp farklı okunanlar",
+      "objective": {
+        "id": "ru.cyrillic-false-friends.objective",
+        "description": "В, Н, Р, С, У ve Х harflerini Latin harfleriyle karıştırmadan oku.",
+        "level": "A1"
+      },
+      "prerequisites": [
+        "ru.cyrillic.objective"
+      ],
+      "minutes": 5,
+      "goals": [
+        "general"
+      ],
+      "recall": "Metro tabelasını, bir isim listesini ve kafe menüsünü okuyorsun. Latin harfine benzeyen her harf aynı sesi vermez.",
+      "explanation": [
+        "В в = v, Н н = n, Р р = r. Ве́ра, Ни́на ve Рома́н kişi adlarıdır. В harfini b, Н harfini h, Р harfini p diye okuma. Рома́н adındaki ilk о vurgusuzdur; a sesine yaklaşır.",
+        "С с = s, У у = u, Х х Türkçedeki h sesinden daha sürtünmeli, boğazdan gelen bir sestir. Сама́ра bir şehir, тур tur, уха́ balık çorbasıdır. Türkçe ses karşılıkları yaklaşık bir destektir; kaydı da dinle."
+      ],
+      "examples": [
+        {
+          "correct": "Роман → Roman",
+          "incorrect": "Роман → Poman",
+          "note": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir."
+        },
+        {
+          "correct": "САМАРА → Samara",
+          "incorrect": "САМАРА → Kamara",
+          "note": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ru.cyrillic-false-friends.form.1",
+          "label": "В, Н ve Р seslerini ayır",
+          "variants": [
+            {
+              "id": "ru.cyrillic-false-friends.form.1.guided.1",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Вера adının ilk sesini Türkçe bir harfle yaz.",
+              "accepted": [
+                "v"
+              ],
+              "explanation": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir."
+            },
+            {
+              "id": "ru.cyrillic-false-friends.form.1.guided.2",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Нина adının ilk sesini Türkçe bir harfle yaz.",
+              "accepted": [
+                "n"
+              ],
+              "explanation": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir."
+            },
+            {
+              "id": "ru.cyrillic-false-friends.form.1.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "В harfi hangi sesi verir?",
+              "options": [
+                "b",
+                "v",
+                "p"
+              ],
+              "accepted": "v",
+              "explanation": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir."
+            }
+          ]
+        },
+        {
+          "id": "ru.cyrillic-false-friends.form.2",
+          "label": "С, У ve Х ile tabela ve menü oku",
+          "variants": [
+            {
+              "id": "ru.cyrillic-false-friends.form.2.guided.1",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Самара adının ilk sesini Türkçe bir harfle yaz.",
+              "accepted": [
+                "s"
+              ],
+              "explanation": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma."
+            },
+            {
+              "id": "ru.cyrillic-false-friends.form.2.guided.2",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "т-у-р harflerini birleştirerek sözcüğü yaz.",
+              "accepted": [
+                "тур"
+              ],
+              "explanation": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma."
+            },
+            {
+              "id": "ru.cyrillic-false-friends.form.2.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "У harfi hangi sesi verir?",
+              "options": [
+                "y",
+                "u",
+                "ü"
+              ],
+              "accepted": "u",
+              "explanation": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "ru.cyrillic-false-friends.writing",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Bir kafe menüsüne meyve suyu ve balık çorbasını Kiril yazısıyla ekle.",
+        "sample": "Сок. Уха.",
+        "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+      },
+      "vocabulary": [
+        {
+          "id": "ru.cyrillic-false-friends.word.1",
+          "term": "сок",
+          "meaning": "meyve suyu",
+          "example": "СОК",
+          "pronunciation": "сок",
+          "context": "Metro tabelasını, bir isim listesini ve kafe menüsünü okuyorsun. Latin harfine benzeyen her harf aynı sesi vermez.",
+          "partOfSpeech": "isim",
+          "grammar": "Menüde СОК yazısı meyve suyunu gösterir. С harfi s okunur."
+        },
+        {
+          "id": "ru.cyrillic-false-friends.word.2",
+          "term": "уха",
+          "meaning": "balık çorbası",
+          "example": "УХА",
+          "pronunciation": "уха́",
+          "context": "Metro tabelasını, bir isim listesini ve kafe menüsünü okuyorsun. Latin harfine benzeyen her harf aynı sesi vermez.",
+          "partOfSpeech": "isim",
+          "grammar": "Уха́ bir çorba adıdır. Х sesini kayıttan dinle; ks diye okuma."
+        }
+      ],
+      "teaching": {
+        "situation": "Metro tabelasını, bir isim listesini ve kafe menüsünü okuyorsun. Latin harfine benzeyen her harf aynı sesi vermez.",
+        "approach": "decoding",
+        "models": [
+          {
+            "phrase": "ВЕРА · НИНА · РОМАН",
+            "explanation": "В в = v, Н н = n, Р р = r. Ве́ра, Ни́на ve Рома́н kişi adlarıdır. В harfini b, Н harfini h, Р harfini p diye okuma. Рома́н adındaki ilk о vurgusuzdur; a sesine yaklaşır."
+          },
+          {
+            "phrase": "САМАРА · ТУР · УХА",
+            "explanation": "С с = s, У у = u, Х х Türkçedeki h sesinden daha sürtünmeli, boğazdan gelen bir sestir. Сама́ра bir şehir, тур tur, уха́ balık çorbasıdır. Türkçe ses karşılıkları yaklaşık bir destektir; kaydı da dinle."
+          }
+        ],
+        "bridge": "Önce örnekleri oku ve dinle. Harfleri tanıyorsan kısa kontrolü çöz; takıldığında açıklamaya dön.",
+        "readingPurpose": "Sözcükleri harf ve ses sırasıyla çöz, sorulan anlamı veya adı bul.",
+        "readingUse": "Seçtiğin sözcüğü sesli oku.",
+        "listeningUse": "Duyduğun sözcüğü yazılı biçimiyle eşleştir.",
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic-false-friends.word.1",
+            "usage": "Menüde СОК yazısı meyve suyunu gösterir. С harfi s okunur."
+          },
+          {
+            "cardId": "ru.cyrillic-false-friends.word.2",
+            "usage": "Уха́ bir çorba adıdır. Х sesini kayıttan dinle; ks diye okuma."
+          }
+        ]
+      },
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://mezhdunami.org/unit01/1_1/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "В, Н ve Р seslerini ayır",
+            "example": "ВЕРА · НИНА · РОМАН",
+            "explanation": "В в = v, Н н = n, Р р = r. Ве́ра, Ни́на ve Рома́н kişi adlarıdır. В harfini b, Н harfini h, Р harfini p diye okuma. Рома́н adındaki ilk о vurgusuzdur; a sesine yaklaşır."
+          },
+          {
+            "title": "С, У ve Х ile tabela ve menü oku",
+            "example": "САМАРА · ТУР · УХА",
+            "explanation": "С с = s, У у = u, Х х Türkçedeki h sesinden daha sürtünmeli, boğazdan gelen bir sestir. Сама́ра bir şehir, тур tur, уха́ balık çorbasıdır. Türkçe ses karşılıkları yaklaşık bir destektir; kaydı da dinle."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+            "example": "ВЕРА · НИНА · РОМАН"
+          },
+          {
+            "criterion": "Sözcükleri önce seslere ayır, sonra birleştirerek oku.",
+            "example": "САМАРА · ТУР · УХА"
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.cyrillic-false-friends.form.1",
+            "misconception": "В, Н ve Р seslerini ayır",
+            "correctExample": "Роман → Roman",
+            "incorrectExample": "Роман → Poman",
+            "correction": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic-false-friends.form.1.transfer.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Роман adının ilk sesini Türkçe bir harfle yaz.",
+                "accepted": [
+                  "r"
+                ],
+                "explanation": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir."
+              },
+              {
+                "id": "ru.cyrillic-false-friends.form.1.transfer.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Нева nehrinin ilk sesini Türkçe bir harfle yaz.",
+                "accepted": [
+                  "n"
+                ],
+                "explanation": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic-false-friends.form.1.delayed.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Варна şehir adının ilk sesini Türkçe bir harfle yaz.",
+                "accepted": [
+                  "v"
+                ],
+                "explanation": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir."
+              },
+              {
+                "id": "ru.cyrillic-false-friends.form.1.delayed.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Рим şehir adının ilk sesini Türkçe bir harfle yaz.",
+                "accepted": [
+                  "r"
+                ],
+                "explanation": "В = v, Н = n, Р = r. Kişi adının ilk sesini yazıdaki harfle eşleştir."
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.cyrillic-false-friends.form.2",
+            "misconception": "С, У ve Х ile tabela ve menü oku",
+            "correctExample": "САМАРА → Samara",
+            "incorrectExample": "САМАРА → Kamara",
+            "correction": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic-false-friends.form.2.transfer.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "с-о-к harflerinden meyve suyu anlamındaki sözcüğü yaz.",
+                "accepted": [
+                  "сок"
+                ],
+                "explanation": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma."
+              },
+              {
+                "id": "ru.cyrillic-false-friends.form.2.transfer.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "у-х-а harflerinden balık çorbasının adını yaz.",
+                "accepted": [
+                  "уха"
+                ],
+                "explanation": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic-false-friends.form.2.delayed.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "с-о-н harflerinden uyku anlamındaki sözcüğü yaz.",
+                "accepted": [
+                  "сон"
+                ],
+                "explanation": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma."
+              },
+              {
+                "id": "ru.cyrillic-false-friends.form.2.delayed.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "х-о-р harflerinden koro anlamındaki sözcüğü yaz.",
+                "accepted": [
+                  "хор"
+                ],
+                "explanation": "С = s, У = u, Х sürtünmeli h sesidir. Уха́ bir balık çorbasıdır; х harfini Latin x gibi ks diye okuma."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "МЕТРО · САМАРА · РОМАН",
+          "question": {
+            "id": "ru.cyrillic-false-friends.input.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Şehir adı hangisi?",
+            "options": [
+              "МЕТРО",
+              "САМАРА",
+              "РОМАН"
+            ],
+            "accepted": "САМАРА",
+            "explanation": "САМАРА, metinde istenen sözcüktür."
+          }
+        },
+        "listening": {
+          "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+          "transcript": "Вера. Нина. Роман.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.cyrillic-false-friends.input.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.cyrillic-false-friends.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İlk ad hangisi?",
+            "options": [
+              "Нина",
+              "Вера",
+              "Роман"
+            ],
+            "accepted": "Вера",
+            "explanation": "İlk sözcük Вера."
+          },
+          "detail": {
+            "id": "ru.cyrillic-false-friends.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Son ad hangisi?",
+            "options": [
+              "Вера",
+              "Роман",
+              "Нина"
+            ],
+            "accepted": "Роман",
+            "explanation": "İstenen sıradaki sözcük Роман."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "ВЕРА · СОК · ТУР",
+            "question": {
+              "id": "ru.cyrillic-false-friends.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "İçecek hangisi?",
+              "options": [
+                "ВЕРА",
+                "СОК",
+                "ТУР"
+              ],
+              "accepted": "СОК",
+              "explanation": "СОК, metinde istenen sözcüktür."
+            },
+            "coaching": "Sözcükleri harf harf oku. Sorulan anlamı taşıyan sözcüğü seç."
+          },
+          "listening": {
+            "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+            "transcript": "Самара. Сок. Уха.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-false-friends.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "main": {
+              "id": "ru.cyrillic-false-friends.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "İlk sözcük hangisi?",
+              "options": [
+                "Сок",
+                "Самара",
+                "Уха"
+              ],
+              "accepted": "Самара",
+              "explanation": "İlk sözcük Самара."
+            },
+            "detail": {
+              "id": "ru.cyrillic-false-friends.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Son sözcük hangisi?",
+              "options": [
+                "Самара",
+                "Уха",
+                "Сок"
+              ],
+              "accepted": "Уха",
+              "explanation": "İstenen sıradaki sözcük Уха."
+            },
+            "mainCoaching": "İlk sözcüğü bitene kadar dinle; yazıdaki ilk harfiyle eşleştir.",
+            "detailCoaching": "Sözcükleri parmağınla sayarak dinle; sorulan sırayı bul."
+          }
+        },
+        "revision": {
+          "id": "ru.cyrillic-false-friends.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "Yazdığın kısa listeyi kontrol et. Karışan harfleri düzeltip yeniden yaz.",
+          "sample": "Сок. Уха.",
+          "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic-false-friends.word.1",
+            "collocations": [
+              "сок"
+            ],
+            "pronunciation": "сок",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-false-friends.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic-false-friends.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "сок ne demek?",
+              "options": [
+                "bilet",
+                "meyve suyu",
+                "saat"
+              ],
+              "accepted": "meyve suyu",
+              "explanation": "Menüde СОК yazısı meyve suyunu gösterir. С harfi s okunur."
+            },
+            "recall": {
+              "id": "ru.cyrillic-false-friends.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“meyve suyu” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "сок"
+              ],
+              "explanation": "Menüde СОК yazısı meyve suyunu gösterir. С harfi s okunur."
+            },
+            "use": {
+              "id": "ru.cyrillic-false-friends.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “meyve suyu” sözcüğünü yaz.",
+              "sample": "СОК",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          },
+          {
+            "cardId": "ru.cyrillic-false-friends.word.2",
+            "collocations": [
+              "уха"
+            ],
+            "pronunciation": "уха́",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-false-friends.word.2.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic-false-friends.word.2.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "уха ne demek?",
+              "options": [
+                "bilet",
+                "balık çorbası",
+                "saat"
+              ],
+              "accepted": "balık çorbası",
+              "explanation": "Уха́ bir çorba adıdır. Х sesini kayıttan dinle; ks diye okuma."
+            },
+            "recall": {
+              "id": "ru.cyrillic-false-friends.word.2.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“balık çorbası” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "уха"
+              ],
+              "explanation": "Уха́ bir çorba adıdır. Х sesini kayıttan dinle; ks diye okuma."
+            },
+            "use": {
+              "id": "ru.cyrillic-false-friends.word.2.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “balık çorbası” sözcüğünü yaz.",
+              "sample": "УХА",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Örneklerdeki sözcükleri önce yavaşça, sonra birleştirerek sesli oku.",
+        "grammar": "В, Н ve Р seslerini ayır · С, У ve Х ile tabela ve menü oku",
+        "goals": [
+          "В, Н, Р, С, У ve Х harflerini Latin harfleriyle karıştırmadan oku."
+        ],
+        "rubric": [
+          "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+          "Sözcükleri önce seslere ayır, sonra birleştirerek oku."
+        ],
+        "context": "daily_conversation"
+      }
+    },
+    {
+      "id": "ru.cyrillic-new-shapes",
+      "title": "Alfabe 3: Yeni biçimlerle ad ve yer oku",
+      "objective": {
+        "id": "ru.cyrillic-new-shapes.objective",
+        "description": "Б, Г, Д, З, И, Й, Л, П ve Ф harflerini gündelik kelimelerde tanı.",
+        "level": "A1"
+      },
+      "prerequisites": [
+        "ru.cyrillic-false-friends.objective"
+      ],
+      "minutes": 5,
+      "goals": [
+        "general"
+      ],
+      "recall": "Bir kafenin adını, şehir adlarını ve içecek listesini okuyorsun. Yeni harfleri tek seferde ezberlemek yerine iki küçük grupta birleştir.",
+      "explanation": [
+        "Б б = b, Г г = g, Д д = d, З з = z. Банк banka, го́род şehir, дом ev, зал salon demektir. Д biçimini А ile, З biçimini 3 sayısıyla karıştırma. Го́род sözcüğünün son д sesi t gibi duyulur; yazıda д kalır.",
+        "И и = i, Й й kısa bir y kaymasıdır: мой (benim). Л л = l, П п = p, Ф ф = f. И́ра bir ad, Ли́ма bir şehir, парк park, ко́фе kahvedir. И ve Й ayrı harflerdir; Й üzerindeki işaret harfin parçasıdır."
+      ],
+      "examples": [
+        {
+          "correct": "ДОМ → d-o-m",
+          "incorrect": "ДОМ → a-o-m",
+          "note": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir."
+        },
+        {
+          "correct": "ПАРК → park",
+          "incorrect": "ПАРК → nark",
+          "note": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ru.cyrillic-new-shapes.form.1",
+          "label": "Б, Г, Д ve З biçimlerini tanı",
+          "variants": [
+            {
+              "id": "ru.cyrillic-new-shapes.form.1.guided.1",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Дом sözcüğünün ilk sesini Türkçe bir harfle yaz.",
+              "accepted": [
+                "d"
+              ],
+              "explanation": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir."
+            },
+            {
+              "id": "ru.cyrillic-new-shapes.form.1.guided.2",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Банк sözcüğünün ilk sesini Türkçe bir harfle yaz.",
+              "accepted": [
+                "b"
+              ],
+              "explanation": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir."
+            },
+            {
+              "id": "ru.cyrillic-new-shapes.form.1.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Hangi sözcük d sesiyle başlar?",
+              "options": [
+                "том",
+                "дом",
+                "ком"
+              ],
+              "accepted": "дом",
+              "explanation": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir."
+            }
+          ]
+        },
+        {
+          "id": "ru.cyrillic-new-shapes.form.2",
+          "label": "И, Й, Л, П ve Ф ile kelime kur",
+          "variants": [
+            {
+              "id": "ru.cyrillic-new-shapes.form.2.guided.1",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Мой sözcüğünün son harfini Kiril yazısıyla yaz.",
+              "accepted": [
+                "й"
+              ],
+              "explanation": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur."
+            },
+            {
+              "id": "ru.cyrillic-new-shapes.form.2.guided.2",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Кофе sözcüğündeki f sesini veren harfi Kiril yazısıyla yaz.",
+              "accepted": [
+                "ф"
+              ],
+              "explanation": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur."
+            },
+            {
+              "id": "ru.cyrillic-new-shapes.form.2.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Й ile biten sözcük hangisi?",
+              "options": [
+                "мои",
+                "мой",
+                "кофе"
+              ],
+              "accepted": "мой",
+              "explanation": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "ru.cyrillic-new-shapes.writing",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Bir haritaya banka ve parkı, kafe menüsüne kahveyi Kiril yazısıyla ekle.",
+        "sample": "Банк. Парк. Кофе.",
+        "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+      },
+      "vocabulary": [
+        {
+          "id": "ru.cyrillic-new-shapes.word.1",
+          "term": "кофе",
+          "meaning": "kahve",
+          "example": "КОФЕ",
+          "pronunciation": "ко́фе",
+          "context": "Bir kafenin adını, şehir adlarını ve içecek listesini okuyorsun. Yeni harfleri tek seferde ezberlemek yerine iki küçük grupta birleştir.",
+          "partOfSpeech": "isim",
+          "grammar": "Ко́фе menüde kahveyi gösterir. Ф = f; vurgu ilk hecededir."
+        },
+        {
+          "id": "ru.cyrillic-new-shapes.word.2",
+          "term": "парк",
+          "meaning": "park",
+          "example": "ПАРК",
+          "pronunciation": "парк",
+          "context": "Bir kafenin adını, şehir adlarını ve içecek listesini okuyorsun. Yeni harfleri tek seferde ezberlemek yerine iki küçük grupta birleştir.",
+          "partOfSpeech": "isim",
+          "grammar": "Парк bir yer adıdır. П harfini Latin n gibi okuma."
+        }
+      ],
+      "teaching": {
+        "situation": "Bir kafenin adını, şehir adlarını ve içecek listesini okuyorsun. Yeni harfleri tek seferde ezberlemek yerine iki küçük grupta birleştir.",
+        "approach": "decoding",
+        "models": [
+          {
+            "phrase": "БАНК · ГОРОД · ДОМ · ЗАЛ",
+            "explanation": "Б б = b, Г г = g, Д д = d, З з = z. Банк banka, го́род şehir, дом ev, зал salon demektir. Д biçimini А ile, З biçimini 3 sayısıyla karıştırma. Го́род sözcüğünün son д sesi t gibi duyulur; yazıda д kalır."
+          },
+          {
+            "phrase": "ИРА · МОЙ · ЛИМА · ПАРК · КОФЕ",
+            "explanation": "И и = i, Й й kısa bir y kaymasıdır: мой (benim). Л л = l, П п = p, Ф ф = f. И́ра bir ad, Ли́ма bir şehir, парк park, ко́фе kahvedir. И ve Й ayrı harflerdir; Й üzerindeki işaret harfin parçasıdır."
+          }
+        ],
+        "bridge": "Önce örnekleri oku ve dinle. Harfleri tanıyorsan kısa kontrolü çöz; takıldığında açıklamaya dön.",
+        "readingPurpose": "Sözcükleri harf ve ses sırasıyla çöz, sorulan anlamı veya adı bul.",
+        "readingUse": "Seçtiğin sözcüğü sesli oku.",
+        "listeningUse": "Duyduğun sözcüğü yazılı biçimiyle eşleştir.",
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic-new-shapes.word.1",
+            "usage": "Ко́фе menüde kahveyi gösterir. Ф = f; vurgu ilk hecededir."
+          },
+          {
+            "cardId": "ru.cyrillic-new-shapes.word.2",
+            "usage": "Парк bir yer adıdır. П harfini Latin n gibi okuma."
+          }
+        ]
+      },
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://mezhdunami.org/unit01/1_1/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Б, Г, Д ve З biçimlerini tanı",
+            "example": "БАНК · ГОРОД · ДОМ · ЗАЛ",
+            "explanation": "Б б = b, Г г = g, Д д = d, З з = z. Банк banka, го́род şehir, дом ev, зал salon demektir. Д biçimini А ile, З biçimini 3 sayısıyla karıştırma. Го́род sözcüğünün son д sesi t gibi duyulur; yazıda д kalır."
+          },
+          {
+            "title": "И, Й, Л, П ve Ф ile kelime kur",
+            "example": "ИРА · МОЙ · ЛИМА · ПАРК · КОФЕ",
+            "explanation": "И и = i, Й й kısa bir y kaymasıdır: мой (benim). Л л = l, П п = p, Ф ф = f. И́ра bir ad, Ли́ма bir şehir, парк park, ко́фе kahvedir. И ve Й ayrı harflerdir; Й üzerindeki işaret harfin parçasıdır."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+            "example": "БАНК · ГОРОД · ДОМ · ЗАЛ"
+          },
+          {
+            "criterion": "Sözcükleri önce seslere ayır, sonra birleştirerek oku.",
+            "example": "ИРА · МОЙ · ЛИМА · ПАРК · КОФЕ"
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.cyrillic-new-shapes.form.1",
+            "misconception": "Б, Г, Д ve З biçimlerini tanı",
+            "correctExample": "ДОМ → d-o-m",
+            "incorrectExample": "ДОМ → a-o-m",
+            "correction": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic-new-shapes.form.1.transfer.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Гора (dağ) sözcüğünün ilk sesini Türkçe bir harfle yaz.",
+                "accepted": [
+                  "g"
+                ],
+                "explanation": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir."
+              },
+              {
+                "id": "ru.cyrillic-new-shapes.form.1.transfer.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Зал sözcüğünün ilk sesini Türkçe bir harfle yaz.",
+                "accepted": [
+                  "z"
+                ],
+                "explanation": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic-new-shapes.form.1.delayed.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "д-о-м harflerinden “ev” sözcüğünü yaz.",
+                "accepted": [
+                  "дом"
+                ],
+                "explanation": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir."
+              },
+              {
+                "id": "ru.cyrillic-new-shapes.form.1.delayed.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "б-а-н-к harflerinden “banka” sözcüğünü yaz.",
+                "accepted": [
+                  "банк"
+                ],
+                "explanation": "Б = b, Г = g, Д = d, З = z. Дом ev, зал salon, банк banka demektir."
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.cyrillic-new-shapes.form.2",
+            "misconception": "И, Й, Л, П ve Ф ile kelime kur",
+            "correctExample": "ПАРК → park",
+            "incorrectExample": "ПАРК → nark",
+            "correction": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic-new-shapes.form.2.transfer.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "п-а-р-к harflerinden “park” sözcüğünü yaz.",
+                "accepted": [
+                  "парк"
+                ],
+                "explanation": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur."
+              },
+              {
+                "id": "ru.cyrillic-new-shapes.form.2.transfer.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "л-и-м-а harflerinden Lima şehir adını yaz.",
+                "accepted": [
+                  "Лима"
+                ],
+                "explanation": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic-new-shapes.form.2.delayed.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "и-р-а harflerinden İra adını yaz.",
+                "accepted": [
+                  "Ира"
+                ],
+                "explanation": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur."
+              },
+              {
+                "id": "ru.cyrillic-new-shapes.form.2.delayed.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "п-о-р-т harflerinden “liman” sözcüğünü yaz.",
+                "accepted": [
+                  "порт"
+                ],
+                "explanation": "И = i, Й kısa y sesidir. Л = l, П = p, Ф = f. Мой sözcüğünün son harfi й, кофе sözcüğündeki f harfi ф olur."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "БАНК · ПАРК · КОФЕ",
+          "question": {
+            "id": "ru.cyrillic-new-shapes.input.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "İçecek hangisi?",
+            "options": [
+              "БАНК",
+              "КОФЕ",
+              "ПАРК"
+            ],
+            "accepted": "КОФЕ",
+            "explanation": "КОФЕ, metinde istenen sözcüktür."
+          }
+        },
+        "listening": {
+          "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+          "transcript": "Банк. Парк. Кофе.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.cyrillic-new-shapes.input.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.cyrillic-new-shapes.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İlk sözcük hangisi?",
+            "options": [
+              "Парк",
+              "Банк",
+              "Кофе"
+            ],
+            "accepted": "Банк",
+            "explanation": "İlk sözcük Банк."
+          },
+          "detail": {
+            "id": "ru.cyrillic-new-shapes.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Son sözcük hangisi?",
+            "options": [
+              "Банк",
+              "Кофе",
+              "Парк"
+            ],
+            "accepted": "Кофе",
+            "explanation": "İstenen sıradaki sözcük Кофе."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "ДОМ · ЗАЛ · ЛИМА",
+            "question": {
+              "id": "ru.cyrillic-new-shapes.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Şehir adı hangisi?",
+              "options": [
+                "ДОМ",
+                "ЛИМА",
+                "ЗАЛ"
+              ],
+              "accepted": "ЛИМА",
+              "explanation": "ЛИМА, metinde istenen sözcüktür."
+            },
+            "coaching": "Sözcükleri harf harf oku. Sorulan anlamı taşıyan sözcüğü seç."
+          },
+          "listening": {
+            "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+            "transcript": "Ира. Лима. Дом.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-new-shapes.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "main": {
+              "id": "ru.cyrillic-new-shapes.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "İlk sözcük hangisi?",
+              "options": [
+                "Лима",
+                "Ира",
+                "Дом"
+              ],
+              "accepted": "Ира",
+              "explanation": "İlk sözcük Ира."
+            },
+            "detail": {
+              "id": "ru.cyrillic-new-shapes.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "İkinci sözcük hangisi?",
+              "options": [
+                "Ира",
+                "Лима",
+                "Дом"
+              ],
+              "accepted": "Лима",
+              "explanation": "İstenen sıradaki sözcük Лима."
+            },
+            "mainCoaching": "İlk sözcüğü bitene kadar dinle; yazıdaki ilk harfiyle eşleştir.",
+            "detailCoaching": "Sözcükleri parmağınla sayarak dinle; sorulan sırayı bul."
+          }
+        },
+        "revision": {
+          "id": "ru.cyrillic-new-shapes.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "Yazdığın kısa listeyi kontrol et. Karışan harfleri düzeltip yeniden yaz.",
+          "sample": "Банк. Парк. Кофе.",
+          "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic-new-shapes.word.1",
+            "collocations": [
+              "кофе"
+            ],
+            "pronunciation": "ко́фе",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-new-shapes.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic-new-shapes.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "кофе ne demek?",
+              "options": [
+                "bilet",
+                "kahve",
+                "saat"
+              ],
+              "accepted": "kahve",
+              "explanation": "Ко́фе menüde kahveyi gösterir. Ф = f; vurgu ilk hecededir."
+            },
+            "recall": {
+              "id": "ru.cyrillic-new-shapes.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“kahve” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "кофе"
+              ],
+              "explanation": "Ко́фе menüde kahveyi gösterir. Ф = f; vurgu ilk hecededir."
+            },
+            "use": {
+              "id": "ru.cyrillic-new-shapes.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “kahve” sözcüğünü yaz.",
+              "sample": "КОФЕ",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          },
+          {
+            "cardId": "ru.cyrillic-new-shapes.word.2",
+            "collocations": [
+              "парк"
+            ],
+            "pronunciation": "парк",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-new-shapes.word.2.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic-new-shapes.word.2.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "парк ne demek?",
+              "options": [
+                "bilet",
+                "park",
+                "saat"
+              ],
+              "accepted": "park",
+              "explanation": "Парк bir yer adıdır. П harfini Latin n gibi okuma."
+            },
+            "recall": {
+              "id": "ru.cyrillic-new-shapes.word.2.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“park” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "парк"
+              ],
+              "explanation": "Парк bir yer adıdır. П harfini Latin n gibi okuma."
+            },
+            "use": {
+              "id": "ru.cyrillic-new-shapes.word.2.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “park” sözcüğünü yaz.",
+              "sample": "ПАРК",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Örneklerdeki sözcükleri önce yavaşça, sonra birleştirerek sesli oku.",
+        "grammar": "Б, Г, Д ve З biçimlerini tanı · И, Й, Л, П ve Ф ile kelime kur",
+        "goals": [
+          "Б, Г, Д, З, И, Й, Л, П ve Ф harflerini gündelik kelimelerde tanı."
+        ],
+        "rubric": [
+          "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+          "Sözcükleri önce seslere ayır, sonra birleştirerek oku."
+        ],
+        "context": "daily_conversation"
+      }
+    },
+    {
+      "id": "ru.cyrillic-hushing",
+      "title": "Alfabe 4: Ж, Ц, Ч, Ш ve Щ sesleri",
+      "objective": {
+        "id": "ru.cyrillic-hushing.objective",
+        "description": "Ж, Ц, Ч, Ш ve Щ harflerini menü ve tabela sözcüklerinde ayırt et.",
+        "level": "A1"
+      },
+      "prerequisites": [
+        "ru.cyrillic-new-shapes.objective"
+      ],
+      "minutes": 5,
+      "goals": [
+        "general"
+      ],
+      "recall": "Kafede çay ve çorba adlarını, sokakta merkez ve okul tabelalarını okuyorsun. Birkaç yeni sese odaklan.",
+      "explanation": [
+        "Ж ж Türkçedeki j sesine yakın, Ц ц birleşik ts, Ч ч ise ç sesidir. Жук böcek, центр merkez, чай çay demektir. Ц iki ayrı harf değildir; tek harfle ts sesi yazılır.",
+        "Ш ш sert bir ş, Щ щ daha uzun ve yumuşak bir ş sesidir. Шко́ла okul, щи lahana çorbasıdır. Щ sesini şç diye iki ayrı ses olarak bölme; kayıtta dilin konumunu ve uzunluğu karşılaştır."
+      ],
+      "examples": [
+        {
+          "correct": "ЧАЙ → çay",
+          "incorrect": "ЧАЙ → say",
+          "note": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir."
+        },
+        {
+          "correct": "ЩИ → щ + и",
+          "incorrect": "ЩИ → ш + и",
+          "note": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ru.cyrillic-hushing.form.1",
+          "label": "Ж, Ц ve Ч seslerini ayır",
+          "variants": [
+            {
+              "id": "ru.cyrillic-hushing.form.1.guided.1",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Чай sözcüğünün ilk sesini Türkçe bir harfle yaz.",
+              "accepted": [
+                "ç"
+              ],
+              "explanation": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir."
+            },
+            {
+              "id": "ru.cyrillic-hushing.form.1.guided.2",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Центр sözcüğündeki ilk sesi yaklaşık Latin harfleriyle yaz.",
+              "accepted": [
+                "ts"
+              ],
+              "explanation": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir."
+            },
+            {
+              "id": "ru.cyrillic-hushing.form.1.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Menüde çay anlamındaki sözcük hangisi?",
+              "options": [
+                "сок",
+                "чай",
+                "кофе"
+              ],
+              "accepted": "чай",
+              "explanation": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir."
+            }
+          ]
+        },
+        {
+          "id": "ru.cyrillic-hushing.form.2",
+          "label": "Ш ve Щ farkını koru",
+          "variants": [
+            {
+              "id": "ru.cyrillic-hushing.form.2.guided.1",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Школа sözcüğünün ilk harfini Kiril yazısıyla yaz.",
+              "accepted": [
+                "ш"
+              ],
+              "explanation": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır."
+            },
+            {
+              "id": "ru.cyrillic-hushing.form.2.guided.2",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Щи sözcüğünün ilk harfini Kiril yazısıyla yaz.",
+              "accepted": [
+                "щ"
+              ],
+              "explanation": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır."
+            },
+            {
+              "id": "ru.cyrillic-hushing.form.2.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Hangi harfin sağ altında kısa bir uzantı var?",
+              "options": [
+                "Ш",
+                "Щ",
+                "Ж"
+              ],
+              "accepted": "Щ",
+              "explanation": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "ru.cyrillic-hushing.writing",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Bir menü için çay ve lahana çorbasını Kiril yazısıyla yaz.",
+        "sample": "Чай. Щи.",
+        "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+      },
+      "vocabulary": [
+        {
+          "id": "ru.cyrillic-hushing.word.1",
+          "term": "чай",
+          "meaning": "çay",
+          "example": "ЧАЙ",
+          "pronunciation": "чай",
+          "context": "Kafede çay ve çorba adlarını, sokakta merkez ve okul tabelalarını okuyorsun. Birkaç yeni sese odaklan.",
+          "partOfSpeech": "isim",
+          "grammar": "Чай içecek adıdır. Ч ç sesi, Й kısa y sesidir."
+        },
+        {
+          "id": "ru.cyrillic-hushing.word.2",
+          "term": "щи",
+          "meaning": "lahana çorbası",
+          "example": "ЩИ",
+          "pronunciation": "щи",
+          "context": "Kafede çay ve çorba adlarını, sokakta merkez ve okul tabelalarını okuyorsun. Birkaç yeni sese odaklan.",
+          "partOfSpeech": "isim",
+          "grammar": "Щи tek heceli bir çorba adıdır. Щ sesini uzun ve yumuşak söyle."
+        }
+      ],
+      "teaching": {
+        "situation": "Kafede çay ve çorba adlarını, sokakta merkez ve okul tabelalarını okuyorsun. Birkaç yeni sese odaklan.",
+        "approach": "decoding",
+        "models": [
+          {
+            "phrase": "ЖУК · ЦЕНТР · ЧАЙ",
+            "explanation": "Ж ж Türkçedeki j sesine yakın, Ц ц birleşik ts, Ч ч ise ç sesidir. Жук böcek, центр merkez, чай çay demektir. Ц iki ayrı harf değildir; tek harfle ts sesi yazılır."
+          },
+          {
+            "phrase": "ШКОЛА · ЩИ",
+            "explanation": "Ш ш sert bir ş, Щ щ daha uzun ve yumuşak bir ş sesidir. Шко́ла okul, щи lahana çorbasıdır. Щ sesini şç diye iki ayrı ses olarak bölme; kayıtta dilin konumunu ve uzunluğu karşılaştır."
+          }
+        ],
+        "bridge": "Önce örnekleri oku ve dinle. Harfleri tanıyorsan kısa kontrolü çöz; takıldığında açıklamaya dön.",
+        "readingPurpose": "Sözcükleri harf ve ses sırasıyla çöz, sorulan anlamı veya adı bul.",
+        "readingUse": "Seçtiğin sözcüğü sesli oku.",
+        "listeningUse": "Duyduğun sözcüğü yazılı biçimiyle eşleştir.",
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic-hushing.word.1",
+            "usage": "Чай içecek adıdır. Ч ç sesi, Й kısa y sesidir."
+          },
+          {
+            "cardId": "ru.cyrillic-hushing.word.2",
+            "usage": "Щи tek heceli bir çorba adıdır. Щ sesini uzun ve yumuşak söyle."
+          }
+        ]
+      },
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://mezhdunami.org/unit01/1_1/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Ж, Ц ve Ч seslerini ayır",
+            "example": "ЖУК · ЦЕНТР · ЧАЙ",
+            "explanation": "Ж ж Türkçedeki j sesine yakın, Ц ц birleşik ts, Ч ч ise ç sesidir. Жук böcek, центр merkez, чай çay demektir. Ц iki ayrı harf değildir; tek harfle ts sesi yazılır."
+          },
+          {
+            "title": "Ш ve Щ farkını koru",
+            "example": "ШКОЛА · ЩИ",
+            "explanation": "Ш ш sert bir ş, Щ щ daha uzun ve yumuşak bir ş sesidir. Шко́ла okul, щи lahana çorbasıdır. Щ sesini şç diye iki ayrı ses olarak bölme; kayıtta dilin konumunu ve uzunluğu karşılaştır."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+            "example": "ЖУК · ЦЕНТР · ЧАЙ"
+          },
+          {
+            "criterion": "Sözcükleri önce seslere ayır, sonra birleştirerek oku.",
+            "example": "ШКОЛА · ЩИ"
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.cyrillic-hushing.form.1",
+            "misconception": "Ж, Ц ve Ч seslerini ayır",
+            "correctExample": "ЧАЙ → çay",
+            "incorrectExample": "ЧАЙ → say",
+            "correction": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic-hushing.form.1.transfer.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Жук sözcüğünün ilk sesini Türkçe bir harfle yaz.",
+                "accepted": [
+                  "j"
+                ],
+                "explanation": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir."
+              },
+              {
+                "id": "ru.cyrillic-hushing.form.1.transfer.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "ч-а-й harflerinden içecek adını yaz.",
+                "accepted": [
+                  "чай"
+                ],
+                "explanation": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic-hushing.form.1.delayed.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "ц-е-н-т-р harflerinden “merkez” sözcüğünü yaz.",
+                "accepted": [
+                  "центр"
+                ],
+                "explanation": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir."
+              },
+              {
+                "id": "ru.cyrillic-hushing.form.1.delayed.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "ж-у-к harflerinden “böcek” sözcüğünü yaz.",
+                "accepted": [
+                  "жук"
+                ],
+                "explanation": "Ж yaklaşık j, Ц ts, Ч ç sesidir. Чай menüde çaydır, центр tabelada merkezdir."
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.cyrillic-hushing.form.2",
+            "misconception": "Ш ve Щ farkını koru",
+            "correctExample": "ЩИ → щ + и",
+            "incorrectExample": "ЩИ → ш + и",
+            "correction": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic-hushing.form.2.transfer.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "ш-а-р harflerinden “top” sözcüğünü yaz.",
+                "accepted": [
+                  "шар"
+                ],
+                "explanation": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır."
+              },
+              {
+                "id": "ru.cyrillic-hushing.form.2.transfer.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "щ-и harflerinden çorba adını yaz.",
+                "accepted": [
+                  "щи"
+                ],
+                "explanation": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic-hushing.form.2.delayed.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "ш-к-о-л-а harflerinden “okul” sözcüğünü yaz.",
+                "accepted": [
+                  "школа"
+                ],
+                "explanation": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır."
+              },
+              {
+                "id": "ru.cyrillic-hushing.form.2.delayed.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "щ-у-к-а harflerinden “turna balığı” sözcüğünü yaz.",
+                "accepted": [
+                  "щука"
+                ],
+                "explanation": "Ш ve Щ ayrı harflerdir. Ш sert ş, Щ daha uzun ve yumuşak ş sesidir. Щ harfinin sağ altında kısa bir uzantı vardır."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "ЦЕНТР · ШКОЛА · ЧАЙ",
+          "question": {
+            "id": "ru.cyrillic-hushing.input.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Okul tabelası hangisi?",
+            "options": [
+              "ЦЕНТР",
+              "ШКОЛА",
+              "ЧАЙ"
+            ],
+            "accepted": "ШКОЛА",
+            "explanation": "ШКОЛА, metinde istenen sözcüktür."
+          }
+        },
+        "listening": {
+          "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+          "transcript": "Чай. Щи. Школа.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.cyrillic-hushing.input.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.cyrillic-hushing.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İlk sözcük hangisi?",
+            "options": [
+              "Щи",
+              "Чай",
+              "Школа"
+            ],
+            "accepted": "Чай",
+            "explanation": "İlk sözcük Чай."
+          },
+          "detail": {
+            "id": "ru.cyrillic-hushing.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İkinci sözcük hangisi?",
+            "options": [
+              "Чай",
+              "Щи",
+              "Школа"
+            ],
+            "accepted": "Щи",
+            "explanation": "İstenen sıradaki sözcük Щи."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "ЧАЙ · ЩИ · СОК",
+            "question": {
+              "id": "ru.cyrillic-hushing.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Lahana çorbası hangisi?",
+              "options": [
+                "ЧАЙ",
+                "ЩИ",
+                "СОК"
+              ],
+              "accepted": "ЩИ",
+              "explanation": "ЩИ, metinde istenen sözcüktür."
+            },
+            "coaching": "Sözcükleri harf harf oku. Sorulan anlamı taşıyan sözcüğü seç."
+          },
+          "listening": {
+            "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+            "transcript": "Жук. Центр. Чай.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-hushing.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "main": {
+              "id": "ru.cyrillic-hushing.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "İlk sözcük hangisi?",
+              "options": [
+                "Центр",
+                "Жук",
+                "Чай"
+              ],
+              "accepted": "Жук",
+              "explanation": "İlk sözcük Жук."
+            },
+            "detail": {
+              "id": "ru.cyrillic-hushing.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Son sözcük hangisi?",
+              "options": [
+                "Жук",
+                "Чай",
+                "Центр"
+              ],
+              "accepted": "Чай",
+              "explanation": "İstenen sıradaki sözcük Чай."
+            },
+            "mainCoaching": "İlk sözcüğü bitene kadar dinle; yazıdaki ilk harfiyle eşleştir.",
+            "detailCoaching": "Sözcükleri parmağınla sayarak dinle; sorulan sırayı bul."
+          }
+        },
+        "revision": {
+          "id": "ru.cyrillic-hushing.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "Yazdığın kısa listeyi kontrol et. Karışan harfleri düzeltip yeniden yaz.",
+          "sample": "Чай. Щи.",
+          "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic-hushing.word.1",
+            "collocations": [
+              "чай"
+            ],
+            "pronunciation": "чай",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-hushing.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic-hushing.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "чай ne demek?",
+              "options": [
+                "bilet",
+                "çay",
+                "saat"
+              ],
+              "accepted": "çay",
+              "explanation": "Чай içecek adıdır. Ч ç sesi, Й kısa y sesidir."
+            },
+            "recall": {
+              "id": "ru.cyrillic-hushing.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“çay” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "чай"
+              ],
+              "explanation": "Чай içecek adıdır. Ч ç sesi, Й kısa y sesidir."
+            },
+            "use": {
+              "id": "ru.cyrillic-hushing.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “çay” sözcüğünü yaz.",
+              "sample": "ЧАЙ",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          },
+          {
+            "cardId": "ru.cyrillic-hushing.word.2",
+            "collocations": [
+              "щи"
+            ],
+            "pronunciation": "щи",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-hushing.word.2.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic-hushing.word.2.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "щи ne demek?",
+              "options": [
+                "bilet",
+                "lahana çorbası",
+                "saat"
+              ],
+              "accepted": "lahana çorbası",
+              "explanation": "Щи tek heceli bir çorba adıdır. Щ sesini uzun ve yumuşak söyle."
+            },
+            "recall": {
+              "id": "ru.cyrillic-hushing.word.2.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“lahana çorbası” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "щи"
+              ],
+              "explanation": "Щи tek heceli bir çorba adıdır. Щ sesini uzun ve yumuşak söyle."
+            },
+            "use": {
+              "id": "ru.cyrillic-hushing.word.2.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “lahana çorbası” sözcüğünü yaz.",
+              "sample": "ЩИ",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Örneklerdeki sözcükleri önce yavaşça, sonra birleştirerek sesli oku.",
+        "grammar": "Ж, Ц ve Ч seslerini ayır · Ш ve Щ farkını koru",
+        "goals": [
+          "Ж, Ц, Ч, Ш ve Щ harflerini menü ve tabela sözcüklerinde ayırt et."
+        ],
+        "rubric": [
+          "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+          "Sözcükleri önce seslere ayır, sonra birleştirerek oku."
+        ],
+        "context": "daily_conversation"
+      }
+    },
+    {
+      "id": "ru.cyrillic-vowels-signs",
+      "title": "Alfabe 5: Ünlüler, işaretler ve vurgu",
+      "objective": {
+        "id": "ru.cyrillic-vowels-signs.objective",
+        "description": "Я, Ё, Ю, Э, Ы, Ь ve Ъ harflerini tanı; öğrenme metnindeki vurgu işaretini oku.",
+        "level": "A1"
+      },
+      "prerequisites": [
+        "ru.cyrillic-hushing.objective"
+      ],
+      "minutes": 5,
+      "goals": [
+        "general"
+      ],
+      "recall": "Bir kafe menüsünü ve bina girişini okuyorsun. Artık son ünlüleri, ses vermeyen işaretleri ve vurguyu birleştir.",
+      "explanation": [
+        "А–Я, О–Ё, У–Ю, Э–Е ve Ы–И ünlü çiftleridir. Я, Ё, Ю sözcük başında ya, yo, yu gibi duyulur; ünsüzden sonra önceki sesi yumuşatıp a, o, u verir: ме́ню. Э doğrudan e sesidir. Ы Türkçede tam karşılığı olmayan, dilin daha geride durduğu bir sestir; ı yalnız yaklaşık destektir. Сыр peynir demektir.",
+        "Ь ь ve Ъ ъ tek başına ses vermez. Соль (tuz) sözcüğünde ь önceki л sesini yumuşatır. Подъе́зд (bina girişi) sözcüğünde ъ, sonraki е öncesinde ayırır; burada ye duyulur. Vurgu işareti ayrı bir harf değildir: меню́ son hecede, Мо́сква değil Москва́ son hecede vurgulanır. Normal tabelalarda vurgu çoğunlukla yazılmaz. Ё genellikle vurguludur; günlük yazıda bazen е yazılsa da öğrenirken ё biçimini koru."
+      ],
+      "examples": [
+        {
+          "correct": "Я → ya; Ю → yu; Ё → yo",
+          "incorrect": "Я → r; Ю → io; Ё → e",
+          "note": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır."
+        },
+        {
+          "correct": "Москва́ → vurgu son а üzerinde",
+          "incorrect": "Москва́ → vurgu ilk о üzerinde",
+          "note": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir."
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ru.cyrillic-vowels-signs.form.1",
+          "label": "Ünlü çiftlerini ve Ы sesini tanı",
+          "variants": [
+            {
+              "id": "ru.cyrillic-vowels-signs.form.1.guided.1",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Я harfinin sözcük başındaki sesini Türkçe harflerle yaz.",
+              "accepted": [
+                "ya"
+              ],
+              "explanation": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır."
+            },
+            {
+              "id": "ru.cyrillic-vowels-signs.form.1.guided.2",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Юля adındaki ilk harfin sesini Türkçe harflerle yaz.",
+              "accepted": [
+                "yu"
+              ],
+              "explanation": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır."
+            },
+            {
+              "id": "ru.cyrillic-vowels-signs.form.1.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Сыр sözcüğünün ortasında hangi harf var?",
+              "options": [
+                "и",
+                "ы",
+                "ь"
+              ],
+              "accepted": "ы",
+              "explanation": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır."
+            }
+          ]
+        },
+        {
+          "id": "ru.cyrillic-vowels-signs.form.2",
+          "label": "Ь, Ъ ve vurgu işaretini oku",
+          "variants": [
+            {
+              "id": "ru.cyrillic-vowels-signs.form.2.guided.1",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Соль sözcüğünün sonundaki, kendi sesi olmayan harfi yaz.",
+              "accepted": [
+                "ь"
+              ],
+              "explanation": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir."
+            },
+            {
+              "id": "ru.cyrillic-vowels-signs.form.2.guided.2",
+              "kind": "fill",
+              "skill": "reading",
+              "prompt": "Подъезд sözcüğünde д ile е arasındaki harfi yaz.",
+              "accepted": [
+                "ъ"
+              ],
+              "explanation": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir."
+            },
+            {
+              "id": "ru.cyrillic-vowels-signs.form.2.recognition",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Hangi harf kendi başına ses vermez?",
+              "options": [
+                "ы",
+                "ъ",
+                "э"
+              ],
+              "accepted": "ъ",
+              "explanation": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir."
+            }
+          ]
+        }
+      ],
+      "production": {
+        "id": "ru.cyrillic-vowels-signs.writing",
+        "kind": "open",
+        "skill": "writing",
+        "prompt": "Kafe için menü ve peynir sözcüklerini yaz. Menü sözcüğünde hangi hecenin vurgulu olduğunu sesli göster.",
+        "sample": "Меню. Сыр.",
+        "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+      },
+      "vocabulary": [
+        {
+          "id": "ru.cyrillic-vowels-signs.word.1",
+          "term": "меню",
+          "meaning": "menü",
+          "example": "МЕНЮ",
+          "pronunciation": "меню́",
+          "context": "Bir kafe menüsünü ve bina girişini okuyorsun. Artık son ünlüleri, ses vermeyen işaretleri ve vurguyu birleştir.",
+          "partOfSpeech": "isim",
+          "grammar": "Меню́ sözcüğünde vurgu son hecededir. Ю, önceki н sesini yumuşatır."
+        },
+        {
+          "id": "ru.cyrillic-vowels-signs.word.2",
+          "term": "сыр",
+          "meaning": "peynir",
+          "example": "СЫР",
+          "pronunciation": "сыр",
+          "context": "Bir kafe menüsünü ve bina girişini okuyorsun. Artık son ünlüleri, ses vermeyen işaretleri ve vurguyu birleştir.",
+          "partOfSpeech": "isim",
+          "grammar": "Ы sesini kayıttan dinle. Сыр peynir demektir; сир yazma."
+        }
+      ],
+      "teaching": {
+        "situation": "Bir kafe menüsünü ve bina girişini okuyorsun. Artık son ünlüleri, ses vermeyen işaretleri ve vurguyu birleştir.",
+        "approach": "decoding",
+        "models": [
+          {
+            "phrase": "Я · ЁЛКА · ЮЛЯ · ЭТО · СЫР",
+            "explanation": "А–Я, О–Ё, У–Ю, Э–Е ve Ы–И ünlü çiftleridir. Я, Ё, Ю sözcük başında ya, yo, yu gibi duyulur; ünsüzden sonra önceki sesi yumuşatıp a, o, u verir: ме́ню. Э doğrudan e sesidir. Ы Türkçede tam karşılığı olmayan, dilin daha geride durduğu bir sestir; ı yalnız yaklaşık destektir. Сыр peynir demektir."
+          },
+          {
+            "phrase": "МЕНЮ́ · СОЛЬ · ПОДЪЕ́ЗД · МОСКВА́",
+            "explanation": "Ь ь ve Ъ ъ tek başına ses vermez. Соль (tuz) sözcüğünde ь önceki л sesini yumuşatır. Подъе́зд (bina girişi) sözcüğünde ъ, sonraki е öncesinde ayırır; burada ye duyulur. Vurgu işareti ayrı bir harf değildir: меню́ son hecede, Мо́сква değil Москва́ son hecede vurgulanır. Normal tabelalarda vurgu çoğunlukla yazılmaz. Ё genellikle vurguludur; günlük yazıda bazen е yazılsa da öğrenirken ё biçimini koru."
+          }
+        ],
+        "bridge": "Önce örnekleri oku ve dinle. Harfleri tanıyorsan kısa kontrolü çöz; takıldığında açıklamaya dön.",
+        "readingPurpose": "Sözcükleri harf ve ses sırasıyla çöz, sorulan anlamı veya adı bul.",
+        "readingUse": "Seçtiğin sözcüğü sesli oku.",
+        "listeningUse": "Duyduğun sözcüğü yazılı biçimiyle eşleştir.",
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic-vowels-signs.word.1",
+            "usage": "Меню́ sözcüğünde vurgu son hecededir. Ю, önceki н sesini yumuşatır."
+          },
+          {
+            "cardId": "ru.cyrillic-vowels-signs.word.2",
+            "usage": "Ы sesini kayıttan dinle. Сыр peynir demektir; сир yazma."
+          }
+        ]
+      },
+      "pedagogy": {
+        "language": "ru",
+        "target": "A1",
+        "version": 2,
+        "quality": "automated_checked",
+        "sources": [
+          "https://mezhdunami.org/unit01/1_1/language.shtml"
+        ],
+        "sections": [
+          {
+            "title": "Ünlü çiftlerini ve Ы sesini tanı",
+            "example": "Я · ЁЛКА · ЮЛЯ · ЭТО · СЫР",
+            "explanation": "А–Я, О–Ё, У–Ю, Э–Е ve Ы–И ünlü çiftleridir. Я, Ё, Ю sözcük başında ya, yo, yu gibi duyulur; ünsüzden sonra önceki sesi yumuşatıp a, o, u verir: ме́ню. Э doğrudan e sesidir. Ы Türkçede tam karşılığı olmayan, dilin daha geride durduğu bir sestir; ı yalnız yaklaşık destektir. Сыр peynir demektir."
+          },
+          {
+            "title": "Ь, Ъ ve vurgu işaretini oku",
+            "example": "МЕНЮ́ · СОЛЬ · ПОДЪЕ́ЗД · МОСКВА́",
+            "explanation": "Ь ь ve Ъ ъ tek başına ses vermez. Соль (tuz) sözcüğünde ь önceki л sesini yumuşatır. Подъе́зд (bina girişi) sözcüğünde ъ, sonraki е öncesinde ayırır; burada ye duyulur. Vurgu işareti ayrı bir harf değildir: меню́ son hecede, Мо́сква değil Москва́ son hecede vurgulanır. Normal tabelalarda vurgu çoğunlukla yazılmaz. Ё genellikle vurguludur; günlük yazıda bazen е yazılsa da öğrenirken ё biçimini koru."
+          }
+        ],
+        "rubric": [
+          {
+            "criterion": "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+            "example": "Я · ЁЛКА · ЮЛЯ · ЭТО · СЫР"
+          },
+          {
+            "criterion": "Sözcükleri önce seslere ayır, sonra birleştirerek oku.",
+            "example": "МЕНЮ́ · СОЛЬ · ПОДЪЕ́ЗД · МОСКВА́"
+          }
+        ],
+        "checks": [
+          {
+            "conceptId": "ru.cyrillic-vowels-signs.form.1",
+            "misconception": "Ünlü çiftlerini ve Ы sesini tanı",
+            "correctExample": "Я → ya; Ю → yu; Ё → yo",
+            "incorrectExample": "Я → r; Ю → io; Ё → e",
+            "correction": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic-vowels-signs.form.1.transfer.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Ёлка sözcüğünün ilk harfinin sesini Türkçe harflerle yaz.",
+                "accepted": [
+                  "yo"
+                ],
+                "explanation": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır."
+              },
+              {
+                "id": "ru.cyrillic-vowels-signs.form.1.transfer.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Сыр sözcüğünün ortadaki harfini Kiril yazısıyla yaz.",
+                "accepted": [
+                  "ы"
+                ],
+                "explanation": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic-vowels-signs.form.1.delayed.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Это sözcüğünün ilk harfini Kiril yazısıyla yaz.",
+                "accepted": [
+                  "э"
+                ],
+                "explanation": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır."
+              },
+              {
+                "id": "ru.cyrillic-vowels-signs.form.1.delayed.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "м-е-н-ю harflerinden “menü” sözcüğünü yaz.",
+                "accepted": [
+                  "меню"
+                ],
+                "explanation": "Я, Ё, Ю sözcük başında ya, yo, yu gibi okunur. Э doğrudan e sesidir. Ы ile И ayrı harflerdir: сыр sözcüğünde ы vardır."
+              }
+            ]
+          },
+          {
+            "conceptId": "ru.cyrillic-vowels-signs.form.2",
+            "misconception": "Ь, Ъ ve vurgu işaretini oku",
+            "correctExample": "Москва́ → vurgu son а üzerinde",
+            "incorrectExample": "Москва́ → vurgu ilk о üzerinde",
+            "correction": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir.",
+            "transfer": [
+              {
+                "id": "ru.cyrillic-vowels-signs.form.2.transfer.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Москва́ yazısında vurgulu ünlüyü Kiril yazısıyla yaz.",
+                "accepted": [
+                  "а"
+                ],
+                "explanation": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir."
+              },
+              {
+                "id": "ru.cyrillic-vowels-signs.form.2.transfer.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Кафе́ yazısında vurgulu ünlüyü Kiril yazısıyla yaz.",
+                "accepted": [
+                  "е"
+                ],
+                "explanation": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir."
+              }
+            ],
+            "delayed": [
+              {
+                "id": "ru.cyrillic-vowels-signs.form.2.delayed.1",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Меню́ yazısında vurgulu ünlüyü Kiril yazısıyla yaz.",
+                "accepted": [
+                  "ю"
+                ],
+                "explanation": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir."
+              },
+              {
+                "id": "ru.cyrillic-vowels-signs.form.2.delayed.2",
+                "kind": "fill",
+                "skill": "reading",
+                "prompt": "Бульон (et suyu) sözcüğünde л harfinden sonraki işareti yaz.",
+                "accepted": [
+                  "ь"
+                ],
+                "explanation": "Ь önceki ünsüzü yumuşatabilir, Ъ ayırır; ikisinin de kendi sesi yoktur. Ünlü üzerindeki çizgi vurgulu heceyi gösterir; ayrı harf değildir."
+              }
+            ]
+          }
+        ],
+        "reviewAfterHours": 24,
+        "reading": {
+          "text": "МЕНЮ́: ЧАЙ · КО́ФЕ · СЫР\nПОДЪЕ́ЗД",
+          "question": {
+            "id": "ru.cyrillic-vowels-signs.input.reading",
+            "kind": "single",
+            "skill": "reading",
+            "prompt": "Peynir anlamındaki sözcük hangisi?",
+            "options": [
+              "ЧАЙ",
+              "СЫР",
+              "КОФЕ"
+            ],
+            "accepted": "СЫР",
+            "explanation": "СЫР, metinde istenen sözcüktür."
+          }
+        },
+        "listening": {
+          "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+          "transcript": "Меню. Сыр. Соль.",
+          "audio": {
+            "kind": "recording",
+            "src": "/audio/ru.cyrillic-vowels-signs.input.mp3",
+            "license": "MIT",
+            "source": "https://github.com/espeak-ng/espeak-ng",
+            "locale": "ru-RU",
+            "synthetic": true
+          },
+          "main": {
+            "id": "ru.cyrillic-vowels-signs.listen.main",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "İlk sözcük hangisi?",
+            "options": [
+              "Сыр",
+              "Меню",
+              "Соль"
+            ],
+            "accepted": "Меню",
+            "explanation": "İlk sözcük Меню."
+          },
+          "detail": {
+            "id": "ru.cyrillic-vowels-signs.listen.detail",
+            "kind": "single",
+            "skill": "listening",
+            "prompt": "Son sözcük hangisi?",
+            "options": [
+              "Меню",
+              "Соль",
+              "Сыр"
+            ],
+            "accepted": "Соль",
+            "explanation": "İstenen sıradaki sözcük Соль."
+          }
+        },
+        "receptionRetry": {
+          "reading": {
+            "text": "МОСКВА́ · МЕНЮ́ · СОЛЬ",
+            "question": {
+              "id": "ru.cyrillic-vowels-signs.retry.reading",
+              "kind": "single",
+              "skill": "reading",
+              "prompt": "Tuz anlamındaki sözcük hangisi?",
+              "options": [
+                "МОСКВА",
+                "СОЛЬ",
+                "МЕНЮ"
+              ],
+              "accepted": "СОЛЬ",
+              "explanation": "СОЛЬ, metinde istenen sözcüktür."
+            },
+            "coaching": "Sözcükleri harf harf oku. Sorulan anlamı taşıyan sözcüğü seç."
+          },
+          "listening": {
+            "preparation": "Önce sözcüklerin sırasını dinle. İkinci dinlemede sorulan sıradaki sözcüğe odaklan.",
+            "transcript": "Юля. Ёлка. Москва.",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-vowels-signs.retry.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "main": {
+              "id": "ru.cyrillic-vowels-signs.retry.listen.main",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "İlk sözcük hangisi?",
+              "options": [
+                "Ёлка",
+                "Юля",
+                "Москва"
+              ],
+              "accepted": "Юля",
+              "explanation": "İlk sözcük Юля."
+            },
+            "detail": {
+              "id": "ru.cyrillic-vowels-signs.retry.listen.detail",
+              "kind": "single",
+              "skill": "listening",
+              "prompt": "Son sözcük hangisi?",
+              "options": [
+                "Юля",
+                "Москва",
+                "Ёлка"
+              ],
+              "accepted": "Москва",
+              "explanation": "İstenen sıradaki sözcük Москва."
+            },
+            "mainCoaching": "İlk sözcüğü bitene kadar dinle; yazıdaki ilk harfiyle eşleştir.",
+            "detailCoaching": "Sözcükleri parmağınla sayarak dinle; sorulan sırayı bul."
+          }
+        },
+        "revision": {
+          "id": "ru.cyrillic-vowels-signs.revision",
+          "kind": "open",
+          "skill": "writing",
+          "prompt": "Yazdığın kısa listeyi kontrol et. Karışan harfleri düzeltip yeniden yaz.",
+          "sample": "Меню. Сыр.",
+          "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+        },
+        "vocabulary": [
+          {
+            "cardId": "ru.cyrillic-vowels-signs.word.1",
+            "collocations": [
+              "меню"
+            ],
+            "pronunciation": "меню́",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-vowels-signs.word.1.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic-vowels-signs.word.1.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "меню ne demek?",
+              "options": [
+                "bilet",
+                "menü",
+                "saat"
+              ],
+              "accepted": "menü",
+              "explanation": "Меню́ sözcüğünde vurgu son hecededir. Ю, önceki н sesini yumuşatır."
+            },
+            "recall": {
+              "id": "ru.cyrillic-vowels-signs.word.1.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“menü” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "меню"
+              ],
+              "explanation": "Меню́ sözcüğünde vurgu son hecededir. Ю, önceki н sesini yumuşatır."
+            },
+            "use": {
+              "id": "ru.cyrillic-vowels-signs.word.1.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “menü” sözcüğünü yaz.",
+              "sample": "МЕНЮ",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          },
+          {
+            "cardId": "ru.cyrillic-vowels-signs.word.2",
+            "collocations": [
+              "сыр"
+            ],
+            "pronunciation": "сыр",
+            "audio": {
+              "kind": "recording",
+              "src": "/audio/ru.cyrillic-vowels-signs.word.2.mp3",
+              "license": "MIT",
+              "source": "https://github.com/espeak-ng/espeak-ng",
+              "locale": "ru-RU",
+              "synthetic": true
+            },
+            "recognize": {
+              "id": "ru.cyrillic-vowels-signs.word.2.recognize",
+              "kind": "single",
+              "skill": "vocabulary",
+              "prompt": "сыр ne demek?",
+              "options": [
+                "bilet",
+                "peynir",
+                "saat"
+              ],
+              "accepted": "peynir",
+              "explanation": "Ы sesini kayıttan dinle. Сыр peynir demektir; сир yazma."
+            },
+            "recall": {
+              "id": "ru.cyrillic-vowels-signs.word.2.recall",
+              "kind": "short",
+              "skill": "vocabulary",
+              "prompt": "“peynir” sözcüğünü Kiril yazısıyla yaz.",
+              "accepted": [
+                "сыр"
+              ],
+              "explanation": "Ы sesini kayıttan dinle. Сыр peynir demektir; сир yazma."
+            },
+            "use": {
+              "id": "ru.cyrillic-vowels-signs.word.2.use",
+              "kind": "open",
+              "skill": "vocabulary",
+              "prompt": "Bir etiket veya menü için “peynir” sözcüğünü yaz.",
+              "sample": "СЫР",
+              "explanation": "Harf sırasını ve sesleri örnekle karşılaştır; uzun cümle yazman gerekmiyor."
+            }
+          }
+        ]
+      },
+      "speaking": {
+        "scenario": "Örneklerdeki sözcükleri önce yavaşça, sonra birleştirerek sesli oku.",
+        "grammar": "Ünlü çiftlerini ve Ы sesini tanı · Ь, Ъ ve vurgu işaretini oku",
+        "goals": [
+          "Я, Ё, Ю, Э, Ы, Ь ve Ъ harflerini tanı; öğrenme metnindeki vurgu işaretini oku."
+        ],
+        "rubric": [
+          "Harfleri doğru sırayla yaz ve benzer biçimleri ayır.",
+          "Sözcükleri önce seslere ayır, sonra birleştirerek oku."
         ],
         "context": "daily_conversation"
       }
@@ -1532,24 +3777,24 @@
     },
     "ru.cyrillic": {
       "reading": {
-        "text": "Рита · Соня · Нина",
+        "text": "ТОМ · МАК · КОТ",
         "question": {
           "id": "ru.cyrillic.diagnostic.reading",
-          "skill": "reading",
           "kind": "single",
-          "prompt": "Hangi isim Н ile başlıyor?",
+          "skill": "reading",
+          "prompt": "Kişi adı hangisi?",
           "options": [
-            "Рита",
-            "Нина",
-            "Соня"
+            "МАК",
+            "ТОМ",
+            "КОТ"
           ],
-          "accepted": "Нина",
-          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+          "accepted": "ТОМ",
+          "explanation": "Том bir kişi adıdır."
         }
       },
       "listening": {
         "preparation": "Dinle ve sorulan ayrıntıyı seç.",
-        "transcript": "Саша. Роман. Нина.",
+        "transcript": "Том. Кот. Мама.",
         "audio": {
           "kind": "recording",
           "src": "/audio/ru.cyrillic.diagnostic.mp3",
@@ -1560,16 +3805,16 @@
         },
         "detail": {
           "id": "ru.cyrillic.diagnostic.listening",
-          "skill": "listening",
           "kind": "single",
-          "prompt": "İlk isim hangisi?",
+          "skill": "listening",
+          "prompt": "İlk sözcük hangisi?",
           "options": [
-            "Роман",
-            "Саша",
-            "Нина"
+            "Кот",
+            "Том",
+            "Мама"
           ],
-          "accepted": "Саша",
-          "explanation": "Yanıt, örnekte verilen kişi, zaman veya eylemden çıkarılır."
+          "accepted": "Том",
+          "explanation": "İlk sözcük Том."
         }
       }
     }

@@ -77,7 +77,12 @@ describe('adaptive evidence', () => {
     expect(() => runPhase(failed, lesson, 'transfer', next, {}, course)).toThrow(/rehberli/)
     const retry = lessonTasks(failed, lesson)
     expect(retry.map(({ exercise }) => exercise.id)).not.toContain(firstTask.exercise.id)
-    const failedAgain = finishLesson(failed, course, lesson, { [retry[0].exercise.id]: 'Bilmiyorum' }, next)
+    let failedAgain = finishLesson(failed, course, lesson, { [retry[0].exercise.id]: 'Bilmiyorum' }, next)
+    while (lessonTasks(failedAgain, lesson).length) {
+      const remaining = lessonTasks(failedAgain, lesson)
+      failedAgain = finishLesson(failedAgain, course, lesson,
+        Object.fromEntries(remaining.map(({ exercise }) => [exercise.id, 'Bilmiyorum'])), next)
+    }
     expect(dailyPlan(failedAgain, course, later, 'Europe/Istanbul')).toMatchObject({ kind: 'assessment_gap' })
     expect(lessonTasks(failedAgain, lesson)).toEqual([])
     expect(() => finishLesson(failedAgain, course, lesson, draft, later)).toThrow()
@@ -175,7 +180,8 @@ describe('vocabulary, listening and content checks', () => {
       ['ru', 2, 'Anna', 'İki kişinin yaşadığı yer', 'Samara', 'Это Ира. Она живёт в Самаре'],
     ] as const
     for (const [language, index, reading, main, detail, audibleClue] of keys) {
-      const p = catalog[language].unit.lessons[index].pedagogy!
+      const lessons = catalog[language].unit.lessons
+      const p = (language === 'ru' ? lessons.find(({ id }) => id === ['ru.intro', 'ru.roles', 'ru.city'][index])! : lessons[index]).pedagogy!
       expect(p.listening.transcript).toContain(audibleClue)
       for (const [exercise, key] of [[p.reading.question, reading], [p.listening.main, main], [p.listening.detail, detail]] as const) {
         expect(assess(exercise, key, language).outcome).toBe('correct')
@@ -193,7 +199,11 @@ describe('vocabulary, listening and content checks', () => {
       'en.routine': ['Saat onda', 'Yürüyerek', '11', 'Lobide'],
       'en.opinion': ['Daha kısa gündem', 'Beş', 'İlk gündem maddesini', 'Kütüphane'],
       'en.tradeoff': ['Eğitim süresi', 'Daha ucuz', 'İstasyona yakınlık', 'Canlı pratik'],
-      'ru.cyrillic': ['Роман', 'Роман', 'Саша', 'Соня'],
+      'ru.cyrillic': ['КОТ', 'Том', 'ТОМ', 'Том'],
+      'ru.cyrillic-false-friends': ['САМАРА', 'Роман', 'СОК', 'Уха'],
+      'ru.cyrillic-new-shapes': ['КОФЕ', 'Кофе', 'ЛИМА', 'Лима'],
+      'ru.cyrillic-hushing': ['ШКОЛА', 'Щи', 'ЩИ', 'Чай'],
+      'ru.cyrillic-vowels-signs': ['СЫР', 'Соль', 'СОЛЬ', 'Москва'],
       'ru.order': ['Su', '80', '90', '150'],
       'ru.meeting': ['Yarın saat beşte', 'Yedi', 'Cumartesi', 'Metro yakınında'],
       'es.familia': ['14', '18', '11', '13'],
@@ -201,7 +211,7 @@ describe('vocabulary, listening and content checks', () => {
       'es.cafe': ['Sütlü ve şekersiz', 'Şekersiz', 'Sütlü çay', '3'],
     }
     for (const course of Object.values(catalog)) {
-      for (const lesson of course.unit.lessons.slice(3, 6)) {
+      for (const lesson of course.unit.lessons.filter(({ id }) => id in expected)) {
         const p = lesson.pedagogy!
         const { reading, listening } = p.receptionRetry!
         const tasks = [p.reading.question, p.listening.detail, reading.question, listening.detail]
@@ -323,7 +333,6 @@ describe('Learning Experience v1 learner scenarios', () => {
       for (let block = 0; block < 10; block++) {
         const plan = dailyPlan(state, course, now, 'Europe/Istanbul')
         if (plan.kind === 'complete') {
-          routeEnd = route.every((lesson) => masteryFor(state, lesson).status === 'retained')
           break
         }
         if (plan.kind === 'out_of_scope' || plan.kind === 'budget' || plan.kind === 'rest') break
@@ -346,6 +355,9 @@ describe('Learning Experience v1 learner scenarios', () => {
         else state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), now)
       }
       expect(state.activity.filter(({ at }) => at === now).reduce((total, { minutes }) => total + minutes, 0)).toBeLessThanOrEqual(5)
+      // Ongoing vocabulary reviews can fill the budget even after every route milestone is met.
+      routeEnd = route.every((lesson) => masteryFor(state, lesson).status === 'retained') &&
+        state.attempts.filter(({ context }) => context === 'revision').length === route.length
     }
     expect(routeEnd, JSON.stringify({ learningDays: learningDays.size, statuses: course.unit.lessons.map((lesson) => [lesson.id, masteryFor(state, lesson).status]), tail: state.activity.slice(-5), phases: state.attempts.slice(-8).map(({ context, exerciseId }) => [context, exerciseId]) })).toBe(true)
     expect(learningDays.size).toBeGreaterThanOrEqual(40)

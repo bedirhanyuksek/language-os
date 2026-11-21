@@ -2,6 +2,7 @@ import { readFileSync, readdirSync, existsSync, mkdtempSync, renameSync, rmSync 
 import { execFileSync } from 'node:child_process'
 import console from 'node:console'
 import { createHash } from 'node:crypto'
+import { Buffer } from 'node:buffer'
 import { join } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath, pathToFileURL, URL } from 'node:url'
@@ -12,12 +13,27 @@ const list = args.includes('--list')
 const selected = args.filter((arg) => !['--force', '--list'].includes(arg))
 const root = new URL('../src/content/', import.meta.url)
 const packs = new URL('packs/', root)
-const files = [...readdirSync(packs).filter((name) => name.endsWith('.json')), 'es.json'].sort()
+const files = [...readdirSync(packs).filter((name) => name.endsWith('.json')), 'es.json', 'ru-experience.json'].sort()
 for (const name of selected) {
   if (!files.includes(name)) throw new Error(`Paket bulunamadı: ${name}`)
 }
 const voices = { en: ['en-us', '153'], ru: ['ru', '140'], es: ['es', '140'] }
 const clips = files.filter((name) => !selected.length || selected.includes(name)).flatMap((file) => {
+  if (file === 'ru-experience.json') {
+    const { lessons, diagnostics } = JSON.parse(readFileSync(new URL(file, root), 'utf8'))
+    return lessons.filter(({ id }) => id === 'ru.cyrillic' || id.startsWith('ru.cyrillic-')).flatMap((lesson) => {
+      const p = lesson.pedagogy
+      const items = [
+        ...lesson.teaching.models.map(({ phrase }, index) => [`${lesson.id}.model.${index + 1}.mp3`, phrase]),
+        [p.listening.audio.src.split('/').at(-1), p.listening.transcript],
+        [p.receptionRetry.listening.audio.src.split('/').at(-1), p.receptionRetry.listening.transcript],
+        ...p.vocabulary.map(({ audio, cardId }) => [audio.src.split('/').at(-1), lesson.vocabulary.find(({ id }) => id === cardId).example]),
+      ]
+      const diagnostic = diagnostics[lesson.id]?.listening
+      if (diagnostic) items.push([diagnostic.audio.src.split('/').at(-1), diagnostic.transcript])
+      return items.map(([file, text]) => ({ file, text, options: ['-b', '1', '-v', 'ru', '-s', '140'] }))
+    })
+  }
   const { language, lessons } = JSON.parse(readFileSync(new URL(file, file === 'es.json' ? root : packs), 'utf8'))
   if (!Object.hasOwn(voices, language)) throw new Error(`Geçersiz dil: ${file}`)
   return lessons.flatMap((lesson) => {
@@ -61,7 +77,8 @@ try {
       const engine = await espeak({ wasmBinary: wasm, arguments: [...options, '-w', 'speech.wav', phrase] })
       input = engine.FS.readFile('speech.wav')
     } else {
-      execFileSync('espeak-ng', [...options, '-w', wav, '--', phrase])
+      // UTF-8 stdin also preserves Cyrillic on Windows, where argv can lose non-ASCII text.
+      execFileSync('espeak-ng', [...options, '-w', wav, '--stdin'], { input: Buffer.from(phrase, 'utf8') })
     }
     execFileSync('ffmpeg', ['-v', 'error', '-y', '-i', input ? 'pipe:0' : wav, '-codec:a', 'libmp3lame',
       '-b:a', '48k', '-metadata', `comment=${sourceHash}`, mp3], { input })

@@ -40,8 +40,8 @@ test.each(Object.values(catalog))('$language planning graph and playable catalog
     }
   }
   expect(live.sort()).toEqual(course.unit.lessons.map(({ id }) => id).sort())
-  expect(groups.reduce((sum, group) => sum + group.baseline, 0)).toBe({ en: 48, ru: 44, es: 9 }[course.language])
-  expect(rows).toHaveLength({ en: 74, ru: 70, es: 9 }[course.language])
+  expect(groups.reduce((sum, group) => sum + group.baseline, 0)).toBe({ en: 48, ru: 48, es: 9 }[course.language])
+  expect(rows).toHaveLength({ en: 74, ru: 74, es: 9 }[course.language])
   for (const { band, grammar, vocabulary } of languageAudit(course)) {
     expect(grammar.length).toBeGreaterThanOrEqual(course.language === 'es' ? (band === 'A1' ? 6 : band === 'A2' ? 3 : 0) : 5)
     expect(vocabulary.targetDomains.length).toBeGreaterThanOrEqual(course.language === 'es' && !['A1', 'A2'].includes(band) ? 0 : 5)

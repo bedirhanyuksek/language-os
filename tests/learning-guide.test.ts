@@ -58,9 +58,9 @@ test('local practice advances with no account and keeps unsupported evidence out
   const prepared = teachWords(guided, course, lesson, start)
   const written = finishLesson(prepared, course, lesson, practiceAnswers(lessonTasks(prepared, lesson)), start)
   const transferred = finishPedagogy(written, course, lesson, 'transfer', {
-    'ru.intro.name.transfer.1': 'Меня', 'ru.intro.polite.transfer.1': 'вас',
+    'ru.cyrillic.concept.1.3': 'т', 'ru.cyrillic.concept.2.3': 'кот',
   }, start)
-  const read = finishPedagogy(transferred, course, lesson, 'reading', { 'ru.intro.reading': 'Pavel' }, start)
+  const read = finishPedagogy(transferred, course, lesson, 'reading', { 'ru.cyrillic.reading': 'КОТ' }, start)
   const skipped = finishPedagogy(read, course, lesson, 'listening', {}, start, 'unavailable')
   expect(skipped.attempts).toEqual(read.attempts)
   expect(skipped.speakingAssessments).toEqual([])
@@ -73,7 +73,7 @@ test('local practice advances with no account and keeps unsupported evidence out
   expect(masteryFor(skipped, lesson).status).toBe('ready')
   expect(phaseTasks(skipped, lesson, 'delayed', start)).toEqual([])
   expect(phaseTasks(skipped, lesson, 'delayed', tomorrow).map(({ exercise }) => exercise.id)).toEqual([
-    'ru.intro.name.delayed.1', 'ru.intro.polite.delayed.1',
+    'ru.cyrillic.concept.1.5', 'ru.cyrillic.concept.2.5',
   ])
 })
 

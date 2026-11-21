@@ -64,7 +64,12 @@ const inventory: Record<Language, Record<Band, Outcome[]>> = {
   },
   ru: {
     A1: [
-      ['script', 'Kiril harf ve seslerini eşleştir', '', 'ru.cyrillic'], ['intro', 'Kibarca tanış ve ad sor', 'script', 'ru.intro'],
+      ['script', 'А, К, М, О, Т ve Е ile ilk kelimeleri oku', '', 'ru.cyrillic'],
+      ['script-false-friends', 'В, Н, Р, С, У ve Х seslerini ayır', 'script', 'ru.cyrillic-false-friends'],
+      ['script-new-shapes', 'Б, Г, Д, З, И, Й, Л, П ve Ф ile ad ve yer oku', 'script-false-friends', 'ru.cyrillic-new-shapes'],
+      ['script-hushing', 'Ж, Ц, Ч, Ш ve Щ ile menü ve tabela oku', 'script-new-shapes', 'ru.cyrillic-hushing'],
+      ['script-vowels-signs', 'Ünlü çiftlerini, Ь, Ъ ve vurguyu oku', 'script-hushing', 'ru.cyrillic-vowels-signs'],
+      ['intro', 'Kibarca tanış ve ad sor', 'script-vowels-signs', 'ru.intro'],
       ['roles', 'Kişiyi mesleğiyle tanıt', 'intro', 'ru.roles'], ['city', 'Yaşanan şehri sor ve söyle', 'roles', 'ru.city'],
       ['order', 'Kafede sipariş ver ve fiyatı sor', 'city', 'ru.order'], ['family', 'Aileyi iyelik ve sahiplikle tanıt', 'roles', 'ru.family'],
       ['numbers', 'Sayı, saat, ücret ve iletişim numarası ver', 'intro'], ['home', 'Ev ve eşyaların konumunu tarif et', 'city', 'ru.home'],

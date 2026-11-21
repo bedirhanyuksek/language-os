@@ -77,7 +77,7 @@ test.each([['en', [...englishBatch, ...englishTravel, ...englishAdvanced, ...eng
   expect(coverage.map(({ level }) => level)).toEqual(['A1', 'A2', 'B1', 'B2', 'C1', 'C2'])
   const added = new Set(packedLessons.map(({ entry }) => entry.id))
   expect(coverage.map(({ lessons }) => lessons.filter(({ id }) => !added.has(id)).length))
-    .toEqual(language === 'en' ? [4, 7, 7, 5, 5, 2] : [7, 5, 5, 3, 3, 2])
+    .toEqual(language === 'en' ? [4, 7, 7, 5, 5, 2] : [11, 5, 5, 3, 3, 2])
   expect(coverage.flatMap(({ lessons }) => lessons)).toHaveLength(course.unit.lessons.length)
   for (const { id } of batch) {
     const lesson = course.unit.lessons.find((item) => item.id === id)!

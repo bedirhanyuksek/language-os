@@ -3,6 +3,7 @@ import { expect, test } from 'vitest'
 import { catalog, publishCourse } from '../src/content/catalog'
 import { vocabularyEvidence } from '../src/content/curriculum/language-audit'
 import { packedLessons } from '../src/content/curriculum/packs'
+import { russianAlphabetIds } from '../src/content/curriculum/russian-alphabet'
 import type { Course, Exercise } from '../src/content/schema'
 import { assess, mapPlacement } from '../src/domain/assessment'
 import { nextDiagnostic } from '../src/domain/diagnostic'
@@ -301,7 +302,7 @@ test.each(Object.values(catalog))('$language beginner reaches the end of the ava
   const phases = [...new Set([...studies.keys()].map((key) => key.split(':')[1]))].sort()
   expect(exhausted).toBe(true)
   const routePack = packedLessons.filter(({ language, entry }) => language === course.language && ['A1', 'A2'].includes(entry.level))
-  expect(reached.size).toBe({ en: 11, ru: 12, es: 9 }[course.language] + routePack.length)
+  expect(reached.size).toBe({ en: 11, ru: 16, es: 9 }[course.language] + routePack.length)
   for (const { entry } of routePack) expect(reached.has(entry.id), entry.id).toBe(true)
   expect(reached.has({ en: 'en.host', ru: 'ru.housing', es: 'es.perfect' }[course.language])).toBe(true)
   expect(phases).toEqual(['draft', 'instruction', 'listening', 'reading', 'revision', 'transfer', 'vocabulary'])
@@ -436,8 +437,9 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
   expect(reachedPublishedEnd).toBe(true)
   const available = course.unit.lessons.filter(({ objective }) =>
     target === 'C2' || ['A1', 'A2', 'B1', 'B2', 'B2+'].includes(objective.level))
-  expect(studied).toEqual(new Set(available.map(({ id }) => id).filter((id) => !['ru.cyrillic', 'ru.intro'].includes(id))))
-  const preparationOrder = ['ru.cyrillic', 'ru.intro', ...studied]
+  const accelerated = [...russianAlphabetIds, 'ru.intro']
+  expect(studied).toEqual(new Set(available.map(({ id }) => id).filter((id) => !accelerated.includes(id))))
+  const preparationOrder = [...accelerated, ...studied]
   for (const { entry } of packedLessons.filter(({ language, entry }) =>
     language === 'ru' && available.some(({ id }) => id === entry.id))) {
     for (const previous of entry.prerequisite) {

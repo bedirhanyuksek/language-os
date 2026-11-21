@@ -28,6 +28,7 @@ import type { Language } from '../domain/model'
 import { spanishCourse, spanishLegacyCourse } from './curriculum/es'
 import { registerVocabularySenses } from './vocabulary'
 import vocabularyPilot from './vocabulary-pilot.json' with { type: 'json' }
+import { russianAlphabet } from './curriculum/russian-alphabet'
 
 export function publishCourse(data: unknown): Course {
   const course = courseSchema.parse(data)
@@ -78,7 +79,7 @@ function extend(language: 'en' | 'ru', extension: typeof enExperience | typeof r
   const added = extension.lessons.map((lesson) => ({ ...lesson, pedagogy: { ...lesson.pedagogy,
     diagnostic: (extension.diagnostics as Record<string, unknown>)[lesson.id] } }))
   const taught = [...lessons, ...added].map((lesson) => {
-    const notes = teaching[lesson.id]
+    const notes = 'teaching' in lesson ? lesson.teaching : teaching[lesson.id]
     if (!notes) throw new Error(`Ders öğretimi eksik: ${lesson.id}`)
     return { ...lesson, teaching: notes, concepts: lesson.concepts.map((concept) => {
       const alternative = guidedAlternatives[concept.id]
@@ -86,8 +87,9 @@ function extend(language: 'en' | 'ru', extension: typeof enExperience | typeof r
     }) }
   })
   const existing = [...taught, ...continuity[language], ...batch[language].map((item) => author(language, item))]
-  return publishCourse({ ...course, unit: { ...course.unit,
-    lessons: [...existing, ...additionsFor(language, existing.map(({ id }) => id), packs)] } })
+  const published = [...existing, ...additionsFor(language, existing.map(({ id }) => id), packs)]
+  const prepared = language === 'ru' ? russianAlphabet(course, published) : { lessons: published, placement: course.placement }
+  return publishCourse({ ...course, placement: prepared.placement, unit: { ...course.unit, lessons: prepared.lessons } })
 }
 
 export function createCatalog(packs: typeof packedLessons): Record<Language, Course> {
