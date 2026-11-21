@@ -1,6 +1,7 @@
 import Dexie, { type IndexableType, type Table } from 'dexie'
 import { z } from 'zod'
 import { catalog, legacyCatalog } from '../content/catalog'
+import { vocabularyIndex } from '../content/vocabulary'
 import { pedagogyExercises, receptionExercises } from '../content/schema'
 import { diagnosticTasks } from '../domain/diagnostic'
 import { gradeVocabularyRecall } from '../domain/pedagogy'
@@ -263,7 +264,8 @@ export function parseBackup(raw: string): LearningState {
   const state = backup.schemaVersion === 1 ? stateSchema.parse(normalizeWorkspaceState(backup.state)) : backup.state
   const course = catalog[state.profile.language]
   const lessons = course.unit.lessons
-  const cards = new Set(lessons.flatMap((lesson) => lesson.vocabulary.map(({ id }) => id)))
+  const cards = vocabularyIndex(course)
+  const reviewSchedules = new Map(state.reviews.map((schedule) => [schedule.cardId, schedule]))
   const placement = state.attempts.filter((attempt) => attempt.context === 'placement')
   const placementVersion = placement[0]?.contentVersion
   const placementCourse = placementVersion === 1 ? legacyCatalog[state.profile.language] : course
@@ -329,8 +331,8 @@ export function parseBackup(raw: string): LearningState {
       state.attempts.some(({ context, lessonId, evidence }) => context === 'listening' && lessonId === id && evidence.outcome === 'correct') &&
         !state.attempts.some(({ context, lessonId, evidence }) => context === 'listening' && lessonId === id && evidence.outcome === 'incorrect')) ||
     state.reviewHistory.some(({ cardId, at, result, mode, answer }) => {
-      const schedule = state.reviews.find((card) => card.cardId === cardId)
-      const recall = lessons.flatMap(({ pedagogy }) => pedagogy?.vocabulary ?? []).find((item) => item.cardId === cardId)?.recall
+      const schedule = reviewSchedules.get(cardId)
+      const recall = cards.get(cardId)?.learning?.recall
       return !schedule || at < schedule.introducedAt || (mode === 'typed' &&
         (!recall || !answer || (gradeVocabularyRecall(recall, answer, course.language) !== result &&
           gradeVocabularyRecall(recall, answer, course.language, 'legacy') !== result)))

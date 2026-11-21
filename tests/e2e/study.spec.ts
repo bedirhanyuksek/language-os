@@ -46,7 +46,7 @@ async function submit(page: Page) {
   await page.getByRole('button', { name: 'Yanıtları değerlendir' }).click()
 }
 
-test('restoring a partial word lesson opens the next three cards', async ({ page }) => {
+test('restoring a completed vocabulary batch continues with the next eligible lesson', async ({ page }) => {
   const course = catalog.en
   const lesson = course.unit.lessons.find(({ id }) => id === 'en.intercultural')!
   const date = '2026-11-13T10:00:00.000Z'
@@ -104,16 +104,9 @@ test('restoring a partial word lesson opens the next three cards', async ({ page
   })
   await page.getByRole('button', { name: 'Yedeği geri yükle' }).click()
   await expect(page.getByRole('heading', { name: 'Bugünkü plan' })).toBeVisible()
-  await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
-  for (const [index, vocabulary] of lesson.pedagogy!.vocabulary.slice(3).entries()) {
-    await expect(page.getByRole('heading', { name: lesson.vocabulary[index + 3].term, exact: true })).toBeVisible()
-    await page.getByRole('button', { name: 'Kelimeyi çalış' }).click()
-    for (const exercise of [vocabulary.recognize, vocabulary.recall, vocabulary.use]) {
-      await fill(task(page, exercise), exercise)
-      await page.getByRole('button', { name: 'Yanıtı kaydet' }).click()
-    }
-  }
-  await expect(page.getByText('İnceleme bekliyor', { exact: true })).toHaveCount(3)
+  await expect(page.getByRole('heading', { name: 'İki seçeneği tart', exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Derse başla', exact: true }).click()
+  await expect(page.getByRole('heading', { name: 'Bu yapı ne işe yarar?' })).toBeVisible()
 })
 
 async function play(page: Page, label: string) {

@@ -102,6 +102,39 @@ test('Russian A1 with no Cyrillic evidence resumes an unfinished sample and rece
   await expect(field(page, 'ru.assess.a1.r2')).toBeVisible()
 })
 
+test.describe('media loaded without the installed cache', () => {
+  test.use({ serviceWorkers: 'block' })
+
+  test('Russian A1 corrupted local recording stays unavailable and transcript remains a separate evidence path', async ({ page, context }) => {
+    await context.route('**/ru.assess.a1.l1-*.mp3', (route) => route.fulfill({
+      status: 200,
+      contentType: 'audio/mpeg',
+      body: Buffer.from('corrupted local recording'),
+    }))
+    await onboard(page, 'ru', 'A1', 'A1', 15)
+    await button(page, 'Bilmiyorum').click()
+    await expect(field(page, 'ru.assess.a1.g1')).toBeVisible()
+    await button(page, 'Şimdilik geç').click()
+    await expect(page.getByLabel('Değerlendirme sesini dinle')).toBeVisible()
+
+    await page.getByLabel('Değerlendirme sesini dinle').evaluate(async (node) => {
+      const media = node as HTMLMediaElement
+      media.muted = true
+      await media.play().catch(() => undefined)
+    })
+    await expect(page.getByText('Ses kaydı açılamadı.', { exact: true })).toBeVisible()
+    expect((await stored(page)).placementTrack!.samples.some(({ itemId }) => itemId === 'ru.assess.a1.l1')).toBe(false)
+
+    await button(page, 'Metinle çalış').click()
+    await expect(page.getByText(item('ru.assess.a1.l1').transcript!, { exact: true })).toBeVisible()
+    await choose(page, 'ru.assess.a1.l1')
+    await expect.poll(async () => (await stored(page)).placementTrack!.samples
+      .find(({ itemId }) => itemId === 'ru.assess.a1.l1')).toMatchObject({
+      status: 'answered', mode: 'transcript', result: 'correct',
+    })
+  })
+})
+
 test('English B1 with stronger listening gets a harder recording and separate form and meaning work', async ({ page, context }) => {
   const since = await onboard(page, 'en', 'B1', 'C1', 30)
   await choose(page, 'en.assess.b1.g1', false)

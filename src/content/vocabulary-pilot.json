@@ -1,0 +1,30 @@
+[
+  {
+    "id": "en.change.money",
+    "language": "en",
+    "lemma": "change",
+    "partOfSpeech": "noun",
+    "forms": { "countability": "uncountable" },
+    "band": "A1",
+    "meaning": "para üstü",
+    "example": "Here is your change.",
+    "usage": "Ödemeden sonra geri verilen para. Sayılamaz.",
+    "revision": 1,
+    "change": "A1 kafe dersi için ilk ek pratik.",
+    "links": [{ "cardId": "en.cafe.word.2", "lessonId": "en.cafe", "objectiveId": "en.cafe.objective", "band": "A1", "assessmentRevision": "698428" }]
+  },
+  {
+    "id": "en.change.modify",
+    "language": "en",
+    "lemma": "change",
+    "partOfSpeech": "verb",
+    "forms": { "past": "changed", "pastParticiple": "changed", "progressive": "changing" },
+    "band": "A2",
+    "meaning": "mevcut bir düzenlemeyi değiştirmek",
+    "example": "Can I change a booking at the desk?",
+    "usage": "Bir rezervasyonun saatini veya gününü değiştirirken kullanılır.",
+    "revision": 1,
+    "change": "Mevcut A2 rezervasyon kartına kimlik bağlandı.",
+    "links": [{ "cardId": "en.rebook.word.1", "lessonId": "en.rebook", "objectiveId": "en.rebook.objective", "band": "A2", "assessmentRevision": "3a9cdaf8" }]
+  }
+]

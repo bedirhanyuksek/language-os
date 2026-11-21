@@ -1,0 +1,477 @@
+{
+  "pilot.en.b1.audio.control": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.en.b1.audio.control.v1.mp3",
+    "source": "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX",
+    "license": "Apache-2.0",
+    "attribution": "Hexgrad Kokoro and ONNX Community",
+    "sha256": "b86ed1d4befd209f1a8ec7f11286e3895e0c0174d69cf1069b534d3e2730bf71",
+    "durationMs": 6144,
+    "transcriptVersion": 1,
+    "speakers": {
+      "A1-updater": "af_heart"
+    },
+    "transcript": [
+      {
+        "role": "A1-updater",
+        "startMs": 0,
+        "endMs": 6075,
+        "text": "We’ve fixed the payment issue. We fixed it on Tuesday. Tomorrow, we’re going to test the payment page again."
+      }
+    ],
+    "model": {
+      "id": "kokoro-82m-onnx",
+      "version": "1.0",
+      "weightsSha256": "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  },
+  "pilot.en.b1.audio.dialogue.a": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.en.b1.audio.dialogue.a.v1.mp3",
+    "source": "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX",
+    "license": "Apache-2.0",
+    "attribution": "Hexgrad Kokoro and ONNX Community",
+    "sha256": "2a6653c959288cfe38b5aa298eeb49cb33a01df725c80a85d4e95d17367a1f30",
+    "durationMs": 21936,
+    "transcriptVersion": 1,
+    "speakers": {
+      "A1-updater": "af_heart",
+      "A2-tester": "am_michael"
+    },
+    "transcript": [
+      {
+        "role": "A1-updater",
+        "startMs": 0,
+        "endMs": 6100,
+        "text": "Here’s a quick update. We’ve fixed the payment issue. We fixed it on Tuesday, and the page is working again."
+      },
+      {
+        "role": "A2-tester",
+        "startMs": 6480,
+        "endMs": 13240,
+        "text": "Good to hear. I’m going to test the payment page again tomorrow. I’ll check that a customer can complete a payment."
+      },
+      {
+        "role": "A1-updater",
+        "startMs": 13620,
+        "endMs": 18912,
+        "text": "Thanks. Please let me know how the test goes. I’ll update the rest of the team after I hear from you."
+      },
+      {
+        "role": "A2-tester",
+        "startMs": 19292,
+        "endMs": 21870,
+        "text": "Sure. I’ll send you the result after the test."
+      }
+    ],
+    "model": {
+      "id": "kokoro-82m-onnx",
+      "version": "1.0",
+      "weightsSha256": "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  },
+  "pilot.en.b1.audio.dialogue.b": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.en.b1.audio.dialogue.b.v1.mp3",
+    "source": "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX",
+    "license": "Apache-2.0",
+    "attribution": "Hexgrad Kokoro and ONNX Community",
+    "sha256": "4609eacfb97dd230e76a548df42d51fbec0772ec578d082f8eff84ad38e1bc20",
+    "durationMs": 21888,
+    "transcriptVersion": 1,
+    "speakers": {
+      "B1-sender": "am_michael",
+      "B2-colleague": "af_heart"
+    },
+    "transcript": [
+      {
+        "role": "B1-sender",
+        "startMs": 0,
+        "endMs": 8055,
+        "text": "Here’s an update on the new booking form. We’ve finished it, and it’s ready to share. I’ll send it to the volunteers on Friday."
+      },
+      {
+        "role": "B2-colleague",
+        "startMs": 8435,
+        "endMs": 14551,
+        "text": "Thanks. I checked the form this morning. It looks clear, and the volunteers should be able to use it right away."
+      },
+      {
+        "role": "B1-sender",
+        "startMs": 14931,
+        "endMs": 18536,
+        "text": "Great. I’ll write a short message with the link before I send it."
+      },
+      {
+        "role": "B2-colleague",
+        "startMs": 18916,
+        "endMs": 21817,
+        "text": "Sounds good. Let me know if you need help with the message."
+      }
+    ],
+    "model": {
+      "id": "kokoro-82m-onnx",
+      "version": "1.0",
+      "weightsSha256": "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  },
+  "pilot.en.b1.audio.model": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.en.b1.audio.model.v1.mp3",
+    "source": "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX",
+    "license": "Apache-2.0",
+    "attribution": "Hexgrad Kokoro and ONNX Community",
+    "sha256": "19baffbc5ad196d1b28cb94887b1695b37e9de184c43be30b9ee7b90a263250e",
+    "durationMs": 5304,
+    "transcriptVersion": 1,
+    "speakers": {
+      "A1-updater": "af_heart"
+    },
+    "transcript": [
+      {
+        "role": "A1-updater",
+        "startMs": 0,
+        "endMs": 1102,
+        "text": "I’ve led a workshop."
+      },
+      {
+        "role": "A1-updater",
+        "startMs": 1902,
+        "endMs": 3291,
+        "text": "We sent it last Tuesday."
+      },
+      {
+        "role": "A1-updater",
+        "startMs": 4091,
+        "endMs": 5232,
+        "text": "Ask for feedback."
+      }
+    ],
+    "model": {
+      "id": "kokoro-82m-onnx",
+      "version": "1.0",
+      "weightsSha256": "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  },
+  "pilot.ru.a1.audio.control": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.ru.a1.audio.control.v1.mp3",
+    "source": "https://github.com/snakers4/silero-models#v5-cis-base-models",
+    "license": "MIT",
+    "attribution": "Silero Team",
+    "sha256": "3e2c0a4d1a7adf00ccaf91e79618f7f56f25ee9a3f0ad996bfc291be170f37fb",
+    "durationMs": 3336,
+    "transcriptVersion": 1,
+    "speakers": {
+      "A1-registrar": "ru_aigul"
+    },
+    "transcript": [
+      {
+        "role": "A1-registrar",
+        "startMs": 0,
+        "endMs": 540,
+        "text": "Нина."
+      },
+      {
+        "role": "A1-registrar",
+        "startMs": 1340,
+        "endMs": 1922,
+        "text": "Роман."
+      },
+      {
+        "role": "A1-registrar",
+        "startMs": 2722,
+        "endMs": 3270,
+        "text": "Соня."
+      }
+    ],
+    "model": {
+      "id": "silero-v5-cis-base",
+      "version": "v5_cis_base",
+      "weightsSha256": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  },
+  "pilot.ru.a1.audio.decode.b": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.ru.a1.audio.decode.b.v1.mp3",
+    "source": "https://github.com/snakers4/silero-models#v5-cis-base-models",
+    "license": "MIT",
+    "attribution": "Silero Team",
+    "sha256": "3b0a252e4400bc93984020c3b76b93a19aef55b5d1447e29bd61cf446c60ec93",
+    "durationMs": 3432,
+    "transcriptVersion": 1,
+    "speakers": {
+      "B1-registrar": "ru_alexandr"
+    },
+    "transcript": [
+      {
+        "role": "B1-registrar",
+        "startMs": 0,
+        "endMs": 580,
+        "text": "Ника."
+      },
+      {
+        "role": "B1-registrar",
+        "startMs": 1380,
+        "endMs": 1973,
+        "text": "Роза."
+      },
+      {
+        "role": "B1-registrar",
+        "startMs": 2773,
+        "endMs": 3362,
+        "text": "Саша."
+      }
+    ],
+    "model": {
+      "id": "silero-v5-cis-base",
+      "version": "v5_cis_base",
+      "weightsSha256": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  },
+  "pilot.ru.a1.audio.dialogue.a": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.ru.a1.audio.dialogue.a.v1.mp3",
+    "source": "https://github.com/snakers4/silero-models#v5-cis-base-models",
+    "license": "MIT",
+    "attribution": "Silero Team",
+    "sha256": "ee42ac0fe0652842f93fd87899fce5b0d4e4f168273e7259a023ebc089110db9",
+    "durationMs": 9096,
+    "transcriptVersion": 1,
+    "speakers": {
+      "A1-registrar": "ru_aigul",
+      "A2-learner": "ru_alexandr"
+    },
+    "transcript": [
+      {
+        "role": "A1-registrar",
+        "startMs": 0,
+        "endMs": 3570,
+        "text": "Здравствуйте! Меня зовут Нина. Как вас зовут?"
+      },
+      {
+        "role": "A2-learner",
+        "startMs": 3950,
+        "endMs": 5739,
+        "text": "Здравствуйте! Меня зовут Роман."
+      },
+      {
+        "role": "A1-registrar",
+        "startMs": 6119,
+        "endMs": 7326,
+        "text": "Вас зовут Роман?"
+      },
+      {
+        "role": "A2-learner",
+        "startMs": 7706,
+        "endMs": 9045,
+        "text": "Да, меня зовут Роман."
+      }
+    ],
+    "model": {
+      "id": "silero-v5-cis-base",
+      "version": "v5_cis_base",
+      "weightsSha256": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  },
+  "pilot.ru.a1.audio.dialogue.b": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.ru.a1.audio.dialogue.b.v1.mp3",
+    "source": "https://github.com/snakers4/silero-models#v5-cis-base-models",
+    "license": "MIT",
+    "attribution": "Silero Team",
+    "sha256": "2ca6430e1c7dc12f82fdc7168bb3b405494b7da4a1c4cce3cd521c610627b54d",
+    "durationMs": 9240,
+    "transcriptVersion": 1,
+    "speakers": {
+      "B1-registrar": "ru_alexandr",
+      "B2-guest": "ru_aigul"
+    },
+    "transcript": [
+      {
+        "role": "B1-registrar",
+        "startMs": 0,
+        "endMs": 3012,
+        "text": "Здравствуйте! Меня зовут Сергей. Как вас зовут?"
+      },
+      {
+        "role": "B2-guest",
+        "startMs": 3392,
+        "endMs": 7431,
+        "text": "Здравствуйте! Меня зовут Наталья. Вас зовут Сергей?"
+      },
+      {
+        "role": "B1-registrar",
+        "startMs": 7811,
+        "endMs": 9172,
+        "text": "Да, меня зовут Сергей."
+      }
+    ],
+    "model": {
+      "id": "silero-v5-cis-base",
+      "version": "v5_cis_base",
+      "weightsSha256": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  },
+  "pilot.ru.a1.audio.model": {
+    "status": "pending",
+    "sourceKind": "synthetic_tts",
+    "version": 1,
+    "scenarioVersion": 1,
+    "src": "/audio/pilot.ru.a1.audio.model.v1.mp3",
+    "source": "https://github.com/snakers4/silero-models#v5-cis-base-models",
+    "license": "MIT",
+    "attribution": "Silero Team",
+    "sha256": "a15e8a1debf851fd14b8cea82899baf86dceb4f90ca8d7fd07062e6e98b0398a",
+    "durationMs": 5952,
+    "transcriptVersion": 1,
+    "speakers": {
+      "A1-registrar": "ru_aigul"
+    },
+    "transcript": [
+      {
+        "role": "A1-registrar",
+        "startMs": 0,
+        "endMs": 982,
+        "text": "Здравствуйте."
+      },
+      {
+        "role": "A1-registrar",
+        "startMs": 1782,
+        "endMs": 2698,
+        "text": "Меня зовут."
+      },
+      {
+        "role": "A1-registrar",
+        "startMs": 3498,
+        "endMs": 4510,
+        "text": "Как вас зовут?"
+      },
+      {
+        "role": "A1-registrar",
+        "startMs": 5310,
+        "endMs": 5889,
+        "text": "Метро́."
+      }
+    ],
+    "model": {
+      "id": "silero-v5-cis-base",
+      "version": "v5_cis_base",
+      "weightsSha256": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a"
+    },
+    "distribution": {
+      "commercial": false,
+      "offline": false,
+      "publicRepository": false
+    },
+    "quality": {
+      "status": "user_accepted",
+      "reviewer": "user",
+      "reviewRef": "user-listening-approval-2026-11-21"
+    }
+  }
+}

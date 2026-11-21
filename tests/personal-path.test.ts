@@ -67,7 +67,7 @@ test.each([5, 15, 30, 60])('%i minute plan advances while overdue cards compete 
         }
         nonReview += plan.minutes
         if (plan.kind === 'pedagogy') {
-          const tasks = phaseTasks(state, lesson, plan.phase, now)
+          const tasks = phaseTasks(state, lesson, plan.phase, now, plan.vocabularyCardIds)
           if (plan.phase === 'vocabulary') {
             totals.vocabulary += plan.minutes
             const batch = new Set(tasks.map(({ conceptId }) => conceptId))
@@ -78,7 +78,7 @@ test.each([5, 15, 30, 60])('%i minute plan advances while overdue cards compete 
             expect(tasks).toHaveLength(batch.size * 3)
           } else if (plan.phase === 'delayed') totals.delayed += plan.minutes
           else totals.skills += plan.minutes
-          state = finishPedagogy(state, course, lesson, plan.phase, answers(tasks), now, plan.phase === 'listening' ? 'played' : undefined)
+          state = finishPedagogy(state, course, lesson, plan.phase, answers(tasks), now, plan.phase === 'listening' ? 'played' : undefined, now, plan.vocabularyCardIds)
         } else {
           const tasks = lessonTasks(state, lesson)
           totals[tasks.some(({ exercise }) => exercise.kind === 'open') ? 'skills' : 'instruction'] += plan.minutes
@@ -152,7 +152,7 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
       if (plan.kind === 'review' || (plan.kind === 'pedagogy' && plan.phase === 'delayed')) reviewMinutes += plan.minutes
       else if (plan.kind !== 'speaking' && !(plan.kind === 'pedagogy' && plan.phase === 'foundation')) {
         const vocabularyBatch = plan.kind === 'pedagogy' && plan.phase === 'vocabulary'
-          ? phaseTasks(state, course.unit.lessons.find(({ id }) => id === plan.lessonId)!, plan.phase, now)[0]?.conceptId : undefined
+          ? phaseTasks(state, course.unit.lessons.find(({ id }) => id === plan.lessonId)!, plan.phase, now, plan.vocabularyCardIds)[0]?.conceptId : undefined
         const key = plan.kind === 'pedagogy' ? [plan.lessonId, plan.phase, vocabularyBatch].filter(Boolean).join(':') :
           `${plan.lessonId}:${lessonTasks(state, course.unit.lessons.find(({ id }) => id === plan.lessonId)!)
             .some(({ exercise }) => exercise.kind === 'open') ? 'draft' : 'instruction'}`
@@ -174,7 +174,7 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
         seen.add('speaking')
         state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
       } else if (plan.kind === 'pedagogy') {
-        const tasks = phaseTasks(state, lesson, plan.phase, now)
+        const tasks = phaseTasks(state, lesson, plan.phase, now, plan.vocabularyCardIds)
         const response = answers(tasks)
         if (lesson.id === 'en.intercultural' && plan.phase === 'transfer' && !cultureTransferMiss) {
           response[tasks[0].exercise.id] = 'mistook'
@@ -196,7 +196,7 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
           missedPhases.add(plan.phase)
         }
         state = finishPedagogy(state, course, lesson, plan.phase, response,
-          now, plan.phase === 'listening' ? 'played' : undefined)
+          now, plan.phase === 'listening' ? 'played' : undefined, now, plan.vocabularyCardIds)
         if (cultureVocabulary) {
           expect(state.reviews.filter(({ cardId }) => cardId.startsWith('en.intercultural.word.')))
             .toHaveLength(cultureVocabularyBatches.reduce((total, count) => total + count, 0))
@@ -285,7 +285,7 @@ test.each(Object.values(catalog))('$language beginner reaches the end of the ava
         state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
         continue
       }
-      const tasks = plan.kind === 'pedagogy' ? phaseTasks(state, lesson, plan.phase, now) : lessonTasks(state, lesson)
+      const tasks = plan.kind === 'pedagogy' ? phaseTasks(state, lesson, plan.phase, now, plan.vocabularyCardIds) : lessonTasks(state, lesson)
       if (plan.kind === 'pedagogy' && plan.phase === 'delayed') reviewMinutes += plan.minutes
       else {
         const phase = plan.kind === 'pedagogy' ? plan.phase : tasks.some(({ exercise }) => exercise.kind === 'open') ? 'draft' : 'instruction'
@@ -293,7 +293,7 @@ test.each(Object.values(catalog))('$language beginner reaches the end of the ava
         if (!studies.has(key)) studies.set(key, plan.minutes)
       }
       if (plan.kind === 'pedagogy') state = finishPedagogy(state, course, lesson, plan.phase, answers(tasks),
-        now, plan.phase === 'listening' ? 'played' : undefined)
+        now, plan.phase === 'listening' ? 'played' : undefined, now, plan.vocabularyCardIds)
       else state = finishLesson(state, course, lesson, answers(tasks), now)
     }
   }
@@ -420,7 +420,7 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
       if (plan.kind === 'pedagogy' && plan.phase === 'delayed') reviewMinutes += plan.minutes
       else if (plan.kind !== 'speaking') {
         const phase = plan.kind === 'pedagogy' ? plan.phase : plan.kind
-        const batch = phase === 'vocabulary' && phaseTasks(state, lesson, phase, now)[0]?.conceptId
+        const batch = phase === 'vocabulary' && plan.kind === 'pedagogy' && plan.vocabularyCardIds?.[0]
         const key = [lesson.id, phase, batch].filter(Boolean).join(':')
         if (!firstBlocks.has(key)) firstStudyMinutes += plan.minutes
         firstBlocks.add(key)
@@ -428,7 +428,7 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
       if (targets.includes(lesson.id) && !order.includes(lesson.id)) order.push(lesson.id)
       if (plan.kind === 'speaking') state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
       else if (plan.kind === 'pedagogy') state = finishPedagogy(state, course, lesson, plan.phase,
-        answers(phaseTasks(state, lesson, plan.phase, now)), now, plan.phase === 'listening' ? 'played' : undefined)
+        answers(phaseTasks(state, lesson, plan.phase, now, plan.vocabularyCardIds)), now, plan.phase === 'listening' ? 'played' : undefined, now, plan.vocabularyCardIds)
       else state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), now)
     }
   }

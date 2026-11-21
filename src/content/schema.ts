@@ -13,6 +13,7 @@ const conceptSchema = z.strictObject({
 const vocabularySchema = z.strictObject({
   id: idSchema, term: line, meaning: line, example: line, context: line, partOfSpeech: line, grammar: line,
   pronunciation: line.optional(),
+  supplemental: z.literal(true).optional(),
 })
 
 export const lessonSchema = z.strictObject({
@@ -46,7 +47,8 @@ export const courseSchema = z.strictObject({
   const objectives = new Set<string>()
   const priorConcepts = new Map<string, string>()
   for (const lesson of course.unit.lessons) {
-    if (lesson.prerequisites.some((id) => !objectives.has(id))) {
+    if (new Set(lesson.prerequisites).size !== lesson.prerequisites.length ||
+        lesson.prerequisites.some((id) => !objectives.has(id))) {
       ctx.addIssue({ code: 'custom', message: `Ön koşul önce tanımlanmalı: ${lesson.id}` })
     }
     if ((course.version === 2) !== Boolean(lesson.pedagogy)) {

@@ -5,6 +5,8 @@ import { wordsPrepared, wordPreparation } from './instruction'
 import type { ExerciseAttempt, PedagogyPhase, StudyPlan } from './model'
 import { phaseMinutes } from './study-session'
 import type { LearningState } from './state'
+import { vocabularyIndex } from '../content/vocabulary'
+import { vocabularyBatchLimit, vocabularyMinutes, type VocabularyLoad } from './vocabulary-load'
 
 export type ExerciseTask = { exercise: Exercise; conceptId: string; label: string }
 
@@ -37,7 +39,7 @@ export function receptionTask(state: LearningState, lesson: Lesson, phase: 'read
   return { material: retry, previous, coaching }
 }
 
-export function phaseTasks(state: LearningState, lesson: Lesson, phase: PedagogyPhase, now: string): ExerciseTask[] {
+export function phaseTasks(state: LearningState, lesson: Lesson, phase: PedagogyPhase, now: string, vocabularyCardIds?: readonly string[]): ExerciseTask[] {
   const p = lesson.pedagogy
   if (!p) return []
   const task = (exercise: Exercise, conceptId: string, label: string) => ({ exercise, conceptId, label })
@@ -61,13 +63,21 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
   if (phase === 'vocabulary') {
     const prepared = new Set(wordPreparation(state, lesson).filter(({ prepared }) => prepared).map(({ card }) => card.id))
     const pendingCards = p.vocabulary.filter(({ cardId }) => !prepared.has(cardId))
-    // Repeated misses and cards awaiting a first review represent unfinished work.
-    const unfinished = state.reviews.filter(({ lastResult }) => lastResult !== 'remembered').length
-    // Anchor the batch to saved activity so midnight or a new due time cannot change an open form.
-    const lastActivity = state.activity.at(-1)?.at ?? state.placementAt
-    const due = lastActivity ? state.reviews.filter(({ dueAt }) => dueAt <= lastActivity).length : 0
-    const batchSize = Math.max(unfinished, due) >= state.profile.minutes ? 1 : 3
-    return pendingCards.slice(0, batchSize).flatMap(({ cardId, recognize, recall, use }) => {
+    let selected
+    if (vocabularyCardIds) {
+      const ids = new Set(vocabularyCardIds)
+      selected = pendingCards.filter(({ cardId }) => ids.has(cardId))
+      if (ids.size !== vocabularyCardIds.length || selected.length !== ids.size) return []
+    } else {
+      // Existing drafts and direct callers retain their original batching.
+      const supplemental = new Set(lesson.vocabulary.filter((card) => card.supplemental).map(({ id }) => id))
+      const core = pendingCards.filter(({ cardId }) => !supplemental.has(cardId))
+      const unfinished = state.reviews.filter(({ lastResult }) => lastResult !== 'remembered').length
+      const lastActivity = state.activity.at(-1)?.at ?? state.placementAt
+      const due = lastActivity ? state.reviews.filter(({ dueAt }) => dueAt <= lastActivity).length : 0
+      selected = (core.length ? core : pendingCards).slice(0, Math.max(unfinished, due) >= state.profile.minutes ? 1 : 3)
+    }
+    return selected.flatMap(({ cardId, recognize, recall, use }) => {
       const label = lesson.vocabulary.find(({ id }) => id === cardId)!.term
       return [task(recognize, cardId, label), task(recall, cardId, 'Aktif hatırlama'), task(use, cardId, 'Cümle içinde kullanım')]
     })
@@ -111,9 +121,27 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
   })
 }
 
-export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesson, now: string, ready: boolean): Extract<StudyPlan, { kind: 'pedagogy' }> | undefined {
+export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesson, now: string, ready: boolean, load?: VocabularyLoad): Extract<StudyPlan, { kind: 'pedagogy' }> | undefined {
   const phase = (phase: PedagogyPhase, reason: string) => ({ kind: 'pedagogy' as const, phase, lessonId: lesson.id, reason,
     minutes: phaseMinutes[phase] })
+  const vocabulary = (reason: string, includeSupplemental: boolean) => {
+    if (!load) return phase('vocabulary', reason)
+    const index = vocabularyIndex(course)
+    const candidates = wordPreparation(state, lesson)
+      .filter(({ prepared, card }) => !prepared && (includeSupplemental || !card.supplemental))
+    const selected: string[] = []
+    const newSenses = new Set<string>()
+    const limit = Math.min(vocabularyBatchLimit, load.remaining - 2)
+    for (const { card } of candidates) {
+      if (selected.length >= limit) break
+      const senseId = index.get(card.id)?.senseId ?? card.id
+      const isNew = !load.seen.has(senseId) && !newSenses.has(senseId)
+      if (isNew && newSenses.size >= load.availableNew) continue
+      if (isNew) newSenses.add(senseId)
+      selected.push(card.id)
+    }
+    return selected.length ? { ...phase('vocabulary', reason), minutes: vocabularyMinutes(selected.length), vocabularyCardIds: selected } : undefined
+  }
   const foundation = phaseTasks(state, lesson, 'foundation', now)[0]
   if (foundation) {
     const id = lesson.pedagogy?.checks.find(({ conceptId }) => conceptId === foundation.conceptId)?.foundation?.conceptId
@@ -123,7 +151,7 @@ export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesso
   const hasGuided = lesson.concepts.every(({ id }) => state.attempts.some(({ lessonId, conceptId, context, evidence }) =>
     lessonId === lesson.id && conceptId === id && ['lesson', 'transfer'].includes(context) && evidence.outcome === 'correct'))
   if ((hasGuided || canAccelerate(state, course, lesson)) && !wordsPrepared(state, lesson)) {
-    return phase('vocabulary', 'Kendi mesajından önce gerekli ifadeleri anlam, hatırlama ve kullanım ile çalış.')
+    return vocabulary('Kendi mesajından önce gerekli ifadeleri anlam, hatırlama ve kullanım ile çalış.', false)
   }
   const triedTransfer = state.attempts.some(({ lessonId, context }) => lessonId === lesson.id && context === 'transfer')
   const guidedReady = !lesson.teaching || triedTransfer || canAccelerate(state, course, lesson) ||
@@ -162,6 +190,11 @@ export function pedagogyPlan(state: LearningState, course: Course, lesson: Lesso
   const ordered = prioritizeListening ? [phases[1], phases[0], ...phases.slice(2)] : phases
   for (const [key, reason] of ordered) {
     if (!phaseTasks(state, lesson, key, now).length) continue
+    if (key === 'vocabulary') {
+      const task = vocabulary(reason, true)
+      if (task) return task
+      continue
+    }
     const previous = key === 'reading' || key === 'listening' ? receptionTask(state, lesson, key)?.previous[0] : undefined
     return previous ? { ...phase(key, `Önceki yanıtın “${String(previous.answer)}”. İlgili ipucunu incele ve başka bir kaynakla dene.`),
       evidenceId: previous.id } : key === 'listening' && prioritizeListening

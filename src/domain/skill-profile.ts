@@ -1,4 +1,5 @@
 import type { Course } from '../content/schema'
+import { vocabularyIndex } from '../content/vocabulary'
 import { skillSchema, type Skill, type ExerciseAttempt } from './model'
 import type { LearningState } from './state'
 import { assessmentItem } from './adaptive-placement'
@@ -11,6 +12,7 @@ export function assistance(attempt: ExerciseAttempt) {
 }
 
 export function skillProfile(state: LearningState, course: Course, now: string) {
+  const vocabulary = vocabularyIndex(course)
   return skillSchema.options.map((skill) => {
     const rows: SkillRow[] = state.attempts.filter(({ evidence }) => evidence.skill === skill).map((attempt) => {
       const lesson = course.unit.lessons.find(({ id }) => id === attempt.lessonId)
@@ -27,7 +29,10 @@ export function skillProfile(state: LearningState, course: Course, now: string) 
         skill === 'writing' ? 'Yeni metin örneği' : 'Kaynağa dayalı alımlama'
       const help = assistance(attempt)
       const comparable = family && ['transfer', 'delayed'].includes(attempt.context) && attempt.study && help === 'Ek destek açılmadı'
-      return { id: attempt.id, at: attempt.at, label: lesson?.concepts.find(({ id }) => id === attempt.conceptId)?.label ?? lesson?.title ?? 'Başlangıç örneği',
+      const word = skill === 'vocabulary' ? vocabulary.get(attempt.conceptId) : undefined
+      const label = word?.sense ? `${word.card.term} · ${word.sense.meaning}`
+        : lesson?.concepts.find(({ id }) => id === attempt.conceptId)?.label ?? lesson?.title ?? 'Başlangıç örneği'
+      return { id: attempt.id, at: attempt.at, label,
         stage, help, result: resultLabel[attempt.evidence.outcome],
         family: comparable ? JSON.stringify([attempt.contentVersion, attempt.lessonId, attempt.conceptId, attempt.evidence.observation]) : undefined,
         compare: comparable ? attempt.exerciseId : undefined }
@@ -42,8 +47,9 @@ export function skillProfile(state: LearningState, course: Course, now: string) 
           { unknown: 'Bilmiyorum', skipped: 'Ertelendi', unavailable: 'Ses erişilemedi', practiced: 'Puanlanmayan prova' }[sample.status] })
     }
     if (skill === 'vocabulary') for (const review of state.reviewHistory) {
-      const card = course.unit.lessons.flatMap(({ vocabulary }) => vocabulary).find(({ id }) => id === review.cardId)
-      rows.push({ id: `review-${rows.length}`, at: review.at, label: card?.term ?? 'Kelime tekrarı',
+      const word = vocabulary.get(review.cardId)
+      const label = word?.sense ? `${word.card.term} · ${word.sense.meaning}` : word?.card.term ?? 'Kelime tekrarı'
+      rows.push({ id: `review-${rows.length}`, at: review.at, label,
         stage: 'Vadesi gelen hatırlama', help: review.mode === 'typed' ? 'Yazılı hatırlama' : 'Öz bildirim',
         result: review.result === 'remembered' ? 'Hatırlandı' : 'Tekrar gerekiyor' })
     }

@@ -127,6 +127,12 @@ Bu sıra [ürün ana planının](PRODUCT_LEARNING_BLUEPRINT.md) geliştirme söz
 
 ## Aşama 4 · Doğal ses, Speaking ve AI destekli iki dilli pilot
 
+**Paket 1 durumu.** EN B1 ve RU A1 görev, medya ve rubrik tasarımı belgelendi. Uzman incelemesi, kayıt üretimi ve öğrenci oturumları sonraki adımlarda. [Pilot sözleşmesi](PHASE_4_PILOT_CONTRACT.md)
+
+**Paket 2A durumu.** Doğal ses kaynakları, lisans koşulları, pilot kayıt envanteri ve teknik yaklaşım incelendi. İzinli temsilî kayıtlar ve çevrimdışı entegrasyon doğrulaması Paket 2B’de. [Ses fizibilitesi](PHASE_4_AUDIO_FEASIBILITY.md)
+
+**Paket 2B durumu.** Kokoro ve Silero ile 4 EN B1 ve 5 RU A1 MP3 adayı yerel olarak üretildi. Manifestte sentetik kaynak, sürüm, zamanlı transkript ve ayrı hak ve kalite kontrolleri var. Dokuz MP3 de `pending` ve depo dışında. Çıktının ticari, çevrimdışı ve açık depo dağıtımı ile uzman dinleme onayı bekleniyor. Onaylı model kayıtları mevcut oynatıcıyla puansız öğretim örneği olarak açılabilir. Pilot Listening görevleri ve kaynak türüne göre kanıt Paket 3 kapsamındadır. [Ses kabulü ve kalan koşullar](PHASE_4_AUDIO_FEASIBILITY.md#paket-2b-teknik-teslimi)
+
 - **Amaç ve ön koşullar.** Aşama 3’te yerel öğretim ve açık kanıt çalışıyor. Mevcut AI ve ChatGPT Live akışının sınırları korunarak gerçek alımlama/üretim doğrulanabilir hâle gelir.
 - **Kapsam, bileşen, veri.** Oynatıcı, yerel medya paketi ve öğretim seti, `speaking.ts`, `TutorPanel` ve yerel servis. İzin kayıtlı özgün insan sesi, transkript ve paralel görev. Ses hızı/yardım ve görev bağlamı; varsa mikrofon izni, kayıt geri dinleme ve saklama politikası. AI yanıt ve rapor şeması sürer.
 - **Beklenen davranış.** Çevrimdışı doğal ses çalınabilir. Erişim yoksa yerel iş devam eder ve dinleme açık kalır. Yazı/konuşma rubrikli geri bildirim alabilir. İstek başına paylaşım ve ücret/kota onayı; dış konuşma raporu kullanıcı onayıyla içe alınır.

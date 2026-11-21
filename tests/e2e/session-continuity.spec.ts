@@ -111,7 +111,7 @@ async function solvePhase(page: Page, course: Course, phase: 'transfer' | 'readi
   if (proposal.kind !== 'pedagogy') throw new Error('Beklenen öğrenme aşaması açılmadı.')
   const lesson = course.unit.lessons.find(({ id }) => id === proposal.lessonId)!
   await page.getByRole('button', { name: 'Çalışmayı aç' }).click()
-  const items = phaseTasks(state, lesson, phase, now)
+  const items = phaseTasks(state, lesson, phase, now, proposal.vocabularyCardIds)
   for (const [index, { exercise }] of items.entries()) {
     if (phase === 'listening') await playAudio(page, index === 0 ? 'Kaydı dinle' : 'Tekrar dinle')
     await fill(page, exercise)
@@ -304,7 +304,7 @@ function advancedHistory() {
       const lesson = course.unit.lessons.find(({ id }) => id === plan.lessonId)!
       if (plan.kind === 'speaking') state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
       else if (plan.kind === 'pedagogy') state = finishPedagogy(state, course, lesson, plan.phase,
-        answers(phaseTasks(state, lesson, plan.phase, now)), now, plan.phase === 'listening' ? 'played' : undefined)
+        answers(phaseTasks(state, lesson, plan.phase, now, plan.vocabularyCardIds)), now, plan.phase === 'listening' ? 'played' : undefined, now, plan.vocabularyCardIds)
       else state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), now)
     }
   }

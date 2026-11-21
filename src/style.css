@@ -213,6 +213,7 @@ blockquote { max-width: 65ch; margin: 24px 0; padding: 4px 0 4px 20px; border-le
 .feedback h2 { margin: 18px 0; font-size: 1.35rem; }
 .feedback p:last-child { margin-bottom: 0; }
 .yours { color: var(--blue); font: italic 400 1.2rem/1.65 var(--serif); }
+.yours[lang="ru"] { font-style: normal; }
 .expected { color: var(--ink); font: 400 1.2rem/1.65 var(--serif); }
 .yours strong, .expected strong, .feedback strong { margin-right: 8px; font: 400 .73rem/1.6 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
 .feedback p:has(s) { padding-left: 18px; border-left: 2px solid var(--red); }

@@ -1,12 +1,79 @@
 import { createHash } from 'node:crypto'
+import { basename, resolve } from 'node:path'
+import { pilotAudioManifest } from './src/content/pilot-audio.ts'
+import { isLoopbackAddress, isPilotAudioFile, readLocalPilotAudioReviewAsset, rejectPublicPilotAudioAssets, validatePilotAudioAssets } from './scripts/validate-pilot-audio.ts'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vitest/config'
 
+const pilotAudioDirectory = resolve(import.meta.dirname, 'src/content/audio')
+let publicDirectory = ''
+
 export default defineConfig({
+  build: { assetsInlineLimit: (file) => isPilotAudioFile(basename(file)) ? false : undefined },
   plugins: [react(), {
+    name: 'local-pilot-audio-review',
+    apply: 'serve',
+    configureServer(server) {
+      const enabled = process.env.VITE_PILOT_AUDIO_REVIEW === '1'
+      const reviewDirectory = process.env.LANGUAGE_OS_PILOT_AUDIO_REVIEW_DIR
+      if (enabled && !reviewDirectory) throw new Error('VITE_PILOT_AUDIO_REVIEW=1 requires LANGUAGE_OS_PILOT_AUDIO_REVIEW_DIR.')
+      server.middlewares.use((request, response, next) => {
+        let pathname: string
+        try {
+          pathname = new URL(request.url ?? '/', 'http://localhost').pathname
+        } catch {
+          next()
+          return
+        }
+        if (!pathname.startsWith('/audio/pilot.')) { next(); return }
+        if (!enabled || !reviewDirectory) {
+          response.statusCode = 404
+          response.setHeader('Cache-Control', 'no-store')
+          response.end('Pilot audio preview is disabled.')
+          return
+        }
+        if (!isLoopbackAddress(request.socket.remoteAddress ?? '')) {
+          response.statusCode = 403
+          response.end('Local pilot audio preview is loopback-only.')
+          return
+        }
+        if (request.method !== 'GET') {
+          response.statusCode = 405
+          response.setHeader('Allow', 'GET')
+          response.end()
+          return
+        }
+        const audio = readLocalPilotAudioReviewAsset(basename(pathname), reviewDirectory)
+        if (!audio) {
+          response.statusCode = 404
+          response.setHeader('Cache-Control', 'no-store')
+          response.end('Pilot audio is unavailable or failed its SHA-256 check.')
+          return
+        }
+        response.statusCode = 200
+        response.setHeader('Content-Type', 'audio/mpeg')
+        response.setHeader('Content-Length', audio.byteLength)
+        response.setHeader('Cache-Control', 'no-store, max-age=0')
+        response.setHeader('X-Content-Type-Options', 'nosniff')
+        response.end(audio)
+      })
+    },
+  }, {
     name: 'offline-shell',
     apply: 'build',
+    configResolved({ publicDir }) {
+      publicDirectory = publicDir
+    },
+    buildStart() {
+      rejectPublicPilotAudioAssets(publicDirectory)
+    },
     generateBundle(_options, bundle) {
+      const approved = validatePilotAudioAssets(pilotAudioDirectory, pilotAudioManifest)
+      const emitted = new Set(Object.values(bundle).flatMap((entry) =>
+        entry.type === 'asset' ? entry.originalFileNames.map((name) => basename(name)) : []))
+      for (const file of approved) {
+        if (!emitted.has(file)) this.error(`Pilot ses dosyası çevrimdışı pakette bulunamadı: ${file}`)
+      }
       const assets = Object.keys(bundle).map((path) => '/' + path)
       const files = ['/', '/index.html', '/icon.svg', '/manifest.webmanifest', ...assets.filter((path) => path !== '/index.html')]
       const version = createHash('sha256').update(JSON.stringify(files)).digest('hex').slice(0, 16)

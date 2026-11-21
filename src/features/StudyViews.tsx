@@ -7,6 +7,7 @@ import { coachingForAnswer } from '../domain/lesson-coaching'
 import { InlineCoaching, LessonHelp } from './TutorPanel'
 import type { Course, Lesson, VocabularyItem } from '../content/schema'
 import { curriculumCoverage } from '../content/curriculum/coverage'
+import { pilotAudioReviewSamplesForLesson, pilotModelForLesson } from '../content/pilot-audio'
 import { modelAudio } from '../content/teaching'
 import { mapPlacement } from '../domain/assessment'
 import { levelSchema, type Answer, type ExerciseAttempt, type StudyPlan } from '../domain/model'
@@ -112,6 +113,9 @@ export function LessonStudy({ lesson, state, tasks, busy, onSubmit }: {
   const guided = !teaching || repairs.length > 0 || step >= teaching.models.length
   const language = state.profile.language
   const model = teaching?.models[step]
+  const pilotModel = step === 0 ? pilotModelForLesson(lesson.id) : undefined
+  const localPilotReview = import.meta.env.DEV && import.meta.env.VITE_PILOT_AUDIO_REVIEW === '1'
+    ? pilotAudioReviewSamplesForLesson(lesson.id) : []
   return <>
     {teaching && !writing && !guided && model && <article className="surface notes">
       {step === 0 && <><h2>Bu yapı ne işe yarar?</h2><p>{teaching.situation}</p><p>{lesson.recall}</p></>}
@@ -120,6 +124,23 @@ export function LessonStudy({ lesson, state, tasks, busy, onSubmit }: {
       <blockquote lang={language}>{model.phrase}</blockquote><p>{model.explanation}</p>
       <AudioPlayer key={step} audio={modelAudio(lesson.id, step, language)}
         text={model.phrase} label="Cümleyi dinle" />
+      {pilotModel && <details>
+        <summary>{pilotModel.audio.kind === 'recording' && pilotModel.audio.synthetic
+          ? 'Sentetik TTS örneği · puanlanmaz' : 'Telaffuz örneği'}</summary>
+        <AudioPlayer audio={pilotModel.audio} text={pilotModel.transcript} label="Telaffuz örneğini dinle" />
+        <blockquote lang={language}>{pilotModel.transcript}</blockquote>
+        <small>{pilotModel.attribution}</small>
+      </details>}
+      {localPilotReview.length > 0 && <details className="section">
+        <summary>Yerel Paket 2B TTS önizlemesi · puanlanmaz ({localPilotReview.length})</summary>
+        <p>Yalnızca geliştirme önizlemesi. Bu sentetik sesler telaffuz veya dinleme değerlendirmesi değildir ve öğrenme kanıtı oluşturmaz.</p>
+        {localPilotReview.map((sample) => <section className="surface section" key={sample.id}>
+          <h3>{sample.id}</h3>
+          <AudioPlayer audio={sample.audio} text={sample.transcript} label={`Yerel TTS kaydını dinle: ${sample.id}`} />
+          <blockquote lang={language}>{sample.transcript}</blockquote>
+          <small>{sample.attribution} · {sample.modelVersion} · Kullanıcı dinleme kabulü; uzman onayı değildir.</small>
+        </section>)}
+      </details>}
       <div className="button-row">
         {step > 0 && <button className="secondary" onClick={() => session.change({ step: step - 1 })}>Önceki örnek</button>}
         <button className="primary" onClick={() => session.change({ step: step + 1, supports: { instruction: true } })}>
@@ -190,7 +211,7 @@ export function LessonResults({ lesson, attempts, onContinue, state }: {
       return <article className="surface feedback" key={attempt.id}>
         <span className={`status ${outcome}`}>{outcome === 'correct' ? 'Doğru' : outcome === 'incorrect' ? 'Tekrar çalışılacak' : 'İnceleme bekliyor'}</span>
         <h2>{exercise.prompt}</h2>
-        <p className="yours"><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
+        <p className="yours" lang={state.profile.language}><strong>Yanıtın</strong> {Array.isArray(attempt.answer) ? attempt.answer.join(' · ') : attempt.answer}</p>
         {exercise.kind === 'open' && <p className="expected"><strong>Örnek yanıt</strong> {exercise.sample}</p>}
         {outcome === 'incorrect' && exercise.kind !== 'open' && <p className="expected"><strong>Beklenen yanıt</strong> {
           Array.isArray(exercise.accepted) ? exercise.accepted.join(exercise.kind === 'fill' || exercise.kind === 'short' ? ' / ' : ' · ') : exercise.accepted}</p>}
@@ -282,7 +303,7 @@ export function SkillProfile({ state, course, plan, now }: { state: LearningStat
       const answer = state.attempts.find(({ exerciseId }) => exerciseId === exercise.id)?.answer
       if (!answer) return null
       return <article className="surface feedback" key={exercise.id}>
-        <h2>Yazılı üretim örneği</h2><p className="yours"><strong>Yanıtın</strong> {answer}</p>
+        <h2>Yazılı üretim örneği</h2><p className="yours" lang={state.profile.language}><strong>Yanıtın</strong> {answer}</p>
         <p className="expected"><strong>Örnek yanıt</strong> {exercise.sample}</p><p>{exercise.explanation}</p>
       </article>
     })}

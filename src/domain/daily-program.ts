@@ -4,9 +4,11 @@ import { dailyMinutes, dailyPlan, dueCards, lessonTasks } from './progress'
 import type { LearningState } from './state'
 import { phaseTasks } from './pedagogy'
 import { wordsPrepared } from './instruction'
+import { vocabularyBatchLimit, vocabularyLoad, vocabularyMinutes } from './vocabulary-load'
 
 export function activityLabel(task: StudyPlan) {
-  if (task.kind === 'pedagogy') return { foundation: 'Ön koşul onarımı', vocabulary: 'Kelime edinimi',
+  if (task.kind === 'pedagogy') return { foundation: 'Ön koşul onarımı',
+    vocabulary: task.vocabularyCardIds ? `Kelime edinimi · ${task.vocabularyCardIds.length} ifade` : 'Kelime edinimi',
     reading: 'Okuma pratiği', listening: 'Dinleme pratiği', transfer: 'Yeni bağlamda kontrollü kullanım',
     delayed: 'Gecikmeli kontrol', revision: 'Yazıyı gözden geçirme' }[task.phase]
   return { lesson: 'Yeni konu ve rehberli pratik', practice: 'Uygulama', speaking: 'Konuşma fırsatı', review: 'Vadesi gelen tekrar',
@@ -33,6 +35,7 @@ export function dailyProgram(state: LearningState, course: Course, now: string, 
   const learning = current.kind === 'review' ? dailyPlan(state, course, now, timeZone, false) : undefined
   const used = dailyMinutes(state, now, timeZone)
   const remaining = Math.max(0, state.profile.minutes - used)
+  const vocabulary = vocabularyLoad(state, course, now, timeZone, remaining)
   const sequence = [current]
   if (learning && 'minutes' in learning && current.kind === 'review' && current.minutes + learning.minutes <= remaining) sequence.push(learning)
   const alternatives: StudyPlan[] = []
@@ -52,8 +55,9 @@ export function dailyProgram(state: LearningState, course: Course, now: string, 
   let reserved = sequence.reduce((sum, item) => sum + ('minutes' in item ? item.minutes : 0), 0)
   if (owner && 'minutes' in focus) {
     const blocks = [
-      ...(!wordsPrepared(state, owner) && !(focus.kind === 'pedagogy' && focus.phase === 'vocabulary')
-        ? [{ label: 'Gerekli kelime ve kalıpları öğrenme', minutes: 5, dependency: 'Rehberli yapı pratiği yeterli olduğunda' }] : []),
+      ...(!wordsPrepared(state, owner) && vocabulary.availableNew > 0 && !(focus.kind === 'pedagogy' && focus.phase === 'vocabulary')
+        ? [{ label: 'Gerekli kelime ve kalıpları öğrenme', minutes: vocabularyMinutes(Math.min(vocabulary.availableNew,
+          owner.vocabulary.filter((card) => !card.supplemental).length, vocabularyBatchLimit)), dependency: 'Rehberli yapı pratiği yeterli olduğunda' }] : []),
       ...(!state.attempts.some(({ exerciseId }) => exerciseId === owner.production.id) &&
         !(focus.kind === 'practice' && lessonTasks(state, owner).every(({ exercise }) => exercise.kind === 'open'))
         ? [{ label: 'Yeni bağlamda kendi mesajın', minutes: 3, dependency: 'Yapı ve kelime ön çalışması tamamlandığında' }] : []),

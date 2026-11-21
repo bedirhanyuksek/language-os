@@ -110,12 +110,12 @@ test.each([5, 15, 30, 60])('%i minute queues stay honest across 42 days', (minut
             continue
           }
           if (plan.kind === 'pedagogy') {
-            const tasks = phaseTasks(state, lesson, plan.phase, now)
+            const tasks = phaseTasks(state, lesson, plan.phase, now, plan.vocabularyCardIds)
             if (plan.phase === 'vocabulary' || plan.phase === 'foundation') instruction += plan.minutes
             else if (plan.phase === 'delayed') checks += plan.minutes
             else skills += plan.minutes
             state = finishPedagogy(state, course, lesson, plan.phase, answers(tasks), now,
-              plan.phase === 'listening' ? 'played' : undefined)
+              plan.phase === 'listening' ? 'played' : undefined, now, plan.vocabularyCardIds)
           } else {
             const tasks = lessonTasks(state, lesson)
             if (tasks.some(({ exercise }) => exercise.kind === 'open')) skills += plan.minutes
