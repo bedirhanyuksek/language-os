@@ -113,5 +113,6 @@ self.addEventListener('fetch', event => {
 });` })
     },
   }],
-  test: { include: ['tests/**/*.test.ts'] },
+  // Long learner simulations replay weeks of daily plans; shared CI runners exceed Vitest's 5 s default.
+  test: { include: ['tests/**/*.test.ts'], testTimeout: 30_000 },
 })
