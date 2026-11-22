@@ -4,9 +4,6 @@ import { teachVocabulary } from './teaching'
 
 test('Spanish beginner starts with sounds before questions and preserves a separate workspace', async ({ page }) => {
   await page.clock.setFixedTime(new Date('2026-11-20T10:00:00Z'))
-  await page.addInitScript(() => {
-    Object.defineProperty(window.speechSynthesis, 'getVoices', { value: () => [] })
-  })
   await page.goto('/')
   await page.getByRole('radio', { name: /İspanyolca/ }).check()
   await expect(page.getByText('Ññ', { exact: true })).toBeVisible()
@@ -22,8 +19,8 @@ test('Spanish beginner starts with sounds before questions and preserves a separ
   await expect(page.getByRole('heading', { name: 'Harf ile sesi eşleştir' })).toBeVisible()
   await expect(page.locator('blockquote[lang="es"]')).toHaveText('Hola, me llamo Ana.')
   await expect(page.locator('fieldset[id^="es.saludos"]')).toHaveCount(0)
-  await page.getByRole('button', { name: 'Cümleyi dinle' }).click()
-  await expect(page.getByRole('status')).toContainText('uygun yerel ses açılamadı')
+  // Spanish models now play the bundled recording instead of device speech synthesis.
+  await expect(page.locator('audio[aria-label="Cümleyi dinle"]')).toHaveAttribute('src', /es\.saludos\.model\.1.*\.mp3$/)
   await page.getByRole('button', { name: 'Sonraki örnek' }).click()
   await page.getByRole('button', { name: 'Rehberli pratiğe geç' }).click()
   for (const [id, response] of [

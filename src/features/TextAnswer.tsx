@@ -1,9 +1,10 @@
-import { useId, useLayoutEffect, useRef } from 'react'
+import { useId, useLayoutEffect, useRef, useState } from 'react'
 import type { Language } from '../domain/model'
 import { missingCyrillic } from '../domain/assessment'
 import './text-answer.css'
 
 const rows = ['й ц у к е н г ш щ з х ъ', 'ф ы в а п р о л д ж э', 'я ч с м и т ь б ю ё']
+const spanishLetters = ['ñ', 'á', 'é', 'í', 'ó', 'ú', 'ü', '¿', '¡']
 const warning = 'Rusça cevabı Kiril harfleriyle yaz. Klavyende Rusça yoksa Kiril klavyesini aç.'
 const maxLength = 2000
 
@@ -19,6 +20,8 @@ export function TextAnswer({ language, value, onChange, label = 'Yanıtın', pla
   const input = useRef<HTMLInputElement>(null)
   const caret = useRef<number | null>(null)
   const warningId = useId()
+  const [keyboardOpen, setKeyboardOpen] = useState(false)
+  const [uppercase, setUppercase] = useState(false)
   const invalid = language === 'ru' && requireCyrillic && missingCyrillic(value)
 
   useLayoutEffect(() => {
@@ -49,8 +52,13 @@ export function TextAnswer({ language, value, onChange, label = 'Yanıtın', pla
   }
 
   function key(letter: string, label = letter) {
-    return <button type="button" key={letter} aria-label={label} lang={letter.length === 1 && letter !== ' ' ? 'ru' : undefined}
+    return <button type="button" key={letter} aria-label={label} lang={letter.length === 1 && letter !== ' ' ? language : undefined}
       onPointerDown={(event) => event.preventDefault()} onClick={() => insert(letter)}>{label}</button>
+  }
+
+  function shift() {
+    return <button type="button" aria-label="Büyük harf" aria-pressed={uppercase}
+      onPointerDown={(event) => event.preventDefault()} onClick={() => setUppercase(!uppercase)}>⇧ Büyük harf</button>
   }
 
   return <div className="text-answer">
@@ -58,11 +66,17 @@ export function TextAnswer({ language, value, onChange, label = 'Yanıtın', pla
       placeholder={placeholder} required={required} aria-invalid={invalid || undefined}
       aria-describedby={invalid ? warningId : undefined} onChange={(event) => onChange(event.target.value)} />
     {invalid && <p className="text-answer-warning" id={warningId} aria-live="polite">{warning}</p>}
-    {language === 'ru' && <details className="cyrillic-keyboard">
-      <summary>Kiril klavyesini aç</summary>
+    {language === 'es' && <div className="spanish-keyboard" role="group" aria-label="İspanyolca özel karakterler">
+      <div className="cyrillic-keyboard-row">
+        {spanishLetters.map((letter) => key(uppercase ? letter.toUpperCase() : letter))}
+        {shift()}
+      </div>
+    </div>}
+    {language === 'ru' && <details className="cyrillic-keyboard" open={keyboardOpen} onToggle={(event) => setKeyboardOpen(event.currentTarget.open)}>
+      <summary aria-expanded={keyboardOpen}>Kiril klavyesini {keyboardOpen ? 'kapat' : 'aç'}</summary>
       <div role="group" aria-label="Kiril klavyesi">
-        {rows.map((row) => <div className="cyrillic-keyboard-row" key={row}>{row.split(' ').map((letter) => key(letter))}</div>)}
-        <div className="cyrillic-keyboard-row">{key(' ', 'Boşluk')}{key('backspace', 'Geri sil')}</div>
+        {rows.map((row) => <div className="cyrillic-keyboard-row" key={row}>{row.split(' ').map((letter) => key(uppercase ? letter.toUpperCase() : letter))}</div>)}
+        <div className="cyrillic-keyboard-row">{shift()}{key(' ', 'Boşluk')}{key('backspace', 'Geri sil')}</div>
       </div>
     </details>}
   </div>

@@ -1,12 +1,15 @@
 import 'fake-indexeddb/auto'
 import { execFileSync } from 'node:child_process'
-import { readFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
+import { readFileSync, readdirSync } from 'node:fs'
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { expect, test } from 'vitest'
 import { catalog, publishCourse } from '../src/content/catalog'
 import { curriculumCoverage } from '../src/content/curriculum/coverage'
 import { measureCurriculum } from '../src/content/curriculum/inventory'
+import { author, type Module } from '../src/content/continuity'
+import spanish from '../src/content/es.json'
 import { pedagogyExercises, receptionExercises, type Exercise } from '../src/content/schema'
 import { modelAudio } from '../src/content/teaching'
 import { assess } from '../src/domain/assessment'
@@ -122,7 +125,7 @@ test('Spanish controlled forms preserve accents, variants, unique contexts and o
   for (const variant of ['Todavía', 'Aún']) expect(assess(recent, variant, 'es').outcome).toBe('correct')
 })
 
-test('missing Spanish device audio never creates listening evidence and the course stays valid without MP3', () => {
+test('unavailable Spanish recordings never create listening evidence', () => {
   const lesson = course.unit.lessons[0]
   let state = finishPlacement(start(), course, answers(course.placement), at)
   state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), at)
@@ -134,12 +137,6 @@ test('missing Spanish device audio never creates listening evidence and the cour
   expect(state.attempts.some(({ evidence }) => evidence.skill === 'listening')).toBe(false)
   expect(state.skippedListening).toContain(lesson.id)
   expect(parseBackup(exportBackup(state))).toEqual(state)
-  for (const lesson of course.unit.lessons) {
-    expect(modelAudio(lesson.id, 0, 'es')).toMatchObject({ kind: 'synthesis', locale: 'es-ES' })
-    expect(lesson.pedagogy!.listening.audio).toMatchObject({ kind: 'synthesis', locale: 'es-ES' })
-    expect(lesson.pedagogy!.receptionRetry!.listening.audio.kind).toBe('synthesis')
-    expect(lesson.pedagogy!.vocabulary.every(({ audio }) => audio?.kind === 'synthesis')).toBe(true)
-  }
   const invalid = structuredClone(course)
   invalid.unit.lessons[0].pedagogy!.listening.audio = { kind: 'synthesis', locale: 'ru-RU', rate: .85 }
   expect(() => publishCourse(invalid)).toThrow()
@@ -174,15 +171,46 @@ test('tutor and speaking contexts use Spanish examples and Turkish explanations'
     observations: [], confidence: 'low', transcriptAvailability: 'unavailable', completionStatus: 'partial' }), session, lesson).language).toBe('es')
 })
 
-test('audio TODO lists exactly the 54 ungenerated Spanish clips and the generator selects voice es', () => {
+test('Spanish uses all 54 recordings in authored order with matching text and source metadata', () => {
   const clips: { file: string; text: string; options: string[] }[] = JSON.parse(execFileSync(process.execPath,
     ['scripts/curriculum-audio.mjs', '--list', 'es.json'], { encoding: 'utf8' }))
   const todo = readFileSync('docs/SPANISH_AUDIO_TODO.md', 'utf8')
   expect(clips).toHaveLength(54)
   expect(new Set(clips.map(({ file }) => file)).size).toBe(54)
+  expect(readdirSync('src/content/audio').filter((file) => /^es\..*\.mp3$/.test(file)).sort())
+    .toEqual(clips.map(({ file }) => file).sort())
   expect(todo.match(/^\| es\./gm)).toHaveLength(54)
+  const authored = course.unit.lessons.flatMap((lesson) => {
+    const p = lesson.pedagogy!
+    return [
+      ...lesson.teaching!.models.map(({ phrase }, index) => ({ audio: modelAudio(lesson.id, index, 'es'), text: phrase })),
+      { audio: p.listening.audio, text: p.listening.transcript },
+      { audio: p.receptionRetry!.listening.audio, text: p.receptionRetry!.listening.transcript },
+      ...p.vocabulary.map(({ audio }, index) => ({ audio, text: lesson.vocabulary[index].example })),
+    ]
+  })
+  expect(authored).toHaveLength(clips.length)
+  for (const [index, { file, text }] of clips.entries()) {
+    expect(authored[index]).toEqual({ text, audio: {
+      kind: 'recording', src: `/audio/${file}`, locale: 'es-ES', license: 'MIT',
+      source: 'https://github.com/espeak-ng/espeak-ng', synthetic: true,
+    } })
+  }
   for (const { file, text, options } of clips) {
     expect(todo).toContain(`| ${file} | ${text} |`)
     expect(options).toEqual(['-b', '1', '-v', 'es', '-s', '140'])
+    const hash = createHash('sha256').update(JSON.stringify([options, text])).digest('hex')
+    expect(readFileSync(`src/content/audio/${file}`).includes(hash), file).toBe(true)
   }
+})
+
+test('Spanish supplemental vocabulary keeps its own audio override', () => {
+  const item = structuredClone(spanish.lessons[0]) as Module
+  const supplemental = { ...item.additionalWords![0], supplemental: true as const,
+    audio: { kind: 'synthesis' as const, locale: 'es-ES' as const, rate: .85 } }
+  item.additionalWords = [supplemental]
+  const lesson = author('es', item)
+  expect(lesson.pedagogy!.vocabulary[0].audio).toMatchObject({ kind: 'recording', src: '/audio/es.saludos.word.1.mp3' })
+  expect(lesson.vocabulary[1].supplemental).toBe(true)
+  expect(lesson.pedagogy!.vocabulary[1].audio).toEqual(supplemental.audio)
 })

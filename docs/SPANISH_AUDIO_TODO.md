@@ -1,8 +1,10 @@
 # İspanyolca ses üretim listesi
 
-İspanyolca A1–A2 başlangıcındaki **54 MP3 henüz üretilmedi**. Bu teslimde ses dosyası oluşturulmadı: espeak-ng ve FFmpeg kurulu değil. Her derste iki model, ilk/onarım dinlemesi ve iki kelime örneği var. Ayrı tanılama sesi yok.
+İspanyolca A1–A2 başlangıcındaki **54 MP3 uygulamada kullanımda**. Kayıtlar eSpeak NG 1.52 ve FFmpeg ile üretildi. Dokuz dersin her birinde iki model, ilk/onarım dinlemesi ve iki kelime örneği var. Ayrı tanılama sesi yok.
 
-Şema dinleme için bir ses nesnesi ister; `recording` veya `synthesis` kabul eder. İspanyolcada mevcut `synthesis` yolu, `es-ES` ve 0.85 hızını kullanır. Yalnız cihazın yerel İspanyolca sesi seçilir; başka bir İspanyolca bölgesi de kullanılabilir. Ses yoksa kullanıcı metinle devam eder; bu işlem dinleme kanıtı üretmez. Genel medya testleri yalnız `recording` nesnelerinin dosyasını zorunlu tutar. Paket MP3/parmak izi kontrolleri mevcut en/ru JSON paketlerinde aynen çalışır; İspanyolca başlangıcı aynı `author()` derleyicisini kullanan ayrı bir müfredat partisidir. Kalıcı çevrimdışı MP3 kapsamı henüz yoktur. Doğallık, vurgu ve pedagojik uygunluk için uzman incelemesi/pilot bekler.
+Model, dinleme ve kelime sesleri `recording` nesneleriyle yerel MP3 dosyalarına bağlanır; yerel ayar `es-ES`, lisans MIT, kaynak eSpeak NG ve `synthetic: true` olarak belirtilir. Ek kelime kartlarının kendi `audio` değeri varsa korunur. Cihazda İspanyolca sentez sesi bulunması gerekmez. Kayıt oynatılamazsa kullanıcı metinle devam edebilir; bu işlem dinleme kanıtı üretmez.
+
+Genel medya testleri İspanyolca kayıt dosyalarının varlığını da denetler. İspanyolca testleri aşağıdaki 54 dosyanın model/ilk dinleme/onarım/kelime sırasını, tam metnini ve MP3 içindeki kaynak parmak izini doğrular. **Anadili İspanyolca olan birinin dinleme ve içerik incelemesi hâlâ bekleniyor**; doğallık, vurgu, telaffuz, hız ve pedagojik uygunluk ile öğrenci pilotu ayrıca değerlendirilmeli.
 
 ## Üretim
 
@@ -16,10 +18,10 @@ npm run curriculum:audio -- es.json
 ```
 
 3. Çıktılar `src/content/audio/` altına yazılır. Liste `src/content/es.json` içindeki sıralı `models[].phrase`, `input.transcript`, `retry.transcript`, `word.example` ve `additionalWords[].example` alanlarından gelir. Metin değiştiğinde aşağıdaki listeyi ve klibi birlikte güncelle.
-4. Üretilen sesleri tam çözümleme ve dinleyerek kontrol et; model, kelime ve transkript eşleşmesini doğrula. Sonra `src/content/teaching.ts` içindeki `modelAudio()` ve `src/content/continuity.ts` içindeki `author()` dinleme/kelime nesnelerinin İspanyolca `synthesis` dallarını `recording` yoluna geçir. Yalnız dosya üretmek uygulamanın sentez tercihini değiştirmez. Kayıt metadatasında `es-ES`, MIT ve eSpeak NG kaynağını koru. Bu değişiklik ve MP3 dosyaları birlikte yayımlanmalı.
+4. Yeniden üretilen sesleri tam çözümleme ve dinleyerek kontrol et; model, kelime ve transkript eşleşmesini doğrula. `src/content/teaching.ts` içindeki `modelAudio()` ve `src/content/continuity.ts` içindeki `author()` kayıtları kullanır. Metin değişikliklerini ilgili MP3 dosyalarıyla birlikte yayımla; `es-ES`, MIT ve eSpeak NG kaynak metadatasını koru.
 5. `npm run typecheck`, `npm run lint`, `npm run curriculum:check` ve `npm test` çalıştır.
 
-## Bekleyen dosyalar ve tam metinleri
+## Kullanımdaki dosyalar ve tam metinleri
 
 Dosya adlarının tamamı `src/content/audio/` dizinine göredir. Aşağıdaki metinler senteze aynen verilir; Türkçe açıklamalar seslendirilmez.
 
