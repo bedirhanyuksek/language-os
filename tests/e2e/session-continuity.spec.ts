@@ -1,4 +1,4 @@
-import { teachVocabulary, clearPlannedReviews } from './teaching'
+import { teachVocabulary, clearPlannedReviews, reviewPlannedBatch } from './teaching'
 import { expect, test, type Page } from '@playwright/test'
 import { catalog } from './catalog-fixture'
 import { restoreLegacy } from './legacy-profile'
@@ -122,20 +122,6 @@ async function solvePhase(page: Page, course: Course, phase: 'transfer' | 'readi
   await toPlan(page)
 }
 
-async function reviews(page: Page, course: Course, now: string) {
-  const state = await stored(page)
-  const plan = dailyPlan(state, course, now, zone)
-  if (plan.kind !== 'review') return
-  await page.getByRole('button', { name: 'Kelimeleri tekrar et' }).click()
-  for (const cardId of plan.cardIds) {
-    const recall = course.unit.lessons.flatMap(({ pedagogy }) => pedagogy?.vocabulary ?? []).find((entry) => entry.cardId === cardId)!.recall
-    await page.getByRole('textbox', { name: 'Hatırladığın ifade' }).fill(String(answer(recall)))
-    await page.getByRole('button', { name: 'Yanıtı karşılaştır' }).click()
-    await page.getByRole('button', { name: 'Tekrarı kaydet' }).click()
-  }
-  await expect(page.getByText('Kelime tekrarları kaydedildi.')).toBeVisible()
-}
-
 test('Russian A1 at fifteen minutes resumes Kiril repair offline and proceeds to a new introduction', async ({ page, context }) => {
   test.setTimeout(65_000)
   const course = catalog.ru
@@ -186,7 +172,7 @@ test('Russian A1 at fifteen minutes resumes Kiril repair offline and proceeds to
     [main.id, 'correct', 2],
     [detail.id, 'correct', 2],
   ])
-  await reviews(page, course, third)
+  await reviewPlannedBatch(page, course, third)
   const state = await stored(page)
   const plan = dailyPlan(state, course, third, zone)
   if (plan.kind === 'pedagogy' && plan.phase === 'revision') {
@@ -197,7 +183,7 @@ test('Russian A1 at fifteen minutes resumes Kiril repair offline and proceeds to
   const fourth = '2026-11-17T10:03:00.000Z'
   await page.clock.setFixedTime(new Date(fourth))
   await page.reload()
-  await reviews(page, course, fourth)
+  await reviewPlannedBatch(page, course, fourth)
   await solvePhase(page, course, 'delayed', fourth)
   if ((dailyPlan(await stored(page), course, fourth, zone)).kind === 'speaking') {
     await page.getByRole('button', { name: 'Konuşmayı hazırla' }).click()
@@ -263,7 +249,7 @@ test('English B1 at thirty minutes saves a retry once, teaches words, and record
   await solvePhase(winner, course, 'listening')
   await winner.clock.setFixedTime(new Date(nextDay))
   await winner.reload()
-  await reviews(winner, course, nextDay)
+  await reviewPlannedBatch(winner, course, nextDay)
   if ((dailyPlan(await stored(winner), course, nextDay, zone)).kind === 'pedagogy') {
     const remaining = dailyPlan(await stored(winner), course, nextDay, zone)
     if (remaining.kind === 'pedagogy' && remaining.phase === 'revision') {
