@@ -4,6 +4,7 @@ import { exportBackup, parseBackup } from '../persistence/repository'
 import { TutorSettings, TutorUnavailableNote } from './TutorPanel'
 import { isLocalTutorAvailable } from '../runtime'
 import { ProfileForm } from './ProfileForm'
+import { AudioPacks } from './AudioPacks'
 
 export function Settings({ state, busy, onSave, onRestore, notice }: {
   state: LearningState; busy: boolean
@@ -45,6 +46,7 @@ export function Settings({ state, busy, onSave, onRestore, notice }: {
     </section>
     {isLocalTutorAvailable() ? <TutorSettings /> :
       <section className="surface section"><TutorUnavailableNote /></section>}
+    <AudioPacks language={state.profile.language} />
     <section className="surface section">
       <h2>Yerel kayıtlar</h2><p>Yedek etkin dili, yanıtlarını ve içe aktardığın konuşma alıntılarını içerir. Her dilin yedeğini o dile geçerek indirebilirsin.</p>
       <div className="button-row">

@@ -132,6 +132,16 @@ Yerel araçlar `kokoro-onnx 0.6.1` (MIT), ONNX Runtime `1.32.0` (MIT), Phonemize
 
 **MP3 çıktı hakları.** Apache 2.0 ve MIT modelin yerel ve ticari üretimde kullanılmasına izin verir. İncelenen resmî metinlerde seçilen seslerin MP3 çıktısı için ayrı bir ticari izin, çevrimdışı uygulamada yeniden dağıtım izni veya açık GitHub deposunda yayımlama izni bulunmadı. Çıktı başına ek ücret/telif şartı da belgelenmedi. Bu inceleme çıktı üzerindeki hakları kesinleştirmediğinden manifestte üç dağıtım kontrolü de doğrulanmamış kalır. Proje lisansı MP3’lere kendiliğinden uygulanmaz.
 
+## Artımlı müfredat ses üretimi
+
+`npm run curriculum:audio -- --audio-report` yayımlanan kataloğu okur ve EN, RU, ES ses gereksinimlerini listeler. Kelimelerin yalın gösterimi, bağlam örneği, öğretim modeli ve dinleme/onarım/tanılama kaynakları ayrı kimlik taşır. Rapor mevcut paketli dosyaları, eksik dosyaları ve Rusça telaffuz girdisi bekleyen öğeleri gösterir. Önceki eSpeak komutu ve `--list` kullanımı devam eder.
+
+Geliştirme üretimi için `npm run curriculum:audio -- --tts --output /tmp/my-curriculum-audio --ids en.cafe.input,ru.intro.input` çalıştırılır. `--lessons` ile dersler, `--all` ile tüm katalog seçilebilir. Python yürütücüsü `LANGUAGE_OS_TTS_PYTHON`, Kokoro ve Silero ağırlık dizinleri `LANGUAGE_OS_KOKORO_DIR` ve `LANGUAGE_OS_SILERO_DIR` ile verilir. Beklenen dosya adları, araç sürümleri ve ağırlık özetleri [model sabitleme kaydında](../scripts/curriculum-tts-models.json) bulunur. FFmpeg ve FFprobe yerel olmalı. İspanyolca için yerel `espeak-ng` ile aday üretilebilir. Bu yol mevcut, proje metninden üretilen eSpeak materyalleriyle uyumludur ve yeni bir ses modelinin ticari dağıtımını onaylamaz. [Mevcut eSpeak kaynak notu](../src/content/audio/README.md)
+
+[Örnek telaffuz girdileri](../scripts/curriculum-tts-pronunciation.json) diyalog repliklerini rol ve ses bazında ayırır. `--pronunciation` farklı bir JSON dosyasıyla ek işaretleme alır. Rusça çok heceli sözcüklerde Silero'nun ünlü öncesi `+` işareti veya `ё` gerekir. Kural biçimi ve kaynak metni denetler. İşaretin dilsel doğruluğu ve duyulan ses uzman incelemesinde değerlendirilir. Model ve ses, girdi, replik sırası ve dönüştürücü sürümü üretim özetini oluşturur. MP3 bayt özeti ayrı doğrulanır. Başarısız bir üretim önceki dosyayı silmez. Aday raporu insan incelemesi bekleyen ve yayımlama izinleri kapalı kayıtlar üretir. Dokuz Paket 2B adayının ayrı manifesti bu hatta dahil edilmez.
+
+İzinleri belgelenmiş yeni sesler için `public/audio-packs/index.json` sürümlü paket bildirimi kullanır. Paket dağıtım öncesi dosya boyutu, SHA-256, kaynak, insan incelemesi ve ilgili izin alanlarıyla doğrulanır. Puanlı dinleme için uzman incelemesi gerekir. Paketteki MP3'ler çekirdek indirmeye dahil edilmez. Ayarlar'daki dil bazlı isteğe bağlı indirme, her dosyayı doğrular ve tamamlanan paketi ayrı çevrimdışı önbelleğe alır. Derslerde yayımlanmış paket dosyası aynı oynatıcıyla kullanılabilir. İlk indeks boştur ve mevcut MP3'ler çekirdek çevrimdışı akışını korur.
+
 ## Açık kararlar ve dış bağımlılıklar
 
 - İlk inceleme için EN kontrollü klip ve RU A diyaloğu seçilebilir. Dil uzmanları hedef ayrıntı, ad vurgusu, ses ayrımı, transkript ve cevap dayanaklarını sesle karşılaştırır. Rusça ad dizilerinde A/B dil yükü ayrıca incelenir.

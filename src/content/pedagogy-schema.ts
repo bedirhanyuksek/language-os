@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { audioPackClipPath } from './audio-packs'
 import { idSchema, languageSchema, levelSchema } from '../domain/model'
 import { exerciseSchema } from './exercise-schema'
 
@@ -8,7 +9,7 @@ export const controlledExercise = exerciseSchema.refine((item) =>
 
 const audioSchema = z.discriminatedUnion('kind', [
       z.strictObject({ kind: z.literal('synthesis'), locale: z.enum(['en-US', 'ru-RU', 'es-ES']), rate: z.number().min(0.5).max(1.2) }),
-      z.strictObject({ kind: z.literal('recording'), src: z.string().regex(/^\/audio\/[\w.-]+$/),
+      z.strictObject({ kind: z.literal('recording'), src: z.string().refine((src) => /^\/audio\/[\w.-]+$/.test(src) || audioPackClipPath.test(src)),
         license: text, source: z.url({ protocol: /^https$/ }), locale: text, synthetic: z.boolean().optional() }),
     ])
 

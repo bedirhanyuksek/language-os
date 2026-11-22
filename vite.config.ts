@@ -1,9 +1,12 @@
 import { createHash } from 'node:crypto'
 import { basename, resolve } from 'node:path'
+import { existsSync, readFileSync } from 'node:fs'
 import { pilotAudioManifest } from './src/content/pilot-audio.ts'
 import { isLoopbackAddress, isPilotAudioFile, readLocalPilotAudioReviewAsset, rejectPublicPilotAudioAssets, validatePilotAudioAssets } from './scripts/validate-pilot-audio.ts'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vitest/config'
+import { audioPackCachePrefix, audioPackClipPath, audioPackMarker } from './src/content/audio-packs.ts'
+import { validateCurriculumAudioPacks } from './scripts/validate-curriculum-audio-packs.ts'
 
 const pilotAudioDirectory = resolve(import.meta.dirname, 'src/content/audio')
 let publicDirectory = ''
@@ -66,6 +69,7 @@ export default defineConfig({
     },
     buildStart() {
       rejectPublicPilotAudioAssets(publicDirectory)
+      validateCurriculumAudioPacks(publicDirectory)
     },
     generateBundle(_options, bundle) {
       const approved = validatePilotAudioAssets(pilotAudioDirectory, pilotAudioManifest)
@@ -76,10 +80,29 @@ export default defineConfig({
       }
       const assets = Object.keys(bundle).map((path) => '/' + path)
       const files = ['/', '/index.html', '/icon.svg', '/manifest.webmanifest', ...assets.filter((path) => path !== '/index.html')]
-      const version = createHash('sha256').update(JSON.stringify(files)).digest('hex').slice(0, 16)
+      const audioIndex = publicDirectory && resolve(publicDirectory, 'audio-packs/index.json')
+      const hash = createHash('sha256')
+      if (audioIndex && existsSync(audioIndex)) {
+        files.push('/audio-packs/index.json')
+        hash.update(readFileSync(audioIndex))
+      }
+      const version = hash.update(JSON.stringify(files)).digest('hex').slice(0, 16)
       this.emitFile({ type: 'asset', fileName: 'sw.js', source: `
 const cacheName = 'language-os-${version}';
 const files = ${JSON.stringify(files)};
+const mediaPath = ${audioPackClipPath};
+const mediaPrefix = ${JSON.stringify(audioPackCachePrefix)};
+const mediaMarker = ${JSON.stringify(audioPackMarker)};
+async function installedAudio(path) {
+  const pack = path.split('/')[2];
+  const names = (await caches.keys()).filter(name => name.startsWith(mediaPrefix + pack + ':'));
+  for (const name of names) {
+    const cache = await caches.open(name);
+    if (!(await cache.match(mediaMarker))) continue;
+    const hit = await cache.match(path);
+    if (hit) return hit;
+  }
+}
 self.addEventListener('install', event => event.waitUntil(caches.open(cacheName).then(cache => cache.addAll(files))));
 self.addEventListener('activate', event => event.waitUntil(
   caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('language-os-') && key !== cacheName).map(key => caches.delete(key))))
@@ -90,8 +113,10 @@ self.addEventListener('fetch', event => {
     url.pathname === '/auth/callback' || url.pathname.startsWith('/local-tutor/')) return;
   if (event.request.mode === 'navigate') {
     event.respondWith(fetch(event.request).catch(() => caches.open(cacheName).then(cache => cache.match('/index.html'))));
-  } else if (files.includes(url.pathname)) {
-    event.respondWith(caches.open(cacheName).then(cache => cache.match(url.pathname)).then(async response => {
+  } else if (files.includes(url.pathname) || mediaPath.test(url.pathname)) {
+    const lookup = mediaPath.test(url.pathname) ? installedAudio(url.pathname)
+      : caches.open(cacheName).then(cache => cache.match(url.pathname));
+    event.respondWith(lookup.then(async response => {
       if (!response) return fetch(event.request);
       const range = event.request.headers.get('range');
       if (!range) return response;
