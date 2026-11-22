@@ -1,0 +1,13 @@
+{
+  "en.cafe.input": [
+    {"role":"customer","voice":"af_heart","text":"I’d like a coffee to go, please. How much is it?"},
+    {"role":"server","voice":"am_michael","text":"Three pounds."}
+  ],
+  "ru.intro.input": [
+    {"role":"anna","voice":"ru_aigul","text":"Здравствуйте! Меня зовут Анна. Как вас зовут?","input":"Здр+авствуйте! Мен+я зов+ут +Анна. Как вас зов+ут?"},
+    {"role":"maksim","voice":"ru_alexandr","text":"Меня зовут Максим.","input":"Мен+я зов+ут Макс+им."}
+  ],
+  "ru.cyrillic.input": [
+    {"role":"narrator","voice":"ru_aigul","text":"Нина. Роман. Соня.","input":"Н+ина. Ром+ан. С+оня."}
+  ]
+}

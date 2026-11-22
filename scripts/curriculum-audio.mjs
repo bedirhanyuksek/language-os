@@ -7,6 +7,11 @@ import process from 'node:process'
 import { fileURLToPath, pathToFileURL, URL } from 'node:url'
 
 const args = process.argv.slice(2)
+if (args.includes('--tts') || args.includes('--audio-report')) {
+  const { curriculumTtsCli } = await import('./curriculum-tts-cli.mjs')
+  await curriculumTtsCli(args)
+  process.exit(process.exitCode ?? 0)
+}
 const force = args.includes('--force')
 const list = args.includes('--list')
 const selected = args.filter((arg) => !['--force', '--list'].includes(arg))

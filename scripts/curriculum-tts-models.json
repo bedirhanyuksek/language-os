@@ -1,0 +1,34 @@
+{
+  "en": {
+    "id": "kokoro-82m-onnx",
+    "version": "1.0",
+    "license": "Apache-2.0",
+    "source": "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX",
+    "attribution": "Hexgrad Kokoro and ONNX Community",
+    "runtime": {"kokoro-onnx": "0.6.1", "onnxruntime": "1.32.0", "phonemizer": "3.6.0", "espeakng-loader": "0.2.4"},
+    "weights": {
+      "model_quantized.onnx": "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478",
+      "af_heart.bin": "d583ccff3cdca2f7fae535cb998ac07e9fcb90f09737b9a41fa2734ec44a8f0b",
+      "am_michael.bin": "1d1f21dd8da39c30705cd4c75d039d265e9bc4a2a93ed09bc9e1b1225eb95ba1"
+    },
+    "voices": ["af_heart", "am_michael"]
+  },
+  "ru": {
+    "id": "silero-v5-cis-base",
+    "version": "v5_cis_base",
+    "license": "MIT",
+    "source": "https://github.com/snakers4/silero-models#v5-cis-base-models",
+    "attribution": "Silero Team",
+    "runtime": {"torch": "2.7.1"},
+    "weights": {"v5_cis_base.pt": "ba41b18f6a707ad93605a162998865e7c087153d2e010a26dd02229dab0e672a"},
+    "voices": ["ru_aigul", "ru_alexandr"]
+  },
+  "es": {
+    "id": "espeak-ng",
+    "version": "local-engine",
+    "license": "GPL-3.0-or-later",
+    "source": "https://github.com/espeak-ng/espeak-ng",
+    "attribution": "eSpeak NG contributors",
+    "voices": ["es", "es-la"]
+  }
+}
