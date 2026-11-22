@@ -103,7 +103,12 @@ const inventory: Record<Language, Record<Band, Outcome[]>> = {
 
 // Additive, separately counted audit targets. Existing outcome identifiers remain stable.
 const auditTargets: typeof inventory = {
-  es: { A1: [], A2: [], B1: [], B2: [], C1: [], C2: [] },
+  es: {
+    A1: [['repetir', 'Adı tekrarlat ve yazımını kontrol et', 'saludos']],
+    A2: [['cambiar-plan', 'Bir davete yanıt ver ve yeni zamanı teyit et', 'perfect']],
+    B1: [['connected-account', 'Bir deneyimi olay sırası, sonuç ve takip sorusuyla anlat', 'cambiar-plan']],
+    B2: [], C1: [], C2: [],
+  },
   en: {
     A1: [
       ['feelings', 'Gündelik duyguyu veya basit tercihi söyle', 'identity'], ['forms', 'Bir kurs veya etkinlik formunda temel veriyi yaz', 'identity'],
@@ -116,14 +121,17 @@ const auditTargets: typeof inventory = {
     B1: [
       ['emotion', 'Bir ilişkide duygu, neden ve beklentiyi incelikle açıkla', 'story'], ['culture-visit', 'Gezide iki kültürel uygulamayı karşılaştır', 'story'],
       ['education-talk', 'Bir öğrenme deneyimini anlat ve geri bildirim iste', 'interaction'], ['creative-response', 'Öykü veya filme kişisel tepkiyi gerekçelendir', 'story'],
+      ['lost-property', 'Kayıp eşyanın ayırt edici özelliğini, son görüldüğü yeri ve izleme adımını aktar', 'story'],
       ['intelligibility', 'Durak, sözcük vurgusu ve netleştirmeyle konuşmayı sürdür', 'interaction'],
     ],
     B2: [
       ['persuade', 'Toplumsal konuda karşı itirazla ikna edici sav kur', 'negotiation'], ['multimedia', 'Haber, fotoğraf, tanıklık ve karşı kanıtı tart', 'story', 'en.media'],
       ['study-discussion', 'Seminerde bulgu, soru ve itirazı yönlendir', 'education-talk'], ['intercultural', 'Kültürel yanlış anlamayı iki bakışla açıkla', 'culture-visit'],
+      ['consumer-terms', 'Bir hizmetin fiyat ve iptal koşullarını farklı kaynaklardan karşılaştır', 'genres'],
       ['prosody', 'Karşıt vurgu ve tonla tutumu ayırt et', 'accents'],
     ],
     C1: [
+      ['research-briefing', 'Araştırma sunuşunda dolaylı göstergeyi, çıkarımı ve kapsamı ayır', 'academic'],
       ['fiction', 'Uzun kurmacada anlatıcı tutumu ve bakışı çöz', 'creative-response'], ['academic-audio', 'Akademik konuşmada yöntem ve çıkarıma not al', 'lecture'],
       ['online-debate', 'Yazılı çevrim içi tartışmada görüşleri uzlaştır', 'negotiation'], ['register-speech', 'Aynı savı farklı dinleyicilere akıcıca uyarla', 'brief'],
     ],

@@ -1,3 +1,4 @@
+import { modelAudio } from '../src/content/teaching'
 import { catalog } from '../src/content/catalog'
 import type { Course } from '../src/content/schema'
 import { vocabularyIndex } from '../src/content/vocabulary'
@@ -9,7 +10,9 @@ export function audioMaterials(course: Course) {
     const base = { lessonId: lesson.id, language: course.language, band: lesson.objective.level }
     for (const [index, model] of (lesson.teaching?.models ?? []).entries()) {
       const id = `${lesson.id}.model.${index + 1}`
-      materials.push({ ...base, kind: 'model', id, text: model.phrase, bundledFile: `${id}.mp3` })
+      const audio = modelAudio(lesson.id, index, course.language, lesson.teaching?.audioMode)
+      materials.push({ ...base, kind: 'model', id, text: model.phrase,
+        bundledFile: audio.kind === 'recording' ? audio.src.split('/').at(-1) : undefined })
     }
     for (const [name, activity] of [
       ['input', lesson.pedagogy?.listening],

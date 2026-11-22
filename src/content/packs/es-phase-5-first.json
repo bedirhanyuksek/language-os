@@ -1,0 +1,482 @@
+{
+  "format": 1,
+  "language": "es",
+  "lessons": [
+    {
+      "id": "es.repetir",
+      "outcome": "A1.repetir",
+      "level": "A1",
+      "prerequisite": [
+        "es.saludos"
+      ],
+      "title": "Adı tekrarlat ve yazımını kontrol et",
+      "objective": "Bir adı veya soyadı anlamadığında tekrar ve harf iste, anladığın biçimi teyit et.",
+      "audioMode": "device-synthesis",
+      "grammarStrands": [
+        "¿Puede + infinitivo?",
+        "¿Con …? ile harf teyidi"
+      ],
+      "situation": "Bir kursa kaydolurken görevli soyadını yanlış anladı. Harfi tek tek söylemek veya tekrar istemek işe yarar.",
+      "bridge": "Önce tekrar iste. Karışan harfi sor. Sonra duyduğun adı teyit et.",
+      "models": [
+        {
+          "phrase": "¿Puede repetir el apellido, por favor?",
+          "explanation": "Puede kibar bir rica açar. Ardından çekimsiz repetir kullan."
+        },
+        {
+          "phrase": "¿Con be o con uve?",
+          "explanation": "Be, b harfinin; uve, v harfinin İspanya’da yaygın adıdır. Harf adları bölgeye göre değişebilir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Kibar yeniden söyleme isteği",
+          "incorrect": "¿Puede repite su nombre?",
+          "correct": "¿Puede repetir su nombre?",
+          "explanation": "Puede + mastar kullan. Repite tek başına başka bir çekimli biçimdir.",
+          "guided": [
+            [
+              "İsmi yeniden söylemesini iste: ¿Puede ___ su nombre? (repetir)",
+              "repetir"
+            ],
+            [
+              "Yazmasını iste: ¿Puede ___ el nombre? (escribir)",
+              "escribir"
+            ]
+          ],
+          "transfer": [
+            [
+              "Adın harflerini söylemesini iste: ¿Puede ___ el nombre? (deletrear)",
+              "deletrear"
+            ],
+            [
+              "Görevli için soyadını tekrarlamasını iste: ¿Puede ___ el apellido? (repetir)",
+              "repetir"
+            ]
+          ],
+          "delayed": [
+            [
+              "Adresi yazmasını iste: ¿Puede ___ la dirección? (escribir)",
+              "escribir"
+            ],
+            [
+              "Görevliye şehri söyleyebilir mi diye sor: ¿Puede ___ la ciudad? (decir)",
+              "decir"
+            ]
+          ]
+        },
+        {
+          "label": "İki harften birini teyit et",
+          "incorrect": "¿De eme o de ene?",
+          "correct": "¿Con eme o con ene?",
+          "explanation": "Bir sözcükteki harfi sorarken con kullan. O iki olası harfi birbirine bağlar.",
+          "guided": [
+            [
+              "m ile n arasında seçim: ¿Con eme ___ con ene?",
+              "o"
+            ],
+            [
+              "l ile r arasında seçim: ¿Con ele ___ con erre?",
+              "o"
+            ]
+          ],
+          "transfer": [
+            [
+              "“z veya s ile mi” sor. Con ve harf adlarını kullan: ___?",
+              "Con zeta o con ese"
+            ],
+            [
+              "“m veya n ile mi” sor. Con ve harf adlarını kullan: ___?",
+              "Con eme o con ene"
+            ]
+          ],
+          "delayed": [
+            [
+              "“p veya t ile mi” sor. Con ve harf adlarını kullan: ___?",
+              "Con pe o con te"
+            ],
+            [
+              "“f veya j ile mi” sor. Con ve harf adlarını kullan: ___?",
+              "Con efe o con jota"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "apellido",
+        "meaning": "soyadı",
+        "example": "Mi apellido es Lara.",
+        "usage": "Nombre addır, apellido soyaddır.",
+        "pronunciation": "/apeˈʝiðo/",
+        "collocations": [
+          "mi apellido",
+          "primer apellido"
+        ],
+        "recognize": [
+          "“apellido” bu kullanımda ne anlama geliyor?",
+          "soyadı",
+          "adres",
+          "ülke",
+          "Nombre addır, apellido soyaddır."
+        ],
+        "recall": [
+          "“soyadı” anlamındaki hedef ifadeyi yaz.",
+          "apellido"
+        ],
+        "use": "Bir formda kendi adını ve soyadını ayrı söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "deletrear",
+          "meaning": "harf harf söylemek",
+          "example": "¿Puedes deletrear tu nombre?",
+          "usage": "Deletrear adın seslerini değil, harf adlarını sırayla söylemektir.",
+          "pronunciation": "/deletreˈaɾ/",
+          "collocations": [
+            "deletrear un apellido",
+            "deletrear el nombre"
+          ],
+          "recognize": [
+            "“deletrear” bu kullanımda ne anlama geliyor?",
+            "harf harf söylemek",
+            "çeviri yapmak",
+            "selam vermek",
+            "Deletrear adın seslerini değil, harf adlarını sırayla söylemektir."
+          ],
+          "recall": [
+            "“harf harf söylemek” anlamındaki hedef ifadeyi yaz.",
+            "deletrear"
+          ],
+          "use": "Birinden soyadını harf harf söylemesini iste."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "inscripción",
+          "cue": "kayıt"
+        }
+      ],
+      "writing": {
+        "prompt": "Kartta Alma Ríos yazıyor. Görevli Ramos dedi. Soyadını düzelt ve tekrar etmesini iste.",
+        "sample": "No, mi apellido es Ríos. ¿Puede repetirlo, por favor?",
+        "revision": "Düzeltmeden sonra ilk harfin r olduğunu da söyle.",
+        "criteria": [
+          "Soyadı doğru ve kısa biçimde düzeltilir.",
+          "Kibar tekrar isteği anlaşılır."
+        ]
+      },
+      "input": {
+        "text": "Ficha de inscripción. Nombre: Vega. Apellido: Mora, con eme. Clase: lunes.",
+        "reading": [
+          "Soyadının ilk harfi nedir?",
+          "m",
+          "n",
+          "v",
+          "Con eme, m harfini belirtir.",
+          "Mora, con eme"
+        ],
+        "transcript": "— Mi apellido es Vela.\n— ¿Puede repetirlo, por favor?\n— Vela, con uve.\n— Gracias, Vela.",
+        "preparation": "Duyduğun adı ve düzeltilen harfi ayır.",
+        "main": [
+          "İkinci kişi ne istiyor?",
+          "Soyadının tekrarlanmasını",
+          "Ders saatini",
+          "Adın anlamını",
+          "Repetirlo ile önceki soyadın tekrarını istiyor.",
+          "¿Puede repetirlo, por favor?"
+        ],
+        "detail": [
+          "Soyadı hangi harfle başlıyor?",
+          "v",
+          "b",
+          "l",
+          "Uve, v harfidir.",
+          "con uve"
+        ]
+      },
+      "retry": {
+        "text": "Lista del taller: Elisa Navas, con ene. La clase empieza a las seis.",
+        "reading": [
+          "Navas’ın ilk harfi ne?",
+          "n",
+          "m",
+          "s",
+          "Ene, n harfinin adıdır.",
+          "Navas, con ene"
+        ],
+        "transcript": "— ¿Su nombre es Lina?\n— No, Nina, con ene al principio.\n— Entendido: Nina.",
+        "preparation": "No sonrasında gelen adı dinle.",
+        "main": [
+          "Hangi bilgi düzeltiliyor?",
+          "Ad",
+          "Saat",
+          "Soyadı",
+          "Su nombre, adı soruyor.",
+          "¿Su nombre es Lina?"
+        ],
+        "detail": [
+          "Doğru ad nedir?",
+          "Nina",
+          "Lina",
+          "Ana",
+          "Konuşmacı Nina ve ilk harfi teyit ediyor.",
+          "Nina, con ene al principio"
+        ]
+      },
+      "readingUse": "Kartı görevliden gelen bir soruya cevap vermek için kullan.",
+      "listeningUse": "Kayıt formunu yanlış harften koru.",
+      "speaking": "Görevliye adını söyle. Görevli ikinci harfi yanlış söylerse harfin adını ver ve tekrar iste.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Kartın ad ve soyadı alanlarına ayrı bak.",
+        "main": "Repetirlo sözcüğünün hangi bilgiye dönük olduğunu bul.",
+        "detail": "No’dan sonra verilen harfi listeyle karşılaştır."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Adı, soyadı ve harf ipucunu ayır.",
+      "genres": {
+        "reading": "Kurs kayıt kartı",
+        "listening": "Kayıt masası diyaloğu",
+        "writing": "Kısa düzeltme"
+      }
+    },
+    {
+      "id": "es.cambiar-plan",
+      "outcome": "A2.cambiar-plan",
+      "level": "A2",
+      "prerequisite": [
+        "es.perfect"
+      ],
+      "title": "Planı değiştir ve yeni zamanı teyit et",
+      "objective": "Bir davete engelini söyleyerek yanıt ver, alternatif saat öner ve kararı teyit et.",
+      "audioMode": "device-synthesis",
+      "grammarStrands": [
+        "Poder + infinitivo",
+        "¿Te viene bien …?"
+      ],
+      "situation": "Bir arkadaşın seninle karşılaşmak istiyor ama ilk önerisine yetişemiyorsun. Onun uygun olduğu aralıkta yeni bir saat seç.",
+      "bridge": "Engeli kısa söyle. Yeni saati sor. İkisi de uygun olduğunda kararı tekrar et.",
+      "models": [
+        {
+          "phrase": "No puedo ir hoy. Ya he quedado con Marta.",
+          "explanation": "Puedo sonrasında ir mastarı gelir. Ya he quedado, bugünkü planı etkileyen önceki bir anlaşmayı bildirir."
+        },
+        {
+          "phrase": "¿Te viene bien mañana a las seis?",
+          "explanation": "Te viene bien, önerilen tek bir zamanın karşındakine uyup uymadığını sorar."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Poder sonrasında mastar",
+          "incorrect": "No puedo voy a la cena.",
+          "correct": "No puedo ir a la cena.",
+          "explanation": "Puedo fiili kişiyi taşır. Sonraki eylem mastar olarak kalır.",
+          "guided": [
+            [
+              "Yemek yiyemiyorsun: No puedo ___ ahora. (comer)",
+              "comer"
+            ],
+            [
+              "Şimdilik konuşamazsın: No puedo ___ ahora. (hablar)",
+              "hablar"
+            ]
+          ],
+          "transfer": [
+            [
+              "Bugün arayamazsın. No puedo ile başla: ___",
+              "No puedo llamar hoy"
+            ],
+            [
+              "Yarın kalamazsın. No puedo ile başla: ___",
+              "No puedo quedarme mañana"
+            ]
+          ],
+          "delayed": [
+            [
+              "Bu akşam çıkamazsın: No puedo ___ esta noche. (salir)",
+              "salir"
+            ],
+            [
+              "O saatte gelemeyeceğini söyle. No puedo ile başla: ___",
+              "No puedo ir a esa hora"
+            ]
+          ]
+        },
+        {
+          "label": "Saatin uygunluğunu sor",
+          "incorrect": "¿Te vienes bien el martes?",
+          "correct": "¿Te viene bien el martes?",
+          "explanation": "Viene önerilen zamana uyar. Te burada kime uygun olduğunu gösterir.",
+          "guided": [
+            [
+              "Salıyı öner: ¿Te ___ bien el martes? (venir)",
+              "viene"
+            ],
+            [
+              "Dörtte uygun mu? ¿Te viene bien ___ las cuatro?",
+              "a"
+            ]
+          ],
+          "transfer": [
+            [
+              "Çarşamba saat yediyi öner. Te viene bien ile başla: ___?",
+              "Te viene bien el miércoles a las siete"
+            ],
+            [
+              "Yarın öğlen uygun mu? Te viene bien ile başla: ___?",
+              "Te viene bien mañana al mediodía"
+            ]
+          ],
+          "delayed": [
+            [
+              "Pazartesi saat beşi öner. Te viene bien ile başla: ___?",
+              "Te viene bien el lunes a las cinco"
+            ],
+            [
+              "Pazar sabahı uygun mu? Te viene bien ile başla: ___?",
+              "Te viene bien el domingo por la mañana"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "quedar con alguien",
+        "meaning": "biriyle buluşmak üzere anlaşmak",
+        "example": "He quedado con Leo para cenar.",
+        "usage": "Quedar con + kişi, buluşma planı yapmak anlamına gelir.",
+        "pronunciation": "/keˈðaɾ kon ˈalɣjen/",
+        "collocations": [
+          "quedar con una amiga",
+          "quedar para cenar"
+        ],
+        "recognize": [
+          "“quedar con alguien” bu kullanımda ne anlama geliyor?",
+          "biriyle buluşmak üzere anlaşmak",
+          "birini aramak",
+          "bir şeyi unutmak",
+          "Quedar con + kişi, buluşma planı yapmak anlamına gelir."
+        ],
+        "recall": [
+          "“biriyle buluşmak üzere anlaşmak” anlamındaki hedef ifadeyi yaz.",
+          "quedar con alguien"
+        ],
+        "use": "Kiminle ve ne için buluşacağını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "venir bien",
+          "meaning": "uygun olmak",
+          "example": "El jueves me viene bien.",
+          "usage": "Me kime uygun olduğunu, el jueves uygun olan zamanı belirtir.",
+          "pronunciation": "/beˈniɾ bjen/",
+          "collocations": [
+            "me viene bien mañana",
+            "te viene bien el viernes"
+          ],
+          "recognize": [
+            "“venir bien” bu kullanımda ne anlama geliyor?",
+            "uygun olmak",
+            "eve dönmek",
+            "vaktini unutmak",
+            "Me kime uygun olduğunu, el jueves uygun olan zamanı belirtir."
+          ],
+          "recall": [
+            "“uygun olmak” anlamındaki hedef ifadeyi yaz.",
+            "venir bien"
+          ],
+          "use": "Arkadaşına iki zamandan birinin sana uyduğunu söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "libre",
+          "cue": "boş, müsait"
+        }
+      ],
+      "writing": {
+        "prompt": "Bugün saat altıda sinemaya davetlisin. Kardeşinle planın var. Arkadaşın yarın 17.00’den sonra boş. Kısa gerekçe, yeni saat ve teyit sorusu yaz.",
+        "sample": "No puedo ir hoy a las seis. Ya he quedado con mi hermano. ¿Te viene bien mañana a las siete? Podemos vernos en la entrada del cine.",
+        "revision": "Yeni saati uygun aralığa göre kontrol et. Buluşma yerini de teyit et.",
+        "criteria": [
+          "Engel kısa ve anlaşılır.",
+          "Yeni saat uygun ve bir soruyla teyit ediliyor."
+        ]
+      },
+      "input": {
+        "text": "Julia: ¿Salimos el viernes a las siete?\nNico: Ya he quedado con Ana para cenar. El sábado estoy libre por la tarde, pero por la mañana trabajo.\nJulia: Entonces, ¿a las cinco?",
+        "reading": [
+          "Saat beş hangi güne öneriliyor?",
+          "Cumartesi",
+          "Cuma",
+          "Pazar",
+          "Nico cumartesi öğleden sonra boş.",
+          "El sábado estoy libre por la tarde"
+        ],
+        "transcript": "— ¿Te viene bien vernos mañana a las doce?\n— No puedo. Ya he quedado con Eva para comer. ¿A las cinco?\n— Sí, a las cinco en la entrada del parque.",
+        "preparation": "Engeli ve yeni yer-saat çiftini dinle.",
+        "main": [
+          "İlk saatte neden buluşamıyorlar?",
+          "Eva’yla yemek planı var",
+          "Park kapalı",
+          "Beşte çalışıyor",
+          "Ya he quedado önceki planı bildiriyor.",
+          "Ya he quedado con Eva para comer."
+        ],
+        "detail": [
+          "Son karar nerede buluşmak?",
+          "Park girişinde",
+          "Eva’nın evinde",
+          "Kursun girişinde",
+          "Son söz hem saati hem yeri doğruluyor.",
+          "en la entrada del parque"
+        ]
+      },
+      "retry": {
+        "text": "Mensaje de Paula: El jueves tengo clase hasta las seis. A las siete puedo ir al café. El viernes trabajo por la tarde.",
+        "reading": [
+          "Paula ne zaman kafeye gidebilir?",
+          "Perşembe saat yedide",
+          "Perşembe saat beşte",
+          "Cuma öğleden sonra",
+          "Ders altıda bitiyor.",
+          "A las siete puedo ir al café."
+        ],
+        "transcript": "— ¿Quedamos el domingo por la mañana?\n— No puedo. Tengo que trabajar. ¿Te viene bien el lunes después de clase?\n— Sí, a las ocho, delante de la biblioteca.",
+        "preparation": "İki farklı günü ve son yeri ayrı not et.",
+        "main": [
+          "Son gün hangisi?",
+          "Pazartesi",
+          "Pazar",
+          "Salı",
+          "İkinci teklif pazartesi.",
+          "el lunes después de clase"
+        ],
+        "detail": [
+          "Yeni buluşma yeri neresi?",
+          "Kütüphanenin önü",
+          "Sınıfın içi",
+          "İş yeri",
+          "Lugar ifadesi son replikte.",
+          "delante de la biblioteca"
+        ]
+      },
+      "readingUse": "Kabul edilebilecek bir mesaj tasarla.",
+      "listeningUse": "İlk teklifin neden değiştiğini ve son kararı söyle.",
+      "speaking": "Arkadaşın markete gitmeyi öneriyor. Başka bir planın olduğu için alternatif ver. Arkadaşın yeni saat önerirse son gün, saat ve yeri tekrar söyle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İkinci kişinin boş zamanını, ilk davetten ayrı oku.",
+        "main": "Para comer ifadesi önceki planın amacını verir.",
+        "detail": "Son replikte delante de’den sonra gelen yeri dinle."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "İki kişinin uygunluk bilgisinden ortak zaman çıkar.",
+      "genres": {
+        "reading": "Mesajlaşma",
+        "listening": "Davet ve plan teyidi diyaloğu",
+        "writing": "Yeni zaman önerisi"
+      }
+    }
+  ]
+}

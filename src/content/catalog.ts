@@ -27,6 +27,7 @@ import { guidedAlternatives, teaching } from './teaching'
 import type { Language } from '../domain/model'
 import { spanishCourse, spanishLegacyCourse } from './curriculum/es'
 import { registerVocabularySenses } from './vocabulary'
+import vocabularyPhase5 from './vocabulary-phase-5.json' with { type: 'json' }
 import vocabularyPilot from './vocabulary-pilot.json' with { type: 'json' }
 
 export function publishCourse(data: unknown): Course {
@@ -97,4 +98,5 @@ export function createCatalog(packs: typeof packedLessons): Record<Language, Cou
 }
 
 export const catalog = createCatalog(packedLessons)
-registerVocabularySenses(catalog, vocabularyPilot)
+// The raw Node catalog used by Playwright fixtures has no Vite pack loader.
+registerVocabularySenses(catalog, import.meta.env ? [...vocabularyPilot, ...vocabularyPhase5] : vocabularyPilot)

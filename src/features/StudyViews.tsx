@@ -122,7 +122,7 @@ export function LessonStudy({ lesson, state, tasks, busy, onSubmit }: {
       <h2>{{ contrast: 'Anlam farkını gör', dialogue: 'Diyalogda nasıl kullanılır?', decoding: 'Harf ile sesi eşleştir',
         sequence: 'Olayları sıraya koy' }[teaching.approach]}</h2>
       <blockquote lang={language}>{model.phrase}</blockquote><p>{model.explanation}</p>
-      <AudioPlayer key={step} audio={modelAudio(lesson.id, step, language)}
+      <AudioPlayer key={step} audio={modelAudio(lesson.id, step, language, teaching.audioMode)}
         text={model.phrase} label="Cümleyi dinle" />
       {pilotModel && <details>
         <summary>{pilotModel.audio.kind === 'recording' && pilotModel.audio.synthetic

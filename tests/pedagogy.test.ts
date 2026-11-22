@@ -224,7 +224,7 @@ describe('vocabulary, listening and content checks', () => {
         const teaching = lesson.teaching!
         expect(new Set(teaching.models.map(({ phrase }) => phrase)).size).toBe(teaching.models.length)
         expect(teaching.receptive?.every(({ term }) => p.reading.text.toLocaleLowerCase(course.language).includes(term.toLocaleLowerCase(course.language))) ?? true, lesson.id).toBe(true)
-        const models = teaching.models.map((_, index) => modelAudio(lesson.id, index, course.language))
+        const models = teaching.models.map((_, index) => modelAudio(lesson.id, index, course.language, teaching.audioMode))
         for (const audio of [p.listening.audio, p.receptionRetry?.listening.audio, p.diagnostic?.listening.audio,
           ...p.vocabulary.map((item) => item.audio), ...models]) {
           if (audio?.kind === 'recording') expect(existsSync(`src/content${audio.src}`), audio.src).toBe(true)
@@ -313,7 +313,7 @@ describe('Learning Experience v1 learner scenarios', () => {
       .map(({ exercise }) => [exercise.id, 'Bilmiyorum']))
     let state = start(course, placementErrors)
     state = { ...state, profile: { ...state.profile, days: [1, 2, 3, 4, 5], minutes: 5, target: 'C1' } }
-    const beginnerOnlyEnglish = new Set(['en.rebook', 'en.detour', 'en.symptoms', 'en.appointment', 'en.invite', 'en.host', 'en.instructions'])
+    const beginnerOnlyEnglish = new Set(['en.rebook', 'en.detour', 'en.symptoms', 'en.appointment', 'en.invite', 'en.host', 'en.instructions', 'en.make-it-up'])
     const route = course.unit.lessons.filter(({ id, objective }) => objective.level !== 'C2' &&
       (course.language !== 'en' || (objective.level !== 'A1' && !beginnerOnlyEnglish.has(id))))
     const learningDays = new Set<string>()
@@ -322,8 +322,10 @@ describe('Learning Experience v1 learner scenarios', () => {
       const now = new Date(Date.parse(at) + day * 86_400_000).toISOString()
       for (let block = 0; block < 10; block++) {
         const plan = dailyPlan(state, course, now, 'Europe/Istanbul')
-        if (plan.kind === 'complete') {
-          routeEnd = route.every((lesson) => masteryFor(state, lesson).status === 'retained')
+        // Vocabulary reviews continue even after all lesson stages on the route are complete.
+        if (route.every((lesson) => masteryFor(state, lesson).status === 'retained') &&
+            dailyPlan(state, course, now, 'Europe/Istanbul', false).kind === 'complete') {
+          routeEnd = true
           break
         }
         if (plan.kind === 'out_of_scope' || plan.kind === 'budget' || plan.kind === 'rest') break
@@ -349,6 +351,7 @@ describe('Learning Experience v1 learner scenarios', () => {
     }
     expect(routeEnd, JSON.stringify({ learningDays: learningDays.size, statuses: course.unit.lessons.map((lesson) => [lesson.id, masteryFor(state, lesson).status]), tail: state.activity.slice(-5), phases: state.attempts.slice(-8).map(({ context, exerciseId }) => [context, exerciseId]) })).toBe(true)
     expect(learningDays.size).toBeGreaterThanOrEqual(40)
+    expect(state.reviewHistory.length).toBeGreaterThan(0)
     expect(state.speakingAssessments).toHaveLength(0)
     expect(state.attempts.filter(({ context }) => context === 'revision')).toHaveLength(route.length)
   }, 30_000)

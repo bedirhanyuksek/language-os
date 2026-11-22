@@ -26,6 +26,7 @@ const lesson = z.strictObject({
   id: z.string().regex(/^(en|ru|es)\.[a-z][a-z0-9-]+$/),
   outcome: z.string().regex(/^(A1|A2|B1|B2|C1|C2)\.[a-z][a-z0-9-]+$/),
   level: levelSchema, prerequisite: z.array(line).min(1), title: line, objective: line,
+  audioMode: teachingSchema.shape.audioMode,
   grammarStrands: z.array(line).max(2),
   situation: line, bridge: line,
   models: z.tuple([teachingSchema.shape.models.element, teachingSchema.shape.models.element]),

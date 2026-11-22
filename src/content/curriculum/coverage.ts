@@ -16,13 +16,13 @@ type Strand = {
 }
 const goals: Record<Language, Record<Band, Strand>> = {
   es: {
-    A1: { function: 'Selamlaş, kendini ve aileyi tanıt, rutin ve fiyat anlat, kafede sipariş ver',
+    A1: { function: 'Selamlaş, kendini ve aileyi tanıt, rutin ve fiyat anlat, kafede sipariş ver, adı tekrarlat',
       grammar: 'me llamo, ser/estar, sayılar, mi/mis, tener, düzenli presente, con/sin',
       vocabulary: 'selam, kişi, aile, sayı ve fiyat, rutin, içecek', reading: 'kısa tanışma, fiyat listesi ve sipariş',
       listening: 'açık ad, fiyat ve tercih; yerel cihaz sesi gerekir', writing: 'kısa profil ve sipariş',
       speaking: 'tanış, günlük rutin ve sipariş konuş', pronunciation: 'beş ünlü, sessiz h, ñ, yazılı vurgu ve soru işaretleri',
       check: 'Yeni kişi ve fiyatlarla bağımsız görev; en az 24 saat sonra farklı bağlam' },
-    A2: { function: 'Yol sor ve tarif et, beğenilerini ve bugün yapılan işleri anlat',
+    A2: { function: 'Yol sor ve tarif et, beğenilerini ve bugün yapılan işleri anlat, buluşma saatini değiştir',
       grammar: 'dónde/estar, del, yön kalıpları, gusta/gustan, haber + participio',
       vocabulary: 'yerler ve yön, beğeni ve etkinlik, hoy/ya/todavía no', reading: 'kısa yol tarifi ve kişisel not',
       listening: 'dönüş, tercih ve tamamlanan iş; yerel cihaz sesi gerekir', writing: 'yön tarifi, beğeni ve bugünkü işler',

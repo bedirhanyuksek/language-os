@@ -7,6 +7,7 @@ import type { Exercise } from './schema'
 const text = z.string().trim().min(1).max(1000)
 export const teachingSchema = z.strictObject({
   situation: text,
+  audioMode: z.literal('device-synthesis').optional(),
   approach: z.enum(['contrast', 'dialogue', 'decoding', 'sequence']),
   models: z.array(z.strictObject({ phrase: text, explanation: text })).min(2),
   bridge: text,
@@ -25,8 +26,9 @@ export function modelRecording(lessonId: string, index: number, language: Langua
     source: 'https://github.com/espeak-ng/espeak-ng', locale: audioLocales[language], synthetic: true }
 }
 
-export function modelAudio(lessonId: string, index: number, language: Language): ListeningActivity['audio'] {
-  return modelRecording(lessonId, index, language)
+export function modelAudio(lessonId: string, index: number, language: Language, mode?: Teaching['audioMode']): ListeningActivity['audio'] {
+  return mode === 'device-synthesis' ? { kind: 'synthesis', locale: audioLocales[language], rate: 0.9 }
+    : modelRecording(lessonId, index, language)
 }
 
 export const guidedAlternatives: Record<string, Exercise> = {

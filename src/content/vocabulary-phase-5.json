@@ -1,0 +1,590 @@
+[
+  {
+    "id": "en.platform-check.1",
+    "language": "en",
+    "lemma": "platform",
+    "partOfSpeech": "noun",
+    "band": "A1",
+    "meaning": "peron",
+    "example": "The train leaves from platform four.",
+    "usage": "From platform ten, trenin kalktığı peronu belirtir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.platform-check.word.1",
+        "lessonId": "en.platform-check",
+        "objectiveId": "en.platform-check.objective",
+        "band": "A1",
+        "assessmentRevision": "5be8670f"
+      }
+    ]
+  },
+  {
+    "id": "en.platform-check.2",
+    "language": "en",
+    "lemma": "departure board",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "kalkış panosu",
+    "example": "Look at the departure board for your train.",
+    "usage": "Kalkacak trenlerin saat ve peronlarını gösterir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.platform-check.word.2",
+        "lessonId": "en.platform-check",
+        "objectiveId": "en.platform-check.objective",
+        "band": "A1",
+        "assessmentRevision": "bea8b91e"
+      }
+    ]
+  },
+  {
+    "id": "en.make-it-up.1",
+    "language": "en",
+    "lemma": "rain check",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "teklifi başka zamana bırakma",
+    "example": "Can I take a rain check on dinner?",
+    "usage": "Gündelik kullanımda teklifi şimdi kabul edemediğini ve başka zaman istediğini söyler.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.make-it-up.word.1",
+        "lessonId": "en.make-it-up",
+        "objectiveId": "en.make-it-up.objective",
+        "band": "A2",
+        "assessmentRevision": "9c688a88"
+      }
+    ]
+  },
+  {
+    "id": "en.make-it-up.2",
+    "language": "en",
+    "lemma": "make it",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "planlanan buluşmaya gelebilmek",
+    "example": "I can make it on Tuesday after work.",
+    "usage": "Burada make it, bir yere yetişebilmek veya bir plana katılabilmektir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.make-it-up.word.2",
+        "lessonId": "en.make-it-up",
+        "objectiveId": "en.make-it-up.objective",
+        "band": "A2",
+        "assessmentRevision": "235fec3d"
+      }
+    ]
+  },
+  {
+    "id": "en.lost-property.1",
+    "language": "en",
+    "lemma": "identifying mark",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "ayırt edici işaret",
+    "example": "The scratch is an identifying mark on the camera.",
+    "usage": "Bir eşyanın benzerlerinden ayrılmasını sağlayan ayrıntıyı anlatır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.lost-property.word.1",
+        "lessonId": "en.lost-property",
+        "objectiveId": "en.lost-property.objective",
+        "band": "B1",
+        "assessmentRevision": "dbd14761"
+      }
+    ]
+  },
+  {
+    "id": "en.lost-property.2",
+    "language": "en",
+    "lemma": "hand in",
+    "partOfSpeech": "phrasal verb",
+    "band": "B1",
+    "meaning": "bulunan eşyayı yetkiliye teslim etmek",
+    "example": "Please hand in any found keys at reception.",
+    "usage": "Bir görevliye veya kuruma teslim anlamında hand it in da kullanılır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.lost-property.word.2",
+        "lessonId": "en.lost-property",
+        "objectiveId": "en.lost-property.objective",
+        "band": "B1",
+        "assessmentRevision": "bb5df510"
+      }
+    ]
+  },
+  {
+    "id": "en.consumer-terms.1",
+    "language": "en",
+    "lemma": "cooling-off period",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "karardan cayma süresi",
+    "example": "The policy gives new members a short cooling-off period.",
+    "usage": "Bazı sözleşmelerde ilk kararın geri alınabildiği süreyi anlatır; haklar sözleşme ve ülkeye göre değişebilir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.consumer-terms.word.1",
+        "lessonId": "en.consumer-terms",
+        "objectiveId": "en.consumer-terms.objective",
+        "band": "B2",
+        "assessmentRevision": "930535a3"
+      }
+    ]
+  },
+  {
+    "id": "en.consumer-terms.2",
+    "language": "en",
+    "lemma": "waive a fee",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "bir ücreti almaktan vazgeçmek",
+    "example": "The centre agreed to waive a fee after the booking error.",
+    "usage": "Waive, talep edilebilen bir ücreti almamayı seçmek anlamına gelir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.consumer-terms.word.2",
+        "lessonId": "en.consumer-terms",
+        "objectiveId": "en.consumer-terms.objective",
+        "band": "B2",
+        "assessmentRevision": "895be848"
+      }
+    ]
+  },
+  {
+    "id": "en.research-briefing.1",
+    "language": "en",
+    "lemma": "proxy measure",
+    "partOfSpeech": "noun phrase",
+    "band": "C1",
+    "meaning": "dolaylı gösterge",
+    "example": "Attendance was used as a proxy measure for engagement.",
+    "usage": "Asıl sonucu doğrudan ölçmeyince yerine kullanılan gösterge; bağlantısı sınanmalıdır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.research-briefing.word.1",
+        "lessonId": "en.research-briefing",
+        "objectiveId": "en.research-briefing.objective",
+        "band": "C1",
+        "assessmentRevision": "142ec7ea"
+      }
+    ]
+  },
+  {
+    "id": "en.research-briefing.2",
+    "language": "en",
+    "lemma": "rule out an explanation",
+    "partOfSpeech": "verb phrase",
+    "band": "C1",
+    "meaning": "bir açıklamayı geçersiz kılmak",
+    "example": "The log cannot rule out an explanation based on earlier access.",
+    "usage": "Rule out, bir olasılığın elenmesine yetecek dayanak bulunduğunu ifade eder.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.research-briefing.word.2",
+        "lessonId": "en.research-briefing",
+        "objectiveId": "en.research-briefing.objective",
+        "band": "C1",
+        "assessmentRevision": "409af63e"
+      }
+    ]
+  },
+  {
+    "id": "en.access-negotiation.1",
+    "language": "en",
+    "lemma": "operational readiness",
+    "partOfSpeech": "noun phrase",
+    "band": "C2",
+    "meaning": "bir sistemin çalışmaya hazırlığı",
+    "example": "The inspection confirmed operational readiness, but nobody tested the service with a full audience.",
+    "usage": "Bileşenlerin çalışmaya hazır olduğuna ilişkin teknik görüşü belirtir. Kullanıcı deneyimi ayrı bir ölçüm olabilir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.access-negotiation.word.1",
+        "lessonId": "en.access-negotiation",
+        "objectiveId": "en.access-negotiation.objective",
+        "band": "C2",
+        "assessmentRevision": "68888898"
+      }
+    ]
+  },
+  {
+    "id": "en.access-negotiation.2",
+    "language": "en",
+    "lemma": "overstate a claim",
+    "partOfSpeech": "verb phrase",
+    "band": "C2",
+    "meaning": "bir iddianın kapsamını abartmak",
+    "example": "The headline overstated the claim by extending it to every seat.",
+    "usage": "Dayanağın kapsamadığı bir sonucu kesin veya daha geniş göstermektir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.access-negotiation.word.2",
+        "lessonId": "en.access-negotiation",
+        "objectiveId": "en.access-negotiation.objective",
+        "band": "C2",
+        "assessmentRevision": "1850633d"
+      }
+    ]
+  },
+  {
+    "id": "ru.daily-mood.1",
+    "language": "ru",
+    "lemma": "холодно",
+    "partOfSpeech": "предикатив",
+    "band": "A1",
+    "meaning": "soğuk hissetmek",
+    "example": "Мне холодно в парке.",
+    "usage": "Düzeltme için sıcaklık duyumunu anlatırken kişi мне ile verilir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.daily-mood.word.1",
+        "lessonId": "ru.daily-mood",
+        "objectiveId": "ru.daily-mood.objective",
+        "band": "A1",
+        "assessmentRevision": "74c523ba"
+      }
+    ]
+  },
+  {
+    "id": "ru.daily-mood.2",
+    "language": "ru",
+    "lemma": "нормально",
+    "partOfSpeech": "наречие",
+    "band": "A1",
+    "meaning": "fena değil, normal",
+    "example": "У меня всё нормально.",
+    "usage": "Как дела? sorusuna nötr gündelik cevaptır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.daily-mood.word.2",
+        "lessonId": "ru.daily-mood",
+        "objectiveId": "ru.daily-mood.objective",
+        "band": "A1",
+        "assessmentRevision": "9c43d4b2"
+      }
+    ]
+  },
+  {
+    "id": "ru.missed-meeting.1",
+    "language": "ru",
+    "lemma": "опаздывать",
+    "partOfSpeech": "глагол",
+    "band": "A2",
+    "meaning": "geç kalmak",
+    "example": "Я опаздываю на встречу.",
+    "usage": "Опаздывать на + etkinlik, o etkinliğe zamanında yetişememektir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.missed-meeting.word.1",
+        "lessonId": "ru.missed-meeting",
+        "objectiveId": "ru.missed-meeting.objective",
+        "band": "A2",
+        "assessmentRevision": "7d7d0b1f"
+      }
+    ]
+  },
+  {
+    "id": "ru.missed-meeting.2",
+    "language": "ru",
+    "lemma": "перенести",
+    "partOfSpeech": "глагол",
+    "band": "A2",
+    "meaning": "buluşmayı başka zamana almak",
+    "example": "Можно перенести встречу на завтра?",
+    "usage": "Перенести … на + zaman, etkinliği yeni zamana almayı ifade eder.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.missed-meeting.word.2",
+        "lessonId": "ru.missed-meeting",
+        "objectiveId": "ru.missed-meeting.objective",
+        "band": "A2",
+        "assessmentRevision": "3bfb0d11"
+      }
+    ]
+  },
+  {
+    "id": "ru.shared-courtyard.1",
+    "language": "ru",
+    "lemma": "тихий час",
+    "partOfSpeech": "словосочетание",
+    "band": "B1",
+    "meaning": "belirli bir sessizlik saati",
+    "example": "В доме есть тихий час.",
+    "usage": "Belirli saatlerde gürültüyü azaltma uygulamasını ifade edebilir. Küçük çocuklar için dinlenme saati anlamı da var.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.shared-courtyard.word.1",
+        "lessonId": "ru.shared-courtyard",
+        "objectiveId": "ru.shared-courtyard.objective",
+        "band": "B1",
+        "assessmentRevision": "aa2dd48a"
+      }
+    ]
+  },
+  {
+    "id": "ru.shared-courtyard.2",
+    "language": "ru",
+    "lemma": "проход",
+    "partOfSpeech": "существительное",
+    "band": "B1",
+    "meaning": "geçiş yolu",
+    "example": "Оставьте проход свободным.",
+    "usage": "Проход burada insanların geçtiği fiziksel alanı anlatır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.shared-courtyard.word.2",
+        "lessonId": "ru.shared-courtyard",
+        "objectiveId": "ru.shared-courtyard.objective",
+        "band": "B1",
+        "assessmentRevision": "2f26efae"
+      }
+    ]
+  },
+  {
+    "id": "ru.street-lighting.1",
+    "language": "ru",
+    "lemma": "пробный период",
+    "partOfSpeech": "словосочетание",
+    "band": "B2",
+    "meaning": "deneme dönemi",
+    "example": "Пробный период продлится месяц.",
+    "usage": "Kalıcı karardan önce koşulların sınandığı belirli süreyi anlatır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.street-lighting.word.1",
+        "lessonId": "ru.street-lighting",
+        "objectiveId": "ru.street-lighting.objective",
+        "band": "B2",
+        "assessmentRevision": "e2f2b586"
+      }
+    ]
+  },
+  {
+    "id": "ru.street-lighting.2",
+    "language": "ru",
+    "lemma": "шаткий аргумент",
+    "partOfSpeech": "словосочетание",
+    "band": "B2",
+    "meaning": "dayanağı zayıf sav",
+    "example": "Одно наблюдение — шаткий аргумент.",
+    "usage": "Шаткий burada fiziksel sallantı değil, güvenilmez dayanak anlamında.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.street-lighting.word.2",
+        "lessonId": "ru.street-lighting",
+        "objectiveId": "ru.street-lighting.objective",
+        "band": "B2",
+        "assessmentRevision": "50e3d4b6"
+      }
+    ]
+  },
+  {
+    "id": "ru.conditional-agreement.1",
+    "language": "ru",
+    "lemma": "идти на уступку",
+    "partOfSpeech": "глагольное словосочетание",
+    "band": "C1",
+    "meaning": "ödün vermek",
+    "example": "Мы готовы идти на уступку по срокам.",
+    "usage": "Bir tarafın önceki talebini karşılıklı ilerleme için yumuşatmasını anlatır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.conditional-agreement.word.1",
+        "lessonId": "ru.conditional-agreement",
+        "objectiveId": "ru.conditional-agreement.objective",
+        "band": "C1",
+        "assessmentRevision": "a8291793"
+      }
+    ]
+  },
+  {
+    "id": "ru.conditional-agreement.2",
+    "language": "ru",
+    "lemma": "оговорка",
+    "partOfSpeech": "существительное",
+    "band": "C1",
+    "meaning": "belirtilen çekince veya istisna",
+    "example": "В договоре есть оговорка о проверке.",
+    "usage": "Burada söylerken yapılan hata değil, kararı sınırlandıran kayıt anlamındadır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.conditional-agreement.word.2",
+        "lessonId": "ru.conditional-agreement",
+        "objectiveId": "ru.conditional-agreement.objective",
+        "band": "C1",
+        "assessmentRevision": "fc6c271d"
+      }
+    ]
+  },
+  {
+    "id": "ru.community-names.1",
+    "language": "ru",
+    "lemma": "приписывать единодушие",
+    "partOfSpeech": "глагольное словосочетание",
+    "band": "C2",
+    "meaning": "oybirliğini başkalarına atfetmek",
+    "example": "Не стоит приписывать единодушие всего сообщества по одному письму.",
+    "usage": "Kanıtın izin vermediği bir ortak görüş atfetmek anlamında kullanılır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.community-names.word.1",
+        "lessonId": "ru.community-names",
+        "objectiveId": "ru.community-names.objective",
+        "band": "C2",
+        "assessmentRevision": "c7be2955"
+      }
+    ]
+  },
+  {
+    "id": "ru.community-names.2",
+    "language": "ru",
+    "lemma": "зафиксировать оговорку",
+    "partOfSpeech": "глагольное словосочетание",
+    "band": "C2",
+    "meaning": "bir çekinceyi kayda geçirmek",
+    "example": "Просили зафиксировать оговорку в протоколе.",
+    "usage": "Kararı sınırlayan koşul veya çekinceyi gelecekte görülebilir hâle getirmektir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.community-names.word.2",
+        "lessonId": "ru.community-names",
+        "objectiveId": "ru.community-names.objective",
+        "band": "C2",
+        "assessmentRevision": "669e8b50"
+      }
+    ]
+  },
+  {
+    "id": "es.repetir.1",
+    "language": "es",
+    "lemma": "apellido",
+    "partOfSpeech": "sustantivo",
+    "band": "A1",
+    "meaning": "soyadı",
+    "example": "Mi apellido es Lara.",
+    "usage": "Nombre addır, apellido soyaddır.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.repetir.word.1",
+        "lessonId": "es.repetir",
+        "objectiveId": "es.repetir.objective",
+        "band": "A1",
+        "assessmentRevision": "c148c0bd"
+      }
+    ]
+  },
+  {
+    "id": "es.repetir.2",
+    "language": "es",
+    "lemma": "deletrear",
+    "partOfSpeech": "verbo",
+    "band": "A1",
+    "meaning": "harf harf söylemek",
+    "example": "¿Puedes deletrear tu nombre?",
+    "usage": "Deletrear adın seslerini değil, harf adlarını sırayla söylemektir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.repetir.word.2",
+        "lessonId": "es.repetir",
+        "objectiveId": "es.repetir.objective",
+        "band": "A1",
+        "assessmentRevision": "6dcaa1e6"
+      }
+    ]
+  },
+  {
+    "id": "es.cambiar-plan.1",
+    "language": "es",
+    "lemma": "quedar",
+    "partOfSpeech": "verbo",
+    "band": "A2",
+    "meaning": "biriyle buluşmak üzere anlaşmak",
+    "example": "He quedado con Leo para cenar.",
+    "usage": "Quedar con + kişi, buluşma planı yapmak anlamına gelir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.cambiar-plan.word.1",
+        "lessonId": "es.cambiar-plan",
+        "objectiveId": "es.cambiar-plan.objective",
+        "band": "A2",
+        "assessmentRevision": "dcf72ba"
+      }
+    ]
+  },
+  {
+    "id": "es.cambiar-plan.2",
+    "language": "es",
+    "lemma": "venir bien",
+    "partOfSpeech": "locución verbal",
+    "band": "A2",
+    "meaning": "uygun olmak",
+    "example": "El jueves me viene bien.",
+    "usage": "Me kime uygun olduğunu, el jueves uygun olan zamanı belirtir.",
+    "revision": 1,
+    "change": "Phase 5 ilk içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.cambiar-plan.word.2",
+        "lessonId": "es.cambiar-plan",
+        "objectiveId": "es.cambiar-plan.objective",
+        "band": "A2",
+        "assessmentRevision": "67a37113"
+      }
+    ]
+  }
+]

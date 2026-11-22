@@ -302,7 +302,20 @@ test.each(Object.values(catalog))('$language beginner reaches the end of the ava
   expect(exhausted).toBe(true)
   const routePack = packedLessons.filter(({ language, entry }) => language === course.language && ['A1', 'A2'].includes(entry.level))
   expect(reached.size).toBe({ en: 11, ru: 12, es: 9 }[course.language] + routePack.length)
-  for (const { entry } of routePack) expect(reached.has(entry.id), entry.id).toBe(true)
+  for (const { entry, lesson } of routePack) {
+    expect(reached.has(entry.id), entry.id).toBe(true)
+    if (entry.audioMode !== 'device-synthesis') continue
+    const attempts = state.attempts.filter(({ lessonId }) => lessonId === lesson.id)
+    const transfer = attempts.find(({ context }) => context === 'transfer')!
+    const delayed = attempts.find(({ context }) => context === 'delayed')!
+    expect(Date.parse(delayed.at) - Date.parse(transfer.at), lesson.id).toBeGreaterThanOrEqual(day)
+    expect(delayed.exerciseId, lesson.id).not.toBe(transfer.exerciseId)
+    expect(attempts.find(({ exerciseId }) => exerciseId === lesson.production.id)?.evidence.outcome)
+      .toBe('review_required')
+    for (const { id } of lesson.vocabulary) {
+      expect(state.reviews.some(({ cardId }) => cardId === id), id).toBe(true)
+    }
+  }
   expect(reached.has({ en: 'en.host', ru: 'ru.housing', es: 'es.perfect' }[course.language])).toBe(true)
   expect(phases).toEqual(['draft', 'instruction', 'listening', 'reading', 'revision', 'transfer', 'vocabulary'])
   expect(parseBackup(exportBackup(state))).toEqual(state)

@@ -1,10 +1,14 @@
 import { createHash } from 'node:crypto'
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { expect, test } from 'vitest'
 import { catalog } from '../src/content/catalog'
 import { additionsFor, loadPacks, packedLessons } from '../src/content/curriculum/packs'
 import { outcomesFor } from '../src/content/curriculum/inventory'
-import { modelRecording } from '../src/content/teaching'
+import { audioMaterials } from '../scripts/curriculum-audio-inventory'
+import { planCurriculumTts } from '../scripts/curriculum-tts.mjs'
+import pronunciation from '../scripts/curriculum-tts-pronunciation.json'
+import { vocabularyIndex } from '../src/content/vocabulary'
+import { modelAudio } from '../src/content/teaching'
 import { assess } from '../src/domain/assessment'
 import { pedagogyExercises } from '../src/content/schema'
 
@@ -103,10 +107,14 @@ test('every packed lesson has an inventory binding, stage evidence, source ancho
       [p.listening.audio, entry.input.transcript],
       [p.receptionRetry!.listening.audio, entry.retry.transcript],
       ...p.vocabulary.map(({ audio }, index) => [audio, lesson.vocabulary[index].example] as const),
-      ...entry.models.map(({ phrase }, index) => [modelRecording(lesson.id, index, language), phrase] as const),
+      ...entry.models.map(({ phrase }, index) => [modelAudio(lesson.id, index, language, lesson.teaching?.audioMode), phrase] as const),
     ] as const
     for (const [audio, phrase] of clips) {
-      expect(audio?.kind, lesson.id).toBe('recording')
+      const device = entry.audioMode === 'device-synthesis'
+      expect(audio?.kind, lesson.id).toBe(device ? 'synthesis' : 'recording')
+      if (device && audio?.kind === 'synthesis') {
+        expect(audio.locale.split('-')[0]).toBe(language)
+      }
       if (audio?.kind === 'recording') {
         const options = ['-b', '1', '-v', { en: 'en-us', ru: 'ru', es: 'es' }[language], '-s', language === 'en' ? '153' : '140']
         const hash = createHash('sha256').update(JSON.stringify([options, phrase])).digest('hex')
@@ -121,5 +129,31 @@ test('every packed lesson has an inventory binding, stage evidence, source ancho
       packedGenres: packedLessons.map(({ entry }) => ({ id: entry.id, genres: entry.genres,
         words: [wordCount(entry.input.text), wordCount(entry.input.transcript), wordCount(entry.writing.sample)] })),
     }))
+  }
+})
+
+test('Phase 5 adds explicit senses and complete TTS work without packaging unreviewed audio', () => {
+  const materials = Object.values(catalog).flatMap(audioMaterials)
+  const phase5 = packedLessons.filter(({ entry }) => entry.audioMode === 'device-synthesis')
+  expect(Object.fromEntries(Object.keys(catalog).map((language) => [language,
+    phase5.filter((item) => item.language === language).map(({ entry }) => entry.level)])))
+    .toEqual({ en: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], ru: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], es: ['A1', 'A2'] })
+  for (const { language, lesson } of phase5) {
+    const jobs = planCurriculumTts(materials.filter(({ lessonId }) => lessonId === lesson.id), pronunciation)
+    expect(jobs).toHaveLength(4 + lesson.vocabulary.length * 2)
+    for (const job of jobs) {
+      expect(job.blocked, job.id).toBeUndefined()
+      expect(job.bundledFile, job.id).toBeUndefined()
+      expect(existsSync(`src/content/audio/${job.id}.mp3`), job.id).toBe(false)
+      if (language === 'ru') {
+        expect(pronunciation).toHaveProperty([job.id])
+        expect(job.segments?.some(({ input }) => input?.includes('+')), job.id).toBe(true)
+      }
+    }
+    for (const card of lesson.vocabulary) {
+      const word = vocabularyIndex(catalog[language]).get(card.id)
+      expect(word?.sense?.links[0]).toMatchObject({ cardId: card.id, objectiveId: lesson.objective.id, band: lesson.objective.level })
+      expect(jobs.filter(({ senseId }) => senseId === word?.senseId)).toHaveLength(2)
+    }
   }
 })

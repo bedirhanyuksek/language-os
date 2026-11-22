@@ -1,0 +1,1438 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.daily-mood",
+      "outcome": "A1.feelings",
+      "level": "A1",
+      "prerequisite": [
+        "ru.family"
+      ],
+      "title": "Bugün nasıl hissettiğini söyle",
+      "objective": "Как дела? sorusuna kısa cevap ver, kişinin durumuyla ilgili temel soruyu anla ve karşılık ver.",
+      "audioMode": "device-synthesis",
+      "grammarStrands": [
+        "Мне + durum",
+        "Как у тебя дела?"
+      ],
+      "situation": "Aileden birini görüyorsun. Kısaca nasıl olduğunu söyle ve ona da sor.",
+      "bridge": "Durum için мне, karşındakine sorarken у тебя kalıbını kullan.",
+      "models": [
+        {
+          "phrase": "Мне хорошо.",
+          "explanation": "Мне burada kişinin durumunu bildirir. Хорошо değişmez; sıfat gibi cinsiyete göre çekilmez."
+        },
+        {
+          "phrase": "Как у тебя дела?",
+          "explanation": "Tanıdık bir kişiye у тебя ile sor. У вас kibar hitap veya çoğul içindir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Durumu deneyimleyen kişi",
+          "incorrect": "Я холодно.",
+          "correct": "Мне холодно.",
+          "explanation": "Холодно ve тепло ile durumu yaşayan kişiyi мне veya ему gibi yönelme biçimiyle göster.",
+          "guided": [
+            [
+              "Ben üşüyorum: ___ холодно.",
+              "Мне"
+            ],
+            [
+              "O erkek, ona sıcak: ___ тепло.",
+              "Ему"
+            ]
+          ],
+          "transfer": [
+            [
+              "Sen üşüyor musun? ___ холодно? (ты)",
+              "Тебе"
+            ],
+            [
+              "Kadın için sıcak. ___ тепло. (она)",
+              "Ей"
+            ]
+          ],
+          "delayed": [
+            [
+              "Biz üşüyoruz. ___ холодно. (мы)",
+              "Нам"
+            ],
+            [
+              "Onlar için sıcak. ___ тепло. (они)",
+              "Им"
+            ]
+          ]
+        },
+        {
+          "label": "Tanıdık birine hâlini sor",
+          "incorrect": "Как ты дела?",
+          "correct": "Как у тебя дела?",
+          "explanation": "У тебя, как … дела sorusunda tekil samimi hitaptır. Bir kişi adı veya мама gibi bir ad kullanırsan у + tamlayan gelir: мама → мамы, Лена → Лены.",
+          "guided": [
+            [
+              "Привет, как у ___ дела сегодня? (ты)",
+              "тебя"
+            ],
+            [
+              "Скажите, как у ___ дела? (вы)",
+              "вас"
+            ]
+          ],
+          "transfer": [
+            [
+              "“Annen nasıl?” Как у ___ дела? (мама)",
+              "мамы"
+            ],
+            [
+              "“Arkadaşın Dima nasıl?” Как у ___ дела? (Дима)",
+              "Димы"
+            ]
+          ],
+          "delayed": [
+            [
+              "“Anna nasıl?” Как у ___ дела? (Анна)",
+              "Анны"
+            ],
+            [
+              "Kibar biçimde “Nasılsınız?” de: Как у ___ дела? (вы)",
+              "вас"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "холодно",
+        "meaning": "soğuk hissetmek",
+        "example": "Мне холодно в парке.",
+        "usage": "Düzeltme için sıcaklık duyumunu anlatırken kişi мне ile verilir.",
+        "pronunciation": "хо́лодно",
+        "collocations": [
+          "мне холодно",
+          "тебе холодно"
+        ],
+        "recognize": [
+          "“холодно” bu kullanımda ne anlama geliyor?",
+          "soğuk hissetmek",
+          "karnı aç",
+          "mutlu",
+          "Düzeltme için sıcaklık duyumunu anlatırken kişi мне ile verilir."
+        ],
+        "recall": [
+          "“soğuk hissetmek” anlamındaki hedef ifadeyi yaz.",
+          "холодно"
+        ],
+        "use": "Dışarıda üşüdüğünü söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "нормально",
+          "meaning": "fena değil, normal",
+          "example": "У меня всё нормально.",
+          "usage": "Как дела? sorusuna nötr gündelik cevaptır.",
+          "pronunciation": "норма́льно",
+          "collocations": [
+            "всё нормально",
+            "у меня всё нормально"
+          ],
+          "recognize": [
+            "“нормально” bu kullanımda ne anlama geliyor?",
+            "fena değil, normal",
+            "çok kötü",
+            "çok geç",
+            "Как дела? sorusuna nötr gündelik cevaptır."
+          ],
+          "recall": [
+            "“fena değil, normal” anlamındaki hedef ifadeyi yaz.",
+            "нормально"
+          ],
+          "use": "Tanıdık birine kısa bir durum cevabı ver."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "дома",
+          "cue": "evde"
+        }
+      ],
+      "writing": {
+        "prompt": "Evde olan arkadaşına kısa mesaj yaz. Nasılsın diye sor ve dışarıda üşüdüğünü söyle.",
+        "sample": "Привет! Как у тебя дела? Мне холодно на улице.",
+        "revision": "Arkadaşın yerine öğretmene yazıyor olsaydın hitabı nasıl değiştirirdin?",
+        "criteria": [
+          "Durum anlaşılır biçimde bildirilir.",
+          "Muhataba uygun hitap seçilir."
+        ]
+      },
+      "input": {
+        "text": "Оля: Привет, папа! Как дела?\nПапа: Всё хорошо. Я дома. Мне тепло. А ты?",
+        "reading": [
+          "Baba nerede?",
+          "Evde",
+          "Parkta",
+          "Dükkânda",
+          "Я дома yerini bildirir.",
+          "Я дома."
+        ],
+        "transcript": "— Привет, Лена! Как дела?\n— Нормально. Мне холодно. А у тебя?\n— Мне тепло.",
+        "preparation": "Durum bildiren iki kısa cümleyi ayır.",
+        "main": [
+          "İlk konuşmacı ne soruyor?",
+          "Lena’nın nasıl olduğunu",
+          "Lena’nın adresini",
+          "Lena’nın yaşını",
+          "Как дела? hâlini sorar.",
+          "Как дела?"
+        ],
+        "detail": [
+          "Lena nasıl hissediyor?",
+          "Üşüyor",
+          "Aç",
+          "Sıcak hissediyor",
+          "Мне холодно, üşüdüğünü bildirir.",
+          "Мне холодно."
+        ]
+      },
+      "retry": {
+        "text": "Миша: Как у тебя дела?\nИра: У меня всё хорошо. А тебе тепло?\nМиша: Нет, мне холодно.",
+        "reading": [
+          "Kimin üşüdüğü yazıyor?",
+          "Mişa’nın",
+          "İra’nın",
+          "İkisinin de",
+          "Son cümle Mişa’ya ait.",
+          "Миша: Нет, мне холодно."
+        ],
+        "transcript": "— Как у вас дела?\n— Спасибо, всё хорошо. А у вас?\n— Тоже хорошо.",
+        "preparation": "У вас ve тоже sözcüklerine odaklan.",
+        "main": [
+          "İlk soru hangi hitap biçiminde?",
+          "Kibar veya çoğul",
+          "Tekil samimi",
+          "Üçüncü kişi",
+          "У вас kibar veya çoğul hitaptır.",
+          "Как у вас дела?"
+        ],
+        "detail": [
+          "Son kişi nasıl olduğunu söylüyor?",
+          "O da iyi",
+          "O da üşüyor",
+          "Yorgun",
+          "Тоже хорошо, onun da iyi olduğunu bildirir.",
+          "Тоже хорошо."
+        ]
+      },
+      "readingUse": "Bir durum sorusuna metinden yanıtla.",
+      "listeningUse": "İki kişinin durumunu tek tek aktar.",
+      "speaking": "Bir arkadaşına nasıl olduğunu sor ve kendi durumunu söyle. Karşı taraf üşüdüğünü söylerse kendi durumunla kıyasla.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Kişinin yerini bildiren дома sözcüğünü bul.",
+        "main": "İki kişiyi cevap sırasına göre ayır.",
+        "detail": "Тоже, önceki durumu tekrarlar."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Yer ve hissi ayrı oku.",
+      "genres": {
+        "reading": "Aile mesajı",
+        "listening": "Hâl hatır diyaloğu",
+        "writing": "Gündelik kısa mesaj"
+      }
+    },
+    {
+      "id": "ru.missed-meeting",
+      "outcome": "A2.relationship",
+      "level": "A2",
+      "prerequisite": [
+        "ru.daily-mood",
+        "ru.meeting"
+      ],
+      "title": "Gecikme için özür dile ve yeni zaman öner",
+      "objective": "Bir buluşmaya geç kalınca özür, kısa neden, yeni saat ve teyit bildir.",
+      "audioMode": "device-synthesis",
+      "grammarStrands": [
+        "Извини / извините",
+        "Давай(те) + öneri"
+      ],
+      "situation": "Bir buluşmaya vaktinde gelemiyorsun. Kime yazdığına göre özrü seç, kısa bir alternatif sun.",
+      "bridge": "Özür biçimini hitaba uydur. Alternatif öner ve muhatabın kabul ettiği son zamanı teyit et.",
+      "models": [
+        {
+          "phrase": "Извини, я опаздываю. Автобус ещё не пришёл.",
+          "explanation": "Извини samimi tekil hitap. Опаздываю sürmekte olan gecikmeyi bildirir."
+        },
+        {
+          "phrase": "Давайте встретимся в шесть у входа.",
+          "explanation": "Kibar ya da çoğul hitapta давайте. Встретимся ile birlikte yeni buluşma önerisi olur."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Özrü hitaba uydur",
+          "incorrect": "Извини, Анна Ивановна.",
+          "correct": "Извините, Анна Ивановна.",
+          "explanation": "Arkadaşa извини; kibar hitaba veya birden fazla kişiye извините.",
+          "guided": [
+            [
+              "Mişa’ya: ___, Миша, я опаздываю.",
+              "Извини"
+            ],
+            [
+              "Görevliye: ___, пожалуйста, я не успеваю.",
+              "Извините"
+            ]
+          ],
+          "transfer": [
+            [
+              "Yakın arkadaş Lena’ya: ___, Лена, я забыл ключи.",
+              "Извини"
+            ],
+            [
+              "Öğretmenine: ___, Ирина Петровна, я не смогу прийти.",
+              "Извините"
+            ]
+          ],
+          "delayed": [
+            [
+              "Tek arkadaşına: ___, Паша, я перепутал время.",
+              "Извини"
+            ],
+            [
+              "Birden fazla kişiye: ___, друзья, я задержусь.",
+              "Извините"
+            ]
+          ]
+        },
+        {
+          "label": "Birlikte yapılacak işi öner",
+          "incorrect": "Давайте встретимся к входу.",
+          "correct": "Давайте встретимся у входа.",
+          "explanation": "Встретимся, birlikte buluşma önerir. У + tamlayan sabit buluşma noktasını verir.",
+          "guided": [
+            [
+              "Давай ___ у музея. (встретиться)",
+              "встретимся"
+            ],
+            [
+              "Давайте встретимся ___ школы. (önünde / yanında)",
+              "у"
+            ]
+          ],
+          "transfer": [
+            [
+              "Birlikte karar ver: Давай ___ у вокзала. (встретиться)",
+              "встретимся"
+            ],
+            [
+              "Buluşma yeri: Давайте встретимся у ___. (библиотека)",
+              "библиотеки"
+            ]
+          ],
+          "delayed": [
+            [
+              "Buluşma yeri: Давай встретимся у ___. (парк)",
+              "парка"
+            ],
+            [
+              "Bugünkü yeni öneri: Давайте ___ у метро. (встретиться)",
+              "встретимся"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "опаздывать",
+        "meaning": "geç kalmak",
+        "example": "Я опаздываю на встречу.",
+        "usage": "Опаздывать на + etkinlik, o etkinliğe zamanında yetişememektir.",
+        "pronunciation": "опа́здывать",
+        "collocations": [
+          "опаздывать на встречу",
+          "опаздывать на урок"
+        ],
+        "recognize": [
+          "“опаздывать” bu kullanımda ne anlama geliyor?",
+          "geç kalmak",
+          "erken ayrılmak",
+          "toplantıyı yönetmek",
+          "Опаздывать на + etkinlik, o etkinliğe zamanında yetişememektir."
+        ],
+        "recall": [
+          "“geç kalmak” anlamındaki hedef ifadeyi yaz.",
+          "опаздывать"
+        ],
+        "use": "Hangi buluşmaya geç kaldığını yaz."
+      },
+      "additionalWords": [
+        {
+          "term": "перенести встречу",
+          "meaning": "buluşmayı başka zamana almak",
+          "example": "Можно перенести встречу на завтра?",
+          "usage": "Перенести … на + zaman, etkinliği yeni zamana almayı ifade eder.",
+          "pronunciation": "перенести́ встре́чу",
+          "collocations": [
+            "перенести встречу на завтра",
+            "перенести встречу на пятницу"
+          ],
+          "recognize": [
+            "“перенести встречу” bu kullanımda ne anlama geliyor?",
+            "buluşmayı başka zamana almak",
+            "buluşmayı bitirmek",
+            "birlikte yolculuk etmek",
+            "Перенести … на + zaman, etkinliği yeni zamana almayı ifade eder."
+          ],
+          "recall": [
+            "“buluşmayı başka zamana almak” anlamındaki hedef ifadeyi yaz.",
+            "перенести встречу"
+          ],
+          "use": "Yeni bir gün önererek buluşmayı değiştirmeyi iste."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "задерживается",
+          "cue": "gecikiyor"
+        }
+      ],
+      "writing": {
+        "prompt": "Öğretmeninle 14.00’te buluşacaktın; otobüs gecikti. Öğretmenin 15.00’e kadar boş. Özür, gerekçe ve yeni saatle kısa mesaj yaz.",
+        "sample": "Извините, я опаздываю. Автобус ещё не пришёл. Давайте встретимся в половине третьего у школы. Вам удобно?",
+        "revision": "Kibar hitabı ve öğretmenin boş olduğu süreden önce bir saat seçtiğini denetle.",
+        "criteria": [
+          "Özür muhataba uygun.",
+          "Öneri ilk engeli ve son zamanı netleştirir."
+        ]
+      },
+      "input": {
+        "text": "Маша: Извини, поезд задерживается. В пять не успею.\nДенис: В шесть могу. В семь у меня урок.\nМаша: Тогда давай встретимся в шесть у театра.",
+        "reading": [
+          "Son plan ne?",
+          "Altıda tiyatronun önünde",
+          "Beşte tren istasyonunda",
+          "Yedide derste",
+          "Денис altıda uygun, Маша yeri seçiyor.",
+          "в шесть у театра"
+        ],
+        "transcript": "— Извините, я опаздываю на встречу.\n— Ничего. Я могу подождать до шести.\n— Тогда давайте встретимся в половине шестого у музея.\n— Хорошо, жду у входа.",
+        "preparation": "Son öneriyi bekleme sınırından ayır.",
+        "main": [
+          "Konuşmacılar neyi kararlaştırıyor?",
+          "Buluşmanın yeni saatini ve yerini",
+          "Bir sonraki trenin ücretini",
+          "Müzenin tatil gününü",
+          "Son iki replik yeni saati ve yeri kesinleştiriyor.",
+          "у музея"
+        ],
+        "detail": [
+          "Saat kaçta buluşacaklar?",
+          "17.30",
+          "18.30",
+          "18.00",
+          "Половина шестого, altıncı saate yarım, yani 17.30 demek.",
+          "в половине шестого"
+        ]
+      },
+      "retry": {
+        "text": "Извини, я не успеваю к восьми. Давай встретимся в девять у школы. Если не можешь, перенесём встречу на завтра.",
+        "reading": [
+          "Bugün için önerilen seçenek nedir?",
+          "Dokuzda okul yanında",
+          "Sekizde istasyonda",
+          "Yarın dokuzda okul yanında",
+          "Yarın ancak bugün uygun olmazsa.",
+          "в девять у школы"
+        ],
+        "transcript": "— У тебя есть время в среду? Я перепутала день.\n— Есть, но только утром.\n— Тогда встретимся в десять у банка?\n— Да, до среды.",
+        "preparation": "Только sözcüğünden sonraki zamanı ve son yeri dinle.",
+        "main": [
+          "Son seçenek neden sabah?",
+          "İkinci kişi sadece sabah boş",
+          "Banka akşam ücretsiz",
+          "İlk kişi her gün öğlen çalışıyor",
+          "Только утром kısıt koyar.",
+          "только утром"
+        ],
+        "detail": [
+          "Son seçenek nerede?",
+          "Banka yanında",
+          "Okul önünde",
+          "İstasyon yanında",
+          "У банка, bankanın yanında anlamına gelir.",
+          "у банка"
+        ]
+      },
+      "readingUse": "Kısa bir teyit mesajını hazırla.",
+      "listeningUse": "Bekleme sınırını son plandan ayrı aktar.",
+      "speaking": "Bir arkadaşın beşte buluşmayı öneriyor. O saate yetişemediğini söyle ve altıyı öner. O saat olmazsa bu kez yarın için bir seçenek sor.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Yedi bir engel. Altının neden uygun olduğunu bul.",
+        "main": "İlk kişiden sonra verilen son öneriye dön.",
+        "detail": "У ile başlayan yeri not et."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Önerilerden hangisinin kabul edildiğini ayır.",
+      "genres": {
+        "reading": "Plan değişikliği mesajları",
+        "listening": "Gecikme görüşmesi",
+        "writing": "Özür ve teyit"
+      }
+    },
+    {
+      "id": "ru.shared-courtyard",
+      "outcome": "B1.community",
+      "level": "B1",
+      "prerequisite": [
+        "ru.opinion"
+      ],
+      "title": "Ortak avlu için iki ihtiyacı uzlaştır",
+      "objective": "Mahalle planı için iki ihtiyacı özetle ve uygulanabilir zaman veya yer öner.",
+      "audioMode": "device-synthesis",
+      "grammarStrands": [
+        "С одной стороны / с другой стороны",
+        "Предлагать + чтобы"
+      ],
+      "situation": "Avluda çocuklar oynamak istiyor; bazı komşular akşam dinlenmek istiyor. Tek bir tarafı suçlamadan çözüm öner.",
+      "bridge": "İhtiyaçları karşılaştır. Öneriye yer veya zaman sınırı koy. Karşı tarafın şartını tekrar et.",
+      "models": [
+        {
+          "phrase": "С одной стороны, детям нужно где-то играть. С другой стороны, вечером соседям нужна тишина.",
+          "explanation": "İki kalıp talepleri dengeli biçimde sıralar. Потребность kime aitse onu ayrıca belirt."
+        },
+        {
+          "phrase": "Предлагаю, чтобы дети играли здесь до семи.",
+          "explanation": "Предлагаю, чтобы sonrasında özneyi ve -ли ile biten çoğul biçimi kullan. Bu biçim burada istek bildirir ve geleceğe dönük olabilir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Karşılaştırmanın iki yanı",
+          "incorrect": "С другой стороны, а с другой стороны…",
+          "correct": "С одной стороны, а с другой стороны…",
+          "explanation": "С одной стороны ile ilk görüş, с другой стороны ile diğer görüş açılır.",
+          "guided": [
+            [
+              "İlk tarafı aç: С ___ стороны, площадка нужна детям.",
+              "одной"
+            ],
+            [
+              "Karşı görüşü ver: С ___ стороны, вечером нужен покой.",
+              "другой"
+            ]
+          ],
+          "transfer": [
+            [
+              "İkinci ihtiyaca geç: С ___ стороны, людям нужен свободный проход.",
+              "другой"
+            ],
+            [
+              "İlk gerekçeyi aç: С ___ стороны, в парке мало скамеек.",
+              "одной"
+            ]
+          ],
+          "delayed": [
+            [
+              "Saat uzatma önerisine karşı: С ___ стороны, рядом живут пожилые люди.",
+              "другой"
+            ],
+            [
+              "Tartışmanın ilk yanını aç: С ___ стороны, автобус ходит редко.",
+              "одной"
+            ]
+          ]
+        },
+        {
+          "label": "Öneride özne ve uyum",
+          "incorrect": "Предлагаю, чтобы дети играют до семи.",
+          "correct": "Предлагаю, чтобы дети играли до семи.",
+          "explanation": "Чтобы sonrasında önerilen eylem için geçmiş zamanla aynı biçimde olan dilek kipi kullanılır. Özne çoğulsa -ли.",
+          "guided": [
+            [
+              "Предлагаю, чтобы дети ___ за домом. (играть)",
+              "играли"
+            ],
+            [
+              "Предлагаю, чтобы группа ___ здесь. (ждать)",
+              "ждала"
+            ]
+          ],
+          "transfer": [
+            [
+              "Предлагаю, чтобы рабочие ___ после восьми. (начинать)",
+              "начинали"
+            ],
+            [
+              "Предлагаю, чтобы автобус ___ у ворот. (останавливаться)",
+              "останавливался"
+            ]
+          ],
+          "delayed": [
+            [
+              "Предлагаю, чтобы жители ___ школьный двор. (использовать)",
+              "использовали"
+            ],
+            [
+              "Предлагаю, чтобы площадка ___ в шесть. (закрываться)",
+              "закрывалась"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "тихий час",
+        "meaning": "belirli bir sessizlik saati",
+        "example": "В доме есть тихий час.",
+        "usage": "Belirli saatlerde gürültüyü azaltma uygulamasını ifade edebilir. Küçük çocuklar için dinlenme saati anlamı da var.",
+        "pronunciation": "ти́хий час",
+        "collocations": [
+          "в тихий час",
+          "устроить тихий час"
+        ],
+        "recognize": [
+          "“тихий час” bu kullanımda ne anlama geliyor?",
+          "belirli bir sessizlik saati",
+          "çalışma molası",
+          "otobüs saati",
+          "Belirli saatlerde gürültüyü azaltma uygulamasını ifade edebilir. Küçük çocuklar için dinlenme saati anlamı da var."
+        ],
+        "recall": [
+          "“belirli bir sessizlik saati” anlamındaki hedef ifadeyi yaz.",
+          "тихий час"
+        ],
+        "use": "Avluda sessizliğin başlayacağı bir saat öner."
+      },
+      "additionalWords": [
+        {
+          "term": "проход",
+          "meaning": "geçiş yolu",
+          "example": "Оставьте проход свободным.",
+          "usage": "Проход burada insanların geçtiği fiziksel alanı anlatır.",
+          "pronunciation": "прохо́д",
+          "collocations": [
+            "свободный проход",
+            "оставить проход"
+          ],
+          "recognize": [
+            "“проход” bu kullanımda ne anlama geliyor?",
+            "geçiş yolu",
+            "son toplantı",
+            "giriş ücreti",
+            "Проход burada insanların geçtiği fiziksel alanı anlatır."
+          ],
+          "recall": [
+            "“geçiş yolu” anlamındaki hedef ifadeyi yaz.",
+            "проход"
+          ],
+          "use": "Plana geçiş yolunu koruyan bir şart ekle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "качели",
+          "cue": "salıncak"
+        }
+      ],
+      "writing": {
+        "prompt": "Apartman avlusunda köpekler için yer isteyenler ve açık geçiş isteyenler var. İki tarafı özetle, bir yer öner ve zaman sınırı koy.",
+        "sample": "С одной стороны, жильцам нужно место, где можно гулять с собаками. С другой стороны, у входа нужен свободный проход. Предлагаю, чтобы хозяева гуляли с собаками у дальнего забора до девяти вечера. Подойдёт такой вариант?",
+        "revision": "Önerin geçiş yolunu açık bırakıyor mu? Bir saat ve bir yer ver.",
+        "criteria": [
+          "İki ihtiyaç ayrı ve adil biçimde aktarılır.",
+          "Öneri belirli ve teyide açık."
+        ]
+      },
+      "input": {
+        "text": "Записка жильцов. Детям нужны качели. У дальнего забора есть свободное место, но до него трудно добраться с коляской. У входа дорога ровная. Соседи просят не ставить качели на проходе и не шуметь после восьми.",
+        "reading": [
+          "Neden girişteki yer tek başına çözüm olmayabilir?",
+          "Salıncak geçişi kapatabilir",
+          "Girişte yol eğimli",
+          "Komşular sekizden önce dinleniyor",
+          "Girişte düzgün yol var ama açık geçiş isteniyor.",
+          "не ставить качели на проходе"
+        ],
+        "transcript": "— Мне кажется, дети могут играть у дома.\n— Да, но у входа нужен свободный проход.\n— Тогда поставим столик у забора?\n— Давайте. А после восьми пусть во дворе будет тихо.",
+        "preparation": "Yer ve zamanı ayrı yaz.",
+        "main": [
+          "İkinci konuşmacının yerle ilgili şartı ne?",
+          "Girişte geçişin açık olması",
+          "Masanın kapının önünde olması",
+          "Avlunun tamamen kapanması",
+          "Свободный проход, geçilebilen alan demek.",
+          "у входа нужен свободный проход"
+        ],
+        "detail": [
+          "Sessizlik için hangi saat öneriliyor?",
+          "Sekizden sonra",
+          "Sekizden önce",
+          "Saat altıda",
+          "После восьми, sekizden sonra demek.",
+          "после восьми"
+        ]
+      },
+      "retry": {
+        "text": "В парке две площадки. У дороги слышно машины; у пруда тише. Вечером у пруда нет света. Жители предлагают читать у пруда днём, а вечером перейти на площадку с фонарями.",
+        "reading": [
+          "Akşam hangi öneri var?",
+          "Lambalı alana geçmek",
+          "Gölet kenarında okumak",
+          "Yolun kapatılması",
+          "Akşam ışık gerektiği için yer değişiyor.",
+          "вечером перейти на площадку с фонарями"
+        ],
+        "transcript": "— Возле школы шумно утром.\n— Но в три часа там свободно.\n— Тогда предлагаю встретиться у школы в три.\n— Согласна.",
+        "preparation": "Saat değişikliğini yer değişikliğiyle karıştırma.",
+        "main": [
+          "Neden saat üç seçiliyor?",
+          "O anda yer boş",
+          "Okul o saatte açılıyor",
+          "Sabah oraya uğramışlar",
+          "В три часа там свободно doğrudan gerekçe.",
+          "в три часа там свободно"
+        ],
+        "detail": [
+          "Nerede buluşacaklar?",
+          "Okulun yanında",
+          "Parkta",
+          "Avluda",
+          "Son öneride okul teyit ediliyor.",
+          "у школы в три"
+        ]
+      },
+      "readingUse": "İki sakıncayı karşılayan bir öneri düşün.",
+      "listeningUse": "Öneriyi yer ve saate göre açıklayan kısa cevap hazırla.",
+      "speaking": "Komşuya öneri sun. Komşu çit yanının karanlık olduğunu söylerse saat veya yer konusunda yeni bir seçenek oluştur.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Bebek arabasının zorlandığı yol ile girişteki geçişi ayır.",
+        "main": "У входа ifadesinden sonra dile getirilen şartı dinle.",
+        "detail": "Öğleden sonraki uygunluğu gösteren свободно sözcüğünü bul."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Yer seçeneklerinin sakıncalarını çıkar.",
+      "genres": {
+        "reading": "Mahalle duyurusu",
+        "listening": "Avlu görüşmesi",
+        "writing": "Uzlaşma önerisi"
+      }
+    },
+    {
+      "id": "ru.street-lighting",
+      "outcome": "B2.social-persuasion",
+      "level": "B2",
+      "prerequisite": [
+        "ru.debate",
+        "ru.shared-courtyard"
+      ],
+      "title": "Bir sokak aydınlatma denemesini itirazla savun",
+      "objective": "İki yerel gereksinimi kanıt ve ödünle tartıp sınanabilir kamusal öneri sun.",
+      "audioMode": "device-synthesis",
+      "grammarStrands": [
+        "Несмотря на + винительный",
+        "При условии что"
+      ],
+      "situation": "Bir geçitte akşam ışık yetersiz. Bazı sakinler daha fazla ışık, bazıları pencerelere daha az yansıma istiyor.",
+      "bridge": "İtirazı kabul et. Öneriyi kapsam, saat ve ölçüme bağla. Ölçüm başarısızsa nasıl değişeceğini söyle.",
+      "models": [
+        {
+          "phrase": "Несмотря на жалобы, освещение у перехода можно улучшить без ярких фонарей.",
+          "explanation": "Несмотря на + belirtme hâli, bir engeli kabul edip ana iddiayı sürdürür; engeli ortadan kaldırmaz."
+        },
+        {
+          "phrase": "Поддержу испытание при условии, что свет не будет попадать в окна.",
+          "explanation": "При условии, что ile desteğin gerekli şartı açıklanır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Engeli kabul et",
+          "incorrect": "Несмотря на жалобами, проект продолжился.",
+          "correct": "Несмотря на жалобы, проект продолжился.",
+          "explanation": "Несмотря на sonrasında belirtme hâli gelir. Engeli ve sonucu ayrı tut.",
+          "guided": [
+            [
+              "Несмотря на ___, мы сохранили маршрут. (задержка)",
+              "задержку"
+            ],
+            [
+              "Несмотря на ___, обсуждение продолжилось. (критика)",
+              "критику"
+            ]
+          ],
+          "transfer": [
+            [
+              "Несмотря на ___, жители согласились на опыт. (опасение, çoğul)",
+              "опасения"
+            ],
+            [
+              "Несмотря на ___, проект рассмотрели ещё раз. (ошибка)",
+              "ошибку"
+            ]
+          ],
+          "delayed": [
+            [
+              "Несмотря на ___, комиссия обсудила новый план. (сложность, çoğul)",
+              "сложности"
+            ],
+            [
+              "Несмотря на ___, встречу не отменили. (непогода)",
+              "непогоду"
+            ]
+          ]
+        },
+        {
+          "label": "Destek koşulunu belirt",
+          "incorrect": "Я поддержу проект при условие, что расходы проверят.",
+          "correct": "Я поддержу проект при условии, что расходы проверят.",
+          "explanation": "При + bulunma hâli: при условии. Что ile koşul cümlesi açılır.",
+          "guided": [
+            [
+              "Продлим опыт при ___, что проход останется открытым. (условие)",
+              "условии"
+            ],
+            [
+              "Комиссия согласна при условии, ___ жильцов предупредят.",
+              "что"
+            ]
+          ],
+          "transfer": [
+            [
+              "Примем план при ___, что измерения повторят на второй улице.",
+              "условии"
+            ],
+            [
+              "Начнём работы при условии, ___ вход не перекроют.",
+              "что"
+            ]
+          ],
+          "delayed": [
+            [
+              "Согласуем поставку при ___, что срок запишут в договоре.",
+              "условии"
+            ],
+            [
+              "Обсудим расширение при условии, ___ расходы не вырастут.",
+              "что"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "пробный период",
+        "meaning": "deneme dönemi",
+        "example": "Пробный период продлится месяц.",
+        "usage": "Kalıcı karardan önce koşulların sınandığı belirli süreyi anlatır.",
+        "pronunciation": "про́бный перио́д",
+        "collocations": [
+          "ввести пробный период",
+          "продлить пробный период"
+        ],
+        "recognize": [
+          "“пробный период” bu kullanımda ne anlama geliyor?",
+          "deneme dönemi",
+          "resmî tatil",
+          "ön ödeme",
+          "Kalıcı karardan önce koşulların sınandığı belirli süreyi anlatır."
+        ],
+        "recall": [
+          "“deneme dönemi” anlamındaki hedef ifadeyi yaz.",
+          "пробный период"
+        ],
+        "use": "Önerinin deneme süresini ve son ölçümünü belirt."
+      },
+      "additionalWords": [
+        {
+          "term": "шаткий аргумент",
+          "meaning": "dayanağı zayıf sav",
+          "example": "Одно наблюдение — шаткий аргумент.",
+          "usage": "Шаткий burada fiziksel sallantı değil, güvenilmez dayanak anlamında.",
+          "pronunciation": "ша́ткий аргуме́нт",
+          "collocations": [
+            "отвергнуть шаткий аргумент",
+            "считать аргумент шатким"
+          ],
+          "recognize": [
+            "“шаткий аргумент” bu kullanımda ne anlama geliyor?",
+            "dayanağı zayıf sav",
+            "oybirliği",
+            "kesin bulgu",
+            "Шаткий burada fiziksel sallantı değil, güvenilmez dayanak anlamında."
+          ],
+          "recall": [
+            "“dayanağı zayıf sav” anlamındaki hedef ifadeyi yaz.",
+            "шаткий аргумент"
+          ],
+          "use": "Bir itirazın neden zayıf olduğunu somut kanıtla açıkla."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "замеры",
+          "cue": "ölçümler"
+        }
+      ],
+      "writing": {
+        "prompt": "Akşam bir bisiklet yolundaki işaretler görünmüyor. Karşıdaki evler flaşlı lambaya itiraz ediyor. Yansıtıcı tabela ile sabit ışığı nasıl karşılaştıracağını ve hangi şartla devam edeceğini belediyeye yaz.",
+        "sample": "За последний месяц жители сообщили, что вечером плохо видят знак на велосипедной дорожке. Одни предлагают мигающий фонарь, другие опасаются, что он будет мешать спать. Несмотря на эти опасения, проблему видимости можно проверить без постоянной установки. Предлагаю сначала поставить отражающий знак на две недели. Пусть наблюдатели отметят, с какого расстояния его видят велосипедисты при одинаковой погоде. Затем можно испытать направленный свет, если знак заметят слишком поздно. Прошу проверить свет у окон до испытания и после него. Поддержу второй вариант при условии, что знак станет заметнее, а свет в жилых комнатах не усилится. О результатах стоит сообщить обеим группам.",
+        "revision": "Bağlılığını açık koşula bağla. Rapor edilen sorunu ve ölçülen sonucu eşit kanıt sayma.",
+        "criteria": [
+          "Bir itiraz ile önerinin karşılaştırması somut.",
+          "Ölçüm ve durdurma koşulu açık."
+        ]
+      },
+      "input": {
+        "text": "Записка районного совета. За месяц поступило двенадцать сообщений о том, что вечером плохо виден переход перед остановкой. Большинство сообщений отправили после девяти. Число обращений выросло после того, как совет разместил ссылку на форму жалоб.\n\nЖители двух домов возражают против новых высоких фонарей: свет уже отражается от окон соседнего здания. Инженер предлагает поставить один низкий светильник с экраном и направить его только на переход. До испытания и через две недели пройдут замеры на переходе и у окон. Совет может снять светильник, если он не улучшит видимость или добавит свет в квартиры. Данные о столкновениях пока не собирали.",
+        "reading": [
+          "Önerilen deneme hangi iki ölçüyü birlikte gerektiriyor?",
+          "Geçitte görünürlük ve pencere yanında ışık",
+          "Yalnız şikâyet sayısı ve kurulum maliyeti",
+          "Otobüs saatleri ve yaya sayısı",
+          "İyileşme ile sakınca ayrı yerde ölçülecek.",
+          "замеры на переходе и у окон"
+        ],
+        "transcript": "— Мы получили жалобы: вечером переход плохо виден. Я предлагаю поставить низкий фонарь с экраном.\n— У моих соседей свет уже попадает в окна. Нам нужны замеры, а не обещания.\n— Согласна. До начала работ мы проверим свет у перехода и у окон. Повторим замеры через две недели. Если у окон станет светлее, изменим направление света.\n— При таком условии я поддержу пробный период. Но постоянное решение обсудим позже.",
+        "preparation": "İtiraz, düzeltici adım ve nihai bekleyen kararı ayır.",
+        "main": [
+          "İtirazdan sonra hangi konuda anlaşma sağlanıyor?",
+          "Ölçüm koşuluyla deneme yapmak",
+          "Bütün sokağa kalıcı fener takmak",
+          "Şikâyetleri saymayı bırakmak",
+          "Son cevap açıkça geçici desteği bildiriyor.",
+          "я поддержу пробный период"
+        ],
+        "detail": [
+          "Pencere tarafı aydınlanırsa ne yapılacak?",
+          "Işığın yönü değiştirilecek",
+          "Fener sayısı artırılacak",
+          "Geçit taşınacak",
+          "Işık yönü değişikliği koşula bağlı.",
+          "изменим направление света"
+        ]
+      },
+      "retry": {
+        "text": "Парк хочет открыть второй вход на месяц. Жители просят не направлять поток людей мимо детского сада в час пик. Совет предлагает открывать вход после десяти и считать людей на обоих маршрутах.",
+        "reading": [
+          "Deneme neyi birlikte korumalı?",
+          "Yeni erişim ve kreş önünde yoğun saatte sakinlik",
+          "Yalnız ilk kapının kilitlenmesi",
+          "Bütün gün araç girişi",
+          "İkinci kapı geç saatte açılarak yoğun saat korunuyor.",
+          "после десяти"
+        ],
+        "transcript": "— Мы можем открыть второй вход на месяц.\n— Я согласен, если он будет открыт после десяти. До этого у нас на входе много детей.\n— Запишем это условие и проверим, где собирается очередь.",
+        "preparation": "Şartı kabulden ve ölçüm adımından ayır.",
+        "main": [
+          "Hangi koşulla destek var?",
+          "İkinci girişin ondan sonra açılması",
+          "İki girişin ondan önce kapanması",
+          "Bir ay kreşin kapalı olması",
+          "İkinci konuşmacı saat şartını açıkça veriyor.",
+          "после десяти"
+        ],
+        "detail": [
+          "Denemede ne izlenecek?",
+          "Kuyruğun nerede oluştuğu",
+          "Çocukların ev adresleri",
+          "Kreşin açılış ücreti",
+          "Son konuşmacı kuyruğun konumunu izleyecek.",
+          "где собирается очередь"
+        ]
+      },
+      "readingUse": "Kamusal toplantı için tek ölçülebilir şart hazırla.",
+      "listeningUse": "Geçici destek ile kalıcı kararı ayır.",
+      "speaking": "Bir sakin maliyet yerine uyku sorunu gündeme getiriyor. İtirazını aynen özetle ve deneme önerini buna göre sınırla.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Şikâyet formunun değişmesini ve geçit gözlemini ayrı değerlendir.",
+        "main": "Sakınca gerçekleşirse önerilen eylemi yakala.",
+        "detail": "После десяти önceki saatlerin neden dışarıda olduğunu açıklar."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Önerinin ölçtüğü faydayı ve sakıncayı ayır.",
+      "genres": {
+        "reading": "Mahalle kurulu değerlendirmesi",
+        "listening": "Çok replikli kurul oturumu",
+        "writing": "Belediye önerisi"
+      }
+    },
+    {
+      "id": "ru.conditional-agreement",
+      "outcome": "C1.negotiation",
+      "level": "C1",
+      "prerequisite": [
+        "ru.debate",
+        "ru.synthesis"
+      ],
+      "title": "Koşullu uzlaşmayı toplantıdan tutanağa geçir",
+      "objective": "Karşı teklif değiştiğinde kabul eşiğini koru ve sözlü uzlaşmayı resmî karara uygun yaz.",
+      "audioMode": "device-synthesis",
+      "grammarStrands": [
+        "Уступительное даже если",
+        "За исключением + родительный"
+      ],
+      "situation": "İki kurum ortak bir salon kullanacak. Toplantıda bir kolaylık kabul ediliyor, bir diğer koşul pazarlığa kapalı.",
+      "bridge": "Kimin neyi kabul ettiğini, hangi kısıtın koşulsuz kaldığını ve hangi istisnanın yetki gerektirdiğini ayrı yaz.",
+      "models": [
+        {
+          "phrase": "Даже если зал освободится раньше, мы не сможем отменить проверку.",
+          "explanation": "Даже если, öne sürülen ihtimalin kuralı değiştirmediğini vurgular."
+        },
+        {
+          "phrase": "Доступ возможен каждый день, за исключением выходных.",
+          "explanation": "За исключением + tamlayan, genel kural dışında bırakılan unsuru bildirir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Varsayılan değişse de sınırı koru",
+          "incorrect": "Если зал свободен, проверка не нужна.",
+          "correct": "Даже если зал свободен, проверка всё равно нужна.",
+          "explanation": "Даже если ile ihtimali tanı, ancak ana cümlede değişmeyen kararı aktar.",
+          "guided": [
+            [
+              "Ön ödeme kuralı değişmez: ___ зал готов раньше, предоплата обязательна.",
+              "Даже если"
+            ],
+            [
+              "Hava iyi olsa bile: ___ погода хорошая, проверка нужна.",
+              "Даже если"
+            ]
+          ],
+          "transfer": [
+            [
+              "Saat artsa bile: ___ время увеличат, отдельная заявка нужна.",
+              "Даже если"
+            ],
+            [
+              "Koşul olsa da süreyi koru: ___ работы закончат раньше, дата останется прежней.",
+              "Даже если"
+            ]
+          ],
+          "delayed": [
+            [
+              "Talep yükselse de: ___ заявок будет больше, лимит не изменится.",
+              "Даже если"
+            ],
+            [
+              "Ücret düşse de: ___ цена снизится, договор нужно прочитать.",
+              "Даже если"
+            ]
+          ]
+        },
+        {
+          "label": "Genel kuraldan istisna çıkar",
+          "incorrect": "Доступ открыт за исключением пятница.",
+          "correct": "Доступ открыт за исключением пятницы.",
+          "explanation": "За исключением sonrasında tamlayan hâli kullan.",
+          "guided": [
+            [
+              "Все занятия включены, за исключением ___. (экскурсия)",
+              "экскурсии"
+            ],
+            [
+              "Зал доступен в будни, за исключением ___. (среда)",
+              "среды"
+            ]
+          ],
+          "transfer": [
+            [
+              "Документы опубликованы, за исключением ___. (приложение)",
+              "приложения"
+            ],
+            [
+              "Все окна открыты, за исключением ___. (два окна)",
+              "двух окон"
+            ]
+          ],
+          "delayed": [
+            [
+              "Отчёты доступны, за исключением ___. (последний отчёт)",
+              "последнего отчёта"
+            ],
+            [
+              "Правило действует для всех, за исключением ___. (дети)",
+              "детей"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "идти на уступку",
+        "meaning": "ödün vermek",
+        "example": "Мы готовы идти на уступку по срокам.",
+        "usage": "Bir tarafın önceki talebini karşılıklı ilerleme için yumuşatmasını anlatır.",
+        "pronunciation": "идти́ на усту́пку",
+        "collocations": [
+          "идти на уступку по срокам",
+          "согласиться на уступку"
+        ],
+        "recognize": [
+          "“идти на уступку” bu kullanımda ne anlama geliyor?",
+          "ödün vermek",
+          "anlaşmayı iptal etmek",
+          "tutanak yazmak",
+          "Bir tarafın önceki talebini karşılıklı ilerleme için yumuşatmasını anlatır."
+        ],
+        "recall": [
+          "“ödün vermek” anlamındaki hedef ifadeyi yaz.",
+          "идти на уступку"
+        ],
+        "use": "Hangi konuda ödün verebileceğini ve hangisinde veremeyeceğini belirt."
+      },
+      "additionalWords": [
+        {
+          "term": "оговорка",
+          "meaning": "belirtilen çekince veya istisna",
+          "example": "В договоре есть оговорка о проверке.",
+          "usage": "Burada söylerken yapılan hata değil, kararı sınırlandıran kayıt anlamındadır.",
+          "pronunciation": "огово́рка",
+          "collocations": [
+            "сделать оговорку",
+            "оговорка о сроках"
+          ],
+          "recognize": [
+            "“оговорка” bu kullanımda ne anlama geliyor?",
+            "belirtilen çekince veya istisna",
+            "övgü",
+            "yayımlanmış ölçüm",
+            "Burada söylerken yapılan hata değil, kararı sınırlandıran kayıt anlamındadır."
+          ],
+          "recall": [
+            "“belirtilen çekince veya istisna” anlamındaki hedef ifadeyi yaz.",
+            "оговорка"
+          ],
+          "use": "Tutanağa yazılacak bir çekince öner."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "расписание",
+          "cue": "çizelge"
+        }
+      ],
+      "writing": {
+        "prompt": "Ortak bir mutfak için yazılı karar oluştur. Dernek bir saat erken açabilir. Salı bakım olduğu için kullanılamaz. Erken açılsa bile güvenlik kontrolü gerekli. İlk tarih denetimden sonra teyit edilecek. Hem toplantı tutanağı hem katılımcı mesajı yaz.",
+        "sample": "В протоколе. Комиссия согласовала перенос времени начала на один час раньше. Кухня доступна по будням, за исключением вторника, когда проводится обслуживание. Даже если помещение освобождается раньше, отдельная проверка оборудования обязательна. Дату первого занятия секретарь подтвердит после получения заключения. Подготовка списка участников может начаться до проверки, но команда пока не бронирует помещение.\n\nУчастникам. Мы сможем начать на час раньше. По вторникам кухня закрыта на обслуживание. Мы напишем вам точную дату, как только сотрудники проверят оборудование. До нашего письма подтверждать участие не нужно. Если новое время вам не подходит, сообщите об этом организатору, чтобы мы могли проверить другие варианты.",
+        "revision": "İki metinde tarihin beklediğini ve salı istisnasını koru. Tutanakta teyidi yapacak kişiyi belirt.",
+        "criteria": [
+          "Ödün, koşulsuz gereklilik ve istisna ayrılır.",
+          "Tutanak ile mesaj aynı kararı farklı bir kayıt düzeyinde verir."
+        ]
+      },
+      "input": {
+        "text": "Письмо спортивного центра. Мы готовы уступить соседней школе два вечерних часа по четвергам. Перенос на другой день возможен по общему расписанию. Исключение составляет последняя неделя сентября: зал нужен для городских соревнований. На эту неделю администрация предлагает малый зал.\n\nОтвет школы. Два часа подходят, если сначала можно провести отдельный инструктаж для новой группы. Малый зал устраивает школу на время соревнований, но в нём нет свободного выхода с нужной стороны. Техническая проверка обязательна и для большого, и для малого зала. Проверка не заменяется присутствием тренера. Центр может начать готовить расписание, однако дата первого занятия будет подтверждена после осмотра помещения.",
+        "reading": [
+          "Hangi karar şimdiden uygulanabilir?",
+          "İlk ders tarihini teyit etmeden çizelgeyi hazırlamak",
+          "Küçük salonu denetimsiz açmak",
+          "Eylül ayının son haftasını normal çizelgeye eklemek",
+          "Hazırlık aşaması ve açılış yetkisi ayrı.",
+          "Центр может начать готовить расписание"
+        ],
+        "transcript": "— Мы готовы идти на уступку по времени. Малый зал свободен на час раньше.\n— Это помогает школе. Но даже если тренер придёт раньше, осмотр выхода всё равно нужен.\n— В таком случае сдвинем время начала, а дату запишем после осмотра.\n— Согласен. По пятницам подойдёт любой час, за исключением времени репетиций. Давайте внесём эту оговорку в протокол.\n— Хорошо. Мы подтвердим дату, когда получим заключение.",
+        "preparation": "Saat, tarih ve istisnayı ayrı not et.",
+        "main": [
+          "Hangi ödün kabul ediliyor?",
+          "Başlangıç saatinde esneklik",
+          "Çıkış denetiminin kaldırılması",
+          "Her cuma provasının iptali",
+          "Esneklik saate ait, denetim sürüyor.",
+          "сдвинем время начала"
+        ],
+        "detail": [
+          "Cuma esnekliğinin istisnası ne?",
+          "Provaların saati",
+          "İlk ders tarihi",
+          "Denetim günü",
+          "İstisna açıkça tutanağa eklenecek.",
+          "за исключением времени репетиций"
+        ]
+      },
+      "retry": {
+        "text": "Организаторы готовы продлить ярмарку на час. Уличные киоски могут остаться открытыми, за исключением мест у жилых окон. Пожарный проход должен быть свободен даже после закрытия основной площадки.",
+        "reading": [
+          "Hangi kısıt kapanıştan sonra sürüyor?",
+          "Yangın geçişi açık kalacak",
+          "Konut önündeki tezgâhlar açık kalacak",
+          "Pazar bir saat erken kapanacak",
+          "Даже после kapanıştan sonra da geçerli koşulu gösteriyor.",
+          "Пожарный проход должен быть свободен"
+        ],
+        "transcript": "— Мы согласны изменить час доставки. Но даже если машина приедет раньше, без пропуска её не впустят.\n— Тогда запишем: доставка в любой будний день, за исключением среды. Пропуск оформляется отдельно.",
+        "preparation": "Saate verilen ödün ile belgeyi ayır.",
+        "main": [
+          "Yeni saat esnekliği hangi yükümlülüğü kaldırmıyor?",
+          "Geçiş belgesini",
+          "Aracın yükünü boşaltmayı",
+          "Salı teslimatını",
+          "Belge ayrı düzenlenir.",
+          "Пропуск оформляется отдельно."
+        ],
+        "detail": [
+          "Hangi gün hariç?",
+          "Çarşamba",
+          "Cuma",
+          "Salı",
+          "За исключением среды, çarşamba hariç demek.",
+          "за исключением среды"
+        ]
+      },
+      "readingUse": "Karar tutanağının ilk maddesini tasarla.",
+      "listeningUse": "Sözlü anlaşmayı koşullarını kaybetmeden aktar.",
+      "speaking": "Taraflardan biri ‘Antrenör erken gelirse denetim olmasın’ derse kısa cevap ver. Saate verilen ödünü koru, denetim ve istisnayı tutanağa geçir.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Hangi cümlenin çizelge hazırlığına, hangisinin açılışa izin verdiğini bul.",
+        "main": "Даже если sonrasındaki senaryoyu kuralla karıştırma.",
+        "detail": "За исключением sonrasındaki günün çekimini tanı."
+      },
+      "approach": "contrast",
+      "readingPurpose": "İki kurumun ortak kararını çıkar.",
+      "genres": {
+        "reading": "Kurumlararası yazışma",
+        "listening": "Müzakere ve tutanak görüşmesi",
+        "writing": "Tutanak ve duyuru"
+      }
+    },
+    {
+      "id": "ru.community-names",
+      "outcome": "C2.sensitive",
+      "level": "C2",
+      "prerequisite": [
+        "ru.mediate"
+      ],
+      "title": "Aidiyetle ilgili örtük kaygıyı iki tarafa aktar",
+      "objective": "Kültürel bir adlandırma görüşmesinde imayı ve iç farklılığı koru, uzlaşma sürecini iki muhatap için kur.",
+      "audioMode": "device-synthesis",
+      "grammarStrands": [
+        "Оговорка к чужому выводу",
+        "Не столько …, сколько …"
+      ],
+      "situation": "Bir kütüphane eski mahalle adlarını yeni haritada gösterecek. Yerel grubun içinde farklı görüşler var; bir katılımcı önemli bir itirazı dolaylı söylüyor.",
+      "bridge": "Alıntı, yorum ve karar yetkisini ayır. Hiçbir görüşü bütün mahalleye mal etme. Kültürel kaygıyı farklı dilde aktarırken koşullarını koru.",
+      "models": [
+        {
+          "phrase": "Я бы не стала понимать это как согласие от имени всего района.",
+          "explanation": "Я бы не стала / не стал + mastar, başkasının çıkarımını doğrudan kişiye saldırmadan sınırlar."
+        },
+        {
+          "phrase": "Речь не столько о названии, сколько о том, кто имеет право его выбрать.",
+          "explanation": "Не столько …, сколько …, odağı bir unsurdan diğerine kaydırır. İlk unsurun varlığını tümüyle reddetmez."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "İmayı temsil yetkisinden ayır",
+          "incorrect": "Один сосед согласился, значит, район согласен.",
+          "correct": "Сосед высказал личное мнение; решения от имени района не было.",
+          "explanation": "Kimin konuştuğu, kimi temsil ettiği ve açıkça neyi üstlendiğini ayrı çıkar.",
+          "skill": "reading",
+          "guided": [
+            [
+              "«За себя могу сказать, что готов». Taahhüt kapsamı? (за себя / за всех)",
+              "за себя"
+            ],
+            [
+              "«Мы не возражаем против обсуждения». Kabul edilen adım? (обсуждение / публикация)",
+              "обсуждение"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Не уверен, что все слышали предложение». Eksik önkoşul? (ознакомление с предложением / печать карты)",
+              "ознакомление с предложением"
+            ],
+            [
+              "«Я не уполномочена отвечать за группу». O anda eksik olan? (полномочия / название)",
+              "полномочия"
+            ]
+          ],
+          "delayed": [
+            [
+              "«Список пока посмотрели три участника». Desteklenmeyen çıkarım? (решение всех / участие троих)",
+              "решение всех"
+            ],
+            [
+              "«Мы передадим вопрос на обсуждение». Kesinleşen adım? (обсуждение / утверждение)",
+              "обсуждение"
+            ]
+          ]
+        },
+        {
+          "label": "Odağı düzelt",
+          "incorrect": "Речь не столько о сроке, что о порядке.",
+          "correct": "Речь не столько о сроке, сколько о порядке.",
+          "explanation": "Сколько ikinci yönü ekler. Cümlenin her iki yarısında aynı dilbilgisi bağını koru.",
+          "guided": [
+            [
+              "Речь не столько о цене, ___ о доступности.",
+              "сколько"
+            ],
+            [
+              "Важно не столько то, кто пришёл первым, ___ то, кто сможет ответить.",
+              "сколько"
+            ]
+          ],
+          "transfer": [
+            [
+              "Спор не столько об оформлении, ___ о порядке голосования.",
+              "сколько"
+            ],
+            [
+              "Нас волнует не столько количество писем, ___ то, кто их не получил.",
+              "сколько"
+            ]
+          ],
+          "delayed": [
+            [
+              "Нужно не столько перепечатать текст, ___ уточнить, кому он адресован.",
+              "сколько"
+            ],
+            [
+              "Разница не столько в формулировке, ___ в её последствиях.",
+              "сколько"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "приписывать единодушие",
+        "meaning": "oybirliğini başkalarına atfetmek",
+        "example": "Не стоит приписывать единодушие всего сообщества по одному письму.",
+        "usage": "Kanıtın izin vermediği bir ortak görüş atfetmek anlamında kullanılır.",
+        "pronunciation": "припи́сывать единоду́шие",
+        "collocations": [
+          "приписывать группе единодушие",
+          "не приписывать единодушие"
+        ],
+        "recognize": [
+          "“приписывать единодушие” bu kullanımda ne anlama geliyor?",
+          "oybirliğini başkalarına atfetmek",
+          "katılım sayısını bildirmek",
+          "bir alıntıyı düzeltmek",
+          "Kanıtın izin vermediği bir ortak görüş atfetmek anlamında kullanılır."
+        ],
+        "recall": [
+          "“oybirliğini başkalarına atfetmek” anlamındaki hedef ifadeyi yaz.",
+          "приписывать единодушие"
+        ],
+        "use": "Tek bir kişinin yanıtından çıkarılamayacak görüşü yaz."
+      },
+      "additionalWords": [
+        {
+          "term": "зафиксировать оговорку",
+          "meaning": "bir çekinceyi kayda geçirmek",
+          "example": "Просили зафиксировать оговорку в протоколе.",
+          "usage": "Kararı sınırlayan koşul veya çekinceyi gelecekte görülebilir hâle getirmektir.",
+          "pronunciation": "зафикси́ровать огово́рку",
+          "collocations": [
+            "зафиксировать оговорку в протоколе",
+            "зафиксировать письменную оговорку"
+          ],
+          "recognize": [
+            "“зафиксировать оговорку” bu kullanımda ne anlama geliyor?",
+            "bir çekinceyi kayda geçirmek",
+            "kararı hızlandırmak",
+            "muhatabı izlemek",
+            "Kararı sınırlayan koşul veya çekinceyi gelecekte görülebilir hâle getirmektir."
+          ],
+          "recall": [
+            "“bir çekinceyi kayda geçirmek” anlamındaki hedef ifadeyi yaz.",
+            "зафиксировать оговорку"
+          ],
+          "use": "Tutanak için bir kişinin çekincesini kendi sözlerinle kaydet."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "двуязычный указатель",
+          "cue": "iki dilli tabela"
+        }
+      ],
+      "writing": {
+        "prompt": "Yerel iki ad taşıyan bir parkın tanıtım panosu için belediyeye ve mahalleye iki mesaj hazırla. Bir kişi kısa adı kendisi için uygun buluyor. Bir aile eski adın evde yaşadığını, ama karar yetkisi olmadığını söylüyor. Belediye yalnız açık toplantı ilanını onayladı. Görüş, dilsel kullanım ve karar aşamasını koru.",
+        "sample": "Для комиссии. Получены два ответа о названиях парка. Первый участник лично предпочитает короткий вариант. Семья сообщает, что старое название сохраняется в домашней речи, но не берётся говорить от имени района. Не стоит приписывать группе единодушие или считать первый ответ результатом голосования. Сейчас разрешено опубликовать только приглашение; смысл встречи состоит в том, чтобы уточнить употребление обоих вариантов и порядок выбора.\n\nДля соседей. Мы услышали разные варианты названия парка. Расскажите, пожалуйста, как вы называете его дома и в каких случаях слышите другое название. Никакого решения о новой вывеске пока нет. На открытой встрече можно будет уточнить, кто и как примет решение и где появятся оба названия.",
+        "revision": "Kişisel tercih ve topluluk kararı her iki metinde ayrı mı? Bir özetinde atıf, diğerinde açık katılım çağrısı kullan.",
+        "criteria": [
+          "Örtük temsil sorunu ve farklı görüşler korunur.",
+          "İki muhataba uygun tonla aynı karar aşaması aktarılır."
+        ]
+      },
+      "input": {
+        "text": "Редактор городской карты предлагает двуязычный указатель для старого рынка. В архиве сохранились два местных названия. Одно встречается в довоенных документах, другое до сих пор употребляют продавцы. Архивист просит показать оба и указать, откуда они взяты. Для организации экскурсий ему достаточно временной схемы.\n\nНа встрече представитель торговцев сказал, что не станет спорить о шрифте, «пока нас спрашивают не только о внешнем виде». В письменном пояснении он подчеркнул, что торговцы не выбирали общее название. Другой участник поддержал второе название лично, но попросил не включать его ответ в число голосов от всего рынка. Редактор решает обнародовать приглашение на обсуждение. Варианты названия он предложит на отдельной встрече, где жители смогут уточнить происхождение и употребление каждого.",
+        "reading": [
+          "Temsilcinin şrift sözündeki asıl çekince ne?",
+          "Katılımcıların yalnız görünüşe değil adın seçimine de katılması",
+          "Her iki yazı tipinin yasaklanması",
+          "Bütün satıcıların ikinci adı seçmiş olması",
+          "Yazılı açıklama, seçimin ortaklaşa yapılmadığını belirtiyor.",
+          "торговцы не выбирали общее название"
+        ],
+        "transcript": "— Мы можем написать, что рынок поддержал второе название?\n— Я бы не стала понимать слова одного человека как согласие всех. Речь не столько о названии, сколько о том, кто его выбрал.\n— Тогда сейчас мы опубликуем только приглашение. На встрече обсудим, где и когда употребляли оба названия.\n— И попросим людей сказать, от своего имени они говорят или от имени группы.\n— Согласна. До решения не будем менять указатель.",
+        "preparation": "Söylenen görüş, onu kimin temsil ettiği ve karar adımını ayrı dinle.",
+        "main": [
+          "İlk öneriye gelen düzeltmenin odağı nedir?",
+          "Bir görüşün bütün gruba atfedilmesi",
+          "İki yazımın tipografisi",
+          "Haritanın basım tarihi",
+          "Bir kişinin görüşü tümünün kararı sayılmıyor.",
+          "согласие всех"
+        ],
+        "detail": [
+          "Şimdi ne yayımlanacak?",
+          "Sadece toplantı daveti",
+          "Yeni tabela",
+          "Son ad kararı",
+          "Son karar beklerken ancak davet yayımlanıyor.",
+          "только приглашение"
+        ]
+      },
+      "retry": {
+        "text": "Экскурсоводы предложили заменить местный топоним коротким названием для туристов. Проводник согласился объяснять короткое название, но попросил не убирать старое с карты. В школьном проекте дети продолжают собирать записи о том, как место называют дома.",
+        "reading": [
+          "Rehberin kabulü neyi kapsamıyor?",
+          "Eski adın haritadan kaldırılmasını",
+          "Kısa adın açıklanmasını",
+          "Okul kayıtlarının toplanmasını",
+          "Rehber gerekçeyi açıklamayı kabul ediyor, silmeyi istemiyor.",
+          "не убирать старое с карты"
+        ],
+        "transcript": "— В отчёте написано, что школа одобрила новое название.\n— Класс согласен обсуждать его. Речь не шла об утверждении.\n— Исправим отчёт и пригласим учителей на встречу.",
+        "preparation": "Tartışma ve onayın farklı fiillerini yakala.",
+        "main": [
+          "Hangi yanlış çıkarım düzeltiliyor?",
+          "Tartışmaya katılma kesin onay sayılmış",
+          "Adın biraz uzun olduğu söylenmiş",
+          "Öğretmenler toplantıyı reddetmiş",
+          "Onay ve tartışma farklı.",
+          "Речь не шла об утверждении."
+        ],
+        "detail": [
+          "Rapordan sonra hangi adım var?",
+          "Öğretmenleri toplantıya çağırmak",
+          "Haritayı basmak",
+          "Sınıfı değiştirmek",
+          "Son replik bir davet veriyor.",
+          "пригласим учителей на встречу"
+        ]
+      },
+      "readingUse": "İlan için tarafsız ve dahil edici ifade seç.",
+      "listeningUse": "Bir iddiayı kime ait olduğunu koruyarak yeniden söyle.",
+      "speaking": "Bir yetkili ‘mahalle yeni adı seçti’ diyor. Kimin görüş verdiğini açıklayıp toplantı ilanı için tarafsız bir cümle öner. Karşı taraf iki adı istemezse görüşün kime ait olduğunu ve nasıl kaydedileceğini sor.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Arşivdeki kullanım ile bugünkü kişisel tercihi ayır.",
+        "main": "Согласие всех ifadesinin ne zaman reddedildiğini dinle.",
+        "detail": "Утверждение ile обсуждение arasındaki ayrımı göster."
+      },
+      "approach": "contrast",
+      "readingPurpose": "İki adın kullanım kanıtını ve karar yetkisini ayrı çıkar.",
+      "genres": {
+        "reading": "Toplantı notu ve yazılı açıklama",
+        "listening": "Topluluk ile editör görüşmesi",
+        "writing": "Kurul notu ve açık davet"
+      }
+    }
+  ]
+}

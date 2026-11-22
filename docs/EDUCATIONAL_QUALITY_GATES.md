@@ -2,6 +2,12 @@
 
 Bir dersin öğretici sayılması için öğrenciye ilgili iletişim görevini açıklaması, doğru kullanım ve anlamlı karşı örnek göstermesi, yardımın azaldığı deneme sunması ve hatanın ardından işe yarar bir sonraki adım vermesi gerekir. Bağımsız ve gecikmeli kanıt, öğretilen cümlelerin kopyası dışındaki bağlamlardan gelir. Soru ve süre sayıları üretim bütçesi olabilir.
 
+## Yeni ders paketleri
+
+İngilizce, Rusça ve İspanyolca paketlerinde önce öğrencinin hangi iletişim işini yapacağı ve hangi önceki kazanımı kullanacağı yazılır. İki öğretim modeli biçim ile anlamı bağlar. Rehberli deneme hedef biçimi öğretir. Aktarım ve gecikmeli görev aynı biçimi farklı kişi, amaç veya koşulla kullandırır. Okuma ve dinleme soruları karar için gerekli bilgiye ya da çıkarıma odaklanır. Onarım girdisi yeni bir kaynak ve hataya yönelik ipucu kullanır. İlk yazı, revizyon ve sözlü takip sorusu ayrı çalışmalardır. Açık yanıt gönderimi inceleme bekler.
+
+Yeni aktif kelime kartına kalıcı anlam kimliği ve denetlenen kart sürümü bağlanır. Öğrenciye kart miktarını süre, tekrar yükü ve performansa göre mevcut planlayıcı verir. Yeni ses kayıtları için `device-synthesis` kullanan paketlerde model, örnek ve dinleme metinleri yerel cihaz sesiyle çalışabilir. Yerel ses yoksa metinle çalışma dinleme kanıtı oluşturmaz. Üretim gereksinimlerini `npm run curriculum:audio -- --audio-report` ile incele. Yeni Rusça terim, örnek ve replikler için vurgu girdisini metinle birlikte doğrula. Dosya üretimi ve dağıtım kararı ayrı adımlardır.
+
 ## Kanıt ve geçiş
 
 | Durum | Gerekli gözlem | Ürün davranışı |

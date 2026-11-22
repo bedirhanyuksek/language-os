@@ -77,6 +77,8 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
     </section>}
     {phase === 'listening' && <section className="surface section">
       <h2>Dinlemeden önce</h2><p>{listening.preparation}</p>
+      {lesson.teaching?.audioMode === 'device-synthesis' && listening.audio.kind === 'synthesis' &&
+        <p><small>Yerel cihaz sesi · tüm replikler aynı sesle okunur</small></p>}
       <AudioPlayer audio={listening.audio} text={listening.transcript}
         label={plays ? 'Tekrar dinle' : 'Kaydı dinle'} onEnd={() => session.change({ plays: plays + 1, supports: { audioUnavailable: false } })}
         onUnavailable={() => session.change({ supports: { audioUnavailable: true } })} />

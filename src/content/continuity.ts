@@ -1,6 +1,6 @@
 import type { CEFRLevel, Language } from '../domain/model'
 import type { Exercise, Lesson } from './schema'
-import { modelRecording, type Teaching } from './teaching'
+import { modelAudio, type Teaching } from './teaching'
 import type { ListeningActivity } from './pedagogy-schema'
 
 type Practice = [prompt: string, answer: string, ...alternatives: string[]]
@@ -25,11 +25,15 @@ export type Module = {
   input: Material; retry: Material; readingUse: string; listeningUse: string
   speaking: string; speakingContext?: NonNullable<Lesson['speaking']>['context']
   recovery?: { reading: string; main: string; detail: string }
-  approach?: Teaching['approach']; readingPurpose?: string
+  audioMode?: Teaching['audioMode']; approach?: Teaching['approach']; readingPurpose?: string
 }
 
 export function author(language: Language, item: Module): Lesson {
-  const { id, level, word, writing, concepts } = item
+  const { id, level, word, writing, concepts, audioMode } = item
+  const audioFor = (filename: string): ListeningActivity['audio'] => {
+    const audio = modelAudio(id, 0, language, audioMode)
+    return audio.kind === 'recording' ? { ...audio, src: `/audio/${filename}.mp3` } : audio
+  }
   const words = [word, ...(item.additionalWords ?? [])].map((entry, index) => ({ ...entry, cardId: `${id}.word.${index + 1}` }))
   const lessonConcepts = concepts.map((concept, i) => {
     const conceptId = `${id}.form.${i + 1}`
@@ -62,7 +66,7 @@ export function author(language: Language, item: Module): Lesson {
     return {
       reading: { text: material.text, question: question(`${key}.reading`, 'reading', material.reading) },
       listening: { transcript: material.transcript, preparation: material.preparation,
-        audio: { ...modelRecording(id, 0, language), src: `/audio/${id}.${key}.mp3` },
+        audio: audioFor(`${id}.${key}`),
         main: question(`${key}.main`, 'listening', material.main), detail: question(`${key}.detail`, 'listening', material.detail) },
     }
   }
@@ -70,7 +74,7 @@ export function author(language: Language, item: Module): Lesson {
   const production = (key: string, prompt: string, sample: string, skill: 'writing' | 'vocabulary' = 'writing'): Extract<Exercise, { kind: 'open' }> =>
     ({ id: `${id}.${key}`, kind: 'open', skill, prompt, sample, explanation: item.bridge })
   const teaching: Teaching = {
-    situation: item.situation, approach: item.approach ?? 'contrast', models: item.models, bridge: item.bridge,
+    ...(audioMode && { audioMode }), situation: item.situation, approach: item.approach ?? 'contrast', models: item.models, bridge: item.bridge,
     readingPurpose: item.readingPurpose ?? 'Kararı veya öneriyi bul. Onu destekleyen koşulu ayrı düşün.',
     readingUse: item.readingUse, listeningUse: item.listeningUse, vocabulary: words.map(({ cardId, usage }) => ({ cardId, usage })), receptive: item.receptive,
   }
@@ -106,7 +110,7 @@ export function author(language: Language, item: Module): Lesson {
         const key = index === 0 ? 'word' : `word.${index + 1}`
         return {
           cardId: entry.cardId, collocations: entry.collocations, pronunciation: entry.pronunciation,
-          audio: entry.audio ?? { ...modelRecording(id, 0, language), src: `/audio/${entry.cardId}.mp3` },
+          audio: entry.audio ?? audioFor(entry.cardId),
           recognize: question(`${key}.recognize`, 'vocabulary', entry.recognize),
           recall: { id: `${id}.${key}.recall`, kind: 'fill', skill: 'vocabulary', prompt: recall, accepted, explanation: entry.usage },
           use: production(`${key}.use`, entry.use, entry.example, 'vocabulary'),
