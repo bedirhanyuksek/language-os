@@ -105,8 +105,13 @@ const inventory: Record<Language, Record<Band, Outcome[]>> = {
 const auditTargets: typeof inventory = {
   es: {
     A1: [['repetir', 'Adı tekrarlat ve yazımını kontrol et', 'saludos']],
-    A2: [['cambiar-plan', 'Bir davete yanıt ver ve yeni zamanı teyit et', 'perfect']],
-    B1: [['connected-account', 'Bir deneyimi olay sırası, sonuç ve takip sorusuyla anlat', 'cambiar-plan']],
+    A2: [['cambiar-plan', 'Bir davete yanıt ver ve yeni zamanı teyit et', 'perfect'],
+      ['pasado-cerrado', 'Bitmiş bir günde tamamlanan ve kalan işleri bildir', 'cambiar-plan']],
+    B1: [
+      ['connected-account', 'Bir deneyimi başlangıç, dönüm noktası ve sonuçla anlat', 'pasado-cerrado'],
+      ['cambio-con-motivo', 'Beklenmedik değişikliğin nedenini ve sonucunu ayır', 'connected-account'],
+      ['pregunta-seguimiento', 'Eksik ayrıntıya takip sorusu sor ve cevabı teyit et', 'cambio-con-motivo'],
+    ],
     B2: [], C1: [], C2: [],
   },
   en: {
@@ -122,15 +127,18 @@ const auditTargets: typeof inventory = {
       ['emotion', 'Bir ilişkide duygu, neden ve beklentiyi incelikle açıkla', 'story'], ['culture-visit', 'Gezide iki kültürel uygulamayı karşılaştır', 'story'],
       ['education-talk', 'Bir öğrenme deneyimini anlat ve geri bildirim iste', 'interaction'], ['creative-response', 'Öykü veya filme kişisel tepkiyi gerekçelendir', 'story'],
       ['lost-property', 'Kayıp eşyanın ayırt edici özelliğini, son görüldüğü yeri ve izleme adımını aktar', 'story'],
+      ['repair-request', 'Bir ürün arızasını oluşma koşuluyla bildir ve çözüm sor', 'lost-property'],
       ['intelligibility', 'Durak, sözcük vurgusu ve netleştirmeyle konuşmayı sürdür', 'interaction'],
     ],
     B2: [
       ['persuade', 'Toplumsal konuda karşı itirazla ikna edici sav kur', 'negotiation'], ['multimedia', 'Haber, fotoğraf, tanıklık ve karşı kanıtı tart', 'story', 'en.media'],
       ['study-discussion', 'Seminerde bulgu, soru ve itirazı yönlendir', 'education-talk'], ['intercultural', 'Kültürel yanlış anlamayı iki bakışla açıkla', 'culture-visit'],
+      ['panel-evidence', 'Panelde aynı dönemde değişen koşulları hesaba katarak öneri ver', 'newsviews'],
       ['consumer-terms', 'Bir hizmetin fiyat ve iptal koşullarını farklı kaynaklardan karşılaştır', 'genres'],
       ['prosody', 'Karşıt vurgu ve tonla tutumu ayırt et', 'accents'],
     ],
     C1: [
+      ['floor-repair', 'Kesilen sözü ve açık kalan soruyu doğru atıfla gündeme getir', 'academic'],
       ['research-briefing', 'Araştırma sunuşunda dolaylı göstergeyi, çıkarımı ve kapsamı ayır', 'academic'],
       ['fiction', 'Uzun kurmacada anlatıcı tutumu ve bakışı çöz', 'creative-response'], ['academic-audio', 'Akademik konuşmada yöntem ve çıkarıma not al', 'lecture'],
       ['online-debate', 'Yazılı çevrim içi tartışmada görüşleri uzlaştır', 'negotiation'], ['register-speech', 'Aynı savı farklı dinleyicilere akıcıca uyarla', 'brief'],
@@ -143,6 +151,7 @@ const auditTargets: typeof inventory = {
   ru: {
     A1: [
       ['feelings', 'Ruh hâlini ve temel tercihini söyle', 'family'], ['forms', 'Ad, yaş ve iletişim bilgisiyle basit form doldur', 'numbers'],
+      ['shift-note', 'Kısa vardiya çizelgesini oku ve yeni gün ile saat aralığını teyit et', 'numbers'],
       ['sound-contrast', 'Sert/yumuşak ünsüzü ve sözcük vurgusunu ayır', 'script'], ['short-message', 'Davet veya adres içeren kısa mesaja cevap ver', 'repair'],
     ],
     A2: [
@@ -155,6 +164,7 @@ const auditTargets: typeof inventory = {
       ['community', 'Gündelik toplumsal öneriye iki tarafın ihtiyacıyla yanıt ver', 'opinion'],
     ],
     B2: [
+      ['panel-corrections', 'Kayıt ve kişi sayımı ayrı olduğunda kamuya düzeltme yaz', 'reports'],
       ['public-media', 'Haberle yorum arasındaki farkı kaynağına bağla', 'news'], ['seminar', 'Seminerde sav, soru ve örneği birbirine bağla', 'study'],
       ['intercultural', 'Kültürel bir anlaşmazlıkta iki bakışı aktar', 'cultural-visit'], ['speech-voices', 'Farklı konuşmacıların tutumunu tonla ayırt et', 'natural'],
       ['social-persuasion', 'Toplumsal konu için itirazlı ikna konuşması yap', 'debate'],
@@ -164,6 +174,7 @@ const auditTargets: typeof inventory = {
       ['online-debate', 'Çevrim içi grup tartışmasında görüşleri özetleyip ilerlet', 'negotiation'], ['prosody', 'Üslup ve vurguyu dinleyiciye göre değiştir', 'register'],
     ],
     C2: [
+      ['polyphonic-testimony', 'Tanıklık ile editoryal yeniden anlatım arasındaki anlam değişimini göster', 'literary'],
       ['sensitive', 'Hassas kültürlerarası görüşmede esnek aracılık yap', 'mediation'], ['mixed-voices', 'Hızlı bölgesel ve gündelik konuşmayı birlikte yorumla', 'accent'],
       ['creative-style', 'Aynı içeriği farklı edebî üsluplarla işle', 'literary', 'ru.recast'], ['prosodic-nuance', 'İma ve duygusal mesafeyi sesle ayarla', 'nuance'],
     ],
@@ -191,11 +202,13 @@ export function measureCurriculum(course: Course) {
     value.normalize('NFC').toLocaleLowerCase(course.language).trim())).size
   return outcomesFor(course).map(({ band, baseline, outcomes }) => {
     const lessons = outcomes.flatMap(({ activeLesson }) => activeLesson ? [activeLesson] : [])
-    const materials = lessons.flatMap(({ pedagogy }) => pedagogy
-      ? [pedagogy, ...(pedagogy.receptionRetry ? [pedagogy.receptionRetry] : [])] : [])
+    const reception = ({ pedagogy }: Course['unit']['lessons'][number]) => pedagogy
+      ? [pedagogy, ...(pedagogy.receptionRetry ? [pedagogy.receptionRetry] : [])] : []
+    const materials = lessons.flatMap(reception)
+    const listeningMaterials = lessons.filter(({ teaching }) => teaching?.audioMode !== 'script-practice').flatMap(reception)
     const activeTerms = lessons.flatMap(({ vocabulary }) => vocabulary.map(({ term }) => term))
     const receptiveTerms = lessons.flatMap(({ teaching }) => teaching?.receptive?.map(({ term }) => term) ?? [])
-    const audio = materials.map(({ listening }) => listening.audio)
+    const audio = listeningMaterials.map(({ listening }) => listening.audio)
     const concepts = lessons.flatMap((lesson) => lesson.concepts
       .filter(({ variants }) => variants.some(({ skill }) => skill === 'grammar'))
       .map(({ id }) => ({ id, check: lesson.pedagogy?.checks.find(({ conceptId }) => conceptId === id) })))
@@ -204,12 +217,12 @@ export function measureCurriculum(course: Course) {
       band, baseline, planned: outcomes.length, playable: lessons.length,
       open: outcomes.filter(({ activeLesson }) => !activeLesson).map(({ id, task, prerequisite }) => ({ id, task, prerequisite })),
       active: distinct(activeTerms), receptive: distinct(receptiveTerms),
-      reading: materials.length, listening: materials.length,
+      reading: materials.length, listening: listeningMaterials.length, scriptPractice: materials.length - listeningMaterials.length,
       syntheticListening: audio.filter((clip) => clip.kind === 'synthesis' || clip.synthetic === true).length,
       readingSourceLengths: materials.map(({ reading }) => wordCount(reading.text)),
-      listeningSourceLengths: materials.map(({ listening }) => wordCount(listening.transcript)),
+      listeningSourceLengths: listeningMaterials.map(({ listening }) => wordCount(listening.transcript)),
       readingWords: Math.max(0, ...materials.map(({ reading }) => wordCount(reading.text))),
-      listeningWords: Math.max(0, ...materials.map(({ listening }) => wordCount(listening.transcript))),
+      listeningWords: Math.max(0, ...listeningMaterials.map(({ listening }) => wordCount(listening.transcript))),
       writing: lessons.length, speaking: lessons.filter(({ speaking }) => speaking).length,
       revisions: lessons.filter(({ pedagogy }) => pedagogy?.revision).length,
       practiceOpportunities: {

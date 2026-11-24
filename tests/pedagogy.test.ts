@@ -313,7 +313,7 @@ describe('Learning Experience v1 learner scenarios', () => {
       .map(({ exercise }) => [exercise.id, 'Bilmiyorum']))
     let state = start(course, placementErrors)
     state = { ...state, profile: { ...state.profile, days: [1, 2, 3, 4, 5], minutes: 5, target: 'C1' } }
-    const beginnerOnlyEnglish = new Set(['en.rebook', 'en.detour', 'en.symptoms', 'en.appointment', 'en.invite', 'en.host', 'en.instructions', 'en.make-it-up'])
+    const beginnerOnlyEnglish = new Set(['en.rebook', 'en.detour', 'en.symptoms', 'en.appointment', 'en.invite', 'en.host', 'en.instructions', 'en.make-it-up', 'en.course-choice'])
     const route = course.unit.lessons.filter(({ id, objective }) => objective.level !== 'C2' &&
       (course.language !== 'en' || (objective.level !== 'A1' && !beginnerOnlyEnglish.has(id))))
     const learningDays = new Set<string>()

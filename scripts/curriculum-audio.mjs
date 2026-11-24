@@ -25,8 +25,8 @@ const voices = { en: ['en-us', '153'], ru: ['ru', '140'], es: ['es', '140'] }
 const clips = files.filter((name) => !selected.length || selected.includes(name)).flatMap((file) => {
   const { language, lessons } = JSON.parse(readFileSync(new URL(file, file === 'es.json' ? root : packs), 'utf8'))
   if (!Object.hasOwn(voices, language)) throw new Error(`Geçersiz dil: ${file}`)
-  // Device-synthesis lessons use the separate TTS production and review workflow.
-  return lessons.filter(({ audioMode }) => audioMode !== 'device-synthesis').flatMap((lesson) => {
+  // Lessons awaiting recordings use the separate TTS production and review workflow.
+  return lessons.filter(({ audioMode }) => !audioMode).flatMap((lesson) => {
     if (!/^(en|ru|es)\.[a-z][a-z0-9-]+$/.test(lesson.id) || !lesson.id.startsWith(language + '.')) {
       throw new Error(`Geçersiz ders kimliği: ${file}`)
     }

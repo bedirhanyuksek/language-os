@@ -8,6 +8,8 @@ Bir dersin öğretici sayılması için öğrenciye ilgili iletişim görevini a
 
 Yeni aktif kelime kartına kalıcı anlam kimliği ve denetlenen kart sürümü bağlanır. Öğrenciye kart miktarını süre, tekrar yükü ve performansa göre mevcut planlayıcı verir. Yeni ses kayıtları için `device-synthesis` kullanan paketlerde model, örnek ve dinleme metinleri yerel cihaz sesiyle çalışabilir. Yerel ses yoksa metinle çalışma dinleme kanıtı oluşturmaz. Üretim gereksinimlerini `npm run curriculum:audio -- --audio-report` ile incele. Yeni Rusça terim, örnek ve replikler için vurgu girdisini metinle birlikte doğrula. Dosya üretimi ve dağıtım kararı ayrı adımlardır.
 
+İncelenmiş kaydı bekleyen bir diyalog `script-practice` olarak açılır. Öğrenci konuşmacıları ve söylediklerini metin üzerinden izler, ana fikir ve ayrıntı açıklamalarını kontrol edebilir. Bu akış mevcut eksik dinleme kaydını kullanır. Çalışma planı sonraki aşamaya geçebilir; kapsam raporu diyalog metinlerini dinleme materyallerinden ayrı sayar.
+
 ## Kanıt ve geçiş
 
 | Durum | Gerekli gözlem | Ürün davranışı |

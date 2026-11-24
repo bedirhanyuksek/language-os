@@ -11,7 +11,11 @@ export const skillLabels: Record<Skill, string> = {
 }
 export const dayLabels = ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt']
 
-export const phaseLabels: Record<PedagogyPhase, string> = {
+const phaseLabels: Record<PedagogyPhase, string> = {
   revision: 'Yazıyı geliştir', foundation: 'Ön koşul pratiği', transfer: 'Yeni bağlamda üretim', reading: 'Okuma',
   listening: 'Dinleme', vocabulary: 'Kelimeleri öğren', delayed: 'Gecikmeli kazanım kontrolü',
+}
+
+export function pedagogyLabel(phase: PedagogyPhase, scriptPractice: boolean) {
+  return phase === 'listening' && scriptPractice ? 'Diyalog metni' : phaseLabels[phase]
 }

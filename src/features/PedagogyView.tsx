@@ -8,7 +8,7 @@ import type { LearningState } from '../domain/state'
 import { AudioPlayer } from './AudioPlayer'
 import { ExerciseForm } from './ExerciseForm'
 import { TextAnswer } from './TextAnswer'
-import { phaseLabels } from './labels'
+import { pedagogyLabel } from './labels'
 import { useStudySession } from './study-session-context'
 import { audioLocales } from '../content/teaching'
 
@@ -23,6 +23,7 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
   const reception = phase === 'reading' || phase === 'listening' ? receptionTask(state, lesson, phase) : undefined
   const reading = reception && 'text' in reception.material ? reception.material : p.reading
   const listening = reception && 'audio' in reception.material ? reception.material : p.listening
+  const scriptPractice = phase === 'listening' && lesson.teaching?.audioMode === 'script-practice'
   const transferCorrections = phase === 'transfer' ? pendingSpeakingCorrections(state, lesson).filter((item, index, all) =>
     tasks.some(({ conceptId }) => conceptId === item.conceptId) &&
     all.findIndex(({ conceptId }) => conceptId === item.conceptId) === index) : []
@@ -41,7 +42,7 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
   }
 
   return <>
-    <header className="page-heading"><div><p className="eyebrow">{lesson.title}</p><h1>{phaseLabels[phase]}</h1></div></header>
+    <header className="page-heading"><div><p className="eyebrow">{lesson.title}</p><h1>{pedagogyLabel(phase, scriptPractice)}</h1></div></header>
     {!!reception?.previous.length && <section className="surface">
       <h2>Farklı bir yolla dene</h2>
       {reception.previous.map(({ id, answer }, index) => <div key={id}>
@@ -76,14 +77,24 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
       <p lang={p.language} className="passage">{reading.text}</p>
     </section>}
     {phase === 'listening' && <section className="surface section">
-      <h2>Dinlemeden önce</h2><p>{listening.preparation}</p>
-      {lesson.teaching?.audioMode === 'device-synthesis' && listening.audio.kind === 'synthesis' &&
-        <p><small>Yerel cihaz sesi · tüm replikler aynı sesle okunur</small></p>}
-      <AudioPlayer audio={listening.audio} text={listening.transcript}
-        label={plays ? 'Tekrar dinle' : 'Kaydı dinle'} onEnd={() => session.change({ plays: plays + 1, supports: { audioUnavailable: false } })}
-        onUnavailable={() => session.change({ supports: { audioUnavailable: true } })} />
-      {unavailable && <><blockquote lang={p.language}>{listening.transcript}</blockquote><p>Metinli inceleme · sesli dinleme sonucu kaydedilmez.</p><button className="link-button" disabled={busy} onClick={() => void submit({}, 'unavailable')}>Metinle çalış ve dinlemeyi atla</button></>}
-      {plays > 0 && tasks.length > 1 && <p className="section">İlk dinlemede ana fikre, tekrar dinlerken ayrıntıya odaklan.</p>}
+      <h2>{scriptPractice ? 'Okumadan önce' : 'Dinlemeden önce'}</h2><p>{listening.preparation}</p>
+      {scriptPractice ? <>
+        <p lang={p.language} className="passage">{listening.transcript}</p>
+        {[listening.main, listening.detail].map((exercise) => <details key={exercise.id}>
+          <summary>{exercise.prompt}</summary>
+          <p>{exercise.explanation}</p>
+        </details>)}
+        <p>Bu materyalin incelenmiş ses kaydı bekleniyor. Bu çalışmadan dinleme kanıtı kaydedilmez.</p>
+        <button className="primary" disabled={busy} onClick={() => void submit({}, 'unavailable')}>Metin çalışmasını bitir</button>
+      </> : <>
+        {lesson.teaching?.audioMode === 'device-synthesis' && listening.audio.kind === 'synthesis' &&
+          <p><small>Yerel cihaz sesi · tüm replikler aynı sesle okunur</small></p>}
+        <AudioPlayer audio={listening.audio} text={listening.transcript}
+          label={plays ? 'Tekrar dinle' : 'Kaydı dinle'} onEnd={() => session.change({ plays: plays + 1, supports: { audioUnavailable: false } })}
+          onUnavailable={() => session.change({ supports: { audioUnavailable: true } })} />
+        {unavailable && <><blockquote lang={p.language}>{listening.transcript}</blockquote><p>Metinli inceleme · sesli dinleme sonucu kaydedilmez.</p><button className="link-button" disabled={busy} onClick={() => void submit({}, 'unavailable')}>Metinle çalış ve dinlemeyi atla</button></>}
+        {plays > 0 && tasks.length > 1 && <p className="section">İlk dinlemede ana fikre, tekrar dinlerken ayrıntıya odaklan.</p>}
+      </>}
     </section>}
     {phase === 'vocabulary' && card && entry && vocabStep === 0 && <article className="surface section word-card">
       <h2 lang={p.language}>{card.term}</h2><p>{card.meaning} · {card.partOfSpeech}</p>
@@ -97,10 +108,10 @@ export function PedagogyView({ course, lesson, phase, tasks, busy, submit, state
       <ExerciseForm key={step} tasks={[tasks[(Math.floor(step / 4) * 3) + vocabStep - 1]]}
         language={p.language} busy={busy} submitLabel="Yanıtı kaydet" onSubmit={next} />
     </section>}
-    {phase === 'listening' && plays > step && step < tasks.length && <section className="section">
+    {phase === 'listening' && !scriptPractice && plays > step && step < tasks.length && <section className="section">
       <ExerciseForm key={step} tasks={[tasks[step]]} language={p.language} busy={busy} submitLabel={step === tasks.length - 1 ? 'Yanıtları değerlendir' : 'Ana fikri kaydet'} onSubmit={next} />
     </section>}
-    {phase === 'listening' && step === 1 && plays === 1 && <p className="section" role="status">Ayrıntı sorusuna geçmek için bir kez daha dinle.</p>}
+    {phase === 'listening' && !scriptPractice && step === 1 && plays === 1 && <p className="section" role="status">Ayrıntı sorusuna geçmek için bir kez daha dinle.</p>}
     {phase !== 'listening' && phase !== 'vocabulary' && <section className="section">
       {phase === 'foundation' && <div className="surface">
         <p>Önceki kazanımdaki kısa alıştırmayı çöz. Sonra yeni konuya farklı bir örnekle dön.</p>
@@ -134,10 +145,11 @@ export function PedagogyResults({ lesson, phase, attempts, onContinue, state, re
     ...p.checks.flatMap(({ transfer, delayed, foundation }) => [...transfer, ...delayed, ...(foundation ? [foundation.exercise] : [])]),
     ...p.vocabulary.flatMap(({ recognize, recall, use }) => [recognize, recall, use])]
   return <>
-    <header className="page-heading"><div><p className="eyebrow">{phaseLabels[phase]}</p><h1>Çalışma sonucu</h1></div></header>
+    <header className="page-heading"><div><p className="eyebrow">{pedagogyLabel(phase, lesson.teaching?.audioMode === 'script-practice')}</p><h1>Çalışma sonucu</h1></div></header>
     {phase === 'listening' && <article className="surface">
       <h2>Transkript</h2><p lang={p.language}>{listening.transcript}</p>
-      <AudioPlayer audio={listening.audio} text={listening.transcript} label="Transkriptle dinle" />
+      {lesson.teaching?.audioMode !== 'script-practice' &&
+        <AudioPlayer audio={listening.audio} text={listening.transcript} label="Transkriptle dinle" />}
       {!attempts.length && <p>Bu çalışma için dinleme kanıtı kaydedilmedi.</p>}
     </article>}
     {finalFailure && <p className="notice">Yeni örnekte de zorlandın. Bu beceride kanıt henüz eksik; mevcut iki görev kullanıldı. Diğer becerilere çalışmaya devam edebilirsin.</p>}

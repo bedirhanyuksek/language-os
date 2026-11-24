@@ -1,0 +1,674 @@
+[
+  {
+    "id": "en.family-profile.1",
+    "language": "en",
+    "lemma": "cousin",
+    "partOfSpeech": "noun",
+    "band": "A1",
+    "meaning": "kuzen",
+    "example": "My cousin is seventeen.",
+    "usage": "Cousin hem kadın hem erkek kuzen için kullanılır.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.family-profile.word.1",
+        "lessonId": "en.family-profile",
+        "objectiveId": "en.family-profile.objective",
+        "band": "A1",
+        "assessmentRevision": "9c2b4540"
+      }
+    ]
+  },
+  {
+    "id": "en.family-profile.2",
+    "language": "en",
+    "lemma": "older sister",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "abla",
+    "example": "Her older sister is a nurse.",
+    "usage": "Older, kardeşin yaşça büyük olduğunu belirten karşılaştırma sıfatıdır.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.family-profile.word.2",
+        "lessonId": "en.family-profile",
+        "objectiveId": "en.family-profile.objective",
+        "band": "A1",
+        "assessmentRevision": "f429857c"
+      }
+    ]
+  },
+  {
+    "id": "en.course-choice.1",
+    "language": "en",
+    "lemma": "enrol",
+    "partOfSpeech": "verb",
+    "band": "A2",
+    "meaning": "bir kursa kaydolmak",
+    "example": "I want to enrol in the evening course.",
+    "usage": "Enrol in + kurs. Amerikan yazımında enroll biçimi yaygındır.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.course-choice.word.1",
+        "lessonId": "en.course-choice",
+        "objectiveId": "en.course-choice.objective",
+        "band": "A2",
+        "assessmentRevision": "6f67310b"
+      }
+    ]
+  },
+  {
+    "id": "en.course-choice.2",
+    "language": "en",
+    "lemma": "entry requirement",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "kayıt için ön koşul",
+    "example": "A short interview is the only entry requirement.",
+    "usage": "Bir programa giriş için sağlanması gereken koşuldur.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.course-choice.word.2",
+        "lessonId": "en.course-choice",
+        "objectiveId": "en.course-choice.objective",
+        "band": "A2",
+        "assessmentRevision": "3a02381f"
+      }
+    ]
+  },
+  {
+    "id": "en.repair-request.1",
+    "language": "en",
+    "lemma": "fault",
+    "partOfSpeech": "noun",
+    "band": "B1",
+    "meaning": "üründeki arıza",
+    "example": "The fault only appears when the motor warms up.",
+    "usage": "Fault ürün veya sistemdeki sorunu tanımlar.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.repair-request.word.1",
+        "lessonId": "en.repair-request",
+        "objectiveId": "en.repair-request.objective",
+        "band": "B1",
+        "assessmentRevision": "950ea040"
+      }
+    ]
+  },
+  {
+    "id": "en.repair-request.2",
+    "language": "en",
+    "lemma": "replacement",
+    "partOfSpeech": "noun",
+    "band": "B1",
+    "meaning": "arıza sonrası verilen ikame ürün",
+    "example": "They sent a replacement for the broken lamp.",
+    "usage": "Mevcut ürünün yerine verilen eşya.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.repair-request.word.2",
+        "lessonId": "en.repair-request",
+        "objectiveId": "en.repair-request.objective",
+        "band": "B1",
+        "assessmentRevision": "70081e0d"
+      }
+    ]
+  },
+  {
+    "id": "en.panel-evidence.1",
+    "language": "en",
+    "lemma": "confounding factor",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "ölçülen ilişkiyi başka yoldan açıklayabilen etken",
+    "example": "Later opening times were a possible confounding factor.",
+    "usage": "İki durum birlikte değiştiğinde hangisinin sonucu etkilediğini belirsizleştiren etken.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.panel-evidence.word.1",
+        "lessonId": "en.panel-evidence",
+        "objectiveId": "en.panel-evidence.objective",
+        "band": "B2",
+        "assessmentRevision": "2e49681a"
+      }
+    ]
+  },
+  {
+    "id": "en.panel-evidence.2",
+    "language": "en",
+    "lemma": "concurrent change",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "aynı dönemde gerçekleşen değişiklik",
+    "example": "The survey did not account for a concurrent change in opening hours.",
+    "usage": "Aynı dönemdeki ayrı değişikliği belirtir. Sonucu açıklayıp açıklamadığı ayrıca sınanır.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.panel-evidence.word.2",
+        "lessonId": "en.panel-evidence",
+        "objectiveId": "en.panel-evidence.objective",
+        "band": "B2",
+        "assessmentRevision": "d2847cf2"
+      }
+    ]
+  },
+  {
+    "id": "en.floor-repair.1",
+    "language": "en",
+    "lemma": "hold that thought",
+    "partOfSpeech": "verb phrase",
+    "band": "C1",
+    "meaning": "söyleyeceği görüşü kısa süre ertelemek",
+    "example": "Could you hold that thought until Mei has finished?",
+    "usage": "Sözü kesmeden daha sonra geri dönüleceğini belirten rica.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.floor-repair.word.1",
+        "lessonId": "en.floor-repair",
+        "objectiveId": "en.floor-repair.objective",
+        "band": "C1",
+        "assessmentRevision": "5624f4af"
+      }
+    ]
+  },
+  {
+    "id": "en.floor-repair.2",
+    "language": "en",
+    "lemma": "outstanding question",
+    "partOfSpeech": "noun phrase",
+    "band": "C1",
+    "meaning": "hâlâ yanıt bekleyen soru",
+    "example": "The chair returned to the outstanding question about the second group.",
+    "usage": "Outstanding burada cevabı henüz verilmemiş demektir.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.floor-repair.word.2",
+        "lessonId": "en.floor-repair",
+        "objectiveId": "en.floor-repair.objective",
+        "band": "C1",
+        "assessmentRevision": "a4e8c1d2"
+      }
+    ]
+  },
+  {
+    "id": "en.free-indirect-reading.1",
+    "language": "en",
+    "lemma": "free indirect style",
+    "partOfSpeech": "noun phrase",
+    "band": "C2",
+    "meaning": "serbest dolaylı anlatım",
+    "example": "Free indirect style lets a character’s impatience colour third-person narration.",
+    "usage": "Öyküde söz veya iç düşünce, ayrı alıntı olmadan anlatıcının diline sızar.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.free-indirect-reading.word.1",
+        "lessonId": "en.free-indirect-reading",
+        "objectiveId": "en.free-indirect-reading.objective",
+        "band": "C2",
+        "assessmentRevision": "8fc7a0b4"
+      }
+    ]
+  },
+  {
+    "id": "en.free-indirect-reading.2",
+    "language": "en",
+    "lemma": "narrative distance",
+    "partOfSpeech": "noun phrase",
+    "band": "C2",
+    "meaning": "anlatıcıyla karakter bakışı arasındaki mesafe",
+    "example": "The neutral report increases narrative distance.",
+    "usage": "Okurun karakter algısına ne ölçüde yaklaştığını anlatır.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "en.free-indirect-reading.word.2",
+        "lessonId": "en.free-indirect-reading",
+        "objectiveId": "en.free-indirect-reading.objective",
+        "band": "C2",
+        "assessmentRevision": "d4f56703"
+      }
+    ]
+  },
+  {
+    "id": "ru.shift-note.1",
+    "language": "ru",
+    "lemma": "смена",
+    "partOfSpeech": "существительное",
+    "band": "A1",
+    "meaning": "iş vardiyası",
+    "example": "В пятницу у меня смена.",
+    "usage": "Belirli iş aralığını ifade eder.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.shift-note.word.1",
+        "lessonId": "ru.shift-note",
+        "objectiveId": "ru.shift-note.objective",
+        "band": "A1",
+        "assessmentRevision": "be6aa61f"
+      }
+    ]
+  },
+  {
+    "id": "ru.shift-note.2",
+    "language": "ru",
+    "lemma": "расписание",
+    "partOfSpeech": "существительное",
+    "band": "A1",
+    "meaning": "çizelge",
+    "example": "Вот расписание на неделю.",
+    "usage": "Ders, sefer veya iş zamanlarını gösteren liste.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.shift-note.word.2",
+        "lessonId": "ru.shift-note",
+        "objectiveId": "ru.shift-note.objective",
+        "band": "A1",
+        "assessmentRevision": "429902b7"
+      }
+    ]
+  },
+  {
+    "id": "ru.chat-arrangement.1",
+    "language": "ru",
+    "lemma": "успеть",
+    "partOfSpeech": "глагол",
+    "band": "A2",
+    "meaning": "bir işe veya saate yetişmek",
+    "example": "Мы успеем к восьми.",
+    "usage": "К + saat ile varılacak zamanı, mastarla yetiştirilecek işi belirtir.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.chat-arrangement.word.1",
+        "lessonId": "ru.chat-arrangement",
+        "objectiveId": "ru.chat-arrangement.objective",
+        "band": "A2",
+        "assessmentRevision": "c03f4f97"
+      }
+    ]
+  },
+  {
+    "id": "ru.chat-arrangement.2",
+    "language": "ru",
+    "lemma": "переписка",
+    "partOfSpeech": "существительное",
+    "band": "A2",
+    "meaning": "yazılı mesajlaşma",
+    "example": "Началась переписка о встрече.",
+    "usage": "İleti veya mesaj alışverişi.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.chat-arrangement.word.2",
+        "lessonId": "ru.chat-arrangement",
+        "objectiveId": "ru.chat-arrangement.objective",
+        "band": "A2",
+        "assessmentRevision": "b50af4a"
+      }
+    ]
+  },
+  {
+    "id": "ru.film-reaction.1",
+    "language": "ru",
+    "lemma": "ожидание",
+    "partOfSpeech": "существительное",
+    "band": "B1",
+    "meaning": "ne olacağına dair beklenti",
+    "example": "Финал изменил мои ожидания.",
+    "usage": "Burada sıra beklemek değil, beklenen olayı zihinde öngörmek.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.film-reaction.word.1",
+        "lessonId": "ru.film-reaction",
+        "objectiveId": "ru.film-reaction.objective",
+        "band": "B1",
+        "assessmentRevision": "ecec21e4"
+      }
+    ]
+  },
+  {
+    "id": "ru.film-reaction.2",
+    "language": "ru",
+    "lemma": "поступок",
+    "partOfSpeech": "существительное",
+    "band": "B1",
+    "meaning": "bir kişinin belirli davranışı",
+    "example": "Меня удивил его поступок.",
+    "usage": "Bir karakterin yaptığı somut ve yorumlanabilir eylem.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.film-reaction.word.2",
+        "lessonId": "ru.film-reaction",
+        "objectiveId": "ru.film-reaction.objective",
+        "band": "B1",
+        "assessmentRevision": "63143ec9"
+      }
+    ]
+  },
+  {
+    "id": "ru.panel-corrections.1",
+    "language": "ru",
+    "lemma": "единица учёта",
+    "partOfSpeech": "словосочетание",
+    "band": "B2",
+    "meaning": "sayım birimi",
+    "example": "В этой таблице единица учёта — одно посещение.",
+    "usage": "Bir tabloda tek kayıt sayılan olay veya nesne.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.panel-corrections.word.1",
+        "lessonId": "ru.panel-corrections",
+        "objectiveId": "ru.panel-corrections.objective",
+        "band": "B2",
+        "assessmentRevision": "a04df47b"
+      }
+    ]
+  },
+  {
+    "id": "ru.panel-corrections.2",
+    "language": "ru",
+    "lemma": "уточнение",
+    "partOfSpeech": "существительное",
+    "band": "B2",
+    "meaning": "bir bilginin açıklığa kavuşturulması",
+    "example": "Докладчик попросил внести уточнение.",
+    "usage": "Önceki ifade yanlış anlaşılabiliyorsa ayrıntısını netleştiren ek bilgi.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.panel-corrections.word.2",
+        "lessonId": "ru.panel-corrections",
+        "objectiveId": "ru.panel-corrections.objective",
+        "band": "B2",
+        "assessmentRevision": "da8e71f"
+      }
+    ]
+  },
+  {
+    "id": "ru.wiki-compromise.1",
+    "language": "ru",
+    "lemma": "сверять",
+    "partOfSpeech": "глагол",
+    "band": "C1",
+    "meaning": "iki kaynağı karşılaştırarak doğrulamak",
+    "example": "Нужно сверять даты по документам.",
+    "usage": "Bilgiyi başka bir kayıtla karşılaştırıp uyuşmazlığı görmek.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.wiki-compromise.word.1",
+        "lessonId": "ru.wiki-compromise",
+        "objectiveId": "ru.wiki-compromise.objective",
+        "band": "C1",
+        "assessmentRevision": "3d0e1786"
+      }
+    ]
+  },
+  {
+    "id": "ru.wiki-compromise.2",
+    "language": "ru",
+    "lemma": "спорные сведения",
+    "partOfSpeech": "словосочетание",
+    "band": "C1",
+    "meaning": "doğruluğu tartışmalı bilgiler",
+    "example": "Спорные сведения оставили для проверки.",
+    "usage": "Gerçek veya yanlış olduğu henüz kararlaştırılmamış bilgileri ifade eder.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.wiki-compromise.word.2",
+        "lessonId": "ru.wiki-compromise",
+        "objectiveId": "ru.wiki-compromise.objective",
+        "band": "C1",
+        "assessmentRevision": "fd2d8afc"
+      }
+    ]
+  },
+  {
+    "id": "ru.polyphonic-testimony.1",
+    "language": "ru",
+    "lemma": "искажать смысл",
+    "partOfSpeech": "глагольное словосочетание",
+    "band": "C2",
+    "meaning": "anlamı çarpıtmak",
+    "example": "Короткая фраза может искажать смысл ответа.",
+    "usage": "Kısaltma veya yorumun asıl anlamı değiştirmesini ifade eder.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.polyphonic-testimony.word.1",
+        "lessonId": "ru.polyphonic-testimony",
+        "objectiveId": "ru.polyphonic-testimony.objective",
+        "band": "C2",
+        "assessmentRevision": "79b07787"
+      }
+    ]
+  },
+  {
+    "id": "ru.polyphonic-testimony.2",
+    "language": "ru",
+    "lemma": "дословно",
+    "partOfSpeech": "наречие",
+    "band": "C2",
+    "meaning": "kelimesi kelimesine",
+    "example": "Можно процитировать ответ дословно.",
+    "usage": "Aynı sözcükleri koruyan aktarım.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "ru.polyphonic-testimony.word.2",
+        "lessonId": "ru.polyphonic-testimony",
+        "objectiveId": "ru.polyphonic-testimony.objective",
+        "band": "C2",
+        "assessmentRevision": "e2cee2cc"
+      }
+    ]
+  },
+  {
+    "id": "es.pasado-cerrado.1",
+    "language": "es",
+    "lemma": "entregar",
+    "partOfSpeech": "verbo",
+    "band": "A2",
+    "meaning": "teslim etmek",
+    "example": "Entregué las llaves el lunes.",
+    "usage": "Nesneyi birine veya belirli bir noktaya teslim ederken kullanılır.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.pasado-cerrado.word.1",
+        "lessonId": "es.pasado-cerrado",
+        "objectiveId": "es.pasado-cerrado.objective",
+        "band": "A2",
+        "assessmentRevision": "500c62a8"
+      }
+    ]
+  },
+  {
+    "id": "es.pasado-cerrado.2",
+    "language": "es",
+    "lemma": "pendiente",
+    "partOfSpeech": "adjetivo",
+    "band": "A2",
+    "meaning": "henüz tamamlanmamış",
+    "example": "El pago está pendiente.",
+    "usage": "Yapılması gereken işin hâlâ tamamlanmadığını söyler.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.pasado-cerrado.word.2",
+        "lessonId": "es.pasado-cerrado",
+        "objectiveId": "es.pasado-cerrado.objective",
+        "band": "A2",
+        "assessmentRevision": "98893926"
+      }
+    ]
+  },
+  {
+    "id": "es.connected-account.1",
+    "language": "es",
+    "lemma": "turno",
+    "partOfSpeech": "sustantivo",
+    "band": "B1",
+    "meaning": "iş veya görev vardiyası",
+    "example": "Mi turno empezó a las ocho.",
+    "usage": "Burada düzenli görev zaman dilimi. Bekleme sırası anlamı da var.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.connected-account.word.1",
+        "lessonId": "es.connected-account",
+        "objectiveId": "es.connected-account.objective",
+        "band": "B1",
+        "assessmentRevision": "9ed4e61e"
+      }
+    ]
+  },
+  {
+    "id": "es.connected-account.2",
+    "language": "es",
+    "lemma": "dar con",
+    "partOfSpeech": "locución verbal",
+    "band": "B1",
+    "meaning": "arayarak bulmak",
+    "example": "Al final di con la entrada del museo.",
+    "usage": "Dar con + nesne, arama veya çabadan sonra bulmayı anlatır.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.connected-account.word.2",
+        "lessonId": "es.connected-account",
+        "objectiveId": "es.connected-account.objective",
+        "band": "B1",
+        "assessmentRevision": "16fe46d6"
+      }
+    ]
+  },
+  {
+    "id": "es.cambio-con-motivo.1",
+    "language": "es",
+    "lemma": "motivo",
+    "partOfSpeech": "sustantivo",
+    "band": "B1",
+    "meaning": "bir kararın gerekçesi",
+    "example": "El motivo del cambio fue la lluvia.",
+    "usage": "Bir karar veya olay için verilen neden.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.cambio-con-motivo.word.1",
+        "lessonId": "es.cambio-con-motivo",
+        "objectiveId": "es.cambio-con-motivo.objective",
+        "band": "B1",
+        "assessmentRevision": "94533641"
+      }
+    ]
+  },
+  {
+    "id": "es.cambio-con-motivo.2",
+    "language": "es",
+    "lemma": "quedarse sin",
+    "partOfSpeech": "locución verbal",
+    "band": "B1",
+    "meaning": "bir şey tükenince onsuz kalmak",
+    "example": "Nos quedamos sin agua antes del descanso.",
+    "usage": "Bir kaynağın hiç kalmadığını anlatır.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.cambio-con-motivo.word.2",
+        "lessonId": "es.cambio-con-motivo",
+        "objectiveId": "es.cambio-con-motivo.objective",
+        "band": "B1",
+        "assessmentRevision": "9d66cda2"
+      }
+    ]
+  },
+  {
+    "id": "es.pregunta-seguimiento.1",
+    "language": "es",
+    "lemma": "aclarar",
+    "partOfSpeech": "verbo",
+    "band": "B1",
+    "meaning": "belirsiz bilgiyi açıklığa kavuşturmak",
+    "example": "Quiero aclarar quién recogió el paquete.",
+    "usage": "Soru veya açıklama yoluyla belirsizliği gidermek.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.pregunta-seguimiento.word.1",
+        "lessonId": "es.pregunta-seguimiento",
+        "objectiveId": "es.pregunta-seguimiento.objective",
+        "band": "B1",
+        "assessmentRevision": "e0bc4c60"
+      }
+    ]
+  },
+  {
+    "id": "es.pregunta-seguimiento.2",
+    "language": "es",
+    "lemma": "recibo",
+    "partOfSpeech": "sustantivo",
+    "band": "B1",
+    "meaning": "alışveriş veya ödeme makbuzu",
+    "example": "Guardé el recibo después de pagar.",
+    "usage": "Ödemeyi belgeleyen yazılı kayıt.",
+    "revision": 1,
+    "change": "Phase 5 ikinci içerik kaydı",
+    "links": [
+      {
+        "cardId": "es.pregunta-seguimiento.word.2",
+        "lessonId": "es.pregunta-seguimiento",
+        "objectiveId": "es.pregunta-seguimiento.objective",
+        "band": "B1",
+        "assessmentRevision": "a9b73608"
+      }
+    ]
+  }
+]

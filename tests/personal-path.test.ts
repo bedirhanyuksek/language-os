@@ -141,8 +141,16 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
   let cultureTransferMiss = false
   let cultureRepair = false
   let reachedPublishedEnd = false
-  const horizon = target === 'C2' ? 200 : 170
+  const routePack = packedLessons.filter(({ language, entry }) => language === 'en' &&
+    ['B1', 'B2', 'B2+', 'C1', ...(target === 'C2' ? ['C2'] : [])].includes(entry.level))
+  const previousHorizon = target === 'C2' ? 200 : 170
+  const finalLessonId = target === 'C2' ? 'en.mediation' : 'en.seminar'
+  const horizon = previousHorizon + routePack.filter(({ entry }) => entry.audioMode === 'script-practice').length * 10
   for (let elapsed = 0; elapsed < horizon && !reachedPublishedEnd; elapsed++) {
+    if (elapsed === previousHorizon) {
+      const oldEndpoint = course.unit.lessons.find(({ id }) => id === finalLessonId)!
+      expect(masteryFor(state, oldEndpoint).status).toBe('retained')
+    }
     const now = new Date(Date.parse(at) + elapsed * day).toISOString()
     for (let count = 0; count < 60; count++) {
       const plan = dailyPlan(state, course, now, zone)
@@ -218,16 +226,20 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
   expect(seen.has('en.station')).toBe(false)
   expect(seen.has('en.evidence')).toBe(true)
   expect(seen.has('en.appointment')).toBe(false)
-  const routePack = packedLessons.filter(({ language, entry }) => language === 'en' &&
-    ['B1', 'B2', 'B2+', 'C1', ...(target === 'C2' ? ['C2'] : [])].includes(entry.level))
   expect(seen.size).toBe((target === 'C2' ? 20 : 18) + routePack.length)
-  for (const { entry } of routePack) expect(seen.has(entry.id), entry.id).toBe(true)
+  for (const { entry } of routePack) {
+    expect(seen.has(entry.id), entry.id).toBe(true)
+    if (entry.audioMode === 'script-practice') {
+      expect(state.skippedListening, entry.id).toContain(entry.id)
+      expect(state.attempts.some(({ lessonId, context }) => lessonId === entry.id && context === 'listening')).toBe(false)
+    }
+  }
   expect(seen.has('speaking')).toBe(true)
   expect(missedRecall).toBe(true)
   expect([...missedPhases].sort()).toEqual(['delayed', 'reading', 'transfer'])
   expect(state.attempts.some(({ lessonId, context, exerciseId }) =>
     lessonId === 'en.uncertainty' && context === 'reading' && exerciseId.endsWith('.retry.reading'))).toBe(true)
-  const end = course.unit.lessons.find(({ id }) => id === (target === 'C2' ? 'en.mediation' : 'en.seminar'))!
+  const end = course.unit.lessons.find(({ id }) => id === finalLessonId)!
   expect(masteryFor(state, end).status).toBe('retained')
   expect(state.profile.estimate).toBe('B1')
   expect(state.speakingAssessments).toHaveLength(0)
@@ -255,11 +267,12 @@ test.each([[15, 'C1'], [30, 'C1'], [60, 'C1'], [15, 'C2']] as const)(
   }
 })
 
-test.each(Object.values(catalog))('$language beginner reaches the end of the available A2 route locally', (course) => {
+test.each([...Object.values(catalog).map((course) => ({ course, target: 'A2' as const })),
+  { course: catalog.es, target: 'B1' as const }])('$course.language beginner reaches the end of the $target route locally', ({ course, target }) => {
   const misses = Object.fromEntries(course.placement.filter(({ exercise }) => exercise.kind !== 'open')
     .map(({ exercise }) => [exercise.id, 'Bilmiyorum']))
   let state = start(course, 30, misses)
-  state = { ...state, profile: { ...state.profile, estimate: 'A1', target: 'A2' } }
+  state = { ...state, profile: { ...state.profile, estimate: 'A1', target } }
   const first = dailyPlan(state, course, at, zone)
   expect(first).toMatchObject({ kind: 'lesson', lessonId: { en: 'en.identity', ru: 'ru.cyrillic', es: 'es.saludos' }[course.language] })
   const studies = new Map<string, number>()
@@ -300,12 +313,17 @@ test.each(Object.values(catalog))('$language beginner reaches the end of the ava
   const reached = new Set(state.attempts.flatMap(({ lessonId }) => lessonId ? [lessonId] : []))
   const phases = [...new Set([...studies.keys()].map((key) => key.split(':')[1]))].sort()
   expect(exhausted).toBe(true)
-  const routePack = packedLessons.filter(({ language, entry }) => language === course.language && ['A1', 'A2'].includes(entry.level))
+  const routePack = packedLessons.filter(({ language, entry }) => language === course.language &&
+    ['A1', 'A2', ...(target === 'B1' ? ['B1'] : [])].includes(entry.level))
   expect(reached.size).toBe({ en: 11, ru: 12, es: 9 }[course.language] + routePack.length)
   for (const { entry, lesson } of routePack) {
     expect(reached.has(entry.id), entry.id).toBe(true)
-    if (entry.audioMode !== 'device-synthesis') continue
+    if (!entry.audioMode) continue
     const attempts = state.attempts.filter(({ lessonId }) => lessonId === lesson.id)
+    if (entry.audioMode === 'script-practice') {
+      expect(state.skippedListening, lesson.id).toContain(lesson.id)
+      expect(attempts.some(({ context }) => context === 'listening'), lesson.id).toBe(false)
+    }
     const transfer = attempts.find(({ context }) => context === 'transfer')!
     const delayed = attempts.find(({ context }) => context === 'delayed')!
     expect(Date.parse(delayed.at) - Date.parse(transfer.at), lesson.id).toBeGreaterThanOrEqual(day)

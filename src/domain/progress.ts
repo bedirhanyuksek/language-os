@@ -177,6 +177,10 @@ export function finishPedagogy(
   const alternateReception = (phase === 'reading' || phase === 'listening') &&
     (plan?.phase === 'reading' || plan?.phase === 'listening')
   if (!tasks.length || (plan?.phase !== phase && !alternateReception)) throw new Error('Çalışma planı değişti.')
+  if (phase === 'listening' && lesson.teaching?.audioMode === 'script-practice') {
+    return spend({ ...state, skippedListening: [...state.skippedListening, lesson.id] },
+      'lesson', lesson.id, phaseMinutes.listening, now)
+  }
   if (phase === 'listening' && listening === 'unavailable') {
     return { ...state, skippedListening: [...state.skippedListening, lesson.id] }
   }

@@ -16,7 +16,7 @@ import { bridgeLesson, needsBridge } from '../domain/diagnostic'
 import { dailyMinutes, dueCards, isUnlocked, masteryFor, needsEnglishStarter } from '../domain/progress'
 import { speakingSuccesses } from '../domain/speaking'
 import type { LearningState } from '../domain/state'
-import { goalLabels, languageLabels, languageMarks, phaseLabels, skillLabels } from './labels'
+import { goalLabels, languageLabels, languageMarks, pedagogyLabel, skillLabels } from './labels'
 import { AudioPlayer } from './AudioPlayer'
 import { ExerciseForm } from './ExerciseForm'
 
@@ -46,7 +46,8 @@ export function Dashboard({ state, course, plan, start, choose, now }: {
   state: LearningState; course: Course; plan: StudyPlan; start: () => void; choose: (task: StudyPlan) => void; now: string
 }) {
   const lesson = 'lessonId' in plan ? course.unit.lessons.find(({ id }) => id === plan.lessonId) : undefined
-  const headline = plan.kind === 'pedagogy' ? phaseLabels[plan.phase] : {
+  const scriptPractice = plan.kind === 'pedagogy' && plan.phase === 'listening' && lesson?.teaching?.audioMode === 'script-practice'
+  const headline = plan.kind === 'pedagogy' ? pedagogyLabel(plan.phase, scriptPractice) : {
     lesson: lesson?.title, practice: 'Hedefli pratik', speaking: 'Sesli pratik',
     review: 'Kelime tekrarı', out_of_scope: 'Hedef seviyende ders yok', rest: 'Dinlenme günü', budget: 'Bugünkü çalışma tamamlandı', complete: 'Başlangıç ünitesi tamamlandı', assessment_gap: 'Yeni değerlendirme örneği gerekli',
   }[plan.kind]
@@ -61,7 +62,7 @@ export function Dashboard({ state, course, plan, start, choose, now }: {
         <p className="eyebrow">{languageLabels[course.language]} <span>·</span> {lesson?.objective.level ?? course.level}{'minutes' in plan && <> <span>·</span> {plan.minutes} dk</>}</p>
         <h2>{headline}</h2>
         {lesson && <p className="objective">{lesson.objective.description}</p>}
-        <p className="plan-reason">{'minutes' in plan && <strong>Neden bu çalışma? </strong>}{plan.reason}</p>
+        <p className="plan-reason">{'minutes' in plan && <strong>Neden bu çalışma? </strong>}{scriptPractice ? 'Konuşmacıların görüşlerini metinden karşılaştır ve cevaplarını kontrol et.' : plan.reason}</p>
         <p className="plan-budget">Bugün {used} dk çalıştın · {Math.max(0, state.profile.minutes - used)} dk kaldı · Hedef {state.profile.target}</p>
         {'minutes' in plan && <button className="light-button" onClick={start}>{plan.kind === 'pedagogy' ? 'Çalışmayı aç' : action[plan.kind]} <span aria-hidden>↗</span></button>}
         {plan.kind === 'assessment_gap' && <button className="light-button" onClick={start}>Açıklamayı yeniden aç</button>}

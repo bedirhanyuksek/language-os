@@ -110,7 +110,7 @@ test('every packed lesson has an inventory binding, stage evidence, source ancho
       ...entry.models.map(({ phrase }, index) => [modelAudio(lesson.id, index, language, lesson.teaching?.audioMode), phrase] as const),
     ] as const
     for (const [audio, phrase] of clips) {
-      const device = entry.audioMode === 'device-synthesis'
+      const device = Boolean(entry.audioMode)
       expect(audio?.kind, lesson.id).toBe(device ? 'synthesis' : 'recording')
       if (device && audio?.kind === 'synthesis') {
         expect(audio.locale.split('-')[0]).toBe(language)
@@ -134,10 +134,13 @@ test('every packed lesson has an inventory binding, stage evidence, source ancho
 
 test('Phase 5 adds explicit senses and complete TTS work without packaging unreviewed audio', () => {
   const materials = Object.values(catalog).flatMap(audioMaterials)
-  const phase5 = packedLessons.filter(({ entry }) => entry.audioMode === 'device-synthesis')
+  const phase5 = packedLessons.filter(({ entry }) => entry.audioMode)
+  const second = phase5.filter(({ entry }) => entry.audioMode === 'script-practice')
   expect(Object.fromEntries(Object.keys(catalog).map((language) => [language,
-    phase5.filter((item) => item.language === language).map(({ entry }) => entry.level)])))
-    .toEqual({ en: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], ru: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], es: ['A1', 'A2'] })
+    second.filter((item) => item.language === language).map(({ entry }) => entry.level)])))
+    .toEqual({ en: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], ru: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], es: ['A2', 'B1', 'B1', 'B1'] })
+  expect(planCurriculumTts(materials, pronunciation).filter(({ language, blocked }) => language === 'ru' && blocked)
+    .length).toBeLessThanOrEqual(438)
   for (const { language, lesson } of phase5) {
     const jobs = planCurriculumTts(materials.filter(({ lessonId }) => lessonId === lesson.id), pronunciation)
     expect(jobs).toHaveLength(4 + lesson.vocabulary.length * 2)

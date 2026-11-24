@@ -1,0 +1,1439 @@
+{
+  "format": 1,
+  "language": "en",
+  "lessons": [
+    {
+      "id": "en.family-profile",
+      "outcome": "A1.family",
+      "level": "A1",
+      "prerequisite": [
+        "en.identity"
+      ],
+      "title": "Aileni bir ziyaret kaydında tanıt",
+      "objective": "Bir kişiyi yakınlık ve yaş bilgisiyle tanıt, başka bir ailenin kısa kaydını anla.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Possessive adjectives",
+        "Age with be"
+      ],
+      "situation": "Bir aile üyesi seni açık güne getirecek. Görevli onun kim olduğunu ve yaşını soruyor.",
+      "bridge": "Kimin yakını olduğunu my, his veya her ile belirt. Yaş için is ya da are kullan.",
+      "models": [
+        {
+          "phrase": "This is my sister. Her name is Aliya.",
+          "explanation": "My konuşana ait ilişkiyi, her ise Aliya’ya ait adı bildirir."
+        },
+        {
+          "phrase": "My brothers are ten and twelve.",
+          "explanation": "Birden çok kişi için are kullan. İngilizcede yaş için have değil be kullanılır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "İyelik için doğru kişi",
+          "incorrect": "This is Leyla. His brother is Can.",
+          "correct": "This is Leyla. Her brother is Can.",
+          "explanation": "Ait olan kişiye göre my, his veya her seç. His ve her sonraki ismin cinsiyetine bağlı değildir.",
+          "guided": [
+            [
+              "Mia’nın babası: ___ father is Tim.",
+              "Her"
+            ],
+            [
+              "Benim kız kardeşim: ___ sister is here.",
+              "My"
+            ]
+          ],
+          "transfer": [
+            [
+              "Ali’nin annesi gelecek: ___ mother is coming.",
+              "His"
+            ],
+            [
+              "Ece kendi kuzenini tanıtıyor: This is ___ cousin.",
+              "my"
+            ]
+          ],
+          "delayed": [
+            [
+              "Tom’un kız kardeşi öğretmen: ___ sister is a teacher.",
+              "His"
+            ],
+            [
+              "Sana ait kardeş için görevliye yaz: Is that ___ brother?",
+              "your"
+            ]
+          ]
+        },
+        {
+          "label": "Yaş için be",
+          "incorrect": "My brother has eleven years.",
+          "correct": "My brother is eleven years old.",
+          "explanation": "I am, tekil kişi is, çoğul kişi are. Sayı tek başına veya years old ile gelebilir.",
+          "guided": [
+            [
+              "My cousin ___ nine.",
+              "is"
+            ],
+            [
+              "The twins ___ seven years old.",
+              "are"
+            ]
+          ],
+          "transfer": [
+            [
+              "I ___ twenty years old.",
+              "am"
+            ],
+            [
+              "His grandmother ___ sixty.",
+              "is"
+            ]
+          ],
+          "delayed": [
+            [
+              "Our daughters ___ six and eight.",
+              "are"
+            ],
+            [
+              "How old ___ your uncle?",
+              "is"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "cousin",
+        "meaning": "kuzen",
+        "example": "My cousin is seventeen.",
+        "usage": "Cousin hem kadın hem erkek kuzen için kullanılır.",
+        "pronunciation": "/ˈkʌzən/",
+        "collocations": [
+          "my cousin",
+          "an older cousin"
+        ],
+        "recognize": [
+          "“cousin” bu kullanımda ne anlama geliyor?",
+          "kuzen",
+          "dayı",
+          "torun",
+          "Cousin hem kadın hem erkek kuzen için kullanılır."
+        ],
+        "recall": [
+          "“kuzen” anlamındaki hedef ifadeyi yaz.",
+          "cousin"
+        ],
+        "use": "Bir kuzenini yaş veya şehir bilgisiyle tanıt."
+      },
+      "additionalWords": [
+        {
+          "term": "older sister",
+          "meaning": "abla",
+          "example": "Her older sister is a nurse.",
+          "usage": "Older, kardeşin yaşça büyük olduğunu belirten karşılaştırma sıfatıdır.",
+          "pronunciation": "/ˈoʊldɚ ˈsɪstɚ/",
+          "collocations": [
+            "my older sister",
+            "her older sister"
+          ],
+          "recognize": [
+            "“older sister” bu kullanımda ne anlama geliyor?",
+            "abla",
+            "küçük kız kardeş",
+            "teyze",
+            "Older, kardeşin yaşça büyük olduğunu belirten karşılaştırma sıfatıdır."
+          ],
+          "recall": [
+            "“abla” anlamındaki hedef ifadeyi yaz.",
+            "older sister"
+          ],
+          "use": "Bir aile kartında büyük kız kardeşi tanıt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "guest",
+          "cue": "misafir"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir kayıt görevlisine iki ziyaretçiyi tanıt. Kuzenin Aslı 16, abin Murat 24 yaşında. Görevli üçüncü bir misafirden söz ediyor. Onun yaşını da sor.",
+        "sample": "This is my cousin Aslı. She is sixteen. This is my older brother Murat. He is twenty-four. How old is the third guest?",
+        "revision": "Kime ait ilişkiyi söylediğini denetle ve iki yaşın yerini karıştırma.",
+        "criteria": [
+          "İki ilişki doğru.",
+          "Yaşlar doğru kişiyle ve be ile verilir."
+        ]
+      },
+      "input": {
+        "text": "Family day card. Guest: Maya Khan. She is Leo’s aunt. Maya is forty. Leo is twelve. His cousin Imran is also twelve.",
+        "reading": [
+          "Maya, Leo’nun nesi?",
+          "Teyzesi veya halası",
+          "Kuzeni",
+          "Kız kardeşi",
+          "Aunt, ebeveynin kız kardeşi veya amca/dayı eşi olabilir.",
+          "She is Leo’s aunt."
+        ],
+        "transcript": "— Is Ada your sister?\n— Yes. She’s my older sister.\n— How old is she?\n— She’s fourteen.",
+        "preparation": "Kişi, yakınlık ve yaşı üç ayrı bilgi olarak tut.",
+        "main": [
+          "İki kişinin ilişkisi ne?",
+          "Kız kardeşler",
+          "Kuzenler",
+          "Arkadaşlar",
+          "My older sister, konuşanın ablasını tanıtır.",
+          "my older sister"
+        ],
+        "detail": [
+          "Ada kaç yaşında?",
+          "14",
+          "40",
+          "4",
+          "Fourteen 14 demek.",
+          "She’s fourteen."
+        ]
+      },
+      "retry": {
+        "text": "Guests for Friday: Omar and Lina. Omar is Dan’s cousin. Lina is Dan’s mother. She is thirty-eight.",
+        "reading": [
+          "Dan’ın annesi kim?",
+          "Lina",
+          "Omar",
+          "Belirtilmemiş",
+          "İkinci ilişki Lina’ya ait.",
+          "Lina is Dan’s mother."
+        ],
+        "transcript": "— That’s my uncle, Peter. His children are Tom and Iris.\n— How old are they?\n— Tom is nine. Iris is eleven.",
+        "preparation": "Peter’ın yaşı ile çocukların yaşını karıştırma.",
+        "main": [
+          "Peter konuşanın nesi?",
+          "Amcası veya dayısı",
+          "Oğlu",
+          "Kuzeni",
+          "My uncle yakınlığı verir.",
+          "my uncle, Peter"
+        ],
+        "detail": [
+          "Daha büyük çocuk kim?",
+          "Iris",
+          "Tom",
+          "Peter",
+          "Iris 11, Tom 9 yaşında.",
+          "Iris is eleven."
+        ]
+      },
+      "readingUse": "Kimin yakını olduğunu my, his veya her ile belirt. Yaş için is ya da are kullan.",
+      "listeningUse": "Peter’ın yaşı ile çocukların yaşını karıştırma.",
+      "speaking": "Görevli bir aile kartındaki iki ismi karıştırıyor. İlişki ve yaş bilgisi vererek kaydı düzelt.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İkinci ilişki Lina’ya ait.",
+        "main": "My uncle yakınlığı verir.",
+        "detail": "Iris 11, Tom 9 yaşında."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Kişi, yakınlık ve yaşı üç ayrı bilgi olarak tut.",
+      "genres": {
+        "reading": "Ziyaretçi kartı",
+        "listening": "Aile diyaloğu",
+        "writing": "Kısa kayıt açıklaması"
+      }
+    },
+    {
+      "id": "en.course-choice",
+      "outcome": "A2.education",
+      "level": "A2",
+      "prerequisite": [
+        "en.invite"
+      ],
+      "title": "İki kursu kendi ihtiyacına göre karşılaştır",
+      "objective": "Seviye, erişim ve saat bilgisine dayanarak bir kurs seçip eksik koşulu sor.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Comparative adjectives",
+        "Need to"
+      ],
+      "situation": "Bir konuşma kursuna yazılmak istiyorsun ama salı günleri çalışıyorsun.",
+      "bridge": "İki seçeneği bir ölçütle karşılaştır. Ardından yapman gerekeni need to ile söyle.",
+      "models": [
+        {
+          "phrase": "The Thursday class is cheaper than the Saturday class.",
+          "explanation": "Cheaper than bir ölçütte doğrudan karşılaştırma kurar."
+        },
+        {
+          "phrase": "I need to practise speaking in a small group.",
+          "explanation": "Need to sonrasında yalın fiil kullan. Bu cümle bir öğrenme ihtiyacını belirtir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Karşılaştırma biçimi",
+          "incorrect": "This room is more quieter than the hall.",
+          "correct": "This room is quieter than the hall.",
+          "explanation": "Kısa sıfatlarda -er kullanılır. Örneğin quieter. More ile -er birlikte kullanılmaz.",
+          "guided": [
+            [
+              "The morning workshop is ___ than the evening one. (short)",
+              "shorter"
+            ],
+            [
+              "The weekday course is ___ than the weekend course. (cheap)",
+              "cheaper"
+            ]
+          ],
+          "transfer": [
+            [
+              "The online session is ___ than the in-person session. (long)",
+              "longer"
+            ],
+            [
+              "This option is ___ than the private class. (expensive)",
+              "more expensive"
+            ]
+          ],
+          "delayed": [
+            [
+              "The room by the library is ___ than the room by the road. (quiet)",
+              "quieter"
+            ],
+            [
+              "The new start time is ___ than the old start time. (early)",
+              "earlier"
+            ]
+          ]
+        },
+        {
+          "label": "Öğrenme ihtiyacını söyle",
+          "incorrect": "I need practise writing.",
+          "correct": "I need to practise writing.",
+          "explanation": "Need to + yalın fiil, yapılması gereken işi söyler.",
+          "guided": [
+            [
+              "I ___ learn how to book a room. (need)",
+              "need to"
+            ],
+            [
+              "Amir needs to ___ his listening. (improve)",
+              "improve"
+            ]
+          ],
+          "transfer": [
+            [
+              "She ___ use captions in class. (need)",
+              "needs to"
+            ],
+            [
+              "We need to ___ the fee before Monday. (pay)",
+              "pay"
+            ]
+          ],
+          "delayed": [
+            [
+              "I ___ check the room size before I enrol. (need)",
+              "need to"
+            ],
+            [
+              "They need to ___ a daytime course. (find)",
+              "find"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "enrol",
+        "meaning": "bir kursa kaydolmak",
+        "example": "I want to enrol in the evening course.",
+        "usage": "Enrol in + kurs. Amerikan yazımında enroll biçimi yaygındır.",
+        "pronunciation": "/ɪnˈroʊl/",
+        "collocations": [
+          "enrol in a course",
+          "enrol online"
+        ],
+        "recognize": [
+          "“enrol” bu kullanımda ne anlama geliyor?",
+          "bir kursa kaydolmak",
+          "dersi bırakmak",
+          "öğretmenlik yapmak",
+          "Enrol in + kurs. Amerikan yazımında enroll biçimi yaygındır."
+        ],
+        "recall": [
+          "“bir kursa kaydolmak” anlamındaki hedef ifadeyi yaz.",
+          "enrol",
+          "enroll"
+        ],
+        "use": "Kurs bürosuna hangi derse kaydolacağını bildir."
+      },
+      "additionalWords": [
+        {
+          "term": "entry requirement",
+          "meaning": "kayıt için ön koşul",
+          "example": "A short interview is the only entry requirement.",
+          "usage": "Bir programa giriş için sağlanması gereken koşuldur.",
+          "pronunciation": "/ˈɛntri rɪˈkwaɪɚmənt/",
+          "collocations": [
+            "meet an entry requirement",
+            "check the entry requirement"
+          ],
+          "recognize": [
+            "“entry requirement” bu kullanımda ne anlama geliyor?",
+            "kayıt için ön koşul",
+            "katılım ücreti",
+            "ders kitabı",
+            "Bir programa giriş için sağlanması gereken koşuldur."
+          ],
+          "recall": [
+            "“kayıt için ön koşul” anlamındaki hedef ifadeyi yaz.",
+            "entry requirement"
+          ],
+          "use": "Bir kursun giriş koşulunu yazılı olarak sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "places",
+          "cue": "katılımcı yerleri"
+        }
+      ],
+      "writing": {
+        "prompt": "İki ders var. Salı 18.00’de 15 kişi ve ücret 20. Cuma 19.00’da 6 kişi ve ücret 28. Küçük grup istiyorsun ve cuma boşsun. Seçimini yaz, başlangıç koşulunu sor.",
+        "sample": "The Friday class is smaller than the Tuesday class. I need to practise speaking in a small group, so I’d like to enrol in the Friday class. Do I need to do an interview first?",
+        "revision": "Karşılaştırma doğru ölçüte dayanmalı. Programda verilmeyen koşulu sor.",
+        "criteria": [
+          "Seçim iki seçenek ve ihtiyaçla açıklanır.",
+          "Bir gerçek giriş koşulu sorulur."
+        ]
+      },
+      "input": {
+        "text": "Saturday speaking: 10 a.m., £35, eight places. Thursday speaking: 7 p.m., £25, twelve places. Both classes ask for a short interview. Noor can only study after work.",
+        "reading": [
+          "Noor’un saatine hangi kurs uyar?",
+          "Perşembe akşamı",
+          "Cumartesi sabahı",
+          "İkisi de",
+          "Noor işten sonra çalışabiliyor.",
+          "Thursday speaking: 7 p.m."
+        ],
+        "transcript": "— I need to practise making phone calls. Is the evening class right for me?\n— It includes phone calls and short messages. You’ll need a headset.\n— Is it smaller than the morning class?\n— Yes. It has six places.",
+        "preparation": "Saat, grup büyüklüğü ve malzemeyi ayrı kontrol et.",
+        "main": [
+          "Ders hangi ihtiyacı karşılıyor?",
+          "Telefon görüşmesi pratiği",
+          "Uzun sunum yazma",
+          "Sınav kaydı",
+          "Telefon görüşmeleri programda var.",
+          "It includes phone calls"
+        ],
+        "detail": [
+          "Öğrenci ne getirmeli?",
+          "Kulaklık ve mikrofon seti",
+          "Defter",
+          "Sözlük",
+          "Görevli headset gerektiğini söyler.",
+          "You’ll need a headset."
+        ]
+      },
+      "retry": {
+        "text": "The Tuesday workshop starts at six and costs £12. The Wednesday workshop starts at seven and costs £9. Only Tuesday includes a practice interview.",
+        "reading": [
+          "İş görüşmesi provası isteyen hangisini seçmeli?",
+          "Salı",
+          "Çarşamba",
+          "İkisi de",
+          "Pratik görüşme salı gününe özel.",
+          "Only Tuesday includes a practice interview."
+        ],
+        "transcript": "— Can beginners join the photography course?\n— Yes, but you need to bring a camera. The editing course lends laptops.\n— Then I’ll start with editing. I can borrow a camera next month.",
+        "preparation": "İlk sorulan kurs ile seçilen kursu ayır.",
+        "main": [
+          "Öğrenci hangi kursla başlıyor?",
+          "Düzenleme",
+          "Fotoğrafçılık",
+          "Konuşma",
+          "Kamera ihtiyacı tercihi değiştiriyor.",
+          "I’ll start with editing."
+        ],
+        "detail": [
+          "Düzenleme kursu ne ödünç veriyor?",
+          "Dizüstü bilgisayar",
+          "Kamera",
+          "Telefon",
+          "The editing course lends laptops cümlesi malzemeyi belirtir.",
+          "The editing course lends laptops."
+        ]
+      },
+      "readingUse": "İki seçeneği bir ölçütle karşılaştır. Ardından yapman gerekeni need to ile söyle.",
+      "listeningUse": "İlk sorulan kurs ile seçilen kursu ayır.",
+      "speaking": "Kurs görevlisine danış. İlk tercihin doluysa saati veya grup büyüklüğü uygun olan başka bir seçeneği değerlendir.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Pratik görüşme salı gününe özel.",
+        "main": "Kamera ihtiyacı tercihi değiştiriyor.",
+        "detail": "The editing course lends laptops cümlesi malzemeyi belirtir."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Saat, grup büyüklüğü ve malzemeyi ayrı kontrol et.",
+      "genres": {
+        "reading": "Kurs ilanı",
+        "listening": "Kayıt masası diyaloğu",
+        "writing": "Kurs başvuru mesajı"
+      }
+    },
+    {
+      "id": "en.repair-request",
+      "outcome": "B1.repair-request",
+      "level": "B1",
+      "prerequisite": [
+        "en.lost-property"
+      ],
+      "title": "Arızalı bir ürüne çözüm iste",
+      "objective": "Gözlemlenen arızayı, kullanım koşulunu ve istenen çözümü satıcıya açıkça bildir.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Every time / whenever",
+        "Indirect questions with whether"
+      ],
+      "situation": "Yeni aldığın bir eşya belirli bir durumda çalışmıyor. Satıcıya tekrar edilebilir bir belirti ve tercih ettiğin çözümü ver.",
+      "bridge": "Belirtiyi koşuluyla tarif et. Bilmediğin onarım seçeneğini soru olarak yaz.",
+      "models": [
+        {
+          "phrase": "Every time I connect the charger, the screen goes dark.",
+          "explanation": "Every time ile tekrarlanan koşulu belirt. İkinci cümlecik gözlemi verir."
+        },
+        {
+          "phrase": "Could you tell me whether I can get a replacement?",
+          "explanation": "Whether bir evet/hayır sorusunu başka bir cümleye gömer. Ardından I can sırası gelir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Tekrarlanan belirtiyi koşula bağla",
+          "incorrect": "Every time turning the key, the lock sticks.",
+          "correct": "Every time I turn the key, the lock sticks.",
+          "explanation": "Every time ve whenever ile bu bağlamda öznesi ve çekimli fiili olan bir cümlecik kur.",
+          "guided": [
+            [
+              "Every time I ___ the lid, the light flashes. (lift)",
+              "lift"
+            ],
+            [
+              "Whenever the fan ___, the case shakes. (start)",
+              "starts"
+            ]
+          ],
+          "transfer": [
+            [
+              "Every time she ___ the button, the display resets. (press)",
+              "presses"
+            ],
+            [
+              "Whenever we ___ the doors, the alarm sounds. (close)",
+              "close"
+            ]
+          ],
+          "delayed": [
+            [
+              "Every time the timer ___, the lamp turns off. (ring)",
+              "rings"
+            ],
+            [
+              "Whenever I ___ the handle, the tray slips. (pull)",
+              "pull"
+            ]
+          ]
+        },
+        {
+          "label": "Dolaylı evet/hayır sorusu",
+          "incorrect": "Could you tell me whether can I return it?",
+          "correct": "Could you tell me whether I can return it?",
+          "explanation": "Whether’dan sonra düz cümle sırası gerekir. Dolaylı soruda özne yardımcı fiilden önce gelir.",
+          "guided": [
+            [
+              "Could you tell me whether ___ covered? (it / is)",
+              "it is",
+              "it's"
+            ],
+            [
+              "Could you tell me whether ___ send a photo? (I / should)",
+              "I should"
+            ]
+          ],
+          "transfer": [
+            [
+              "Ask the shop whether ___ bring the box. (you / need to)",
+              "you need to"
+            ],
+            [
+              "Please let me know whether ___ repair it. (they / can)",
+              "they can"
+            ]
+          ],
+          "delayed": [
+            [
+              "Could you check whether ___ have a spare part? (you / have)",
+              "you have"
+            ],
+            [
+              "Could you tell me whether ___ exchange it here? (I / can)",
+              "I can"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "fault",
+        "meaning": "üründeki arıza",
+        "example": "The fault only appears when the motor warms up.",
+        "usage": "Fault ürün veya sistemdeki sorunu tanımlar.",
+        "pronunciation": "/fɔlt/",
+        "collocations": [
+          "report a fault",
+          "find a fault"
+        ],
+        "recognize": [
+          "“fault” bu kullanımda ne anlama geliyor?",
+          "üründeki arıza",
+          "teslim tarihi",
+          "fatura",
+          "Fault ürün veya sistemdeki sorunu tanımlar."
+        ],
+        "recall": [
+          "“üründeki arıza” anlamındaki hedef ifadeyi yaz.",
+          "fault"
+        ],
+        "use": "Bir arızanın ne zaman ortaya çıktığını tarif et."
+      },
+      "additionalWords": [
+        {
+          "term": "replacement",
+          "meaning": "arıza sonrası verilen ikame ürün",
+          "example": "They sent a replacement for the broken lamp.",
+          "usage": "Mevcut ürünün yerine verilen eşya.",
+          "pronunciation": "/rɪˈpleɪsmənt/",
+          "collocations": [
+            "request a replacement",
+            "send a replacement"
+          ],
+          "recognize": [
+            "“replacement” bu kullanımda ne anlama geliyor?",
+            "arıza sonrası verilen ikame ürün",
+            "tamir kiti",
+            "indirim kuponu",
+            "Mevcut ürünün yerine verilen eşya."
+          ],
+          "recall": [
+            "“arıza sonrası verilen ikame ürün” anlamındaki hedef ifadeyi yaz.",
+            "replacement"
+          ],
+          "use": "Bir arıza için satıcıdan değişim talep et."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "receipt",
+          "cue": "makbuz"
+        }
+      ],
+      "writing": {
+        "prompt": "Satıcıya bisiklet pompası için yaz. Ucu söktüğünde bağlantı halkası düşüyor. Ürünü hangi gün aldığını belirt, onarım veya değişim iste ve yanında ne getireceğini sor.",
+        "sample": "I bought the pump on Tuesday. Every time I remove the nozzle, the black ring falls out. Could you repair the connection or offer a replacement? Please let me know whether I need to bring the receipt and the packaging.",
+        "revision": "Arızanın ne zaman tekrarlandığını belirt. Sorunu gözlem olarak yaz, nedenini tahmin etmek zorunda değilsin.",
+        "criteria": [
+          "Arıza ve oluşma koşulu anlaşılır.",
+          "Tercih ve dolaylı takip sorusu açık."
+        ]
+      },
+      "input": {
+        "text": "Amina returned a lamp. It worked on the first evening. Every time she used the second brightness setting, it turned itself off. The shop asked for a receipt and offered to test the lamp before agreeing to replace it.",
+        "reading": [
+          "Arıza hangi ayarda ortaya çıkıyor?",
+          "İkinci parlaklık ayarında",
+          "İlk açılışta",
+          "Lamba prizden çekilince",
+          "Every time, aynı ayarda tekrarlanan durumu veriyor.",
+          "the second brightness setting"
+        ],
+        "transcript": "— My headphones work indoors, but the sound cuts out every time I walk past the café.\n— Does that happen when the phone is in your hand?\n— No, only when it’s in my pocket. Could you test that before replacing them?",
+        "preparation": "Sorunun sınırını ve önerilen ilk işlemi ayır.",
+        "main": [
+          "Müşteri hangi adımı istiyor?",
+          "Değişimden önce koşulu canlandırarak test",
+          "Telefonu değiştirmek",
+          "Kafede buluşmak",
+          "Önce benzer kullanım koşulunda test istiyor.",
+          "Could you test that before replacing them?"
+        ],
+        "detail": [
+          "Sorun hangi koşulda oluyor?",
+          "Telefon cepteyken",
+          "Telefon eldeyken",
+          "Telefon kapalıyken",
+          "Only koşulu sınırlandırıyor.",
+          "only when it’s in my pocket"
+        ]
+      },
+      "retry": {
+        "text": "A kettle leaks only once the water is boiling. The help desk asks customers to stop using it and send a photo of the model label. Repairs are arranged through a different office.",
+        "reading": [
+          "İlk hangi bilgi isteniyor?",
+          "Model etiketi fotoğrafı",
+          "Ofisin adresi",
+          "Onarım faturası",
+          "Metin ilk adımı açıkça belirtiyor.",
+          "send a photo of the model label"
+        ],
+        "transcript": "— I’d like a replacement for this clock. Every time I set the alarm, the screen goes blank.\n— I can test it here if you leave the batteries in.\n— All right. Could you tell me whether you’ll need the box as well?",
+        "preparation": "Teste hazırlığı ve müşterinin son sorusunu ayırt et.",
+        "main": [
+          "Müşteri neyi netleştiriyor?",
+          "Kutunun gerekli olup olmadığını",
+          "Pillerin nerede satıldığını",
+          "Saatin rengini",
+          "Whether’den sonraki bilgi kutu hakkında.",
+          "whether you’ll need the box"
+        ],
+        "detail": [
+          "Test için ürünün içinde ne kalmalı?",
+          "Piller",
+          "Fiş",
+          "Kutu",
+          "If koşulu testin gereğini verir.",
+          "if you leave the batteries in"
+        ]
+      },
+      "readingUse": "Belirtiyi koşuluyla tarif et. Bilmediğin onarım seçeneğini soru olarak yaz.",
+      "listeningUse": "Teste hazırlığı ve müşterinin son sorusunu ayırt et.",
+      "speaking": "Satıcı sorunun yalnız ilk gün olup olmadığını soruyor. Tekrar eden koşulu açıkla, ilk teklif uygun değilse başka çözüm iste.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Metin ilk adımı açıkça belirtiyor.",
+        "main": "Whether’den sonraki bilgi kutu hakkında.",
+        "detail": "If koşulu testin gereğini verir."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Sorunun sınırını ve önerilen ilk işlemi ayır.",
+      "genres": {
+        "reading": "Servis kaydı",
+        "listening": "Arıza takip görüşmesi",
+        "writing": "Onarım talebi"
+      }
+    },
+    {
+      "id": "en.panel-evidence",
+      "outcome": "B2.panel-evidence",
+      "level": "B2",
+      "prerequisite": [
+        "en.newsviews"
+      ],
+      "title": "Bir panelde korelasyonla nedenselliği ayır",
+      "objective": "Üç paydaşın gözlemini karşılaştır, güçlü iddiayı daralt ve yeni bir vakada sınama öner.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Concession with while",
+        "Necessity versus sufficiency"
+      ],
+      "situation": "Bir okul telefon yasağının etkisini tartışıyor. Öğrenci, öğretmen ve araştırmacı farklı şeyleri ölçmüş.",
+      "bridge": "Ortak olguyu kabul et, yorumun kapsamını daralt ve hangi karşılaştırmanın eksik olduğunu belirt.",
+      "models": [
+        {
+          "phrase": "While late arrivals fell, the timetable changed in the same week.",
+          "explanation": "While, ilk olguyu kabul edip karşılaştırmayı sınırlayan ikinci gözlemi açar."
+        },
+        {
+          "phrase": "A steady attendance record is necessary for this comparison, but it is not sufficient on its own.",
+          "explanation": "Necessary olmazsa olmaz koşul. Not sufficient, tek koşulun sonucu göstermeye yetmediğini söyler."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Ödünlemeli karşılaştırma",
+          "incorrect": "Although complaints fell, but reporting moved online.",
+          "correct": "While complaints fell, reporting moved online.",
+          "explanation": "While ödünleme açtığında ana cümleye ayrıca but ekleme. Bu dersin bağlamında aynı anda gerçekleşen iki şeyden sonuç çıkarmayı sınırlar.",
+          "guided": [
+            [
+              "Ödünleme başlat (while): ___ the club grew, its funding shrank.",
+              "While"
+            ],
+            [
+              "Karşılaştır: ___ the route was shorter, more people got lost. (while / therefore)",
+              "While"
+            ]
+          ],
+          "transfer": [
+            [
+              "İlk ölçümü kabul et: ___ the waiting time fell, no one measured access. (while / therefore)",
+              "While"
+            ],
+            [
+              "Ödünleme: ___ sales rose, returns rose as well. (while / because of)",
+              "While"
+            ]
+          ],
+          "delayed": [
+            [
+              "Veriye sınır ekle: ___ the survey improved, the sample was smaller. (while / so)",
+              "While"
+            ],
+            [
+              "Sonraki gün: ___ entry was quicker, the separate exit queue lengthened. (while / as a result)",
+              "While"
+            ]
+          ]
+        },
+        {
+          "label": "Gerekli ve yeterliyi ayır",
+          "incorrect": "A pass is sufficient, even though members also need a seat.",
+          "correct": "A pass is necessary, but not sufficient. Members also need a seat.",
+          "explanation": "Ek zorunlu koşul varsa ilk koşul tek başına yeterli değildir.",
+          "guided": [
+            [
+              "Belge olmadan başvuru olmaz: An ID is ___. (necessary / sufficient)",
+              "necessary"
+            ],
+            [
+              "İzin tek başına iş için tüm koşulları sağlar: Permission is ___. (necessary / sufficient)",
+              "sufficient"
+            ]
+          ],
+          "transfer": [
+            [
+              "İmza şart ama para da lazım: A signature alone is not ___.",
+              "sufficient"
+            ],
+            [
+              "Kayda girmek için parolan olmalı: A password is ___. (necessary / sufficient)",
+              "necessary"
+            ]
+          ],
+          "delayed": [
+            [
+              "Fatura olmadan geri ödeme yok: An invoice is ___. (necessary / optional)",
+              "necessary"
+            ],
+            [
+              "Bir ön ödeme tek başına rezervasyonu garantilemez: A deposit alone is not ___.",
+              "sufficient"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "confounding factor",
+        "meaning": "ölçülen ilişkiyi başka yoldan açıklayabilen etken",
+        "example": "Later opening times were a possible confounding factor.",
+        "usage": "İki durum birlikte değiştiğinde hangisinin sonucu etkilediğini belirsizleştiren etken.",
+        "pronunciation": "/kənˈfaʊndɪŋ ˈfæktɚ/",
+        "collocations": [
+          "control for a confounding factor",
+          "possible confounding factor"
+        ],
+        "recognize": [
+          "“confounding factor” bu kullanımda ne anlama geliyor?",
+          "ölçülen ilişkiyi başka yoldan açıklayabilen etken",
+          "kesin çözüm",
+          "ana sonuç",
+          "İki durum birlikte değiştiğinde hangisinin sonucu etkilediğini belirsizleştiren etken."
+        ],
+        "recall": [
+          "“ölçülen ilişkiyi başka yoldan açıklayabilen etken” anlamındaki hedef ifadeyi yaz.",
+          "confounding factor"
+        ],
+        "use": "Gözlemdeki bir alternatif açıklamayı göster."
+      },
+      "additionalWords": [
+        {
+          "term": "concurrent change",
+          "meaning": "aynı dönemde gerçekleşen değişiklik",
+          "example": "The survey did not account for a concurrent change in opening hours.",
+          "usage": "Aynı dönemdeki ayrı değişikliği belirtir. Sonucu açıklayıp açıklamadığı ayrıca sınanır.",
+          "pronunciation": "/kənˈkɜrənt tʃeɪndʒ/",
+          "collocations": [
+            "identify a concurrent change",
+            "account for a concurrent change"
+          ],
+          "recognize": [
+            "“concurrent change” bu kullanımda ne anlama geliyor?",
+            "aynı dönemde gerçekleşen değişiklik",
+            "önceki yıla ait karar",
+            "kesin nedensellik",
+            "Aynı dönemdeki ayrı değişikliği belirtir. Sonucu açıklayıp açıklamadığı ayrıca sınanır."
+          ],
+          "recall": [
+            "“aynı dönemde gerçekleşen değişiklik” anlamındaki hedef ifadeyi yaz.",
+            "concurrent change"
+          ],
+          "use": "Bir deneme sırasında değişen ikinci koşulu yaz."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "late arrivals",
+          "cue": "geç gelenler"
+        }
+      ],
+      "writing": {
+        "prompt": "Mahalle pazarı hafta içi müşteri sayısını artırdı. Aynı hafta yağmur durdu ve çarşamba ücretsiz otopark başladı. Satıcı seslerinde biri otoparkı, biri havayı öne çıkarıyor. İki çıkarımı ayıran bir karar notu yaz.",
+        "sample": "While weekday visits rose, the available count cannot tell us what caused the increase. One stallholder attributes it to free Wednesday parking, whereas another points to the better weather. Neither observation establishes how many visitors came for each reason. I would keep the parking offer for another month and compare Wednesdays with similar days when parking is charged. Record rainfall on all days and ask a small sample what influenced their visit. Parking receipts are necessary to check usage, but they would not be sufficient to rule out the effect of weather. Report the two results separately.",
+        "revision": "Önerdiğin ölçü iki olası açıklamayı ayırmalı. Kaynaklara duymadıkları bir iddia yükleme.",
+        "criteria": [
+          "İki yorum kaynaklarıyla ve sınırlarıyla verilir.",
+          "Öneri ayrım yapmaya çalışan ölçülebilir karşılaştırma sunar."
+        ]
+      },
+      "input": {
+        "text": "A secondary school kept phones in lockers during the first lesson for four weeks. Its attendance log shows that late arrivals fell in that period. The same week the trial began, a bus company started an earlier route from the largest housing estate. The school newsletter credits the phone rule with the whole improvement.\n\nTwo form tutors report that pupils now settle down more quietly. Their notes describe behaviour once pupils are inside, rather than when pupils reach the gate. The pupil council asked for a separate count of children who walk to school. The head intends to retain the phone rule during a further trial, but wants to learn which change affected arrival times.\n\nThe log covers the same number of school days before and during the trial, but it does not show how pupils arrived. A second school on the bus route did not introduce the phone rule. Its head has offered to share anonymised arrival records. The pupil council supports the comparison as long as the final report distinguishes those records from the tutors’ descriptions of classroom behaviour.",
+        "reading": [
+          "Kuralın gelişmenin tamamını sağladığını söylemeyi ne zorlaştırıyor?",
+          "Aynı dönemde daha erken otobüs seferi başladı",
+          "Öğretmenler telefon kullanıyor",
+          "Notlarda öğrenci adı yok",
+          "Otobüs de varış zamanını değiştirmiş olabilir.",
+          "a bus company started an earlier route"
+        ],
+        "transcript": "— The newsletter gives the lockers all the credit. I can say the room is calmer once everyone is sitting down, but that does not explain who gets to school on time.\n— I take the new bus. It reaches the gate ten minutes earlier. My friends who walk have the same route as before.\n— Then let’s record travel mode and arrival time separately for two more weeks. We need both records before we can compare the groups. The quieter rooms are a separate result.",
+        "preparation": "Sıra: öğretmen → öğrenci → araştırmacı. Her paydaşın gözlemiyle önerdiği çıkarımı ayrı not et.",
+        "main": [
+          "Araştırmacı neyi ayırmak istiyor?",
+          "Ulaşım biçimi, varış ve sınıf içi davranış",
+          "Okulun ve otobüsün adını",
+          "Telefonun ve dolabın fiyatını",
+          "Kayıtlar varışı ölçer, sınıf sessizliği ayrı bir sonuçtur.",
+          "The quieter rooms are a separate result."
+        ],
+        "detail": [
+          "Öğrencinin otobüsü ne kadar erken geliyor?",
+          "On dakika",
+          "İki dakika",
+          "On beş dakika",
+          "Ten minutes earlier süreyi verir.",
+          "ten minutes earlier"
+        ]
+      },
+      "retry": {
+        "text": "A pool promoted a discount and opened earlier on the same Monday. Morning visits doubled, but the booking report has no transaction prices. Staff plan to compare full-price entries in the first hour with the same period before the change.",
+        "reading": [
+          "İndirim etkisi için hangi eksik bilgi önemli?",
+          "Ödenen giriş fiyatları",
+          "Havuzun uzunluğu",
+          "Pazartesinin tarihi",
+          "Rapor fiyatları içermiyor.",
+          "the booking report has no transaction prices"
+        ],
+        "transcript": "— Our readers spent longer on the new page.\n— We also added a video last month. Some readers may have left it playing.\n— Let’s count how far people scroll and ask a sample to explain the article in their own words.",
+        "preparation": "Süre, davranış ve anlamayı ayrı gözlemler olarak ele al.",
+        "main": [
+          "İlk ölçümü ne sınırlandırıyor?",
+          "Videonun açık kalması süreyi artırabilir",
+          "Sayfa hiç okunmadı",
+          "Başlık tamamen kaldırıldı",
+          "Süre dikkat veya anlamaya doğrudan eşit değildir.",
+          "Some readers may have left it playing."
+        ],
+        "detail": [
+          "Takipte okuyucudan ne isteniyor?",
+          "Makalenin içeriğini kendi sözleriyle anlatması",
+          "Videoyu yeniden açması",
+          "Siteye üyelik alması",
+          "Son replik doğrudan anlamayı sınar.",
+          "explain the article in their own words"
+        ]
+      },
+      "readingUse": "Ortak olguyu kabul et, yorumun kapsamını daralt ve hangi karşılaştırmanın eksik olduğunu belirt.",
+      "listeningUse": "Süre, davranış ve anlamayı ayrı gözlemler olarak ele al.",
+      "speaking": "Bir panelde başka bir üyeye gözleminin kapsamını sor. Ardından bir veri eksikliğini kapatacak açık bir takip öner.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Rapor fiyatları içermiyor.",
+        "main": "Süre dikkat veya anlamaya doğrudan eşit değildir.",
+        "detail": "Son replik doğrudan anlamayı sınar."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Her paydaşın gözlemiyle önerdiği çıkarımı ayrı not et.",
+      "genres": {
+        "reading": "Gazete, kayıt ve gözlem",
+        "listening": "Üç paydaşlı panel metni",
+        "writing": "Karar notu"
+      }
+    },
+    {
+      "id": "en.floor-repair",
+      "outcome": "C1.floor-repair",
+      "level": "C1",
+      "prerequisite": [
+        "en.seminar"
+      ],
+      "title": "Kesilen sözü ve bekleyen soruyu toplantıya geri getir",
+      "objective": "Üç kişinin katkısını doğru atfet, araya girilen noktayı yeniden aç ve gündemi iki adımla sürdür.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Attribution in reported speech",
+        "Restoring an outstanding question"
+      ],
+      "situation": "Bir toplantıda yeni soru, önceki konuşmacının sınırlılık açıklamasını yarıda kesti.",
+      "bridge": "Önce yarım kalan soruyu sahibine atfet. Sonra yeni soruya gündemde ayrı yer aç.",
+      "models": [
+        {
+          "phrase": "Before we move on, I’d like to come back to the point Asha was making about who responded.",
+          "explanation": "Before we move on konuşmanın odağını kibarca geri çevirir. Asha was making sözü doğru kişiye bağlar."
+        },
+        {
+          "phrase": "I heard Priya ask what the extra hour would cost; the survey question remains open.",
+          "explanation": "Bir sorunun dile getirilmesi onun çözüldüğünü söylemez. Özetlerken soru ile sonucu ayrı tut."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Kesilen noktaya dön",
+          "incorrect": "Before we move on, let’s come back the unanswered question.",
+          "correct": "Before we move on, let’s come back to the unanswered question.",
+          "explanation": "Come back to + konu. Soruyu başkasına yüklemeden sözü asıl sahibine ver.",
+          "guided": [
+            [
+              "Yarım kalan maddeye dön: Let’s come back ___ Omar’s point.",
+              "to"
+            ],
+            [
+              "Gündem geçişini durdur: Before we ___ on, can Maya finish? (move)",
+              "move"
+            ]
+          ],
+          "transfer": [
+            [
+              "Konuşmacıya dön: Could we return ___ the point Rosa was making?",
+              "to"
+            ],
+            [
+              "Önceki konuya dön: I’d like to come ___ to the timetable issue.",
+              "back"
+            ]
+          ],
+          "delayed": [
+            [
+              "Ayrı kayıt iste: Let’s come back to the query that is ___ open. (still / already closed)",
+              "still"
+            ],
+            [
+              "Gecikmeli kapanış: Before we move ___, could we finish the question about fees?",
+              "on"
+            ]
+          ]
+        },
+        {
+          "label": "Atıf ile çıkarımı ayır",
+          "incorrect": "Lopez asked how many replied, so Lopez reported a low response rate.",
+          "correct": "Lopez asked how many replied; Lopez did not report a response rate.",
+          "explanation": "Birinin sorduğu, gözlemlediği veya onayladığı şeyi aynı fiille aktarma.",
+          "skill": "reading",
+          "guided": [
+            [
+              "‘How many users were contacted?’ Eylem: asked / confirmed",
+              "asked"
+            ],
+            [
+              "‘There were thirty responses.’ Eylem: reported / asked",
+              "reported"
+            ]
+          ],
+          "transfer": [
+            [
+              "‘Could we try again?’ Eylem: proposed / decided",
+              "proposed"
+            ],
+            [
+              "‘I saw four late arrivals.’ Eylem: observed / predicted",
+              "observed"
+            ]
+          ],
+          "delayed": [
+            [
+              "‘We could try a smaller site.’ Eylem: suggested / authorised",
+              "suggested"
+            ],
+            [
+              "‘We approved July as the trial month.’ Eylem: approved / mentioned",
+              "approved"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "hold that thought",
+        "meaning": "söyleyeceği görüşü kısa süre ertelemek",
+        "example": "Could you hold that thought until Mei has finished?",
+        "usage": "Sözü kesmeden daha sonra geri dönüleceğini belirten rica.",
+        "pronunciation": "/hoʊld ðæt θɔt/",
+        "collocations": [
+          "could you hold that thought",
+          "hold that thought for a moment"
+        ],
+        "recognize": [
+          "“hold that thought” bu kullanımda ne anlama geliyor?",
+          "söyleyeceği görüşü kısa süre ertelemek",
+          "fikri tümüyle reddetmek",
+          "söz vermek",
+          "Sözü kesmeden daha sonra geri dönüleceğini belirten rica."
+        ],
+        "recall": [
+          "“söyleyeceği görüşü kısa süre ertelemek” anlamındaki hedef ifadeyi yaz.",
+          "hold that thought"
+        ],
+        "use": "Bir yeni soruyu sıraya koymak için kibarca rica et."
+      },
+      "additionalWords": [
+        {
+          "term": "outstanding question",
+          "meaning": "hâlâ yanıt bekleyen soru",
+          "example": "The chair returned to the outstanding question about the second group.",
+          "usage": "Outstanding burada cevabı henüz verilmemiş demektir.",
+          "pronunciation": "/aʊtˈstændɪŋ ˈkwɛstʃən/",
+          "collocations": [
+            "address an outstanding question",
+            "record an outstanding question"
+          ],
+          "recognize": [
+            "“outstanding question” bu kullanımda ne anlama geliyor?",
+            "hâlâ yanıt bekleyen soru",
+            "en başarılı cevap",
+            "son karar",
+            "Outstanding burada cevabı henüz verilmemiş demektir."
+          ],
+          "recall": [
+            "“hâlâ yanıt bekleyen soru” anlamındaki hedef ifadeyi yaz.",
+            "outstanding question"
+          ],
+          "use": "Görüşmede açık kalan soruyu tek cümlede belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "represented",
+          "cue": "örneklemde yer almış"
+        }
+      ],
+      "writing": {
+        "prompt": "Kiracı toplantısında çatı teklifinin kapsamı anlatılırken biri kiraları soruyor. Alt merdivenin incelenip incelenmediği açık. Kimin neyi sorduğunu, başkanın sırayı nasıl onardığını ve sonraki iki adımı yaz.",
+        "sample": "At the tenants’ meeting, the treasurer began describing a repair estimate when a resident asked about next year’s rent. The chair replied that the rent question mattered, but asked the resident to hold it until the scope of the estimate was clear. The treasurer explained that the quote covered the roof above two stairwells, not the entire building. Another tenant asked whether the lower stairwell had been inspected. The chair recorded that as an outstanding question and invited the treasurer to respond before returning to rent. The meeting agreed to request a second inspection and discuss the budget after receiving it.",
+        "revision": "Bir soruyu karar gibi yazma. Sonraki iki adımın sırasını denetle.",
+        "criteria": [
+          "Atıf ve sıra açık.",
+          "Açık kalan soru ile alınan karar ayrı."
+        ]
+      },
+      "input": {
+        "text": "The review panel met to decide whether evening library hours should continue. Its chair, Mara, asked each member to name one result that could change their recommendation. Dr Ellis said the exit survey showed that late visitors valued the extra hour. He added that the survey included only people who stayed until closing. Before he could explain the limitation, another member, Priya, began asking about staffing costs. Mara intervened gently: “We still have Dr Ellis’s unanswered point about who was represented.” She asked Priya to hold her question, then invited Ellis to finish. He said the results supported keeping the trial for registered users, but did not establish that access improved for people who left early. The panel agreed to check both groups before a permanent decision.\n\nIn the draft minutes, the secretary had combined Ellis’s observation and Priya’s question under “Reasons to keep the trial”. Mara returned the draft with two notes. The survey established a preference among the respondents; it did not establish what happened to other visitors. Staffing costs were raised as a question and were not yet known. Priya checked the revised wording and asked that the cost comparison be the first item at the next meeting, once the two visitor groups had been identified.",
+        "reading": [
+          "Başkan hangi soruyu önce bitirmek istiyor?",
+          "Anket kimleri temsil ediyor?",
+          "Ek vardiya kaç para?",
+          "Kütüphane hangi gün kapanıyor?",
+          "Başkan örneklem noktasına dönüp personel sorusunu sıraya koyuyor.",
+          "who was represented"
+        ],
+        "transcript": "— Before we move on, I want to return to the question we have not answered. Dr Ellis, you said the survey reflected visitors who stayed until closing.\n— Yes. We did not ask people who left earlier, so I can’t say whether the later hour helped them.\n— I was going to ask about staffing, but I see that my question came before that point was finished.\n— Thank you. Let’s record both questions separately. First, who benefited? Then, what would the additional hour cost?",
+        "preparation": "Sıra: Mara → Ellis → Priya → Mara. Soruların sahiplerini, gündem sırasını ve açık kalan bilgiyi not et.",
+        "main": [
+          "Son repliğin görevi ne?",
+          "İki soruyu ayrı kaydedip sıralamak",
+          "Maliyet sorusunu geçersiz saymak",
+          "Anketi kapatmak",
+          "Başkan yarar ve maliyeti ayrı tutuyor.",
+          "Let’s record both questions separately."
+        ],
+        "detail": [
+          "Ankete kim alınmamış?",
+          "Daha erken çıkanlar",
+          "Personel",
+          "Geç kalanlar",
+          "Ellis erken çıkanlara sormadıklarını söylüyor.",
+          "We did not ask people who left earlier"
+        ]
+      },
+      "retry": {
+        "text": "Jo began explaining why the exhibition estimate excluded lighting. Inez raised the price of tickets before Jo could finish. The chair invited Jo to explain the omission, then returned to Inez. The ticket price was not set.",
+        "reading": [
+          "Hangi konuda karar çıkmadı?",
+          "Bilet ücreti",
+          "Aydınlatma kapsamı",
+          "Söz sırası",
+          "Son cümle ücretin belirlenmediğini söyler.",
+          "The ticket price was not set."
+        ],
+        "transcript": "— We recorded twelve reports, but three were repeats.\n— Can we decide on the poster now?\n— Hold that thought. We need to hear whether the repeats were removed before we discuss publicity.\n— They were removed from the final count, not the first draft.",
+        "preparation": "Kesilen açıklamayı ve hangi sürümün güncel olduğunu bildir.",
+        "main": [
+          "Başkan önce neyi aydınlatıyor?",
+          "Tekrar kayıtlarının sayımdan çıkarılması",
+          "Afişin rengi",
+          "Raporların başlıkları",
+          "Tanıtım konusu veri sorusundan sonra gelecek.",
+          "whether the repeats were removed"
+        ],
+        "detail": [
+          "Hangi sayımda tekrarlar çıkarıldı?",
+          "Son sayım",
+          "İlk taslak",
+          "Her ikisi",
+          "Son söz iki belgeyi ayırıyor.",
+          "the final count, not the first draft"
+        ]
+      },
+      "readingUse": "Önce yarım kalan soruyu sahibine atfet. Sonra yeni soruya gündemde ayrı yer aç.",
+      "listeningUse": "Kesilen açıklamayı ve hangi sürümün güncel olduğunu bildir.",
+      "speaking": "Yeni bir konuşmacı konuyu değiştirdiğinde önceki konuşmacının görüşünü kısaca aktar. Sonra her iki soruya ayrı sırayla söz ver.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Son cümle ücretin belirlenmediğini söyler.",
+        "main": "Tanıtım konusu veri sorusundan sonra gelecek.",
+        "detail": "Son söz iki belgeyi ayırıyor."
+      },
+      "approach": "contrast",
+      "readingPurpose": "İlk iki sorunun sahiplerini, gündem sırasını ve açık kalan bilgiyi not et.",
+      "genres": {
+        "reading": "Kurul tutanağı",
+        "listening": "Üç konuşmacılı panel",
+        "writing": "Toplantı özeti"
+      }
+    },
+    {
+      "id": "en.free-indirect-reading",
+      "outcome": "C2.literary",
+      "level": "C2",
+      "prerequisite": [
+        "en.register"
+      ],
+      "title": "Anlatıcıyla karakterin iç sesini ayır",
+      "objective": "Serbest dolaylı anlatımdaki sözcük ve bakış ipuçlarını yorumla, yeni bir metni ton farkını koruyarak yeniden yaz.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Free indirect discourse",
+        "Narrative deixis"
+      ],
+      "situation": "Üçüncü kişiyle yazılan bir öyküde bir cümle hem anlatıcının hem karakterin sesi gibi duruyor.",
+      "bridge": "Zaman ve kişi anlatıcıda kalırken değer bildiren kelimelerin kimden geldiğini sınamak için çevre cümleye bak.",
+      "models": [
+        {
+          "phrase": "Mina closed the gate. A fine welcome this was.",
+          "explanation": "Üçüncü kişi ve geçmiş zaman sürüyor. A fine welcome içten alay taşıyabilir; bağlam Mina’nın tonunu düşündürüyor."
+        },
+        {
+          "phrase": "He glanced at the empty room. Would anyone show up tomorrow, then?",
+          "explanation": "Doğrudan alıntı işareti yok. Tomorrow ve then, olay anındaki beklentiyi karaktere yaklaştırıyor."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Tutumun sahibini sınama",
+          "incorrect": "‘Of course.’ proves the narrator agrees.",
+          "correct": "‘Of course.’ may carry the character’s impatience in the context.",
+          "explanation": "Karakterin bakışına yeni geçilmişse kısa değerlendirme doğrudan anlatıcı hükmü olarak okunmayabilir.",
+          "skill": "reading",
+          "guided": [
+            [
+              "‘She checked the key. Brilliant. It didn’t fit.’ Brilliant tutumu: irony / praise",
+              "irony"
+            ],
+            [
+              "‘He shut the window. Surely they had heard him.’ Varsayımın sahibi: character / quoted witness",
+              "character"
+            ]
+          ],
+          "transfer": [
+            [
+              "‘Eva counted her coins. More than enough, obviously. Then she noticed the price.’ İlk yargı: confidence / certainty of the new price",
+              "confidence"
+            ],
+            [
+              "‘Mara looked at the empty shelf. How kind of them to leave the labels.’ Kind hangi işlevde? irony / neutral description",
+              "irony"
+            ]
+          ],
+          "delayed": [
+            [
+              "‘Leo checked the clock. They must have left already.’ Muhtemel dayanak: Leo’s inference / confirmed departure",
+              "Leo’s inference"
+            ],
+            [
+              "‘Ada read the draft. A mistake, perhaps, although she could not name it.’ Tutum: uncertainty / verified error",
+              "uncertainty"
+            ]
+          ]
+        },
+        {
+          "label": "Karakterin zamansal bakışı",
+          "incorrect": "In third person, tomorrow must always become the next day.",
+          "correct": "Tomorrow can keep the character’s immediate temporal viewpoint.",
+          "explanation": "Anlatıcı mesafesini artırınca the next day, yakın karakter bakışında tomorrow kullanılabilir.",
+          "skill": "reading",
+          "guided": [
+            [
+              "‘He would go tomorrow. No more waiting.’ Yakın bakışın zaman sözcüğü: ___",
+              "tomorrow"
+            ],
+            [
+              "“Today of all days!” düşüncesini yakın biçimde tut: ___ of all days!",
+              "Today"
+            ]
+          ],
+          "transfer": [
+            [
+              "‘The next morning she left.’ Mesafeli eşdeğer: the following morning / this morning",
+              "the following morning"
+            ],
+            [
+              "‘There was no time now.’ Karaktere yakın sözcük: ___",
+              "now"
+            ]
+          ],
+          "delayed": [
+            [
+              "‘Could they really be here already?’ Karakterin mekânı: ___",
+              "here"
+            ],
+            [
+              "‘He wondered if she had arrived the previous evening.’ Mesafeli zaman ifadesi: the previous evening / tonight",
+              "the previous evening"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "free indirect style",
+        "meaning": "serbest dolaylı anlatım",
+        "example": "Free indirect style lets a character’s impatience colour third-person narration.",
+        "usage": "Öyküde söz veya iç düşünce, ayrı alıntı olmadan anlatıcının diline sızar.",
+        "pronunciation": "/fri ɪndəˈrɛkt staɪl/",
+        "collocations": [
+          "use free indirect style",
+          "a shift into free indirect style"
+        ],
+        "recognize": [
+          "“free indirect style” bu kullanımda ne anlama geliyor?",
+          "serbest dolaylı anlatım",
+          "doğrudan alıntı",
+          "olay özeti",
+          "Öyküde söz veya iç düşünce, ayrı alıntı olmadan anlatıcının diline sızar."
+        ],
+        "recall": [
+          "“serbest dolaylı anlatım” anlamındaki hedef ifadeyi yaz.",
+          "free indirect style"
+        ],
+        "use": "Bir sahnede karakterin sözcükleriyle anlatıcının dilini birbirine yaklaştır."
+      },
+      "additionalWords": [
+        {
+          "term": "narrative distance",
+          "meaning": "anlatıcıyla karakter bakışı arasındaki mesafe",
+          "example": "The neutral report increases narrative distance.",
+          "usage": "Okurun karakter algısına ne ölçüde yaklaştığını anlatır.",
+          "pronunciation": "/ˈnærətɪv ˈdɪstəns/",
+          "collocations": [
+            "increase narrative distance",
+            "reduce narrative distance"
+          ],
+          "recognize": [
+            "“narrative distance” bu kullanımda ne anlama geliyor?",
+            "anlatıcıyla karakter bakışı arasındaki mesafe",
+            "olaylar arasındaki zaman",
+            "karakter sayısı",
+            "Okurun karakter algısına ne ölçüde yaklaştığını anlatır."
+          ],
+          "recall": [
+            "“anlatıcıyla karakter bakışı arasındaki mesafe” anlamındaki hedef ifadeyi yaz.",
+            "narrative distance"
+          ],
+          "use": "Bir cümleyi karakterin bakışına yaklaştır ve neyi değiştirdiğini açıkla."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "connection from the clinic",
+          "cue": "klinikten aktarma bağlantısı"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir galeri eski bir haritayı depoda tutacak. Tomas önce kararı mantıklı buluyor, sonra bir kopya yapılabileceğini hatırlıyor fakat küratörün sözünden emin değil. Önce bakışına yakın anlat, sonra son iki olguyu tarafsız not olarak ver.",
+        "sample": "When the gallery announced that the old map would remain in storage, Tomas read the notice twice. Sensible, he supposed. The paper was fragile and the room was too bright. Still, a careful copy could have been displayed. The curator had said as much last month, hadn’t she? Tomas could not remember the exact words. Perhaps he had heard what he wanted to hear. At the meeting, he asked whether the archive might show a facsimile instead. The curator welcomed the suggestion but explained that the copy had not yet been checked for colour accuracy. Meeting record: the colour check is pending, with no final display decision.",
+        "revision": "Yargının kime ait olduğunu iki sürümde karşılaştır. Düşünceyi kurul kararı gibi yazma.",
+        "criteria": [
+          "Yakın bakış sözcük ve zaman seçimiyle tanınabilir.",
+          "Tarafsız sürüm yalnız doğrulanmış olguları taşır."
+        ]
+      },
+      "input": {
+        "text": "Nora returned to the station just as her bus pulled away. Of course. The timetable had said ten past, unless the town had quietly moved the clock again. She checked her phone: 22:08. The driver had stopped at the exit gate to let a van pass. “Could you wait?” she called, though she knew what he would say. He looked at the empty road, then at the queue behind her. It was not his fault, naturally. Nobody had told him that the connection from the clinic was late. Nora stepped back. The next bus was in forty minutes. Plenty of time to explain to her sister why she had missed dinner, and why the soup would be cold. She opened a message, deleted it, and began again.\n\nFrom the bench she could see a notice by the gate. The driver had waited for an ambulance at the previous stop. So that was what the dispatcher had been trying to tell her at the clinic. Or had he? She could remember only the woman’s finger pointing toward the exit. Weeks later her sister recalled the evening differently: she had offered to collect Nora, and the text on her phone said there was no rush. Nora’s unfinished reply, still saved in the drafts folder, began with an apology for keeping everyone waiting.",
+        "reading": [
+          "Of course, saat iması ve Plenty of time birlikte neyi gösteriyor?",
+          "Nora’nın sabırsız ve alaycı bakışı olgusal anlatıdan duyuluyor",
+          "Anlatıcı kasaba saatinin değiştiğini doğruluyor",
+          "Sürücü kız kardeşine mesaj yazıyor",
+          "Bu değerlendirmeleri doğrulanmış olay gibi okumak, bakış değişimini kaçırır.",
+          "unless the town had quietly moved the clock again"
+        ],
+        "transcript": "— The narrator first gives the missed bus as an event. Then “Of course” moves close to Nora’s impatient thought.\n— So that phrase belongs to the narrator’s verdict?\n— I wouldn’t say verdict. The timetable and the clock are coloured by Nora’s suspicion.\n— Would “naturally” be another example?\n— Yes. It may carry her self-correction. The narration stays in the third person while briefly taking on her language. We can read the shading without treating it as a direct quotation.",
+        "preparation": "Sıra: okur → editör → okur → moderatör → okur. Kesin olay ile olası tutum arasındaki farkı incele.",
+        "main": [
+          "Katılımcıların son ayrımı nedir?",
+          "Karakterin dilinin duyulması doğrudan alıntı olduğu anlamına gelmiyor",
+          "Anlatıcı tüm sahneyi birinci kişide anlatıyor",
+          "Şüphe doğrulanmış bir bilgi",
+          "Son cümle alıntı ile bakışa yaklaşma arasında sınır çizer.",
+          "without treating it as a direct quotation"
+        ],
+        "detail": [
+          "Naturally için verilen yorum nedir?",
+          "Nora’nın kendini düzeltmesi olabilir",
+          "Sürücünün kesin onayı",
+          "Zaman çizelgesinin sonraki sayfası",
+          "May, yorumun olasılık olduğunu koruyor.",
+          "It may carry her self-correction."
+        ]
+      },
+      "retry": {
+        "text": "Nadia unlocked the office. Excellent, another envelope with no address. She left it beside the register. At noon the manager said the courier had forgotten the label.",
+        "reading": [
+          "Excellent sözcüğü neyi taşıyor?",
+          "Nadia’nın alayı",
+          "Müdürün övgüsü",
+          "Kuryenin doğrulaması",
+          "Adresin olmayışı alaylı bakışı destekler.",
+          "Excellent, another envelope with no address."
+        ],
+        "transcript": "— I read ‘Another triumph’ as the narrator praising the chef.\n— The next sentence says the plates had gone cold. It sounds closer to the waiter’s irritation.\n— We can keep that ambiguity if we show whose viewpoint the scene has been following.",
+        "preparation": "Övgü gibi duran kelimenin olayla ilişkisini incele.",
+        "main": [
+          "İkinci kişi hangi ipucunu kullanıyor?",
+          "Tabakların soğumuş olması",
+          "Şefin masası",
+          "Garsonun adı",
+          "Sonraki olgu, övgü yorumunu zayıflatıyor.",
+          "the plates had gone cold"
+        ],
+        "detail": [
+          "Yeniden anlatımda ne korunabilir?",
+          "Sözün kime ait olabileceğine dair belirsizlik",
+          "Yemeğin tam fiyatı",
+          "Mekânın adı",
+          "Belirsizlik ancak bakış çizgisi korunursa kalır.",
+          "We can keep that ambiguity"
+        ]
+      },
+      "readingUse": "Zaman ve kişi anlatıcıda kalırken değer bildiren kelimelerin kimden geldiğini sınamak için çevre cümleye bak.",
+      "listeningUse": "Övgü gibi duran kelimenin olayla ilişkisini incele.",
+      "speaking": "Bir okuma grubunda iki olası bakış yorumunu savun. Hangi kelimenin ve çevre cümlenin fikrini değiştireceğini açıkla.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Adresin olmayışı alaylı bakışı destekler.",
+        "main": "Sonraki olgu, övgü yorumunu zayıflatıyor.",
+        "detail": "Belirsizlik ancak bakış çizgisi korunursa kalır."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Kesin olay ve olası tutum arasında bağ kur.",
+      "genres": {
+        "reading": "Öykü kesiti",
+        "listening": "Üç sesli okuma grubu",
+        "writing": "Üslup dönüşümü"
+      }
+    }
+  ]
+}

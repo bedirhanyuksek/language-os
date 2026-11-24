@@ -1,0 +1,961 @@
+{
+  "format": 1,
+  "language": "es",
+  "lessons": [
+    {
+      "id": "es.pasado-cerrado",
+      "outcome": "A2.pasado-cerrado",
+      "level": "A2",
+      "prerequisite": [
+        "es.cambiar-plan"
+      ],
+      "title": "Bitmiş bir güne ait olayı bildir",
+      "objective": "Belirli bir geçmiş zamandaki iki bitmiş işi ve eksik kalan işi kısa bir mesajda aktar.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Pretérito indefinido regular",
+        "Negación en pasado"
+      ],
+      "situation": "Arkadaşın dün beklediği bir teslimatı soruyor. İşi yaptığın zamanı ve hangi adımın eksik kaldığını bildir.",
+      "bridge": "Dün ve geçen hafta gibi bitmiş süreleri tanı. Tamamlanan iş ile yapılmayan işi ayrı yaz.",
+      "models": [
+        {
+          "phrase": "Ayer entregué el formulario.",
+          "explanation": "Ayer bitmiş bir gün. Bu derste o zamana ait bitmiş olay için indefinido kullanıyoruz. Entregué’de g sesini korumak için u yazılır."
+        },
+        {
+          "phrase": "El lunes no recibimos la respuesta.",
+          "explanation": "No çekimli fiilden önce gelir. Recibimos hem şimdiki hem bu geçmiş biçimde aynıdır; zaman çerçevesini el lunes ve konuşma verir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Bitmiş olayın kişi çekimi",
+          "incorrect": "Ayer yo compró pan.",
+          "correct": "Ayer yo compré pan.",
+          "explanation": "Düzenli -ar fiilleri: yo -é, él/ella -ó. Örneğin compré ve compró.",
+          "guided": [
+            [
+              "Ayer yo ___ la entrada. (comprar)",
+              "compré"
+            ],
+            [
+              "Ayer Sara ___ dos cajas. (preparar)",
+              "preparó"
+            ]
+          ],
+          "transfer": [
+            [
+              "El lunes tú ___ la reserva. (confirmar)",
+              "confirmaste"
+            ],
+            [
+              "La semana pasada ella ___ el aviso. (publicar)",
+              "publicó"
+            ]
+          ],
+          "delayed": [
+            [
+              "Anoche yo ___ arroz. (cocinar)",
+              "cociné"
+            ],
+            [
+              "El sábado Luis ___ el taller. (visitar)",
+              "visitó"
+            ]
+          ]
+        },
+        {
+          "label": "Olumsuzluk fiilden önce",
+          "incorrect": "Ayer escribí no a Eva.",
+          "correct": "Ayer no escribí a Eva.",
+          "explanation": "Olumsuzluk no çekimli fiilden önce gelir: no escribí. -ir fiilinde yo için geçmiş sonu -í.",
+          "guided": [
+            [
+              "“Dün açmadım”: Ayer ___ la caja. (no abrir, yo)",
+              "no abrí"
+            ],
+            [
+              "“Elena dün mektubu göndermedi”: Ayer Elena ___ la carta. (no enviar)",
+              "no envió"
+            ]
+          ],
+          "transfer": [
+            [
+              "“Dün metni okumadım”: Ayer ___ el texto. (no leer, yo)",
+              "no leí"
+            ],
+            [
+              "“Pazar günü yanıt vermedik”: El domingo ___ al mensaje. (no responder, nosotros)",
+              "no respondimos"
+            ]
+          ],
+          "delayed": [
+            [
+              "“Pazartesi kargoyu almadım”: El lunes ___ el paquete. (no recibir, yo)",
+              "no recibí"
+            ],
+            [
+              "“Dün Roberto formu yazmadı”: Ayer Roberto ___ el formulario. (no escribir)",
+              "no escribió"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "entregar",
+        "meaning": "teslim etmek",
+        "example": "Entregué las llaves el lunes.",
+        "usage": "Nesneyi birine veya belirli bir noktaya teslim ederken kullanılır.",
+        "pronunciation": "/entɾeˈɣaɾ/",
+        "collocations": [
+          "entregar un formulario",
+          "entregar las llaves"
+        ],
+        "recognize": [
+          "“entregar” bu kullanımda ne anlama geliyor?",
+          "teslim etmek",
+          "saklamak",
+          "ödünç istemek",
+          "Nesneyi birine veya belirli bir noktaya teslim ederken kullanılır."
+        ],
+        "recall": [
+          "“teslim etmek” anlamındaki hedef ifadeyi yaz.",
+          "entregar"
+        ],
+        "use": "Dün nereye ne teslim ettiğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "pendiente",
+          "meaning": "henüz tamamlanmamış",
+          "example": "El pago está pendiente.",
+          "usage": "Yapılması gereken işin hâlâ tamamlanmadığını söyler.",
+          "pronunciation": "/penˈdjente/",
+          "collocations": [
+            "estar pendiente",
+            "quedar pendiente"
+          ],
+          "recognize": [
+            "“pendiente” bu kullanımda ne anlama geliyor?",
+            "henüz tamamlanmamış",
+            "çok eski",
+            "hemen tamamlanmış",
+            "Yapılması gereken işin hâlâ tamamlanmadığını söyler."
+          ],
+          "recall": [
+            "“henüz tamamlanmamış” anlamındaki hedef ifadeyi yaz.",
+            "pendiente"
+          ],
+          "use": "Bugün için kalan bir işi belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "registro",
+          "cue": "kayıt"
+        }
+      ],
+      "writing": {
+        "prompt": "Dün bir kulüp için sandalyeleri hazırladın ve anahtarı teslim ettin. Listeyi yazdırmadın. Arkadaşına üç işi ve kalan adımı yaz.",
+        "sample": "Ayer preparé las sillas y entregué la llave. No imprimí la lista. La puedo imprimir hoy.",
+        "revision": "Bitmiş iki işi zamanıyla ver. Eksik iş için no fiilden önce mi kontrol et.",
+        "criteria": [
+          "İki tamamlanan iş geçmişte aktarılır.",
+          "Eksik iş ve sonraki adım anlaşılır."
+        ]
+      },
+      "input": {
+        "text": "Registro del lunes: Alba preparó las cajas a las nueve. Después entregó dos paquetes. No imprimió las etiquetas del tercer paquete porque no tenía papel.",
+        "reading": [
+          "Pazartesi hangi iş bitmedi?",
+          "Üçüncü paketin etiketlerini yazdırmak",
+          "İki paketi teslim etmek",
+          "Kutuları hazırlamak",
+          "Son cümle etiketlerin yazdırılmadığını söylüyor.",
+          "No imprimió las etiquetas del tercer paquete"
+        ],
+        "transcript": "— ¿Qué hiciste ayer en la biblioteca?\n— Devolví los libros y compré una tarjeta. No hablé con la directora.\n— Entonces le escribimos hoy.",
+        "preparation": "Dünkü işleri ve bugün yapılacak işi ayır.",
+        "main": [
+          "İlk soru neyle ilgili?",
+          "Dünkü kütüphane işleriyle",
+          "Bugünkü market alışverişiyle",
+          "Yarınki toplantıyla",
+          "Ayer geçmiş zamanı, biblioteca yeri bildirir.",
+          "ayer en la biblioteca"
+        ],
+        "detail": [
+          "Hangi görüşme gerçekleşmedi?",
+          "Müdürle görüşme",
+          "Kütüphaneciyle görüşme",
+          "Komşuyla görüşme",
+          "No hablé con la directora açıkça eksik işi belirtir.",
+          "No hablé con la directora"
+        ]
+      },
+      "retry": {
+        "text": "El sábado Nora escribió el aviso. El domingo lo publicó. No respondió a las preguntas hasta el martes.",
+        "reading": [
+          "İlan hangi gün yayımlandı?",
+          "Pazar",
+          "Cumartesi",
+          "Salı",
+          "El domingo yayımlama fiiline bağlıdır.",
+          "El domingo lo publicó."
+        ],
+        "transcript": "— El martes entregué las llaves. ¿Firmaste el papel?\n— No, no firmé nada. Tengo cita el jueves.",
+        "preparation": "Teslim günü ile randevu gününü ayrı yaz.",
+        "main": [
+          "Ne eksik kalmış?",
+          "İmza",
+          "Anahtar teslimi",
+          "Randevu",
+          "İkinci konuşmacı imza atmadığını söyler.",
+          "no firmé nada"
+        ],
+        "detail": [
+          "Yeni randevu ne zaman?",
+          "Perşembe",
+          "Salı",
+          "Cuma",
+          "Son cümle perşembeyi verir.",
+          "Tengo cita el jueves"
+        ]
+      },
+      "readingUse": "Sonraki vardiyaya hangi notu bırakacağını seç.",
+      "listeningUse": "Dünkü iki eylem ve bir eksik işi aktar.",
+      "speaking": "Bir ekip arkadaşın dünkü işleri soruyor. Biten iki işi söyle ve ona bugün ne yapabileceğini sor.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Üçüncü paketle ilgili olumsuz fiili bul.",
+        "main": "Ayer ve hoy ile verilen işleri ayır.",
+        "detail": "No hablé’den sonra hangi kişinin geldiğini bul."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Zaman tablosunda tamamlanmamış işi bul.",
+      "genres": {
+        "reading": "Görev kaydı",
+        "listening": "İş devri diyaloğu",
+        "writing": "Kısa durum mesajı"
+      }
+    },
+    {
+      "id": "es.connected-account",
+      "outcome": "B1.connected-account",
+      "level": "B1",
+      "prerequisite": [
+        "es.cambiar-plan",
+        "es.pasado-cerrado"
+      ],
+      "title": "Bir deneyimi olay sırasına göre anlat",
+      "objective": "Bağlantılı bir geçmiş anlatıda başlangıcı, değişikliği, sonucu ve bir takip ayrıntısını aktar.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Marcadores de secuencia",
+        "Pretérito indefinido irregular"
+      ],
+      "situation": "Arkadaşın ilk gönüllü vardiyanı soruyor. Aynı anda her ayrıntıyı vermek yerine dönüm noktasını ve sonucu seç.",
+      "bridge": "Başlangıç ve bitişi birbirinden ayır. Son olayla önceki olay arasına uygun bağ kullan.",
+      "models": [
+        {
+          "phrase": "Al principio no encontré la entrada; después vi un cartel en la esquina.",
+          "explanation": "Al principio ilk durumu, después bir sonraki olayın sırasını belirtir."
+        },
+        {
+          "phrase": "La guía nos dio un mapa y al final pudimos llegar juntos.",
+          "explanation": "Dio, dar’ın; pudimos, poder’in geçmiş biçimidir. Al final sonucu veya son olayı açar."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Zaman bağı ile sıra kur",
+          "incorrect": "Al final empezamos y al principio guardamos todo.",
+          "correct": "Al principio preparamos el material y al final lo guardamos.",
+          "explanation": "Al principio başlangıca, al final sonuca, después ara adımlara işaret eder.",
+          "guided": [
+            [
+              "Başlangıç durumunu aç: ___ no conocía a nadie.",
+              "Al principio"
+            ],
+            [
+              "Sonucu aç: ___ encontramos el camino.",
+              "Al final"
+            ]
+          ],
+          "transfer": [
+            [
+              "Sonraki adımı ver: Primero llamé a Sara. ___ fui a la oficina.",
+              "Después",
+              "Luego"
+            ],
+            [
+              "Kapanışı ver: Probamos tres rutas. ___ elegimos la más corta.",
+              "Al final"
+            ]
+          ],
+          "delayed": [
+            [
+              "İlk durumu söyle: ___ pensé que la tienda estaba cerrada.",
+              "Al principio"
+            ],
+            [
+              "Aradaki adımı ekle: Guardé el billete. ___ subí al tren.",
+              "Después",
+              "Luego"
+            ]
+          ]
+        },
+        {
+          "label": "Düzensiz bitmiş olay",
+          "incorrect": "La guía nos dió un plano.",
+          "correct": "La guía nos dio un plano.",
+          "explanation": "Dio ve vi tek hecelidir ve aksan işareti almaz. Poder geçmişte pude ve pudimos biçimlerini alır.",
+          "guided": [
+            [
+              "Ayer vi el mercado y Ana me ___ un volante. (dar)",
+              "dio"
+            ],
+            [
+              "Sonuçta ben içeri girebildim: Al final ___ entrar. (poder)",
+              "pude"
+            ]
+          ],
+          "transfer": [
+            [
+              "Dün biz buluşabildik: Ayer ___ reunirnos. (poder)",
+              "pudimos"
+            ],
+            [
+              "Ben peronu gördüm: ___ el andén desde la calle. (ver)",
+              "Vi"
+            ]
+          ],
+          "delayed": [
+            [
+              "Luis bizi belgeyle destekledi: Luis nos ___ una copia. (dar)",
+              "dio"
+            ],
+            [
+              "Siz nihayet ödeyebildiniz: Al final ustedes ___ pagar. (poder)",
+              "pudieron"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "turno",
+        "meaning": "iş veya görev vardiyası",
+        "example": "Mi turno empezó a las ocho.",
+        "usage": "Burada düzenli görev zaman dilimi. Bekleme sırası anlamı da var.",
+        "pronunciation": "/ˈtuɾno/",
+        "collocations": [
+          "primer turno",
+          "cambiar de turno"
+        ],
+        "recognize": [
+          "“turno” bu kullanımda ne anlama geliyor?",
+          "iş veya görev vardiyası",
+          "sonuç",
+          "durak",
+          "Burada düzenli görev zaman dilimi. Bekleme sırası anlamı da var."
+        ],
+        "recall": [
+          "“iş veya görev vardiyası” anlamındaki hedef ifadeyi yaz.",
+          "turno"
+        ],
+        "use": "İlk vardiyanda ne olduğunu anlat."
+      },
+      "additionalWords": [
+        {
+          "term": "dar con",
+          "meaning": "arayarak bulmak",
+          "example": "Al final di con la entrada del museo.",
+          "usage": "Dar con + nesne, arama veya çabadan sonra bulmayı anlatır.",
+          "pronunciation": "/daɾ kon/",
+          "collocations": [
+            "dar con la entrada",
+            "dar con una solución"
+          ],
+          "recognize": [
+            "“dar con” bu kullanımda ne anlama geliyor?",
+            "arayarak bulmak",
+            "hediye etmek",
+            "erkenden ayrılmak",
+            "Dar con + nesne, arama veya çabadan sonra bulmayı anlatır."
+          ],
+          "recall": [
+            "“arayarak bulmak” anlamındaki hedef ifadeyi yaz.",
+            "dar con"
+          ],
+          "use": "Aradığın bir yeri sonunda nasıl bulduğunu söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "cartel",
+          "cue": "tabela"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir fotoğraf kursunun ilk gününde yanlış binaya gittin. Bir mesajla doğru yeri buldun. Derste yaptığın işi ve arkadaşının ‘Ne zaman ulaştın?’ sorusuna yanıtını yaz.",
+        "sample": "Al principio fui al edificio equivocado. Después vi un mensaje de la profesora con la dirección correcta. Llegué justo antes del descanso. Al final pude hacer dos fotos con el grupo.",
+        "revision": "Başlangıç, yön değişikliği ve sonuç için üç geçiş kullan. Takip sorusunun yanıtı bir zaman vermeli.",
+        "criteria": [
+          "Olay sırası ve sonuç izlenebiliyor.",
+          "Takip ayrıntısı eksik bilgiyi tamamlıyor."
+        ]
+      },
+      "input": {
+        "text": "El sábado hice mi primer turno en un huerto. Primero llevé las herramientas a la entrada principal, pero estaba cerrada. Vi un cartel con el número de la coordinadora. Ella me explicó cómo llegar por el otro lado. Al final entré por la calle de atrás y ayudé a plantar tomates.",
+        "reading": [
+          "Kapalı girişten sonra anlatıcı ne yaptı?",
+          "Tabeladan numarayı bulup yol bilgisi aldı",
+          "Domatesleri eve götürdü",
+          "Vardiyayı ertesi güne aldı",
+          "Tabela ve koordinatör, erişim sorununu çözdü.",
+          "Vi un cartel con el número de la coordinadora."
+        ],
+        "transcript": "— ¿Qué tal tu primer turno en el centro?\n— Al principio fui a la sala equivocada. Una voluntaria me dio el plano y después encontré al grupo.\n— ¿Qué hiciste al llegar?\n— Ayudé a preparar las mesas para la merienda.",
+        "preparation": "Başlangıç, yön değişikliği ve takip sorusuna verilen cevabı not et.",
+        "main": [
+          "Konuşan başlangıçtaki sorunu nasıl çözdü?",
+          "Bir gönüllüden plan aldı",
+          "Mola verdi",
+          "Vardiyayı değiştirdi",
+          "Plano sayesinde grubu buldu.",
+          "Una voluntaria me dio el plano"
+        ],
+        "detail": [
+          "Gruba ulaştığında ne yaptı?",
+          "Masaları hazırladı",
+          "Yeni plan çizdi",
+          "Girişte bekledi",
+          "Son replik takip sorusuna cevap verir.",
+          "Ayudé a preparar las mesas"
+        ]
+      },
+      "retry": {
+        "text": "Fuimos a una feria el domingo. Al principio buscamos la entrada por la plaza. Un vendedor nos señaló un puente. Cruzamos el puente y al final llegamos por el paseo del río.",
+        "reading": [
+          "Panayıra nereden ulaştılar?",
+          "Nehir kenarındaki yürüyüş yolundan",
+          "Meydandan",
+          "Otoparktan",
+          "Al final gerçek varış yolunu işaretler.",
+          "llegamos por el paseo del río"
+        ],
+        "transcript": "— ¿Pudiste recoger la bici?\n— Sí. Primero fui al taller, pero no estaba allí. Después vi un mensaje del encargado. Estaba en el almacén.\n— ¿Y qué hiciste entonces?\n— Fui al almacén y la recogí justo antes del cierre.",
+        "preparation": "İlk gidilen yer ile son teslim yerini ayır.",
+        "main": [
+          "Bisiklet nerede teslim alındı?",
+          "Depoda",
+          "Tamir tezgâhında",
+          "Evin önünde",
+          "Konuşan son adım olarak depoya gitti.",
+          "Fui al almacén y la recogí"
+        ],
+        "detail": [
+          "Teslim ne zaman oldu?",
+          "Kapanıştan hemen önce",
+          "Ertesi sabah",
+          "Öğle arasından sonra",
+          "Justo antes del cierre zamanı verir.",
+          "justo antes del cierre"
+        ]
+      },
+      "readingUse": "Kısa bir takip sorusu yaz.",
+      "listeningUse": "Üç adımı sırayla aktar.",
+      "speaking": "İlk kez yaptığın bir işi anlat. Karşı taraf ‘¿Qué hiciste después?’ veya ‘¿A qué hora llegaste?’ derse yalnız sorulan ayrıntıyı doğal biçimde ekle.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Tabela sonrası bulunan yeni yolu not et.",
+        "main": "İlk sorun ile çözüm aracını eşleştir.",
+        "detail": "Justo antes ifadesi kapanışla olan ilişkiyi verir."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Dönüm noktasını bul.",
+      "genres": {
+        "reading": "Kişisel anlatı",
+        "listening": "Deneyim ve takip diyaloğu",
+        "writing": "Bağlantılı deneyim mesajı"
+      }
+    },
+    {
+      "id": "es.cambio-con-motivo",
+      "outcome": "B1.cambio-con-motivo",
+      "level": "B1",
+      "prerequisite": [
+        "es.connected-account"
+      ],
+      "title": "Değişikliğin nedenini ve sonucunu ayır",
+      "objective": "Geçmişteki beklenmedik bir değişikliğin nedenini ve sonucunu iki açık bağla anlat.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Porque",
+        "Por eso"
+      ],
+      "situation": "Bir etkinliğin yeri değişti. İnsanlar kararın nedenini ve bunun katılımı nasıl etkilediğini soruyor.",
+      "bridge": "Neden için porque, elde edilen sonuç için por eso kullan. İki cümleyi zaman sırası ile denetle.",
+      "models": [
+        {
+          "phrase": "Cambiamos de sala porque entraba agua por la ventana.",
+          "explanation": "Porque değişikliğin sebebini açar. Entraba suyun o sırada girdiğini anlatır."
+        },
+        {
+          "phrase": "La sala de abajo era pequeña. Por eso hicimos dos grupos.",
+          "explanation": "Por eso, önceki gerekçeden çıkan sonucu tanıtır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Nedeni belirt",
+          "incorrect": "La tienda cerró por eso se fue la luz.",
+          "correct": "La tienda cerró porque se fue la luz.",
+          "explanation": "Porque sonrasında sebep olan cümle gelir. Sebep burada elektrik kesintisi.",
+          "guided": [
+            [
+              "Sebebi bağla: Volví a casa ___ olvidé las llaves.",
+              "porque"
+            ],
+            [
+              "Sebebi bağla: Cambiamos la fecha ___ había un examen.",
+              "porque"
+            ]
+          ],
+          "transfer": [
+            [
+              "Geç kaldım, sebep otobüs: Llegué tarde ___ el autobús no pasó.",
+              "porque"
+            ],
+            [
+              "Sebebi bağla: No entramos ___ ya no quedaban plazas.",
+              "porque"
+            ]
+          ],
+          "delayed": [
+            [
+              "Yardım isteme nedeni: Pedí ayuda ___ no entendí el aviso.",
+              "porque"
+            ],
+            [
+              "Kararı açıkla: Pagamos en efectivo ___ la máquina no funcionaba.",
+              "porque"
+            ]
+          ]
+        },
+        {
+          "label": "Önceki cümleden sonuç çıkar",
+          "incorrect": "Se rompió la silla. Porque buscamos otra.",
+          "correct": "Se rompió la silla. Por eso buscamos otra.",
+          "explanation": "Por eso önce verilen nedene döner ve onun sonucunu verir.",
+          "guided": [
+            [
+              "Se agotaron las entradas. ___ vimos la película en casa.",
+              "Por eso"
+            ],
+            [
+              "La sala era fría. ___ trajimos mantas.",
+              "Por eso"
+            ]
+          ],
+          "transfer": [
+            [
+              "Sonucu ekle: Teníamos dos llaves. ___ pudimos entrar por separado.",
+              "Por eso"
+            ],
+            [
+              "Sonucu yaz: Quitaron el banco de la plaza. ___ esperamos de pie.",
+              "Por eso"
+            ]
+          ],
+          "delayed": [
+            [
+              "El plano estaba incompleto. ___ preguntamos en recepción.",
+              "Por eso"
+            ],
+            [
+              "Nadie podía venir el martes. ___ reservamos para el jueves.",
+              "Por eso"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "motivo",
+        "meaning": "bir kararın gerekçesi",
+        "example": "El motivo del cambio fue la lluvia.",
+        "usage": "Bir karar veya olay için verilen neden.",
+        "pronunciation": "/moˈtiβo/",
+        "collocations": [
+          "motivo del cambio",
+          "explicar el motivo"
+        ],
+        "recognize": [
+          "“motivo” bu kullanımda ne anlama geliyor?",
+          "bir kararın gerekçesi",
+          "tarih",
+          "yer",
+          "Bir karar veya olay için verilen neden."
+        ],
+        "recall": [
+          "“bir kararın gerekçesi” anlamındaki hedef ifadeyi yaz.",
+          "motivo"
+        ],
+        "use": "Bir iptalin gerekçesini bir cümlede bildir."
+      },
+      "additionalWords": [
+        {
+          "term": "quedarse sin",
+          "meaning": "bir şey tükenince onsuz kalmak",
+          "example": "Nos quedamos sin agua antes del descanso.",
+          "usage": "Bir kaynağın hiç kalmadığını anlatır.",
+          "pronunciation": "/keˈðaɾse sin/",
+          "collocations": [
+            "quedarse sin agua",
+            "quedarse sin tiempo"
+          ],
+          "recognize": [
+            "“quedarse sin” bu kullanımda ne anlama geliyor?",
+            "bir şey tükenince onsuz kalmak",
+            "bir şey saklamak",
+            "yeni bir şey almak",
+            "Bir kaynağın hiç kalmadığını anlatır."
+          ],
+          "recall": [
+            "“bir şey tükenince onsuz kalmak” anlamındaki hedef ifadeyi yaz.",
+            "quedarse sin"
+          ],
+          "use": "Bir kaynağın tükenmesini ve sonucunu anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "aforo",
+          "cue": "mekânın kişi kapasitesi"
+        }
+      ],
+      "writing": {
+        "prompt": "Açık hava pazarı rüzgâr yüzünden depoya taşındı. Kapıda az yer vardı, bu yüzden satıcılar sırayla içeri girdi. Orada olmayan satıcıya nedeni, sonucu ve bir sonraki adımı bildir.",
+        "sample": "Trasladamos el mercado al almacén porque hacía mucho viento. Había poco espacio junto a la puerta. Por eso los vendedores entraron por turnos. La próxima vez podemos marcar una zona de espera fuera.",
+        "revision": "Porque ile verdiğin bilgi gerçeği açıklıyor mu? Por eso’dan sonra işin sonucunu ver. Daha sonraki çözümü ayrı tut.",
+        "criteria": [
+          "İlk değişikliğin nedeni doğru.",
+          "Yeni yerin sonucu ve sonraki adım ayrı."
+        ]
+      },
+      "input": {
+        "text": "La asociación cambió la proyección al salón municipal porque el patio se inundó. El salón tenía un aforo menor. Por eso hubo dos sesiones. Las personas con entrada pudieron elegir el horario, pero la segunda sesión empezó media hora más tarde.",
+        "reading": [
+          "Neden iki seans düzenlendi?",
+          "Kapalı salona daha az kişi sığdığı için",
+          "İki ayrı film olduğu için",
+          "Biletler geç geldiği için",
+          "Seans bölünmesi yeni yerin kapasitesinden doğdu.",
+          "El salón tenía un aforo menor."
+        ],
+        "transcript": "— ¿Por qué movisteis el ensayo?\n— Porque el ascensor no funcionaba y parte del grupo no podía subir. Lo hicimos en la planta baja.\n— ¿Y qué cambió con el nuevo sitio?\n— No cabía el piano. Por eso ensayamos solo las voces.",
+        "preparation": "İlk değişikliğin nedeni ile taşınmanın sonucunu ayır.",
+        "main": [
+          "Prova neden taşındı?",
+          "Bazı kişiler üst kata çıkamadı",
+          "Piyano geç geldi",
+          "Şarkıcılar prova saatini unuttu",
+          "Asansör arızası erişimi engelledi.",
+          "parte del grupo no podía subir"
+        ],
+        "detail": [
+          "Taşınmanın provaya etkisi neydi?",
+          "Yalnız seslerle prova yapıldı",
+          "Prova iki saat uzadı",
+          "Yeni piyano getirildi",
+          "Yer piyanoya yetmedi.",
+          "ensayamos solo las voces"
+        ]
+      },
+      "retry": {
+        "text": "No quedaban mesas grandes en el comedor. Por eso el grupo comió en el jardín. Más tarde empezó a llover y todos volvieron al edificio.",
+        "reading": [
+          "Grup neden bahçede yedi?",
+          "Yeterince büyük masa kalmadı",
+          "Yağmur yağıyordu",
+          "Bina kapanmıştı",
+          "Yağmur daha sonraki dönüşü açıklıyor.",
+          "No quedaban mesas grandes en el comedor."
+        ],
+        "transcript": "— El taller empezó tarde porque faltaban dos piezas.\n— ¿Las comprasteis?\n— No. Una vecina nos prestó las suyas. Por eso pudimos terminar la máquina esa tarde.",
+        "preparation": "Açılışın gecikmesi ile işi bitirme sebebini ayır.",
+        "main": [
+          "Atölye neden geç başladı?",
+          "İki parça eksikti",
+          "Komşu geç geldi",
+          "Makine çok büyüktü",
+          "İlk cümle gecikmeyi eksik parçaya bağlıyor.",
+          "faltaban dos piezas"
+        ],
+        "detail": [
+          "Son işi mümkün kılan neydi?",
+          "Komşu kendi parçalarını ödünç verdi",
+          "Bir mağaza parçaları sattı",
+          "Makine değiştirildi",
+          "Ödünç parçalarla iş bitti.",
+          "Una vecina nos prestó las suyas."
+        ]
+      },
+      "readingUse": "Bir organizatöre kısa açıklama hazırla.",
+      "listeningUse": "Bir gerekçe ve bir sonuç bağını farklı yerde kullan.",
+      "speaking": "Bir etkinlikte plan değişikliğini anlat. Biri ‘¿Por qué?’ derse sebebi, ‘¿Y qué pasó entonces?’ derse sonucu ver.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Taşınma sebebi ile iki seansın sebebini ayır.",
+        "main": "Asansörle ilgili bilgiyi öncelikli not al.",
+        "detail": "Piyano ile prova türü arasındaki ilişkiyi bul."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Karar ve sonucunun nedenlerini ayır.",
+      "genres": {
+        "reading": "Etkinlik değişikliği duyurusu",
+        "listening": "Prova değerlendirmesi",
+        "writing": "Açıklama mesajı"
+      }
+    },
+    {
+      "id": "es.pregunta-seguimiento",
+      "outcome": "B1.pregunta-seguimiento",
+      "level": "B1",
+      "prerequisite": [
+        "es.cambio-con-motivo"
+      ],
+      "title": "Eksik ayrıntı için bir takip sorusu sor",
+      "objective": "Bir anlatıda eksik yeri, zamanı veya nedeni ayırt edip uygun takip sorusunu ve kısa teyidi üret.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Interrogativos tónicos",
+        "Confirmación con O sea que"
+      ],
+      "situation": "Bir arkadaşın bir iade yaşadı. Anlatının genelini biliyorsun ama bundan sonra ne yapacağınızı belirlemek için bir ayrıntı eksik.",
+      "bridge": "Önce neyin eksik olduğunu seç. Soru sözcüğünü buna göre kur, cevabı bir cümleyle teyit et.",
+      "models": [
+        {
+          "phrase": "¿En qué tienda cambiaste la chaqueta?",
+          "explanation": "Qué, edatla da soru vurgusu taşır. En qué tienda yeri, por qué nedeni sorar."
+        },
+        {
+          "phrase": "O sea que no te devolvieron el dinero, ¿verdad?",
+          "explanation": "O sea que, karşı tarafın söylediklerinden çıkardığın sonucu tekrar eder. ¿Verdad? teyit ister."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Eksik bilgi türünü sor",
+          "incorrect": "¿Dónde te llamaron? — A las ocho.",
+          "correct": "¿Cuándo te llamaron? — A las ocho.",
+          "explanation": "Dónde yer, cuándo zaman, por qué sebep sorar. Soru sözcüğünün yazı vurgusunu koru.",
+          "guided": [
+            [
+              "Yer sor: ¿___ dejaste las llaves?",
+              "Dónde"
+            ],
+            [
+              "Zaman sor: ¿___ abrió la oficina?",
+              "Cuándo"
+            ]
+          ],
+          "transfer": [
+            [
+              "Neden sor: ¿___ cancelaron el viaje?",
+              "Por qué"
+            ],
+            [
+              "Yer sor: ¿___ recogiste el paquete nuevo?",
+              "Dónde"
+            ]
+          ],
+          "delayed": [
+            [
+              "Zaman sor: ¿___ se enteró Marta del cambio?",
+              "Cuándo"
+            ],
+            [
+              "Neden sor: ¿___ eligieron la segunda opción?",
+              "Por qué"
+            ]
+          ]
+        },
+        {
+          "label": "Çıkarımı teyit ettir",
+          "incorrect": "O sea llegó el martes, ¿verdad?",
+          "correct": "O sea que llegó el martes, ¿verdad?",
+          "explanation": "O sea que bütün sonucu tanıtır. ¿Verdad? ile muhataptan teyit istenir.",
+          "guided": [
+            [
+              "Anladığını teyit et: ___ todavía esperan una respuesta, ¿verdad?",
+              "O sea que"
+            ],
+            [
+              "Cevabı bitir: O sea que el taller sigue abierto, ¿___?",
+              "verdad"
+            ]
+          ],
+          "transfer": [
+            [
+              "Sonucu yeniden söyle: ___ tienes que volver con el recibo, ¿no?",
+              "O sea que"
+            ],
+            [
+              "Kontrol et: O sea que cambiaron el nombre del grupo, ¿___?",
+              "verdad"
+            ]
+          ],
+          "delayed": [
+            [
+              "Aynı kalıpla teyit et: ___ nadie vio el correo, ¿verdad?",
+              "O sea que"
+            ],
+            [
+              "Teyit sözcüğünü yaz: O sea que la ruta termina en el puente, ¿___?",
+              "verdad"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "aclarar",
+        "meaning": "belirsiz bilgiyi açıklığa kavuşturmak",
+        "example": "Quiero aclarar quién recogió el paquete.",
+        "usage": "Soru veya açıklama yoluyla belirsizliği gidermek.",
+        "pronunciation": "/aklaˈɾaɾ/",
+        "collocations": [
+          "aclarar una duda",
+          "aclarar un detalle"
+        ],
+        "recognize": [
+          "“aclarar” bu kullanımda ne anlama geliyor?",
+          "belirsiz bilgiyi açıklığa kavuşturmak",
+          "yola çıkmak",
+          "bir şeyi iade etmek",
+          "Soru veya açıklama yoluyla belirsizliği gidermek."
+        ],
+        "recall": [
+          "“belirsiz bilgiyi açıklığa kavuşturmak” anlamındaki hedef ifadeyi yaz.",
+          "aclarar"
+        ],
+        "use": "Görüşmedeki bir detayın neden açık olmadığını ifade et."
+      },
+      "additionalWords": [
+        {
+          "term": "recibo",
+          "meaning": "alışveriş veya ödeme makbuzu",
+          "example": "Guardé el recibo después de pagar.",
+          "usage": "Ödemeyi belgeleyen yazılı kayıt.",
+          "pronunciation": "/reˈsiβo/",
+          "collocations": [
+            "guardar el recibo",
+            "mostrar el recibo"
+          ],
+          "recognize": [
+            "“recibo” bu kullanımda ne anlama geliyor?",
+            "alışveriş veya ödeme makbuzu",
+            "adres",
+            "teslimat aracı",
+            "Ödemeyi belgeleyen yazılı kayıt."
+          ],
+          "recall": [
+            "“alışveriş veya ödeme makbuzu” anlamındaki hedef ifadeyi yaz.",
+            "recibo"
+          ],
+          "use": "Bir iade görüşmesinde hangi belgeyi göstereceğini söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "vale",
+          "cue": "mağaza çeki"
+        }
+      ],
+      "writing": {
+        "prompt": "Kulüp bir etkinliği taşımış. Yeni yer bilinmiyor, sebep ise elektrik kesintisi. Yeri sor ve cevabın ‘en la sala del colegio’ olduğunu varsayarak anladığını teyit et.",
+        "sample": "¿Dónde se hace ahora la reunión? ¿En la sala del colegio? O sea que vamos al colegio y no al centro del barrio, ¿verdad?",
+        "revision": "Zaten bilinen nedeni tekrar sormadığını kontrol et. Verilen yeri kendi cümlenle teyit et.",
+        "criteria": [
+          "Soru eksik olan bilgiyi hedefler.",
+          "Teyit verilen ayrıntıyı doğru korur."
+        ]
+      },
+      "input": {
+        "text": "Inés dijo que la tienda aceptó la devolución del abrigo, pero le dio un vale en lugar de dinero. El vale solo se puede usar en la tienda y caduca en junio. Luis quiere saber si puede usarlo para una compra por internet.",
+        "reading": [
+          "İnternet alışverişine dair ne biliniyor?",
+          "Çek mağazada kullanılabiliyor",
+          "Web için ikinci bir çek var",
+          "Çek internetten alınmalı",
+          "Solo en la tienda ifadesi kapsamı sınırlar.",
+          "solo se puede usar en la tienda"
+        ],
+        "transcript": "— La excursión salió tarde porque faltaba un permiso. Cambiamos el recorrido y llegamos antes del almuerzo.\n— ¿Dónde empezó el nuevo recorrido?\n— En la plaza del mercado.\n— O sea que no salisteis desde la estación, ¿verdad?\n— Exacto.",
+        "preparation": "Soru türünü ve son teyidi karşılaştır.",
+        "main": [
+          "Takip sorusu neyi netleştirdi?",
+          "Yeni rotanın başlangıç yerini",
+          "Yemek çeşidini",
+          "İzin ücretini",
+          "Dónde ile başlangıç yeri soruluyor.",
+          "¿Dónde empezó el nuevo recorrido?"
+        ],
+        "detail": [
+          "Yanıt hangi yeri doğruluyor?",
+          "Pazar meydanı",
+          "İstasyon",
+          "Yemek salonu",
+          "En la plaza del mercado cevabı net.",
+          "En la plaza del mercado"
+        ]
+      },
+      "retry": {
+        "text": "Eva devolvió un libro en la biblioteca del barrio. Le dijeron que la multa seguía pendiente. No le explicaron cuándo tenía que pagarla.",
+        "reading": [
+          "Eva hangi takip sorusunu sormalı?",
+          "¿Cuándo tengo que pagarla?",
+          "¿Dónde está el libro?",
+          "¿Quién escribió el libro?",
+          "Metinde ödeme zamanı eksik.",
+          "No le explicaron cuándo tenía que pagarla."
+        ],
+        "transcript": "— El viernes no pudimos entrar. Volvimos el sábado con la tarjeta.\n— ¿Por qué no pudisteis entrar el viernes?\n— Porque nuestro nombre no aparecía en la lista.\n— O sea que el problema fue la lista, no la hora.",
+        "preparation": "İlk anlatıdaki eksik bilgiyi, gelen cevapla birleştir.",
+        "main": [
+          "Takip sorusu neyin eksik kaldığını buluyor?",
+          "Cuma günü girişin engellenme nedeni",
+          "Cumartesi biletinin fiyatı",
+          "Cumartesi saati",
+          "Por qué neden soruyor.",
+          "¿Por qué no pudisteis entrar el viernes?"
+        ],
+        "detail": [
+          "Engel neydi?",
+          "Ad listede yoktu",
+          "Kart kayboldu",
+          "Cuma erken kapanmıştı",
+          "Son teyit listeyi saatten ayırıyor.",
+          "nuestro nombre no aparecía en la lista"
+        ]
+      },
+      "readingUse": "Eksik ayrıntıya bir soru yaz.",
+      "listeningUse": "Cevabı kısa ve doğru bir teyitle kapat.",
+      "speaking": "Üç olaylı bir deneyim dinlediğini varsay. Yer, zaman veya neden ayrıntılarından biri verilmediyse onu sor. Yanıtı duyunca kısa biçimde teyit et.",
+      "speakingContext": "discussion",
+      "recovery": {
+        "reading": "Solo ifadesinden sonra gelen kullanım koşulunu bul.",
+        "main": "Dónde sorusundan sonraki yer cevabına dön.",
+        "detail": "Son cümleden listede olmayan bilgiyi çıkar."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Metinde belirtilen kapsamı çıkar.",
+      "genres": {
+        "reading": "Hizmet anlatısı",
+        "listening": "Deneyim ve açıklığa kavuşturma",
+        "writing": "Takip sorusu ve teyit"
+      }
+    }
+  ]
+}

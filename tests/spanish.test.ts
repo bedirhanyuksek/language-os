@@ -33,21 +33,24 @@ function start(language: Language = 'es') {
     estimate: 'A1', target: 'A2', minutes: 60, goals: ['general'], days: [0, 1, 2, 3, 4, 5, 6] })
 }
 
-test('Spanish preserves its starter sequence and adds two linked A1–A2 branches', () => {
+test('Spanish preserves its starter sequence and links the bridge to three B1 lessons', () => {
   expect(course.unit.lessons.map(({ id }) => id)).toEqual([
     'es.saludos', 'es.ser-estar', 'es.numeros', 'es.familia', 'es.rutina', 'es.cafe', 'es.direcciones', 'es.gustos', 'es.perfect',
-    'es.repetir', 'es.cambiar-plan',
+    'es.repetir', 'es.cambiar-plan', 'es.pasado-cerrado', 'es.connected-account', 'es.cambio-con-motivo', 'es.pregunta-seguimiento',
   ])
-  expect(curriculumCoverage(course).map(({ lessons }) => lessons.length)).toEqual([7, 4, 0, 0, 0, 0])
-  expect(measureCurriculum(course).map(({ playable }) => playable)).toEqual([7, 4, 0, 0, 0, 0])
+  expect(curriculumCoverage(course).map(({ lessons }) => lessons.length)).toEqual([7, 5, 3, 0, 0, 0])
+  const measured = measureCurriculum(course)
+  expect(measured.map(({ playable }) => playable)).toEqual([7, 5, 3, 0, 0, 0])
+  expect(measured.find(({ band }) => band === 'B1')).toMatchObject({ reading: 6, scriptPractice: 6, listening: 0 })
   for (const [index, lesson] of course.unit.lessons.entries()) {
     const addedPrerequisites: Record<string, string> = {
       'es.repetir': 'es.saludos.objective', 'es.cambiar-plan': 'es.perfect.objective',
     }
     const parent = addedPrerequisites[lesson.id] ?? course.unit.lessons[index - 1]?.objective.id
-    expect(lesson.prerequisites).toEqual(parent ? [parent] : [])
+    expect(lesson.prerequisites).toEqual(lesson.id === 'es.connected-account'
+      ? ['es.cambiar-plan.objective', 'es.pasado-cerrado.objective'] : parent ? [parent] : [])
     expect(lesson.pedagogy?.revision?.kind).toBe('open')
-    expect(lesson.speaking?.context).toBe('daily_conversation')
+    expect(lesson.speaking?.context).toBe(lesson.objective.level === 'B1' ? 'discussion' : 'daily_conversation')
   }
 })
 

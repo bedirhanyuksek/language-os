@@ -7,7 +7,7 @@ import type { Exercise } from './schema'
 const text = z.string().trim().min(1).max(1000)
 export const teachingSchema = z.strictObject({
   situation: text,
-  audioMode: z.literal('device-synthesis').optional(),
+  audioMode: z.enum(['device-synthesis', 'script-practice']).optional(),
   approach: z.enum(['contrast', 'dialogue', 'decoding', 'sequence']),
   models: z.array(z.strictObject({ phrase: text, explanation: text })).min(2),
   bridge: text,
@@ -27,7 +27,7 @@ export function modelRecording(lessonId: string, index: number, language: Langua
 }
 
 export function modelAudio(lessonId: string, index: number, language: Language, mode?: Teaching['audioMode']): ListeningActivity['audio'] {
-  return mode === 'device-synthesis' ? { kind: 'synthesis', locale: audioLocales[language], rate: 0.9 }
+  return mode ? { kind: 'synthesis', locale: audioLocales[language], rate: 0.9 }
     : modelRecording(lessonId, index, language)
 }
 
