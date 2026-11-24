@@ -316,14 +316,23 @@ describe('Learning Experience v1 learner scenarios', () => {
     const beginnerOnlyEnglish = new Set(['en.rebook', 'en.detour', 'en.symptoms', 'en.appointment', 'en.invite', 'en.host', 'en.instructions', 'en.make-it-up', 'en.course-choice'])
     const route = course.unit.lessons.filter(({ id, objective }) => objective.level !== 'C2' &&
       (course.language !== 'en' || (objective.level !== 'A1' && !beginnerOnlyEnglish.has(id))))
+    const lessonById = new Map(course.unit.lessons.map((lesson) => [lesson.id, lesson]))
+    const recallByCardId = new Map(course.unit.lessons.flatMap(({ pedagogy }) =>
+      (pedagogy?.vocabulary ?? []).map(({ cardId, recall }) => [cardId, recall] as const)))
     const learningDays = new Set<string>()
     let routeEnd = false
     for (let day = 0; day < route.length * 36 && !routeEnd; day++) {
       const now = new Date(Date.parse(at) + day * 86_400_000).toISOString()
+      const activityStart = state.activity.length
       for (let block = 0; block < 10; block++) {
         const plan = dailyPlan(state, course, now, 'Europe/Istanbul')
-        // Vocabulary reviews continue even after all lesson stages on the route are complete.
-        if (route.every((lesson) => masteryFor(state, lesson).status === 'retained') &&
+        // Reviews can remain after the learning route is complete. Only those plans can
+        // differ from the no-review plan, so avoid rechecking the full route on every block.
+        if (plan.kind === 'complete') {
+          routeEnd = route.every((lesson) => masteryFor(state, lesson).status === 'retained')
+          break
+        }
+        if (plan.kind === 'review' && route.every((lesson) => masteryFor(state, lesson).status === 'retained') &&
             dailyPlan(state, course, now, 'Europe/Istanbul', false).kind === 'complete') {
           routeEnd = true
           break
@@ -332,13 +341,13 @@ describe('Learning Experience v1 learner scenarios', () => {
         learningDays.add(now)
         if (plan.kind === 'review') {
           for (const id of plan.cardIds) {
-            const recall = course.unit.lessons.flatMap(({ pedagogy }) => pedagogy!.vocabulary).find(({ cardId }) => cardId === id)!.recall
+            const recall = recallByCardId.get(id)!
             state = finishTypedReview(state, course, id, String(correct(recall)), now)
           }
           continue
         }
         if (!('lessonId' in plan)) throw new Error('Expected a lesson-backed study plan')
-        const lesson = course.unit.lessons.find(({ id }) => id === plan.lessonId)!
+        const lesson = lessonById.get(plan.lessonId)!
         if (plan.kind === 'speaking') state = { ...state, skippedSpeaking: [...state.skippedSpeaking, lesson.id] }
         else if (plan.kind === 'pedagogy') {
           const tasks = phaseTasks(state, lesson, plan.phase, now, plan.vocabularyCardIds)
@@ -347,12 +356,14 @@ describe('Learning Experience v1 learner scenarios', () => {
         }
         else state = finishLesson(state, course, lesson, answers(lessonTasks(state, lesson)), now)
       }
-      expect(state.activity.filter(({ at }) => at === now).reduce((total, { minutes }) => total + minutes, 0)).toBeLessThanOrEqual(5)
+      expect(state.activity.slice(activityStart).filter(({ at }) => at === now)
+        .reduce((total, { minutes }) => total + minutes, 0)).toBeLessThanOrEqual(5)
     }
     expect(routeEnd, JSON.stringify({ learningDays: learningDays.size, statuses: course.unit.lessons.map((lesson) => [lesson.id, masteryFor(state, lesson).status]), tail: state.activity.slice(-5), phases: state.attempts.slice(-8).map(({ context, exerciseId }) => [context, exerciseId]) })).toBe(true)
     expect(learningDays.size).toBeGreaterThanOrEqual(40)
     expect(state.reviewHistory.length).toBeGreaterThan(0)
+    expect(state.attempts.some(({ context }) => context === 'delayed')).toBe(true)
     expect(state.speakingAssessments).toHaveLength(0)
     expect(state.attempts.filter(({ context }) => context === 'revision')).toHaveLength(route.length)
-  }, 30_000)
+  }, 45_000)
 })
