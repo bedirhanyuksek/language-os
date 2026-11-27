@@ -2,7 +2,7 @@ import type { CEFRLevel, Language, Skill } from '../../domain/model'
 import type { Exercise } from '../schema'
 
 export const assessmentBankVersion = 1
-export type Route = 'en-start' | 'en-b1' | 'en-advanced' | 'ru-start' | 'ru-a2'
+export type Route = 'en-start' | 'en-b1' | 'en-advanced' | 'ru-start' | 'ru-a2' | 'es-start' | 'es-medium'
 type Level = Extract<CEFRLevel, 'A1' | 'A2' | 'B1' | 'B2' | 'C1'>
 export type AssessmentItem = {
   route: Route
@@ -49,6 +49,15 @@ const englishBeginner = [
   question('en-start', 'A1', 'mini', 'en.assess.start.r1', 'basic-reading', 'Kısa mesajda yer', 'en.identity', 'reading',
     'Where will Pat wait?', ['Outside the library', 'At the station', 'Inside the café'], 0,
     { passage: 'Hi Sam. The café is closed. I’m at the library. I’ll wait outside. Pat' }),
+  question('en-start', 'A1', 'mini', 'en.assess.start.r2', 'basic-reading-detail', 'Farklı kısa mesajda zaman', 'en.identity', 'reading',
+    'When will Lee call?', ['This evening', 'Tomorrow morning', 'At lunchtime'], 0,
+    { passage: 'Hi Jo. I am at work now. I will call you this evening. Lee' }),
+  question('en-start', 'A1', 'mini', 'en.assess.start.vr1', 'basic-places', 'Gündelik yer sözcüğünü tanıma', 'en.identity', 'vocabulary',
+    'Which place do people use to borrow books?', ['A library', 'A station', 'A kitchen'], 0),
+  recall('en-start', 'A1', 'mini', 'en.assess.start.gp1', 'basic-forms', 'Kişi ve fiil uyumunu kurma', 'en.identity', 'grammar',
+    'Complete the sentence: “My friend ___ in Ankara.” Use one word.', ['lives']),
+  recall('en-start', 'A1', 'mini', 'en.assess.start.vp1', 'basic-places', 'Gündelik yer sözcüğünü hatırlama', 'en.identity', 'vocabulary',
+    'Write the English word for a place where people borrow books.', ['library']),
   recall('en-start', 'A1', 'followup', 'en.assess.start.v1', 'basic-places', 'Yer adını hatırlama', 'en.identity', 'vocabulary',
     'İnsanların tren beklediği yeri bir İngilizce sözcükle yaz.', ['station']),
   ...production('en-start', 'A1', 'en.assess.start', 'en.identity', 'Yeni sınıf arkadaşına adını ve yaşadığın şehri söyleyen iki kısa İngilizce cümle yaz.'),
@@ -68,6 +77,13 @@ const englishIntermediate = [
   question('en-b1', 'A2', 'mini', 'en.assess.b1.r-foundation', 'practical-reading', 'Kısa mesajda yer değişikliği', 'en.experience', 'reading',
     'Where will Eva wait for Dan?', ['By the café', 'At the bus stop', 'Inside the station'], 0,
     { passage: 'Dan, the bus stop is busy today. Let’s meet by the café across the road at six. I’ll wait there. Eva' }),
+  question('en-b1', 'B1', 'mini', 'en.assess.b1.vr1', 'work-collocations', 'İş kalıbını bağlamda tanıma', 'en.experience', 'vocabulary',
+    '“Mia takes minutes at the monthly meeting.” What does Mia do?', ['Checks how long each person speaks', 'Keeps the written record of the meeting', 'Arrives several minutes early'], 1),
+  recall('en-b1', 'B1', 'mini', 'en.assess.b1.gp1', 'time-reference', 'Bağımsız geçmiş zaman üretimi', 'en.experience', 'grammar',
+    'Complete: “Last year, I ___ for a local charity.” (work)', ['worked']),
+  question('en-b1', 'B1', 'mini', 'en.assess.b1.r3', 'practical-reading-detail', 'Farklı kısa kayıtta eylemi bulma', 'en.experience', 'reading',
+    'Where should visitors leave a parcel?', ['At the front desk', 'In the meeting room', 'Outside the building'], 0,
+    { passage: 'The reception desk closes at five. Visitors arriving later should leave parcels in the secure box beside the main entrance.' }),
   question('en-b1', 'B1', 'followup', 'en.assess.b1.g3', 'time-reference', 'Yeni bağlamda zaman gönderimi', 'en.experience', 'grammar',
     'The exhibition ended in April. Which sentence gives a finished event in its own time?', ['I helped at the exhibition in March.', 'I have helped at the exhibition in March.', 'I am helping at the exhibition last March.'], 0),
   question('en-b1', 'B1', 'followup', 'en.assess.b1.g4', 'time-reference', 'Bağımsız bir soruda zaman gönderimi', 'en.experience', 'grammar',
@@ -127,6 +143,15 @@ const russian = [
   question('ru-start', 'A1', 'mini', 'ru.assess.a1.l1', 'spoken-identity', 'Temel konuşmada kişi adı', 'ru.intro', 'listening',
     'Bilet kimin için?', ['Дима', 'Нина', 'Анна'], 0,
     { transcript: 'Здравствуйте! Меня зовут Нина. А это Дима. Билет для Димы. Спасибо.' }),
+  question('ru-start', 'A1', 'mini', 'ru.assess.a1.r2m', 'cyrillic-detail', 'Farklı tabelada yeri bulma', 'ru.cyrillic', 'reading',
+    'Касса nerede?', ['У входа', 'У выхода', 'На улице'], 1,
+    { passage: 'Вокзал. Касса у выхода. Платформа у входа.' }),
+  question('ru-start', 'A1', 'mini', 'ru.assess.a1.vr1', 'basic-places', 'Gündelik yer sözcüğünü tanıma', 'ru.intro', 'vocabulary',
+    '«Книги можно взять в библиотеке.» Библиотека nedir?', ['Kütüphane', 'İstasyon', 'Mutfak'], 0),
+  recall('ru-start', 'A1', 'mini', 'ru.assess.a1.gp1', 'introduction', 'Tanışma kalıbını kurma', 'ru.intro', 'grammar',
+    '— Как вас зовут? — ___ зовут Анна. Yalnızca eksik sözcüğü yaz.', ['меня']),
+  recall('ru-start', 'A1', 'mini', 'ru.assess.a1.vp1', 'basic-places', 'Gündelik yer sözcüğünü hatırlama', 'ru.intro', 'vocabulary',
+    'Kütüphane sözcüğünü Rusça yaz.', ['библиотека']),
   question('ru-start', 'A1', 'followup', 'ru.assess.a1.r2', 'cyrillic', 'Yeni Kiril yazısında aynı kişiyi bulma', 'ru.cyrillic', 'reading',
     'Нина adına ayrılan pakette ne yazıyor?', ['РОМАН', 'НАТАША', 'НИНА'], 2, { passage: 'Посылки. Имена на этикетках: РОМАН · НИНА · НАТАША' }),
   question('ru-start', 'A1', 'followup', 'ru.assess.a1.v1', 'service-words', 'Gündelik bir mekân sözcüğü', 'ru.intro', 'vocabulary',
@@ -145,13 +170,58 @@ const russian = [
   question('ru-a2', 'A2', 'mini', 'ru.assess.a2.r1', 'practical-reading', 'Yeni randevu mesajında eylem', 'ru.intro', 'reading',
     'Ziyaretçi önce nereye uğramalı?', ['В аптеку', 'К врачу', 'В регистратуру'], 2,
     { passage: 'Приём у врача в 15.30. Сначала зайдите в регистратуру и покажите паспорт. Кабинет врача на втором этаже.' }),
+  question('ru-a2', 'A2', 'mini', 'ru.assess.a2.r2', 'practical-reading-detail', 'Farklı randevu kaydında zamanı bulma', 'ru.intro', 'reading',
+    'Когда начинается встреча?', ['В 10.00', 'В 12.00', 'В 14.00'], 1,
+    { passage: 'Встреча с преподавателем назначена на 12.00. Сначала подойдите к стойке информации на первом этаже.' }),
+  question('ru-a2', 'A2', 'mini', 'ru.assess.a2.vr1', 'service-words', 'Gündelik hizmet sözcüğünü tanıma', 'ru.intro', 'vocabulary',
+    '«Я записался к врачу на понедельник.» Что значит «записался»?', ['Randevu aldı', 'Yolunu kaybetti', 'Mektup gönderdi'], 0),
+  recall('ru-a2', 'A2', 'mini', 'ru.assess.a2.gp1', 'case-goal', 'Hareket yönünü bağımsız kurma', 'ru.intro', 'grammar',
+    'Complete: «Завтра я иду ___, чтобы купить хлеб.» Write the missing word.', ['в магазин']),
+  recall('ru-a2', 'A2', 'mini', 'ru.assess.a2.vp1', 'service-words', 'Hizmet sözcüğünü bağımsız hatırlama', 'ru.intro', 'vocabulary',
+    'Rusça “randevu almak” fiilini yaz.', ['записаться']),
   recall('ru-a2', 'A2', 'followup', 'ru.assess.a2.v1', 'service-words', 'Randevu kalıbını hatırlama', 'ru.intro', 'vocabulary',
     '“Doktordan randevu almak” kalıbını tamamla. ___ к врачу.', ['записаться']),
   ...production('ru-a2', 'A2', 'ru.assess.a2', 'ru.intro', 'Bir arkadaşına Rusça yaz. Görüşme saati değişti; bir sebep, yeni saat ve yer ver.'),
 ]
 
-export const assessmentBank: readonly AssessmentItem[] = [...englishBeginner, ...englishIntermediate, ...englishAdvanced, ...russian]
+const spanishBeginner: AssessmentItem[] = [
+  question('es-start', 'A1', 'mini', 'es.assess.start.g1', 'basic-forms', 'Kişi ve fiil uyumu', 'es.saludos', 'grammar',
+    '“Marta ___ en Ankara.” Hangi fiil uygun?', ['vivo', 'vive', 'viven'], 1),
+  question('es-start', 'A1', 'mini', 'es.assess.start.r1', 'basic-reading', 'Kısa mesajda yer', 'es.saludos', 'reading',
+    '¿Dónde espera Ana?', ['En la estación', 'En el café', 'En la biblioteca'], 1,
+    { passage: 'Hola Luis. Estoy en el café, junto a la puerta. Te espero aquí. Ana' }),
+  question('es-start', 'A1', 'mini', 'es.assess.start.r2', 'basic-reading-detail', 'Farklı kısa mesajda zaman', 'es.saludos', 'reading',
+    '¿Cuándo llama Pablo?', ['Esta tarde', 'Mañana', 'A mediodía'], 0,
+    { passage: 'Hola. Trabajo hasta las cinco. Te llamo esta tarde. Pablo' }),
+  question('es-start', 'A1', 'mini', 'es.assess.start.vr1', 'basic-places', 'Gündelik yer sözcüğünü tanıma', 'es.saludos', 'vocabulary',
+    '“Compro pan en la panadería.” Panadería nedir?', ['Fırın', 'İstasyon', 'Okul'], 0),
+  recall('es-start', 'A1', 'mini', 'es.assess.start.gp1', 'basic-forms', 'Kişi ve fiil uyumunu kurma', 'es.saludos', 'grammar',
+    '“Mis amigos ___ en Madrid.” Boşluğu bir fiille tamamla.', ['viven']),
+  recall('es-start', 'A1', 'mini', 'es.assess.start.vp1', 'basic-places', 'Gündelik yer sözcüğünü hatırlama', 'es.saludos', 'vocabulary',
+    'İnsanların kitap ödünç aldığı yerin İspanyolca adını yaz.', ['biblioteca']),
+  ...production('es-start', 'A1', 'es.assess.start', 'es.saludos', 'Yeni sınıf arkadaşına İspanyolca adını ve yaşadığın şehri söyleyen iki kısa cümle yaz.'),
+]
+
+const spanishMedium: AssessmentItem[] = [
+  question('es-medium', 'A2', 'mini', 'es.assess.a2.g1', 'time-reference', 'Geçmiş zamanı bağlama göre seçme', 'es.perfect', 'grammar',
+    '“Ayer ___ con la directora.” Hangi fiil uygun?', ['hablo', 'hablé', 'hablaré'], 1),
+  question('es-medium', 'A2', 'mini', 'es.assess.a2.r1', 'practical-reading', 'Duyuruda eylem ve ayrıntı', 'es.perfect', 'reading',
+    '¿Qué debe hacer quien no puede asistir el jueves?', ['Pagar una multa', 'Avisar antes del miércoles', 'Ir sin reservar'], 1,
+    { passage: 'La reunión es el jueves a las seis. Si no puedes venir, avisa por correo antes del miércoles para que otra persona ocupe tu plaza.' }),
+  question('es-medium', 'A2', 'mini', 'es.assess.a2.r2', 'cause-inference', 'Farklı kayıtta neden çıkarımı', 'es.perfect', 'reading',
+    '¿Por qué llegará tarde Julia?', ['El autobús sale antes', 'La estación está cerrada', 'Su tren llega con retraso'], 2,
+    { passage: 'Julia escribe: “El tren debía llegar a las ocho, pero anuncian veinte minutos de retraso. Avísame si cambia la hora de la reunión.”' }),
+  question('es-medium', 'A2', 'mini', 'es.assess.a2.vr1', 'work-collocations', 'İş kalıbını bağlamda tanıma', 'es.perfect', 'vocabulary',
+    '“Marta tomó acta durante la reunión.” ¿Qué hizo Marta?', ['Anotó los acuerdos', 'Dirigió el tren', 'Canceló la reunión'], 0),
+  recall('es-medium', 'A2', 'mini', 'es.assess.a2.gp1', 'time-reference', 'Geçmişte bitmiş olayı kurma', 'es.perfect', 'grammar',
+    'Completa: “Ayer ___ una presentación.” (hacer)', ['hice']),
+  recall('es-medium', 'A2', 'mini', 'es.assess.a2.vp1', 'work-collocations', 'İş kalıbını hatırlama', 'es.perfect', 'vocabulary',
+    '“Toplantı tutanağı” için İspanyolcada kullanılan iki sözcüğü yaz.', ['acta de reunión', 'acta']),
+  ...production('es-medium', 'A2', 'es.assess.a2', 'es.perfect', 'Yeni bir arkadaşına bu hafta yaptığın bir işi anlatan 3–4 İspanyolca cümle yaz.'),
+]
+
+export const assessmentBank: readonly AssessmentItem[] = [...englishBeginner, ...englishIntermediate, ...englishAdvanced, ...russian, ...spanishBeginner, ...spanishMedium]
 
 export function routeLanguage(route: Route): Language {
-  return route.startsWith('ru-') ? 'ru' : 'en'
+  return route.startsWith('ru-') ? 'ru' : route.startsWith('es-') ? 'es' : 'en'
 }

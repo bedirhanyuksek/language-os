@@ -1,7 +1,7 @@
 import { skillProfile } from '../domain/skill-profile'
 import { activityLabel, dailyProgram } from '../domain/daily-program'
 import { productionRequirements } from '../domain/instruction'
-import { placementSkills } from '../domain/adaptive-placement'
+import { assessmentItem, placementProfileEvidence, placementSkills } from '../domain/adaptive-placement'
 import { useStudySession } from './study-session-context'
 import { coachingForAnswer } from '../domain/lesson-coaching'
 import { InlineCoaching, LessonHelp } from './TutorPanel'
@@ -250,32 +250,83 @@ export function ReviewCard({ card, index, total, busy, onRate }: {
   </article>
 }
 
-export function SkillProfile({ state, course, plan, now }: { state: LearningState; course: Course; plan: StudyPlan; now: string }) {
+function evidenceOutcomeLabel(value: string) {
+  return ({ correct: 'Doğru örnek', incorrect: 'Destek gerekiyor', review_required: 'İnceleme bekliyor',
+    observed: 'Gözlem', unknown: 'Bilmiyorum', skipped: 'Ertelendi', unavailable: 'Ses erişilemedi', practiced: 'Puanlanmayan prova' } as Record<string, string>)[value] ?? value
+}
+
+function evidenceObservationLabel(value: string) {
+  return ({ recognition: 'Tanıma', controlled_production: 'Kontrollü üretim', free_production: 'Serbest üretim',
+    retention: 'Hatırlama', speaking_application: 'Sözlü uygulama', speaking_independent: 'Bağımsız konuşma' } as Record<string, string>)[value] ?? value
+}
+
+function evidenceSourceLabel(value: string) {
+  return ({ transcript_assisted: 'Metin yardımıyla', audio_sample: 'Ses örneği', independent_adaptive_sample: 'Bağımsız tarama görevi',
+    unscored_practice: 'Puanlanmayan prova', no_answer: 'Yanıt yok', independent_daily_transfer: 'Bağımsız ders aktarımı',
+    support_source_unknown: 'Yardım koşulu bilinmiyor' } as Record<string, string>)[value] ?? value
+}
+
+export function SkillProfile({ state, course, plan, now, onEdit }: { state: LearningState; course: Course; plan: StudyPlan; now: string; onEdit?: () => void }) {
   const writing = state.attempts.filter(({ evidence }) => evidence.skill === 'writing' && evidence.outcome === 'review_required')
   const speaking = state.speakingAssessments.flatMap(({ report }) => speakingSuccesses(report))
   const due = dueCards(state, now)
   const current = 'lessonId' in plan ? course.unit.lessons.find(({ id }) => id === plan.lessonId) : undefined
+  const profileEvidence = placementProfileEvidence(state)
   return <>
     <header className="page-heading"><div><p className="eyebrow">{languageLabels[state.profile.language]}</p>
       <h1>Beceri profili</h1><p>Başlangıç örnekleri. Kendi seviye tahminin ölçüm sonucuna katılmaz.</p></div></header>
     <section className="surface section">
       <h2>Kişisel rota</h2>
       <p>Hedef {state.profile.target} · Günlük {state.profile.minutes} dk · {state.profile.goals.map((goal) => goalLabels[goal]).join(', ')}</p>
+      {state.profile.selfEstimateUnknown && <p>Seviyen kendi tahmininle belirlenmedi; başlangıç örnekleri yön veriyor.</p>}
+      {!!state.profile.prioritySkills?.length && <p>Önceliklerin · {state.profile.prioritySkills.map((skill) => skillLabels[skill]).join(', ')}</p>}
       <p>{current && <strong>{current.title} · Çalışılan bant {current.objective.level}. </strong>}{plan.reason}</p>
       <p>CEFR yeterliği için bu örneklerin kanıt gücü sınırlı.</p>
       {due.length > 0 && <p>Tekrar bekleyen ifadeler: {course.unit.lessons.flatMap(({ vocabulary }) => vocabulary)
         .filter(({ id }) => due.includes(id)).map(({ term }) => term).join(', ')}</p>}
+      {onEdit && <button className="secondary" onClick={onEdit}>Hedef ve beceri önceliklerini düzenle</button>}
     </section>
-    <section className="section"><h2>Becerilerdeki son çalışmalar</h2><div className="skill-grid">{skillProfile(state, course, now).map((summary) => <article className="surface skill-card" key={summary.skill}>
-      <h3>{skillLabels[summary.skill]}</h3>
-      {!summary.measured && <p>Henüz ölçülmedi</p>}
-      {summary.instruction.length > 0 && <p>Öğretim örneğiyle çalışıldı · {summary.instruction.at(-1)}. Bağımsız kullanım ayrıca kontrol edilir.</p>}
-      {summary.latest.map((row) => <p key={row.id}><strong>{row.label}</strong><br />{row.stage} · {row.result} · {row.help}</p>)}
-      <p>Sıradaki ihtiyaç · {summary.next}</p>
-      {summary.comparison ? <p>Son haftanın karşılaştırılabilir örnekleri · {summary.comparison.first.result} → {summary.comparison.latest.result}. Yeni bağlam ve yardım koşulları eşleşiyor.</p>
-        : <p>Haftalık karşılaştırma için eşleşen iki örnek henüz yok.</p>}
-    </article>)}</div></section>
+    <details className="surface section profile-evidence">
+      <summary>Gözlenen seviye aralığı ve kaynaklar</summary>
+      <p><strong>{profileEvidence.proposal ? `Örneklerle uyumlu öneri: ${profileEvidence.proposal}` : 'Henüz yeterli bağımsız örnek yok'}</strong></p>
+      <p>Bu öneri, aynı banttaki bağımsız dil bilgisi ve kelime örnekleri ile iki farklı okuma görevi ister. Hedef seviyenden ve öz tahmininden ayrı gösterilir.</p>
+      {profileEvidence.evidenceIds.length > 0 && <ul>{profileEvidence.evidenceIds.map((id) => {
+        const item = assessmentItem(id.slice(id.lastIndexOf(':') + 1))
+        return <li key={id}>{item ? `${skillLabels[item.skill]} · ${item.focus}` : id}</li>
+      })}</ul>}
+      <h3>Görev düzeyindeki kanıt</h3>
+      {profileEvidence.updates.length === 0 ? <p>Henüz tarama veya aktarım örneği yok.</p> : <ul>{profileEvidence.updates.map((row) => <li key={row.id}>
+        <strong>{skillLabels[row.skill]} · {row.label}</strong> · {evidenceOutcomeLabel(row.outcome)} · {evidenceObservationLabel(row.observation)} · {evidenceSourceLabel(row.source)} · {new Intl.DateTimeFormat('tr-TR', { dateStyle: 'short', timeStyle: 'short' }).format(new Date(row.at))}
+      </li>)}</ul>}
+    </details>
+    <section className="section"><h2>Becerilerdeki son çalışmalar</h2><div className="skill-grid">{skillProfile(state, course, now).map((summary) => {
+      const proposal = profileEvidence.profiles.find(({ skill }) => skill === summary.skill)
+      return <article className="surface skill-card" key={summary.skill}>
+        <h3>{skillLabels[summary.skill]}</h3>
+        {proposal?.band
+          ? <p><strong>Geçici başlangıç bulgusu · {proposal.band}</strong><br />Güven {proposal.confidence === 'medium' ? 'orta' : 'düşük'} · {proposal.asOf ? new Intl.DateTimeFormat('tr-TR', { dateStyle: 'medium' }).format(new Date(proposal.asOf)) : 'tarih yok'}</p>
+          : <p>Geçici başlangıç bulgusu yok · yeterli bağımsız kanıt bekleniyor</p>}
+        {!!proposal?.evidenceIds.length && <p>Örnekler · {proposal.evidenceIds.map((id) => assessmentItem(id.slice(id.lastIndexOf(':') + 1))?.focus ?? id).join(' · ')}</p>}
+        {!summary.measured && <p>Henüz ölçülmedi</p>}
+        {summary.instruction.length > 0 && <p>Öğretim örneğiyle çalışıldı · {summary.instruction.at(-1)}. Bağımsız kullanım ayrıca kontrol edilir.</p>}
+        {summary.latest.map((row) => <p key={row.id}><strong>{row.label}</strong><br />{row.stage} · {row.result} · {row.help}</p>)}
+        <p>Sıradaki ihtiyaç · {summary.next}</p>
+        {summary.comparison ? <p>Son haftanın karşılaştırılabilir örnekleri · {summary.comparison.first.result} → {summary.comparison.latest.result}. Yeni bağlam ve yardım koşulları eşleşiyor.</p>
+          : <p>Haftalık karşılaştırma için eşleşen iki örnek henüz yok.</p>}
+      </article>
+    })}</div></section>
     <details className="section"><summary>Başlangıç kanıtlarının ayrıntısı</summary>
+    {!!state.placementHistory?.length && <section className="section">
+      <h2>Önceki taramalar</h2><p>Yeni tarama önceki örnekleri ve ders ilerlemeni saklar.</p>
+      {state.placementHistory.map((track, index) => <article className="surface skill-card" key={`${track.startedAt}-${index}`}>
+        <h3>{new Intl.DateTimeFormat('tr-TR', { dateStyle: 'medium' }).format(new Date(track.startedAt))}</h3>
+        {!track.samples.length && <p>Henüz örnek yanıtlanmadı.</p>}
+        <ul>{track.samples.map((sample) => {
+          const item = assessmentItem(sample.itemId)
+          return <li key={sample.itemId}>{item?.focus ?? sample.itemId} · {{ answered: sample.result === 'review_required' ? 'İnceleme bekliyor' : sample.result === 'correct' ? 'Doğru örnek' : 'Destek gerekiyor', unavailable: 'Ses erişilemedi', unknown: 'Bilmiyorum', skipped: 'Ertelendi', practiced: 'Puanlanmayan prova' }[sample.status]}</li>
+        })}</ul>
+      </article>)}
+    </section>}
     {state.placementTrack && <section className="section">
       <h2>Beceriye göre başlangıç kanıtı</h2>
       <p>Ek örnekler çalışma takvimine yayılır. Günlük ders planını açabilirsin.</p>

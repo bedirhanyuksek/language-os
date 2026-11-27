@@ -37,12 +37,16 @@ export function skillProfile(state: LearningState, course: Course, now: string) 
         family: comparable ? JSON.stringify([attempt.contentVersion, attempt.lessonId, attempt.conceptId, attempt.evidence.observation]) : undefined,
         compare: comparable ? attempt.exerciseId : undefined }
     })
-    for (const sample of state.placementTrack?.samples ?? []) {
+    const placementRuns = [...(state.placementHistory ?? []), ...(state.placementTrack ? [state.placementTrack] : [])]
+    for (const run of placementRuns) for (const sample of run.samples) {
       const item = assessmentItem(sample.itemId)
       if (item?.skill !== skill) continue
-      rows.push({ id: sample.itemId, at: sample.at, label: item.focus,
-        stage: sample.timing === 'before_teaching' ? 'Öğretim öncesi örnek' : 'Öğretim sonrası örnek',
-        help: sample.mode === 'transcript' ? 'Metin yardımıyla' : sample.mode === 'audio' ? 'Sentetik ses örneği' : 'Ek destek açılmadı',
+      const observation = item.exercise?.kind === 'single' ? 'Tanıma' : item.exercise?.kind === 'open' ? 'Serbest üretim' : 'Kontrollü üretim'
+      const assistance = sample.mode === 'transcript' ? 'Metin yardımıyla' : sample.mode === 'audio' ? 'Ses kaydıyla' :
+        sample.mode === 'text' ? 'Bağımsız yanıt' : 'Yanıt yok'
+      rows.push({ id: `${run.startedAt}:${sample.itemId}`, at: sample.at, label: item.focus,
+        stage: `${sample.timing === 'before_teaching' ? 'Öğretim öncesi' : 'Öğretim sonrası'} · ${observation}`,
+        help: assistance,
         result: sample.status === 'answered' ? resultLabel[sample.result!] :
           { unknown: 'Bilmiyorum', skipped: 'Ertelendi', unavailable: 'Ses erişilemedi', practiced: 'Puanlanmayan prova' }[sample.status] })
     }

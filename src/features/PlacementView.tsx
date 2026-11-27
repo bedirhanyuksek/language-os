@@ -53,7 +53,7 @@ export function PlacementView({ item, language, busy, mini, submit, leave, start
       <button className="link-button" disabled={busy} onClick={() => void submit('skipped')}>Şimdilik geç</button>
       {item.transcript && <button className="link-button" disabled={busy} onClick={() => void submit('unavailable')}>Ses erişilemiyor</button>}
       <button className="link-button" disabled={busy} onClick={leave}>Daha sonra devam et</button>
-      {startLearning && <button className="secondary" disabled={busy} onClick={startLearning}>Öğretime geç</button>}
+      {startLearning && <button className="secondary" disabled={busy} onClick={startLearning}>{mini ? 'Öğretime geç' : 'Bu taramayı bitir'}</button>}
     </div>
   </>
 }

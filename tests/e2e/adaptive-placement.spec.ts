@@ -31,6 +31,23 @@ async function choose(page: Page, id: string, correct = true) {
     exact: true,
   }).check()
   await button(page, 'Yanıtı kaydet').click()
+  await expect.poll(async () => (await stored(page)).placementTrack?.samples.some(({ itemId }) => itemId === id)).toBe(true)
+}
+
+async function answerText(page: Page, id: string, answer: string) {
+  await field(page, id).getByRole('textbox').fill(answer)
+  await button(page, 'Yanıtı kaydet').click()
+  await expect.poll(async () => (await stored(page)).placementTrack?.samples.some(({ itemId }) => itemId === id)).toBe(true)
+}
+
+async function waitForNextSample(page: Page, previous: string | null) {
+  await expect.poll(async () => page.locator('main .page-heading .eyebrow').textContent()).not.toBe(previous)
+}
+
+async function unknownAndWait(page: Page) {
+  const previous = await page.locator('main .page-heading .eyebrow').textContent()
+  await button(page, 'Bilmiyorum').click()
+  await waitForNextSample(page, previous)
 }
 
 async function playAudio(page: Page) {
@@ -75,6 +92,27 @@ async function followup(page: Page) {
   await expect(page.getByRole('heading', { name: 'Ek değerlendirme', exact: true })).toBeVisible()
 }
 
+async function finishMini(page: Page) {
+  for (let index = 0; index < 12 && !(await page.getByRole('heading', { name: 'Beceri profili', exact: true }).count()); index++) {
+    const previous = await page.locator('main .page-heading .eyebrow').textContent()
+    const unknown = button(page, 'Bilmiyorum')
+    if (await unknown.count()) {
+      await expect(unknown).toBeEnabled()
+      await unknown.click()
+    } else {
+      const skip = button(page, 'Şimdilik geç')
+      await expect(skip).toBeEnabled()
+      await skip.click()
+    }
+    await waitForNextSample(page, previous)
+  }
+  await expect(page.getByRole('heading', { name: 'Beceri profili', exact: true })).toBeVisible()
+}
+
+async function activeAssessmentId(page: Page) {
+  return page.locator('main fieldset[id]').first().getAttribute('id')
+}
+
 test('Russian A1 with no Cyrillic evidence resumes an unfinished sample and receives Cyrillic teaching', async ({ page }) => {
   const since = await onboard(page, 'ru', 'A1', 'A1', 15)
   const draft = field(page, 'ru.assess.a1.r1').getByRole('radio', { name: 'КАССА', exact: true })
@@ -86,11 +124,13 @@ test('Russian A1 with no Cyrillic evidence resumes an unfinished sample and rece
   await page.reload()
   await expect(draft).toBeChecked()
   expect((await stored(page)).placementTrack?.samples).toEqual([])
-  await button(page, 'Bilmiyorum').click()
-  await expect(field(page, 'ru.assess.a1.g1')).toBeVisible()
+  await unknownAndWait(page)
   await button(page, 'Şimdilik geç').click()
   await expect(page.getByLabel('Değerlendirme sesini dinle')).toBeVisible()
   await button(page, 'Ses erişilemiyor').click()
+  await expect(field(page, 'ru.assess.a1.r2m')).toBeVisible()
+  await unknownAndWait(page)
+  await finishMini(page)
   await expect(skill(page, 'Okuma')).toContainText('Bilmiyorum')
   await expect(skill(page, 'Dil bilgisi')).toContainText('Ertelendi')
   await expect(skill(page, 'Dinleme')).toContainText('Ses erişilemedi')
@@ -99,7 +139,9 @@ test('Russian A1 with no Cyrillic evidence resumes an unfinished sample and rece
   await fixedDay(page, 2)
   await page.reload()
   await followup(page)
-  await expect(field(page, 'ru.assess.a1.r2')).toBeVisible()
+  const nextId = await activeAssessmentId(page)
+  expect(nextId).toBeTruthy()
+  expect(item(nextId!).stage).toBe('followup')
 })
 
 test.describe('media loaded without the installed cache', () => {
@@ -135,18 +177,20 @@ test.describe('media loaded without the installed cache', () => {
   })
 })
 
-test('English B1 with stronger listening gets a harder recording and separate form and meaning work', async ({ page, context }) => {
+test('English B1 evidence reaches successful listening, a harder recording, and separate transcript evidence', async ({ page, context }) => {
   const since = await onboard(page, 'en', 'B1', 'C1', 30)
-  await choose(page, 'en.assess.b1.g1', false)
-  await expect(field(page, 'en.assess.b1.v1')).toBeVisible()
-  await button(page, 'Bilmiyorum').click()
+  await choose(page, 'en.assess.b1.g1')
+  await answerText(page, 'en.assess.b1.v1', 'gave')
   await playAudio(page)
   await choose(page, 'en.assess.b1.l1')
   await choose(page, 'en.assess.b1.r1')
+  await choose(page, 'en.assess.b1.vr1')
+  await answerText(page, 'en.assess.b1.gp1', 'worked')
+  await choose(page, 'en.assess.adv.g1')
+  await choose(page, 'en.assess.b1.r3')
+  await expect(page.getByRole('heading', { name: 'Beceri profili', exact: true })).toBeVisible()
   await expect(skill(page, 'Dinleme')).toContainText('Doğru')
-  await expect(skill(page, 'Dinleme')).toContainText('Sentetik ses örneği')
-  await expect(skill(page, 'Dil bilgisi')).toContainText('Destek gerekiyor')
-  await expect(skill(page, 'Kelime')).toContainText('Bilmiyorum')
+  await expect(skill(page, 'Dinleme')).toContainText('Ses kaydıyla')
   await firstLesson(page, 'en', 'en.experience', since)
 
   await page.evaluate(() => navigator.serviceWorker.ready.then(() => undefined))
@@ -155,8 +199,12 @@ test('English B1 with stronger listening gets a harder recording and separate fo
   await expect.poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller))).toBe(true)
   await context.setOffline(true)
   await followup(page)
+  await choose(page, 'en.assess.adv.v1')
+  await followup(page)
   await playAudio(page)
   await choose(page, 'en.assess.b1.l2')
+  await fixedDay(page, 3)
+  await page.reload()
   await followup(page)
   await button(page, 'Metinle çalış').click()
   await expect(field(page, 'en.assess.b1.l3')).toBeVisible()
@@ -169,8 +217,8 @@ test('English B1 with stronger listening gets a harder recording and separate fo
   await fixedDay(page, 3)
   await page.reload()
   await followup(page)
-  await choose(page, 'en.assess.b1.g3')
-  await expect(skill(page, 'Dil bilgisi')).toContainText('Öğretim sonrası örnek')
+  await answerText(page, 'en.assess.b1.g2', 'have worked')
+  await expect(skill(page, 'Dil bilgisi')).toContainText('Öğretim sonrası · Kontrollü üretim · Doğru')
   const samples = (await stored(page)).placementTrack!.samples
   expect(samples.find(({ itemId }) => itemId === 'en.assess.b1.l3')).toMatchObject({ mode: 'transcript', timing: 'before_teaching' })
   expect(new Set(samples.map(({ itemId }) => itemId)).size).toBe(samples.length)
@@ -191,19 +239,21 @@ test('English C1 aiming at C2 reaches a source lesson, then leaves original writ
   await followup(page)
   await choose(page, 'en.assess.adv.r2', false)
   await followup(page)
-  await choose(page, 'en.assess.adv.r4')
-  await expect(skill(page, 'Okuma')).toContainText('Bağımsız bir metinde nedensellik sınırı')
+  await expect(field(page, 'en.assess.b1.r1')).toBeVisible()
+  await choose(page, 'en.assess.b1.r1', false)
+  await expect(skill(page, 'Okuma')).toContainText('Duyuruda eylem ve ayrıntı')
   await fixedDay(page, 3)
   await page.reload()
   await followup(page)
-  await choose(page, 'en.assess.adv.g2')
+  await choose(page, 'en.assess.adv.r4')
   await followup(page)
-  await field(page, 'en.assess.adv.v2').getByRole('textbox').fill('grain')
-  await button(page, 'Yanıtı kaydet').click()
-  await expect(skill(page, 'Kelime')).toContainText('Kalıbı bağımsız hatırlama')
+  await choose(page, 'en.assess.adv.g2')
 
   await fixedDay(page, 4)
   await page.reload()
+  await followup(page)
+  await answerText(page, 'en.assess.adv.v2', 'grain')
+  await expect(skill(page, 'Kelime')).toContainText('Kalıbı bağımsız hatırlama')
   await followup(page)
   await field(page, 'en.assess.adv.write').getByRole('textbox').fill(
     'I would test the reminder on a second site before expanding it. One library reported fewer late returns, but that change alone cannot tell us whether the reminder caused the decrease.',

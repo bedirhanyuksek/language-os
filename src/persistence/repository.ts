@@ -25,6 +25,7 @@ const backupSchema = z.discriminatedUnion('schemaVersion', [
   z.strictObject({ schemaVersion: z.literal(2), state: stateSchema }),
   z.strictObject({ schemaVersion: z.literal(3), state: stateSchema }),
   z.strictObject({ schemaVersion: z.literal(4), state: stateSchema }),
+  z.strictObject({ schemaVersion: z.literal(5), state: stateSchema }),
 ])
 
 export interface LearningRepository extends SpeakingAssessmentRepository {
@@ -255,7 +256,7 @@ function currentStudy(state: LearningState, id: string, revision: number) {
 }
 
 export function exportBackup(state: LearningState) {
-  const schemaVersion = state.placementTrack ? 4 : state.studyDrafts?.length || state.attempts.some(({ study }) => study) || state.activity.some(({ elapsedSeconds }) => elapsedSeconds !== undefined) ? 3 : 2
+  const schemaVersion = state.placementHistory?.length || state.placementTrack ? 5 : state.studyDrafts?.length || state.attempts.some(({ study }) => study) || state.activity.some(({ elapsedSeconds }) => elapsedSeconds !== undefined) ? 3 : 2
   return JSON.stringify({ schemaVersion, state }, null, 2)
 }
 
@@ -269,8 +270,9 @@ export function parseBackup(raw: string): LearningState {
   const placement = state.attempts.filter((attempt) => attempt.context === 'placement')
   const placementVersion = placement[0]?.contentVersion
   const placementCourse = placementVersion === 1 ? legacyCatalog[state.profile.language] : course
-  if (!validPlacementTrack(state)) throw new Error('Adaptif başlangıç kanıtı geçersiz.')
+  if (!validPlacementTrack(state) || (state.placementHistory ?? []).some((track) => !validPlacementTrack({ ...state, placementTrack: track }))) throw new Error('Adaptif başlangıç kanıtı geçersiz.')
   const placementWithoutLegacyAnswers = state.placementTrack?.origin === 'new' ||
+    (state.placementHistory ?? []).some(({ origin }) => origin === 'new') ||
     (course.language === 'es' && placement.length === 0)
   if (state.placementAt && placementWithoutLegacyAnswers ? placement.length !== 0 :
     state.placementAt ? placement.length !== placementCourse.placement.length ||

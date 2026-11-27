@@ -80,9 +80,10 @@ async function onboard(page: Page, course: Course, target: string, minutes: stri
   await page.getByLabel('Hedef seviyen').selectOption(target)
   await page.getByLabel('Günlük süre (dk)').fill(minutes)
   await page.getByRole('button', { name: 'Başlangıç taramasına geç' }).click()
-  for (let sample = 0; sample < (course.language === 'ru' ? 3 : 4); sample++) {
+  for (let sample = 0; sample < 24 && !(await stored(page)).placementAt; sample++) {
     await page.getByRole('button', { name: 'Bilmiyorum', exact: true }).click()
   }
+  expect((await stored(page)).placementAt).toBeTruthy()
   await expect(page.getByRole('heading', { name: 'Beceri profili', exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Günlük planı aç', exact: true }).click()
 }
@@ -198,8 +199,10 @@ test('Russian A1 at fifteen minutes resumes Kiril repair offline and proceeds to
 test('English B1 at thirty minutes saves a retry once, teaches words, and records next-day recall', async ({ page, context }) => {
   test.setTimeout(65_000)
   const course = catalog.en
-  const lesson = course.unit.lessons[0]
   await onboard(page, course, 'C1', '30')
+  const firstPlan = dailyPlan(await stored(page), course, firstDay, zone)
+  if (!('lessonId' in firstPlan)) throw new Error('Başlangıç kanıtına göre ilk ders seçilmedi.')
+  const lesson = course.unit.lessons.find(({ id }) => id === firstPlan.lessonId)!
   await openExamples(page, lesson)
   const guided = lessonTasks(await stored(page), lesson)
   for (const [index, { exercise }] of guided.entries()) await fill(page, exercise, index === 0 ? 'have lead' : answer(exercise))

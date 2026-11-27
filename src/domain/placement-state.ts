@@ -5,6 +5,7 @@ export const responseStatus = z.enum(['answered', 'unknown', 'skipped', 'unavail
 export const placementSampleSchema = z.strictObject({
   itemId: idSchema,
   at: dateSchema,
+  elapsedSeconds: z.number().int().min(0).max(3600).optional(),
   stage: z.enum(['mini', 'followup']),
   status: responseStatus,
   answer: answerSchema.optional(),
@@ -17,11 +18,13 @@ export const placementSampleSchema = z.strictObject({
 
 export const placementTrackSchema = z.strictObject({
   bankVersion: z.literal(1),
-  route: z.enum(['en-start', 'en-b1', 'en-advanced', 'ru-start', 'ru-a2']),
+  policy: z.literal('adaptive-v1').optional(),
+  route: z.enum(['en-start', 'en-b1', 'en-advanced', 'ru-start', 'ru-a2', 'es-start', 'es-medium']),
   origin: z.enum(['new', 'existing']),
   startedAt: dateSchema,
   targetAtStart: levelSchema,
   finishedAt: dateSchema.optional(),
+  completedAt: dateSchema.optional(),
   samples: z.array(placementSampleSchema),
 }).refine(({ samples }) => new Set(samples.map(({ itemId }) => itemId)).size === samples.length)
 

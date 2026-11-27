@@ -2,7 +2,7 @@ import { useCallback, type ReactNode, lazy, Suspense, useEffect, useRef, useStat
 import { catalog } from '../content/catalog'
 import { vocabularyIndex } from '../content/vocabulary'
 import { beginSpeaking, dailyPlan, finishLesson, finishPlacement, finishDiagnostic, finishReview, finishPedagogy, finishTypedReview, importReport, lessonTasks, isUnlocked } from '../domain/progress'
-import { assessmentItem, beginPlacementTrack, finishMiniPlacement, nextPlacementItem, recordPlacementSample, upcomingPlacement } from '../domain/adaptive-placement'
+import { assessmentItem, beginPlacementTrack, finishMiniPlacement, finishPlacementTrack, nextPlacementItem, placementRouteAllowed, recordPlacementSample, rescreenPlacementTrack, upcomingPlacement } from '../domain/adaptive-placement'
 import { PlacementView } from './PlacementView'
 import { nextDiagnostic } from '../domain/diagnostic'
 import type { Course } from '../content/schema'
@@ -66,7 +66,8 @@ function defineStudy(state: LearningState, course: Course, task: StudyTask, now:
   if (task.kind === 'placement') reason = 'new_assessment'
   if (task.kind === 'assessment') {
     const item = assessmentItem(task.itemId)
-    if (item && item.route === state.placementTrack?.route && !state.placementTrack.samples.some(({ itemId }) => itemId === item.id)) {
+    if (item && state.placementTrack && placementRouteAllowed(state.placementTrack, item, state.profile.language) &&
+      !state.placementTrack.samples.some(({ itemId }) => itemId === item.id)) {
       itemIds = [item.id]
       content = item
       reason = 'new_assessment'
@@ -235,6 +236,7 @@ export function App() {
   const course = catalog[state?.profile.language ?? 'en']
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
   const assessment = state && nextPlacementItem(state, now, timeZone)
+  const rescreenBlockedByDraft = Boolean(state?.studyDrafts?.some(({ task }) => task.kind === 'assessment'))
   function study(task: StudyTask, render: (session: StudyControls) => ReactNode) {
     if (!state) return
     const existing = [...(state.studyDrafts ?? [])].reverse().find((draft) =>
@@ -264,10 +266,11 @@ export function App() {
     return study({ kind: 'assessment', itemId: item.id }, (session) => <PlacementView
       item={item} language={course.language} busy={busy} mini={mini}
       submit={(status, answer, audioPlayed, transcript) => completeStudy(session, (current) =>
-        recordPlacementSample(current, item.id, { status, answer, audioPlayed, transcript }, nowISO(), timeZone),
+        recordPlacementSample(current, item.id, { status, answer, audioPlayed, transcript, elapsedSeconds: session.snapshot().elapsedSeconds }, nowISO(), timeZone),
         (saved) => go(mini && !saved.placementAt ? { type: 'assessment' } : { type: 'skills' }))}
       leave={() => go({ type: mini ? 'assessment-paused' : 'home' })}
-      startLearning={mini ? () => void update((current) => finishMiniPlacement(current, nowISO()), () => go({ type: 'skills' })) : undefined}
+      startLearning={() => void update((current) => mini ? finishMiniPlacement(current, nowISO()) : finishPlacementTrack(current, nowISO()),
+        () => go(mini ? { type: 'skills' } : { type: 'home' }))}
     />)
   }
 
@@ -365,10 +368,15 @@ export function App() {
       state={state} course={course} busy={busy} back={() => go({ type: 'home' })}
       submit={(id, answer, played) => completeStudy(session, (current) => finishDiagnostic(current, course, id, answer, nowISO(), played),
         (saved) => go({ type: nextDiagnostic(course, saved) ? 'diagnostic' : 'skills' }))} />)
-    else if (screen.type === 'skills') content = <><SkillProfile state={state} course={course} plan={plan} now={now} />
+    else if (screen.type === 'skills') content = <><SkillProfile state={state} course={course} plan={plan} now={now} onEdit={() => go({ type: 'settings' })} />
       {assessmentAction}
       {diagnostic && <button className="secondary" onClick={() => go({ type: 'diagnostic' })}>Tanılamaya devam et</button>}
-      <button className="primary" onClick={() => go({ type: 'home' })}>Günlük planı aç <span aria-hidden>→</span></button></>
+      <button className="primary" onClick={() => start(plan)}>Bugünkü çalışmaya başla <span aria-hidden>→</span></button>
+      <button className="secondary" onClick={() => go({ type: 'home' })}>Günlük planı aç</button>
+      {state.placementAt && rescreenBlockedByDraft && <p className="notice">Önce yarım kalan tarama örneğini yanıtla. Taslak ve önceki ilerlemen korunuyor.</p>}
+      {state.placementAt && <button className="link-button" disabled={busy || rescreenBlockedByDraft}
+        onClick={() => void update((current) => rescreenPlacementTrack(current, nowISO()), () => go({ type: 'assessment' }))}>
+        Başlangıç taramasını yenile</button>}</>
     else if (screen.type === 'settings') content = <Settings key={state.profile.id} state={state} busy={busy} notice={setNotice}
       onSave={(profile) => update((current) => ({ ...current, profile }))}
       onRestore={(candidate) => save(() => repository.restore(candidate, state), () => {

@@ -24,6 +24,7 @@ const stateFields = {
   profile: profileSchema,
   placementAt: dateSchema.nullable(),
   placementTrack: placementTrackSchema.optional(),
+  placementHistory: z.array(placementTrackSchema).optional(),
   attempts: z.array(attemptSchema),
   reviews: z.array(reviewScheduleSchema),
   reviewHistory: z.array(reviewEventSchema),

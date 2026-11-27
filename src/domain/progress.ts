@@ -1,10 +1,10 @@
-import type { Course, Exercise, Lesson } from '../content/schema'
+import { receptionExercises, type Course, type Exercise, type Lesson } from '../content/schema'
 import { canAccelerate, pedagogyPlan, phaseTasks, gradeVocabularyRecall, type ExerciseTask } from './pedagogy'
 import { bridgeLesson, isLessonEvidence, needsBridge, nextDiagnostic } from './diagnostic'
 import { placementEntry } from './adaptive-placement'
 import { assess } from './assessment'
 import { wordsPrepared } from './instruction'
-import { answerSchema, levelSchema, type Answer, type ErrorRecord, type ExerciseAttempt, type SkillMastery, type StudyPlan, type PedagogyPhase } from './model'
+import { answerSchema, levelSchema, type Answer, type ErrorRecord, type ExerciseAttempt, type Skill, type LearningGoal, type SkillMastery, type StudyPlan, type PedagogyPhase } from './model'
 import { phaseMinutes } from './study-session'
 import { dayMs, scheduleReview } from './review'
 import { reportSchema, validateSpeakingReport, pendingSpeakingCorrections, speakingFocus, speakingSuccesses, speakingWordGaps, type SpeakingReport, type SpeakingSession } from './speaking'
@@ -266,9 +266,27 @@ export function dailyMinutes(state: LearningState, now: string, timeZone: string
 }
 
 export function needsEnglishStarter(state: LearningState) {
-  return placementEntry(state)?.id === 'en.identity' || ['A1', 'A2'].includes(state.profile.target) || state.attempts.filter(({ context, evidence }) =>
+  const entry = placementEntry(state)
+  return (Boolean(state.profile.selfEstimateUnknown) && (!entry || entry.id === 'en.identity')) || entry?.id === 'en.identity' || ['A1', 'A2'].includes(state.profile.target) || state.attempts.filter(({ context, evidence }) =>
     context === 'placement' && evidence.skill === 'grammar' && evidence.outcome === 'incorrect').length >= 4 ||
     state.attempts.some(({ lessonId, context }) => lessonId === 'en.identity' && context === 'lesson')
+}
+
+export function rankEligibleLessons(lessons: Lesson[], prioritySkills: Skill[], goals: LearningGoal[], misses: (lesson: Lesson) => number) {
+  const priorityWeight = (lesson: Lesson) => {
+    if (!prioritySkills.length) return 0
+    const skills = new Set(lesson.concepts.flatMap(({ variants }) => variants.map(({ skill }) => skill)))
+    if (lesson.vocabulary.length) skills.add('vocabulary')
+    skills.add(lesson.production.skill)
+    if (lesson.speaking) skills.add('speaking')
+    if (lesson.pedagogy) for (const exercise of receptionExercises(lesson.pedagogy)) {
+      if (exercise.skill !== 'listening' || lesson.teaching?.audioMode !== 'script-practice') skills.add(exercise.skill)
+    }
+    const rank = prioritySkills.findIndex((skill) => skills.has(skill))
+    return rank === -1 ? prioritySkills.length : rank
+  }
+  const goalWeight = (lesson: Lesson) => lesson.goals.filter((goal) => goals.includes(goal)).length
+  return [...lessons].sort((a, b) => misses(b) - misses(a) || goalWeight(b) - goalWeight(a) || priorityWeight(a) - priorityWeight(b))
 }
 
 export function dailyPlan(state: LearningState, course: Course, now: string, timeZone: string, includeReviews = true): StudyPlan {
@@ -326,7 +344,16 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
     task = undefined
   }
   if (!task) {
-    for (const lesson of unlocked) {
+    const priorities = state.profile.prioritySkills ?? []
+    const receptionPriority = (lesson: Lesson) => {
+      if (!lesson.pedagogy) return priorities.length + 1
+      const plan = pedagogyPlan(state, course, lesson, now, true, load)
+      const phase = plan?.phase
+      return (phase === 'reading' || phase === 'listening') && priorities.includes(phase) ? priorities.indexOf(phase) : priorities.length + 1
+    }
+    const readyLessons = priorities.some((skill) => skill === 'reading' || skill === 'listening')
+      ? [...unlocked].sort((a, b) => receptionPriority(a) - receptionPriority(b)) : unlocked
+    for (const lesson of readyLessons) {
       const mastery = masteryFor(state, lesson).status
       if (mastery !== 'ready' && mastery !== 'retained') continue
       if (lesson.pedagogy && !wordsPrepared(state, lesson)) {
@@ -346,12 +373,13 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
     const misses = (lesson: Lesson) => state.attempts.filter((attempt) =>
       (attempt.context === 'placement' || attempt.context === 'diagnostic') &&
       attempt.conceptId === lesson.objective.id && attempt.evidence.outcome === 'incorrect').length
-    const goalWeight = (lesson: Lesson) => lesson.goals.filter((goal) => state.profile.goals.includes(goal)).length
     const entry = placementEntry(state)
-    const choices = unlocked.filter((lesson) => masteryFor(state, lesson).status === 'not_assessed')
-      .sort((a, b) => misses(b) - misses(a) || goalWeight(b) - goalWeight(a))
-    const next = choices.find(({ id }) => id === entry?.id && !state.attempts.some(({ context }) =>
-      context === 'lesson' || context === 'transfer')) ?? choices[0]
+    const choices = rankEligibleLessons(unlocked.filter((lesson) => masteryFor(state, lesson).status === 'not_assessed'),
+      state.profile.prioritySkills ?? [], state.profile.goals, misses)
+    const hasCourseProgress = state.attempts.some(({ context }) => context === 'lesson' || context === 'transfer')
+    const completedRescreen = state.placementTrack?.origin === 'existing' && Boolean(state.placementTrack.completedAt)
+    const next = choices.find(({ id }) => id === entry?.id && (!hasCourseProgress || completedRescreen) &&
+      !state.attempts.some(({ lessonId, context }) => lessonId === id && (context === 'lesson' || context === 'transfer'))) ?? choices[0]
     if (next && canAccelerate(state, course, next)) task = planPedagogy(next, false)
     else if (next) task = { kind: 'lesson', lessonId: next.id, minutes: next.minutes,
       reason: next.id === entry?.id ? entry.reason : next === bridge ? 'Tarama, kısa bir temel çalışmanın sonraki görevleri kolaylaştırabileceğini gösterdi.' : misses(next) ? 'Başlangıç taramasında bu kazanım için çalışma fırsatı görüldü.'

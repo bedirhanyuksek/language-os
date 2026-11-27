@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react'
-import { goalSchema, languageSchema, levelSchema, profileSchema, type CEFRLevel, type Language, type LearningGoal } from '../domain/model'
+import { goalSchema, languageSchema, levelSchema, profileSchema, skillSchema, type CEFRLevel, type Language, type LearningGoal, type Skill } from '../domain/model'
 import type { Profile } from '../domain/state'
 import { dayLabels, goalLabels, languageLabels, languageMarks } from './labels'
 
@@ -17,10 +17,12 @@ export function ProfileForm({ initial, onSave, busy, fixedLanguage }: {
 }) {
   const [language, setLanguage] = useState<Language>(initial?.language ?? fixedLanguage ?? 'en')
   const [estimate, setEstimate] = useState<CEFRLevel>(initial?.estimate ?? defaults[language].estimate)
+  const [selfEstimateUnknown, setSelfEstimateUnknown] = useState(initial?.selfEstimateUnknown === true)
   const [target, setTarget] = useState<CEFRLevel>(initial?.target ?? defaults[language].target)
   const [minutes, setMinutes] = useState(initial?.minutes ?? 30)
   const [days, setDays] = useState(initial?.days ?? [0, 1, 2, 3, 4, 5, 6])
   const [goals, setGoals] = useState<LearningGoal[]>(initial?.goals ?? ['general'])
+  const [prioritySkills, setPrioritySkills] = useState<Skill[]>(initial?.prioritySkills ?? [])
   const [error, setError] = useState('')
 
   function changeLanguage(next: Language) {
@@ -31,7 +33,9 @@ export function ProfileForm({ initial, onSave, busy, fixedLanguage }: {
 
   async function submit(event: FormEvent) {
     event.preventDefault()
-    const result = profileSchema.safeParse({ id: initial?.id ?? crypto.randomUUID(), language, estimate, target, minutes, days, goals })
+    const result = profileSchema.safeParse({ id: initial?.id ?? crypto.randomUUID(), language, estimate, target, minutes, days, goals,
+      ...(selfEstimateUnknown ? { selfEstimateUnknown: true } : {}),
+      ...(prioritySkills.length ? { prioritySkills } : {}) })
     if (!result.success) {
       setError('En az bir çalışma günü ve hedef seç. Günlük süre 5–180 dakika olabilir.')
       return
@@ -52,20 +56,31 @@ export function ProfileForm({ initial, onSave, busy, fixedLanguage }: {
       </div>
     </fieldset>}
     <div className="field-grid">
-      <label>Tahmini seviyen<select value={estimate} onChange={(e) => setEstimate(levelSchema.parse(e.target.value))}>
+      {!selfEstimateUnknown && <label>Tahmini seviyen<select value={estimate} onChange={(e) => setEstimate(levelSchema.parse(e.target.value))}>
         {levelSchema.options.map((level) => <option key={level}>{level}</option>)}
-      </select></label>
+      </select></label>}
       <label>Hedef seviyen<select value={target} onChange={(e) => setTarget(levelSchema.parse(e.target.value))}>
         {levelSchema.options.map((level) => <option key={level}>{level}</option>)}
       </select></label>
       <label>Günlük süre (dk)<input type="number" required min={5} max={180} value={minutes || ''} onChange={(e) => setMinutes(Number(e.target.value))} /></label>
     </div>
+    <label className="preference-check"><input type="checkbox" checked={selfEstimateUnknown}
+      onChange={(event) => setSelfEstimateUnknown(event.target.checked)} /> Seviyemi henüz bilmiyorum</label>
+    <p className="field-hint">Kısa uyarlanabilir tarama başlangıç dersini seçmeye yardımcı olur.</p>
     <fieldset>
       <legend>Çalışma hedeflerin</legend>
       <div className="chips">{goalSchema.options.map((goal) => <label key={goal}>
         <input type="checkbox" checked={goals.includes(goal)}
           onChange={(e) => setGoals(e.target.checked ? [...goals, goal] : goals.filter((value) => value !== goal))} />
         {goalLabels[goal]}
+      </label>)}</div>
+    </fieldset>
+    <fieldset>
+      <legend>Öncelik vermek istediğin beceriler <small>(isteğe bağlı)</small></legend>
+      <div className="chips">{skillSchema.options.map((skill) => <label key={skill}>
+        <input type="checkbox" checked={prioritySkills.includes(skill)}
+          onChange={(event) => setPrioritySkills(event.target.checked ? [...prioritySkills, skill] : prioritySkills.filter((value) => value !== skill))} />
+        {skill === 'grammar' ? 'Dil bilgisi' : skill === 'vocabulary' ? 'Kelime' : skill === 'reading' ? 'Okuma' : skill === 'listening' ? 'Dinleme' : skill === 'writing' ? 'Yazma' : 'Konuşma'}
       </label>)}</div>
     </fieldset>
     <fieldset>

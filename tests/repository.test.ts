@@ -56,6 +56,7 @@ describe('IndexedDB and backup', () => {
   })
   it('round trips backups and rejects an unknown version or orphaned data', () => {
     expect(parseBackup(exportBackup(state))).toEqual(state)
+    expect(parseBackup(JSON.stringify({ schemaVersion: 4, state }))).toEqual(state)
     expect(() => parseBackup(exportBackup(state).replace('"schemaVersion": 2', '"schemaVersion": 99'))).toThrow()
     expect(() => parseBackup(exportBackup({ ...state, placementAt: new Date().toISOString() }))).toThrow(/tarama/)
   })
@@ -87,18 +88,33 @@ describe('IndexedDB and backup', () => {
     expect(listening.id).toBe('ru.assess.a1.l1')
     russian = recordPlacementSample(russian, listening.id, { status: 'unavailable' },
       '2026-11-13T10:02:00.000Z', 'Europe/Istanbul')
-    const readingFollowup = nextPlacementItem(russian, '2026-11-14T10:00:00.000Z', 'Europe/Istanbul')!
-    expect(readingFollowup.id).toBe('ru.assess.a1.r2')
-    russian = recordPlacementSample(russian, readingFollowup.id, { status: 'unknown' },
+    const readingProbe = nextPlacementItem(russian, '2026-11-14T10:00:00.000Z', 'Europe/Istanbul')!
+    expect(readingProbe.id).toBe('ru.assess.a1.r2m')
+    russian = recordPlacementSample(russian, readingProbe.id, { status: 'unknown' },
       '2026-11-14T10:00:00.000Z', 'Europe/Istanbul')
-    const next = nextPlacementItem(russian, '2026-11-14T10:01:00.000Z', 'Europe/Istanbul')!
-    expect(next.id).toBe('ru.assess.a1.g2')
+    let next: ReturnType<typeof nextPlacementItem>
+    let nextAt = ''
+    for (let day = 1; day <= 10; day += 1) {
+      const dayAt = new Date(Date.parse('2026-11-14T10:01:00.000Z') + day * 86_400_000).toISOString()
+      nextAt = dayAt
+      next = nextPlacementItem(russian, dayAt, 'Europe/Istanbul')
+      for (let step = 0; next && next.id !== 'ru.assess.a1.g2' && step < 8; step += 1) {
+        russian = recordPlacementSample(russian, next.id, { status: 'unknown' }, dayAt, 'Europe/Istanbul')
+        nextAt = new Date(Date.parse(dayAt) + (step + 1) * 60_000).toISOString()
+        next = nextPlacementItem(russian, nextAt, 'Europe/Istanbul')
+      }
+      if (next?.id === 'ru.assess.a1.g2') break
+    }
+    expect(next?.id).toBe('ru.assess.a1.g2')
     const mixedScriptAnswer = 'Мeня' // Latin e among otherwise Cyrillic letters.
-    russian = recordPlacementSample(russian, next.id, { status: 'answered', answer: mixedScriptAnswer },
-      '2026-11-14T10:01:00.000Z', 'Europe/Istanbul')
-    expect(russian.placementTrack?.samples.at(-1)).toMatchObject({ itemId: next.id, answer: mixedScriptAnswer, result: 'correct' })
-    expect(assessmentItem(next.id)?.exercise?.kind).toBe('short')
-    expect(parseBackup(exportBackup(russian))).toEqual(russian)
+    const grammarProduction = next!
+    russian = recordPlacementSample(russian, grammarProduction.id, { status: 'answered', answer: mixedScriptAnswer },
+      nextAt, 'Europe/Istanbul')
+    expect(russian.placementTrack?.samples.at(-1)).toMatchObject({ itemId: grammarProduction.id, answer: mixedScriptAnswer, result: 'correct' })
+    expect(assessmentItem(grammarProduction.id)?.exercise?.kind).toBe('short')
+    const russianBackup = exportBackup(russian)
+    expect(JSON.parse(russianBackup).schemaVersion).toBe(5)
+    expect(parseBackup(russianBackup)).toEqual(russian)
   })
   it('serializes concurrent changes and rejects stale replacement', async () => {
     const current = await repository.create(state)

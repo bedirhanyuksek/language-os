@@ -15,6 +15,8 @@ export type LearningGoal = z.infer<typeof goalSchema>
 
 export const profileSchema = z.strictObject({
   id: z.uuid(), language: languageSchema, estimate: levelSchema, target: levelSchema,
+  selfEstimateUnknown: z.literal(true).optional(),
+  prioritySkills: z.array(skillSchema).refine((values) => new Set(values).size === values.length).optional(),
   minutes: z.number().int().min(5).max(180),
   goals: z.array(goalSchema).min(1).refine((values) => new Set(values).size === values.length),
   days: z.array(z.number().int().min(0).max(6)).min(1).refine((values) => new Set(values).size === values.length),

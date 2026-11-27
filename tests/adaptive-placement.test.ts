@@ -5,8 +5,8 @@ import { assessmentBank, routeLanguage } from '../src/content/assessment/bank'
 import { exerciseSchema } from '../src/content/exercise-schema'
 import { catalog } from '../src/content/catalog'
 import { beginPlacementTrack, finishMiniPlacement, independent, nextPlacementItem, placementSkills, recordPlacementSample,
-  validPlacementTrack } from '../src/domain/adaptive-placement'
-import { dailyPlan, finishLesson, finishPlacement, isUnlocked, lessonTasks, masteryFor } from '../src/domain/progress'
+  validPlacementTrack, rescreenPlacementTrack, finishPlacementTrack } from '../src/domain/adaptive-placement'
+import { dailyPlan, finishLesson, finishPlacement, isUnlocked, lessonTasks, masteryFor, rankEligibleLessons } from '../src/domain/progress'
 import { initialState, type LearningState, type Profile } from '../src/domain/state'
 import { exportBackup, parseBackup } from '../src/persistence/repository'
 
@@ -18,6 +18,13 @@ const profile = (overrides: Partial<Profile> = {}) => initialState({
   id: 'ebe6a17d-dd03-4c5b-b716-5a9f7065a177', language: 'en', estimate: 'B1', target: 'C1',
   minutes: 30, goals: ['general'], days: [0, 1, 2, 3, 4, 5, 6], ...overrides,
 })
+const legacyTrack = (state: LearningState, at = day1) => {
+  const next = beginPlacementTrack(state, at)
+  if (!next.placementTrack) return next
+  const track = { ...next.placementTrack }
+  delete track.policy
+  return { ...next, placementTrack: track }
+}
 const offer = (state: LearningState, at = day1) => nextPlacementItem(state, at, zone)!
 const record = (state: LearningState, response: Parameters<typeof recordPlacementSample>[2], at = day1) =>
   recordPlacementSample(state, offer(state, at).id, response, at, zone)
@@ -47,8 +54,68 @@ test('authored assessment families keep distinct items, compatible exercise sche
   }
 })
 
+test('unknown estimate starts with a lower anchor and answers choose a harder or baseline next initial item', () => {
+  const unknown = profile({ estimate: 'C1', target: 'C2', selfEstimateUnknown: true })
+  let strong = beginPlacementTrack(unknown, day1)
+  expect(strong.placementTrack?.route).toBe('en-start')
+  expect(offer(strong).id).toBe('en.assess.start.g1')
+  strong = correct(strong)
+  while (offer(strong).id !== 'en.assess.start.gp1') strong = correct(strong)
+  strong = correct(strong)
+  expect(offer(strong).id).toBe('en.assess.b1.g1')
+
+  let weaker = beginPlacementTrack(unknown, day1)
+  weaker = record(weaker, { status: 'answered', answer: 'are' })
+  while (offer(weaker).id !== 'en.assess.start.gp1') weaker = correct(weaker)
+  weaker = record(weaker, { status: 'answered', answer: 'walks' })
+  expect(offer(weaker).id).toBe('en.assess.start.vp1')
+})
+
+test('rescreen preserves prior recommendation and backup history; unanswered run does not replace it', () => {
+  let state = beginPlacementTrack(profile(), day1)
+  state = correct(state)
+  state = finishMiniPlacement(state, day1)
+  const before = dailyPlan(state, catalog.en, day2, zone)
+  const originalAt = state.placementAt
+  let rescreen = rescreenPlacementTrack(state, day2)
+  expect(rescreen.placementAt).toBe(originalAt)
+  expect(rescreen.placementHistory).toEqual([state.placementTrack])
+  expect(dailyPlan(rescreen, catalog.en, day2, zone)).toMatchObject({ kind: before.kind, lessonId: 'en.experience' })
+  const item = offer(rescreen, day2)
+  rescreen = record(rescreen, { status: 'unknown' }, day2)
+  rescreen = finishPlacementTrack(rescreen, day2)
+  expect(dailyPlan(rescreen, catalog.en, day2, zone)).toMatchObject({ kind: before.kind, lessonId: 'en.experience' })
+  expect(parseBackup(exportBackup(rescreen))).toEqual(rescreen)
+  expect(rescreen.placementTrack?.samples[0]?.itemId).toBe(item.id)
+})
+
+test('active assessment seconds and fixed per-day limits are independent of daily study minutes', () => {
+  const nextAfterOne = (minutes: number) => {
+    let state = finishMiniPlacement(beginPlacementTrack(profile({ minutes }), day1), day1)
+    state = rescreenPlacementTrack(state, day2)
+    const item = offer(state, day2)
+    state = recordPlacementSample(state, item.id, { status: 'unknown' }, day2, zone)
+    return nextPlacementItem(state, day2, zone)?.id
+  }
+  expect(nextAfterOne(5)).toBe(nextAfterOne(180))
+
+  let timed = rescreenPlacementTrack(finishMiniPlacement(beginPlacementTrack(profile({ minutes: 5 }), day1), day1), day2)
+  const item = offer(timed, day2)
+  timed = recordPlacementSample(timed, item.id, { status: 'unknown', elapsedSeconds: 600 }, day2, zone)
+  expect(timed.placementTrack?.completedAt).toBe(day2)
+  expect(parseBackup(exportBackup(timed))).toEqual(timed)
+})
+
+test('priority skills influence interchangeable eligible lessons without changing the legacy order', () => {
+  const speaking = catalog.en.unit.lessons.find((lesson) => lesson.speaking)!
+  const other = catalog.en.unit.lessons.find((lesson) => lesson !== speaking && !lesson.speaking)!
+  const eligible = [other, speaking]
+  expect(rankEligibleLessons(eligible, [], [], () => 0).map(({ id }) => id)).toEqual(eligible.map(({ id }) => id))
+  expect(rankEligibleLessons(eligible, ['speaking'], [], () => 0)[0].id).toBe(speaking.id)
+})
+
 test('Russian script uncertainty selects Kiril and preserves the distinctions between unknown, skipped and unavailable', () => {
-  let state = beginPlacementTrack(profile({ language: 'ru', estimate: 'A1', target: 'A1' }), day1)
+  let state = legacyTrack(profile({ language: 'ru', estimate: 'A1', target: 'A1' }), day1)
   const first = offer(state).id
   state = record(state, { status: 'unknown' })
   state = record(state, { status: 'skipped' })
@@ -64,12 +131,12 @@ test('Russian script uncertainty selects Kiril and preserves the distinctions be
 })
 
 test('different strengths get a harder listening sample and a separate grammar conflict sample', () => {
-  let state = beginPlacementTrack(profile(), day1)
+  let state = legacyTrack(profile(), day1)
   state = correct(state)
   state = record(state, { status: 'unknown' })
   state = correct(state)
   state = correct(state)
-  expect(dailyPlan(state, catalog.en, day1, zone)).toMatchObject({ kind: 'lesson', lessonId: 'en.experience', reason: expect.stringContaining('iş kalıplarında') })
+  expect(dailyPlan(state, catalog.en, day1, zone)).toMatchObject({ kind: 'lesson', lessonId: 'en.identity', reason: expect.stringContaining('Temel derslerden') })
   expect(nextPlacementItem(state, day1, zone)).toBeUndefined()
   expect(offer(state, day2).id).toBe('en.assess.b1.l2')
   state = correct(state, day2)
@@ -83,7 +150,7 @@ test('different strengths get a harder listening sample and a separate grammar c
 })
 
 test('two explicit unknowns lower the initial reading demand without adding a fifth question', () => {
-  let state = beginPlacementTrack(profile(), day1)
+  let state = legacyTrack(profile(), day1)
   state = record(state, { status: 'unknown' })
   state = record(state, { status: 'unknown' })
   state = correct(state)
@@ -94,7 +161,7 @@ test('two explicit unknowns lower the initial reading demand without adding a fi
 })
 
 test('transcript answers stay assisted and cannot qualify an upward listening sample', () => {
-  let state = beginPlacementTrack(profile(), day1)
+  let state = legacyTrack(profile(), day1)
   state = correct(state)
   state = correct(state)
   expect(() => record(state, { status: 'answered', answer: 'To change the collection time' })).toThrow(/dinle/)
@@ -108,7 +175,7 @@ test('transcript answers stay assisted and cannot qualify an upward listening sa
 
 test('advanced guided entry leaves prerequisite mastery unchanged, and empty placement falls back to teaching', () => {
   const options = { estimate: 'C1', target: 'C2', minutes: 60 } as const
-  let state = beginPlacementTrack(profile(options), day1)
+  let state = legacyTrack(profile(options), day1)
   for (let count = 0; count < 4; count++) state = correct(state)
   const course = catalog.en
   const plan = dailyPlan(state, course, day1, zone)
@@ -122,7 +189,7 @@ test('advanced guided entry leaves prerequisite mastery unchanged, and empty pla
   const observed = finishLesson(state, course, lesson, Object.fromEntries(lessonTasks(state, lesson).map(({ exercise }) =>
     [exercise.id, exercise.kind === 'fill' ? exercise.accepted[0] : 'synthetic response'])), day1)
   expect(observed.attempts.every(({ context }) => context === 'lesson')).toBe(true)
-  expect(dailyPlan(finishMiniPlacement(beginPlacementTrack(profile(options), day1), day1), course, day1, zone))
+  expect(dailyPlan(finishMiniPlacement(legacyTrack(profile(options), day1), day1), course, day1, zone))
     .toMatchObject({ kind: 'lesson', lessonId: 'en.experience' })
 })
 
@@ -133,11 +200,11 @@ test('workdays, early teaching, existing assessment and v4 validation preserve l
     [exercise.id, exercise.kind === 'open' ? exercise.sample :
       exercise.kind === 'short' || exercise.kind === 'fill' ? exercise.accepted[0] : exercise.accepted])), day1)
   expect(parseBackup(exportBackup(earlier))).toEqual(earlier)
-  const state = beginPlacementTrack(earlier, day1)
+  const state = legacyTrack(earlier, day1)
   expect(state.attempts).toEqual(earlier.attempts)
   expect(offer(state).id).toBe('en.assess.b1.g1')
   const answered = correct(state)
-  expect(nextPlacementItem(answered, day1, zone)).toBeUndefined()
+  expect(nextPlacementItem(answered, day1, zone)?.id).toBe('en.assess.b1.v1')
   expect(nextPlacementItem(answered, day2, zone)).toBeUndefined()
   expect(nextPlacementItem(answered, day3, zone)).toBeTruthy()
   expect(validPlacementTrack({ ...answered, profile: { ...answered.profile, language: 'ru' } })).toBe(false)
