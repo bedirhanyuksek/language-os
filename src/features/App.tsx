@@ -371,7 +371,8 @@ export function App() {
     else if (screen.type === 'skills') content = <><SkillProfile state={state} course={course} plan={plan} now={now} onEdit={() => go({ type: 'settings' })} />
       {assessmentAction}
       {diagnostic && <button className="secondary" onClick={() => go({ type: 'diagnostic' })}>Tanılamaya devam et</button>}
-      <button className="primary" onClick={() => start(plan)}>Bugünkü çalışmaya başla <span aria-hidden>→</span></button>
+      {('minutes' in plan || plan.kind === 'assessment_gap') && <button className="primary" onClick={() => start(plan)}>
+        {plan.kind === 'assessment_gap' ? 'Açıklamayı yeniden aç' : 'Bugünkü çalışmaya başla'} <span aria-hidden>→</span></button>}
       <button className="secondary" onClick={() => go({ type: 'home' })}>Günlük planı aç</button>
       {state.placementAt && rescreenBlockedByDraft && <p className="notice">Önce yarım kalan tarama örneğini yanıtla. Taslak ve önceki ilerlemen korunuyor.</p>}
       {state.placementAt && <button className="link-button" disabled={busy || rescreenBlockedByDraft}
@@ -385,7 +386,7 @@ export function App() {
       })} />
     else if (screen.type === 'explanation' && lesson) content = <>
       <header className="page-heading"><div><h1>{lesson.title}</h1>
-        <p>Önceki örnekleri gözden geçir. Yeni değerlendirme örneği bekleniyor; bu gözden geçirme puanlanmaz.</p></div></header>
+        <p>Önceki örnekleri ve açıklamaları puanlama olmadan gözden geçir.</p></div></header>
       <LessonNotes lesson={lesson} state={state} />
       <button className="primary" onClick={() => go({ type: 'home' })}>Günlük plana dön</button>
     </>

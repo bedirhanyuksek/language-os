@@ -59,7 +59,7 @@ export type StudyPlan =
   | { kind: 'pedagogy'; phase: PedagogyPhase; lessonId: string; minutes: number; reason: string; evidenceId?: string; vocabularyCardIds?: string[] }
   | { kind: 'lesson' | 'practice' | 'speaking'; lessonId: string; minutes: number; reason: string }
   | { kind: 'review'; cardIds: string[]; minutes: number; reason: string }
-  | { kind: 'assessment_gap'; lessonId: string; reason: string }
+  | { kind: 'assessment_gap' | 'prerequisite_wait' | 'review_wait'; lessonId: string; reason: string }
   | { kind: 'rest' | 'complete' | 'budget' | 'out_of_scope'; reason: string }
 
 export type CommunicationContext =

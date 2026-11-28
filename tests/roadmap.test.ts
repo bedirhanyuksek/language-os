@@ -56,7 +56,8 @@ describe('roadmap lesson state', () => {
     const initial = buildRoadmap(start(), course)
     expect(initial.current?.id).toBe(course.unit.lessons[0].id)
     expect(initial.next?.id).toBe(course.unit.lessons[1].id)
-    const state = { ...start(catalog.en), profile: { ...start(catalog.en).profile, target: 'C1' as const } }
+    const placed = start(catalog.en)
+    const state = { ...placed, profile: { ...placed.profile, estimate: 'B1' as const, target: 'C1' as const } }
     const plan = dailyPlan(state, catalog.en, at, zone)
     expect('lessonId' in plan).toBe(true)
     if (!('lessonId' in plan)) throw new Error('Fixture must select a lesson')
@@ -64,6 +65,7 @@ describe('roadmap lesson state', () => {
     expect(roadmap.current?.id).toBe(plan.lessonId)
     expect(roadmap.next?.id).not.toBe(roadmap.current?.id)
     expect(roadmap.next?.level).not.toBe('A1')
+    expect(roadmap.fourWeeks.lessonIds).not.toContain('en.rebook')
   })
 
   test('a completed route has no current or next lesson', () => {

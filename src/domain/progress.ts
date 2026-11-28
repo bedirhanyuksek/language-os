@@ -1,5 +1,5 @@
 import { receptionExercises, type Course, type Exercise, type Lesson } from '../content/schema'
-import { canAccelerate, pedagogyPlan, phaseTasks, gradeVocabularyRecall, type ExerciseTask } from './pedagogy'
+import { canAccelerate, hasPendingDelayedReview, pedagogyPlan, phaseTasks, gradeVocabularyRecall, type ExerciseTask } from './pedagogy'
 import { bridgeLesson, isLessonEvidence, needsBridge, nextDiagnostic } from './diagnostic'
 import { placementEntry } from './adaptive-placement'
 import { assess } from './assessment'
@@ -96,6 +96,7 @@ export function masteryFor(state: LearningState, lesson: Lesson): SkillMastery {
 
 export function lessonTasks(state: LearningState, lesson: Lesson): ExerciseTask[] {
   const tasks: ExerciseTask[] = []
+  const guidedRetries: ExerciseTask[] = []
   let allReady = true
   for (const concept of lesson.concepts) {
     const { attempts, ready } = getConceptState(state, lesson, concept.id)
@@ -108,12 +109,20 @@ export function lessonTasks(state: LearningState, lesson: Lesson): ExerciseTask[
       : concept.variants
     const exercise = variants.find(({ id }) => !attempts.some(({ exerciseId }) => exerciseId === id))
     if (exercise) tasks.push({ conceptId: concept.id, exercise, label: concept.label })
+    else if (lesson.teaching && attempts.at(-1)?.evidence.outcome === 'incorrect' &&
+      !attempts.some(({ context }) => context === 'transfer')) {
+      // Guided practice can revisit a model. Independent transfer still needs a fresh sample.
+      const latestByExercise = new Map(attempts.map(({ exerciseId }, index) => [exerciseId, index]))
+      const lastTried = variants.map(({ id }) => latestByExercise.get(id)!)
+      const retry = variants[lastTried.indexOf(Math.min(...lastTried))]
+      if (retry) guidedRetries.push({ conceptId: concept.id, exercise: retry, label: concept.label })
+    }
   }
-  if ((!lesson.pedagogy || (allReady && !tasks.length && wordsPrepared(state, lesson))) &&
+  if ((!lesson.pedagogy || (allReady && !tasks.length && !guidedRetries.length && wordsPrepared(state, lesson))) &&
     !state.attempts.some((attempt) => attempt.exerciseId === lesson.production.id)) {
     tasks.push({ conceptId: lesson.objective.id, exercise: lesson.production, label: 'Kendi cümleni yaz' })
   }
-  return tasks
+  return tasks.length ? tasks : guidedRetries
 }
 
 function spend(state: LearningState, kind: StudySession['kind'], itemId: string, minutes: number, now: string): LearningState {
@@ -267,9 +276,26 @@ export function dailyMinutes(state: LearningState, now: string, timeZone: string
 
 export function needsEnglishStarter(state: LearningState) {
   const entry = placementEntry(state)
-  return (Boolean(state.profile.selfEstimateUnknown) && (!entry || entry.id === 'en.identity')) || entry?.id === 'en.identity' || ['A1', 'A2'].includes(state.profile.target) || state.attempts.filter(({ context, evidence }) =>
+  return (!entry && (state.profile.selfEstimateUnknown || ['A1', 'A2'].includes(state.profile.estimate))) ||
+    entry?.id === 'en.identity' || ['A1', 'A2'].includes(state.profile.target) || state.attempts.filter(({ context, evidence }) =>
     context === 'placement' && evidence.skill === 'grammar' && evidence.outcome === 'incorrect').length >= 4 ||
     state.attempts.some(({ lessonId, context }) => lessonId === 'en.identity' && context === 'lesson')
+}
+
+export function routeLessons(state: LearningState, course: Course) {
+  const targetIndex = levelSchema.options.indexOf(state.profile.target)
+  const bridge = bridgeLesson(course)
+  const includeBridge = bridge && needsBridge(course, state, bridge)
+  const skipStarter = course.language === 'en' && !needsEnglishStarter(state)
+  const starterObjectives = new Set<string>()
+  return course.unit.lessons.filter((lesson) => {
+    // The catalog orders prerequisites before their dependents.
+    if (skipStarter && (lesson.objective.level === 'A1' || lesson.prerequisites.some((id) => starterObjectives.has(id)))) {
+      starterObjectives.add(lesson.objective.id)
+      return false
+    }
+    return levelSchema.options.indexOf(lesson.objective.level) <= targetIndex && (lesson !== bridge || includeBridge)
+  })
 }
 
 export function rankEligibleLessons(lessons: Lesson[], prioritySkills: Skill[], goals: LearningGoal[], misses: (lesson: Lesson) => number) {
@@ -307,16 +333,13 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
     }
     return plan
   }
-  const targetIndex = levelSchema.options.indexOf(state.profile.target)
-  const eligible = course.unit.lessons.filter((lesson) => levelSchema.options.indexOf(lesson.objective.level) <= targetIndex &&
-    (course.language !== 'en' || lesson.objective.level !== 'A1' || needsEnglishStarter(state)))
+  const eligible = routeLessons(state, course)
   const starter = eligible.find(({ id }) => id === 'en.identity')
   const starterPending = starter && !['ready', 'retained'].includes(masteryFor(state, starter).status)
   const bridge = bridgeLesson(course)
-  const bridgePending = bridge && eligible.includes(bridge) && needsBridge(course, state, bridge) &&
+  const bridgePending = bridge && eligible.includes(bridge) &&
     !['ready', 'retained'].includes(masteryFor(state, bridge).status)
   const unlocked = eligible.filter((lesson) => isUnlocked(state, course, lesson) &&
-    (lesson !== bridge || needsBridge(course, state, lesson)) &&
     (starterPending ? lesson === starter : !bridgePending || lesson === bridge || (course.language === 'en' && lesson.objective.level === 'A1')))
   let task: StudyPlan | undefined
   const developingLessons = unlocked.filter((lesson) => masteryFor(state, lesson).status === 'developing')
@@ -326,6 +349,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
     return recent.length === 3 && recent.every(({ evidence }) => evidence.outcome === 'incorrect')
   })
   let assessmentGap: Lesson | undefined
+  let guidedRetry: StudyPlan | undefined
   for (const developing of developingLessons) {
     const vocabularyWasDeferred = deferredVocabulary
     const tasks = lessonTasks(state, developing)
@@ -336,9 +360,19 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
         !canAccelerate(state, course, developing) && (developing.teaching || !onlyProduction) &&
         !state.attempts.some(({ lessonId, context }) => lessonId === developing.id && context === 'transfer')) task = undefined
     }
-    if (!task && tasks.length) task = { kind: 'practice', lessonId: developing.id, minutes: onlyProduction ? 3 : developing.minutes,
-      reason: onlyProduction ? 'Rehberli pratiği tamamladın. Şimdi öğrendiğin yapıyla kendi mesajını yaz.'
-        : `Önceki yanıtın için açıklamalı prova ve yeni soru. Çalışılacak konular ${tasks.map(({ label }) => label).join(', ')}.` }
+    if (!task && tasks.length) {
+      const repeated = !onlyProduction && tasks.every(({ exercise }) => state.attempts.some(({ context, lessonId, exerciseId }) =>
+        context === 'lesson' && lessonId === developing.id && exerciseId === exercise.id))
+      const practice: StudyPlan = { kind: 'practice', lessonId: developing.id, minutes: onlyProduction ? 3 : developing.minutes,
+        reason: onlyProduction ? 'Rehberli pratiği tamamladın. Şimdi öğrendiğin yapıyla kendi mesajını yaz.'
+          : repeated ? 'Bu yapı için öğrenme desteği gerekiyor. Açıklamayı incele ve rehberli örneği yeniden dene.'
+            : `Önceki yanıtın için açıklamalı prova ve yeni soru. Çalışılacak konular ${tasks.map(({ label }) => label).join(', ')}.` }
+      if (repeated) {
+        if (!pausedToday(developing)) guidedRetry ??= practice
+        continue
+      }
+      task = practice
+    }
     if (task && !pausedToday(developing)) break
     if (!task && !vocabularyWasDeferred && !deferredVocabulary) assessmentGap ??= developing
     task = undefined
@@ -385,6 +419,7 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
       reason: next.id === entry?.id ? entry.reason : next === bridge ? 'Tarama, kısa bir temel çalışmanın sonraki görevleri kolaylaştırabileceğini gösterdi.' : misses(next) ? 'Başlangıç taramasında bu kazanım için çalışma fırsatı görüldü.'
         : next.prerequisites.length ? 'Ön koşullar tamamlandı ve sıradaki kazanım açıldı.' : 'Başlangıç ünitesinin ilk kazanımı.' }
   }
+  task ??= guidedRetry
   const cards = dueCards(state, now)
   // A five-minute assignment can consume the whole session. Under sustained pressure,
   // alternate with a review-focused study day so neither queue is starved.
@@ -450,13 +485,26 @@ export function dailyPlan(state: LearningState, course: Course, now: string, tim
     : task
   if (deferredVocabulary) return { kind: 'budget', reason: 'Yeni kelimeler için bugünkü süre veya çalışma yükü sınırına ulaştın. Kalan kelimeler sırada.' }
   if (assessmentGap) return { kind: 'assessment_gap', lessonId: assessmentGap.id,
-    reason: 'Bu kazanım için yeni değerlendirme örneği kalmadı. Önceki denemelerin saklandı; yeni soru eklenene kadar diğer uygun çalışmalara dönebilirsin.' }
+    reason: 'Bu kazanım için yeni bağımsız örnek kalmadı. Açıklamayı yeniden çalışabilir veya uygun diğer çalışmalara dönebilirsin.' }
   if (unlocked.some((lesson) => masteryFor(state, lesson).status === 'developing')) {
     return { kind: 'budget', reason: 'Bugünkü onarım çalışmasına ara ver. Başka bir örnekle sonraki çalışma gününde devam edebilirsin.' }
   }
   if (!eligible.length) {
     return { kind: 'out_of_scope', reason: `Bu dildeki başlangıç ünitesi ${course.level} düzeyinde. Hedefini Ayarlar’dan güncelleyebilirsin.` }
   }
+  const locked = eligible.find((lesson) => {
+    if (isUnlocked(state, course, lesson)) return false
+    const { status } = masteryFor(state, lesson)
+    return status !== 'retained' && (status !== 'ready' || Boolean(lesson.pedagogy))
+  })
+  if (locked) return { kind: 'prerequisite_wait', lessonId: locked.id,
+    reason: 'Bu kazanımın açılması için önce gerekli temel çalışma tamamlanmalı.' }
+  const awaitingRetention = unlocked.filter((lesson) => lesson.pedagogy && masteryFor(state, lesson).status === 'ready')
+  const pendingReview = awaitingRetention.find((lesson) => hasPendingDelayedReview(state, lesson, now))
+  if (pendingReview) return { kind: 'review_wait', lessonId: pendingReview.id,
+    reason: 'Gecikmeli kontrolün zamanı geldiğinde günlük plana eklenecek.' }
+  if (awaitingRetention.length) return { kind: 'assessment_gap', lessonId: awaitingRetention[0].id,
+    reason: 'Yeni gecikmeli kontrol örneği kalmadı. Açıklamayı yeniden çalışabilirsin.' }
   const hasTargetLessons = eligible.some(({ objective }) => objective.level === state.profile.target)
   return { kind: 'complete', reason: 'Yayımlanan rotanın ilk turu bitti. Vadesi gelen kazanım kontrolleri ve kelime tekrarları plana eklenir.' +
     (hasTargetLessons ? ' Bu bantta yayımlanan kazanımlar seçilidir.' : ` ${state.profile.target} hedefi için bu dilde ders henüz yayımlanmadı.`) }

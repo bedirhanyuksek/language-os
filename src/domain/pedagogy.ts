@@ -39,9 +39,33 @@ export function receptionTask(state: LearningState, lesson: Lesson, phase: 'read
   return { material: retry, previous, coaching }
 }
 
+function delayedTasks(state: LearningState, lesson: Lesson, matchesDueTime: (dueAt: number) => boolean): ExerciseTask[] {
+  const pedagogy = lesson.pedagogy
+  if (!pedagogy) return []
+  return pedagogy.checks.flatMap(({ conceptId, delayed }) => {
+    const related = state.attempts.filter((item) => item.lessonId === lesson.id && item.conceptId === conceptId)
+    const anchor = related.filter(({ context, evidence }) => context === 'delayed' ||
+      (context === 'transfer' && evidence.outcome === 'correct')).at(-1)
+    if (!anchor || (anchor.context === 'delayed' && anchor.evidence.outcome === 'correct') ||
+      !matchesDueTime(Date.parse(anchor.at) + pedagogy.reviewAfterHours * 3_600_000)) return []
+    const exercise = delayed.find(({ id }) => !related.some(({ context, exerciseId }) => context === 'delayed' && exerciseId === id))
+    const concept = lesson.concepts.find(({ id }) => id === conceptId)!
+    return exercise ? [{ exercise, conceptId, label: concept.label }] : []
+  })
+}
+
+export function hasPendingDelayedReview(state: LearningState, lesson: Lesson, now: string) {
+  const time = Date.parse(now)
+  return delayedTasks(state, lesson, (dueAt) => dueAt > time).length > 0
+}
+
 export function phaseTasks(state: LearningState, lesson: Lesson, phase: PedagogyPhase, now: string, vocabularyCardIds?: readonly string[]): ExerciseTask[] {
   const p = lesson.pedagogy
   if (!p) return []
+  if (phase === 'delayed') {
+    const time = Date.parse(now)
+    return delayedTasks(state, lesson, (dueAt) => dueAt <= time)
+  }
   const task = (exercise: Exercise, conceptId: string, label: string) => ({ exercise, conceptId, label })
   const objective = lesson.objective.id
   const previous = state.attempts.filter((item) => item.lessonId === lesson.id && item.context === phase)
@@ -103,20 +127,12 @@ export function phaseTasks(state: LearningState, lesson: Lesson, phase: Pedagogy
           key.toLowerCase() === answer.toLowerCase().trim().replace(/[.!?]+$/, '')))
       return triggered ? [task(foundation.exercise, concept.id, 'Ön koşulu yeniden çalış')] : []
     }
-    if (phase === 'transfer') {
-      const latest = related.filter(({ context }) => context === 'transfer' || context === 'lesson').at(-1)
-      const needsSpeakingCheck = priority.includes(concept.id)
-      if (latest === last && last?.evidence.outcome === 'correct' && !needsSpeakingCheck) return []
-      const guided = related.filter(({ context }) => context === 'lesson')
-      if (lesson.teaching && guided.length && !guided.some(({ evidence }) => evidence.outcome === 'correct')) return []
-      const fresh = check.transfer.find(({ id }) => !history.some(({ exerciseId }) => exerciseId === id))
-      return fresh ? [task(fresh, concept.id, concept.label)] : []
-    }
-    const transfer = related.filter(({ context, evidence }) => context === 'transfer' && evidence.outcome === 'correct').at(-1)
-    const anchor = last && (!transfer || state.attempts.indexOf(last) > state.attempts.indexOf(transfer)) ? last : transfer
-    if (!anchor || (anchor === last && last?.evidence.outcome === 'correct') ||
-      Date.parse(now) - Date.parse(anchor.at) < p.reviewAfterHours * 3_600_000) return []
-    const fresh = check.delayed.find((item) => !history.some(({ exerciseId }) => exerciseId === item.id))
+    const latest = related.filter(({ context }) => context === 'transfer' || context === 'lesson').at(-1)
+    const needsSpeakingCheck = priority.includes(concept.id)
+    if (latest === last && last?.evidence.outcome === 'correct' && !needsSpeakingCheck) return []
+    const guided = related.filter(({ context }) => context === 'lesson')
+    if (lesson.teaching && guided.length && !guided.some(({ evidence }) => evidence.outcome === 'correct')) return []
+    const fresh = check.transfer.find(({ id }) => !history.some(({ exerciseId }) => exerciseId === id))
     return fresh ? [task(fresh, concept.id, concept.label)] : []
   })
 }

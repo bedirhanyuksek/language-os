@@ -359,7 +359,7 @@ test('weak listening triggers listening practice without sending a successful re
   expect(dailyPlan(state, course, at, zone, false)).toMatchObject({ phase: 'listening', lessonId: lesson.id, evidenceId: expect.any(String) })
 })
 
-test('exhausted variants stay closed while an unrelated unlocked lesson can proceed', () => {
+test('exhausted guided variants request support after same-day misses and can be retried next day', () => {
   const course = catalog.en
   const lesson = course.unit.lessons[0]
   const extra = course.unit.lessons.find(({ id }) => id === 'en.opinion')!
@@ -367,18 +367,23 @@ test('exhausted variants stay closed while an unrelated unlocked lesson can proc
     item === extra ? { ...item, prerequisites: [] } : item) } })
   let state = start(course, 60, { 'en.diagnostic.2': 'have lead' })
   const tried = new Set<string>()
+  let reused = false
   for (let attempt = 0; attempt < 3; attempt++) {
     const tasks = lessonTasks(state, lesson)
     if (!tasks.length) break
-    expect(tried.has(tasks[0].exercise.id)).toBe(false)
+    if (tried.has(tasks[0].exercise.id)) reused = true
     tried.add(tasks[0].exercise.id)
     state = finishLesson(state, course, lesson, { ...answers(tasks), [tasks[0].exercise.id]: 'wrong' }, at)
   }
   expect(tried.size).toBeGreaterThan(1)
+  expect(reused).toBe(true)
   expect(dailyPlan(state, independent, at, zone)).toMatchObject({ kind: 'lesson', lessonId: extra.id })
-  expect(dailyPlan(state, course, at, zone)).toMatchObject({ kind: 'assessment_gap' })
+  expect(dailyPlan(state, course, at, zone).kind).toBe('budget')
   const monday = '2026-11-16T10:00:00.000Z'
-  expect(dailyPlan(state, course, monday, zone)).toMatchObject({ kind: 'assessment_gap' })
+  expect(dailyPlan(state, course, monday, zone)).toMatchObject({
+    kind: 'practice', lessonId: lesson.id, reason: expect.stringContaining('öğrenme desteği gerekiyor'),
+  })
+  expect(lessonTasks(state, lesson).some(({ exercise }) => tried.has(exercise.id))).toBe(true)
   expect(masteryFor(state, lesson).status).toBe('developing')
 })
 

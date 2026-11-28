@@ -13,7 +13,7 @@ import { mapPlacement } from '../domain/assessment'
 import { levelSchema, type Answer, type ExerciseAttempt, type StudyPlan } from '../domain/model'
 import type { ExerciseTask } from '../domain/pedagogy'
 import { bridgeLesson, needsBridge } from '../domain/diagnostic'
-import { dailyMinutes, dueCards, isUnlocked, masteryFor, needsEnglishStarter } from '../domain/progress'
+import { dailyMinutes, dueCards, isUnlocked, masteryFor, routeLessons } from '../domain/progress'
 import { speakingSuccesses } from '../domain/speaking'
 import type { LearningState } from '../domain/state'
 import { goalLabels, languageLabels, languageMarks, pedagogyLabel, skillLabels } from './labels'
@@ -26,16 +26,17 @@ const statusLabels = {
 }
 
 export function Curriculum({ course, state }: { course: Course; state: LearningState }) {
+  const route = new Set(routeLessons(state, course))
   return <div className="curriculum">
     {course.unit.lessons.filter((lesson) => lesson !== bridgeLesson(course) || needsBridge(course, state, lesson)).map((lesson, index) => {
       const eligible = levelSchema.options.indexOf(lesson.objective.level) <= levelSchema.options.indexOf(state.profile.target)
-      const unlocked = eligible && isUnlocked(state, course, lesson)
-      const outsideRoute = course.language === 'en' && lesson.objective.level === 'A1' && !needsEnglishStarter(state)
+      const outsideRoute = eligible && !route.has(lesson)
+      const unlocked = eligible && !outsideRoute && isUnlocked(state, course, lesson)
       const status = masteryFor(state, lesson).status
       return <div className={unlocked ? 'curriculum-row' : 'curriculum-row locked'} key={lesson.id}>
         <span className={`step-icon ${unlocked ? 'available' : ''}`} aria-hidden>{String(index + 1).padStart(2, '0')}</span>
         <div><strong>{lesson.title}</strong><small>{lesson.objective.level} · {lesson.objective.description}</small></div>
-        <span className={`status ${unlocked && !outsideRoute ? status : ''}`}>{!eligible ? 'Hedef seviyenin üzerinde' : outsideRoute ? 'Başlangıç rotasında' :
+        <span className={`status ${unlocked ? status : ''}`}>{!eligible ? 'Hedef seviyenin üzerinde' : outsideRoute ? 'Başlangıç rotasında' :
           unlocked ? statusLabels[status] : 'Ön koşul bekliyor'}</span>
       </div>
     })}
@@ -49,7 +50,9 @@ export function Dashboard({ state, course, plan, start, choose, now }: {
   const scriptPractice = plan.kind === 'pedagogy' && plan.phase === 'listening' && lesson?.teaching?.audioMode === 'script-practice'
   const headline = plan.kind === 'pedagogy' ? pedagogyLabel(plan.phase, scriptPractice) : {
     lesson: lesson?.title, practice: 'Hedefli pratik', speaking: 'Sesli pratik',
-    review: 'Kelime tekrarı', out_of_scope: 'Hedef seviyende ders yok', rest: 'Dinlenme günü', budget: 'Bugünkü çalışma tamamlandı', complete: 'Başlangıç ünitesi tamamlandı', assessment_gap: 'Yeni değerlendirme örneği gerekli',
+    review: 'Kelime tekrarı', out_of_scope: 'Hedef seviyende ders yok', rest: 'Dinlenme günü', budget: 'Bugünkü çalışma tamamlandı',
+    complete: 'Yayımlanan rota sonu', assessment_gap: 'Öğrenme desteği gerekiyor',
+    prerequisite_wait: 'Ön koşul bekleniyor', review_wait: 'Tekrar zamanı gelmedi',
   }[plan.kind]
   const program = dailyProgram(state, course, now, Intl.DateTimeFormat().resolvedOptions().timeZone)
   const action = { lesson: 'Derse başla', practice: 'Pratiğe başla', speaking: 'Konuşmayı hazırla', review: 'Kelimeleri tekrar et' }

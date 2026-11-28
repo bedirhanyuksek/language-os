@@ -8,7 +8,7 @@ import { bridgeLesson, nextDiagnostic } from '../src/domain/diagnostic'
 import { assess, mapPlacement } from '../src/domain/assessment'
 import type { Answer, PedagogyPhase } from '../src/domain/model'
 import { canAccelerate, phaseTasks } from '../src/domain/pedagogy'
-import { dailyPlan, finishDiagnostic, finishLesson, finishPedagogy, finishPlacement, finishTypedReview, lessonTasks, masteryFor } from '../src/domain/progress'
+import { dailyPlan, finishDiagnostic, finishLesson, finishPedagogy, finishPlacement, finishTypedReview, isUnlocked, lessonTasks, masteryFor } from '../src/domain/progress'
 import { initialState, type LearningState } from '../src/domain/state'
 import { exportBackup, parseBackup } from '../src/persistence/repository'
 
@@ -58,6 +58,58 @@ function finishInput(state: LearningState, lesson = first) {
 }
 
 describe('adaptive evidence', () => {
+  it('offers a next-day guided retry after two consecutive controlled misses without unlocking the child lesson', () => {
+    const diagnosticMisses = Object.fromEntries(en.placement.filter(({ diagnosticConceptId }) => diagnosticConceptId)
+      .map(({ exercise }) => [exercise.id, 'Bilmiyorum']))
+    const placed = start(en, diagnosticMisses)
+    const state = { ...placed, profile: { ...placed.profile, estimate: 'A1' as const, target: 'A2' as const } }
+    const identity = en.unit.lessons.find(({ id }) => id === 'en.identity')!
+    const child = en.unit.lessons.find(({ id }) => id === 'en.cafe')!
+
+    expect(dailyPlan(state, en, at, 'Europe/Istanbul')).toMatchObject({ kind: 'lesson', lessonId: identity.id })
+    expect(isUnlocked(state, en, child)).toBe(false)
+    const firstTasks = lessonTasks(state, identity)
+    expect(firstTasks.length).toBeGreaterThan(0)
+    const firstAnswers = answers(firstTasks)
+    firstAnswers[firstTasks[0].exercise.id] = 'Bilmiyorum'
+    const firstMiss = finishLesson(state, en, identity, firstAnswers, at)
+    expect(masteryFor(firstMiss, identity).status).toBe('developing')
+    expect(isUnlocked(firstMiss, en, child)).toBe(false)
+
+    const secondTasks = lessonTasks(firstMiss, identity)
+    expect(secondTasks[0].conceptId).toBe(firstTasks[0].conceptId)
+    expect(secondTasks[0].exercise.id).not.toBe(firstTasks[0].exercise.id)
+    const secondAnswers = answers(secondTasks)
+    secondAnswers[secondTasks[0].exercise.id] = 'Bilmiyorum'
+    const secondMiss = finishLesson(firstMiss, en, identity, secondAnswers, next)
+    expect(masteryFor(secondMiss, identity).status).toBe('developing')
+    expect(isUnlocked(secondMiss, en, child)).toBe(false)
+
+    expect(dailyPlan(secondMiss, en, later, 'Europe/Istanbul')).toMatchObject({ kind: 'practice', lessonId: identity.id })
+    const retryTasks = lessonTasks(secondMiss, identity)
+    expect(retryTasks.map(({ exercise }) => exercise.id)).toContain(firstTasks[0].exercise.id)
+    const guided = finishLesson(secondMiss, en, identity, answers(retryTasks), later)
+    expect(guided.attempts.filter(({ exerciseId }) => exerciseId === firstTasks[0].exercise.id)).toHaveLength(2)
+    expect(parseBackup(exportBackup(guided))).toEqual(guided)
+    expect(masteryFor(guided, identity).status).toBe('developing')
+    expect(isUnlocked(guided, en, child)).toBe(false)
+
+    const vocabulary = phaseTasks(guided, identity, 'vocabulary', later)
+    expect(vocabulary.length).toBeGreaterThan(0)
+    const prepared = finishPedagogy(guided, en, identity, 'vocabulary', answers(vocabulary), later)
+    expect(isUnlocked(prepared, en, child)).toBe(false)
+    expect(lessonTasks(prepared, identity).map(({ exercise }) => exercise.id)).toContain(identity.production.id)
+
+    const drafted = finishLesson(prepared, en, identity, { [identity.production.id]: correct(identity.production) }, later)
+    expect(isUnlocked(drafted, en, child)).toBe(false)
+    const transfer = phaseTasks(drafted, identity, 'transfer', later)
+    expect(transfer.map(({ exercise }) => exercise.id)).toEqual(expect.arrayContaining(
+      identity.pedagogy!.checks.map(({ transfer: samples }) => samples[0].id)))
+    const transferred = finishPedagogy(drafted, en, identity, 'transfer', answers(transfer), later)
+    expect(masteryFor(transferred, identity).status).toBe('ready')
+    expect(isUnlocked(transferred, en, child)).toBe(true)
+  })
+
   it.each(Object.values(catalog))('requires guided production before an independent $language draft', (course) => {
     const changes = Object.fromEntries(course.placement.filter(({ diagnosticConceptId }) => diagnosticConceptId)
       .map(({ exercise }) => [exercise.id, 'Bilmiyorum']))
@@ -78,9 +130,13 @@ describe('adaptive evidence', () => {
     const retry = lessonTasks(failed, lesson)
     expect(retry.map(({ exercise }) => exercise.id)).not.toContain(firstTask.exercise.id)
     const failedAgain = finishLesson(failed, course, lesson, { [retry[0].exercise.id]: 'Bilmiyorum' }, next)
-    expect(dailyPlan(failedAgain, course, later, 'Europe/Istanbul')).toMatchObject({ kind: 'assessment_gap' })
-    expect(lessonTasks(failedAgain, lesson)).toEqual([])
-    expect(() => finishLesson(failedAgain, course, lesson, draft, later)).toThrow()
+    expect(dailyPlan(failedAgain, course, later, 'Europe/Istanbul')).toMatchObject({ kind: 'practice', lessonId: lesson.id })
+    const supportedRetry = lessonTasks(failedAgain, lesson)
+    expect(supportedRetry.map(({ exercise }) => exercise.id)).toContain(firstTask.exercise.id)
+    const recovered = finishLesson(failedAgain, course, lesson, answers(supportedRetry), later)
+    expect(masteryFor(recovered, lesson).status).toBe('developing')
+    expect(lessonTasks(recovered, lesson)).toEqual([])
+    expect(() => finishLesson(recovered, course, lesson, draft, later)).toThrow()
     const guided = finishLesson(failed, course, lesson, answers(retry), later)
     expect(lessonTasks(guided, lesson)).toEqual([])
     const repaired = teachWords(guided, course, lesson, later)
@@ -337,7 +393,7 @@ describe('Learning Experience v1 learner scenarios', () => {
           routeEnd = true
           break
         }
-        if (plan.kind === 'out_of_scope' || plan.kind === 'budget' || plan.kind === 'rest') break
+        if (plan.kind === 'out_of_scope' || plan.kind === 'budget' || plan.kind === 'rest' || plan.kind === 'review_wait') break
         learningDays.add(now)
         if (plan.kind === 'review') {
           for (const id of plan.cardIds) {

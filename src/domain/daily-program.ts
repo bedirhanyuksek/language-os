@@ -12,13 +12,14 @@ export function activityLabel(task: StudyPlan) {
     reading: 'Okuma pratiği', listening: 'Dinleme pratiği', transfer: 'Yeni bağlamda kontrollü kullanım',
     delayed: 'Gecikmeli kontrol', revision: 'Yazıyı gözden geçirme' }[task.phase]
   return { lesson: 'Yeni konu ve rehberli pratik', practice: 'Uygulama', speaking: 'Konuşma fırsatı', review: 'Vadesi gelen tekrar',
-    rest: 'Dinlenme', budget: 'Sonraki çalışma günü', complete: 'Yayımlanan rota sonu', assessment_gap: 'Yeni örnek bekleniyor', out_of_scope: 'İçerik açığı' }[task.kind]
+    rest: 'Dinlenme', budget: 'Sonraki çalışma günü', complete: 'Yayımlanan rota sonu', assessment_gap: 'Öğrenme desteği gerekiyor',
+    prerequisite_wait: 'Ön koşul bekleniyor', review_wait: 'Tekrar zamanı gelmedi', out_of_scope: 'İçerik açığı' }[task.kind]
 }
 
 // A forecast describes dependencies. It never answers a question or writes learner evidence.
 export function followingStep(course: Course, task: StudyPlan) {
   if (task.kind === 'review') return 'Seçili tekrarlar bitince öğretim ve beceri çalışması için kalan plan yeniden hesaplanır.'
-  if (!('lessonId' in task)) return task.reason
+  if (!('minutes' in task)) return task.reason
   const lesson = course.unit.lessons.find(({ id }) => id === task.lessonId)!
   if (task.kind === 'lesson' || task.kind === 'practice') return 'Yanıtına göre önce eksik yapı onarımı veya gerekli kelime edinimi, ardından kendi mesajın açılır.'
   if (task.kind === 'pedagogy') {

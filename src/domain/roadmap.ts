@@ -1,9 +1,9 @@
-import type { Course, Lesson } from '../content/schema'
+import type { Course } from '../content/schema'
 import { outcomesFor } from '../content/curriculum/inventory'
-import { bridgeLesson, isLessonEvidence, needsBridge } from './diagnostic'
+import { isLessonEvidence } from './diagnostic'
 import { placementEntry } from './adaptive-placement'
 import { levelSchema, type CEFRLevel } from './model'
-import { isUnlocked, masteryFor, needsEnglishStarter } from './progress'
+import { isUnlocked, masteryFor, routeLessons } from './progress'
 import type { LearningState } from './state'
 
 export type RoadmapStatus = 'completed' | 'in_progress' | 'upcoming' | 'locked'
@@ -92,16 +92,10 @@ export function buildRoadmap(state: LearningState, course: Course, focusLessonId
     level.completed = lessons.filter(({ status }) => status === 'completed').length
   }
 
-  const bridge = bridgeLesson(course)
-  const targetIndex = levelSchema.options.indexOf(state.profile.target)
-  const englishStarter = needsEnglishStarter(state)
-  const includeBridge = bridge && needsBridge(course, state, bridge)
-  const eligible = (lesson: Lesson) => levelSchema.options.indexOf(lesson.objective.level) <= targetIndex &&
-    (course.language !== 'en' || lesson.objective.level !== 'A1' || englishStarter) &&
-    (lesson !== bridge || includeBridge)
+  const eligible = routeLessons(state, course)
   // CEFR ordering is stable; catalog order within each band preserves authored prerequisites.
-  const ordered = levels.flatMap(({ level }) => course.unit.lessons.filter((lesson) =>
-    lesson.objective.level === level && eligible(lesson)).map(({ id }) => byId.get(id)!))
+  const ordered = levels.flatMap(({ level }) => eligible.filter((lesson) =>
+    lesson.objective.level === level).map(({ id }) => byId.get(id)!))
   const pending = ordered.filter(({ status }) => status !== 'completed')
   const entry = placementEntry(state)
   const current = (focusLessonId && byId.get(focusLessonId)) ||
