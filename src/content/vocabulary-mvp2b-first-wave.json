@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "en.venue-rules.1",
+    "language": "en",
+    "lemma": "advance booking",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "önceden rezervasyon",
+    "example": "The free tour requires advance booking.",
+    "usage": "Yerini etkinlikten veya ziyaretten önce ayırma.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.venue-rules.word.1",
+        "lessonId": "en.venue-rules",
+        "objectiveId": "en.venue-rules.objective",
+        "band": "B1",
+        "assessmentRevision": "c68afdb8"
+      }
+    ]
+  },
+  {
+    "id": "en.venue-rules.2",
+    "language": "en",
+    "lemma": "designated area",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "belirlenmiş alan",
+    "example": "You may eat in the designated area.",
+    "usage": "Özel bir kullanım için belirlenmiş yer.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.venue-rules.word.2",
+        "lessonId": "en.venue-rules",
+        "objectiveId": "en.venue-rules.objective",
+        "band": "B1",
+        "assessmentRevision": "46ec4102"
+      }
+    ]
+  },
+  {
+    "id": "en.venue-rules.3",
+    "language": "en",
+    "lemma": "visitor pass",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "ziyaretçi kartı",
+    "example": "A visitor pass is required upstairs.",
+    "usage": "Ziyaretçinin giriş iznini gösteren kart.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.venue-rules.word.3",
+        "lessonId": "en.venue-rules",
+        "objectiveId": "en.venue-rules.objective",
+        "band": "B1",
+        "assessmentRevision": "31a8278"
+      }
+    ]
+  },
+  {
+    "id": "en.venue-rules.4",
+    "language": "en",
+    "lemma": "personal belongings",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "kişisel eşyalar",
+    "example": "Put your personal belongings in a locker.",
+    "usage": "Yanında getirdiğin çanta, mont ve benzeri eşyalar.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.venue-rules.word.4",
+        "lessonId": "en.venue-rules",
+        "objectiveId": "en.venue-rules.objective",
+        "band": "B1",
+        "assessmentRevision": "26b3b37f"
+      }
+    ]
+  },
+  {
+    "id": "en.venue-rules.5",
+    "language": "en",
+    "lemma": "optional charge",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "isteğe bağlı ücret",
+    "example": "There is an optional charge for the printed guide.",
+    "usage": "Yalnızca ek bir hizmet seçilirse ödenen ücret.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.venue-rules.word.5",
+        "lessonId": "en.venue-rules",
+        "objectiveId": "en.venue-rules.objective",
+        "band": "B1",
+        "assessmentRevision": "87e73081"
+      }
+    ]
+  },
+  {
+    "id": "en.venue-rules.6",
+    "language": "en",
+    "lemma": "no outside food",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "dışarıdan yiyecek getirmek yasak",
+    "example": "The sign says there is no outside food in the hall.",
+    "usage": "Dışarıdan getirilen yiyeceği mekâna sokmama kuralı.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.venue-rules.word.6",
+        "lessonId": "en.venue-rules",
+        "objectiveId": "en.venue-rules.objective",
+        "band": "B1",
+        "assessmentRevision": "6e0c44d"
+      }
+    ]
+  },
+  {
+    "id": "en.relay-request.1",
+    "language": "en",
+    "lemma": "pass on a message",
+    "partOfSpeech": "verb phrase",
+    "band": "B1",
+    "meaning": "mesajı iletmek",
+    "example": "I can pass on a message when Eva returns.",
+    "usage": "Bir kişinin iletisini doğru muhataba aktarmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.relay-request.word.1",
+        "lessonId": "en.relay-request",
+        "objectiveId": "en.relay-request.objective",
+        "band": "B1",
+        "assessmentRevision": "3411912"
+      }
+    ]
+  },
+  {
+    "id": "en.relay-request.2",
+    "language": "en",
+    "lemma": "handover note",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "devir notu",
+    "example": "The handover note is pinned inside the office.",
+    "usage": "Görevi devralana kalan iş ve ayrıntıları aktaran kısa not.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.relay-request.word.2",
+        "lessonId": "en.relay-request",
+        "objectiveId": "en.relay-request.objective",
+        "band": "B1",
+        "assessmentRevision": "9c5019e0"
+      }
+    ]
+  },
+  {
+    "id": "en.relay-request.3",
+    "language": "en",
+    "lemma": "designated contact",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "belirlenmiş irtibat kişisi",
+    "example": "Omar is the designated contact during setup.",
+    "usage": "Görev için iletişim kurulacak kişi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.relay-request.word.3",
+        "lessonId": "en.relay-request",
+        "objectiveId": "en.relay-request.objective",
+        "band": "B1",
+        "assessmentRevision": "814b5a4c"
+      }
+    ]
+  },
+  {
+    "id": "en.relay-request.4",
+    "language": "en",
+    "lemma": "priority item",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "öncelikli iş",
+    "example": "The door sign is a priority item this morning.",
+    "usage": "Önce ele alınması gereken iş veya madde.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.relay-request.word.4",
+        "lessonId": "en.relay-request",
+        "objectiveId": "en.relay-request.objective",
+        "band": "B1",
+        "assessmentRevision": "226b7c9c"
+      }
+    ]
+  },
+  {
+    "id": "en.relay-request.5",
+    "language": "en",
+    "lemma": "acknowledge receipt",
+    "partOfSpeech": "verb phrase",
+    "band": "B1",
+    "meaning": "teslim aldığını doğrulamak",
+    "example": "Please acknowledge receipt of the new schedule.",
+    "usage": "Mesajın ya da belgenin sana ulaştığını doğrulamak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.relay-request.word.5",
+        "lessonId": "en.relay-request",
+        "objectiveId": "en.relay-request.objective",
+        "band": "B1",
+        "assessmentRevision": "781a5cad"
+      }
+    ]
+  },
+  {
+    "id": "en.relay-request.6",
+    "language": "en",
+    "lemma": "stand-in",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "geçici olarak yerine geçen kişi",
+    "example": "The stand-in starts at two today.",
+    "usage": "Birinin yokluğunda rolünü geçici olarak üstlenen kişi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.relay-request.word.6",
+        "lessonId": "en.relay-request",
+        "objectiveId": "en.relay-request.objective",
+        "band": "B1",
+        "assessmentRevision": "a66b4d24"
+      }
+    ]
+  },
+  {
+    "id": "en.mixed-outcome.1",
+    "language": "en",
+    "lemma": "single point of failure",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "tek kritik arıza noktası",
+    "example": "The shared password was a single point of failure.",
+    "usage": "Arızalanırsa bütün süreci durdurabilecek tek unsur.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.mixed-outcome.word.1",
+        "lessonId": "en.mixed-outcome",
+        "objectiveId": "en.mixed-outcome.objective",
+        "band": "B2",
+        "assessmentRevision": "2cd8f108"
+      }
+    ]
+  },
+  {
+    "id": "en.mixed-outcome.2",
+    "language": "en",
+    "lemma": "contingency plan",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "aksaklık durumuna karşı plan",
+    "example": "We need a contingency plan for heavy rain.",
+    "usage": "Plan işlemezse uygulanacak önceden düşünülmüş alternatif.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.mixed-outcome.word.2",
+        "lessonId": "en.mixed-outcome",
+        "objectiveId": "en.mixed-outcome.objective",
+        "band": "B2",
+        "assessmentRevision": "6dbb0dd1"
+      }
+    ]
+  },
+  {
+    "id": "en.mixed-outcome.3",
+    "language": "en",
+    "lemma": "trace the cause",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "nedeni izini sürerek bulmak",
+    "example": "We traced the cause to a faulty sensor.",
+    "usage": "Gözlemlerden yola çıkarak sorunun kaynağını bulmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.mixed-outcome.word.3",
+        "lessonId": "en.mixed-outcome",
+        "objectiveId": "en.mixed-outcome.objective",
+        "band": "B2",
+        "assessmentRevision": "9f310da7"
+      }
+    ]
+  },
+  {
+    "id": "en.mixed-outcome.4",
+    "language": "en",
+    "lemma": "carry-over effect",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "sonraki döneme taşınan etki",
+    "example": "There was a carry-over effect on Monday bookings.",
+    "usage": "Bir olayın sonraki dönem veya aşamaya yansıyan etkisi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.mixed-outcome.word.4",
+        "lessonId": "en.mixed-outcome",
+        "objectiveId": "en.mixed-outcome.objective",
+        "band": "B2",
+        "assessmentRevision": "320707a5"
+      }
+    ]
+  },
+  {
+    "id": "en.mixed-outcome.5",
+    "language": "en",
+    "lemma": "underlying constraint",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "altta yatan kısıt",
+    "example": "Time is the underlying constraint on this plan.",
+    "usage": "Birçok görünür sorunu etkileyen temel kısıt.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.mixed-outcome.word.5",
+        "lessonId": "en.mixed-outcome",
+        "objectiveId": "en.mixed-outcome.objective",
+        "band": "B2",
+        "assessmentRevision": "49042db6"
+      }
+    ]
+  },
+  {
+    "id": "en.mixed-outcome.6",
+    "language": "en",
+    "lemma": "put a safeguard in place",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "koruyucu önlem uygulamaya koymak",
+    "example": "Let’s put a safeguard in place before the next launch.",
+    "usage": "Yeni hata riskini düşüren bir uygulama başlatmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.mixed-outcome.word.6",
+        "lessonId": "en.mixed-outcome",
+        "objectiveId": "en.mixed-outcome.objective",
+        "band": "B2",
+        "assessmentRevision": "d637593a"
+      }
+    ]
+  },
+  {
+    "id": "en.compact-safety-note.1",
+    "language": "en",
+    "lemma": "restricted access",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "kısıtlı erişim",
+    "example": "There is restricted access during the repair.",
+    "usage": "Bir alana herkesin giremediği erişim düzeni.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.compact-safety-note.word.1",
+        "lessonId": "en.compact-safety-note",
+        "objectiveId": "en.compact-safety-note.objective",
+        "band": "B2",
+        "assessmentRevision": "3c6d227b"
+      }
+    ]
+  },
+  {
+    "id": "en.compact-safety-note.2",
+    "language": "en",
+    "lemma": "assembly point",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "acil toplanma noktası",
+    "example": "The assembly point is behind the south gate.",
+    "usage": "Acil durumda insanların bir araya gelmesi gereken yer.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.compact-safety-note.word.2",
+        "lessonId": "en.compact-safety-note",
+        "objectiveId": "en.compact-safety-note.objective",
+        "band": "B2",
+        "assessmentRevision": "d9a6fac5"
+      }
+    ]
+  },
+  {
+    "id": "en.compact-safety-note.3",
+    "language": "en",
+    "lemma": "protective eyewear",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "koruyucu gözlük",
+    "example": "Visitors to the cutting area must wear protective eyewear.",
+    "usage": "Gözü parça ve sıçramalara karşı koruyan ekipman.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.compact-safety-note.word.3",
+        "lessonId": "en.compact-safety-note",
+        "objectiveId": "en.compact-safety-note.objective",
+        "band": "B2",
+        "assessmentRevision": "7887f0c7"
+      }
+    ]
+  },
+  {
+    "id": "en.compact-safety-note.4",
+    "language": "en",
+    "lemma": "isolation switch",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "yalıtım şalteri",
+    "example": "Turn the isolation switch off before maintenance.",
+    "usage": "Cihazı enerji kaynağından ayırmak için kullanılan şalter.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.compact-safety-note.word.4",
+        "lessonId": "en.compact-safety-note",
+        "objectiveId": "en.compact-safety-note.objective",
+        "band": "B2",
+        "assessmentRevision": "20a22a3b"
+      }
+    ]
+  },
+  {
+    "id": "en.compact-safety-note.5",
+    "language": "en",
+    "lemma": "barrier tape",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "bariyer şeridi",
+    "example": "Do not cross the barrier tape.",
+    "usage": "Geçici olarak kapatılan alanı gösteren şerit.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.compact-safety-note.word.5",
+        "lessonId": "en.compact-safety-note",
+        "objectiveId": "en.compact-safety-note.objective",
+        "band": "B2",
+        "assessmentRevision": "1da100be"
+      }
+    ]
+  },
+  {
+    "id": "en.compact-safety-note.6",
+    "language": "en",
+    "lemma": "spill kit",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "dökülme müdahale seti",
+    "example": "A spill kit is stored beside the sink.",
+    "usage": "Bir sıvı döküldüğünde güvenli müdahale için kullanılan malzeme seti.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.compact-safety-note.word.6",
+        "lessonId": "en.compact-safety-note",
+        "objectiveId": "en.compact-safety-note.objective",
+        "band": "B2",
+        "assessmentRevision": "23a379fd"
+      }
+    ]
+  },
+  {
+    "id": "en.project-milestone.1",
+    "language": "en",
+    "lemma": "critical milestone",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "kritik dönüm noktası",
+    "example": "The first inspection is a critical milestone.",
+    "usage": "Takvimde sonraki işleri etkileyen önemli nokta.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.project-milestone.word.1",
+        "lessonId": "en.project-milestone",
+        "objectiveId": "en.project-milestone.objective",
+        "band": "B2",
+        "assessmentRevision": "a78623ae"
+      }
+    ]
+  },
+  {
+    "id": "en.project-milestone.2",
+    "language": "en",
+    "lemma": "handover window",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "işi devretme zaman aralığı",
+    "example": "The handover window is one hour on Friday.",
+    "usage": "Görev veya ekipmanın alınabileceği planlı zaman aralığı.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.project-milestone.word.2",
+        "lessonId": "en.project-milestone",
+        "objectiveId": "en.project-milestone.objective",
+        "band": "B2",
+        "assessmentRevision": "d2993e47"
+      }
+    ]
+  },
+  {
+    "id": "en.project-milestone.3",
+    "language": "en",
+    "lemma": "allow for slippage",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "takvim kaymasına pay bırakmak",
+    "example": "The plan allows for slippage during installation.",
+    "usage": "Planlamada gecikme ihtimaline süre ayırmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.project-milestone.word.3",
+        "lessonId": "en.project-milestone",
+        "objectiveId": "en.project-milestone.objective",
+        "band": "B2",
+        "assessmentRevision": "e0205c0a"
+      }
+    ]
+  },
+  {
+    "id": "en.project-milestone.4",
+    "language": "en",
+    "lemma": "bring forward a deadline",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "son tarihi erkene almak",
+    "example": "The venue brought forward a deadline for bookings.",
+    "usage": "Belirlenen son tamamlanma tarihini daha erkene koymak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.project-milestone.word.4",
+        "lessonId": "en.project-milestone",
+        "objectiveId": "en.project-milestone.objective",
+        "band": "B2",
+        "assessmentRevision": "9a7db86"
+      }
+    ]
+  },
+  {
+    "id": "en.project-milestone.5",
+    "language": "en",
+    "lemma": "run in parallel",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "eş zamanlı ilerlemek",
+    "example": "The two checks can run in parallel.",
+    "usage": "İki işin sıra beklemeden aynı zaman aralığında ilerlemesi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.project-milestone.word.5",
+        "lessonId": "en.project-milestone",
+        "objectiveId": "en.project-milestone.objective",
+        "band": "B2",
+        "assessmentRevision": "6bf87c4c"
+      }
+    ]
+  },
+  {
+    "id": "en.project-milestone.6",
+    "language": "en",
+    "lemma": "delivery dependency",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "teslimata bağlı ön koşul",
+    "example": "The paint delivery is a dependency for the next stage.",
+    "usage": "Sonraki işin başlayabilmek için önce bir teslimat beklemesi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.project-milestone.word.6",
+        "lessonId": "en.project-milestone",
+        "objectiveId": "en.project-milestone.objective",
+        "band": "B2",
+        "assessmentRevision": "6b3a9ad7"
+      }
+    ]
+  },
+  {
+    "id": "en.access-criteria.1",
+    "language": "en",
+    "lemma": "clear walkway",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "engelsiz geçiş yolu",
+    "example": "Please leave a clear walkway to the door.",
+    "usage": "Bir geçiş hattının eşya veya engelle kapanmadığını anlatır.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.access-criteria.word.1",
+        "lessonId": "en.access-criteria",
+        "objectiveId": "en.access-criteria.objective",
+        "band": "B1",
+        "assessmentRevision": "c317e953"
+      }
+    ]
+  },
+  {
+    "id": "en.access-criteria.2",
+    "language": "en",
+    "lemma": "turning space",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "dönüş alanı",
+    "example": "There is enough turning space beside the lift.",
+    "usage": "Sandalye veya aracın yön değiştirmesine ayrılan boşluk.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.access-criteria.word.2",
+        "lessonId": "en.access-criteria",
+        "objectiveId": "en.access-criteria.objective",
+        "band": "B1",
+        "assessmentRevision": "41e26ac8"
+      }
+    ]
+  },
+  {
+    "id": "en.access-criteria.3",
+    "language": "en",
+    "lemma": "background noise",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "arka plan gürültüsü",
+    "example": "Background noise makes interviews harder to record.",
+    "usage": "Asıl konuşmanın arkasında kalan ortam sesi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.access-criteria.word.3",
+        "lessonId": "en.access-criteria",
+        "objectiveId": "en.access-criteria.objective",
+        "band": "B1",
+        "assessmentRevision": "d8bad4d1"
+      }
+    ]
+  },
+  {
+    "id": "en.access-criteria.4",
+    "language": "en",
+    "lemma": "doorway width",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "kapı açıklığının genişliği",
+    "example": "The doorway width is listed on the venue map.",
+    "usage": "Kapıdan geçilebilen açıklığın ölçüsü.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.access-criteria.word.4",
+        "lessonId": "en.access-criteria",
+        "objectiveId": "en.access-criteria.objective",
+        "band": "B1",
+        "assessmentRevision": "2f875c83"
+      }
+    ]
+  },
+  {
+    "id": "en.access-criteria.5",
+    "language": "en",
+    "lemma": "low-glare lighting",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "düşük parlamalı aydınlatma",
+    "example": "The floor has low-glare lighting for reading.",
+    "usage": "Parlamayı azaltan ışık düzeni.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.access-criteria.word.5",
+        "lessonId": "en.access-criteria",
+        "objectiveId": "en.access-criteria.objective",
+        "band": "B1",
+        "assessmentRevision": "5fce9d61"
+      }
+    ]
+  },
+  {
+    "id": "en.access-criteria.6",
+    "language": "en",
+    "lemma": "moveable seating",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "taşınabilir oturma düzeni",
+    "example": "The hall has moveable seating for different groups.",
+    "usage": "Oturma yerleri sabit değildir ve düzen değiştirilebilir.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.access-criteria.word.6",
+        "lessonId": "en.access-criteria",
+        "objectiveId": "en.access-criteria.objective",
+        "band": "B1",
+        "assessmentRevision": "86183aa"
+      }
+    ]
+  },
+  {
+    "id": "en.return-process.1",
+    "language": "en",
+    "lemma": "proof of purchase",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "satın alma belgesi",
+    "example": "Bring proof of purchase when you return the lamp.",
+    "usage": "Bir ürünü aldığını gösteren fiş ya da sipariş kaydı.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.return-process.word.1",
+        "lessonId": "en.return-process",
+        "objectiveId": "en.return-process.objective",
+        "band": "B1",
+        "assessmentRevision": "168f691d"
+      }
+    ]
+  },
+  {
+    "id": "en.return-process.2",
+    "language": "en",
+    "lemma": "processing time",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "işlem süresi",
+    "example": "The processing time is longer over the holiday.",
+    "usage": "Başvurunun veya iadenin işlenmesi için gereken zaman.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.return-process.word.2",
+        "lessonId": "en.return-process",
+        "objectiveId": "en.return-process.objective",
+        "band": "B1",
+        "assessmentRevision": "e45f72b8"
+      }
+    ]
+  },
+  {
+    "id": "en.return-process.3",
+    "language": "en",
+    "lemma": "return label",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "iade etiketi",
+    "example": "The return label is inside the parcel.",
+    "usage": "İade paketindeki gönderi etiketi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.return-process.word.3",
+        "lessonId": "en.return-process",
+        "objectiveId": "en.return-process.objective",
+        "band": "B1",
+        "assessmentRevision": "f23acc53"
+      }
+    ]
+  },
+  {
+    "id": "en.return-process.4",
+    "language": "en",
+    "lemma": "item condition",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "ürünün durumu",
+    "example": "The form asks for the item condition.",
+    "usage": "Ürünün hasarlı ya da sağlam olması gibi durumunu belirtir.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.return-process.word.4",
+        "lessonId": "en.return-process",
+        "objectiveId": "en.return-process.objective",
+        "band": "B1",
+        "assessmentRevision": "532fadcb"
+      }
+    ]
+  },
+  {
+    "id": "en.return-process.5",
+    "language": "en",
+    "lemma": "collection receipt",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "teslim alma makbuzu",
+    "example": "Keep the collection receipt until Tuesday.",
+    "usage": "Bir eşyanın veya paketin teslim alındığını belgeleyen makbuz.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.return-process.word.5",
+        "lessonId": "en.return-process",
+        "objectiveId": "en.return-process.objective",
+        "band": "B1",
+        "assessmentRevision": "7b5fc72"
+      }
+    ]
+  },
+  {
+    "id": "en.return-process.6",
+    "language": "en",
+    "lemma": "issue a refund",
+    "partOfSpeech": "verb phrase",
+    "band": "B1",
+    "meaning": "geri ödeme yapmak",
+    "example": "The shop can issue a refund today.",
+    "usage": "Ödenen parayı müşteriye iade etmek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.return-process.word.6",
+        "lessonId": "en.return-process",
+        "objectiveId": "en.return-process.objective",
+        "band": "B1",
+        "assessmentRevision": "d81f4a6c"
+      }
+    ]
+  },
+  {
+    "id": "en.pending-repair.1",
+    "language": "en",
+    "lemma": "intermittent fault",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "aralıklı arıza",
+    "example": "The technician found an intermittent fault.",
+    "usage": "Sürekli görülmeyen ve yeniden ortaya çıkan sorun.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.pending-repair.word.1",
+        "lessonId": "en.pending-repair",
+        "objectiveId": "en.pending-repair.objective",
+        "band": "B1",
+        "assessmentRevision": "57c86dfb"
+      }
+    ]
+  },
+  {
+    "id": "en.pending-repair.2",
+    "language": "en",
+    "lemma": "drop out",
+    "partOfSpeech": "verb phrase",
+    "band": "B1",
+    "meaning": "bağlantısı kesilmek",
+    "example": "The internet drops out during calls.",
+    "usage": "Bağlantının veya sinyalin bir anda kesilmesi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.pending-repair.word.2",
+        "lessonId": "en.pending-repair",
+        "objectiveId": "en.pending-repair.objective",
+        "band": "B1",
+        "assessmentRevision": "33ff1d8f"
+      }
+    ]
+  },
+  {
+    "id": "en.pending-repair.3",
+    "language": "en",
+    "lemma": "service log",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "servis günlüğü",
+    "example": "Add the latest reading to the service log.",
+    "usage": "Servisteki kontrol ve sorunların tarihli kaydı.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.pending-repair.word.3",
+        "lessonId": "en.pending-repair",
+        "objectiveId": "en.pending-repair.objective",
+        "band": "B1",
+        "assessmentRevision": "6e6a302d"
+      }
+    ]
+  },
+  {
+    "id": "en.pending-repair.4",
+    "language": "en",
+    "lemma": "replacement part",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "yedek parça",
+    "example": "We’re waiting for a replacement part.",
+    "usage": "Arızalı parçanın yerine takılacak parça.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.pending-repair.word.4",
+        "lessonId": "en.pending-repair",
+        "objectiveId": "en.pending-repair.objective",
+        "band": "B1",
+        "assessmentRevision": "ce5ea70"
+      }
+    ]
+  },
+  {
+    "id": "en.pending-repair.5",
+    "language": "en",
+    "lemma": "a temporary fix",
+    "partOfSpeech": "noun phrase",
+    "band": "B1",
+    "meaning": "geçici çözüm",
+    "example": "Restarting the unit is a temporary fix.",
+    "usage": "Sorunu bir süre gideren, kalıcı olmayan müdahale.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.pending-repair.word.5",
+        "lessonId": "en.pending-repair",
+        "objectiveId": "en.pending-repair.objective",
+        "band": "B1",
+        "assessmentRevision": "5c0bde1e"
+      }
+    ]
+  },
+  {
+    "id": "en.pending-repair.6",
+    "language": "en",
+    "lemma": "follow up on a ticket",
+    "partOfSpeech": "verb phrase",
+    "band": "B1",
+    "meaning": "destek kaydını takip etmek",
+    "example": "I’ll follow up on a ticket that is still open.",
+    "usage": "Açık bir destek kaydı için geri dönüp gelişme sormak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.pending-repair.word.6",
+        "lessonId": "en.pending-repair",
+        "objectiveId": "en.pending-repair.objective",
+        "band": "B1",
+        "assessmentRevision": "a590d893"
+      }
+    ]
+  },
+  {
+    "id": "en.commission-check.1",
+    "language": "en",
+    "lemma": "commission an inspection",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "uzman incelemesi sipariş etmek",
+    "example": "We commissioned an inspection of the heating system.",
+    "usage": "Bir uzmandan resmî inceleme yapmasını istemek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.commission-check.word.1",
+        "lessonId": "en.commission-check",
+        "objectiveId": "en.commission-check.objective",
+        "band": "B2",
+        "assessmentRevision": "9eaf578d"
+      }
+    ]
+  },
+  {
+    "id": "en.commission-check.2",
+    "language": "en",
+    "lemma": "service contractor",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "servis yüklenicisi",
+    "example": "The service contractor manages the annual checks.",
+    "usage": "Belli bakım işlerini sözleşme kapsamında yürüten sağlayıcı.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.commission-check.word.2",
+        "lessonId": "en.commission-check",
+        "objectiveId": "en.commission-check.objective",
+        "band": "B2",
+        "assessmentRevision": "769fed90"
+      }
+    ]
+  },
+  {
+    "id": "en.commission-check.3",
+    "language": "en",
+    "lemma": "calibration certificate",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "kalibrasyon sertifikası",
+    "example": "We need the calibration certificate before testing.",
+    "usage": "Bir ölçüm cihazının ayar ve kontrolünü belgeleyen kayıt.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.commission-check.word.3",
+        "lessonId": "en.commission-check",
+        "objectiveId": "en.commission-check.objective",
+        "band": "B2",
+        "assessmentRevision": "4a9930d6"
+      }
+    ]
+  },
+  {
+    "id": "en.commission-check.4",
+    "language": "en",
+    "lemma": "quality sign-off",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "kalite onayı",
+    "example": "The release is waiting for quality sign-off.",
+    "usage": "Son kontrolü tamamlayan resmî onay.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.commission-check.word.4",
+        "lessonId": "en.commission-check",
+        "objectiveId": "en.commission-check.objective",
+        "band": "B2",
+        "assessmentRevision": "49c4303b"
+      }
+    ]
+  },
+  {
+    "id": "en.commission-check.5",
+    "language": "en",
+    "lemma": "fit a seal",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "conta takmak",
+    "example": "A technician will fit a seal to stop the leak.",
+    "usage": "Bir birleşme yerini sızdırmaz yapmak için conta yerleştirmek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.commission-check.word.5",
+        "lessonId": "en.commission-check",
+        "objectiveId": "en.commission-check.objective",
+        "band": "B2",
+        "assessmentRevision": "4e1aade8"
+      }
+    ]
+  },
+  {
+    "id": "en.commission-check.6",
+    "language": "en",
+    "lemma": "book a follow-up visit",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "ikinci kontrol ziyareti ayarlamak",
+    "example": "We should book a follow-up visit for next week.",
+    "usage": "İlk işlemden sonra kontrol için yeni randevu ayarlamak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.commission-check.word.6",
+        "lessonId": "en.commission-check",
+        "objectiveId": "en.commission-check.objective",
+        "band": "B2",
+        "assessmentRevision": "ee1c2d15"
+      }
+    ]
+  },
+  {
+    "id": "en.resolution-letter.1",
+    "language": "en",
+    "lemma": "seek reimbursement",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "masrafın iadesini istemek",
+    "example": "We are seeking reimbursement for the extra journey.",
+    "usage": "Cepten ödenen bir giderin geri verilmesini resmî biçimde istemek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.resolution-letter.word.1",
+        "lessonId": "en.resolution-letter",
+        "objectiveId": "en.resolution-letter.objective",
+        "band": "B2",
+        "assessmentRevision": "53898870"
+      }
+    ]
+  },
+  {
+    "id": "en.resolution-letter.2",
+    "language": "en",
+    "lemma": "goodwill gesture",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "iyi niyet adımı",
+    "example": "The centre offered a voucher as a goodwill gesture.",
+    "usage": "Zorunluluk kabul etmeden anlaşmayı kolaylaştırmak için yapılan teklif.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.resolution-letter.word.2",
+        "lessonId": "en.resolution-letter",
+        "objectiveId": "en.resolution-letter.objective",
+        "band": "B2",
+        "assessmentRevision": "73c298e8"
+      }
+    ]
+  },
+  {
+    "id": "en.resolution-letter.3",
+    "language": "en",
+    "lemma": "retain a fee",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "ücretin bir bölümünü alıkoymak",
+    "example": "The organiser may retain a fee for late cancellations.",
+    "usage": "Ödenen ücretin bir bölümünü geri vermemek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.resolution-letter.word.3",
+        "lessonId": "en.resolution-letter",
+        "objectiveId": "en.resolution-letter.objective",
+        "band": "B2",
+        "assessmentRevision": "b1e4579e"
+      }
+    ]
+  },
+  {
+    "id": "en.resolution-letter.4",
+    "language": "en",
+    "lemma": "written assurance",
+    "partOfSpeech": "noun phrase",
+    "band": "B2",
+    "meaning": "yazılı güvence",
+    "example": "Could you give us written assurance about the transfer?",
+    "usage": "Söz verilen bir şeyin yazılı biçimde doğrulanması.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.resolution-letter.word.4",
+        "lessonId": "en.resolution-letter",
+        "objectiveId": "en.resolution-letter.objective",
+        "band": "B2",
+        "assessmentRevision": "a6df5916"
+      }
+    ]
+  },
+  {
+    "id": "en.resolution-letter.5",
+    "language": "en",
+    "lemma": "settle a dispute",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "bir uyuşmazlığı çözmek",
+    "example": "We hope to settle the dispute this week.",
+    "usage": "Tarafların anlaşmazlığı çözümle sonuçlandırması.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.resolution-letter.word.5",
+        "lessonId": "en.resolution-letter",
+        "objectiveId": "en.resolution-letter.objective",
+        "band": "B2",
+        "assessmentRevision": "30f7e3ed"
+      }
+    ]
+  },
+  {
+    "id": "en.resolution-letter.6",
+    "language": "en",
+    "lemma": "rebook at short notice",
+    "partOfSpeech": "verb phrase",
+    "band": "B2",
+    "meaning": "kısa süre kala yeniden rezervasyon yapmak",
+    "example": "It was difficult to rebook at short notice.",
+    "usage": "Beklenmedik değişime çok az süre kalmışken yeni yer ayırmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İngilizce paketi",
+    "links": [
+      {
+        "cardId": "en.resolution-letter.word.6",
+        "lessonId": "en.resolution-letter",
+        "objectiveId": "en.resolution-letter.objective",
+        "band": "B2",
+        "assessmentRevision": "5df4f7c2"
+      }
+    ]
+  }
+]

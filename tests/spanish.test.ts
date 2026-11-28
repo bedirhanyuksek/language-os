@@ -25,6 +25,8 @@ import { IndexedLearningRepository, exportBackup, parseBackup } from '../src/per
 
 const course = catalog.es
 const at = '2026-11-20T10:00:00.000Z'
+const firstWaveIds = ['es.ficha-contacto', 'es.recado-telefono', 'es.horario-diario', 'es.horario-servicio', 'es.turno-mostrador',
+  'es.visita-pasada', 'es.gestion-pasada', 'es.orden-incidente', 'es.retraso-servicio', 'es.cita-servicio']
 const answer = (exercise: Exercise): Answer => exercise.kind === 'open' ? exercise.sample :
   exercise.kind === 'fill' || exercise.kind === 'short' ? exercise.accepted[0] : exercise.accepted
 const answers = (tasks: { exercise: Exercise }[]) => Object.fromEntries(tasks.map(({ exercise }) => [exercise.id, answer(exercise)]))
@@ -34,19 +36,20 @@ function start(language: Language = 'es') {
 }
 
 test('Spanish preserves its starter sequence and links the bridge to three B1 lessons', () => {
-  expect(course.unit.lessons.map(({ id }) => id)).toEqual([
+  expect(course.unit.lessons.filter(({ id }) => !firstWaveIds.includes(id)).map(({ id }) => id)).toEqual([
     'es.saludos', 'es.ser-estar', 'es.numeros', 'es.familia', 'es.rutina', 'es.cafe', 'es.direcciones', 'es.gustos', 'es.perfect',
     'es.repetir', 'es.cambiar-plan', 'es.pasado-cerrado', 'es.connected-account', 'es.cambio-con-motivo', 'es.pregunta-seguimiento',
   ])
-  expect(curriculumCoverage(course).map(({ lessons }) => lessons.length)).toEqual([7, 5, 3, 0, 0, 0])
+  expect(curriculumCoverage(course).map(({ lessons }) => lessons.length)).toEqual([12, 10, 3, 0, 0, 0])
   const measured = measureCurriculum(course)
-  expect(measured.map(({ playable }) => playable)).toEqual([7, 5, 3, 0, 0, 0])
+  expect(measured.map(({ playable }) => playable)).toEqual([12, 10, 3, 0, 0, 0])
   expect(measured.find(({ band }) => band === 'B1')).toMatchObject({ reading: 6, scriptPractice: 6, listening: 0 })
-  for (const [index, lesson] of course.unit.lessons.entries()) {
+  const originalLessons = course.unit.lessons.filter(({ id }) => !firstWaveIds.includes(id))
+  for (const [index, lesson] of originalLessons.entries()) {
     const addedPrerequisites: Record<string, string> = {
       'es.repetir': 'es.saludos.objective', 'es.cambiar-plan': 'es.perfect.objective',
     }
-    const parent = addedPrerequisites[lesson.id] ?? course.unit.lessons[index - 1]?.objective.id
+    const parent = addedPrerequisites[lesson.id] ?? originalLessons[index - 1]?.objective.id
     expect(lesson.prerequisites).toEqual(lesson.id === 'es.connected-account'
       ? ['es.cambiar-plan.objective', 'es.pasado-cerrado.objective'] : parent ? [parent] : [])
     expect(lesson.pedagogy?.revision?.kind).toBe('open')

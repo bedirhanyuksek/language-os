@@ -1,8 +1,56 @@
 # Müfredat tamamlama planı · İngilizce ve Rusça
 
-## Mevcut envanter
+## MVP-2B ilk genişleme dalgası
 
-Güncel `npm run curriculum:report` çıktısı 103 ders ve 144 iletişim hedefi gösteriyor. Açık 41 hedef, bağlanmış ders bulunmayan envanter maddeleridir. Bir iletişim hedefinde ders bulunması, bağlantılı gramerin öğretilmesini, söz varlığının yeterliliğini veya bağımsız görevin kalitesini garanti etmez. Örneğin İngilizce B1 envanterinde 14/14 hedefin dersi var, doğal dinleme ve hazırlıksız etkileşim için ayrıca kanıt ve materyal gerekiyor. [Son kapsam ve simülasyon](MILESTONE_5_REVIEW_LOAD.md)
+İlk dalga için güncel çalışma tahmini **106 yeni ders ve 636 aktif ifade**. Bu tahmin, birbirinden bağımsız 8–12 derslik yayımlama partilerine bölünür. Öncelik, yeni bir iletişim ürünü, bağımsız bağlam ve gecikmeli kontrol getiren derslerdir. Aşağıdaki mevcut sayılar MVP-2B ilk İngilizce paketi öncesindeki yerel katalogdan gelir.
+
+| Rota | Mevcut | Öğretim ve iletişim açığı | Ön koşul, kanıt ve yeni kapasite |
+| --- | --- | --- | --- |
+| EN B1 | 16 ders, 34 aktif ifade. Olay anlatma, geçmiş zamanlar, takip sorusu, görüş ve hizmet onarımı. | İşlem duyurusu, zorunluluk ve izin, ihtiyaç ölçütü, dolaylı rica ve süren sorunu açıklama. Hizmet, mekân ve destek eşdizimleri. | `update`, `clarify`, `interaction`, `repair-request` dallarından işlem metni ve bağımsız mesaj. Bir sonraki gün yeni kurum ve muhatap. **16 ders / 96 ifade.** |
+| EN B2 | 12 ders, 32 aktif ifade. Koşul, modal çıkarım, tartışma, kaynak karşılaştırma ve resmî türler. | Yaptırma yapısı, karışık koşul, kısaltılmış ilgi tümcesi, gelecek dönüm noktası ve pişmanlık. Uzman desteği, proje ve çözüm dili. | `tradeoff`, `report`, `update`, `genres` ve yeni B1 işlem dersi. Belgelerden öneri, güvenlik özeti ve müzakere. Yeni veriyle gecikmeli gerekçe. Aksan ve prosodi için ayrı onaylı ses partisi. **20 / 120.** |
+| RU A1 | 14 ders, 25 aktif ifade. Kiril, kimlik, aile, yer, sayılar, form ve kısa mesaj. | Sıfat uyumu, çoğul ve temel sayı yapısı, doğrudan nesne ve olumsuzluk. Ev, sağlık, iletişim ve perakende. | Kiril yardımı gerekenlerde `cyrillic`, diğerlerinde tanışma ve sayı kanıtı. Yazılı form ve mesaj, farklı isimlerle gecikmeli işlem. Sert/yumuşak ayrım için metni açmadan oynatılan incelenmiş kayıt. **16 / 96.** |
+| RU A2 | 12 ders, 30 aktif ifade. Yön, miktar, geçmiş, buluşma, koşullu talimat ve hizmet. | Hâl seçimini yer, araç, zaman ve miktar arasında genelleme, hareket ve görünüşe başlangıç. Randevu ve yolculuk kesintisi. | `directions`, `meeting`, `quantity` dalları. Alternatif rota ve randevuyu iki kaynaktan açıklama, yeni saat ve yerle gecikmeli teyit. Dinlenen konuşmacılar ve sözlü üretim ayrı değerlendirilir. **20 / 120.** |
+| ES A1 | 7 ders, 14 aktif ifade. Tanışma, ser/estar, sayı, aile, rutin, sipariş, tekrar ve yazım. | Basit form ve sesli mesaj, temas bilgileri ve gün-saat, soru sözcükleri, yüksek sıklıklı düzensiz şimdiki zaman ve temel yer bildirimi. | `saludos`, `numeros`, `repetir` dalları. Form, yeni alıcıya mesaj, ad ve numara teyidi. Ertesi gün farklı isim ve saat. **16 / 96.** |
+| ES A2 | 5 ders, 10 aktif ifade. Yön, gustar, perfecto, plan değişikliği ve düzenli indefinido. | Düzensiz indefinido ve olay sırası, nesne zamirleri, temel karşılaştırma, ulaşım ve randevu işlemleri. | `perfect`, `pasado-cerrado`, `direcciones`, `cambiar-plan` dalları. Gecikme bildir, seçenek karşılaştır ve olayı yeni bir bağlamda yeniden anlat. **18 / 108.** |
+
+CEFR 2020 iletişim talebini belirler. A1 kişisel bilgi ve temel işlemlere, A2 tanıdık hizmet işlemleri ve kısa mesajlara, B1 sorun açıklama ve bilgi teyidine, B2 gerekçeli seçenek değerlendirmesi ve çözüm görüşmesine odaklanır. Gramer sırası dil bazlı kaynaklarla eşleştirilir. [CEFR 2020 Companion Volume](https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4) · [British Council ve Eaquals genel İngilizce envanteri](https://www.teachingenglish.org.uk/comment/216754) · [Puşkin Enstitüsü ТРКИ A1 ve A2](https://www.pushkin.institute/certificates/trki/) · [Instituto Cervantes A1–A2 grameri](https://cvc.cervantes.es/ensenanza/biblioteca_ele/plan_curricular/niveles/02_gramatica_inventario_a1-a2.htm) · [Instituto Cervantes A1–A2 işlevleri](https://cvc.cervantes.es/ensenanza/biblioteca_ele/plan_curricular/niveles/05_funciones_inventario_a1-a2.htm)
+
+| Rota | Mevcut okuma / dinleme / yazma / konuşma | Öncelikli beceri açığı |
+| --- | ---: | --- |
+| EN B1 | 32 / 30 / 16 / 14 | Duyuru ve işlem kaydını okuyup tam mesaj yaz. İkinci konuşmacının farklı bir ayrıntıyla sorduğu soruya cevap ver. |
+| EN B2 | 24 / 22 / 12 / 12 | Yoğun iki kaynağı karşılaştır, koşullu karar notu yaz, doğal bir itirazı dinleyip çözüm önerisini sözlü olarak gözden geçir. |
+| RU A1 | 28 / 24 / 14 / 11 | Farklı seslerden benzer ad ve sayıları ayır, duyduğunu yazılı kayda geçir ve yeni muhatapla teyit et. |
+| RU A2 | 24 / 22 / 12 / 12 | Çizelge ve sesli değişiklik duyurusunu birleştir, yeni planı yazıp farklı bir saat veya yer teklifine yanıt ver. |
+| ES A1 | 14 / 14 / 7 / 7 | Kısa formu oku ve doldur, sesli mesajdan iletişim bilgisi çıkar, yeni kişiye kısa yanıt ver. |
+| ES A2 | 10 / 8 / 5 / 5 | Değişen plana ilişkin mesajı ve duyuruyu karşılaştır, olayı yazıp hazırlıksız takip sorusuna cevap ver. |
+
+Okuma ve dinleme sayıları ana ve alternatif kaynakları içerir. Mevcut sesler sentetiktir. Yazma ve konuşma sayıları görev fırsatıdır. İncelenmiş bağımsız üretim ayrı kaydedilir. Kaynak ve gecikmeli kontrol farklı kişinin adını, koşulu veya olayını kullanır.
+
+**Her partinin kanıtı.** Her kavramda öğretimden sonra iki rehberli ve iki yardımsız kontrollü bağlam ile ayrı gecikmeli maddeler kullanılır. Açık yanıtlar amaç, doğruluk ve muhataba uygunluk rubriğiyle incelenir. Dinleme için kaynak, izin, hedef ses ve oynatma eşleşmesi doğrulanır. Metin provası okuma ve hazırlık sağlar. Yeni kimlikler yeni örneklere verilir. Yedek v1–v5 ve açık taslaklar üzerinden eski değerlendirme, tekrar tarihi ve erişilebilir dersler yeniden oynatılır.
+
+**Parti sırası.** Önce EN B1–B2 işlem ve çözüm paketi (5 B1, 5 B2 ve 60 ifade). Sonraki partiler aşağıdaki geliştirme sırasındadır. Her sesli parti kendi kayıt incelemesiyle yayınlanır.
+
+1. ES A1 mesaj ve form (8), ES A2 gündelik geçmiş (9).
+2. RU A1 kimlik, rutin ve alışveriş (6), RU A2 randevu, ulaşım ve hizmet onarımı (6).
+3. EN B1 metinler arası aktarım (11), EN B2 kaynak karşılaştırma (8).
+4. ES A1 temel işlemler (8), ES A2 randevu ve yolculuk (9). RU için aşağıdaki iki parti ayrı teslim edilir.
+5. EN B2 tutum, aksan ve hazırlıksız çözüm görüşmesi (7), incelenmiş ses kaynakları hazır olduğunda.
+
+### Rusça A1–A2 üretim partileri
+
+Başlangıçtaki 26 ders form, temel fiyat ve saat, kısa mesaj, yol tarifi, miktar ve geçmişin temel biçimlerini kapsıyor. Yeni dalga bu ön koşulları kullanır. Yaklaşık **20 gramer odağı ve 24 iletişim senaryosu** için **36 ders ve 216 aktif ifade** planlanmıştır. Aynı yapı en az iki ayrı durumda yeniden kullanılır.
+
+| Parti | A1 / A2 ders | Aktif ifade | Gramer, bağlam ve rota bağları |
+| --- | ---: | ---: | --- |
+| 1 · Katalogda | 6 / 6 | 72 | A1 kayıt düzeltme, dönüşlü fiille rutin, sıfat/isim uyumu, ölçü ve fiyat, yer/yön ve çalışma saatleri. A2 randevu iptal ve teyidi, aktarma, araç hâli, geçmişte süreç/sonuç, fiş hatası ve teslim alanı belirtme. `forms`, `daily-mood`, `order`, `numbers`, `city`, `shift-note`, `meeting`, `directions`, `weekend` ve `quantity` dallarına bağlanır. |
+| 2 · Plan | 5 / 7 | ~72 | A1 olumsuz sahiplik, çoğul, düzenli şimdiki zaman, kısa soru ve rica. Evde eksik eşya, okul çizelgesi, kütüphane ve komşuyla plan. A2 meslek ve araç hâli, çoğul ilgi hâli, sıra sayısı ve tarih, hareket ve neden–sonuç. İş günü, yeni sefer, kurs ve randevu seçimi. `family`, `home`, `study` ve ilk partideki rutin, ulaşım ve araç hâli dalları. |
+| 3 · Plan | 5 / 7 | ~72 | A1 konum soruları, iyelik uyumu, sıklık, zaman ve nesne biçimleriyle yeni kamusal görevler. A2 görünüş, yönlü/düzenli hareket, karşılaştırma, koşullu plan ve yönelme. Ulaşım aksaması, ev seçimi, arkadaş daveti ve hizmet yanıtı. `future`, `housing`, `instructions` ve ilk partideki geçmiş ve hizmet dalları. |
+
+Ek ön koşullar yalnızca yeni derslere bağlanır. Yeni derslerde kısa yazılı kaynak, yardımsız kontrollü üretim ve en az 24 saat sonra farklı koşulda kontrol bulunur. Açık yanıtlar inceleme gerektirir. Benzer adlar, telefon rakamları ve vurgu için gerçek dinleme ölçümü, kaynağı ve hakları incelenmiş kayıtlarla ayrı değerlendirilir. [CEFR 2020](https://rm.coe.int/cefr-companion-volume-with-new-descriptors-2020/16809ea0d4) · [Между нами gramer kapsamı](https://www.mezhdunami.org/scope.shtml)
+
+## Önceki envanter kaydı
+
+Milestone 5 raporu 103 ders ve 144 iletişim hedefi gösteriyordu. Açık 41 hedef, bağlanmış ders bulunmayan envanter maddeleriydi. Bir iletişim hedefinde ders bulunması, bağlantılı gramerin öğretilmesini, söz varlığının yeterliliğini veya bağımsız görevin kalitesini garanti etmez. Örneğin o raporda İngilizce B1 envanterinde 14/14 hedefin dersi vardı, doğal dinleme ve hazırlıksız etkileşim için ayrıca kanıt ve materyal gerekiyordu. [Milestone 5 kapsamı ve simülasyonu](MILESTONE_5_REVIEW_LOAD.md)
 
 | Bant | İngilizce çalışılabilir/hedef | Rusça çalışılabilir/hedef | Belirgin yayımlama açıkları |
 | --- | ---: | ---: | --- |

@@ -11,6 +11,7 @@ import { vocabularyIndex } from '../src/content/vocabulary'
 import { modelAudio } from '../src/content/teaching'
 import { assess } from '../src/domain/assessment'
 import { pedagogyExercises } from '../src/content/schema'
+import russianFirstWave from '../src/content/packs/ru-mvp2b-first-wave.json'
 
 const normalized = (text: string) => text.normalize('NFC').toLowerCase().trim().replace(/’/g, "'")
   .replace(/[.!?]+$/, '').replace(/\s+/g, ' ')
@@ -134,21 +135,24 @@ test('every packed lesson has an inventory binding, stage evidence, source ancho
 
 test('Phase 5 adds explicit senses and complete TTS work without packaging unreviewed audio', () => {
   const materials = Object.values(catalog).flatMap(audioMaterials)
-  const phase5 = packedLessons.filter(({ entry }) => entry.audioMode)
-  const second = phase5.filter(({ entry }) => entry.audioMode === 'script-practice')
+  const deviceAudioPacks = packedLessons.filter(({ entry }) => entry.audioMode)
+  const second = loadPacks(import.meta.glob('../src/content/packs/*-phase-5-second.json', { eager: true, import: 'default' }))
+  expect(second.every(({ entry }) => entry.audioMode === 'script-practice')).toBe(true)
   expect(Object.fromEntries(Object.keys(catalog).map((language) => [language,
     second.filter((item) => item.language === language).map(({ entry }) => entry.level)])))
     .toEqual({ en: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], ru: ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], es: ['A2', 'B1', 'B1', 'B1'] })
-  expect(planCurriculumTts(materials, pronunciation).filter(({ language, blocked }) => language === 'ru' && blocked)
+  const deferredRussianAudio = new Set(russianFirstWave.lessons.filter(({ audioMode }) => audioMode === 'script-practice').map(({ id }) => id))
+  const existingAudioMaterials = materials.filter(({ lessonId }) => !deferredRussianAudio.has(lessonId))
+  expect(planCurriculumTts(existingAudioMaterials, pronunciation).filter(({ language, blocked }) => language === 'ru' && blocked)
     .length).toBeLessThanOrEqual(438)
-  for (const { language, lesson } of phase5) {
+  for (const { language, lesson } of deviceAudioPacks) {
     const jobs = planCurriculumTts(materials.filter(({ lessonId }) => lessonId === lesson.id), pronunciation)
     expect(jobs).toHaveLength(4 + lesson.vocabulary.length * 2)
     for (const job of jobs) {
-      expect(job.blocked, job.id).toBeUndefined()
+      if (!deferredRussianAudio.has(lesson.id)) expect(job.blocked, job.id).toBeUndefined()
       expect(job.bundledFile, job.id).toBeUndefined()
       expect(existsSync(`src/content/audio/${job.id}.mp3`), job.id).toBe(false)
-      if (language === 'ru') {
+      if (language === 'ru' && !deferredRussianAudio.has(lesson.id)) {
         expect(pronunciation).toHaveProperty([job.id])
         expect(job.segments?.some(({ input }) => input?.includes('+')), job.id).toBe(true)
       }

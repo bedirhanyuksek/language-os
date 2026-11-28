@@ -1,0 +1,1514 @@
+[
+  {
+    "id": "ru.product-fit.1",
+    "language": "ru",
+    "lemma": "шарф",
+    "partOfSpeech": "noun",
+    "band": "A1",
+    "meaning": "atkı",
+    "example": "Синий шарф стоит триста рублей.",
+    "usage": "Boyna sarılan giysi.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.product-fit.word.1",
+        "lessonId": "ru.product-fit",
+        "objectiveId": "ru.product-fit.objective",
+        "band": "A1",
+        "assessmentRevision": "5927821"
+      }
+    ]
+  },
+  {
+    "id": "ru.product-fit.2",
+    "language": "ru",
+    "lemma": "перчатки",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "eldivenler",
+    "example": "На полке белые перчатки.",
+    "usage": "Tek eldiven «перчатка».",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.product-fit.word.2",
+        "lessonId": "ru.product-fit",
+        "objectiveId": "ru.product-fit.objective",
+        "band": "A1",
+        "assessmentRevision": "12d471a1"
+      }
+    ]
+  },
+  {
+    "id": "ru.product-fit.3",
+    "language": "ru",
+    "lemma": "пальто",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "palto",
+    "example": "Это новое пальто.",
+    "usage": "Nötr, çekimsiz isim.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.product-fit.word.3",
+        "lessonId": "ru.product-fit",
+        "objectiveId": "ru.product-fit.objective",
+        "band": "A1",
+        "assessmentRevision": "fe248f5"
+      }
+    ]
+  },
+  {
+    "id": "ru.product-fit.4",
+    "language": "ru",
+    "lemma": "размер побольше",
+    "partOfSpeech": "adverb",
+    "band": "A1",
+    "meaning": "bir boy büyük",
+    "example": "Есть размер побольше?",
+    "usage": "«побольше» biraz daha büyük boy ister.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.product-fit.word.4",
+        "lessonId": "ru.product-fit",
+        "objectiveId": "ru.product-fit.objective",
+        "band": "A1",
+        "assessmentRevision": "9f17291c"
+      }
+    ]
+  },
+  {
+    "id": "ru.product-fit.5",
+    "language": "ru",
+    "lemma": "примерить",
+    "partOfSpeech": "preposition",
+    "band": "A1",
+    "meaning": "üzerinde denemek",
+    "example": "Можно примерить пальто?",
+    "usage": "Ürün üzerinde deneme, «примерить + nesne».",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.product-fit.word.5",
+        "lessonId": "ru.product-fit",
+        "objectiveId": "ru.product-fit.objective",
+        "band": "A1",
+        "assessmentRevision": "9e896812"
+      }
+    ]
+  },
+  {
+    "id": "ru.product-fit.6",
+    "language": "ru",
+    "lemma": "мне подходит",
+    "partOfSpeech": "verb",
+    "band": "A1",
+    "meaning": "bana uyuyor",
+    "example": "Этот размер мне подходит.",
+    "usage": "«мне» kime uyduğunu söyler.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.product-fit.word.6",
+        "lessonId": "ru.product-fit",
+        "objectiveId": "ru.product-fit.objective",
+        "band": "A1",
+        "assessmentRevision": "1346e394"
+      }
+    ]
+  },
+  {
+    "id": "ru.destination-check.1",
+    "language": "ru",
+    "lemma": "вход со двора",
+    "partOfSpeech": "verb",
+    "band": "A1",
+    "meaning": "avlu tarafından giriş",
+    "example": "В офисе вход со двора.",
+    "usage": "«со двора» giriş yönünü verir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.destination-check.word.1",
+        "lessonId": "ru.destination-check",
+        "objectiveId": "ru.destination-check.objective",
+        "band": "A1",
+        "assessmentRevision": "19cb5db9"
+      }
+    ]
+  },
+  {
+    "id": "ru.destination-check.2",
+    "language": "ru",
+    "lemma": "боковой вход",
+    "partOfSpeech": "verb",
+    "band": "A1",
+    "meaning": "yan giriş",
+    "example": "Боковой вход открыт.",
+    "usage": "«боковой» binanın yan tarafını belirtir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.destination-check.word.2",
+        "lessonId": "ru.destination-check",
+        "objectiveId": "ru.destination-check.objective",
+        "band": "A1",
+        "assessmentRevision": "6eff8c6c"
+      }
+    ]
+  },
+  {
+    "id": "ru.destination-check.3",
+    "language": "ru",
+    "lemma": "на площадке",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "alanda, platformda",
+    "example": "Дети уже на площадке.",
+    "usage": "«где?» sorusuna yer yanıtı.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.destination-check.word.3",
+        "lessonId": "ru.destination-check",
+        "objectiveId": "ru.destination-check.objective",
+        "band": "A1",
+        "assessmentRevision": "12d08a56"
+      }
+    ]
+  },
+  {
+    "id": "ru.destination-check.4",
+    "language": "ru",
+    "lemma": "книжный зал",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "kitap salonu",
+    "example": "Книжный зал слева.",
+    "usage": "Etkinlik alanından ayrı kitap bölümü.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.destination-check.word.4",
+        "lessonId": "ru.destination-check",
+        "objectiveId": "ru.destination-check.objective",
+        "band": "A1",
+        "assessmentRevision": "b5a2124a"
+      }
+    ]
+  },
+  {
+    "id": "ru.destination-check.5",
+    "language": "ru",
+    "lemma": "справочная",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "danışma",
+    "example": "Справочная на первом этаже.",
+    "usage": "Bilgi alma ve yön sorma noktası.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.destination-check.word.5",
+        "lessonId": "ru.destination-check",
+        "objectiveId": "ru.destination-check.objective",
+        "band": "A1",
+        "assessmentRevision": "88973cba"
+      }
+    ]
+  },
+  {
+    "id": "ru.destination-check.6",
+    "language": "ru",
+    "lemma": "зал ожидания",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "bekleme salonu",
+    "example": "Зал ожидания открыт.",
+    "usage": "«в зале» bulunma, «в зал» yön.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.destination-check.word.6",
+        "lessonId": "ru.destination-check",
+        "objectiveId": "ru.destination-check.objective",
+        "band": "A1",
+        "assessmentRevision": "18e69762"
+      }
+    ]
+  },
+  {
+    "id": "ru.travel-options.1",
+    "language": "ru",
+    "lemma": "пересесть на автобус",
+    "partOfSpeech": "noun",
+    "band": "A2",
+    "meaning": "otobüse aktarma yapmak",
+    "example": "У рынка надо пересесть на автобус.",
+    "usage": "Yeni araçtan önce «на + belirtme hâli».",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.travel-options.word.1",
+        "lessonId": "ru.travel-options",
+        "objectiveId": "ru.travel-options.objective",
+        "band": "A2",
+        "assessmentRevision": "28bb259e"
+      }
+    ]
+  },
+  {
+    "id": "ru.travel-options.2",
+    "language": "ru",
+    "lemma": "без пересадки",
+    "partOfSpeech": "noun",
+    "band": "A2",
+    "meaning": "aktarmasız",
+    "example": "До центра можно доехать без пересадки.",
+    "usage": "«без» ardından «пересадки» gelir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.travel-options.word.2",
+        "lessonId": "ru.travel-options",
+        "objectiveId": "ru.travel-options.objective",
+        "band": "A2",
+        "assessmentRevision": "be29ad09"
+      }
+    ]
+  },
+  {
+    "id": "ru.travel-options.3",
+    "language": "ru",
+    "lemma": "конечная остановка",
+    "partOfSpeech": "noun",
+    "band": "A2",
+    "meaning": "son durak",
+    "example": "Рынок — конечная остановка.",
+    "usage": "Hattın sona erdiği yer.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.travel-options.word.3",
+        "lessonId": "ru.travel-options",
+        "objectiveId": "ru.travel-options.objective",
+        "band": "A2",
+        "assessmentRevision": "262961d4"
+      }
+    ]
+  },
+  {
+    "id": "ru.travel-options.4",
+    "language": "ru",
+    "lemma": "выйти у вокзала",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "istasyonun yanında inmek",
+    "example": "Нам надо выйти у вокзала.",
+    "usage": "«у + ilgi hâli» yakınlığı belirtir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.travel-options.word.4",
+        "lessonId": "ru.travel-options",
+        "objectiveId": "ru.travel-options.objective",
+        "band": "A2",
+        "assessmentRevision": "cd2a95d0"
+      }
+    ]
+  },
+  {
+    "id": "ru.travel-options.5",
+    "language": "ru",
+    "lemma": "пешком от остановки",
+    "partOfSpeech": "verb",
+    "band": "A2",
+    "meaning": "duraktan yürüyerek",
+    "example": "До зала пять минут пешком от остановки.",
+    "usage": "«от + ilgi hâli» yürüyüşün başlangıcı.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.travel-options.word.5",
+        "lessonId": "ru.travel-options",
+        "objectiveId": "ru.travel-options.objective",
+        "band": "A2",
+        "assessmentRevision": "dfb056ab"
+      }
+    ]
+  },
+  {
+    "id": "ru.travel-options.6",
+    "language": "ru",
+    "lemma": "доехать до центра",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "merkeze araçla ulaşmak",
+    "example": "Можно доехать до центра на трамвае.",
+    "usage": "Araçla hedefe varma, «до + ilgi hâli».",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.travel-options.word.6",
+        "lessonId": "ru.travel-options",
+        "objectiveId": "ru.travel-options.objective",
+        "band": "A2",
+        "assessmentRevision": "eca48e53"
+      }
+    ]
+  },
+  {
+    "id": "ru.with-and-by.1",
+    "language": "ru",
+    "lemma": "вместе с другом",
+    "partOfSpeech": "numeral",
+    "band": "A2",
+    "meaning": "bir arkadaşla birlikte",
+    "example": "На занятие я иду вместе с другом.",
+    "usage": "«вместе» eşlik vurgusu ekler.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.with-and-by.word.1",
+        "lessonId": "ru.with-and-by",
+        "objectiveId": "ru.with-and-by.objective",
+        "band": "A2",
+        "assessmentRevision": "2398a203"
+      }
+    ]
+  },
+  {
+    "id": "ru.with-and-by.2",
+    "language": "ru",
+    "lemma": "со мной",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "benimle",
+    "example": "Кто пойдёт со мной?",
+    "usage": "«со» ile eşlik eden kişi.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.with-and-by.word.2",
+        "lessonId": "ru.with-and-by",
+        "objectiveId": "ru.with-and-by.objective",
+        "band": "A2",
+        "assessmentRevision": "70d462c9"
+      }
+    ]
+  },
+  {
+    "id": "ru.with-and-by.3",
+    "language": "ru",
+    "lemma": "оплатить картой",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A2",
+    "meaning": "kartla ödemek",
+    "example": "Я хочу оплатить картой.",
+    "usage": "Yöntem edatsız «картой».",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.with-and-by.word.3",
+        "lessonId": "ru.with-and-by",
+        "objectiveId": "ru.with-and-by.objective",
+        "band": "A2",
+        "assessmentRevision": "ab0976da"
+      }
+    ]
+  },
+  {
+    "id": "ru.with-and-by.4",
+    "language": "ru",
+    "lemma": "заплатить наличными",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "nakit ödemek",
+    "example": "Тут можно заплатить наличными.",
+    "usage": "Çoğul araç hâli «наличными».",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.with-and-by.word.4",
+        "lessonId": "ru.with-and-by",
+        "objectiveId": "ru.with-and-by.objective",
+        "band": "A2",
+        "assessmentRevision": "22e9a300"
+      }
+    ]
+  },
+  {
+    "id": "ru.with-and-by.5",
+    "language": "ru",
+    "lemma": "подписать ручкой",
+    "partOfSpeech": "question",
+    "band": "A2",
+    "meaning": "tükenmez veya dolma kalemle imzalamak",
+    "example": "Анкету нужно подписать ручкой.",
+    "usage": "Imzanın hangi araçla atıldığını belirtir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.with-and-by.word.5",
+        "lessonId": "ru.with-and-by",
+        "objectiveId": "ru.with-and-by.objective",
+        "band": "A2",
+        "assessmentRevision": "5bdcb297"
+      }
+    ]
+  },
+  {
+    "id": "ru.with-and-by.6",
+    "language": "ru",
+    "lemma": "с собой",
+    "partOfSpeech": "noun",
+    "band": "A2",
+    "meaning": "yanında, beraberinde",
+    "example": "Возьмите паспорт с собой.",
+    "usage": "«взять/принести с собой» bir şeyi yanında bulundurmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.with-and-by.word.6",
+        "lessonId": "ru.with-and-by",
+        "objectiveId": "ru.with-and-by.objective",
+        "band": "A2",
+        "assessmentRevision": "45e2eabc"
+      }
+    ]
+  },
+  {
+    "id": "ru.errand-log.1",
+    "language": "ru",
+    "lemma": "забрать ключ",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "anahtarı teslim almak",
+    "example": "Мне нужно забрать ключ у охраны.",
+    "usage": "Eşyanın birinden teslim alındığı sonuç.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.errand-log.word.1",
+        "lessonId": "ru.errand-log",
+        "objectiveId": "ru.errand-log.objective",
+        "band": "A2",
+        "assessmentRevision": "62c159b7"
+      }
+    ]
+  },
+  {
+    "id": "ru.errand-log.2",
+    "language": "ru",
+    "lemma": "заполнить бланк",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "formu doldurup bitirmek",
+    "example": "Я уже успел заполнить бланк.",
+    "usage": "«заполнить» tamamlanan adımı öne çıkarır.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.errand-log.word.2",
+        "lessonId": "ru.errand-log",
+        "objectiveId": "ru.errand-log.objective",
+        "band": "A2",
+        "assessmentRevision": "de1a3b62"
+      }
+    ]
+  },
+  {
+    "id": "ru.errand-log.3",
+    "language": "ru",
+    "lemma": "проверить список",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A2",
+    "meaning": "listeyi kontrol etmek",
+    "example": "Нужно проверить список до встречи.",
+    "usage": "«проверить» işlemi tamamlamaya odaklanır.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.errand-log.word.3",
+        "lessonId": "ru.errand-log",
+        "objectiveId": "ru.errand-log.objective",
+        "band": "A2",
+        "assessmentRevision": "1c987aba"
+      }
+    ]
+  },
+  {
+    "id": "ru.errand-log.4",
+    "language": "ru",
+    "lemma": "заглянуть по пути",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "yol üstünde uğramak",
+    "example": "Я могу заглянуть по пути в аптеку.",
+    "usage": "Yürüyüşün veya yolculuğun ara durağı için «заглянуть в + belirtme hâli».",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.errand-log.word.4",
+        "lessonId": "ru.errand-log",
+        "objectiveId": "ru.errand-log.objective",
+        "band": "A2",
+        "assessmentRevision": "16d84a18"
+      }
+    ]
+  },
+  {
+    "id": "ru.errand-log.5",
+    "language": "ru",
+    "lemma": "к концу дня",
+    "partOfSpeech": "noun",
+    "band": "A2",
+    "meaning": "gün sonuna kadar",
+    "example": "К концу дня мы закрыли зал.",
+    "usage": "«к + yönelme hâli» hedef süreyi verir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.errand-log.word.5",
+        "lessonId": "ru.errand-log",
+        "objectiveId": "ru.errand-log.objective",
+        "band": "A2",
+        "assessmentRevision": "f386a7cb"
+      }
+    ]
+  },
+  {
+    "id": "ru.errand-log.6",
+    "language": "ru",
+    "lemma": "оставить записку",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "not bırakmak",
+    "example": "Можно оставить записку на столе.",
+    "usage": "Görevlinin sonra okuyacağı mesaj.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.errand-log.word.6",
+        "lessonId": "ru.errand-log",
+        "objectiveId": "ru.errand-log.objective",
+        "band": "A2",
+        "assessmentRevision": "d9f8b218"
+      }
+    ]
+  },
+  {
+    "id": "ru.routine-clock.1",
+    "language": "ru",
+    "lemma": "просыпаться",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "uyanmak",
+    "example": "Я просыпаюсь в семь.",
+    "usage": "Uyanma anı, «вставать» yataktan kalkma.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.routine-clock.word.1",
+        "lessonId": "ru.routine-clock",
+        "objectiveId": "ru.routine-clock.objective",
+        "band": "A1",
+        "assessmentRevision": "85e06125"
+      }
+    ]
+  },
+  {
+    "id": "ru.routine-clock.2",
+    "language": "ru",
+    "lemma": "собираться",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "hazırlanmak",
+    "example": "Она собирается на работу.",
+    "usage": "«на работу / в школу» ile hazırlığın amacı.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.routine-clock.word.2",
+        "lessonId": "ru.routine-clock",
+        "objectiveId": "ru.routine-clock.objective",
+        "band": "A1",
+        "assessmentRevision": "44dea299"
+      }
+    ]
+  },
+  {
+    "id": "ru.routine-clock.3",
+    "language": "ru",
+    "lemma": "по будням",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "hafta içleri",
+    "example": "По будням я встаю рано.",
+    "usage": "Iş ve okul günlerinde tekrarlanan düzen.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.routine-clock.word.3",
+        "lessonId": "ru.routine-clock",
+        "objectiveId": "ru.routine-clock.objective",
+        "band": "A1",
+        "assessmentRevision": "d29769bb"
+      }
+    ]
+  },
+  {
+    "id": "ru.routine-clock.4",
+    "language": "ru",
+    "lemma": "по выходным",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "hafta sonları",
+    "example": "По выходным мы гуляем.",
+    "usage": "Cumartesi ve pazar tekrarı.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.routine-clock.word.4",
+        "lessonId": "ru.routine-clock",
+        "objectiveId": "ru.routine-clock.objective",
+        "band": "A1",
+        "assessmentRevision": "ae1cf3d"
+      }
+    ]
+  },
+  {
+    "id": "ru.routine-clock.5",
+    "language": "ru",
+    "lemma": "до обеда",
+    "partOfSpeech": "predicate",
+    "band": "A1",
+    "meaning": "öğle yemeğinden önce",
+    "example": "Я убираю комнату до обеда.",
+    "usage": "Öğle yemeğini sınır olarak verir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.routine-clock.word.5",
+        "lessonId": "ru.routine-clock",
+        "objectiveId": "ru.routine-clock.objective",
+        "band": "A1",
+        "assessmentRevision": "8967da1b"
+      }
+    ]
+  },
+  {
+    "id": "ru.routine-clock.6",
+    "language": "ru",
+    "lemma": "выходить из дома",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "evden çıkmak",
+    "example": "Я выхожу из дома в восемь.",
+    "usage": "«из + ilgi hâli» çıkılan yeri gösterir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.routine-clock.word.6",
+        "lessonId": "ru.routine-clock",
+        "objectiveId": "ru.routine-clock.objective",
+        "band": "A1",
+        "assessmentRevision": "3af90ff4"
+      }
+    ]
+  },
+  {
+    "id": "ru.market-basket.1",
+    "language": "ru",
+    "lemma": "полкило",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "yarım kilo",
+    "example": "Дайте полкило яблок.",
+    "usage": "Sonrasında ürün ilgi hâlinde.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.market-basket.word.1",
+        "lessonId": "ru.market-basket",
+        "objectiveId": "ru.market-basket.objective",
+        "band": "A1",
+        "assessmentRevision": "2a10a6a0"
+      }
+    ]
+  },
+  {
+    "id": "ru.market-basket.2",
+    "language": "ru",
+    "lemma": "пакет орехов",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "bir paket kuruyemiş",
+    "example": "Я беру пакет орехов.",
+    "usage": "«пакет» miktarı, «орехов» içeriği bildirir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.market-basket.word.2",
+        "lessonId": "ru.market-basket",
+        "objectiveId": "ru.market-basket.objective",
+        "band": "A1",
+        "assessmentRevision": "ba178516"
+      }
+    ]
+  },
+  {
+    "id": "ru.market-basket.3",
+    "language": "ru",
+    "lemma": "на развес",
+    "partOfSpeech": "fixed expression",
+    "band": "A1",
+    "meaning": "tartılarak, açık olarak",
+    "example": "Печенье продают на развес.",
+    "usage": "Hazır paket yerine tartıyla satış.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.market-basket.word.3",
+        "lessonId": "ru.market-basket",
+        "objectiveId": "ru.market-basket.objective",
+        "band": "A1",
+        "assessmentRevision": "518670e8"
+      }
+    ]
+  },
+  {
+    "id": "ru.market-basket.4",
+    "language": "ru",
+    "lemma": "цена за кило",
+    "partOfSpeech": "fixed expression",
+    "band": "A1",
+    "meaning": "kilo fiyatı",
+    "example": "На табличке — цена за кило.",
+    "usage": "Bir kilogram başına etiketlenen tutar.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.market-basket.word.4",
+        "lessonId": "ru.market-basket",
+        "objectiveId": "ru.market-basket.objective",
+        "band": "A1",
+        "assessmentRevision": "8e3630ef"
+      }
+    ]
+  },
+  {
+    "id": "ru.market-basket.5",
+    "language": "ru",
+    "lemma": "сколько с меня",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "ne kadar ödeyeceğim",
+    "example": "Спасибо. Сколько с меня?",
+    "usage": "Müşterinin ödeyeceği tutarı sorar.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.market-basket.word.5",
+        "lessonId": "ru.market-basket",
+        "objectiveId": "ru.market-basket.objective",
+        "band": "A1",
+        "assessmentRevision": "3d93dc02"
+      }
+    ]
+  },
+  {
+    "id": "ru.market-basket.6",
+    "language": "ru",
+    "lemma": "сдача",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "para üstü",
+    "example": "Вот ваша сдача.",
+    "usage": "Ödenen paranın geri verilen kısmı.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.market-basket.word.6",
+        "lessonId": "ru.market-basket",
+        "objectiveId": "ru.market-basket.objective",
+        "band": "A1",
+        "assessmentRevision": "b7515b5b"
+      }
+    ]
+  },
+  {
+    "id": "ru.receipt-repair.1",
+    "language": "ru",
+    "lemma": "лишняя позиция",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "fazladan kalem",
+    "example": "В чеке есть лишняя позиция.",
+    "usage": "Fişte bulunmaması gereken satır.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.receipt-repair.word.1",
+        "lessonId": "ru.receipt-repair",
+        "objectiveId": "ru.receipt-repair.objective",
+        "band": "A2",
+        "assessmentRevision": "58ca2263"
+      }
+    ]
+  },
+  {
+    "id": "ru.receipt-repair.2",
+    "language": "ru",
+    "lemma": "пересчитать сумму",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A2",
+    "meaning": "toplamı yeniden hesaplamak",
+    "example": "Попросите пересчитать сумму.",
+    "usage": "Hata düzeltilince yeni toplamı bulmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.receipt-repair.word.2",
+        "lessonId": "ru.receipt-repair",
+        "objectiveId": "ru.receipt-repair.objective",
+        "band": "A2",
+        "assessmentRevision": "a13a1d84"
+      }
+    ]
+  },
+  {
+    "id": "ru.receipt-repair.3",
+    "language": "ru",
+    "lemma": "два раза",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "iki defa",
+    "example": "Этот товар указан два раза.",
+    "usage": "Bir ayrıntının iki kez yer alması.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.receipt-repair.word.3",
+        "lessonId": "ru.receipt-repair",
+        "objectiveId": "ru.receipt-repair.objective",
+        "band": "A2",
+        "assessmentRevision": "7e8a2e93"
+      }
+    ]
+  },
+  {
+    "id": "ru.receipt-repair.4",
+    "language": "ru",
+    "lemma": "не та позиция",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "yanlış kalem",
+    "example": "В чеке не та позиция.",
+    "usage": "Fişteki ürün satırının yanlış ürünü gösterdiğini bildirir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.receipt-repair.word.4",
+        "lessonId": "ru.receipt-repair",
+        "objectiveId": "ru.receipt-repair.objective",
+        "band": "A2",
+        "assessmentRevision": "f307a504"
+      }
+    ]
+  },
+  {
+    "id": "ru.receipt-repair.5",
+    "language": "ru",
+    "lemma": "итоговая сумма",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A2",
+    "meaning": "son toplam",
+    "example": "Итоговая сумма — триста рублей.",
+    "usage": "Tüm kalemler ve düzeltmeler sonrası tutar.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.receipt-repair.word.5",
+        "lessonId": "ru.receipt-repair",
+        "objectiveId": "ru.receipt-repair.objective",
+        "band": "A2",
+        "assessmentRevision": "92c390b9"
+      }
+    ]
+  },
+  {
+    "id": "ru.receipt-repair.6",
+    "language": "ru",
+    "lemma": "в чеке указано",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "fişte belirtilmiş",
+    "example": "В чеке указано два пакета.",
+    "usage": "Ifade fişteki bilgiyle başlar.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.receipt-repair.word.6",
+        "lessonId": "ru.receipt-repair",
+        "objectiveId": "ru.receipt-repair.objective",
+        "band": "A2",
+        "assessmentRevision": "baa061e7"
+      }
+    ]
+  },
+  {
+    "id": "ru.opening-hours.1",
+    "language": "ru",
+    "lemma": "часы работы",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "çalışma saatleri",
+    "example": "Часы работы указаны на двери.",
+    "usage": "Bir yerin açılış ve kapanış çizelgesi.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.opening-hours.word.1",
+        "lessonId": "ru.opening-hours",
+        "objectiveId": "ru.opening-hours.objective",
+        "band": "A1",
+        "assessmentRevision": "650d94f3"
+      }
+    ]
+  },
+  {
+    "id": "ru.opening-hours.2",
+    "language": "ru",
+    "lemma": "перерыв на обед",
+    "partOfSpeech": "prepositional phrase",
+    "band": "A1",
+    "meaning": "öğle arası",
+    "example": "Перерыв на обед с часу до двух.",
+    "usage": "Öğlen için belirli kapanma süresi.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.opening-hours.word.2",
+        "lessonId": "ru.opening-hours",
+        "objectiveId": "ru.opening-hours.objective",
+        "band": "A1",
+        "assessmentRevision": "a7012ef4"
+      }
+    ]
+  },
+  {
+    "id": "ru.opening-hours.3",
+    "language": "ru",
+    "lemma": "до закрытия",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "kapanıştan önce, kapanışa kadar",
+    "example": "До закрытия ещё час.",
+    "usage": "«до» kapanışı sınır olarak verir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.opening-hours.word.3",
+        "lessonId": "ru.opening-hours",
+        "objectiveId": "ru.opening-hours.objective",
+        "band": "A1",
+        "assessmentRevision": "81445c6c"
+      }
+    ]
+  },
+  {
+    "id": "ru.opening-hours.4",
+    "language": "ru",
+    "lemma": "без перерыва",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "arasız, mola vermeden",
+    "example": "Пункт работает без перерыва.",
+    "usage": "«без + ilgi hâli» molanın olmadığını bildirir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.opening-hours.word.4",
+        "lessonId": "ru.opening-hours",
+        "objectiveId": "ru.opening-hours.objective",
+        "band": "A1",
+        "assessmentRevision": "41a0e494"
+      }
+    ]
+  },
+  {
+    "id": "ru.opening-hours.5",
+    "language": "ru",
+    "lemma": "временно закрыт",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "geçici olarak kapalı",
+    "example": "Зал временно закрыт.",
+    "usage": "«закрыт» eril isimle, «закрыта» dişil isimle.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.opening-hours.word.5",
+        "lessonId": "ru.opening-hours",
+        "objectiveId": "ru.opening-hours.objective",
+        "band": "A1",
+        "assessmentRevision": "c302ea38"
+      }
+    ]
+  },
+  {
+    "id": "ru.opening-hours.6",
+    "language": "ru",
+    "lemma": "получить талон",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "sıra numarası almak",
+    "example": "Сначала нужно получить талон.",
+    "usage": "Numaralı hizmet sırası için.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.opening-hours.word.6",
+        "lessonId": "ru.opening-hours",
+        "objectiveId": "ru.opening-hours.objective",
+        "band": "A1",
+        "assessmentRevision": "aeefd93f"
+      }
+    ]
+  },
+  {
+    "id": "ru.pickup-handoff.1",
+    "language": "ru",
+    "lemma": "пункт выдачи",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "teslim noktası",
+    "example": "Пункт выдачи находится у метро.",
+    "usage": "Paketin müşteriye verildiği yer.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.pickup-handoff.word.1",
+        "lessonId": "ru.pickup-handoff",
+        "objectiveId": "ru.pickup-handoff.objective",
+        "band": "A2",
+        "assessmentRevision": "346f9b5"
+      }
+    ]
+  },
+  {
+    "id": "ru.pickup-handoff.2",
+    "language": "ru",
+    "lemma": "код получения",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "teslim alma kodu",
+    "example": "На телефоне есть код получения.",
+    "usage": "Teslim alıcısının göstereceği kod.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.pickup-handoff.word.2",
+        "lessonId": "ru.pickup-handoff",
+        "objectiveId": "ru.pickup-handoff.objective",
+        "band": "A2",
+        "assessmentRevision": "19855221"
+      }
+    ]
+  },
+  {
+    "id": "ru.pickup-handoff.3",
+    "language": "ru",
+    "lemma": "забрать заказ",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "siparişi teslim almak",
+    "example": "Я могу забрать заказ вечером.",
+    "usage": "Hazır ürünün müşteri tarafından alınması.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.pickup-handoff.word.3",
+        "lessonId": "ru.pickup-handoff",
+        "objectiveId": "ru.pickup-handoff.objective",
+        "band": "A2",
+        "assessmentRevision": "6dfa6f3e"
+      }
+    ]
+  },
+  {
+    "id": "ru.pickup-handoff.4",
+    "language": "ru",
+    "lemma": "передать другому человеку",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "başka bir kişiye vermek",
+    "example": "Можно передать заказ другому человеку?",
+    "usage": "Alıcıyı «другому человеку» ile yönelme hâlinde söyler.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.pickup-handoff.word.4",
+        "lessonId": "ru.pickup-handoff",
+        "objectiveId": "ru.pickup-handoff.objective",
+        "band": "A2",
+        "assessmentRevision": "5ec2c037"
+      }
+    ]
+  },
+  {
+    "id": "ru.pickup-handoff.5",
+    "language": "ru",
+    "lemma": "заказ готов",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A2",
+    "meaning": "sipariş hazır",
+    "example": "Ваш заказ готов.",
+    "usage": "«готов» eril «заказ» ile uyumlu.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.pickup-handoff.word.5",
+        "lessonId": "ru.pickup-handoff",
+        "objectiveId": "ru.pickup-handoff.objective",
+        "band": "A2",
+        "assessmentRevision": "5d39fa9b"
+      }
+    ]
+  },
+  {
+    "id": "ru.pickup-handoff.6",
+    "language": "ru",
+    "lemma": "уточнить адрес",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "adresi kesinleştirmek",
+    "example": "Я хочу уточнить адрес пункта.",
+    "usage": "Adres sorulup doğrulanır.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.pickup-handoff.word.6",
+        "lessonId": "ru.pickup-handoff",
+        "objectiveId": "ru.pickup-handoff.objective",
+        "band": "A2",
+        "assessmentRevision": "4d977465"
+      }
+    ]
+  },
+  {
+    "id": "ru.contact-check.1",
+    "language": "ru",
+    "lemma": "отчество",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "baba adı",
+    "example": "В списке есть имя и отчество.",
+    "usage": "Babasının adından türetilen resmî ad alanıdır. Soyadı ayrı yazılır.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.contact-check.word.1",
+        "lessonId": "ru.contact-check",
+        "objectiveId": "ru.contact-check.objective",
+        "band": "A1",
+        "assessmentRevision": "16264b1d"
+      }
+    ]
+  },
+  {
+    "id": "ru.contact-check.2",
+    "language": "ru",
+    "lemma": "контактный номер",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "iletişim numarası",
+    "example": "Это мой контактный номер.",
+    "usage": "Geri arama için bırakılan numara.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.contact-check.word.2",
+        "lessonId": "ru.contact-check",
+        "objectiveId": "ru.contact-check.objective",
+        "band": "A1",
+        "assessmentRevision": "1add4e7e"
+      }
+    ]
+  },
+  {
+    "id": "ru.contact-check.3",
+    "language": "ru",
+    "lemma": "две последние цифры",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "son iki rakam",
+    "example": "Две последние цифры — ноль и два.",
+    "usage": "Numaranın tamamını paylaşmadan teyit.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.contact-check.word.3",
+        "lessonId": "ru.contact-check",
+        "objectiveId": "ru.contact-check.objective",
+        "band": "A1",
+        "assessmentRevision": "4edea1ae"
+      }
+    ]
+  },
+  {
+    "id": "ru.contact-check.4",
+    "language": "ru",
+    "lemma": "верно",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "doğru, doğru biçimde",
+    "example": "Номер записан верно.",
+    "usage": "Kayıt veya bilginin doğruluğu.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.contact-check.word.4",
+        "lessonId": "ru.contact-check",
+        "objectiveId": "ru.contact-check.objective",
+        "band": "A1",
+        "assessmentRevision": "94615fd9"
+      }
+    ]
+  },
+  {
+    "id": "ru.contact-check.5",
+    "language": "ru",
+    "lemma": "вместо",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "yerine",
+    "example": "Вместо буквы «а» здесь «о».",
+    "usage": "Yerine geçen öğeyi tanıtır, ardından ilgi hâli gelir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.contact-check.word.5",
+        "lessonId": "ru.contact-check",
+        "objectiveId": "ru.contact-check.objective",
+        "band": "A1",
+        "assessmentRevision": "add3a9b0"
+      }
+    ]
+  },
+  {
+    "id": "ru.contact-check.6",
+    "language": "ru",
+    "lemma": "исправьте",
+    "partOfSpeech": "fixed expression",
+    "band": "A1",
+    "meaning": "lütfen düzeltin",
+    "example": "Исправьте, пожалуйста, номер.",
+    "usage": "Çoğul veya kibar tekil emir.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.contact-check.word.6",
+        "lessonId": "ru.contact-check",
+        "objectiveId": "ru.contact-check.objective",
+        "band": "A1",
+        "assessmentRevision": "3de4514a"
+      }
+    ]
+  },
+  {
+    "id": "ru.appointment-change.1",
+    "language": "ru",
+    "lemma": "отменить запись",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "randevuyu iptal etmek",
+    "example": "Мне нужно отменить запись.",
+    "usage": "Ayrılmış saatin geçerliliğini kaldırmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.appointment-change.word.1",
+        "lessonId": "ru.appointment-change",
+        "objectiveId": "ru.appointment-change.objective",
+        "band": "A2",
+        "assessmentRevision": "a7bf1454"
+      }
+    ]
+  },
+  {
+    "id": "ru.appointment-change.2",
+    "language": "ru",
+    "lemma": "перенести запись",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "randevuyu başka zamana almak",
+    "example": "Можно перенести запись на четверг?",
+    "usage": "Eski randevuyu yeni bir aralığa taşımak.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.appointment-change.word.2",
+        "lessonId": "ru.appointment-change",
+        "objectiveId": "ru.appointment-change.objective",
+        "band": "A2",
+        "assessmentRevision": "49cf4e94"
+      }
+    ]
+  },
+  {
+    "id": "ru.appointment-change.3",
+    "language": "ru",
+    "lemma": "есть свободное время",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "boş saat var",
+    "example": "В пятницу есть свободное время.",
+    "usage": "Henüz ayrılmamış saat.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.appointment-change.word.3",
+        "lessonId": "ru.appointment-change",
+        "objectiveId": "ru.appointment-change.objective",
+        "band": "A2",
+        "assessmentRevision": "34b6abd9"
+      }
+    ]
+  },
+  {
+    "id": "ru.appointment-change.4",
+    "language": "ru",
+    "lemma": "запись подтверждена",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "randevu onaylandı",
+    "example": "Ваша запись подтверждена.",
+    "usage": "Onayın alındığını gösteren durum.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.appointment-change.word.4",
+        "lessonId": "ru.appointment-change",
+        "objectiveId": "ru.appointment-change.objective",
+        "band": "A2",
+        "assessmentRevision": "67a00eed"
+      }
+    ]
+  },
+  {
+    "id": "ru.appointment-change.5",
+    "language": "ru",
+    "lemma": "мне не подходит",
+    "partOfSpeech": "fixed expression",
+    "band": "A2",
+    "meaning": "bana uymuyor",
+    "example": "Мне не подходит время после обеда.",
+    "usage": "Bir teklif veya saat uymadığında.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.appointment-change.word.5",
+        "lessonId": "ru.appointment-change",
+        "objectiveId": "ru.appointment-change.objective",
+        "band": "A2",
+        "assessmentRevision": "714113d"
+      }
+    ]
+  },
+  {
+    "id": "ru.appointment-change.6",
+    "language": "ru",
+    "lemma": "на ближайшее время",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "en yakın uygun zamana",
+    "example": "Запишите меня на ближайшее время.",
+    "usage": "Ilk uygun randevu zamanını ister.",
+    "revision": 1,
+    "change": "MVP-2B ilk Rusça genişleme paketi",
+    "links": [
+      {
+        "cardId": "ru.appointment-change.word.6",
+        "lessonId": "ru.appointment-change",
+        "objectiveId": "ru.appointment-change.objective",
+        "band": "A2",
+        "assessmentRevision": "f3ebd2ca"
+      }
+    ]
+  }
+]

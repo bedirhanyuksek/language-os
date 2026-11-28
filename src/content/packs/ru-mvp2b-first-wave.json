@@ -1,0 +1,4037 @@
+{
+  "format": 1,
+  "language": "ru",
+  "lessons": [
+    {
+      "id": "ru.contact-check",
+      "outcome": "A1.contact-check",
+      "level": "A1",
+      "prerequisite": [
+        "ru.forms",
+        "ru.repair"
+      ],
+      "title": "Kayıttaki iki bilgiyi düzelt",
+      "objective": "Kurs kaydında adı, soyadı veya telefonun son rakamlarını karşılaştır ve iki bilgiyi teyit et.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Alanları karşılaştırma ve düzeltme",
+        "Son iki rakamı teyit etme"
+      ],
+      "situation": "Kayıt görevlisi benzer iki soyadı karıştırdı. Kaydı okuyup hangi alanın düzeltilmesi gerektiğini bul.",
+      "bridge": "Formdaki «Моя фамилия…» kalıbını şimdi «правильно / неверно» ile kayıt onarımında kullan.",
+      "models": [
+        {
+          "phrase": "Это имя, а это фамилия.",
+          "explanation": "«Это» ile alanı tanıt. «А» yan yana gelen iki ayrı bilgiyi ayırır."
+        },
+        {
+          "phrase": "Последние две цифры — пять и девять. Правильно?",
+          "explanation": "«Последние две цифры» telefonunun tamamını vermeden teyit istemeni sağlar. «Правильно?» kapalı bir teyit sorusudur."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Alanları karşılaştırma ve düzeltme",
+          "incorrect": "Это фамилия, и это имя.",
+          "correct": "Это фамилия, а это имя.",
+          "explanation": "İki alanı karşılaştırırken «а» kullan. Hatalı bir bilgiyi «не X, а Y» ile değiştir.",
+          "guided": [
+            [
+              "Adı değil soyadı göster: Это не имя, ___ фамилия.",
+              "а"
+            ],
+            [
+              "Telefonun tamamı değil yalnız son iki rakam: Не весь номер, а ___.",
+              "две последние цифры",
+              "последние две цифры"
+            ]
+          ],
+          "transfer": [
+            [
+              "Kayıtta Олег yerine Ира yazmasını iste. «Не …, а …» yapısıyla doğru adı ver.",
+              "Не Олег, а Ира."
+            ],
+            [
+              "Görevli telefonun sonu 61 dedi. Doğrusu 64. Rakamları ayrı söyleyerek «не …, а …» ile düzelt.",
+              "Не шесть один, а шесть четыре."
+            ]
+          ],
+          "delayed": [
+            [
+              "Kütüphane rozeti «Анна Исаева» diyor. Soyadı Иса́кова. Karşıtlıkla yalnız soyadını düzelt.",
+              "Не Исаева, а Исакова."
+            ],
+            [
+              "Kargo kaydında son iki rakam 37 görünüyor, doğrusu 73. «Не …, а …» ile tek tek söyle.",
+              "Не три семь, а семь три."
+            ]
+          ]
+        },
+        {
+          "label": "Son iki rakamı teyit etme",
+          "incorrect": "Первая две цифры — пять и девять.",
+          "correct": "Последние две цифры — пять и девять.",
+          "explanation": "«Цифры» çoğuldur. «Две» dişil biçimdir. «Правильно?» onay sorar.",
+          "guided": [
+            [
+              "Два / две: ___ цифры.",
+              "две"
+            ],
+            [
+              "«Doğru mu?» diyerek sonu teyit et.",
+              "Правильно?"
+            ]
+          ],
+          "transfer": [
+            [
+              "Tam bir teyit sorusu kur. Kartta son iki rakam 20. Rakamları kelimeyle ve ayrı ver.",
+              "Последние две цифры — два и ноль. Правильно?",
+              "Последние две цифры — два, ноль. Правильно?"
+            ],
+            [
+              "Görevliden soyadını söylerken iki alanın hangisi olduğunu açıklamasını iste: «Bu ad mı, soyadı mı?»",
+              "Это имя или фамилия?"
+            ]
+          ],
+          "delayed": [
+            [
+              "Spor salonunda üyelik numarasının sonu 86. İlk iki kelimesi «Последние две» olan bir teyit sorusu yaz.",
+              "Последние две цифры — восемь и шесть. Правильно?",
+              "Последние две цифры — восемь, шесть. Правильно?"
+            ],
+            [
+              "Yaka kartında önce Марк yazıyor. «Bu soyadı mı?» diye teyit et.",
+              "Это фамилия?"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "отчество",
+        "meaning": "baba adı",
+        "example": "В списке есть имя и отчество.",
+        "pronunciation": "о́тчество",
+        "collocations": [
+          "имя и отчество",
+          "отчество в списке"
+        ],
+        "usage": "Babasının adından türetilen resmî ad alanıdır. Soyadı ayrı yazılır.",
+        "recognize": [
+          "«отчество» burada hangi anlamda? В списке есть имя и отчество.",
+          "baba adı",
+          "doğum tarihi",
+          "soyadı",
+          "Bu bağlamda «отчество» baba adı anlamına gelir."
+        ],
+        "recall": [
+          "Kurum kartındaki baba adı alanının adını Rusça yaz.",
+          "отчество"
+        ],
+        "use": "Staj kaydında soyadını bildiğini ama baba adının eksik olduğunu söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "контактный номер",
+          "meaning": "iletişim numarası",
+          "example": "Это мой контактный номер.",
+          "pronunciation": "конта́ктный но́мер",
+          "collocations": [
+            "мой контактный номер",
+            "проверить контактный номер"
+          ],
+          "usage": "Geri arama için bırakılan numara.",
+          "recognize": [
+            "«контактный номер» burada hangi anlamda? Это мой контактный номер.",
+            "iletişim numarası",
+            "ev adresi",
+            "kimlik numarası",
+            "Bu bağlamda «контактный номер» iletişim numarası anlamına gelir."
+          ],
+          "recall": [
+            "Ulaşılabileceğin numara için alan başlığını yaz.",
+            "контактный номер"
+          ],
+          "use": "Atölye kaydına ulaşılabileceğin bir numara bırak."
+        },
+        {
+          "term": "две последние цифры",
+          "meaning": "son iki rakam",
+          "example": "Две последние цифры — ноль и два.",
+          "pronunciation": "две после́дние ци́фры",
+          "collocations": [
+            "сказать две последние цифры",
+            "проверить две последние цифры"
+          ],
+          "usage": "Numaranın tamamını paylaşmadan teyit.",
+          "recognize": [
+            "«две последние цифры» burada hangi anlamda? Две последние цифры — ноль и два.",
+            "son iki rakam",
+            "ilk iki rakam",
+            "orta iki rakam",
+            "Bu bağlamda «две последние цифры» son iki rakam anlamına gelir."
+          ],
+          "recall": [
+            "Kayıtta kontrol edilen en sondaki iki haneyi adlandır.",
+            "две последние цифры"
+          ],
+          "use": "Bir kulüp kaydında numaranın tamamını vermeden sonunu teyit et."
+        },
+        {
+          "term": "верно",
+          "meaning": "doğru, doğru biçimde",
+          "example": "Номер записан верно.",
+          "pronunciation": "ве́рно",
+          "collocations": [
+            "записано верно",
+            "проверить, всё ли верно"
+          ],
+          "usage": "Kayıt veya bilginin doğruluğu.",
+          "recognize": [
+            "«верно» burada hangi anlamda? Номер записан верно.",
+            "doğru, doğru biçimde",
+            "yanlışlıkla",
+            "geçici olarak",
+            "Bu bağlamda «верно» doğru, doğru biçimde anlamına gelir."
+          ],
+          "recall": [
+            "«Kayda doğru geçirilmiş» cümlesindeki «doğru» sözcüğünü yaz.",
+            "верно"
+          ],
+          "use": "Gönderim etiketindeki adın doğru yazıldığını onayla."
+        },
+        {
+          "term": "вместо",
+          "meaning": "yerine",
+          "example": "Вместо буквы «а» здесь «о».",
+          "pronunciation": "вме́сто",
+          "collocations": [
+            "вместо буквы",
+            "вместо цифры"
+          ],
+          "usage": "Yerine geçen öğeyi tanıtır, ardından ilgi hâli gelir.",
+          "recognize": [
+            "«вместо» burada hangi anlamda? Вместо буквы «а» здесь «о».",
+            "yerine",
+            "yüzünden",
+            "ile birlikte",
+            "Bu bağlamda «вместо» yerine anlamına gelir."
+          ],
+          "recall": [
+            "Bir şeyin yerini başkasının aldığını belirten edatı yaz.",
+            "вместо"
+          ],
+          "use": "Çevrim içi profilde bir harfin yerine hangisinin geleceğini belirt."
+        },
+        {
+          "term": "исправьте",
+          "meaning": "lütfen düzeltin",
+          "example": "Исправьте, пожалуйста, номер.",
+          "pronunciation": "испра́вьте",
+          "collocations": [
+            "исправьте номер",
+            "исправьте запись"
+          ],
+          "usage": "Çoğul veya kibar tekil emir.",
+          "recognize": [
+            "«исправьте» burada hangi anlamda? Исправьте, пожалуйста, номер.",
+            "lütfen düzeltin",
+            "tekrarlayın",
+            "imzalayın",
+            "Bu bağlamda «исправьте» lütfen düzeltin anlamına gelir."
+          ],
+          "recall": [
+            "Görevliye «düzeltin» diye kibarca seslen.",
+            "исправьте"
+          ],
+          "use": "Teslimat belgesinde yanlış baba adını düzeltmesini iste."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "отчество",
+          "cue": "kişinin baba adının kayıt alanı"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir dans kursu, Лев adını ve 27 sonlu telefonu doğru yazmış. Soyadını Рудин yerine Руднов yazmış. Görevliye kısa düzeltme yaz.",
+        "sample": "Имя Лев и номер верны. Исправьте, пожалуйста, фамилию: не Руднов, а Рудин.",
+        "revision": "Görevli son rakamları da karıştırıyor. Düzeltme isteğine «два и семь» bilgisini ekle.",
+        "criteria": [
+          "Doğru ve yanlış soyadı açıkça ayrılıyor.",
+          "Telefon teyidi yeni hatayı gideriyor."
+        ]
+      },
+      "input": {
+        "text": "Курс «Маяк».\nВ списке: имя Вера, отчество Олеговна.\nКонтактный номер: последние цифры — 04.\nВ заявке: 40.",
+        "reading": [
+          "Hangi alan değişmeli?",
+          "telefonun son rakamları",
+          "ad",
+          "baba adı",
+          "İlgili satırı diğer bilgilerle karşılaştır. Контактный номер: последние цифры — 04.",
+          "Контактный номер: последние цифры — 04."
+        ],
+        "transcript": "Объявление. Курс «Маяк». В списке: имя Вера, отчество Олеговна. Контактный номер: последние цифры — 04. В заявке: 40.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Hangi alan değişmeli?",
+          "telefonun son rakamları",
+          "ad",
+          "baba adı",
+          "Контактный номер: последние цифры — 04.",
+          "Контактный номер: последние цифры — 04."
+        ],
+        "detail": [
+          "Kontrol listesinin sonu kaç?",
+          "04",
+          "40",
+          "14",
+          "Контактный номер: последние цифры — 04.",
+          "Контактный номер: последние цифры — 04."
+        ]
+      },
+      "retry": {
+        "text": "Клуб «Старт».\nВ журнале: фамилия Власова.\nИмя: Лида.\nНа карточке: Гласова.",
+        "reading": [
+          "Üyelik kartında yanlış olan alan?",
+          "soyadı",
+          "ad",
+          "telefon",
+          "İlgili satırı diğer bilgilerle karşılaştır. На карточке: Гласова.",
+          "На карточке: Гласова."
+        ],
+        "transcript": "Новый случай. Клуб «Старт». В журнале: фамилия Власова. Имя: Лида. На карточке: Гласова.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Üyelik kartında yanlış olan alan?",
+          "soyadı",
+          "ad",
+          "telefon",
+          "На карточке: Гласова.",
+          "На карточке: Гласова."
+        ],
+        "detail": [
+          "Günlüğe göre doğru soyadı?",
+          "Власова",
+          "Гласова",
+          "Лида",
+          "В журнале: фамилия Власова.",
+          "В журнале: фамилия Власова."
+        ]
+      },
+      "readingUse": "Kayıt masası fişi metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Bir görevliyle staj kaydında adı ve telefon sonunu teyit et. Muhatabın okuduğu yanlış soyadını düzelt.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "sequence",
+      "readingPurpose": "Kurs kaydında adı, soyadı veya telefonun son rakamlarını karşılaştır ve iki bilgiyi teyit et.",
+      "genres": {
+        "reading": "kayıt masası fişi",
+        "listening": "yazılı konuşma provası",
+        "writing": "yazılı kayıt teyidi"
+      }
+    },
+    {
+      "id": "ru.routine-clock",
+      "outcome": "A1.routine-clock",
+      "level": "A1",
+      "prerequisite": [
+        "ru.daily-mood"
+      ],
+      "title": "Rutinini zaman çizelgesine geçir",
+      "objective": "Normal bir günü birinci kişiyle anlat, rutin ve istisnayı saat ile ayır.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Birinci ve üçüncü kişide dönüşlü fiil",
+        "Rutin ve istisna"
+      ],
+      "situation": "Ev arkadaşın duş ve kahvaltı saatlerini öğrenmek istiyor. Haftalık notunda günlük düzeni ve tek istisnayı ayır.",
+      "bridge": "«Мне» ile duygu bildirmeyi biliyorsun. Gündelik eylemde yapan kişiyi «я» ve fiil biçimiyle göster.",
+      "models": [
+        {
+          "phrase": "Я просыпаюсь утром, а Дима просыпается днём.",
+          "explanation": "«Я просыпаюсь» kendi rutinini verir. «Он/она просыпается» başkasını anlatır. Vurgu просыпа́юсь ve просыпа́ется üzerindedir. Benzer örnekler: «я одеваюсь / она одевается», «я собираюсь / он собирается». «Днём» gündüz, «вечером» akşam anlamı verir."
+        },
+        {
+          "phrase": "Обычно я завтракаю дома, а сегодня — на работе.",
+          "explanation": "«Обычно» alışkanlık, «сегодня» bu günün durumu. «По будням» çalışma günlerinde tekrarı işaretler."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Birinci ve üçüncü kişide dönüşlü fiil",
+          "incorrect": "Я просыпается утром.",
+          "correct": "Я просыпаюсь утром.",
+          "explanation": "«Я» ile «-аюсь», «он/она» ile bu fiilde «-ается» kullanılır.",
+          "guided": [
+            [
+              "Я ___ в семь. (просыпаться)",
+              "просыпаюсь"
+            ],
+            [
+              "Нина ___ рано. (просыпаться)",
+              "просыпается"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Ben akşam giyiniyorum» bilgisini tam cümle yaz. Giyinmek: одеваться.",
+              "Я одеваюсь вечером.",
+              "Вечером я одеваюсь."
+            ],
+            [
+              "Stajda Артём'un sabah hazırlandığını yaz. Hazırlanmak: собираться.",
+              "Артём собирается утром.",
+              "Утром Артём собирается."
+            ]
+          ],
+          "delayed": [
+            [
+              "Kamp rutini notuna «Ben akşam yüzümü yıkıyorum» yaz. Eylem: умываться.",
+              "Я умываюсь вечером.",
+              "Вечером я умываюсь."
+            ],
+            [
+              "Ev arkadaşın Зоя akşam hazırlanıyor. «собираться» ile kısa takvim notu yaz.",
+              "Зоя собирается вечером.",
+              "Вечером Зоя собирается."
+            ]
+          ]
+        },
+        {
+          "label": "Rutin ve istisna",
+          "incorrect": "По буднями я завтракаю дома.",
+          "correct": "По будням я завтракаю дома.",
+          "explanation": "Tekrarlanan hafta içi düzeni için kalıp «по будням». «Утром» gibi ifadeler gün bölümünü bildirir.",
+          "guided": [
+            [
+              "___ я работаю, а сегодня отдыхаю. (Genellikle)",
+              "Обычно"
+            ],
+            [
+              "«Hafta içleri» kalıbıyla başla: ___ я учусь.",
+              "По будням"
+            ]
+          ],
+          "transfer": [
+            [
+              "Komşuna hafta içleri akşam ders çalıştığını tek cümleyle yaz.",
+              "По будням я учусь вечером.",
+              "Я учусь вечером по будням."
+            ],
+            [
+              "Gönüllüye bugün gündüz çalıştığını, alışılmış düzen vermeden yaz.",
+              "Сегодня я работаю днём.",
+              "Я работаю днём сегодня."
+            ]
+          ],
+          "delayed": [
+            [
+              "Ev arkadaşına genellikle akşam yemek yaptığını «готовить» ile bildir.",
+              "Обычно я готовлю вечером.",
+              "Вечером я обычно готовлю."
+            ],
+            [
+              "Kulüpte hafta içleri sabah yüzdüğünü «плавать» ile tam cümle yaz.",
+              "По будням я плаваю утром.",
+              "Я плаваю утром по будням."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "просыпаться",
+        "meaning": "uyanmak",
+        "example": "Я просыпаюсь в семь.",
+        "pronunciation": "просыпа́ться",
+        "collocations": [
+          "просыпаться рано",
+          "просыпаться в девять"
+        ],
+        "usage": "Uyanma anı, «вставать» yataktan kalkma.",
+        "recognize": [
+          "«просыпаться» burada hangi anlamda? Я просыпаюсь в семь.",
+          "uyanmak",
+          "uyumak",
+          "giyinmek",
+          "Bu bağlamda «просыпаться» uyanmak anlamına gelir."
+        ],
+        "recall": [
+          "Sabah uykudan uyanmayı anlatan fiili mastarla yaz.",
+          "просыпаться"
+        ],
+        "use": "Tatil evi notunda misafirin genelde kaçta uyandığını belirt."
+      },
+      "additionalWords": [
+        {
+          "term": "собираться",
+          "meaning": "hazırlanmak",
+          "example": "Она собирается на работу.",
+          "pronunciation": "собира́ться",
+          "collocations": [
+            "собираться на работу",
+            "собираться в школу"
+          ],
+          "usage": "«на работу / в школу» ile hazırlığın amacı.",
+          "recognize": [
+            "«собираться» burada hangi anlamda? Она собирается на работу.",
+            "hazırlanmak",
+            "eve dönmek",
+            "dinlenmek",
+            "Bu bağlamda «собираться» hazırlanmak anlamına gelir."
+          ],
+          "recall": [
+            "Evden çıkmadan hazırlanma eylemini yaz.",
+            "собираться"
+          ],
+          "use": "Bir gezi sabahı ailenin hazırlanma zamanını bildir."
+        },
+        {
+          "term": "по будням",
+          "meaning": "hafta içleri",
+          "example": "По будням я встаю рано.",
+          "pronunciation": "по бу́дням",
+          "collocations": [
+            "работать по будням",
+            "учиться по будням"
+          ],
+          "usage": "Iş ve okul günlerinde tekrarlanan düzen.",
+          "recognize": [
+            "«по будням» burada hangi anlamda? По будням я встаю рано.",
+            "hafta içleri",
+            "hafta sonları",
+            "her sabah",
+            "Bu bağlamda «по будням» hafta içleri anlamına gelir."
+          ],
+          "recall": [
+            "Pazartesi–cuma düzenli tekrarı ifade et.",
+            "по будням"
+          ],
+          "use": "Hafta içi yüzme saatini duyur."
+        },
+        {
+          "term": "по выходным",
+          "meaning": "hafta sonları",
+          "example": "По выходным мы гуляем.",
+          "pronunciation": "по выходны́м",
+          "collocations": [
+            "гулять по выходным",
+            "отдыхать по выходным"
+          ],
+          "usage": "Cumartesi ve pazar tekrarı.",
+          "recognize": [
+            "«по выходным» burada hangi anlamda? По выходным мы гуляем.",
+            "hafta sonları",
+            "hafta içleri",
+            "akşamları",
+            "Bu bağlamda «по выходным» hafta sonları anlamına gelir."
+          ],
+          "recall": [
+            "Cumartesi ve pazar günleri için düzenli tekrar kalıbını yaz.",
+            "по выходным"
+          ],
+          "use": "Bir kulübe hafta sonu çalışma düzenini bildir."
+        },
+        {
+          "term": "до обеда",
+          "meaning": "öğle yemeğinden önce",
+          "example": "Я убираю комнату до обеда.",
+          "pronunciation": "до обе́да",
+          "collocations": [
+            "успеть до обеда",
+            "заниматься до обеда"
+          ],
+          "usage": "Öğle yemeğini sınır olarak verir.",
+          "recognize": [
+            "«до обеда» burada hangi anlamda? Я убираю комнату до обеда.",
+            "öğle yemeğinden önce",
+            "öğle yemeği sırasında",
+            "öğle yemeğinden sonra",
+            "Bu bağlamda «до обеда» öğle yemeğinden önce anlamına gelir."
+          ],
+          "recall": [
+            "«Öğle yemeğinden önce» zaman ifadesini yaz.",
+            "до обеда"
+          ],
+          "use": "Bir ev işi için öğleden önce bitecek adımı bildir."
+        },
+        {
+          "term": "выходить из дома",
+          "meaning": "evden çıkmak",
+          "example": "Я выхожу из дома в восемь.",
+          "pronunciation": "выходи́ть из до́ма",
+          "collocations": [
+            "рано выходить из дома",
+            "выходить из дома в семь"
+          ],
+          "usage": "«из + ilgi hâli» çıkılan yeri gösterir.",
+          "recognize": [
+            "«выходить из дома» burada hangi anlamda? Я выхожу из дома в восемь.",
+            "evden çıkmak",
+            "eve varmak",
+            "evde kalmak",
+            "Bu bağlamda «выходить из дома» evden çıkmak anlamına gelir."
+          ],
+          "recall": [
+            "Evden dışarı çıkma eylemini mastarla ver.",
+            "выходить из дома"
+          ],
+          "use": "Perşembe günü normalden erken çıkacağını anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "По выходным",
+          "cue": "hafta sonuna yayılan düzen"
+        }
+      ],
+      "writing": {
+        "prompt": "Ev arkadaşına hafta içi iki alışkanlığını zamanlarıyla yaz. Ardından bugünkü tek istisnayı belirt.",
+        "sample": "По будням я просыпаюсь в семь. Обычно я завтракаю до восьми. Сегодня я выхожу из дома в семь.",
+        "revision": "Bu kez iş arkadaşına yazıyorsun. Bir eylemin saatini değiştir ve öteki rutini koru.",
+        "criteria": [
+          "İki alışkanlık ile bugünkü istisna ayırt ediliyor.",
+          "Eylem ve saat bilgileri birbiriyle uyumlu."
+        ]
+      },
+      "input": {
+        "text": "Календарь для кухни.\nОбычно я завтракаю в семь.\nПо выходным завтрак в девять.\nСегодня завтрак в восемь.",
+        "reading": [
+          "Çizelge neyi ayırıyor?",
+          "normal saat ve istisna",
+          "iki adres",
+          "telefon ve ad",
+          "İlgili satırı diğer bilgilerle karşılaştır. Обычно я завтракаю в семь.",
+          "Обычно я завтракаю в семь."
+        ],
+        "transcript": "Объявление. Календарь для кухни. Обычно я завтракаю в семь. По выходным завтрак в девять. Сегодня завтрак в восемь.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Çizelge neyi ayırıyor?",
+          "normal saat ve istisna",
+          "iki adres",
+          "telefon ve ad",
+          "Обычно я завтракаю в семь.",
+          "Обычно я завтракаю в семь."
+        ],
+        "detail": [
+          "Hafta sonunda kahvaltı ne zaman?",
+          "dokuzda",
+          "yedide",
+          "sekizde",
+          "По выходным завтрак в девять.",
+          "По выходным завтрак в девять."
+        ]
+      },
+      "retry": {
+        "text": "Записка у двери.\nПо будням я выхожу в восемь.\nСегодня выхожу в шесть.\nВ субботу я дома.",
+        "reading": [
+          "Notta bugün için ne bildiriliyor?",
+          "daha erken çıkış",
+          "iş adresi",
+          "yeni ders saati",
+          "İlgili satırı diğer bilgilerle karşılaştır. Сегодня выхожу в шесть.",
+          "Сегодня выхожу в шесть."
+        ],
+        "transcript": "Новый случай. Записка у двери. По будням я выхожу в восемь. Сегодня выхожу в шесть. В субботу я дома.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Notta bugün için ne bildiriliyor?",
+          "daha erken çıkış",
+          "iş adresi",
+          "yeni ders saati",
+          "Сегодня выхожу в шесть.",
+          "Сегодня выхожу в шесть."
+        ],
+        "detail": [
+          "Bugün çıkış kaçta?",
+          "altıda",
+          "sekizde",
+          "yedide",
+          "Сегодня выхожу в шесть.",
+          "Сегодня выхожу в шесть."
+        ]
+      },
+      "readingUse": "Ortak ev takvimi metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Ev arkadaşına mutfak için sabah rutinini anlat. Bir misafir geldiğinde değişen saati ekle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "sequence",
+      "readingPurpose": "Normal bir günü birinci kişiyle anlat, rutin ve istisnayı saat ile ayır.",
+      "genres": {
+        "reading": "ortak ev takvimi",
+        "listening": "yazılı konuşma provası",
+        "writing": "ev arkadaşına rutin notu"
+      }
+    },
+    {
+      "id": "ru.product-fit",
+      "outcome": "A1.product-fit",
+      "level": "A1",
+      "prerequisite": [
+        "ru.order"
+      ],
+      "title": "Ürünü renk ve boyla seç",
+      "objective": "Mağazada isme uyan sıfatı seç ve istenen ürünü belirtme hâliyle iste.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Etikette sıfat ve isim uyumu",
+        "Rica cümlesinde belirtme hâli"
+      ],
+      "situation": "Mağaza rafında benzer ürünler var. Satıcıya doğru renk ve boyu birlikte söyle.",
+      "bridge": "«Можно…?» rica kalıbından sonra isteğin nesnesi gelir. Etiketteki sıfatı gerektiğinde çek.",
+      "models": [
+        {
+          "phrase": "Вот новый шарф. Вот новая шапка.",
+          "explanation": "İsim erilse новый, dişilse новая, nötrse новое. Bunlar etikette veya «вот» ile adlandırmada kullanılır."
+        },
+        {
+          "phrase": "Можно синюю шапку? Можно синий шарф?",
+          "explanation": "Dişil «синяя шапка» nesne olunca «синюю шапку». Cansız eril «синий шарф» aynı kalır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Etikette sıfat ve isim uyumu",
+          "incorrect": "Вот новый шапка.",
+          "correct": "Вот новая шапка.",
+          "explanation": "Sıfat ismin cinsiyetine ve sayısına uyar. Çoğul için «новые».",
+          "guided": [
+            [
+              "Rafa etiket yaz: нов___ пальто.",
+              "новое"
+            ],
+            [
+              "Bir çift eldivenin etiketi: нов___ перчатки.",
+              "новые"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Mavi atkı» için bağımsız etiket yaz. Sözlük biçimi: синий.",
+              "синий шарф"
+            ],
+            [
+              "Belirli ürünün «küçük boy» olduğunu etikette yaz: размер eril.",
+              "маленький размер"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kayıp eşya listesine «beyaz palto» yaz.",
+              "белое пальто"
+            ],
+            [
+              "Kış rafına «sıcak eldivenler» etiketini yaz.",
+              "тёплые перчатки"
+            ]
+          ]
+        },
+        {
+          "label": "Rica cümlesinde belirtme hâli",
+          "incorrect": "Можно синяя шапка?",
+          "correct": "Можно синюю шапку?",
+          "explanation": "Dişil -ая/-яя ve -а/-я bu nesnelerde -ую/-юю ve -у/-ю olur. Cansız eril örnekte değişim yok.",
+          "guided": [
+            [
+              "Покажите красн___ шапку. Sıfatı yaz.",
+              "красную"
+            ],
+            [
+              "Можно тёпл___ шарф? Sıfatı yaz.",
+              "тёплый"
+            ]
+          ],
+          "transfer": [
+            [
+              "Bir satıcıdan kibarca siyah şapkayı göstermesini iste.",
+              "Покажите, пожалуйста, чёрную шапку.",
+              "Пожалуйста, покажите чёрную шапку."
+            ],
+            [
+              "Kış pazarında «Yeşil atkıyı alıyorum» diye yaz.",
+              "Я беру зелёный шарф.",
+              "Беру зелёный шарф."
+            ]
+          ],
+          "delayed": [
+            [
+              "Kayıp eşya masasında beyaz kupayı göstermelerini iste. «Кружка» dişildir.",
+              "Покажите белую кружку, пожалуйста.",
+              "Покажите, пожалуйста, белую кружку."
+            ],
+            [
+              "Açık hava dükkânında «Gri sırt çantasını alıyorum» de.",
+              "Я беру серый рюкзак.",
+              "Беру серый рюкзак."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "шарф",
+        "meaning": "atkı",
+        "example": "Синий шарф стоит триста рублей.",
+        "pronunciation": "шарф",
+        "collocations": [
+          "тёплый шарф",
+          "длинный шарф"
+        ],
+        "usage": "Boyna sarılan giysi.",
+        "recognize": [
+          "«шарф» burada hangi anlamda? Синий шарф стоит триста рублей.",
+          "atkı",
+          "şapka",
+          "kemer",
+          "Bu bağlamda «шарф» atkı anlamına gelir."
+        ],
+        "recall": [
+          "Boyna sarılan giysiyi adlandır.",
+          "шарф"
+        ],
+        "use": "Pazarda gri olanı seçtiğini satıcıya bildir."
+      },
+      "additionalWords": [
+        {
+          "term": "перчатки",
+          "meaning": "eldivenler",
+          "example": "На полке белые перчатки.",
+          "pronunciation": "перча́тки",
+          "collocations": [
+            "тёплые перчатки",
+            "пара перчаток"
+          ],
+          "usage": "Tek eldiven «перчатка».",
+          "recognize": [
+            "«перчатки» burada hangi anlamda? На полке белые перчатки.",
+            "eldivenler",
+            "çoraplar",
+            "ayakkabılar",
+            "Bu bağlamda «перчатки» eldivenler anlamına gelir."
+          ],
+          "recall": [
+            "Elleri soğuktan koruyan, mağazada çoğul kullanılan ürünü yaz.",
+            "перчатки"
+          ],
+          "use": "Spor mağazasında iki farklı eldiven rengini ayır."
+        },
+        {
+          "term": "пальто",
+          "meaning": "palto",
+          "example": "Это новое пальто.",
+          "pronunciation": "пальто́",
+          "collocations": [
+            "длинное пальто",
+            "серое пальто"
+          ],
+          "usage": "Nötr, çekimsiz isim.",
+          "recognize": [
+            "«пальто» burada hangi anlamda? Это новое пальто.",
+            "palto",
+            "atkı",
+            "yağmurluk",
+            "Bu bağlamda «пальто» palto anlamına gelir."
+          ],
+          "recall": [
+            "Kışlık paltonun Rusça adını yaz.",
+            "пальто"
+          ],
+          "use": "Montla palto arasından hangisini deneyeceğini söyle."
+        },
+        {
+          "term": "размер побольше",
+          "meaning": "bir boy büyük",
+          "example": "Есть размер побольше?",
+          "pronunciation": "разме́р побо́льше",
+          "collocations": [
+            "посмотреть размер побольше",
+            "попросить размер побольше"
+          ],
+          "usage": "«побольше» biraz daha büyük boy ister.",
+          "recognize": [
+            "«размер побольше» burada hangi anlamda? Есть размер побольше?",
+            "bir boy büyük",
+            "bir boy küçük",
+            "aynı boy",
+            "Bu bağlamda «размер побольше» bir boy büyük anlamına gelir."
+          ],
+          "recall": [
+            "Aynı ürünün bir boy büyüğü için kısa mağaza ifadesini yaz.",
+            "размер побольше"
+          ],
+          "use": "Dar gelen ayakkabı için bir boy büyüğünü iste."
+        },
+        {
+          "term": "примерить",
+          "meaning": "üzerinde denemek",
+          "example": "Можно примерить пальто?",
+          "pronunciation": "приме́рить",
+          "collocations": [
+            "примерить обувь",
+            "примерить в магазине"
+          ],
+          "usage": "Ürün üzerinde deneme, «примерить + nesne».",
+          "recognize": [
+            "«примерить» burada hangi anlamda? Можно примерить пальто?",
+            "üzerinde denemek",
+            "değiştirmek",
+            "satın almak",
+            "Bu bağlamda «примерить» üzerinde denemek anlamına gelir."
+          ],
+          "recall": [
+            "Bir giysiyi satın almadan önce üzerinde denemek fiilini yaz.",
+            "примерить"
+          ],
+          "use": "Bir tiyatro kostümünü denemek için izin iste."
+        },
+        {
+          "term": "мне подходит",
+          "meaning": "bana uyuyor",
+          "example": "Этот размер мне подходит.",
+          "pronunciation": "мне подхо́дит",
+          "collocations": [
+            "размер мне подходит",
+            "куртка мне подходит"
+          ],
+          "usage": "«мне» kime uyduğunu söyler.",
+          "recognize": [
+            "«мне подходит» burada hangi anlamda? Этот размер мне подходит.",
+            "bana uyuyor",
+            "bana pahalı geliyor",
+            "bana bol geliyor",
+            "Bu bağlamda «мне подходит» bana uyuyor anlamına gelir."
+          ],
+          "recall": [
+            "Ürünün sana uyduğunu belirten iki kelimelik kalıbı yaz.",
+            "мне подходит"
+          ],
+          "use": "Denedikten sonra yeşil kazağın sana uyduğunu söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "Синяя шапка",
+          "cue": "dişil isim ve sıfatın etiket biçimi"
+        }
+      ],
+      "writing": {
+        "prompt": "Mağazadan gri bir atkı ve kırmızı bir şapka iste. Hangisini denemek istediğini de belirt.",
+        "sample": "Покажите серый шарф и красную шапку, пожалуйста. Можно примерить шапку?",
+        "revision": "Gri atkı yok. Rengini değiştirerek iki ürünü tekrar belirt.",
+        "criteria": [
+          "Her renk doğru ürüne bağlı.",
+          "Sıfat ve isim nesne biçiminde uyumlu."
+        ]
+      },
+      "input": {
+        "text": "Бирки на полке.\nСиний шарф — 300 рублей.\nСиняя шапка — 450 рублей.\nСерые перчатки — 250 рублей.",
+        "reading": [
+          "Etiketlerde ürünleri ayıran bilgi?",
+          "renk ve ürün adı",
+          "müşterinin soyadı",
+          "mağazanın adresi",
+          "İlgili satırı diğer bilgilerle karşılaştır. Синий шарф — 300 рублей.",
+          "Синий шарф — 300 рублей."
+        ],
+        "transcript": "Объявление. Бирки на полке. Синий шарф — 300 рублей. Синяя шапка — 450 рублей. Серые перчатки — 250 рублей.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Etiketlerde ürünleri ayıran bilgi?",
+          "renk ve ürün adı",
+          "müşterinin soyadı",
+          "mağazanın adresi",
+          "Синий шарф — 300 рублей.",
+          "Синий шарф — 300 рублей."
+        ],
+        "detail": [
+          "Mavi şapka kaç ruble?",
+          "450",
+          "300",
+          "250",
+          "Синяя шапка — 450 рублей.",
+          "Синяя шапка — 450 рублей."
+        ]
+      },
+      "retry": {
+        "text": "Вещи на обмен.\nБелое пальто — размер 46.\nСерая куртка — размер 44.\nЧёрные перчатки — размер 8.",
+        "reading": [
+          "Listede 46 beden olan ürün?",
+          "beyaz palto",
+          "gri ceket",
+          "siyah eldiven",
+          "İlgili satırı diğer bilgilerle karşılaştır. Белое пальто — размер 46.",
+          "Белое пальто — размер 46."
+        ],
+        "transcript": "Новый случай. Вещи на обмен. Белое пальто — размер 46. Серая куртка — размер 44. Чёрные перчатки — размер 8.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Listede 46 beden olan ürün?",
+          "beyaz palto",
+          "gri ceket",
+          "siyah eldiven",
+          "Белое пальто — размер 46.",
+          "Белое пальто — размер 46."
+        ],
+        "detail": [
+          "Gri ceket kaç beden?",
+          "44",
+          "46",
+          "8",
+          "Серая куртка — размер 44.",
+          "Серая куртка — размер 44."
+        ]
+      },
+      "readingUse": "Raf etiketi metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Mağazada bir şapkayı tarif et, denemek için izin iste, gerekirse bir boy büyüğünü sor.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Mağazada isme uyan sıfatı seç ve istenen ürünü belirtme hâliyle iste.",
+      "genres": {
+        "reading": "raf etiketi",
+        "listening": "yazılı konuşma provası",
+        "writing": "satıcıya seçim notu"
+      }
+    },
+    {
+      "id": "ru.market-basket",
+      "outcome": "A1.market-basket",
+      "level": "A1",
+      "prerequisite": [
+        "ru.numbers",
+        "ru.product-fit"
+      ],
+      "title": "Sepetin miktarını ve toplamını doğrula",
+      "objective": "Pazar tezgâhında ürünü kap veya ölçüyle iste, sonra birim fiyat ile toplamı ayır.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Kap, ölçü ve ilgi hâli",
+        "Birim fiyat ve toplam"
+      ],
+      "situation": "Satıcı kilo fiyatını söylüyor. Yarım kilo isteyen müşterinin ödeyeceği toplamı ayrı tut.",
+      "bridge": "Fiyat sorma ve ruble biçimlerine şimdi ürünün ölçüsünü ve toplamı ekle.",
+      "models": [
+        {
+          "phrase": "Мне полкило сыра и пакет орехов, пожалуйста.",
+          "explanation": "«Полкило» ve kap adı ürünün miktarını belirler. Ardından ilgi hâli gelir: сы́ра, оре́хов. Aynı türden su ve domates miktarları: «буты́лка воды́», «полкило́ помидо́ров»."
+        },
+        {
+          "phrase": "Кило стоит сто рублей. Сколько всего за полкило?",
+          "explanation": "«За кило» birim fiyatı, «всего» toplamı işaretler. «Сколько с меня?» ödenecek tutarı sorar."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Kap, ölçü ve ilgi hâli",
+          "incorrect": "Мне полкило сыр.",
+          "correct": "Мне полкило сыра.",
+          "explanation": "Yarım kilo, paket, şişe gibi ölçülerden sonra ürün bu örneklerde «сыра / орехов / воды» olur.",
+          "guided": [
+            [
+              "Полкило ___ (сыр).",
+              "сыра"
+            ],
+            [
+              "Бутылка ___ (вода).",
+              "воды"
+            ]
+          ],
+          "transfer": [
+            [
+              "Pazarda kibarca bir paket fındık iste. «Орехи» kullan.",
+              "Мне пакет орехов, пожалуйста.",
+              "Пакет орехов, пожалуйста."
+            ],
+            [
+              "Listeye «yarım kilo domates» ekle.",
+              "полкило помидоров"
+            ]
+          ],
+          "delayed": [
+            [
+              "Piknik kayıt listesine «bir paket kraker» yaz. сухарики kullan.",
+              "пакет сухариков"
+            ],
+            [
+              "Fırın siparişinde «yarım kilo un» yaz.",
+              "полкило муки"
+            ]
+          ]
+        },
+        {
+          "label": "Birim fiyat ve toplam",
+          "incorrect": "Сколько стоит кило? (ödeyeceğin toplamı sorarken)",
+          "correct": "Сколько с меня?",
+          "explanation": "Etiketin birim fiyatı ile kasadaki toplam farklı olabilir. «Сколько всего?» veya «Сколько с меня?» ile toplamı sor.",
+          "guided": [
+            [
+              "Birim fiyatı sor: Сколько ___ кило?",
+              "стоит"
+            ],
+            [
+              "Ödenecek tutarı sor: Сколько с ___?",
+              "меня"
+            ]
+          ],
+          "transfer": [
+            [
+              "Tezgâhta ayrı ayrı iki ürün aldın. Birim fiyatı değil toplamı sor.",
+              "Сколько всего?",
+              "Сколько с меня?"
+            ],
+            [
+              "«Yarım kilo için ne kadar?» sorusunu Rusça yaz.",
+              "Сколько за полкило?",
+              "Сколько стоит полкило?"
+            ]
+          ],
+          "delayed": [
+            [
+              "Bir fırında aldığın iki ürüne ne ödeyeceğini «с меня» ile sor.",
+              "Сколько с меня?"
+            ],
+            [
+              "Baharat etiketinde «yüz gram için 90 ruble» yaz.",
+              "Девяносто рублей за сто граммов.",
+              "90 рублей за 100 граммов."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "полкило",
+        "meaning": "yarım kilo",
+        "example": "Дайте полкило яблок.",
+        "pronunciation": "полкило́",
+        "collocations": [
+          "полкило сыра",
+          "полкило яблок"
+        ],
+        "usage": "Sonrasında ürün ilgi hâlinde.",
+        "recognize": [
+          "«полкило» burada hangi anlamda? Дайте полкило яблок.",
+          "yarım kilo",
+          "iki kilo",
+          "yüz gram",
+          "Bu bağlamda «полкило» yarım kilo anlamına gelir."
+        ],
+        "recall": [
+          "Tezgâhta yarım kiloyu tek kelimeyle yaz.",
+          "полкило"
+        ],
+        "use": "Bir piknik için yarım kilo mantar iste."
+      },
+      "additionalWords": [
+        {
+          "term": "пакет орехов",
+          "meaning": "bir paket kuruyemiş",
+          "example": "Я беру пакет орехов.",
+          "pronunciation": "паке́т оре́хов",
+          "collocations": [
+            "купить пакет орехов",
+            "добавить пакет орехов"
+          ],
+          "usage": "«пакет» miktarı, «орехов» içeriği bildirir.",
+          "recognize": [
+            "«пакет орехов» burada hangi anlamda? Я беру пакет орехов.",
+            "bir paket kuruyemiş",
+            "bir kutu çay",
+            "bir avuç meyve",
+            "Bu bağlamda «пакет орехов» bir paket kuruyemiş anlamına gelir."
+          ],
+          "recall": [
+            "Tezgâhtan bir paket kuruyemiş isteğinde kullanılan isim grubunu yaz.",
+            "пакет орехов"
+          ],
+          "use": "Gezi için bir paket kuruyemiş ve başka bir ürün sipariş et."
+        },
+        {
+          "term": "на развес",
+          "meaning": "tartılarak, açık olarak",
+          "example": "Печенье продают на развес.",
+          "pronunciation": "на разве́с",
+          "collocations": [
+            "сыр на развес",
+            "купить на развес"
+          ],
+          "usage": "Hazır paket yerine tartıyla satış.",
+          "recognize": [
+            "«на развес» burada hangi anlamda? Печенье продают на развес.",
+            "tartılarak, açık olarak",
+            "indirimli",
+            "önceden paketlenmiş",
+            "Bu bağlamda «на развес» tartılarak, açık olarak anlamına gelir."
+          ],
+          "recall": [
+            "Paketsiz, tartıyla satılan ürün için hangi kalıp kullanılır?",
+            "на развес"
+          ],
+          "use": "Kurabiyenin açık satılıp satılmadığını sor."
+        },
+        {
+          "term": "цена за кило",
+          "meaning": "kilo fiyatı",
+          "example": "На табличке — цена за кило.",
+          "pronunciation": "цена́ за кило́",
+          "collocations": [
+            "уточнить цену за кило",
+            "цена за кило яблок"
+          ],
+          "usage": "Bir kilogram başına etiketlenen tutar.",
+          "recognize": [
+            "«цена за кило» burada hangi anlamda? На табличке — цена за кило.",
+            "kilo fiyatı",
+            "tüm sepetin fiyatı",
+            "paket başına fiyat",
+            "Bu bağlamda «цена за кило» kilo fiyatı anlamına gelir."
+          ],
+          "recall": [
+            "Tezgâhtaki kilogram başına fiyat başlığını yaz.",
+            "цена за кило"
+          ],
+          "use": "Etikette hangi tutarın kilogram fiyatı olduğunu sor."
+        },
+        {
+          "term": "сколько с меня",
+          "meaning": "ne kadar ödeyeceğim",
+          "example": "Спасибо. Сколько с меня?",
+          "pronunciation": "ско́лько с меня́",
+          "collocations": [
+            "сколько с меня за всё",
+            "скажите, сколько с меня"
+          ],
+          "usage": "Müşterinin ödeyeceği tutarı sorar.",
+          "recognize": [
+            "«сколько с меня» burada hangi anlamda? Спасибо. Сколько с меня?",
+            "ne kadar ödeyeceğim",
+            "ne kadar para üstü",
+            "ne kadar ürün kaldı",
+            "Bu bağlamda «сколько с меня» ne kadar ödeyeceğim anlamına gelir."
+          ],
+          "recall": [
+            "Kasada toplam borcu öğrenmek için kısa soru yaz.",
+            "сколько с меня"
+          ],
+          "use": "Bir pastanede iki ürünü aldıktan sonra ödeyeceğin tutarı sor."
+        },
+        {
+          "term": "сдача",
+          "meaning": "para üstü",
+          "example": "Вот ваша сдача.",
+          "pronunciation": "сда́ча",
+          "collocations": [
+            "дать сдачу",
+            "проверить сдачу"
+          ],
+          "usage": "Ödenen paranın geri verilen kısmı.",
+          "recognize": [
+            "«сдача» burada hangi anlamda? Вот ваша сдача.",
+            "para üstü",
+            "indirim",
+            "toplam tutar",
+            "Bu bağlamda «сдача» para üstü anlamına gelir."
+          ],
+          "recall": [
+            "Kasadan geri alınan paranın adını yaz.",
+            "сдача"
+          ],
+          "use": "Pazar alışverişinden sonra para üstünün doğru olduğunu belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "Цена за кило",
+          "cue": "bir kilogram için gösterilen fiyat"
+        }
+      ],
+      "writing": {
+        "prompt": "Öğle yemeği için pazardan yarım kilo domates ve bir şişe su iste. Sonra toplam tutarı sor.",
+        "sample": "Полкило помидоров и бутылку воды, пожалуйста. Сколько с меня?",
+        "revision": "Tezgâhta domates kalmamış. Onun yerine yarım kilo armut iste ve suyu koru.",
+        "criteria": [
+          "İki ürün ve miktarları açık.",
+          "Toplam fiyat ayrı soruluyor."
+        ]
+      },
+      "input": {
+        "text": "Овощной рынок.\nЦена за кило груш — 120 рублей.\nПолкило груш — 60 рублей.\nПакет орехов — 80 рублей.",
+        "reading": [
+          "120 ruble neyi gösteriyor?",
+          "armudun kilo fiyatını",
+          "armudun yarım kilo fiyatını",
+          "paket fiyatını",
+          "İlgili satırı diğer bilgilerle karşılaştır. Цена за кило груш — 120 рублей.",
+          "Цена за кило груш — 120 рублей."
+        ],
+        "transcript": "Объявление. Овощной рынок. Цена за кило груш — 120 рублей. Полкило груш — 60 рублей. Пакет орехов — 80 рублей.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · 120 ruble neyi gösteriyor?",
+          "armudun kilo fiyatını",
+          "armudun yarım kilo fiyatını",
+          "paket fiyatını",
+          "Цена за кило груш — 120 рублей.",
+          "Цена за кило груш — 120 рублей."
+        ],
+        "detail": [
+          "Yarım kilo armut kaç ruble?",
+          "60",
+          "120",
+          "80",
+          "Полкило груш — 60 рублей.",
+          "Полкило груш — 60 рублей."
+        ]
+      },
+      "retry": {
+        "text": "Заказ на ярмарке.\nСто граммов чая — 90 рублей.\nДва пакета печенья — 100 рублей.\nИтого — 190 рублей.",
+        "reading": [
+          "100 ruble ne için?",
+          "iki paket kurabiye",
+          "çay",
+          "tüm sipariş",
+          "İlgili satırı diğer bilgilerle karşılaştır. Два пакета печенья — 100 рублей.",
+          "Два пакета печенья — 100 рублей."
+        ],
+        "transcript": "Новый случай. Заказ на ярмарке. Сто граммов чая — 90 рублей. Два пакета печенья — 100 рублей. Итого — 190 рублей.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · 100 ruble ne için?",
+          "iki paket kurabiye",
+          "çay",
+          "tüm sipariş",
+          "Два пакета печенья — 100 рублей.",
+          "Два пакета печенья — 100 рублей."
+        ],
+        "detail": [
+          "Kasada toplam kaç ruble?",
+          "190",
+          "90",
+          "100",
+          "Итого — 190 рублей.",
+          "Итого — 190 рублей."
+        ]
+      },
+      "readingUse": "Pazar fiyat kartı metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Satıcıdan iki ürünü farklı ölçülerle al ve tartıldıktan sonra ne kadar ödeyeceğini sor.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "decoding",
+      "readingPurpose": "Pazar tezgâhında ürünü kap veya ölçüyle iste, sonra birim fiyat ile toplamı ayır.",
+      "genres": {
+        "reading": "pazar fiyat kartı",
+        "listening": "yazılı konuşma provası",
+        "writing": "tezgâh sipariş notu"
+      }
+    },
+    {
+      "id": "ru.destination-check",
+      "outcome": "A1.destination-check",
+      "level": "A1",
+      "prerequisite": [
+        "ru.city"
+      ],
+      "title": "Yer ile varış noktasını ayır",
+      "objective": "Bir ziyaretçiye bulunduğun yeri ve gitmek istediğin yeri ayrı belirt.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "«В» ile yer ve hedef",
+        "«На» ile yer ve hedef"
+      ],
+      "situation": "Kültür merkezinin iki girişi var. Bir arkadaş nerede olduğunu, diğeri nereye gittiğini yazıyor.",
+      "bridge": "Şehir söylerken «в городе» kullandın. Şimdi aynı yerin hedef olarak biçimini karşılaştır.",
+      "models": [
+        {
+          "phrase": "Я в аптеке. Я иду в аптеку.",
+          "explanation": "«Где?» yer sorar: в аптеке. «Куда?» hedef sorar: в аптеку. «В» aynı kalır, ismin biçimi değişir."
+        },
+        {
+          "phrase": "Мы на выставке. Мы идём на выставку.",
+          "explanation": "Bazı yer ve etkinlikler «на» alır. «На выставке» bulunduğun yeri, «на выставку» hedefi gösterir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "«В» ile yer ve hedef",
+          "incorrect": "Я иду в библиотеке.",
+          "correct": "Я иду в библиотеку.",
+          "explanation": "Dişil -а/-я ile bu örneklerde yer -е, hedef -у/-ю alır. «Иду» hareketi gösterir.",
+          "guided": [
+            [
+              "Я сейчас в ___ (аптека).",
+              "аптеке"
+            ],
+            [
+              "Я иду в ___ (библиотека).",
+              "библиотеку"
+            ]
+          ],
+          "transfer": [
+            [
+              "Arkadaşına «Şu anda kütüphanedeyim» yaz.",
+              "Я сейчас в библиотеке.",
+              "Сейчас я в библиотеке."
+            ],
+            [
+              "Eczaneye yürüdüğünü «иду» kullanarak bildir.",
+              "Я иду в аптеку.",
+              "Иду в аптеку."
+            ]
+          ],
+          "delayed": [
+            [
+              "Müzeye gidiyorsun. «идти» ile hedefi bildir.",
+              "Я иду в музей.",
+              "Иду в музей."
+            ],
+            [
+              "Soyunma odasındasın. «раздевалка» kullanarak «Şu anda soyunma odasındayım» yaz.",
+              "Я сейчас в раздевалке.",
+              "Сейчас я в раздевалке."
+            ]
+          ]
+        },
+        {
+          "label": "«На» ile yer ve hedef",
+          "incorrect": "Мы идём на выставке.",
+          "correct": "Мы идём на выставку.",
+          "explanation": "«На» ile de yer ve hedefi ismin hâli ayırır. Öğrenirken «на выставку / на выставке» gibi ikilileri kullan.",
+          "guided": [
+            [
+              "Оля сейчас на ___ (выставка).",
+              "выставке"
+            ],
+            [
+              "Мы идём на ___ (выставка).",
+              "выставку"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Duraktayım» diye yaz. на kullan.",
+              "Я на остановке."
+            ],
+            [
+              "Arkadaşına «Durağa yürüyorum» yaz. на + остановка.",
+              "Я иду на остановку.",
+              "Иду на остановку."
+            ]
+          ],
+          "delayed": [
+            [
+              "Biletli bir gösteriye giderken «Konsere gidiyoruz» yaz.",
+              "Мы идём на концерт.",
+              "Идём на концерт."
+            ],
+            [
+              "Spor kulübüne şu anda antrenmanda olduğunu «на + тренировка» ile bildir.",
+              "Я сейчас на тренировке.",
+              "Сейчас я на тренировке."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "вход со двора",
+        "meaning": "avlu tarafından giriş",
+        "example": "В офисе вход со двора.",
+        "pronunciation": "вход со двора́",
+        "collocations": [
+          "искать вход со двора",
+          "табличка «Вход со двора»"
+        ],
+        "usage": "«со двора» giriş yönünü verir.",
+        "recognize": [
+          "«вход со двора» burada hangi anlamda? В офисе вход со двора.",
+          "avlu tarafından giriş",
+          "ana caddeden giriş",
+          "bahçeye çıkış",
+          "Bu bağlamda «вход со двора» avlu tarafından giriş anlamına gelir."
+        ],
+        "recall": [
+          "Avludan girildiğini söyleyen tabelayı yaz.",
+          "вход со двора"
+        ],
+        "use": "Bir atölyeye gelecek kişiye sokak girişi yerine avlu girişini bildir."
+      },
+      "additionalWords": [
+        {
+          "term": "боковой вход",
+          "meaning": "yan giriş",
+          "example": "Боковой вход открыт.",
+          "pronunciation": "боково́й вход",
+          "collocations": [
+            "искать боковой вход",
+            "войти через боковой вход"
+          ],
+          "usage": "«боковой» binanın yan tarafını belirtir.",
+          "recognize": [
+            "«боковой вход» burada hangi anlamda? Боковой вход открыт.",
+            "yan giriş",
+            "ana giriş",
+            "arka çıkış",
+            "Bu bağlamda «боковой вход» yan giriş anlamına gelir."
+          ],
+          "recall": [
+            "Binanın yan tarafındaki girişe ne denir?",
+            "боковой вход"
+          ],
+          "use": "Bir sergi ziyaretçisine yan girişin açık olduğunu söyle."
+        },
+        {
+          "term": "на площадке",
+          "meaning": "alanda, platformda",
+          "example": "Дети уже на площадке.",
+          "pronunciation": "на площа́дке",
+          "collocations": [
+            "ждать на площадке",
+            "играть на площадке"
+          ],
+          "usage": "«где?» sorusuna yer yanıtı.",
+          "recognize": [
+            "«на площадке» burada hangi anlamda? Дети уже на площадке.",
+            "alanda, platformda",
+            "alanın önünde",
+            "alandan çıkış",
+            "Bu bağlamda «на площадке» alanda, platformda anlamına gelir."
+          ],
+          "recall": [
+            "Bir açık alanda bulunmayı belirten yer ifadesini yaz.",
+            "на площадке"
+          ],
+          "use": "Çocuklar yerine bir müzik grubunun alanda beklediğini bildir."
+        },
+        {
+          "term": "книжный зал",
+          "meaning": "kitap salonu",
+          "example": "Книжный зал слева.",
+          "pronunciation": "кни́жный зал",
+          "collocations": [
+            "новый книжный зал",
+            "войти в книжный зал"
+          ],
+          "usage": "Etkinlik alanından ayrı kitap bölümü.",
+          "recognize": [
+            "«книжный зал» burada hangi anlamda? Книжный зал слева.",
+            "kitap salonu",
+            "bilet gişesi",
+            "sergi salonu",
+            "Bu bağlamda «книжный зал» kitap salonu anlamına gelir."
+          ],
+          "recall": [
+            "Kitaplara ayrılmış salonu adlandır.",
+            "книжный зал"
+          ],
+          "use": "Binaya gelen birini kitap salonuna yönlendir."
+        },
+        {
+          "term": "справочная",
+          "meaning": "danışma",
+          "example": "Справочная на первом этаже.",
+          "pronunciation": "спра́вочная",
+          "collocations": [
+            "городская справочная",
+            "спросить в справочной"
+          ],
+          "usage": "Bilgi alma ve yön sorma noktası.",
+          "recognize": [
+            "«справочная» burada hangi anlamda? Справочная на первом этаже.",
+            "danışma",
+            "emanet gişesi",
+            "güvenlik kapısı",
+            "Bu bağlamda «справочная» danışma anlamına gelir."
+          ],
+          "recall": [
+            "Kuruma gelenlerin bilgi alabildiği danışma noktasını yaz.",
+            "справочная"
+          ],
+          "use": "Sorduğun bilgiyi danışmada aldığını arkadaşına bildir."
+        },
+        {
+          "term": "зал ожидания",
+          "meaning": "bekleme salonu",
+          "example": "Зал ожидания открыт.",
+          "pronunciation": "зал ожида́ния",
+          "collocations": [
+            "сидеть в зале ожидания",
+            "пойти в зал ожидания"
+          ],
+          "usage": "«в зале» bulunma, «в зал» yön.",
+          "recognize": [
+            "«зал ожидания» burada hangi anlamda? Зал ожидания открыт.",
+            "bekleme salonu",
+            "toplantı salonu",
+            "danışma masası",
+            "Bu bağlamda «зал ожидания» bekleme salonu anlamına gelir."
+          ],
+          "recall": [
+            "Beklemek için ayrılan salona ne denir?",
+            "зал ожидания"
+          ],
+          "use": "Klinikte arkadaşını bekleme salonuna çağır."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "вход со двора",
+          "cue": "girişin avludan olduğu bilgisi"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir kurs merkezine vardın. Şu an fuayede olduğunu ve kitap salonuna gittiğini bir mesajda bildir. «фойе» biçimi değişmez.",
+        "sample": "Я сейчас в фойе. Иду в книжный зал.",
+        "revision": "Kitap salonu kapalı. Hedefi bekleme salonuyla değiştir.",
+        "criteria": [
+          "Başlangıç yeri ile hareket hedefi ayrılıyor.",
+          "Hedef, uygun «в» kalıbıyla veriliyor."
+        ]
+      },
+      "input": {
+        "text": "Культурный центр: вход со двора.\nИра: я уже на выставке.\nПавел: я иду в книжный зал.\nЗал налево от входа.",
+        "reading": [
+          "Kim henüz hedefe ulaşıyor?",
+          "Павел",
+          "Ира",
+          "ikisi de ulaştı",
+          "İlgili satırı diğer bilgilerle karşılaştır. Павел: я иду в книжный зал.",
+          "Павел: я иду в книжный зал."
+        ],
+        "transcript": "Объявление. Культурный центр: вход со двора. Ира: я уже на выставке. Павел: я иду в книжный зал. Зал налево от входа.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Kim henüz hedefe ulaşıyor?",
+          "Павел",
+          "Ира",
+          "ikisi de ulaştı",
+          "Павел: я иду в книжный зал.",
+          "Павел: я иду в книжный зал."
+        ],
+        "detail": [
+          "Kapı hangi tarafta?",
+          "avlu tarafı",
+          "otopark tarafı",
+          "sokak tarafı",
+          "Культурный центр: вход со двора.",
+          "Культурный центр: вход со двора."
+        ]
+      },
+      "retry": {
+        "text": "Афиша и чат.\nЛада: я на концерте.\nВитя: я иду на остановку.\nПосле концерта встречаемся у метро.",
+        "reading": [
+          "Витя nereye gidiyor?",
+          "durağa",
+          "konsere",
+          "metroya",
+          "İlgili satırı diğer bilgilerle karşılaştır. Витя: я иду на остановку.",
+          "Витя: я иду на остановку."
+        ],
+        "transcript": "Новый случай. Афиша и чат. Лада: я на концерте. Витя: я иду на остановку. После концерта встречаемся у метро.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Витя nereye gidiyor?",
+          "durağa",
+          "konsere",
+          "metroya",
+          "Витя: я иду на остановку.",
+          "Витя: я иду на остановку."
+        ],
+        "detail": [
+          "Konser sonrası nerede buluşuyorlar?",
+          "metronun yanında",
+          "durağın içinde",
+          "salonda",
+          "После концерта встречаемся у метро.",
+          "После концерта встречаемся у метро."
+        ]
+      },
+      "readingUse": "Ziyaretçi mesaj panosu metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Ziyarete gelen arkadaşına yerini yaz ve hangi ayrı noktaya doğru yürüdüğünü belirt.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Bir ziyaretçiye bulunduğun yeri ve gitmek istediğin yeri ayrı belirt.",
+      "genres": {
+        "reading": "ziyaretçi mesaj panosu",
+        "listening": "yazılı konuşma provası",
+        "writing": "varış mesajı"
+      }
+    },
+    {
+      "id": "ru.opening-hours",
+      "outcome": "A1.opening-hours",
+      "level": "A1",
+      "prerequisite": [
+        "ru.shift-note"
+      ],
+      "title": "Çalışma saatinden uygun aralığı seç",
+      "objective": "İlanı okuyup bir hizmete ne zaman yetişebileceğini belirle ve kapalı saatle çakışmayı önle.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "«С / до» sonrası saat biçimleri",
+        "Kısa sıfatla açık ve kapalı durum"
+      ],
+      "situation": "Bir teslim noktası öğle arasında kapanıyor. Açılış, kapanış ve ara bilgisinden bir ziyaret saati seç.",
+      "bridge": "Vardiya çizelgesindeki «с … до …» bilgisini şimdi çalışan ve kapalı gişe saatlerine uygula.",
+      "models": [
+        {
+          "phrase": "Пункт открыт с десяти. Касса работает до шести.",
+          "explanation": "«С» başlangıç, «до» bitiştir. Saat sayıları bu örneklerde с десяти́, до шести́ olur."
+        },
+        {
+          "phrase": "Пункт открыт, но касса закрыта на перерыв.",
+          "explanation": "Kısa sıfat «открыт / закрыт» eril, «открыта / закрыта» dişil, «открыто / закрыто» nötr isimle kullanılır. Burada «но» kısıtı ekler."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "«С / до» sonrası saat biçimleri",
+          "incorrect": "Пункт открыт с десять до шесть.",
+          "correct": "Пункт открыт с десяти до шести.",
+          "explanation": "Saat aralığında «с/до» sonrasında sayı hâli değişir: с девяти, до пяти, с двух.",
+          "guided": [
+            [
+              "С ___ (11) до двух.",
+              "одиннадцати"
+            ],
+            [
+              "Касса работает до ___ (7).",
+              "семи"
+            ]
+          ],
+          "transfer": [
+            [
+              "Bankanın saat dokuzda açıldığını «открыт» ve «с» ile yaz.",
+              "Банк открыт с девяти."
+            ],
+            [
+              "Kütüphane gişesi saat beşe kadar çalışıyor. «до» ile duyuru yaz.",
+              "Касса работает до пяти."
+            ]
+          ],
+          "delayed": [
+            [
+              "Posta şubesi saat on ikiden dörde kadar açık. «Почта открыта …» biçiminde mini duyuru yaz.",
+              "Почта открыта с двенадцати до четырёх."
+            ],
+            [
+              "Kayıt masası dörde kadar çalışıyor. «Стойка» ve «до» kullan.",
+              "Стойка работает до четырёх."
+            ]
+          ]
+        },
+        {
+          "label": "Kısa sıfatla açık ve kapalı durum",
+          "incorrect": "Касса открыт до шести.",
+          "correct": "Касса открыта до шести.",
+          "explanation": "«Касса» dişil, «пункт» eril, «окно» nötrdür. Açık veya kapalı olma bilgisindeki kısa sıfatı buna uydur.",
+          "guided": [
+            [
+              "Окно выдачи ___ до пяти. (açık)",
+              "открыто"
+            ],
+            [
+              "Служба сейчас ___. (kapalı)",
+              "закрыта"
+            ]
+          ],
+          "transfer": [
+            [
+              "«Giriş geçici olarak kapalı» levhasını «вход» ile yaz.",
+              "Вход временно закрыт."
+            ],
+            [
+              "«Gişe kapalı ama teslim penceresi açık» duyurusu. «окно выдачи» kullan.",
+              "Касса закрыта, но окно выдачи открыто."
+            ]
+          ],
+          "delayed": [
+            [
+              "«Soyunma odası molada kapalı.» «Раздевалка» dişil ve «на перерыв» kullan.",
+              "Раздевалка закрыта на перерыв."
+            ],
+            [
+              "Atölye kapalı, fakat ofis açık. «Мастерская» ve «офис» kullan.",
+              "Мастерская закрыта, но офис открыт."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "часы работы",
+        "meaning": "çalışma saatleri",
+        "example": "Часы работы указаны на двери.",
+        "pronunciation": "часы́ рабо́ты",
+        "collocations": [
+          "проверить часы работы",
+          "новые часы работы"
+        ],
+        "usage": "Bir yerin açılış ve kapanış çizelgesi.",
+        "recognize": [
+          "«часы работы» burada hangi anlamda? Часы работы указаны на двери.",
+          "çalışma saatleri",
+          "vardiya değişimi",
+          "randevu başlangıcı",
+          "Bu bağlamda «часы работы» çalışma saatleri anlamına gelir."
+        ],
+        "recall": [
+          "Bir iş yerinin çalışma saatleri için tabela başlığını yaz.",
+          "часы работы"
+        ],
+        "use": "Yeni gideceğin kliniğin çalışma saatlerini sor."
+      },
+      "additionalWords": [
+        {
+          "term": "перерыв на обед",
+          "meaning": "öğle arası",
+          "example": "Перерыв на обед с часу до двух.",
+          "pronunciation": "переры́в на обе́д",
+          "collocations": [
+            "объявить перерыв на обед",
+            "уйти на перерыв на обед"
+          ],
+          "usage": "Öğlen için belirli kapanma süresi.",
+          "recognize": [
+            "«перерыв на обед» burada hangi anlamda? Перерыв на обед с часу до двух.",
+            "öğle arası",
+            "gün sonu kapanışı",
+            "sabah molası",
+            "Bu bağlamda «перерыв на обед» öğle arası anlamına gelir."
+          ],
+          "recall": [
+            "Öğle yemeği için kapanılan arayı adlandır.",
+            "перерыв на обед"
+          ],
+          "use": "Gişenin öğle arasından sonra geleceğini bildir."
+        },
+        {
+          "term": "до закрытия",
+          "meaning": "kapanıştan önce, kapanışa kadar",
+          "example": "До закрытия ещё час.",
+          "pronunciation": "до закры́тия",
+          "collocations": [
+            "успеть до закрытия",
+            "десять минут до закрытия"
+          ],
+          "usage": "«до» kapanışı sınır olarak verir.",
+          "recognize": [
+            "«до закрытия» burada hangi anlamda? До закрытия ещё час.",
+            "kapanıştan önce, kapanışa kadar",
+            "açılıştan sonra",
+            "mola sırasında",
+            "Bu bağlamda «до закрытия» kapanıştan önce, kapanışa kadar anlamına gelir."
+          ],
+          "recall": [
+            "Kapanış vaktinden önceyi belirten kalıbı yaz.",
+            "до закрытия"
+          ],
+          "use": "Postaneye kapanmadan yetişeceğini söyle."
+        },
+        {
+          "term": "без перерыва",
+          "meaning": "arasız, mola vermeden",
+          "example": "Пункт работает без перерыва.",
+          "pronunciation": "без переры́ва",
+          "collocations": [
+            "работать без перерыва",
+            "открыто без перерыва"
+          ],
+          "usage": "«без + ilgi hâli» molanın olmadığını bildirir.",
+          "recognize": [
+            "«без перерыва» burada hangi anlamda? Пункт работает без перерыва.",
+            "arasız, mola vermeden",
+            "sadece molada",
+            "iki mola ile",
+            "Bu bağlamda «без перерыва» arasız, mola vermeden anlamına gelir."
+          ],
+          "recall": [
+            "Öğle arasında kapanmayan yerde «molasız» nasıl yazılır?",
+            "без перерыва"
+          ],
+          "use": "Cumartesi molasız çalışan bir yeri bir arkadaşına öner."
+        },
+        {
+          "term": "временно закрыт",
+          "meaning": "geçici olarak kapalı",
+          "example": "Зал временно закрыт.",
+          "pronunciation": "вре́менно закры́т",
+          "collocations": [
+            "вход временно закрыт",
+            "пункт временно закрыт"
+          ],
+          "usage": "«закрыт» eril isimle, «закрыта» dişil isimle.",
+          "recognize": [
+            "«временно закрыт» burada hangi anlamda? Зал временно закрыт.",
+            "geçici olarak kapalı",
+            "geçici olarak açık",
+            "kalıcı olarak kapalı",
+            "Bu bağlamda «временно закрыт» geçici olarak kapalı anlamına gelir."
+          ],
+          "recall": [
+            "Bir girişin kısa süreliğine kapalı olduğunu eril biçimde yaz.",
+            "временно закрыт"
+          ],
+          "use": "Geçici olarak kapatılan bir ofis için tabela hazırla."
+        },
+        {
+          "term": "получить талон",
+          "meaning": "sıra numarası almak",
+          "example": "Сначала нужно получить талон.",
+          "pronunciation": "получи́ть тало́н",
+          "collocations": [
+            "получить талон у входа",
+            "получить талон в автомате"
+          ],
+          "usage": "Numaralı hizmet sırası için.",
+          "recognize": [
+            "«получить талон» burada hangi anlamda? Сначала нужно получить талон.",
+            "sıra numarası almak",
+            "bilet iade etmek",
+            "fiş istemek",
+            "Bu bağlamda «получить талон» sıra numarası almak anlamına gelir."
+          ],
+          "recall": [
+            "Gişe sırasına girmek için numara almayı anlatan kalıbı yaz.",
+            "получить талон"
+          ],
+          "use": "Kayıt masasına gelen birine önce nereden sıra numarası alacağını söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "Часы работы",
+          "cue": "hizmetin açık olduğu saat aralığı"
+        }
+      ],
+      "writing": {
+        "prompt": "Salı günü 13.00–14.00 arasında kapalı, kalan zamanda 18.00'e dek açık bir yer için 15.00'te buluşmayı öner. Saatini gerekçelendir.",
+        "sample": "Давайте встретимся у пункта в три. С часу до двух там перерыв, а в три пункт открыт.",
+        "revision": "Nokta 15.00'te de geçici olarak kapalı. İlanın sınırını aşmadan yeni saat ver.",
+        "criteria": [
+          "Saat, ilanla uyumlu.",
+          "Mola ile açık zaman ayrı ifade ediliyor."
+        ]
+      },
+      "input": {
+        "text": "Часы работы пункта.\nОткрыто с девяти до шести.\nПерерыв на обед с часу до двух.\nОкно выдачи закрыто во время перерыва.",
+        "reading": [
+          "Saat 13.30 neden uygun değil?",
+          "öğle arası var",
+          "nokta akşam açılıyor",
+          "teslim penceresi öğleden sonra hiç açılmıyor",
+          "İlgili satırı diğer bilgilerle karşılaştır. Перерыв на обед с часу до двух.",
+          "Перерыв на обед с часу до двух."
+        ],
+        "transcript": "Объявление. Часы работы пункта. Открыто с девяти до шести. Перерыв на обед с часу до двух. Окно выдачи закрыто во время перерыва.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Saat 13.30 neden uygun değil?",
+          "öğle arası var",
+          "nokta akşam açılıyor",
+          "teslim penceresi öğleden sonra hiç açılmıyor",
+          "Перерыв на обед с часу до двух.",
+          "Перерыв на обед с часу до двух."
+        ],
+        "detail": [
+          "Gişe ne zaman tekrar çalışır?",
+          "14.00",
+          "13.00",
+          "18.00",
+          "Перерыв на обед с часу до двух.",
+          "Перерыв на обед с часу до двух."
+        ]
+      },
+      "retry": {
+        "text": "Объявление в музее.\nВо вторник касса открыта с десяти до пяти.\nВход после четырёх закрыт.\nПерерыва нет.",
+        "reading": [
+          "16.30'da hangi işlem yapılamaz?",
+          "müzeye girmek",
+          "açık kasayı görmek",
+          "bilet fiyatı sormak",
+          "İlgili satırı diğer bilgilerle karşılaştır. Вход после четырёх закрыт.",
+          "Вход после четырёх закрыт."
+        ],
+        "transcript": "Новый случай. Объявление в музее. Во вторник касса открыта с десяти до пяти. Вход после четырёх закрыт. Перерыва нет.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · 16.30'da hangi işlem yapılamaz?",
+          "müzeye girmek",
+          "açık kasayı görmek",
+          "bilet fiyatı sormak",
+          "Вход после четырёх закрыт.",
+          "Вход после четырёх закрыт."
+        ],
+        "detail": [
+          "Kasa kaçta açılıyor?",
+          "10.00",
+          "16.00",
+          "17.00",
+          "Во вторник касса открыта с десяти до пяти.",
+          "Во вторник касса открыта с десяти до пяти."
+        ]
+      },
+      "readingUse": "Gişe duyurusu metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Bir arkadaşınla gişeye gitmek için uygun saat seç. Neden önceki saatin uymadığını söyle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "decoding",
+      "readingPurpose": "İlanı okuyup bir hizmete ne zaman yetişebileceğini belirle ve kapalı saatle çakışmayı önle.",
+      "genres": {
+        "reading": "gişe duyurusu",
+        "listening": "yazılı konuşma provası",
+        "writing": "ziyaret planı mesajı"
+      }
+    },
+    {
+      "id": "ru.appointment-change",
+      "outcome": "A2.appointment-change",
+      "level": "A2",
+      "prerequisite": [
+        "ru.meeting",
+        "ru.contact-check"
+      ],
+      "title": "Randevuyu iptal et ve yeni saat al",
+      "objective": "Hizmet randevusunun eski ve yeni zamanını ayır, değişikliğin geçerli olduğunu teyit et.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Randevu günü «на», olay günü «в»",
+        "İptal ve teyit istekleri"
+      ],
+      "situation": "Tamir atölyesinin eski kaydı iptal edildi. İki yeni aralıktan uygun olanı iste ve yanlış saatin boşta kalmamasını sağla.",
+      "bridge": "Arkadaşla zaman önerisi yerine kurumda «отменить / перенести запись» kullan.",
+      "models": [
+        {
+          "phrase": "Я записан на среду на три. Можно перенести запись на пятницу?",
+          "explanation": "«На + gün/saat» randevunun ayrıldığı zamanı belirtir. «В пятницу я приду» ise geleceğin günü söyler."
+        },
+        {
+          "phrase": "Отмените запись на среду. Подтвердите, пожалуйста, запись на пятницу.",
+          "explanation": "«Отменить» kaydı durdurur, «перенести» yeni bir zamana alır. Teyit isterken hangi kaydı kastettiğini ekle."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Randevu günü «на», olay günü «в»",
+          "incorrect": "Перенесите запись в пятницу. (Yeni randevu cuma olsun)",
+          "correct": "Перенесите запись на пятницу.",
+          "explanation": "«На пятницу» yeni hedef gününü verir. «В пятницу» taşıma işleminin ne zaman yapılacağını veya eylemin gününü söyleyebilir.",
+          "guided": [
+            [
+              "Запишите меня ___ вторник.",
+              "на"
+            ],
+            [
+              "У нас запись на ___ (среда).",
+              "среду"
+            ]
+          ],
+          "transfer": [
+            [
+              "Tamir için perşembe 11.00'e randevu iste. «Запишите меня» kullan.",
+              "Запишите меня на четверг на одиннадцать, пожалуйста.",
+              "Запишите меня, пожалуйста, на четверг на одиннадцать."
+            ],
+            [
+              "Posta ziyareti için kaydı pazartesiye taşımayı sor.",
+              "Можно перенести запись на понедельник?"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kütüphane danışması için randevuyu cumartesiye taşımalarını rica et.",
+              "Перенесите запись на субботу, пожалуйста.",
+              "Пожалуйста, перенесите запись на субботу."
+            ],
+            [
+              "Dans denemesi için salı günü saat dörde yer iste. «Запишите меня» kullan.",
+              "Запишите меня на вторник на четыре, пожалуйста.",
+              "Запишите меня, пожалуйста, на вторник на четыре."
+            ]
+          ]
+        },
+        {
+          "label": "İptal ve teyit istekleri",
+          "incorrect": "Отмените запись на пятницу. (Cumayı korumak istiyorsun)",
+          "correct": "Подтвердите запись на пятницу.",
+          "explanation": "«Подтвердите, пожалуйста» yeni saati doğrulatır. İptal ettiğin saati ayrı cümlede ver.",
+          "guided": [
+            [
+              "Eski kaydı sil: ___ запись на четверг.",
+              "Отмените"
+            ],
+            [
+              "Yeni kaydı teyit ettir: ___ запись на субботу.",
+              "Подтвердите"
+            ]
+          ],
+          "transfer": [
+            [
+              "Ev bakımı için salı randevusunu kibarca iptal et.",
+              "Отмените запись на вторник, пожалуйста.",
+              "Пожалуйста, отмените запись на вторник."
+            ],
+            [
+              "Bisiklet tamirinde yeni saatin dokuz olduğunu «Подтвердите» ile doğrulat.",
+              "Подтвердите запись на девять, пожалуйста.",
+              "Пожалуйста, подтвердите запись на девять."
+            ]
+          ],
+          "delayed": [
+            [
+              "Yüzme denemesinin perşembe kaydını iptal et ve cumayı teyit ettir.",
+              "Отмените запись на четверг. Подтвердите запись на пятницу.",
+              "Отмените, пожалуйста, запись на четверг и подтвердите запись на пятницу."
+            ],
+            [
+              "Fotoğraf stüdyosu cumartesi kapalı. Cumartesi kaydını iptal ettir.",
+              "Отмените запись на субботу, пожалуйста.",
+              "Пожалуйста, отмените запись на субботу."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "отменить запись",
+        "meaning": "randevuyu iptal etmek",
+        "example": "Мне нужно отменить запись.",
+        "pronunciation": "отмени́ть за́пись",
+        "collocations": [
+          "отменить запись на завтра",
+          "отменить запись по телефону"
+        ],
+        "usage": "Ayrılmış saatin geçerliliğini kaldırmak.",
+        "recognize": [
+          "«отменить запись» burada hangi anlamda? Мне нужно отменить запись.",
+          "randevuyu iptal etmek",
+          "randevuyu onaylamak",
+          "randevuyu erkene almak",
+          "Bu bağlamda «отменить запись» randevuyu iptal etmek anlamına gelir."
+        ],
+        "recall": [
+          "Kuruma gelemediğinde kullanacağın iptal kalıbını mastarla yaz.",
+          "отменить запись"
+        ],
+        "use": "Olumsuz bir hava tahmini sonrası stüdyo randevusunu iptal etmeyi iste."
+      },
+      "additionalWords": [
+        {
+          "term": "перенести запись",
+          "meaning": "randevuyu başka zamana almak",
+          "example": "Можно перенести запись на четверг?",
+          "pronunciation": "перенести́ за́пись",
+          "collocations": [
+            "перенести запись на пятницу",
+            "перенести запись на утро"
+          ],
+          "usage": "Eski randevuyu yeni bir aralığa taşımak.",
+          "recognize": [
+            "«перенести запись» burada hangi anlamda? Можно перенести запись на четверг?",
+            "randevuyu başka zamana almak",
+            "randevuyu tamamen iptal etmek",
+            "randevuya gelmek",
+            "Bu bağlamda «перенести запись» randevuyu başka zamana almak anlamına gelir."
+          ],
+          "recall": [
+            "Mevcut randevuyu başka güne almak için mastarlı kalıbı yaz.",
+            "перенести запись"
+          ],
+          "use": "Ders saati çakışınca bakım kaydını ertesi sabaha almayı iste."
+        },
+        {
+          "term": "есть свободное время",
+          "meaning": "boş saat var",
+          "example": "В пятницу есть свободное время.",
+          "pronunciation": "есть свобо́дное вре́мя",
+          "collocations": [
+            "есть свободное время утром",
+            "уточнить, есть ли свободное время"
+          ],
+          "usage": "Henüz ayrılmamış saat.",
+          "recognize": [
+            "«есть свободное время» burada hangi anlamda? В пятницу есть свободное время.",
+            "boş saat var",
+            "bütün saatler dolu",
+            "kurum kapalı",
+            "Bu bağlamda «есть свободное время» boş saat var anlamına gelir."
+          ],
+          "recall": [
+            "Görevlinin boş saati olduğunu söyleyen kalıbı yaz.",
+            "есть свободное время"
+          ],
+          "use": "Bir spor denemesi için öğleden sonra boş saat olup olmadığını sor."
+        },
+        {
+          "term": "запись подтверждена",
+          "meaning": "randevu onaylandı",
+          "example": "Ваша запись подтверждена.",
+          "pronunciation": "за́пись подтверждена́",
+          "collocations": [
+            "запись подтверждена на завтра",
+            "запись подтверждена по телефону"
+          ],
+          "usage": "Onayın alındığını gösteren durum.",
+          "recognize": [
+            "«запись подтверждена» burada hangi anlamda? Ваша запись подтверждена.",
+            "randevu onaylandı",
+            "randevu iptal edildi",
+            "randevu beklemede",
+            "Bu bağlamda «запись подтверждена» randevu onaylandı anlamına gelir."
+          ],
+          "recall": [
+            "Onaylı bir randevunun bildirim durumunu Rusça yaz.",
+            "запись подтверждена"
+          ],
+          "use": "Bir kurs görüşmesinin saatiyle birlikte onaylandığını bildir."
+        },
+        {
+          "term": "мне не подходит",
+          "meaning": "bana uymuyor",
+          "example": "Мне не подходит время после обеда.",
+          "pronunciation": "мне не подхо́дит",
+          "collocations": [
+            "время мне не подходит",
+            "мне не подходит этот день"
+          ],
+          "usage": "Bir teklif veya saat uymadığında.",
+          "recognize": [
+            "«мне не подходит» burada hangi anlamda? Мне не подходит время после обеда.",
+            "bana uymuyor",
+            "bana zamanında geliyor",
+            "bana çok benziyor",
+            "Bu bağlamda «мне не подходит» bana uymuyor anlamına gelir."
+          ],
+          "recall": [
+            "Önerilen saat uymadığında söyleyeceğin kısa kalıbı yaz.",
+            "мне не подходит"
+          ],
+          "use": "Bir salonun sunduğu erken saati reddet ve daha geç bir saat öner."
+        },
+        {
+          "term": "на ближайшее время",
+          "meaning": "en yakın uygun zamana",
+          "example": "Запишите меня на ближайшее время.",
+          "pronunciation": "на ближа́йшее вре́мя",
+          "collocations": [
+            "записаться на ближайшее время",
+            "попросить запись на ближайшее время"
+          ],
+          "usage": "Ilk uygun randevu zamanını ister.",
+          "recognize": [
+            "«на ближайшее время» burada hangi anlamda? Запишите меня на ближайшее время.",
+            "en yakın uygun zamana",
+            "haftaya aynı saate",
+            "günün en geç saatine",
+            "Bu bağlamda «на ближайшее время» en yakın uygun zamana anlamına gelir."
+          ],
+          "recall": [
+            "Belirli bir günün önemi yoksa ilk uygun zamanı isteyecek kalıbı yaz.",
+            "на ближайшее время"
+          ],
+          "use": "Acil olmayan gözlük ayarı için ilk uygun zamanı sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "Есть свободное время",
+          "cue": "randevu için kullanılabilir saat var"
+        }
+      ],
+      "writing": {
+        "prompt": "Salı 17.00 gözlük ayarı sana uymuyor. Salı kaydını iptal ettir, cuma saat on için yer iste ve teyit sor.",
+        "sample": "Отмените, пожалуйста, запись на вторник на пять. Можно записаться на пятницу на десять? Подтвердите новое время, пожалуйста.",
+        "revision": "Cuma on dolu, on bir boş. Eski randevuyu yeniden açmadan yeni teklifi kabul et.",
+        "criteria": [
+          "İptal ve yeni istek farklı zamanlara bağlanıyor.",
+          "Yeni saatin teyidi açık."
+        ]
+      },
+      "input": {
+        "text": "Мастерская, заказ 15.\nЗапись на среду на три отменена.\nЕсть свободное время в пятницу в четыре и в субботу в десять.\nЧтобы выбрать время, напишите администратору.",
+        "reading": [
+          "Çarşamba kaydının durumu?",
+          "iptal edildi",
+          "cuma gününe taşındı",
+          "onay bekliyor",
+          "İlgili satırı diğer bilgilerle karşılaştır. Запись на среду на три отменена.",
+          "Запись на среду на три отменена."
+        ],
+        "transcript": "Объявление. Мастерская, заказ 15. Запись на среду на три отменена. Есть свободное время в пятницу в четыре и в субботу в десять. Чтобы выбрать время, напишите администратору.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Çarşamba kaydının durumu?",
+          "iptal edildi",
+          "cuma gününe taşındı",
+          "onay bekliyor",
+          "Запись на среду на три отменена.",
+          "Запись на среду на три отменена."
+        ],
+        "detail": [
+          "Cuma teklifi saat kaç?",
+          "16.00",
+          "15.00",
+          "10.00",
+          "Есть свободное время в пятницу в четыре и в субботу в десять.",
+          "Есть свободное время в пятницу в четыре и в субботу в десять."
+        ]
+      },
+      "retry": {
+        "text": "Сообщение из фотостудии.\nНа вторник мест нет.\nМы перенесли запись на четверг на два.\nПожалуйста, подтвердите новое время.",
+        "reading": [
+          "Müşteriden hangi adım isteniyor?",
+          "yeni saati teyit",
+          "randevuyu salıya geri alma",
+          "başka bir stüdyo arama",
+          "İlgili satırı diğer bilgilerle karşılaştır. Пожалуйста, подтвердите новое время.",
+          "Пожалуйста, подтвердите новое время."
+        ],
+        "transcript": "Новый случай. Сообщение из фотостудии. На вторник мест нет. Мы перенесли запись на четверг на два. Пожалуйста, подтвердите новое время.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Müşteriden hangi adım isteniyor?",
+          "yeni saati teyit",
+          "randevuyu salıya geri alma",
+          "başka bir stüdyo arama",
+          "Пожалуйста, подтвердите новое время.",
+          "Пожалуйста, подтвердите новое время."
+        ],
+        "detail": [
+          "Yeni randevu ne zaman?",
+          "perşembe saat ikide",
+          "salı saat ikide",
+          "perşembe saat üçte",
+          "Мы перенесли запись на четверг на два.",
+          "Мы перенесли запись на четверг на два."
+        ]
+      },
+      "readingUse": "Randevu bildirim dizisi metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Servis masasında eski randevunu iptal ettir. İkinci teklifi seç ve teyit al.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Hizmet randevusunun eski ve yeni zamanını ayır, değişikliğin geçerli olduğunu teyit et.",
+      "genres": {
+        "reading": "randevu bildirim dizisi",
+        "listening": "yazılı konuşma provası",
+        "writing": "randevu masasına mesaj"
+      }
+    },
+    {
+      "id": "ru.travel-options",
+      "outcome": "A2.travel-options",
+      "level": "A2",
+      "prerequisite": [
+        "ru.directions",
+        "ru.destination-check"
+      ],
+      "title": "Araç ve aktarma noktasını seç",
+      "objective": "Yürüme ile araçla gitmeyi ayır, iki ulaşım seçeneğinden uygun olanı bildir.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "«Идти / ехать» ile ulaşım biçimi",
+        "Aktarmada «на» ile hedef araç"
+      ],
+      "situation": "Bir ziyaretçi sergiye gidecek. Yolculuğun başındaki araç ile aktarma yerini ayırarak kısa talimat ver.",
+      "bridge": "Önce hedefi «на выставку» dedin. Şimdi nasıl gittiğini «на трамвае / пешком» ile ekle.",
+      "models": [
+        {
+          "phrase": "Я еду на трамвае, а потом иду пешком.",
+          "explanation": "Şimdiki tek yolculukta araç varsa «ехать», yürüyüş varsa «идти». Araç kalıbında «на + bulunma hâli». «Метро» değişmez."
+        },
+        {
+          "phrase": "Выйдите у парка и пересядьте на автобус.",
+          "explanation": "«У + ilgi hâli» aktarmanın yerini, «пересесть на + belirtme hâli» bineceğin sonraki aracı gösterir. Burada «на автобус» bir hedef, «на автобусе» bir yolculuk biçimidir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "«Идти / ехать» ile ulaşım biçimi",
+          "incorrect": "Я иду на трамвае.",
+          "correct": "Я еду на трамвае.",
+          "explanation": "«На чём?» sorusuna «на трамвае / на автобусе / на метро» yanıtı gelir. Yaya hareket için «идти пешком».",
+          "guided": [
+            [
+              "Еду на ___ (трамвай).",
+              "трамвае"
+            ],
+            [
+              "«Yürüyerek gidiyorum» kalıbında eksik söz: Я иду ___.",
+              "пешком"
+            ]
+          ],
+          "transfer": [
+            [
+              "Arkadaşına sergiye metroyla gittiğini tam cümleyle bildir.",
+              "Я еду на выставку на метро.",
+              "Я еду на метро на выставку."
+            ],
+            [
+              "İstasyondan yürüyerek gittiğini «от вокзала» ile yaz.",
+              "Я иду пешком от вокзала.",
+              "Я иду от вокзала пешком."
+            ]
+          ],
+          "delayed": [
+            [
+              "Bir stadyuma otobüsle gittiğini bildir. «на стадион» kullan.",
+              "Я еду на стадион на автобусе.",
+              "Я еду на автобусе на стадион."
+            ],
+            [
+              "Okulun kapısından yürüyerek gittiğini «от школы» ile yaz.",
+              "Я иду пешком от школы.",
+              "Я иду от школы пешком."
+            ]
+          ]
+        },
+        {
+          "label": "Aktarmada «на» ile hedef araç",
+          "incorrect": "Пересядьте на автобусе.",
+          "correct": "Пересядьте на автобус.",
+          "explanation": "Araç değiştirme hedefi «на автобус / на трамвай». Geçiş yerini «у парка» veya «на остановке» ile ayrı söyle.",
+          "guided": [
+            [
+              "Следующая часть маршрута: пересядьте на ___ (трамвай).",
+              "трамвай"
+            ],
+            [
+              "«Müzenin yanında inin»: Выйдите у ___ (музей).",
+              "музея"
+            ]
+          ],
+          "transfer": [
+            [
+              "Yolcuya parkın yanında inip tramvaya aktarma yapmasını söyle.",
+              "Выйдите у парка и пересядьте на трамвай."
+            ],
+            [
+              "Sergi yolunda «Durakta inin» diye yönlendir.",
+              "Выйдите на остановке."
+            ]
+          ],
+          "delayed": [
+            [
+              "Gece hattında istasyonun yanında aktarma yapıp bir otobüse binmelerini «пересесть» ile bildir.",
+              "Пересядьте у вокзала на автобус.",
+              "У вокзала пересядьте на автобус."
+            ],
+            [
+              "Kütüphane önünde inip yürümelerini söyle.",
+              "Выйдите у библиотеки и идите пешком."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "пересесть на автобус",
+        "meaning": "otobüse aktarma yapmak",
+        "example": "У рынка надо пересесть на автобус.",
+        "pronunciation": "пересе́сть на авто́бус",
+        "collocations": [
+          "пересесть на автобус у парка",
+          "пересесть на автобус у вокзала"
+        ],
+        "usage": "Yeni araçtan önce «на + belirtme hâli».",
+        "recognize": [
+          "«пересесть на автобус» burada hangi anlamda? У рынка надо пересесть на автобус.",
+          "otobüse aktarma yapmak",
+          "otobüsten inmek",
+          "durakta beklemek",
+          "Bu bağlamda «пересесть на автобус» otobüse aktarma yapmak anlamına gelir."
+        ],
+        "recall": [
+          "Yolculukta başka araçtan otobüse geçme kalıbını mastarla yaz.",
+          "пересесть на автобус"
+        ],
+        "use": "Tramvay hattı kapanınca yolcuya nerede otobüse aktaracağını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "без пересадки",
+          "meaning": "aktarmasız",
+          "example": "До центра можно доехать без пересадки.",
+          "pronunciation": "без переса́дки",
+          "collocations": [
+            "доехать без пересадки",
+            "маршрут без пересадки"
+          ],
+          "usage": "«без» ardından «пересадки» gelir.",
+          "recognize": [
+            "«без пересадки» burada hangi anlamda? До центра можно доехать без пересадки.",
+            "aktarmasız",
+            "tek aktarmayla",
+            "aktarmadan önce",
+            "Bu bağlamda «без пересадки» aktarmasız anlamına gelir."
+          ],
+          "recall": [
+            "Yolculuğun araç değiştirmeden yapıldığını ifade et.",
+            "без пересадки"
+          ],
+          "use": "Havaalanına aktarmasız bir rota bulunup bulunmadığını sor."
+        },
+        {
+          "term": "конечная остановка",
+          "meaning": "son durak",
+          "example": "Рынок — конечная остановка.",
+          "pronunciation": "коне́чная остано́вка",
+          "collocations": [
+            "выйти на конечной остановке",
+            "доехать до конечной остановки"
+          ],
+          "usage": "Hattın sona erdiği yer.",
+          "recognize": [
+            "«конечная остановка» burada hangi anlamda? Рынок — конечная остановка.",
+            "son durak",
+            "ilk aktarma noktası",
+            "geçici durak",
+            "Bu bağlamda «конечная остановка» son durak anlamına gelir."
+          ],
+          "recall": [
+            "Bir hattın son durağını adlandır.",
+            "конечная остановка"
+          ],
+          "use": "Yolcuya son durakta inmesi gerektiğini bildir."
+        },
+        {
+          "term": "выйти у вокзала",
+          "meaning": "istasyonun yanında inmek",
+          "example": "Нам надо выйти у вокзала.",
+          "pronunciation": "вы́йти у вокза́ла",
+          "collocations": [
+            "выйти у вокзала и повернуть",
+            "выйти у вокзала из автобуса"
+          ],
+          "usage": "«у + ilgi hâli» yakınlığı belirtir.",
+          "recognize": [
+            "«выйти у вокзала» burada hangi anlamda? Нам надо выйти у вокзала.",
+            "istasyonun yanında inmek",
+            "gara girmek",
+            "istasyona yürümek",
+            "Bu bağlamda «выйти у вокзала» istasyonun yanında inmek anlamına gelir."
+          ],
+          "recall": [
+            "Tren istasyonunun civarında araçtan inmeyi mastarla yaz.",
+            "выйти у вокзала"
+          ],
+          "use": "İstasyondan bir ziyaretçiyi karşılamak için yol arkadaşına nerede ineceğini söyle."
+        },
+        {
+          "term": "пешком от остановки",
+          "meaning": "duraktan yürüyerek",
+          "example": "До зала пять минут пешком от остановки.",
+          "pronunciation": "пешко́м от остано́вки",
+          "collocations": [
+            "идти пешком от остановки",
+            "недалеко пешком от остановки"
+          ],
+          "usage": "«от + ilgi hâli» yürüyüşün başlangıcı.",
+          "recognize": [
+            "«пешком от остановки» burada hangi anlamda? До зала пять минут пешком от остановки.",
+            "duraktan yürüyerek",
+            "durağa yürüyerek",
+            "duraktan otobüsle",
+            "Bu bağlamda «пешком от остановки» duraktan yürüyerek anlamına gelir."
+          ],
+          "recall": [
+            "Başlangıcı durak olan yaya rotasını ifade et.",
+            "пешком от остановки"
+          ],
+          "use": "Bir ziyaretçiye duraktan itibaren yaya yolunun süresini bildir."
+        },
+        {
+          "term": "доехать до центра",
+          "meaning": "merkeze araçla ulaşmak",
+          "example": "Можно доехать до центра на трамвае.",
+          "pronunciation": "дое́хать до це́нтра",
+          "collocations": [
+            "быстро доехать до центра",
+            "доехать до центра на метро"
+          ],
+          "usage": "Araçla hedefe varma, «до + ilgi hâli».",
+          "recognize": [
+            "«доехать до центра» burada hangi anlamda? Можно доехать до центра на трамвае.",
+            "merkeze araçla ulaşmak",
+            "merkezde beklemek",
+            "merkezden yola çıkmak",
+            "Bu bağlamda «доехать до центра» merkeze araçla ulaşmak anlamına gelir."
+          ],
+          "recall": [
+            "Şehir merkezine araçla ulaşmanın mastarlı kalıbını yaz.",
+            "доехать до центра"
+          ],
+          "use": "Gece saatlerinde merkeze nasıl ulaşılacağını sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "на конечной остановке",
+          "cue": "hattın bittiği durakta"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir ziyaretçi tramvayla başlayacak. Tren garında inip otobüse aktarma yapmasını ve üç dakika yürümesini yaz.",
+        "sample": "Езжайте на трамвае. Выйдите у вокзала и пересядьте на автобус. От остановки три минуты пешком.",
+        "revision": "Otobüs hattı kapalı. Aktarmayı metroyla değiştir ve yürüyüşü koru.",
+        "criteria": [
+          "Araç ve aktarma noktası ayrılıyor.",
+          "Son yürüyüş bilgisi açık."
+        ]
+      },
+      "input": {
+        "text": "Как доехать до выставки.\nСядьте на трамвай 4.\nУ парка пересядьте на автобус 7.\nВыйдите на конечной остановке. До входа три минуты пешком.",
+        "reading": [
+          "Nerede araç değiştirilecek?",
+          "parkın yanında",
+          "son durakta",
+          "serginin kapısında",
+          "İlgili satırı diğer bilgilerle karşılaştır. У парка пересядьте на автобус 7.",
+          "У парка пересядьте на автобус 7."
+        ],
+        "transcript": "Объявление. Как доехать до выставки. Сядьте на трамвай 4. У парка пересядьте на автобус 7. Выйдите на конечной остановке. До входа три минуты пешком.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Nerede araç değiştirilecek?",
+          "parkın yanında",
+          "son durakta",
+          "serginin kapısında",
+          "У парка пересядьте на автобус 7.",
+          "У парка пересядьте на автобус 7."
+        ],
+        "detail": [
+          "İlk araç hangisi?",
+          "4 numaralı tramvay",
+          "7 numaralı otobüs",
+          "metro",
+          "Сядьте на трамвай 4.",
+          "Сядьте на трамвай 4."
+        ]
+      },
+      "retry": {
+        "text": "Дорога в спортзал.\nДнём автобус 12 идёт без пересадки.\nВечером езжайте на метро до рынка.\nОт рынка до зала пять минут пешком.",
+        "reading": [
+          "Akşam metrodan sonra ne yapılır?",
+          "beş dakika yürünür",
+          "12 numaralı otobüse binilir",
+          "istasyonda beklenir",
+          "İlgili satırı diğer bilgilerle karşılaştır. От рынка до зала пять минут пешком.",
+          "От рынка до зала пять минут пешком."
+        ],
+        "transcript": "Новый случай. Дорога в спортзал. Днём автобус 12 идёт без пересадки. Вечером езжайте на метро до рынка. От рынка до зала пять минут пешком.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Akşam metrodan sonra ne yapılır?",
+          "beş dakika yürünür",
+          "12 numaralı otobüse binilir",
+          "istasyonda beklenir",
+          "От рынка до зала пять минут пешком.",
+          "От рынка до зала пять минут пешком."
+        ],
+        "detail": [
+          "Gündüz aktarmasız hat?",
+          "12 numaralı otobüs",
+          "market metrosu",
+          "4 numaralı tramvay",
+          "Днём автобус 12 идёт без пересадки.",
+          "Днём автобус 12 идёт без пересадки."
+        ]
+      },
+      "readingUse": "Ulaşım güzergâhı duyurusu metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Bir ziyaretçiye araç, aktarma noktası ve en son yaya bölümünden oluşan bir yol tarif et.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "sequence",
+      "readingPurpose": "Yürüme ile araçla gitmeyi ayır, iki ulaşım seçeneğinden uygun olanı bildir.",
+      "genres": {
+        "reading": "ulaşım güzergâhı duyurusu",
+        "listening": "yazılı konuşma provası",
+        "writing": "yolcuya rota notu"
+      }
+    },
+    {
+      "id": "ru.with-and-by",
+      "outcome": "A2.with-and-by",
+      "level": "A2",
+      "prerequisite": [
+        "ru.travel-options"
+      ],
+      "title": "Kiminle ve neyle yaptığını söyle",
+      "objective": "Bir etkinlik planında eşlik edeni, bir işlemde kullanılan araç veya yöntemi araç hâliyle belirt.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "«С» ile eşlik ve araç hâli",
+        "Edatsız araç hâliyle yöntem"
+      ],
+      "situation": "Onarım atölyesi için bir arkadaşınla birlikte gideceksin ve orada ödeme yöntemin sorulacak.",
+      "bridge": "«На трамвае» ulaşım biçimiydi. Eşlikte «с + araç hâli», ödeme aracında «картой» gibi edatsız araç hâli kullanılır.",
+      "models": [
+        {
+          "phrase": "Я иду с другом. Лена придёт с подругой.",
+          "explanation": "«С кем?» eşlik eden kişiyi sorar. «С» sonrasında araç hâli: друг → дру́гом, подруга → подру́гой."
+        },
+        {
+          "phrase": "Можно оплатить картой? Подпишите ручкой.",
+          "explanation": "«Чем?» bir işlemde kullanılan aracı sorar. «Картой / ручкой» araç hâlindedir, başına «с» gelmez."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "«С» ile eşlik ve araç hâli",
+          "incorrect": "Я приду с подруга.",
+          "correct": "Я приду с подругой.",
+          "explanation": "Eşlikte «с» sonrasında bu eril isimler -ом, dişil -а isimler -ой alır. «Со мной» kalıbını ayrı öğren.",
+          "guided": [
+            [
+              "Я приду с ___ (друг).",
+              "другом"
+            ],
+            [
+              "Она работает вместе с ___ (подруга).",
+              "подругой"
+            ]
+          ],
+          "transfer": [
+            [
+              "Etkinliğe kız kardeşinle geleceğini yaz. «сестра» kullan.",
+              "Я приду с сестрой.",
+              "Приду с сестрой."
+            ],
+            [
+              "Randevuya bir meslektaşla gittiğini bildir. «Коллега» bu kalıpta «коллегой» olur.",
+              "Я иду с коллегой.",
+              "Иду с коллегой."
+            ]
+          ],
+          "delayed": [
+            [
+              "Bir gezide erkek kardeşinle geleceğini yaz.",
+              "Я приду с братом.",
+              "Приду с братом."
+            ],
+            [
+              "Eğitimde bir arkadaşa «Benimle mi çalışıyorsun?» diye sor. «со мной» kullan.",
+              "Ты работаешь со мной?",
+              "Ты со мной работаешь?"
+            ]
+          ]
+        },
+        {
+          "label": "Edatsız araç hâliyle yöntem",
+          "incorrect": "Я плачу с картой.",
+          "correct": "Я плачу картой.",
+          "explanation": "Benzer biçimler: ка́ртой, ру́чкой, карандашо́м. Eşlikteki «с» burada yok.",
+          "guided": [
+            [
+              "Плачу ___ (карта).",
+              "картой"
+            ],
+            [
+              "Заполните бланк ___ (ручка).",
+              "ручкой"
+            ]
+          ],
+          "transfer": [
+            [
+              "Atölyede kartla ödeme yapabilir misin? Tam soru yaz.",
+              "Можно оплатить картой?",
+              "Можно заплатить картой?"
+            ],
+            [
+              "Görevliye notu kurşun kalemle yazdığını bildir.",
+              "Я пишу карандашом.",
+              "Пишу карандашом."
+            ]
+          ],
+          "delayed": [
+            [
+              "Piknik kartında çocuklara «Kurşun kalemle çizin» yaz.",
+              "Рисуйте карандашом."
+            ],
+            [
+              "Müze görevlisine «Nakit ödeme yapıyorum» de. «Наличные» biçimi «наличными» olur.",
+              "Я плачу наличными.",
+              "Плачу наличными."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "вместе с другом",
+        "meaning": "bir arkadaşla birlikte",
+        "example": "На занятие я иду вместе с другом.",
+        "pronunciation": "вме́сте с дру́гом",
+        "collocations": [
+          "прийти вместе с другом",
+          "работать вместе с другом"
+        ],
+        "usage": "«вместе» eşlik vurgusu ekler.",
+        "recognize": [
+          "«вместе с другом» burada hangi anlamda? На занятие я иду вместе с другом.",
+          "bir arkadaşla birlikte",
+          "arkadaşın yerine",
+          "arkadaşı bekleyerek",
+          "Bu bağlamda «вместе с другом» bir arkadaşla birlikte anlamına gelir."
+        ],
+        "recall": [
+          "Erkek bir arkadaşla beraber olmayı ifade et.",
+          "вместе с другом"
+        ],
+        "use": "Bir kursa arkadaşınla birlikte gidip gidemeyeceğini sor."
+      },
+      "additionalWords": [
+        {
+          "term": "со мной",
+          "meaning": "benimle",
+          "example": "Кто пойдёт со мной?",
+          "pronunciation": "со мно́й",
+          "collocations": [
+            "пойти со мной",
+            "остаться со мной"
+          ],
+          "usage": "«со» ile eşlik eden kişi.",
+          "recognize": [
+            "«со мной» burada hangi anlamda? Кто пойдёт со мной?",
+            "benimle",
+            "benim için",
+            "bensiz",
+            "Bu bağlamda «со мной» benimle anlamına gelir."
+          ],
+          "recall": [
+            "«Benimle» edatlı ifadesini yaz.",
+            "со мной"
+          ],
+          "use": "Bir sergiye birlikte gitmek için arkadaşına soru sor."
+        },
+        {
+          "term": "оплатить картой",
+          "meaning": "kartla ödemek",
+          "example": "Я хочу оплатить картой.",
+          "pronunciation": "оплати́ть ка́ртой",
+          "collocations": [
+            "оплатить картой на месте",
+            "оплатить картой в кассе"
+          ],
+          "usage": "Yöntem edatsız «картой».",
+          "recognize": [
+            "«оплатить картой» burada hangi anlamda? Я хочу оплатить картой.",
+            "kartla ödemek",
+            "nakit çekmek",
+            "bilet göstermek",
+            "Bu bağlamda «оплатить картой» kartla ödemek anlamına gelir."
+          ],
+          "recall": [
+            "Kartla ödeme yapma kalıbını mastarla yaz.",
+            "оплатить картой"
+          ],
+          "use": "Kartlı ödeme olanağı hakkında kasaya soru sor."
+        },
+        {
+          "term": "заплатить наличными",
+          "meaning": "nakit ödemek",
+          "example": "Тут можно заплатить наличными.",
+          "pronunciation": "заплати́ть нали́чными",
+          "collocations": [
+            "решить заплатить наличными",
+            "можно заплатить наличными"
+          ],
+          "usage": "Çoğul araç hâli «наличными».",
+          "recognize": [
+            "«заплатить наличными» burada hangi anlamda? Тут можно заплатить наличными.",
+            "nakit ödemek",
+            "kartla ödemek",
+            "havale yapmak",
+            "Bu bağlamda «заплатить наличными» nakit ödemek anlamına gelir."
+          ],
+          "recall": [
+            "Bir hizmete nakit ödeme yapmayı mastarla yaz.",
+            "заплатить наличными"
+          ],
+          "use": "Kart terminali çalışmadığında nakit ödeme önereceğini söyle."
+        },
+        {
+          "term": "подписать ручкой",
+          "meaning": "tükenmez veya dolma kalemle imzalamak",
+          "example": "Анкету нужно подписать ручкой.",
+          "pronunciation": "подписа́ть ру́чкой",
+          "collocations": [
+            "подписать ручкой анкету",
+            "подписать ручкой бланк"
+          ],
+          "usage": "Imzanın hangi araçla atıldığını belirtir.",
+          "recognize": [
+            "«подписать ручкой» burada hangi anlamda? Анкету нужно подписать ручкой.",
+            "tükenmez veya dolma kalemle imzalamak",
+            "formu kurşun kalemle silmek",
+            "bilgisayarda form doldurmak",
+            "Bu bağlamda «подписать ручкой» tükenmez veya dolma kalemle imzalamak anlamına gelir."
+          ],
+          "recall": [
+            "Bir belgeyi mürekkepli kalemle imzalamayı mastarla ifade et.",
+            "подписать ручкой"
+          ],
+          "use": "Kurumun imzayı hangi araçla istediğini çalışma arkadaşına anlat."
+        },
+        {
+          "term": "с собой",
+          "meaning": "yanında, beraberinde",
+          "example": "Возьмите паспорт с собой.",
+          "pronunciation": "с собо́й",
+          "collocations": [
+            "взять с собой карту",
+            "принести с собой ручку"
+          ],
+          "usage": "«взять/принести с собой» bir şeyi yanında bulundurmak.",
+          "recognize": [
+            "«с собой» burada hangi anlamda? Возьмите паспорт с собой.",
+            "yanında, beraberinde",
+            "önünde",
+            "onun yerine",
+            "Bu bağlamda «с собой» yanında, beraberinde anlamına gelir."
+          ],
+          "recall": [
+            "«Beraberinde» anlamında edatlı kalıbı yaz.",
+            "с собой"
+          ],
+          "use": "Gönüllüye atölye için yanında bir kalem getirmesini söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "вместе с другом",
+          "cue": "arkadaş eşliğinde"
+        }
+      ],
+      "writing": {
+        "prompt": "Sergi atölyesine kız kardeşinle katılacağını ve kartla ödeyeceğini yaz. Ona yanında kalem getirmesini söyle.",
+        "sample": "Я приду с сестрой. Я оплачу картой. Пожалуйста, возьми с собой ручку.",
+        "revision": "Kart kabul edilmiyor. Yalnız ödeme yöntemini nakde çevir.",
+        "criteria": [
+          "Eşlik eden kişi ve kullanılan araç ayrı.",
+          "Güncel ödeme yöntemi yazıyor."
+        ]
+      },
+      "input": {
+        "text": "Правила мастерской.\nНа занятие можно прийти вместе с другом.\nВозьмите с собой ручку.\nВ кассе можно оплатить картой.",
+        "reading": [
+          "Yanında kim gelebilir?",
+          "bir arkadaş",
+          "yalnız görevli",
+          "hiç kimse",
+          "İlgili satırı diğer bilgilerle karşılaştır. На занятие можно прийти вместе с другом.",
+          "На занятие можно прийти вместе с другом."
+        ],
+        "transcript": "Объявление. Правила мастерской. На занятие можно прийти вместе с другом. Возьмите с собой ручку. В кассе можно оплатить картой.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Yanında kim gelebilir?",
+          "bir arkadaş",
+          "yalnız görevli",
+          "hiç kimse",
+          "На занятие можно прийти вместе с другом.",
+          "На занятие можно прийти вместе с другом."
+        ],
+        "detail": [
+          "Kasada hangi yöntem var?",
+          "kart",
+          "banka havalesi",
+          "kupon",
+          "В кассе можно оплатить картой.",
+          "В кассе можно оплатить картой."
+        ]
+      },
+      "retry": {
+        "text": "Регистрация на ярмарку.\nМаша придёт с сестрой.\nАнкету нужно подписать ручкой.\nВход платный, оплата наличными.",
+        "reading": [
+          "Form neyle imzalanmalı?",
+          "mürekkepli kalemle",
+          "kurşun kalemle",
+          "telefonla",
+          "İlgili satırı diğer bilgilerle karşılaştır. Анкету нужно подписать ручкой.",
+          "Анкету нужно подписать ручкой."
+        ],
+        "transcript": "Новый случай. Регистрация на ярмарку. Маша придёт с сестрой. Анкету нужно подписать ручкой. Вход платный, оплата наличными.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Form neyle imzalanmalı?",
+          "mürekkepli kalemle",
+          "kurşun kalemle",
+          "telefonla",
+          "Анкету нужно подписать ручкой.",
+          "Анкету нужно подписать ручкой."
+        ],
+        "detail": [
+          "Маша kiminle gelecek?",
+          "kız kardeşiyle",
+          "meslektaşıyla",
+          "arkadaşıyla",
+          "Маша придёт с сестрой.",
+          "Маша придёт с сестрой."
+        ]
+      },
+      "readingUse": "Atölye katılım ve ödeme notu metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Kiminle geleceğini ve neyle ödeme yapacağını görevliye bildir. Sonra arkadaşına yanında ne getireceğini söyle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Bir etkinlik planında eşlik edeni, bir işlemde kullanılan araç veya yöntemi araç hâliyle belirt.",
+      "genres": {
+        "reading": "atölye katılım ve ödeme notu",
+        "listening": "yazılı konuşma provası",
+        "writing": "etkinlik planı"
+      }
+    },
+    {
+      "id": "ru.errand-log",
+      "outcome": "A2.errand-log",
+      "level": "A2",
+      "prerequisite": [
+        "ru.weekend"
+      ],
+      "title": "Bir günün işlerini sırayla bildir",
+      "objective": "Yapılan işi, sonuçlanan adımı ve günün sonunda kalan işi geçmişte ayır.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Geçmiş zaman uyumu ve sıra",
+        "Geçmişte süreç ve sonuç"
+      ],
+      "situation": "Ortak bir atölye için anahtar alıp form doldurdun. Sonraki gönüllüye hangi adımın tamamlandığını bırak.",
+      "bridge": "Geçmişte «делал/делала» biliyorsun. Şimdi «сначала / потом» ile sıra ve «заполнила» ile sonuç belirt.",
+      "models": [
+        {
+          "phrase": "Сначала я забрала ключ, потом открыла шкаф.",
+          "explanation": "«Сначала» ilk ve «потом» sonraki adımı işaretler. «Я» ile geçmiş fiil konuşana göre «забрал / забрала»."
+        },
+        {
+          "phrase": "Я заполняла бланк. К пяти я заполнила бланк.",
+          "explanation": "«Заполняла» süreçteki eylemi bildirir. Tamamlandığını doğrulamak için «заполнила» kullan. Başka çift: проверять → проверить."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Geçmiş zaman uyumu ve sıra",
+          "incorrect": "Сначала Лена забрал ключ, потом открыла шкаф.",
+          "correct": "Сначала Лена забрала ключ, потом открыла шкаф.",
+          "explanation": "Geçmiş biçimi yapan kişiyle uyum gösterir. «Сначала …, потом …» işlemleri sıralar.",
+          "guided": [
+            [
+              "Лена сначала ___ ключ. (забрать)",
+              "забрала"
+            ],
+            [
+              "«Sonra» bağlayıcısı: Сначала я позвонил, ___ написал.",
+              "потом"
+            ]
+          ],
+          "transfer": [
+            [
+              "Дима önce aradı, sonra yazdı. «позвонил / написал» ile sırala.",
+              "Сначала Дима позвонил, потом написал.",
+              "Дима сначала позвонил, потом написал."
+            ],
+            [
+              "Лена önce notu okudu, sonra kapıyı açtı. «прочитать / открыть» ile yaz.",
+              "Сначала Лена прочитала записку, потом открыла дверь.",
+              "Лена сначала прочитала записку, потом открыла дверь."
+            ]
+          ],
+          "delayed": [
+            [
+              "Оля önce bileti aldı, sonra arkadaşına yazdı. «купить / написать» kullan.",
+              "Сначала Оля купила билет, потом написала другу.",
+              "Оля сначала купила билет, потом написала другу."
+            ],
+            [
+              "Игорь önce kutuyu aldı, sonra paketi teslim etti. «взять / отдать» kullan.",
+              "Сначала Игорь взял коробку, потом отдал пакет.",
+              "Игорь сначала взял коробку, потом отдал пакет."
+            ]
+          ]
+        },
+        {
+          "label": "Geçmişte süreç ve sonuç",
+          "incorrect": "К пяти я заполняла бланк. (Beşte bitmişti)",
+          "correct": "К пяти я заполнила бланк.",
+          "explanation": "Sonuç önemliyse «заполнил / заполнила». Bir anda neyle uğraştığını söylüyorsan «заполнял / заполняла».",
+          "guided": [
+            [
+              "Görev bitti: Ира уже ___ бланк. (заполняла / заполнила)",
+              "заполнила"
+            ],
+            [
+              "Süreç: В три Олег ещё ___ список. (проверял / проверил)",
+              "проверял"
+            ]
+          ],
+          "transfer": [
+            [
+              "Formu sonunda bitiren Марина için bir cümle yaz. «Наконец» ve «заполнить» kullan.",
+              "Марина наконец заполнила бланк.",
+              "Наконец Марина заполнила бланк."
+            ],
+            [
+              "Saat dörtte Игорь hâlâ listeyi kontrol ediyordu. «ещё» kullan.",
+              "В четыре Игорь ещё проверял список.",
+              "Игорь ещё проверял список в четыре."
+            ]
+          ],
+          "delayed": [
+            [
+              "Müze görevlisi Аня notu sonunda tamamen okudu. «Наконец» ve «прочитать» kullan.",
+              "Аня наконец прочитала записку.",
+              "Наконец Аня прочитала записку."
+            ],
+            [
+              "Нина iki saatte listeyi kontrol edip bitirdi. «За два часа» ve «проверить» kullan.",
+              "Нина проверила список за два часа.",
+              "За два часа Нина проверила список."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "забрать ключ",
+        "meaning": "anahtarı teslim almak",
+        "example": "Мне нужно забрать ключ у охраны.",
+        "pronunciation": "забра́ть ключ",
+        "collocations": [
+          "забрать ключ утром",
+          "забрать ключ у сторожа"
+        ],
+        "usage": "Eşyanın birinden teslim alındığı sonuç.",
+        "recognize": [
+          "«забрать ключ» burada hangi anlamda? Мне нужно забрать ключ у охраны.",
+          "anahtarı teslim almak",
+          "anahtarı geri bırakmak",
+          "anahtarı kaybetmek",
+          "Bu bağlamda «забрать ключ» anahtarı teslim almak anlamına gelir."
+        ],
+        "recall": [
+          "Bir görevliden anahtarı teslim alma kalıbını mastarla yaz.",
+          "забрать ключ"
+        ],
+        "use": "Yeni gönüllüye anahtarı kimden alacağını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "заполнить бланк",
+          "meaning": "formu doldurup bitirmek",
+          "example": "Я уже успел заполнить бланк.",
+          "pronunciation": "запо́лнить бланк",
+          "collocations": [
+            "заполнить бланк до обеда",
+            "заполнить бланк от руки"
+          ],
+          "usage": "«заполнить» tamamlanan adımı öne çıkarır.",
+          "recognize": [
+            "«заполнить бланк» burada hangi anlamda? Я уже успел заполнить бланк.",
+            "formu doldurup bitirmek",
+            "boş form almak",
+            "formu kontrol etmek",
+            "Bu bağlamda «заполнить бланк» formu doldurup bitirmek anlamına gelir."
+          ],
+          "recall": [
+            "Bir kâğıt formu doldurup bitirme eylemini mastarla yaz.",
+            "заполнить бланк"
+          ],
+          "use": "Kurs kaydının hangi adımını tamamladığını bildir."
+        },
+        {
+          "term": "проверить список",
+          "meaning": "listeyi kontrol etmek",
+          "example": "Нужно проверить список до встречи.",
+          "pronunciation": "прове́рить спи́сок",
+          "collocations": [
+            "проверить список гостей",
+            "проверить список до звонка"
+          ],
+          "usage": "«проверить» işlemi tamamlamaya odaklanır.",
+          "recognize": [
+            "«проверить список» burada hangi anlamda? Нужно проверить список до встречи.",
+            "listeyi kontrol etmek",
+            "yeni liste yazmak",
+            "listeyi silmek",
+            "Bu bağlamda «проверить список» listeyi kontrol etmek anlamına gelir."
+          ],
+          "recall": [
+            "Listedeki bilgileri kontrol etme kalıbını mastarla yaz.",
+            "проверить список"
+          ],
+          "use": "Sergi misafirleri gelmeden önce listeyle ilgili adımı açıkla."
+        },
+        {
+          "term": "заглянуть по пути",
+          "meaning": "yol üstünde uğramak",
+          "example": "Я могу заглянуть по пути в аптеку.",
+          "pronunciation": "загляну́ть по пути́",
+          "collocations": [
+            "заглянуть по пути в аптеку",
+            "заглянуть по пути в мастерскую"
+          ],
+          "usage": "Yürüyüşün veya yolculuğun ara durağı için «заглянуть в + belirtme hâli».",
+          "recognize": [
+            "«Заглянуть по пути» burada ne yapmayı anlatıyor? Я могу заглянуть по пути в аптеку.",
+            "yol üstünde uğramak",
+            "yoldan geri dönmek",
+            "vardıktan sonra aramak",
+            "Eczane, yolculuğun ara durağıdır."
+          ],
+          "recall": [
+            "Bir yere giderken kısa süreli uğramayı mastarla ifade et.",
+            "заглянуть по пути"
+          ],
+          "use": "Anahtarı almak için yol üstünde atölyeye uğrayacağını söyle."
+        },
+        {
+          "term": "к концу дня",
+          "meaning": "gün sonuna kadar",
+          "example": "К концу дня мы закрыли зал.",
+          "pronunciation": "к концу́ дня",
+          "collocations": [
+            "успеть к концу дня",
+            "закончить к концу дня"
+          ],
+          "usage": "«к + yönelme hâli» hedef süreyi verir.",
+          "recognize": [
+            "«к концу дня» burada hangi anlamda? К концу дня мы закрыли зал.",
+            "gün sonuna kadar",
+            "gün başında",
+            "ertesi gün",
+            "Bu bağlamda «к концу дня» gün sonuna kadar anlamına gelir."
+          ],
+          "recall": [
+            "Günün sonunda tamamlanmış olması gereken işi tanıtan kalıbı yaz.",
+            "к концу дня"
+          ],
+          "use": "Atölyede raf kontrolünü gün sonuna kadar bitirdiğini söyle."
+        },
+        {
+          "term": "оставить записку",
+          "meaning": "not bırakmak",
+          "example": "Можно оставить записку на столе.",
+          "pronunciation": "оста́вить запи́ску",
+          "collocations": [
+            "оставить записку на двери",
+            "оставить записку коллеге"
+          ],
+          "usage": "Görevlinin sonra okuyacağı mesaj.",
+          "recognize": [
+            "«оставить записку» burada hangi anlamda? Можно оставить записку на столе.",
+            "not bırakmak",
+            "telefon etmek",
+            "yanıt beklemek",
+            "Bu bağlamda «оставить записку» not bırakmak anlamına gelir."
+          ],
+          "recall": [
+            "Sonraki kişiye kısa kâğıt mesaj bırakmayı mastarla yaz.",
+            "оставить записку"
+          ],
+          "use": "Geciken ekip arkadaşın için notu nerede bırakacağını anlat."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "К концу дня",
+          "cue": "günün son noktasına kadar"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir ortak dolaba koyduğun malzemeler için iki tamamlanmış adım ve hâlâ kalan bir iş yaz.",
+        "sample": "Сначала я забрала ключ, потом открыла шкаф. Список я ещё проверяю.",
+        "revision": "Liste bitti, anahtar masasının yanına not bırakılacak. Artık kalan işi buna göre güncelle.",
+        "criteria": [
+          "Geçmiş adımlar sırayla veriliyor.",
+          "Tamamlanan iş ile kalan iş ayrılıyor."
+        ]
+      },
+      "input": {
+        "text": "Запись с понедельника.\nВ десять я забрала ключ.\nК полудню заполнила бланк.\nК концу дня я проверила список. Зал ещё не закрыла.",
+        "reading": [
+          "Hangi iş kaldı?",
+          "salonu kapatmak",
+          "listeyi kontrol etmek",
+          "anahtarı almak",
+          "İlgili satırı diğer bilgilerle karşılaştır. К концу дня я проверила список. Зал ещё не закрыла.",
+          "К концу дня я проверила список. Зал ещё не закрыла."
+        ],
+        "transcript": "Объявление. Запись с понедельника. В десять я забрала ключ. К полудню заполнила бланк. К концу дня я проверила список. Зал ещё не закрыла.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Hangi iş kaldı?",
+          "salonu kapatmak",
+          "listeyi kontrol etmek",
+          "anahtarı almak",
+          "К концу дня я проверила список. Зал ещё не закрыла.",
+          "К концу дня я проверила список. Зал ещё не закрыла."
+        ],
+        "detail": [
+          "Form ne zaman bitmişti?",
+          "öğlene kadar",
+          "saat onda",
+          "gün sonunda",
+          "К полудню заполнила бланк.",
+          "К полудню заполнила бланк."
+        ]
+      },
+      "retry": {
+        "text": "Дневник курьера.\nПо дороге я купил конверт.\nК трём отдал документы.\nСписок ещё проверяю.",
+        "reading": [
+          "Hangi iş henüz sürüyor?",
+          "listeyi kontrol",
+          "evrak teslimi",
+          "zarf alma",
+          "İlgili satırı diğer bilgilerle karşılaştır. Список ещё проверяю.",
+          "Список ещё проверяю."
+        ],
+        "transcript": "Новый случай. Дневник курьера. По дороге я купил конверт. К трём отдал документы. Список ещё проверяю.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Hangi iş henüz sürüyor?",
+          "listeyi kontrol",
+          "evrak teslimi",
+          "zarf alma",
+          "Список ещё проверяю.",
+          "Список ещё проверяю."
+        ],
+        "detail": [
+          "Evrak en geç ne zaman verildi?",
+          "saat üçte",
+          "öğlene kadar",
+          "akşam",
+          "К трём отдал документы.",
+          "К трём отдал документы."
+        ]
+      },
+      "readingUse": "Gönüllü vardiya defteri metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Bir çalışma arkadaşına yaptığın iki işi sırayla aktar ve onun devralacağı tek işi belirt.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "sequence",
+      "readingPurpose": "Yapılan işi, sonuçlanan adımı ve günün sonunda kalan işi geçmişte ayır.",
+      "genres": {
+        "reading": "gönüllü vardiya defteri",
+        "listening": "yazılı konuşma provası",
+        "writing": "sonraki vardiyaya devir notu"
+      }
+    },
+    {
+      "id": "ru.receipt-repair",
+      "outcome": "A2.receipt-repair",
+      "level": "A2",
+      "prerequisite": [
+        "ru.quantity",
+        "ru.market-basket"
+      ],
+      "title": "Fişteki ürün veya miktar hatasını düzelt",
+      "objective": "Bir hizmet görevinde yanlış miktar ile istenen miktarı karşılaştır ve düzeltilmiş fiş iste.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "«Вместо» ile sayıların ilgi hâli",
+        "«Его / её» ile hatalı kaleme gönderme"
+      ],
+      "situation": "İki ürün aldın ama kasada biri iki kez yazıldı. Hatalı satırı ve doğru miktarı birlikte bildir.",
+      "bridge": "Pazarda miktarı sipariş ettin. Şimdi fişte «указано», «лишний» ve «вместо» ile sayıyı düzelt.",
+      "models": [
+        {
+          "phrase": "В чеке три упаковки вместо двух.",
+          "explanation": "«Вместо» ilgi hâli ister: вместо одно́й, двух, трёх. Sayının hangi ürünü anlattığını açık tut."
+        },
+        {
+          "phrase": "Это лишняя позиция. Уберите её из чека, пожалуйста.",
+          "explanation": "«Лишний / лишняя» fazla yazılmış kalemi gösterir. Rusçada «позиция» dişil olduğundan «её» ile geri dön."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "«Вместо» ile sayıların ilgi hâli",
+          "incorrect": "Три упаковки вместо две.",
+          "correct": "Три упаковки вместо двух.",
+          "explanation": "Yanlış sayı önce verilebilir. «Вместо двух» beklenen, asıl miktarı gösterir.",
+          "guided": [
+            [
+              "Пять пакетов вместо ___ (три).",
+              "трёх"
+            ],
+            [
+              "Две бутылки вместо ___ (одна).",
+              "одной"
+            ]
+          ],
+          "transfer": [
+            [
+              "Siparişte iki kutu yerine üç kutu yazıyor. «В заказе …» ve «коробка» ile rapor et.",
+              "В заказе три коробки вместо двух.",
+              "В заказе указаны три коробки вместо двух."
+            ],
+            [
+              "Fişte bir bilet yerine iki bilet yazıyor. «В чеке …» biçiminde söyle.",
+              "В чеке два билета вместо одного."
+            ]
+          ],
+          "delayed": [
+            [
+              "Kuru temizlemede üç gömlek yerine dört gömlek yazılmış. «В заказе …» ile belirt.",
+              "В заказе четыре рубашки вместо трёх."
+            ],
+            [
+              "Kargo listesinde bir paket yerine iki paket var. «В списке …» ile aktar.",
+              "В списке два пакета вместо одного."
+            ]
+          ]
+        },
+        {
+          "label": "«Его / её» ile hatalı kaleme gönderme",
+          "incorrect": "Это лишняя позиция. Уберите его.",
+          "correct": "Это лишняя позиция. Уберите её.",
+          "explanation": "Eril «товар» için «его», dişil «позиция» için «её» kullan. Düzeltmeyi «пересчитайте сумму» ile tamamlayabilirsin.",
+          "guided": [
+            [
+              "Уберите лишнюю позицию. Уберите ___.",
+              "её"
+            ],
+            [
+              "Товар лишний. Уберите ___.",
+              "его"
+            ]
+          ],
+          "transfer": [
+            [
+              "Kasiyerden fazla kalemi ve toplamı düzeltmesini iste. «Уберите её» ve «пересчитайте» kullan.",
+              "Уберите её из чека и пересчитайте сумму, пожалуйста.",
+              "Пожалуйста, уберите её из чека и пересчитайте сумму."
+            ],
+            [
+              "Fazla ürünü gösterip çıkarmalarını «его» ile iste.",
+              "Уберите его, пожалуйста.",
+              "Пожалуйста, уберите его."
+            ]
+          ],
+          "delayed": [
+            [
+              "Bilet gişesinde fazladan kalemi «позиция» ile tanıt ve «её» ile çıkarmalarını iste.",
+              "Это лишняя позиция. Уберите её, пожалуйста.",
+              "Это лишняя позиция. Пожалуйста, уберите её."
+            ],
+            [
+              "Kafeteryada yalnız yeni toplamı hesaplamalarını kibarca iste.",
+              "Пересчитайте сумму, пожалуйста.",
+              "Пожалуйста, пересчитайте сумму."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "лишняя позиция",
+        "meaning": "fazladan kalem",
+        "example": "В чеке есть лишняя позиция.",
+        "pronunciation": "ли́шняя пози́ция",
+        "collocations": [
+          "найти лишнюю позицию",
+          "убрать лишнюю позицию"
+        ],
+        "usage": "Fişte bulunmaması gereken satır.",
+        "recognize": [
+          "«лишняя позиция» burada hangi anlamda? В чеке есть лишняя позиция.",
+          "fazladan kalem",
+          "eksik kalem",
+          "birim fiyat",
+          "Bu bağlamda «лишняя позиция» fazladan kalem anlamına gelir."
+        ],
+        "recall": [
+          "Fişe yanlışlıkla eklenmiş bir satırı adlandır.",
+          "лишняя позиция"
+        ],
+        "use": "Bilet gişesinde listeden hangi fazla kalemin çıkarılacağını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "пересчитать сумму",
+          "meaning": "toplamı yeniden hesaplamak",
+          "example": "Попросите пересчитать сумму.",
+          "pronunciation": "пересчита́ть су́мму",
+          "collocations": [
+            "пересчитать сумму заказа",
+            "пересчитать сумму по чеку"
+          ],
+          "usage": "Hata düzeltilince yeni toplamı bulmak.",
+          "recognize": [
+            "«пересчитать сумму» burada hangi anlamda? Попросите пересчитать сумму.",
+            "toplamı yeniden hesaplamak",
+            "para üstünü vermek",
+            "fiyat etiketi yazmak",
+            "Bu bağlamda «пересчитать сумму» toplamı yeniden hesaplamak anlamına gelir."
+          ],
+          "recall": [
+            "Bir satın alımın toplamını yeniden hesaplamayı mastarla yaz.",
+            "пересчитать сумму"
+          ],
+          "use": "Bir kitapçıda doğru adetle toplamı tekrar hesaplamalarını iste."
+        },
+        {
+          "term": "два раза",
+          "meaning": "iki defa",
+          "example": "Этот товар указан два раза.",
+          "pronunciation": "два ра́за",
+          "collocations": [
+            "посчитать два раза",
+            "указать два раза"
+          ],
+          "usage": "Bir ayrıntının iki kez yer alması.",
+          "recognize": [
+            "«два раза» burada hangi anlamda? Этот товар указан два раза.",
+            "iki defa",
+            "iki tane",
+            "iki kat pahalı",
+            "Bu bağlamda «два раза» iki defa anlamına gelir."
+          ],
+          "recall": [
+            "Bir satırın çifte yazıldığını belirtirken kullanacağın sayı kalıbını yaz.",
+            "два раза"
+          ],
+          "use": "Tek sefer teslim ettiğin paketin listede iki kez geçtiğini söyle."
+        },
+        {
+          "term": "не та позиция",
+          "meaning": "yanlış kalem",
+          "example": "В чеке не та позиция.",
+          "pronunciation": "не та пози́ция",
+          "collocations": [
+            "выбрать не ту позицию",
+            "в чеке не та позиция"
+          ],
+          "usage": "Fişteki ürün satırının yanlış ürünü gösterdiğini bildirir.",
+          "recognize": [
+            "«не та позиция» burada hangi anlamda? В чеке не та позиция.",
+            "yanlış kalem",
+            "doğru kalem",
+            "eksik tutar",
+            "Bu bağlamda «не та позиция» yanlış kalem anlamına gelir."
+          ],
+          "recall": [
+            "Sipariş kalemi yanlış olduğunda kullanılacak üç kelimelik ifadeyi yaz.",
+            "не та позиция"
+          ],
+          "use": "Fişe kendi aldığından farklı bir ürün yazıldığını bildir."
+        },
+        {
+          "term": "итоговая сумма",
+          "meaning": "son toplam",
+          "example": "Итоговая сумма — триста рублей.",
+          "pronunciation": "ито́говая су́мма",
+          "collocations": [
+            "проверить итоговую сумму",
+            "уточнить итоговую сумму"
+          ],
+          "usage": "Tüm kalemler ve düzeltmeler sonrası tutar.",
+          "recognize": [
+            "«итоговая сумма» burada hangi anlamda? Итоговая сумма — триста рублей.",
+            "son toplam",
+            "birim fiyat",
+            "geri verilen para",
+            "Bu bağlamda «итоговая сумма» son toplam anlamına gelir."
+          ],
+          "recall": [
+            "Tüm kalemlerin sonunda görünen toplam tutarın adını yaz.",
+            "итоговая сумма"
+          ],
+          "use": "İndirim uygulandıktan sonra son toplamı doğrula."
+        },
+        {
+          "term": "в чеке указано",
+          "meaning": "fişte belirtilmiş",
+          "example": "В чеке указано два пакета.",
+          "pronunciation": "в че́ке ука́зано",
+          "collocations": [
+            "в чеке указано два билета",
+            "в чеке указано неверное количество"
+          ],
+          "usage": "Ifade fişteki bilgiyle başlar.",
+          "recognize": [
+            "«в чеке указано» burada hangi anlamda? В чеке указано два пакета.",
+            "fişte belirtilmiş",
+            "tezgâhta gösterilmiş",
+            "siparişte iptal edilmiş",
+            "Bu bağlamda «в чеке указано» fişte belirtilmiş anlamına gelir."
+          ],
+          "recall": [
+            "Fişte yer alan bilgiye giriş cümlesini Rusça yaz.",
+            "в чеке указано"
+          ],
+          "use": "Bilet alımında fişte gösterilen sayıyı söyle ve gerçek siparişle kıyasla."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "В чеке указано",
+          "cue": "ödeme belgesinde görüntülenen bilgi"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir sergi için bir harita aldın ama fişte iki tane görünüyor. Hatalı sayıyı göster, doğru olanı belirt ve yeni toplam iste.",
+        "sample": "В чеке две карты вместо одной. Уберите одну карту из чека и пересчитайте сумму, пожалуйста.",
+        "revision": "Haritalar doğru sayıda, artık fazladan bilet yazılmış. Yeni hatayı ürün adı ve sayı ile düzelt.",
+        "criteria": [
+          "Fişteki ve beklenen miktar ayrı.",
+          "Kibar istek yapılabilir bir işlem belirtiyor."
+        ]
+      },
+      "input": {
+        "text": "Касса у театра.\nЗаказ: один взрослый билет и один детский.\nВ чеке указано два взрослых билета.\nОплачено 800 рублей.",
+        "reading": [
+          "Hangi satır yeniden düzenlenmeli?",
+          "yetişkin ve çocuk biletlerinin adedi",
+          "tiyatronun adı",
+          "ödeme zamanı",
+          "İlgili satırı diğer bilgilerle karşılaştır. В чеке указано два взрослых билета.",
+          "В чеке указано два взрослых билета."
+        ],
+        "transcript": "Объявление. Касса у театра. Заказ: один взрослый билет и один детский. В чеке указано два взрослых билета. Оплачено 800 рублей.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Hangi satır yeniden düzenlenmeli?",
+          "yetişkin ve çocuk biletlerinin adedi",
+          "tiyatronun adı",
+          "ödeme zamanı",
+          "В чеке указано два взрослых билета.",
+          "В чеке указано два взрослых билета."
+        ],
+        "detail": [
+          "Ödenen tutar?",
+          "800",
+          "80",
+          "180",
+          "Оплачено 800 рублей.",
+          "Оплачено 800 рублей."
+        ]
+      },
+      "retry": {
+        "text": "Магазин у дома.\nПокупка: один пакет риса и бутылка воды.\nЧек: рис указан два раза.\nВода указана один раз.",
+        "reading": [
+          "Fazladan geçen ürün?",
+          "pirinç",
+          "su",
+          "ikisi de",
+          "İlgili satırı diğer bilgilerle karşılaştır. Чек: рис указан два раза.",
+          "Чек: рис указан два раза."
+        ],
+        "transcript": "Новый случай. Магазин у дома. Покупка: один пакет риса и бутылка воды. Чек: рис указан два раза. Вода указана один раз.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Fazladan geçen ürün?",
+          "pirinç",
+          "su",
+          "ikisi de",
+          "Чек: рис указан два раза.",
+          "Чек: рис указан два раза."
+        ],
+        "detail": [
+          "Su kaç defa yazıyor?",
+          "bir",
+          "iki",
+          "dört",
+          "Вода указана один раз.",
+          "Вода указана один раз."
+        ]
+      },
+      "readingUse": "Fiş ve sipariş karşılaştırması metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Kasiyere bir kalemin neden yanlış olduğunu açıkla. Kaydın düzeltilmesini ve yeni toplamı iste.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Bir hizmet görevinde yanlış miktar ile istenen miktarı karşılaştır ve düzeltilmiş fiş iste.",
+      "genres": {
+        "reading": "fiş ve sipariş karşılaştırması",
+        "listening": "yazılı konuşma provası",
+        "writing": "kasaya düzeltme notu"
+      }
+    },
+    {
+      "id": "ru.pickup-handoff",
+      "outcome": "A2.pickup-handoff",
+      "level": "A2",
+      "prerequisite": [
+        "ru.receipt-repair",
+        "ru.opening-hours"
+      ],
+      "title": "Yanlış teslim noktasını onar",
+      "objective": "Başka şubeye yönlendirilen siparişte doğru konum, teslim alan kişi ve hazır olma durumunu teyit et.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Bulunma hâlinde «этот / другой»",
+        "Teslim alan için yönelme hâli"
+      ],
+      "situation": "Mesaj seni yanlış şubeye gönderiyor. Doğru şubeyi ayır ve senin yerine gelecek kişiyi bildir.",
+      "bridge": "Fişte miktarı düzelttin. Burada «не в этом, а в другом пункте» ile teslim noktası ve «передайте + yönelme» ile alıcıyı ayır.",
+      "models": [
+        {
+          "phrase": "Заказ не в этом пункте, а в другом.",
+          "explanation": "«В каком пункте?» sorusunda «в этом пункте / в другом пункте» bulunma hâlidir. «Не …, а …» doğru şubeyi ayırır."
+        },
+        {
+          "phrase": "Передайте заказ сестре. Сообщите мне, когда заказ готов.",
+          "explanation": "«Кому?» teslim alacak kişiyi sorar. Örnekler: сестра → сестре, друг → другу. «Мне» bildirimin kime yapılacağını söyler."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Bulunma hâlinde «этот / другой»",
+          "incorrect": "Заказ в другой пункте.",
+          "correct": "Заказ в другом пункте.",
+          "explanation": "«Пункт» burada пункте olur. Eril «этот / другой» ise «этом / другом». İsim, daha önce geçtiyse ikinci parçada düşebilir.",
+          "guided": [
+            [
+              "Заказ в ___ пункте. (başka)",
+              "другом"
+            ],
+            [
+              "Sipariş bu şubede: Заказ в ___ пункте.",
+              "этом"
+            ]
+          ],
+          "transfer": [
+            [
+              "Paket bu şubede değil, ötekinde. «Посылка» ve «не …, а …» ile yaz.",
+              "Посылка не в этом пункте, а в другом.",
+              "Посылка не в этом пункте, а в другом пункте."
+            ],
+            [
+              "Siparişin ikinci şubede olup olmadığını sor. «во втором пункте» kullan.",
+              "Заказ во втором пункте?",
+              "Мой заказ во втором пункте?"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kütüphanede kitap bu salonda değil, başka salonda. «Зал» kullan.",
+              "Книга не в этом зале, а в другом.",
+              "Книга не в этом зале, а в другом зале."
+            ],
+            [
+              "Dosyanın bu ofiste olup olmadığını «этом офисе» ile sor.",
+              "Документы в этом офисе?",
+              "Мои документы в этом офисе?"
+            ]
+          ]
+        },
+        {
+          "label": "Teslim alan için yönelme hâli",
+          "incorrect": "Передайте заказ сестра.",
+          "correct": "Передайте заказ сестре.",
+          "explanation": "Alıcıda yönelme hâli kullanılır: сестре, дру́гу, бра́ту. Teslim edilen nesne «заказ» olarak kalır.",
+          "guided": [
+            [
+              "Передайте заказ ___ (друг).",
+              "другу"
+            ],
+            [
+              "Сообщите ___ (ben), когда заказ готов.",
+              "мне"
+            ]
+          ],
+          "transfer": [
+            [
+              "Görevliden paketi erkek kardeşine vermesini «Передайте» ile iste.",
+              "Передайте посылку брату, пожалуйста.",
+              "Пожалуйста, передайте посылку брату."
+            ],
+            [
+              "Sipariş hazır olunca sana bildirmelerini iste.",
+              "Сообщите мне, когда заказ будет готов.",
+              "Сообщите мне, когда заказ готов."
+            ]
+          ],
+          "delayed": [
+            [
+              "Kurs görevlisinden basılı belgeleri meslektaşına vermesini iste. «Коллега» → «коллеге».",
+              "Передайте документы коллеге, пожалуйста.",
+              "Пожалуйста, передайте документы коллеге."
+            ],
+            [
+              "Onarımın bittiğini kız kardeşine bildirmelerini iste. «Сообщите …, что ремонт закончен».",
+              "Сообщите сестре, что ремонт закончен."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "пункт выдачи",
+        "meaning": "teslim noktası",
+        "example": "Пункт выдачи находится у метро.",
+        "pronunciation": "пункт вы́дачи",
+        "collocations": [
+          "выбрать пункт выдачи",
+          "найти пункт выдачи"
+        ],
+        "usage": "Paketin müşteriye verildiği yer.",
+        "recognize": [
+          "«пункт выдачи» burada hangi anlamda? Пункт выдачи находится у метро.",
+          "teslim noktası",
+          "paketleme deposu",
+          "ödeme masası",
+          "Bu bağlamda «пункт выдачи» teslim noktası anlamına gelir."
+        ],
+        "recall": [
+          "Siparişlerin müşteriye verildiği yeri adlandır.",
+          "пункт выдачи"
+        ],
+        "use": "Kargoyu hangi teslim noktasından alacağını doğrulat."
+      },
+      "additionalWords": [
+        {
+          "term": "код получения",
+          "meaning": "teslim alma kodu",
+          "example": "На телефоне есть код получения.",
+          "pronunciation": "код получе́ния",
+          "collocations": [
+            "показать код получения",
+            "проверить код получения"
+          ],
+          "usage": "Teslim alıcısının göstereceği kod.",
+          "recognize": [
+            "«код получения» burada hangi anlamda? На телефоне есть код получения.",
+            "teslim alma kodu",
+            "sipariş fiyatı",
+            "adres satırı",
+            "Bu bağlamda «код получения» teslim alma kodu anlamına gelir."
+          ],
+          "recall": [
+            "Paketi teslim alırken gösterdiğin kodun adını yaz.",
+            "код получения"
+          ],
+          "use": "Başka biri alacaksa kodu nerede göstermesi gerektiğini açıkla."
+        },
+        {
+          "term": "забрать заказ",
+          "meaning": "siparişi teslim almak",
+          "example": "Я могу забрать заказ вечером.",
+          "pronunciation": "забра́ть зака́з",
+          "collocations": [
+            "забрать заказ после обеда",
+            "забрать заказ в другом пункте"
+          ],
+          "usage": "Hazır ürünün müşteri tarafından alınması.",
+          "recognize": [
+            "«забрать заказ» burada hangi anlamda? Я могу забрать заказ вечером.",
+            "siparişi teslim almak",
+            "yeni sipariş vermek",
+            "siparişi iptal etmek",
+            "Bu bağlamda «забрать заказ» siparişi teslim almak anlamına gelir."
+          ],
+          "recall": [
+            "Hazır bir siparişi gidip teslim almayı mastarla yaz.",
+            "забрать заказ"
+          ],
+          "use": "Bir teslimat noktasına kapanmadan siparişini alabileceğini yaz."
+        },
+        {
+          "term": "передать другому человеку",
+          "meaning": "başka bir kişiye vermek",
+          "example": "Можно передать заказ другому человеку?",
+          "pronunciation": "переда́ть друго́му челове́ку",
+          "collocations": [
+            "передать заказ другому человеку",
+            "разрешить передать другому человеку"
+          ],
+          "usage": "Alıcıyı «другому человеку» ile yönelme hâlinde söyler.",
+          "recognize": [
+            "«передать другому человеку» burada hangi anlamda? Можно передать заказ другому человеку?",
+            "başka bir kişiye vermek",
+            "başka şubeye gitmek",
+            "başkasından sipariş istemek",
+            "Bu bağlamda «передать другому человеку» başka bir kişiye vermek anlamına gelir."
+          ],
+          "recall": [
+            "Teslim edilen şeyi başkasına vermeyi mastarla ifade et.",
+            "передать другому человеку"
+          ],
+          "use": "Komşunun teslim alabilmesi için yetki olup olmadığını sor."
+        },
+        {
+          "term": "заказ готов",
+          "meaning": "sipariş hazır",
+          "example": "Ваш заказ готов.",
+          "pronunciation": "зака́з гото́в",
+          "collocations": [
+            "сообщить, что заказ готов",
+            "проверить, готов ли заказ"
+          ],
+          "usage": "«готов» eril «заказ» ile uyumlu.",
+          "recognize": [
+            "«заказ готов» burada hangi anlamda? Ваш заказ готов.",
+            "sipariş hazır",
+            "sipariş ertelendi",
+            "sipariş kayboldu",
+            "Bu bağlamda «заказ готов» sipariş hazır anlamına gelir."
+          ],
+          "recall": [
+            "Siparişin teslim edilebileceğini iki sözcükle bildir.",
+            "заказ готов"
+          ],
+          "use": "Bir baskı siparişinin hazır olup olmadığını sor."
+        },
+        {
+          "term": "уточнить адрес",
+          "meaning": "adresi kesinleştirmek",
+          "example": "Я хочу уточнить адрес пункта.",
+          "pronunciation": "уточни́ть а́дрес",
+          "collocations": [
+            "уточнить адрес склада",
+            "уточнить адрес по телефону"
+          ],
+          "usage": "Adres sorulup doğrulanır.",
+          "recognize": [
+            "«уточнить адрес» burada hangi anlamda? Я хочу уточнить адрес пункта.",
+            "adresi kesinleştirmek",
+            "adresi gizlemek",
+            "teslimi ertelemek",
+            "Bu bağlamda «уточнить адрес» adresi kesinleştirmek anlamına gelir."
+          ],
+          "recall": [
+            "Hangi konuma gideceğini kesinleştirmeyi mastarla yaz.",
+            "уточнить адрес"
+          ],
+          "use": "Bildirimde iki şube görünce doğru adresi sor."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "Пункт выдачи",
+          "cue": "siparişin teslim alınacağı yer"
+        }
+      ],
+      "writing": {
+        "prompt": "Sipariş hazır ama mesajdaki yanlış şube Lesnaya. Doğru yer Polevaya 8. Doğru şubeyi teyit et ve kız kardeşinin alıp alamayacağını sor.",
+        "sample": "Заказ не на Лесной, а на Полевой, дом восемь. Это верно? Можно передать заказ сестре?",
+        "revision": "Kız kardeşin gelemiyor. Yeni teslim alacak kişiyi erkek kardeşinle değiştir.",
+        "criteria": [
+          "Doğru şube ve yanlış şube ayırt ediliyor.",
+          "Teslim alacak kişi doğru ve açık."
+        ]
+      },
+      "input": {
+        "text": "Ваш заказ готов.\nПункт выдачи: улица Полевая, дом 8.\nСтарый адрес: улица Лесная, дом 4.\nПокажите код получения.",
+        "reading": [
+          "Müşteri hangi noktaya gitmeli?",
+          "Полевая, 8",
+          "Лесная, 4",
+          "Полевая, 4",
+          "İlgili satırı diğer bilgilerle karşılaştır. Пункт выдачи: улица Полевая, дом 8.",
+          "Пункт выдачи: улица Полевая, дом 8."
+        ],
+        "transcript": "Объявление. Ваш заказ готов. Пункт выдачи: улица Полевая, дом 8. Старый адрес: улица Лесная, дом 4. Покажите код получения.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Müşteri hangi noktaya gitmeli?",
+          "Полевая, 8",
+          "Лесная, 4",
+          "Полевая, 4",
+          "Пункт выдачи: улица Полевая, дом 8.",
+          "Пункт выдачи: улица Полевая, дом 8."
+        ],
+        "detail": [
+          "Gişede ne gösterilir?",
+          "teslim alma kodu",
+          "adres belgesi",
+          "banka kartı",
+          "Покажите код получения.",
+          "Покажите код получения."
+        ]
+      },
+      "retry": {
+        "text": "Сообщение из мастерской.\nЗаказ пока не готов.\nКогда заказ будет готов, мы напишем вам.\nЗабрать его сможет ваша сестра.",
+        "reading": [
+          "Müşteri şimdi ne yapmalı?",
+          "hazır bildirimini beklemeli",
+          "eski adrese gitmeli",
+          "hemen ödeme zorunda",
+          "İlgili satırı diğer bilgilerle karşılaştır. Заказ пока не готов.",
+          "Заказ пока не готов."
+        ],
+        "transcript": "Новый случай. Сообщение из мастерской. Заказ пока не готов. Когда заказ будет готов, мы напишем вам. Забрать его сможет ваша сестра.",
+        "preparation": "Metin provasında önce işlemin türüne, sonra karar için gereken ayrıntıya odaklan.",
+        "main": [
+          "Metin provası · Müşteri şimdi ne yapmalı?",
+          "hazır bildirimini beklemeli",
+          "eski adrese gitmeli",
+          "hemen ödeme zorunda",
+          "Заказ пока не готов.",
+          "Заказ пока не готов."
+        ],
+        "detail": [
+          "Siparişi kim teslim alabilecek?",
+          "kız kardeş",
+          "komşu",
+          "erkek kardeş",
+          "Забрать его сможет ваша сестра.",
+          "Забрать его сможет ваша сестра."
+        ]
+      },
+      "readingUse": "Teslim kodu bildirimi metnindeki işlem ile ona ait bilgiyi eşleştir.",
+      "listeningUse": "Bu kaynak yazılı prova içindir. Ses ve dinleme değerlendirmesi bu derste kullanılamıyor.",
+      "speaking": "Teslimat görevlisiyle yanlış şubeyi düzelt. Doğru şubeyi teyit ettir ve başka bir teslim alan öner.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İstenen eyleme ve onu değiştiren ayrıntıya ayrı ayrı bak.",
+        "main": "İlk okumada kimin hangi işlemi istediğini bul.",
+        "detail": "Ayrıntıyı doğru kişi, ürün veya yerle eşleştir."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Başka şubeye yönlendirilen siparişte doğru konum, teslim alan kişi ve hazır olma durumunu teyit et.",
+      "genres": {
+        "reading": "teslim kodu bildirimi",
+        "listening": "yazılı konuşma provası",
+        "writing": "teslim desteğine devir mesajı"
+      }
+    }
+  ]
+}

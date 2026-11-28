@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "es.ficha-contacto.1",
+    "language": "es",
+    "lemma": "ficha de inscripción",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "kayıt fişi",
+    "example": "La ficha de inscripción está en la mesa.",
+    "usage": "Bir etkinliğe veya kuruma kayıt için doldurulan belge.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.ficha-contacto.word.1",
+        "lessonId": "es.ficha-contacto",
+        "objectiveId": "es.ficha-contacto.objective",
+        "band": "A1",
+        "assessmentRevision": "11aa4603"
+      }
+    ]
+  },
+  {
+    "id": "es.ficha-contacto.2",
+    "language": "es",
+    "lemma": "apellidos",
+    "partOfSpeech": "noun",
+    "band": "A1",
+    "meaning": "soyadları",
+    "example": "Mis apellidos son Rey Gil.",
+    "usage": "Kişinin soyadlarının yazıldığı alan.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.ficha-contacto.word.2",
+        "lessonId": "es.ficha-contacto",
+        "objectiveId": "es.ficha-contacto.objective",
+        "band": "A1",
+        "assessmentRevision": "cbf6031b"
+      }
+    ]
+  },
+  {
+    "id": "es.ficha-contacto.3",
+    "language": "es",
+    "lemma": "correo electrónico",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "e-posta adresi",
+    "example": "Mi correo electrónico es sara@example.com.",
+    "usage": "Kayıtta mesaj gönderilebilecek adres.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.ficha-contacto.word.3",
+        "lessonId": "es.ficha-contacto",
+        "objectiveId": "es.ficha-contacto.objective",
+        "band": "A1",
+        "assessmentRevision": "f76e1f51"
+      }
+    ]
+  },
+  {
+    "id": "es.ficha-contacto.4",
+    "language": "es",
+    "lemma": "código postal",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "posta kodu",
+    "example": "El código postal tiene cinco cifras.",
+    "usage": "Adresin bölgesini gösteren kod.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.ficha-contacto.word.4",
+        "lessonId": "es.ficha-contacto",
+        "objectiveId": "es.ficha-contacto.objective",
+        "band": "A1",
+        "assessmentRevision": "47c05cbe"
+      }
+    ]
+  },
+  {
+    "id": "es.ficha-contacto.5",
+    "language": "es",
+    "lemma": "fecha de nacimiento",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "doğum tarihi",
+    "example": "La ficha pide la fecha de nacimiento.",
+    "usage": "Bir kişinin doğduğu gün, ay ve yıl.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.ficha-contacto.word.5",
+        "lessonId": "es.ficha-contacto",
+        "objectiveId": "es.ficha-contacto.objective",
+        "band": "A1",
+        "assessmentRevision": "1fb50c9a"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-diario.1",
+    "language": "es",
+    "lemma": "levantarse temprano",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "erken kalkmak",
+    "example": "Mar se levanta temprano los lunes.",
+    "usage": "Yataktan günün erken saatinde kalkmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-diario.word.1",
+        "lessonId": "es.horario-diario",
+        "objectiveId": "es.horario-diario.objective",
+        "band": "A1",
+        "assessmentRevision": "cb756aa7"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-diario.2",
+    "language": "es",
+    "lemma": "ducharse",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "duş almak",
+    "example": "Me ducho después del deporte.",
+    "usage": "Dönüşlü fiil, kişinin kendisinin duş aldığını söyler.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-diario.word.2",
+        "lessonId": "es.horario-diario",
+        "objectiveId": "es.horario-diario.objective",
+        "band": "A1",
+        "assessmentRevision": "bbe41a9e"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-diario.3",
+    "language": "es",
+    "lemma": "prepararse",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "hazırlanmak",
+    "example": "Nos preparamos para salir.",
+    "usage": "Yer veya etkinlik için kendini hazırlamak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-diario.word.3",
+        "lessonId": "es.horario-diario",
+        "objectiveId": "es.horario-diario.objective",
+        "band": "A1",
+        "assessmentRevision": "808469cc"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-diario.4",
+    "language": "es",
+    "lemma": "entre semana",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "hafta içi",
+    "example": "Trabajo temprano entre semana.",
+    "usage": "Haftanın hafta sonu dışındaki günleri.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-diario.word.4",
+        "lessonId": "es.horario-diario",
+        "objectiveId": "es.horario-diario.objective",
+        "band": "A1",
+        "assessmentRevision": "181a046d"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-diario.5",
+    "language": "es",
+    "lemma": "a veces",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "bazen",
+    "example": "A veces vuelvo en autobús.",
+    "usage": "Bir eylemin ara sıra gerçekleştiğini bildirir.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-diario.word.5",
+        "lessonId": "es.horario-diario",
+        "objectiveId": "es.horario-diario.objective",
+        "band": "A1",
+        "assessmentRevision": "f1b6c457"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-servicio.1",
+    "language": "es",
+    "lemma": "hora de apertura",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "açılış saati",
+    "example": "La hora de apertura es a las nueve.",
+    "usage": "Hizmetin başladığı zaman.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-servicio.word.1",
+        "lessonId": "es.horario-servicio",
+        "objectiveId": "es.horario-servicio.objective",
+        "band": "A1",
+        "assessmentRevision": "19f9f77d"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-servicio.2",
+    "language": "es",
+    "lemma": "hora de cierre",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "kapanış saati",
+    "example": "La hora de cierre es a las dos.",
+    "usage": "Hizmetin bittiği zaman.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-servicio.word.2",
+        "lessonId": "es.horario-servicio",
+        "objectiveId": "es.horario-servicio.objective",
+        "band": "A1",
+        "assessmentRevision": "66b4f5d4"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-servicio.3",
+    "language": "es",
+    "lemma": "estar abierto",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "açık olmak",
+    "example": "El museo está abierto hasta las cinco.",
+    "usage": "Bir yerin ziyaretçiye hizmet verecek durumda olması.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-servicio.word.3",
+        "lessonId": "es.horario-servicio",
+        "objectiveId": "es.horario-servicio.objective",
+        "band": "A1",
+        "assessmentRevision": "ef62745b"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-servicio.4",
+    "language": "es",
+    "lemma": "horario de atención",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "hizmet saatleri",
+    "example": "El horario de atención está en la puerta.",
+    "usage": "Görevlinin işlem yaptığı zaman aralığı.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-servicio.word.4",
+        "lessonId": "es.horario-servicio",
+        "objectiveId": "es.horario-servicio.objective",
+        "band": "A1",
+        "assessmentRevision": "5673c3c9"
+      }
+    ]
+  },
+  {
+    "id": "es.horario-servicio.5",
+    "language": "es",
+    "lemma": "pausa del mediodía",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "öğle arası",
+    "example": "Hay una pausa del mediodía de una a dos.",
+    "usage": "Gün ortasında hizmetin geçici olarak durması.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.horario-servicio.word.5",
+        "lessonId": "es.horario-servicio",
+        "objectiveId": "es.horario-servicio.objective",
+        "band": "A1",
+        "assessmentRevision": "4a8d66b8"
+      }
+    ]
+  },
+  {
+    "id": "es.turno-mostrador.1",
+    "language": "es",
+    "lemma": "sacar un turno",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "sıra numarası almak",
+    "example": "Saca un turno antes de pasar a la sala.",
+    "usage": "Bekleme sırası için bir numara edinmek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.turno-mostrador.word.1",
+        "lessonId": "es.turno-mostrador",
+        "objectiveId": "es.turno-mostrador.objective",
+        "band": "A1",
+        "assessmentRevision": "d7aa346a"
+      }
+    ]
+  },
+  {
+    "id": "es.turno-mostrador.2",
+    "language": "es",
+    "lemma": "ventanilla",
+    "partOfSpeech": "noun",
+    "band": "A1",
+    "meaning": "işlem gişesi",
+    "example": "La ventanilla tres está abierta.",
+    "usage": "Bir görevlinin ziyaretçilerle işlem yaptığı gişe.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.turno-mostrador.word.2",
+        "lessonId": "es.turno-mostrador",
+        "objectiveId": "es.turno-mostrador.objective",
+        "band": "A1",
+        "assessmentRevision": "203923fc"
+      }
+    ]
+  },
+  {
+    "id": "es.turno-mostrador.3",
+    "language": "es",
+    "lemma": "número de turno",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "sıra numarası",
+    "example": "El número de turno sale en la pantalla.",
+    "usage": "Bekleyen ziyaretçinin sırasını gösteren sayı.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.turno-mostrador.word.3",
+        "lessonId": "es.turno-mostrador",
+        "objectiveId": "es.turno-mostrador.objective",
+        "band": "A1",
+        "assessmentRevision": "a5590331"
+      }
+    ]
+  },
+  {
+    "id": "es.turno-mostrador.4",
+    "language": "es",
+    "lemma": "sala de espera",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "bekleme odası",
+    "example": "La sala de espera está al fondo.",
+    "usage": "Sırası gelmeden önce beklenen oda.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.turno-mostrador.word.4",
+        "lessonId": "es.turno-mostrador",
+        "objectiveId": "es.turno-mostrador.objective",
+        "band": "A1",
+        "assessmentRevision": "c073fd5f"
+      }
+    ]
+  },
+  {
+    "id": "es.turno-mostrador.5",
+    "language": "es",
+    "lemma": "junto a la entrada",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A1",
+    "meaning": "girişin yanında",
+    "example": "La máquina está junto a la entrada.",
+    "usage": "Söz konusu nesnenin girişe bitişik veya yakın konumda olması.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.turno-mostrador.word.5",
+        "lessonId": "es.turno-mostrador",
+        "objectiveId": "es.turno-mostrador.objective",
+        "band": "A1",
+        "assessmentRevision": "c2c7a724"
+      }
+    ]
+  },
+  {
+    "id": "es.recado-telefono.1",
+    "language": "es",
+    "lemma": "dejar un recado",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "mesaj bırakmak",
+    "example": "¿Puedo dejar un recado para Alba?",
+    "usage": "Kişi ulaşılabilir değilken not bırakmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.recado-telefono.word.1",
+        "lessonId": "es.recado-telefono",
+        "objectiveId": "es.recado-telefono.objective",
+        "band": "A1",
+        "assessmentRevision": "2aef96f9"
+      }
+    ]
+  },
+  {
+    "id": "es.recado-telefono.2",
+    "language": "es",
+    "lemma": "devolver la llamada",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "aramaya geri dönmek",
+    "example": "Marta puede devolver la llamada a las cinco.",
+    "usage": "Daha önce seni arayan kişiyi geri aramak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.recado-telefono.word.2",
+        "lessonId": "es.recado-telefono",
+        "objectiveId": "es.recado-telefono.objective",
+        "band": "A1",
+        "assessmentRevision": "4a78b1a"
+      }
+    ]
+  },
+  {
+    "id": "es.recado-telefono.3",
+    "language": "es",
+    "lemma": "mensaje de voz",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "sesli mesaj",
+    "example": "Tengo un mensaje de voz de la clínica.",
+    "usage": "Telefonla kaydedilmiş sesli ileti.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.recado-telefono.word.3",
+        "lessonId": "es.recado-telefono",
+        "objectiveId": "es.recado-telefono.objective",
+        "band": "A1",
+        "assessmentRevision": "c352c52c"
+      }
+    ]
+  },
+  {
+    "id": "es.recado-telefono.4",
+    "language": "es",
+    "lemma": "número de contacto",
+    "partOfSpeech": "noun phrase",
+    "band": "A1",
+    "meaning": "irtibat numarası",
+    "example": "Este es mi número de contacto.",
+    "usage": "Sana ulaşmak için kullanılan telefon numarası.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.recado-telefono.word.4",
+        "lessonId": "es.recado-telefono",
+        "objectiveId": "es.recado-telefono.objective",
+        "band": "A1",
+        "assessmentRevision": "8fe87d49"
+      }
+    ]
+  },
+  {
+    "id": "es.recado-telefono.5",
+    "language": "es",
+    "lemma": "estar libre",
+    "partOfSpeech": "verb phrase",
+    "band": "A1",
+    "meaning": "müsait olmak",
+    "example": "Estoy libre después de las cuatro.",
+    "usage": "Bir görüşme veya konuşma için zamanı olmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.recado-telefono.word.5",
+        "lessonId": "es.recado-telefono",
+        "objectiveId": "es.recado-telefono.objective",
+        "band": "A1",
+        "assessmentRevision": "3542176d"
+      }
+    ]
+  },
+  {
+    "id": "es.cita-servicio.1",
+    "language": "es",
+    "lemma": "pedir cita",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "randevu istemek",
+    "example": "Necesito pedir cita para una revisión.",
+    "usage": "Bir hizmet için önceden görüşme saati almak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.cita-servicio.word.1",
+        "lessonId": "es.cita-servicio",
+        "objectiveId": "es.cita-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "80ed9b36"
+      }
+    ]
+  },
+  {
+    "id": "es.cita-servicio.2",
+    "language": "es",
+    "lemma": "hueco libre",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "boş zaman aralığı",
+    "example": "Hay un hueco libre a las cuatro.",
+    "usage": "Takvimde henüz ayrılmamış zaman.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.cita-servicio.word.2",
+        "lessonId": "es.cita-servicio",
+        "objectiveId": "es.cita-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "b42b2bbd"
+      }
+    ]
+  },
+  {
+    "id": "es.cita-servicio.3",
+    "language": "es",
+    "lemma": "cambiar de fecha",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "tarihi değiştirmek",
+    "example": "Tengo que cambiar de fecha porque trabajo el jueves.",
+    "usage": "Bir işi daha farklı bir tarihe taşımak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.cita-servicio.word.3",
+        "lessonId": "es.cita-servicio",
+        "objectiveId": "es.cita-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "271cf4ce"
+      }
+    ]
+  },
+  {
+    "id": "es.cita-servicio.4",
+    "language": "es",
+    "lemma": "confirmación de cita",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "randevu teyidi",
+    "example": "La confirmación de cita llegó por correo.",
+    "usage": "Randevu gün ve saatini doğrulayan mesaj.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.cita-servicio.word.4",
+        "lessonId": "es.cita-servicio",
+        "objectiveId": "es.cita-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "573e92b1"
+      }
+    ]
+  },
+  {
+    "id": "es.cita-servicio.5",
+    "language": "es",
+    "lemma": "presentar un documento",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "belge sunmak",
+    "example": "Hay que presentar un documento en recepción.",
+    "usage": "Bir belgeyi kontrol veya işlem için görevliye vermek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.cita-servicio.word.5",
+        "lessonId": "es.cita-servicio",
+        "objectiveId": "es.cita-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "555c4913"
+      }
+    ]
+  },
+  {
+    "id": "es.visita-pasada.1",
+    "language": "es",
+    "lemma": "entrada gratuita",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "ücretsiz giriş",
+    "example": "El museo tiene entrada gratuita los domingos.",
+    "usage": "Giriş için ücret alınmadığı anlamına gelir.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.visita-pasada.word.1",
+        "lessonId": "es.visita-pasada",
+        "objectiveId": "es.visita-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "7eabea5a"
+      }
+    ]
+  },
+  {
+    "id": "es.visita-pasada.2",
+    "language": "es",
+    "lemma": "exposición temporal",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "geçici sergi",
+    "example": "La exposición temporal termina mañana.",
+    "usage": "Sınırlı süre boyunca açık olan sergi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.visita-pasada.word.2",
+        "lessonId": "es.visita-pasada",
+        "objectiveId": "es.visita-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "4a433473"
+      }
+    ]
+  },
+  {
+    "id": "es.visita-pasada.3",
+    "language": "es",
+    "lemma": "centro cultural",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "kültür merkezi",
+    "example": "Fuimos al centro cultural el viernes.",
+    "usage": "Sergi, konuşma veya kurs düzenleyen yer.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.visita-pasada.word.3",
+        "lessonId": "es.visita-pasada",
+        "objectiveId": "es.visita-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "e0d2c513"
+      }
+    ]
+  },
+  {
+    "id": "es.visita-pasada.4",
+    "language": "es",
+    "lemma": "visita guiada",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "rehberli gezi",
+    "example": "La visita guiada duró media hora.",
+    "usage": "Bir rehberin eşlik ettiği ziyaret.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.visita-pasada.word.4",
+        "lessonId": "es.visita-pasada",
+        "objectiveId": "es.visita-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "d3b43f65"
+      }
+    ]
+  },
+  {
+    "id": "es.visita-pasada.5",
+    "language": "es",
+    "lemma": "valer la pena",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "değmek",
+    "example": "La exposición valió la pena.",
+    "usage": "Zaman veya çabaya değecek bir deneyimi anlatır.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.visita-pasada.word.5",
+        "lessonId": "es.visita-pasada",
+        "objectiveId": "es.visita-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "d430b178"
+      }
+    ]
+  },
+  {
+    "id": "es.gestion-pasada.1",
+    "language": "es",
+    "lemma": "hacer una gestión",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "bir resmî işi halletmek",
+    "example": "Ayer hice una gestión en la oficina.",
+    "usage": "Bir başvuru veya belge işini yürütmek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.gestion-pasada.word.1",
+        "lessonId": "es.gestion-pasada",
+        "objectiveId": "es.gestion-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "4c9ea5cb"
+      }
+    ]
+  },
+  {
+    "id": "es.gestion-pasada.2",
+    "language": "es",
+    "lemma": "fotocopia",
+    "partOfSpeech": "noun",
+    "band": "A2",
+    "meaning": "fotokopi",
+    "example": "El empleado me dio una fotocopia.",
+    "usage": "Bir belgenin makinede çıkarılan kopyası.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.gestion-pasada.word.2",
+        "lessonId": "es.gestion-pasada",
+        "objectiveId": "es.gestion-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "dc751e6"
+      }
+    ]
+  },
+  {
+    "id": "es.gestion-pasada.3",
+    "language": "es",
+    "lemma": "documento original",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "asıl belge",
+    "example": "Necesitamos el documento original.",
+    "usage": "Kopya veya fotoğraf yerine belgenin kendisi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.gestion-pasada.word.3",
+        "lessonId": "es.gestion-pasada",
+        "objectiveId": "es.gestion-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "bb56cd00"
+      }
+    ]
+  },
+  {
+    "id": "es.gestion-pasada.4",
+    "language": "es",
+    "lemma": "hacer cola",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "sırada beklemek",
+    "example": "Tuvimos que hacer cola una hora.",
+    "usage": "İşlem sırası için kuyrukta beklemek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.gestion-pasada.word.4",
+        "lessonId": "es.gestion-pasada",
+        "objectiveId": "es.gestion-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "a1bde602"
+      }
+    ]
+  },
+  {
+    "id": "es.gestion-pasada.5",
+    "language": "es",
+    "lemma": "resguardo",
+    "partOfSpeech": "noun",
+    "band": "A2",
+    "meaning": "teslim belgesi",
+    "example": "Guarda el resguardo hasta el lunes.",
+    "usage": "Bir belge veya başvurunun alındığını gösteren yazı.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.gestion-pasada.word.5",
+        "lessonId": "es.gestion-pasada",
+        "objectiveId": "es.gestion-pasada.objective",
+        "band": "A2",
+        "assessmentRevision": "898ef6cb"
+      }
+    ]
+  },
+  {
+    "id": "es.orden-incidente.1",
+    "language": "es",
+    "lemma": "orden de los hechos",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "olayların sırası",
+    "example": "El informe muestra el orden de los hechos.",
+    "usage": "Olayların önce ve sonra nasıl gerçekleştiği.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.orden-incidente.word.1",
+        "lessonId": "es.orden-incidente",
+        "objectiveId": "es.orden-incidente.objective",
+        "band": "A2",
+        "assessmentRevision": "55a6dfe1"
+      }
+    ]
+  },
+  {
+    "id": "es.orden-incidente.2",
+    "language": "es",
+    "lemma": "al rato",
+    "partOfSpeech": "adverbial phrase",
+    "band": "A2",
+    "meaning": "bir süre sonra",
+    "example": "Al rato llegó el autobús.",
+    "usage": "Kesin süre vermeden kısa bir aradan sonraki olayı bildirir.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.orden-incidente.word.2",
+        "lessonId": "es.orden-incidente",
+        "objectiveId": "es.orden-incidente.objective",
+        "band": "A2",
+        "assessmentRevision": "d7cd215a"
+      }
+    ]
+  },
+  {
+    "id": "es.orden-incidente.3",
+    "language": "es",
+    "lemma": "apuntar la hora",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "saati not etmek",
+    "example": "Apunté la hora de la llegada.",
+    "usage": "Olayın saatini yazılı olarak kaydetmek.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.orden-incidente.word.3",
+        "lessonId": "es.orden-incidente",
+        "objectiveId": "es.orden-incidente.objective",
+        "band": "A2",
+        "assessmentRevision": "87c927ca"
+      }
+    ]
+  },
+  {
+    "id": "es.orden-incidente.4",
+    "language": "es",
+    "lemma": "media hora",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "yarım saat",
+    "example": "La espera duró media hora.",
+    "usage": "Otuz dakikalık süre.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.orden-incidente.word.4",
+        "lessonId": "es.orden-incidente",
+        "objectiveId": "es.orden-incidente.objective",
+        "band": "A2",
+        "assessmentRevision": "4c430693"
+      }
+    ]
+  },
+  {
+    "id": "es.orden-incidente.5",
+    "language": "es",
+    "lemma": "recoger un paquete",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "paketi teslim almak",
+    "example": "Recogí un paquete en la oficina.",
+    "usage": "Bekleyen bir paketi gidip almak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.orden-incidente.word.5",
+        "lessonId": "es.orden-incidente",
+        "objectiveId": "es.orden-incidente.objective",
+        "band": "A2",
+        "assessmentRevision": "a8dd4c19"
+      }
+    ]
+  },
+  {
+    "id": "es.retraso-servicio.1",
+    "language": "es",
+    "lemma": "llegar con retraso",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "gecikmeli varmak",
+    "example": "El tren llegó con retraso al centro.",
+    "usage": "Beklenen saatten sonra varmak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.retraso-servicio.word.1",
+        "lessonId": "es.retraso-servicio",
+        "objectiveId": "es.retraso-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "6072a791"
+      }
+    ]
+  },
+  {
+    "id": "es.retraso-servicio.2",
+    "language": "es",
+    "lemma": "perder el autobús",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "otobüsü kaçırmak",
+    "example": "Perdí el autobús de las siete.",
+    "usage": "Kalkışı zamanında yakalayamamak.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.retraso-servicio.word.2",
+        "lessonId": "es.retraso-servicio",
+        "objectiveId": "es.retraso-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "c7fcbf46"
+      }
+    ]
+  },
+  {
+    "id": "es.retraso-servicio.3",
+    "language": "es",
+    "lemma": "aviso de retraso",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "gecikme bildirimi",
+    "example": "Vi un aviso de retraso en el móvil.",
+    "usage": "Gecikme olacağını bildiren kısa ileti.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.retraso-servicio.word.3",
+        "lessonId": "es.retraso-servicio",
+        "objectiveId": "es.retraso-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "f7ea024d"
+      }
+    ]
+  },
+  {
+    "id": "es.retraso-servicio.4",
+    "language": "es",
+    "lemma": "obras en la calle",
+    "partOfSpeech": "noun phrase",
+    "band": "A2",
+    "meaning": "sokakta yol çalışması",
+    "example": "Hay obras en la calle Mayor.",
+    "usage": "Sokakta geçişi etkileyebilen yapım veya onarım işleri.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.retraso-servicio.word.4",
+        "lessonId": "es.retraso-servicio",
+        "objectiveId": "es.retraso-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "3b3a72c6"
+      }
+    ]
+  },
+  {
+    "id": "es.retraso-servicio.5",
+    "language": "es",
+    "lemma": "perder la cita",
+    "partOfSpeech": "verb phrase",
+    "band": "A2",
+    "meaning": "randevuyu kaçırmak",
+    "example": "Perdí la cita porque llegué tarde.",
+    "usage": "Zamanında gelemediğin için randevunun geçmesi.",
+    "revision": 1,
+    "change": "MVP-2B ilk İspanyolca paketi",
+    "links": [
+      {
+        "cardId": "es.retraso-servicio.word.5",
+        "lessonId": "es.retraso-servicio",
+        "objectiveId": "es.retraso-servicio.objective",
+        "band": "A2",
+        "assessmentRevision": "22230494"
+      }
+    ]
+  }
+]

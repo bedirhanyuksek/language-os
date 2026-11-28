@@ -436,7 +436,9 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
   let reviewMinutes = 0
   const firstBlocks = new Set<string>()
   let reachedPublishedEnd = false
-  for (let elapsed = 0; elapsed < 150 && !reachedPublishedEnd; elapsed++) {
+  // The C2 fixture reaches the end around day 168 with the 12 new lessons and 72 cards.
+  const dayLimit = 180
+  for (let elapsed = 0; elapsed < dayLimit && !reachedPublishedEnd; elapsed++) {
     const now = new Date(Date.parse(at) + elapsed * day).toISOString()
     for (let block = 0; block < 30; block++) {
       const plan = dailyPlan(state, course, now, zone)
@@ -469,7 +471,7 @@ test.each(['B2', 'C2'] as const)('Russian A1 start links movement and aspect to 
     }
   }
   expect(order).toEqual(targets)
-  expect(reachedPublishedEnd).toBe(true)
+  expect(reachedPublishedEnd, `Studied ${studied.size} lessons in ${dayLimit} calendar days`).toBe(true)
   const available = course.unit.lessons.filter(({ objective }) =>
     target === 'C2' || ['A1', 'A2', 'B1', 'B2', 'B2+'].includes(objective.level))
   expect(studied).toEqual(new Set(available.map(({ id }) => id).filter((id) => !['ru.cyrillic', 'ru.intro'].includes(id))))

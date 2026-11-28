@@ -1,0 +1,3117 @@
+{
+  "format": 1,
+  "language": "es",
+  "lessons": [
+    {
+      "id": "es.ficha-contacto",
+      "outcome": "A1.ficha-contacto",
+      "level": "A1",
+      "prerequisite": [
+        "es.numeros"
+      ],
+      "title": "Bir kayıt formuna iletişim bilgisi yaz",
+      "objective": "Adı, soyadı ve iletişim bilgilerini doğru kayıt alanlarına aktar, eksik bir alanı sor.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "¿Cuál es…? ile eksik bilgiyi sor"
+      ],
+      "situation": "Bir kütüphane veya kurs kayıt masasında kısa bir iletişim fişi dolduruyorsun.",
+      "bridge": "Nombre ad, apellidos soyad(lar), teléfono telefon ve correo electrónico e-posta alanıdır. Bir değeri sormak için ¿Cuál es…?, cevaplamak için Mi … es… kullan.",
+      "models": [
+        {
+          "phrase": "¿Cuál es su correo electrónico?",
+          "explanation": "Su burada kibar biçimde karşındaki kişinin bilgisini sorar. Cuál, iletişim alanının değerini ister."
+        },
+        {
+          "phrase": "Mi teléfono es el 600 000 020.",
+          "explanation": "Mi teléfono es el ile numaranı bildirirsin. Formda numarayı ilgili alana aynen yaz."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "¿Cuál es…? ile eksik bilgiyi sor",
+          "incorrect": "¿Cuál su correo?",
+          "correct": "¿Cuál es su correo?",
+          "explanation": "Cuál ile belirli bir alanın değerini sorarken es kullan.",
+          "guided": [
+            [
+              "Kibarca e-posta sor: ¿___ su correo?",
+              "Cuál es"
+            ],
+            [
+              "Bir fişte numara eksik. ¿___ su teléfono?",
+              "Cuál es"
+            ]
+          ],
+          "transfer": [
+            [
+              "Bir yolcunun posta kodu eksik. Kibar bir İspanyolca soruyla posta kodunu iste.",
+              "¿Cuál es su código postal?",
+              "¿Me dice su código postal?"
+            ],
+            [
+              "Kurs fişindeki eksik adresi sor: ¿___ su dirección?",
+              "Cuál es"
+            ]
+          ],
+          "delayed": [
+            [
+              "Bir üyelik kartında irtibat numarası eksik. Bir kayıt görevlisi olarak bu numarayı tam cümleyle sor.",
+              "¿Cuál es su número de contacto?",
+              "¿Me dice su número de contacto?"
+            ],
+            [
+              "Adı yazdın. Soyadını kibarca sor: ¿___ su apellido?",
+              "Cuál es"
+            ]
+          ]
+        },
+        {
+          "label": "Bilgiyi uygun form alanına aktar",
+          "incorrect": "Nombre: Vega. Apellidos: Ana.",
+          "correct": "Nombre: Ana. Apellidos: Vega.",
+          "explanation": "İspanyolca formda nombre ile apellidos ayrı alanlardır. Bilgiyi metindeki yazımla koru.",
+          "guided": [
+            [
+              "«Soy Julia Soto». Formdaki Nombre alanını doldur.",
+              "Julia"
+            ],
+            [
+              "«Mi apellido es Mora». Formdaki Apellidos alanını doldur.",
+              "Mora"
+            ]
+          ],
+          "transfer": [
+            [
+              "Kartta «Nombre: Leo; Apellidos: Paz Gil; Teléfono: 600 000 021». Bu yeni formdaki tek alanı doldur: Apellidos.",
+              "Paz Gil"
+            ],
+            [
+              "Not: «El teléfono de Rita es el 600 000 030. Su correo es rita@example.com». Yalnızca Correo alanını doldur.",
+              "rita@example.com"
+            ]
+          ],
+          "delayed": [
+            [
+              "Yeni üyenin notu: «Soy Nora León Díaz. Teléfono: 600 000 040». Formun soyadı alanına ne yazarsın?",
+              "León Díaz"
+            ],
+            [
+              "«Antes usaba sol@example.org. Ahora escribo desde sol@example.com». Güncel Correo alanını doldur.",
+              "sol@example.com"
+            ]
+          ],
+          "skill": "reading"
+        }
+      ],
+      "word": {
+        "term": "ficha de inscripción",
+        "meaning": "kayıt fişi",
+        "example": "La ficha de inscripción está en la mesa.",
+        "usage": "Bir etkinliğe veya kuruma kayıt için doldurulan belge.",
+        "pronunciation": "/ˈfitʃa ðe inskɾipˈθjon/",
+        "collocations": [
+          "llenar la ficha de inscripción",
+          "entregar la ficha de inscripción"
+        ],
+        "recognize": [
+          "“ficha de inscripción” bu bağlamda ne demek?",
+          "kayıt fişi",
+          "kimlik kartı",
+          "günlük program",
+          "Bir etkinliğe veya kuruma kayıt için doldurulan belge."
+        ],
+        "recall": [
+          "“kayıt fişi” anlamındaki İspanyolca ifadeyi yaz.",
+          "ficha de inscripción"
+        ],
+        "use": "Yeni kursiyere kayıt fişinin nerede olduğunu söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "apellidos",
+          "meaning": "soyadları",
+          "example": "Mis apellidos son Rey Gil.",
+          "usage": "Kişinin soyadlarının yazıldığı alan.",
+          "pronunciation": "/apeˈʎiðos/",
+          "collocations": [
+            "escribir los apellidos",
+            "nombre y apellidos"
+          ],
+          "recognize": [
+            "“apellidos” bu bağlamda ne demek?",
+            "soyadları",
+            "telefon numarası",
+            "doğum yeri",
+            "Kişinin soyadlarının yazıldığı alan."
+          ],
+          "recall": [
+            "“soyadları” anlamındaki İspanyolca ifadeyi yaz.",
+            "apellidos"
+          ],
+          "use": "Bir aile üyesinin soyadını kurgusal forma yaz."
+        },
+        {
+          "term": "correo electrónico",
+          "meaning": "e-posta adresi",
+          "example": "Mi correo electrónico es sara@example.com.",
+          "usage": "Kayıtta mesaj gönderilebilecek adres.",
+          "pronunciation": "/koˈreo elekˈtɾoniko/",
+          "collocations": [
+            "pedir el correo electrónico",
+            "confirmar el correo electrónico"
+          ],
+          "recognize": [
+            "“correo electrónico” bu bağlamda ne demek?",
+            "e-posta adresi",
+            "ev telefonu",
+            "mahalle adı",
+            "Kayıtta mesaj gönderilebilecek adres."
+          ],
+          "recall": [
+            "“e-posta adresi” anlamındaki İspanyolca ifadeyi yaz.",
+            "correo electrónico"
+          ],
+          "use": "Kütüphane kaydı için kurgusal bir e-posta adresi ver."
+        },
+        {
+          "term": "código postal",
+          "meaning": "posta kodu",
+          "example": "El código postal tiene cinco cifras.",
+          "usage": "Adresin bölgesini gösteren kod.",
+          "pronunciation": "/ˈkoðiɣo posˈtal/",
+          "collocations": [
+            "anotar el código postal",
+            "confirmar el código postal"
+          ],
+          "recognize": [
+            "“código postal” bu bağlamda ne demek?",
+            "posta kodu",
+            "kapı anahtarı",
+            "üyelik kartı",
+            "Adresin bölgesini gösteren kod."
+          ],
+          "recall": [
+            "“posta kodu” anlamındaki İspanyolca ifadeyi yaz.",
+            "código postal"
+          ],
+          "use": "Bir görevliye eksik posta kodunu sor."
+        },
+        {
+          "term": "fecha de nacimiento",
+          "meaning": "doğum tarihi",
+          "example": "La ficha pide la fecha de nacimiento.",
+          "usage": "Bir kişinin doğduğu gün, ay ve yıl.",
+          "pronunciation": "/ˈfetʃa ðe naθiˈmjento/",
+          "collocations": [
+            "indicar la fecha de nacimiento",
+            "comprobar la fecha de nacimiento"
+          ],
+          "recognize": [
+            "“fecha de nacimiento” bu bağlamda ne demek?",
+            "doğum tarihi",
+            "kayıt saati",
+            "telefon alanı",
+            "Bir kişinin doğduğu gün, ay ve yıl."
+          ],
+          "recall": [
+            "“doğum tarihi” anlamındaki İspanyolca ifadeyi yaz.",
+            "fecha de nacimiento"
+          ],
+          "use": "Kurgusal doğum gününü bir kayıt fişine yaz."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "campo",
+          "cue": "form alanı"
+        }
+      ],
+      "writing": {
+        "prompt": "Kütüphane kaydı için kurgusal kartı kullan: Ada Costa Vidal, ada@example.net, 600 000 041. Nombre, Apellidos, Correo ve Teléfono alanlarını İspanyolca doldur.",
+        "sample": "Nombre: Ada\nApellidos: Costa Vidal\nCorreo: ada@example.net\nTeléfono: 600 000 041",
+        "revision": "Ada’nın yeni adresi ada.nueva@example.net. Dört alanı yeniden yaz ve güncel iletişim bilgisini kullan.",
+        "criteria": [
+          "Ad ve soyad doğru alanlarda.",
+          "E-posta ve numara kaynaktaki bilgilerle eşleşiyor."
+        ]
+      },
+      "input": {
+        "text": "Ficha de la biblioteca. Nombre: Mara. Apellidos: Ruiz Soto. Teléfono: 600 000 011. Correo: mara@example.org. Escribe un dato en cada campo.",
+        "reading": [
+          "Mara’nın soyadları hangileri?",
+          "Ruiz Soto",
+          "Mara Ruiz",
+          "Ruiz Mara",
+          "Soyadları Apellidos etiketinden sonra gelir.",
+          "Apellidos: Ruiz Soto"
+        ],
+        "transcript": "— ¿Cuál es su nombre? — Soy Alba Torres. Mi correo es alba@example.net. Prefiero un mensaje por correo.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Kim konuşuyor?",
+          "Alba Torres",
+          "Alba Ruiz",
+          "Mara Torres",
+          "Soy ile kişinin adı gelir.",
+          "Soy Alba Torres"
+        ],
+        "detail": [
+          "Hangi iletişim yolu tercih ediliyor?",
+          "E-posta",
+          "Telefon",
+          "Posta",
+          "Son cümlede tercih belirtiliyor.",
+          "Prefiero un mensaje por correo"
+        ]
+      },
+      "retry": {
+        "text": "Ficha del club. Nombre: Inés. Apellidos: Lago. Correo: ines@example.com. Teléfono: sin dato.",
+        "reading": [
+          "Hangi alan boş?",
+          "Telefon",
+          "Soyad",
+          "E-posta",
+          "Sin dato, bilgi olmadığını gösterir.",
+          "Teléfono: sin dato"
+        ],
+        "transcript": "— Mi apellido es Díaz. — Gracias. ¿Cuál es su teléfono? — Es el 600 000 052.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Soyadı nedir?",
+          "Díaz",
+          "Lago",
+          "Torres",
+          "İlk konuşmacı soyadını söylüyor.",
+          "Mi apellido es Díaz"
+        ],
+        "detail": [
+          "Görevli sonra hangi bilgiyi ister?",
+          "Telefon",
+          "Doğum tarihi",
+          "Adres",
+          "İkinci soru telefon alanıyla ilgili.",
+          "¿Cuál es su teléfono?"
+        ]
+      },
+      "readingUse": "Bir eksik alanı tespit et ve kayıt görevlisi olarak tek soruyla iste.",
+      "listeningUse": "Bir üyeye kayıt alanlarından birini sor. Üye yanlış alanı cevaplarsa hangisini istediğini tekrar söyle.",
+      "speaking": "Bir üyeye kayıt alanlarından birini sor. Üye yanlış alanı cevaplarsa hangisini istediğini tekrar söyle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Önce hangi kişiye ait formu okuduğunu belirle. Yazılan ve eksik kalan alanları ayrı işaretle.",
+        "main": "Konuşmacının soyadını söylediği anı bul.",
+        "detail": "Görevlinin eksik olan hangi alanı sorduğunu belirle."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Kişinin adı ile soyadını ayır, sonra iletişim bilgilerini ilgili alanlarda bul.",
+      "genres": {
+        "reading": "kayıt fişi",
+        "listening": "kayıt masası diyaloğu",
+        "writing": "form"
+      }
+    },
+    {
+      "id": "es.recado-telefono",
+      "outcome": "A1.recado-telefono",
+      "level": "A1",
+      "prerequisite": [
+        "es.repetir"
+      ],
+      "title": "Kısa bir telefon mesajına karşılık ver",
+      "objective": "Telefon notunda arayanı, alıcıyı ve nedeni ayır. Geri dönüş mesajında neden aradığını ve ne zaman müsait olduğunu bildir.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Aranan kişiyi a, nedeni por ile bağla",
+        "Mesajı gönderene de parte de, alıcıya para kullan"
+      ],
+      "situation": "Bir arkadaşın ya da kayıt masası sana kısa bir telefon notu bırakıyor.",
+      "bridge": "Llamar a ekinden sonra aradığın kişiyi, llamo por kalıbından sonra arama nedenini söyle. De parte de, mesajı kimin bıraktığını belirtir.",
+      "models": [
+        {
+          "phrase": "Llamo a la clínica por mi cita.",
+          "explanation": "A la clínica aranan yeri, por mi cita aramanın nedenini verir."
+        },
+        {
+          "phrase": "Es un mensaje de parte de Nora.",
+          "explanation": "De parte de Nora, mesajı Nora’nın gönderdiğini belirtir. Para Nora olsaydı mesaj Nora’ya giderdi."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Aranan kişiyi a, nedeni por ile bağla",
+          "incorrect": "Llamo por Eva para hablar con ella.",
+          "correct": "Llamo a Eva para hablar con ella.",
+          "explanation": "Llamar a + kişi veya kurum. Llamo por + konu veya neden.",
+          "guided": [
+            [
+              "Bir arkadaşı arıyorsun: Llamo ___ Julia.",
+              "a"
+            ],
+            [
+              "Numara yüzünden arıyorsun: Llamo ___ el número.",
+              "por"
+            ]
+          ],
+          "transfer": [
+            [
+              "Müşteri kartın hakkında aradığını İspanyolca bir cümleyle bildir.",
+              "Llamo por mi tarjeta.",
+              "Llamo por la tarjeta."
+            ],
+            [
+              "Görevli seni yönlendiriyor. Resepsiyonu aradığını söyle: Llamo ___ la recepción.",
+              "a"
+            ]
+          ],
+          "delayed": [
+            [
+              "Bir kayıp çanta hakkında aradığını İspanyolca yaz.",
+              "Llamo por la bolsa perdida.",
+              "Llamo por mi bolsa perdida."
+            ],
+            [
+              "İşe geç kalacağını arkadaşına söylemek için onu arıyorsun: Llamo ___ Dani.",
+              "a"
+            ]
+          ]
+        },
+        {
+          "label": "Mesajı gönderene de parte de, alıcıya para kullan",
+          "incorrect": "Un mensaje de parte de Leo. (mesaj Leo için)",
+          "correct": "Un mensaje para Leo.",
+          "explanation": "De parte de kaynak, para alıcıdır.",
+          "guided": [
+            [
+              "Mesaj Rita’dan: Un mensaje ___ Rita.",
+              "de parte de"
+            ],
+            [
+              "Mesaj Luis’e: Un mensaje ___ Luis.",
+              "para"
+            ]
+          ],
+          "transfer": [
+            [
+              "Inés, Marta’ya bir mesaj bırakıyor. Mesajın Inés’ten olduğunu kısa bir cümleyle bildir.",
+              "Es un mensaje de parte de Inés.",
+              "El mensaje es de parte de Inés."
+            ],
+            [
+              "Görevli, Ximena’nın Tomás’ı aradığını yazmış. Alıcıyı belirt: un mensaje ___ Tomás.",
+              "para"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kütüphanede Elena için not bırakıldı. Mesajın Elena’ya olduğunu tam cümleyle söyle.",
+              "Es un mensaje para Elena.",
+              "El mensaje es para Elena."
+            ],
+            [
+              "Fişte mesajı Daniel’in bıraktığı yazıyor. Kimden geldiğini tamamla: El mensaje es ___ Daniel.",
+              "de parte de"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "dejar un recado",
+        "meaning": "mesaj bırakmak",
+        "example": "¿Puedo dejar un recado para Alba?",
+        "usage": "Kişi ulaşılabilir değilken not bırakmak.",
+        "pronunciation": "/deˈxaɾ un reˈkaðo/",
+        "collocations": [
+          "dejar un recado breve",
+          "dejar un recado para alguien"
+        ],
+        "recognize": [
+          "“dejar un recado” bu bağlamda ne demek?",
+          "mesaj bırakmak",
+          "numara çevirmek",
+          "bir yeri kapatmak",
+          "Kişi ulaşılabilir değilken not bırakmak."
+        ],
+        "recall": [
+          "“mesaj bırakmak” anlamındaki İspanyolca ifadeyi yaz.",
+          "dejar un recado"
+        ],
+        "use": "Arkadaşın evde yok. Kısa bir not bırakmak iste."
+      },
+      "additionalWords": [
+        {
+          "term": "devolver la llamada",
+          "meaning": "aramaya geri dönmek",
+          "example": "Marta puede devolver la llamada a las cinco.",
+          "usage": "Daha önce seni arayan kişiyi geri aramak.",
+          "pronunciation": "/deβolˈβeɾ la ʎaˈmaða/",
+          "collocations": [
+            "devolver la llamada hoy",
+            "pedir que devuelvan la llamada"
+          ],
+          "recognize": [
+            "“devolver la llamada” bu bağlamda ne demek?",
+            "aramaya geri dönmek",
+            "mesajı silmek",
+            "adres istemek",
+            "Daha önce seni arayan kişiyi geri aramak."
+          ],
+          "recall": [
+            "“aramaya geri dönmek” anlamındaki İspanyolca ifadeyi yaz.",
+            "devolver la llamada"
+          ],
+          "use": "Birine aramasına ne zaman dönebileceğini yaz."
+        },
+        {
+          "term": "mensaje de voz",
+          "meaning": "sesli mesaj",
+          "example": "Tengo un mensaje de voz de la clínica.",
+          "usage": "Telefonla kaydedilmiş sesli ileti.",
+          "pronunciation": "/menˈsaxe ðe βoθ/",
+          "collocations": [
+            "enviar un mensaje de voz",
+            "recibir un mensaje de voz"
+          ],
+          "recognize": [
+            "“mensaje de voz” bu bağlamda ne demek?",
+            "sesli mesaj",
+            "yazılı adres",
+            "ödeme belgesi",
+            "Telefonla kaydedilmiş sesli ileti."
+          ],
+          "recall": [
+            "“sesli mesaj” anlamındaki İspanyolca ifadeyi yaz.",
+            "mensaje de voz"
+          ],
+          "use": "Bir arkadaşına kısa bir sesli mesaj bırakacağını söyle."
+        },
+        {
+          "term": "número de contacto",
+          "meaning": "irtibat numarası",
+          "example": "Este es mi número de contacto.",
+          "usage": "Sana ulaşmak için kullanılan telefon numarası.",
+          "pronunciation": "/ˈnumeɾo ðe konˈtakto/",
+          "collocations": [
+            "dar un número de contacto",
+            "anotar el número de contacto"
+          ],
+          "recognize": [
+            "“número de contacto” bu bağlamda ne demek?",
+            "irtibat numarası",
+            "sıra numarası",
+            "oda numarası",
+            "Sana ulaşmak için kullanılan telefon numarası."
+          ],
+          "recall": [
+            "“irtibat numarası” anlamındaki İspanyolca ifadeyi yaz.",
+            "número de contacto"
+          ],
+          "use": "Kurgusal bir notta ulaşılabilecek numarayı yaz."
+        },
+        {
+          "term": "estar libre",
+          "meaning": "müsait olmak",
+          "example": "Estoy libre después de las cuatro.",
+          "usage": "Bir görüşme veya konuşma için zamanı olmak.",
+          "pronunciation": "/esˈtaɾ ˈliβɾe/",
+          "collocations": [
+            "estar libre por la tarde",
+            "preguntar si está libre"
+          ],
+          "recognize": [
+            "“estar libre” bu bağlamda ne demek?",
+            "müsait olmak",
+            "meşgul olmak",
+            "ücretsiz olmak",
+            "Bir görüşme veya konuşma için zamanı olmak."
+          ],
+          "recall": [
+            "“müsait olmak” anlamındaki İspanyolca ifadeyi yaz.",
+            "estar libre"
+          ],
+          "use": "Bir arkadaşına ne zaman konuşmaya müsait olduğunu söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "buzón de voz",
+          "cue": "sesli posta"
+        }
+      ],
+      "writing": {
+        "prompt": "El buzón de voz: «Soy Lucía de la clínica. Llámame por tu cita». İspanyolca kısa bir geri dönüş mesajı yaz. Kendini tanıt, neden aradığını ve bugün ne zaman müsait olduğunu söyle.",
+        "sample": "Hola, Lucía. Soy Selin. Llamo por mi cita. Estoy libre a las cuatro.",
+        "revision": "Arama klinik yerine kütüphaneden geldi. Yeni nedeni ve ne zaman geri arayacağını yaz.",
+        "criteria": [
+          "Arama nedenini açıkça söyle.",
+          "Arayanı veya yanıt veren kişiyi ve geri dönüş zamanını belirt."
+        ]
+      },
+      "input": {
+        "text": "Buzón de voz. Hola, soy Marta de la biblioteca. Llamo por el libro. Puedes llamarme después de las tres.",
+        "reading": [
+          "Marta neden arıyor?",
+          "Kitap için",
+          "Telefon satmak için",
+          "Randevu için",
+          "Por arama nedenine bağlanıyor.",
+          "Llamo por el libro"
+        ],
+        "transcript": "— Un recado para Alba. — ¿De parte de quién? — De parte de Nora. Está libre a las seis.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Mesaj kime?",
+          "Alba",
+          "Nora",
+          "Marta",
+          "Para alıcıyı bildirir.",
+          "Un recado para Alba"
+        ],
+        "detail": [
+          "Nora ne zaman müsait?",
+          "Altıda",
+          "Üçte",
+          "Beşte",
+          "Son cümle saati veriyor.",
+          "libre a las seis"
+        ]
+      },
+      "retry": {
+        "text": "Recado para Paco. Ada llama por la mochila. Puede hablar a las cinco.",
+        "reading": [
+          "Ada neden aradı?",
+          "Sırt çantası",
+          "Ders",
+          "Spor salonu",
+          "Por sonrasındaki isim neden.",
+          "llama por la mochila"
+        ],
+        "transcript": "— Soy Leo. Llamo a Eva por la reunión. — Eva no está. ¿Quieres dejar un recado? — Sí, gracias.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Leo kimi arıyor?",
+          "Eva",
+          "Ada",
+          "Paco",
+          "Llamo a, aranan kişiyi belirtir.",
+          "Llamo a Eva"
+        ],
+        "detail": [
+          "Leo neyi kabul ediyor?",
+          "Not bırakmayı",
+          "Numara değiştirmeyi",
+          "Görüşmeyi iptal etmeyi",
+          "Kısa yanıt ricayı kabul ediyor.",
+          "¿Quieres dejar un recado? — Sí"
+        ]
+      },
+      "readingUse": "Arama nedenini yaz ve arayana uygun bir geri dönüş saati ver.",
+      "listeningUse": "Arama fişini oku. Arayana geri dönüş mesajı bırak. Kendini tanıt, neden aradığını ve yeniden ne zaman konuşabileceğini söyle.",
+      "speaking": "Arama fişini oku. Arayana geri dönüş mesajı bırak. Kendini tanıt, neden aradığını ve yeniden ne zaman konuşabileceğini söyle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Mesajın kime yöneldiğini, kimin aradığını ve konu başlığını ayrı düşün.",
+        "main": "Arayanın kendi adı ile aradığı kişinin adını ayır.",
+        "detail": "Son evet yanıtından hemen önceki isteği oku."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Gönderen, alıcı ve arama nedenini farklı bilgiler olarak işaretle.",
+      "genres": {
+        "reading": "telefon notu",
+        "listening": "telefon diyaloğu",
+        "writing": "geri dönüş mesajı"
+      }
+    },
+    {
+      "id": "es.horario-diario",
+      "outcome": "A1.horario-diario",
+      "level": "A1",
+      "prerequisite": [
+        "es.rutina"
+      ],
+      "title": "Günlük hazırlık rutinini kişiye göre anlat",
+      "objective": "Kendi ve başka birinin sabah veya akşam rutinini dönüşlü fiillerle anlat ve bir alışkanlığın sıklığını bildir.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Dönüşlü zamir ve fiili kişiyle eşleştir",
+        "Sıklığı her zaman, bazen veya hiç yönüyle bildir"
+      ],
+      "situation": "Bir ev arkadaşıyla sabah ve akşam düzeninizi paylaşıyorsunuz.",
+      "bridge": "Me levanto benim kalktığımı, te levantas senin kalktığını ve se levanta başka birinin kalktığını gösterir. Sıklık için siempre, a veces ve nunca kullan.",
+      "models": [
+        {
+          "phrase": "Me levanto temprano, pero Clara se levanta tarde.",
+          "explanation": "Me ben, se üçüncü kişi için dönüşlü zamirdir. Kişi değişince hem zamir hem fiil değişir."
+        },
+        {
+          "phrase": "A veces me ducho por la noche.",
+          "explanation": "A veces bazen demektir. Zamir çekimli fiilin hemen önündedir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Dönüşlü zamir ve fiili kişiyle eşleştir",
+          "incorrect": "Yo se levanto a las siete.",
+          "correct": "Yo me levanto a las siete.",
+          "explanation": "Çekimli dönüşlü fiilde me/te/se, eylemi yapan kişiye uyar.",
+          "guided": [
+            [
+              "Ben hazırlanıyorum. Yo ___ para salir. (prepararse)",
+              "me preparo"
+            ],
+            [
+              "Sen erkenden kalkıyorsun. Tú ___ temprano. (levantarse)",
+              "te levantas"
+            ]
+          ],
+          "transfer": [
+            [
+              "Inés işten sonra duş alıyor. Bu alışkanlığı tam İspanyolca cümleyle yaz.",
+              "Inés se ducha después del trabajo.",
+              "Inés se ducha al salir del trabajo."
+            ],
+            [
+              "Bir ev arkadaşına erken hazırlanıp hazırlanmadığını sor: ¿___ temprano? (prepararse, tú)",
+              "Te preparas"
+            ]
+          ],
+          "delayed": [
+            [
+              "Omar sabah yedide kalkıyor. Bir komşuya tam İspanyolca cümleyle ilet.",
+              "Omar se levanta a las siete.",
+              "A las siete se levanta Omar."
+            ],
+            [
+              "Bir kardeş 'Ben gece duş alırım' diyor: Por la noche ___. (ducharse)",
+              "me ducho"
+            ]
+          ]
+        },
+        {
+          "label": "Sıklığı her zaman, bazen veya hiç yönüyle bildir",
+          "incorrect": "Nunca me preparo aquí. (her zaman)",
+          "correct": "Siempre me preparo aquí.",
+          "explanation": "Siempre her zaman, a veces bazen, nunca hiç demektir. Nunca fiilden önceyse ayrıca no eklenmez.",
+          "guided": [
+            [
+              "'Her zaman' ekle: ___ me levanto temprano.",
+              "Siempre"
+            ],
+            [
+              "'Bazen' ekle: ___ se ducha por la tarde.",
+              "A veces"
+            ]
+          ],
+          "transfer": [
+            [
+              "Komşun hiçbir zaman gece hazırlanmıyor: ___ se prepara por la noche.",
+              "Nunca"
+            ],
+            [
+              "Bir öğrenci bazen sabah hazırlanıyor: ___ se prepara por la mañana.",
+              "A veces"
+            ]
+          ],
+          "delayed": [
+            [
+              "Ev arkadaşı her zaman erken duş alır: ___ se ducha temprano.",
+              "Siempre"
+            ],
+            [
+              "Arkadaşın 'Ben hiç geç kalkmam' diyor. Kendi sözleriyle yaz.",
+              "Nunca me levanto tarde.",
+              "No me levanto tarde nunca."
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "levantarse temprano",
+        "meaning": "erken kalkmak",
+        "example": "Mar se levanta temprano los lunes.",
+        "usage": "Yataktan günün erken saatinde kalkmak.",
+        "pronunciation": "/leβanˈtaɾse temˈpɾano/",
+        "collocations": [
+          "levantarse temprano entre semana",
+          "tener que levantarse temprano"
+        ],
+        "recognize": [
+          "“levantarse temprano” bu bağlamda ne demek?",
+          "erken kalkmak",
+          "erken çıkmak",
+          "geç uyumak",
+          "Yataktan günün erken saatinde kalkmak."
+        ],
+        "recall": [
+          "“erken kalkmak” anlamındaki İspanyolca ifadeyi yaz.",
+          "levantarse temprano"
+        ],
+        "use": "Pazartesi sabahı erken kalkıp kalkmadığını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "ducharse",
+          "meaning": "duş almak",
+          "example": "Me ducho después del deporte.",
+          "usage": "Dönüşlü fiil, kişinin kendisinin duş aldığını söyler.",
+          "pronunciation": "/duˈtʃaɾse/",
+          "collocations": [
+            "ducharse por la mañana",
+            "ducharse rápido"
+          ],
+          "recognize": [
+            "“ducharse” bu bağlamda ne demek?",
+            "duş almak",
+            "yüzmek",
+            "yemek hazırlamak",
+            "Dönüşlü fiil, kişinin kendisinin duş aldığını söyler."
+          ],
+          "recall": [
+            "“duş almak” anlamındaki İspanyolca ifadeyi yaz.",
+            "ducharse"
+          ],
+          "use": "Duş alma alışkanlığını bir eve taşınan arkadaşına anlat."
+        },
+        {
+          "term": "prepararse",
+          "meaning": "hazırlanmak",
+          "example": "Nos preparamos para salir.",
+          "usage": "Yer veya etkinlik için kendini hazırlamak.",
+          "pronunciation": "/pɾepaˈɾaɾse/",
+          "collocations": [
+            "prepararse para salir",
+            "prepararse para clase"
+          ],
+          "recognize": [
+            "“prepararse” bu bağlamda ne demek?",
+            "hazırlanmak",
+            "dinlenmek",
+            "hazır yemek almak",
+            "Yer veya etkinlik için kendini hazırlamak."
+          ],
+          "recall": [
+            "“hazırlanmak” anlamındaki İspanyolca ifadeyi yaz.",
+            "prepararse"
+          ],
+          "use": "Bir ders için ne zaman hazırlandığını anlat."
+        },
+        {
+          "term": "entre semana",
+          "meaning": "hafta içi",
+          "example": "Trabajo temprano entre semana.",
+          "usage": "Haftanın hafta sonu dışındaki günleri.",
+          "pronunciation": "/ˈentɾe seˈmana/",
+          "collocations": [
+            "levantarse temprano entre semana",
+            "estudiar entre semana"
+          ],
+          "recognize": [
+            "“entre semana” bu bağlamda ne demek?",
+            "hafta içi",
+            "hafta sonu",
+            "ay sonunda",
+            "Haftanın hafta sonu dışındaki günleri."
+          ],
+          "recall": [
+            "“hafta içi” anlamındaki İspanyolca ifadeyi yaz.",
+            "entre semana"
+          ],
+          "use": "Hafta içi yaptığın bir şeyi anlat."
+        },
+        {
+          "term": "a veces",
+          "meaning": "bazen",
+          "example": "A veces vuelvo en autobús.",
+          "usage": "Bir eylemin ara sıra gerçekleştiğini bildirir.",
+          "pronunciation": "/a ˈβeθes/",
+          "collocations": [
+            "hacer deporte a veces",
+            "salir a veces"
+          ],
+          "recognize": [
+            "“a veces” bu bağlamda ne demek?",
+            "bazen",
+            "hiçbir zaman",
+            "her gün",
+            "Bir eylemin ara sıra gerçekleştiğini bildirir."
+          ],
+          "recall": [
+            "“bazen” anlamındaki İspanyolca ifadeyi yaz.",
+            "a veces"
+          ],
+          "use": "Bazen yaptığın bir akşam alışkanlığını yaz."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "por turnos",
+          "cue": "dönüşümlü"
+        }
+      ],
+      "writing": {
+        "prompt": "Kendin ve kurgusal ev arkadaşın için üç kısa rutin cümlesi yaz. İki farklı kişi ve bir sıklık ifadesi kullan.",
+        "sample": "Me levanto a las siete. Mi compañero se prepara a las ocho. A veces me ducho por la noche.",
+        "revision": "Bu kez hafta sonu düzenini yaz. Bir saat ve bir sıklık bilgisini değiştir.",
+        "criteria": [
+          "Dönüşlü zamir ile fiilin kişisi eşleşiyor.",
+          "Rutinlerden en az biri zaman veya sıklık içeriyor."
+        ]
+      },
+      "input": {
+        "text": "Nota para el piso. Yo me levanto a las siete entre semana. Paula se levanta a las ocho. Limpiamos la cocina por turnos.",
+        "reading": [
+          "Paula ne zaman kalkar?",
+          "Sekizde",
+          "Yedide",
+          "Altıda",
+          "Paula’nın cümlesinde ikinci saat var.",
+          "Paula se levanta a las ocho"
+        ],
+        "transcript": "— ¿Te duchas por la mañana? — No. Me ducho por la noche. A veces me preparo muy tarde.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Duş ne zaman alınıyor?",
+          "Gece",
+          "Sabah",
+          "Öğle",
+          "Cevap sabah varsayımını düzeltiyor.",
+          "Me ducho por la noche"
+        ],
+        "detail": [
+          "Bazen ne yapıyor?",
+          "Geç hazırlanıyor",
+          "Geç kalkıyor",
+          "Spor yapıyor",
+          "A veces sonrasındaki eylem hazırlanmak.",
+          "me preparo muy tarde"
+        ]
+      },
+      "retry": {
+        "text": "Mara se prepara a las seis. Yo nunca me levanto antes de las siete. Los domingos desayunamos juntas.",
+        "reading": [
+          "Anlatıcı neyi hiç yapmıyor?",
+          "Yediden önce kalkmak",
+          "Altıda hazırlanmak",
+          "Pazar kahvaltısı yapmak",
+          "Nunca ile kendi alışkanlığını anlatıyor.",
+          "nunca me levanto antes de las siete"
+        ],
+        "transcript": "— Leo se ducha a las cinco. — ¿Y tú? — Yo siempre me ducho a las ocho.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Leo kaçta duş alıyor?",
+          "Beşte",
+          "Sekizde",
+          "Dokuzda",
+          "İlk konuşmacı Leo’nun saatini söylüyor.",
+          "Leo se ducha a las cinco"
+        ],
+        "detail": [
+          "İkinci kişinin sıklığı ne?",
+          "Her zaman",
+          "Bazen",
+          "Hiçbir zaman",
+          "Son yanıtın sıklık sözcüğünü bul.",
+          "siempre me ducho"
+        ]
+      },
+      "readingUse": "Ev arkadaşına iki kişinin sabah düzenini karşılaştıran kısa bir not yaz.",
+      "listeningUse": "Bir ev arkadaşına ne zaman kalktığını söyle. O kendi düzenini söylediğinde iki rutinin farklı olduğunu belirt.",
+      "speaking": "Bir ev arkadaşına ne zaman kalktığını söyle. O kendi düzenini söylediğinde iki rutinin farklı olduğunu belirt.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İki kişinin rutinlerini karşılaştır. Her cümlenin kimin alışkanlığını anlattığını belirle.",
+        "main": "Leo’nun saati ile konuşanın saatini ayrı oku.",
+        "detail": "Son cümlede zamirin önündeki sıklık sözünü bul."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Fiili yapan kişiyi ve rutinlerin hangi saatte veya sıklıkta gerçekleştiğini bul.",
+      "genres": {
+        "reading": "ev arkadaşı notu",
+        "listening": "rutin diyaloğu",
+        "writing": "kişisel rutin"
+      }
+    },
+    {
+      "id": "es.horario-servicio",
+      "outcome": "A1.horario-servicio",
+      "level": "A1",
+      "prerequisite": [
+        "es.numeros"
+      ],
+      "title": "Bir hizmet noktasının açılış ve kapanış saatini teyit et",
+      "objective": "Bir duyurudan açılış ve kapanışı çıkar, belirli bir saatte gidilip gidilemeyeceğini bildir.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Saat sorusu ve tekil/çoğul cevabı",
+        "Çalışma aralığını de… a… ile yaz"
+      ],
+      "situation": "Bir kütüphane veya danışma noktasının tabelasında çalışma saatlerini kontrol ediyorsun.",
+      "bridge": "¿A qué hora abre/cierra? ile saati sor. Tek saat için a la una, diğerleri için a las…; saat aralığı için de… a… kullan.",
+      "models": [
+        {
+          "phrase": "¿A qué hora abre la oficina? Abre a la una.",
+          "explanation": "A la una tekildir. Saat birden başka sayıysa a las kullanılır."
+        },
+        {
+          "phrase": "La biblioteca abre de nueve a dos.",
+          "explanation": "De nueve a dos başlangıç ve bitişi olan çalışma aralığını anlatır."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Saat sorusu ve tekil/çoğul cevabı",
+          "incorrect": "Abre a las una.",
+          "correct": "Abre a la una.",
+          "explanation": "Bir için a la, diğer tam saatler için a las.",
+          "guided": [
+            [
+              "Bire doğru açılış: Abre ___ una.",
+              "a la"
+            ],
+            [
+              "Saat beşte kapanış: Cierra ___ cinco.",
+              "a las"
+            ]
+          ],
+          "transfer": [
+            [
+              "Tam cümleyle 'Danışma saat üçte açılıyor' yaz.",
+              "La oficina abre a las tres.",
+              "La recepción abre a las tres."
+            ],
+            [
+              "Duyuruda 13.00 kapanış var. Cierra ___ una de la tarde.",
+              "a la"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kütüphane sabah sekizde açılıyor. Saat bilgisini tek İspanyolca cümlede teyit et.",
+              "La biblioteca abre a las ocho.",
+              "Abre a las ocho de la mañana."
+            ],
+            [
+              "Kapının saat birde açık olduğunu söyle: La puerta está abierta ___ una.",
+              "a la"
+            ]
+          ]
+        },
+        {
+          "label": "Çalışma aralığını de… a… ile yaz",
+          "incorrect": "Abre de nueve en doce.",
+          "correct": "Abre de nueve a doce.",
+          "explanation": "Başlangıcı de, bitişi a ile belirt.",
+          "guided": [
+            [
+              "Dokuzdan on ikiye: Abre ___ nueve ___ doce. Aralığı tamamen yaz.",
+              "de nueve a doce"
+            ],
+            [
+              "On ile iki arası: Atienden ___.",
+              "de diez a dos"
+            ]
+          ],
+          "transfer": [
+            [
+              "Hizmet saatleri 08.00–11.00. Bir arkadaşa tam cümleyle belirt.",
+              "Atienden de ocho a once.",
+              "Abren de ocho a once."
+            ],
+            [
+              "13.00–16.00 aralığını tamamla: El mostrador abre ___.",
+              "de una a cuatro",
+              "de la una a las cuatro"
+            ]
+          ],
+          "delayed": [
+            [
+              "Bir müze 10.00–12.00 arası hizmet veriyor. Arkadaşına tam cümleyle yaz.",
+              "El museo abre de diez a doce.",
+              "El museo está abierto de diez a doce."
+            ],
+            [
+              "Duyuru 15.00–18.00 gösteriyor. Aralığı yaz: La oficina abre ___.",
+              "de tres a seis",
+              "de las tres a las seis"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "hora de apertura",
+        "meaning": "açılış saati",
+        "example": "La hora de apertura es a las nueve.",
+        "usage": "Hizmetin başladığı zaman.",
+        "pronunciation": "/ˈoɾa ðe apeɾˈtuɾa/",
+        "collocations": [
+          "consultar la hora de apertura",
+          "cambiar la hora de apertura"
+        ],
+        "recognize": [
+          "“hora de apertura” bu bağlamda ne demek?",
+          "açılış saati",
+          "kapı numarası",
+          "öğle arası",
+          "Hizmetin başladığı zaman."
+        ],
+        "recall": [
+          "“açılış saati” anlamındaki İspanyolca ifadeyi yaz.",
+          "hora de apertura"
+        ],
+        "use": "Bir arkadaşına açılış saatini nereden kontrol edeceğini söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "hora de cierre",
+          "meaning": "kapanış saati",
+          "example": "La hora de cierre es a las dos.",
+          "usage": "Hizmetin bittiği zaman.",
+          "pronunciation": "/ˈoɾa ðe ˈθjere/",
+          "collocations": [
+            "preguntar la hora de cierre",
+            "confirmar la hora de cierre"
+          ],
+          "recognize": [
+            "“hora de cierre” bu bağlamda ne demek?",
+            "kapanış saati",
+            "başlama günü",
+            "sıra numarası",
+            "Hizmetin bittiği zaman."
+          ],
+          "recall": [
+            "“kapanış saati” anlamındaki İspanyolca ifadeyi yaz.",
+            "hora de cierre"
+          ],
+          "use": "Bir bilet ofisinin kapanış saatini sor."
+        },
+        {
+          "term": "estar abierto",
+          "meaning": "açık olmak",
+          "example": "El museo está abierto hasta las cinco.",
+          "usage": "Bir yerin ziyaretçiye hizmet verecek durumda olması.",
+          "pronunciation": "/esˈtaɾ aˈβjeɾto/",
+          "collocations": [
+            "estar abierto el lunes",
+            "estar abierto al público"
+          ],
+          "recognize": [
+            "“estar abierto” bu bağlamda ne demek?",
+            "açık olmak",
+            "kapalı olmak",
+            "dolu olmak",
+            "Bir yerin ziyaretçiye hizmet verecek durumda olması."
+          ],
+          "recall": [
+            "“açık olmak” anlamındaki İspanyolca ifadeyi yaz.",
+            "estar abierto"
+          ],
+          "use": "Danışmanın pazartesi açık olup olmadığını sor."
+        },
+        {
+          "term": "horario de atención",
+          "meaning": "hizmet saatleri",
+          "example": "El horario de atención está en la puerta.",
+          "usage": "Görevlinin işlem yaptığı zaman aralığı.",
+          "pronunciation": "/oˈɾaɾjo ðe atenˈθjon/",
+          "collocations": [
+            "ver el horario de atención",
+            "ampliar el horario de atención"
+          ],
+          "recognize": [
+            "“horario de atención” bu bağlamda ne demek?",
+            "hizmet saatleri",
+            "randevu belgesi",
+            "adres değişikliği",
+            "Görevlinin işlem yaptığı zaman aralığı."
+          ],
+          "recall": [
+            "“hizmet saatleri” anlamındaki İspanyolca ifadeyi yaz.",
+            "horario de atención"
+          ],
+          "use": "Bir ofisin hizmet saatlerini kısaca bir ziyaretçiye yaz."
+        },
+        {
+          "term": "pausa del mediodía",
+          "meaning": "öğle arası",
+          "example": "Hay una pausa del mediodía de una a dos.",
+          "usage": "Gün ortasında hizmetin geçici olarak durması.",
+          "pronunciation": "/ˈpawsa ðel meðjoˈði.a/",
+          "collocations": [
+            "hacer una pausa del mediodía",
+            "durante la pausa del mediodía"
+          ],
+          "recognize": [
+            "“pausa del mediodía” bu bağlamda ne demek?",
+            "öğle arası",
+            "hafta sonu açılışı",
+            "ilk sıra",
+            "Gün ortasında hizmetin geçici olarak durması."
+          ],
+          "recall": [
+            "“öğle arası” anlamındaki İspanyolca ifadeyi yaz.",
+            "pausa del mediodía"
+          ],
+          "use": "Gün ortasında hizmete ne zaman ara verildiğini belirt."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "cartel",
+          "cue": "tabela"
+        }
+      ],
+      "writing": {
+        "prompt": "Çizelge: 09.00–13.00 ve 15.00–18.00. Arkadaşın saat ikide gitmek istiyor. İspanyolca kısa notla aralıklardan birini ve ikideki durumu teyit et.",
+        "sample": "La oficina abre de nueve a una y de tres a seis. A las dos está cerrada. Podemos ir a las cuatro.",
+        "revision": "Cuma günü yalnızca 10.00–12.00 arasında açık. Yeni bilgiyle arkadaşına yaz.",
+        "criteria": [
+          "Açılış/kapanış veya çalışma aralığı doğru.",
+          "Arkadaşa mümkün bir varış saati açıkça veriliyor."
+        ]
+      },
+      "input": {
+        "text": "Cartel de la biblioteca. Abre de nueve a una y de tres a seis. A las dos, la puerta está cerrada.",
+        "reading": [
+          "Saat ikide gidilebilir mi?",
+          "Hayır",
+          "Evet",
+          "Yalnızca giriş kartıyla",
+          "İki saati aralıkların dışında.",
+          "A las dos, la puerta está cerrada"
+        ],
+        "transcript": "— ¿A qué hora abre la oficina? — A las diez. — ¿Y cierra a las dos? — No, cierra a la una.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Ofis kaçta açılır?",
+          "Onda",
+          "İkide",
+          "Birde",
+          "Açılış saati ilk yanıt.",
+          "A las diez"
+        ],
+        "detail": [
+          "Gerçek kapanış ne zaman?",
+          "Birde",
+          "İkide",
+          "Onda",
+          "Son yanıt kapanışı düzeltiyor.",
+          "cierra a la una"
+        ]
+      },
+      "retry": {
+        "text": "Taquilla del centro. Lunes: de ocho a doce. Martes: de diez a dos. Miércoles: cerrada.",
+        "reading": [
+          "Salı kapanış saati nedir?",
+          "İki",
+          "On iki",
+          "On",
+          "Salı satırının sonunda.",
+          "Martes: de diez a dos"
+        ],
+        "transcript": "— Los viernes atendemos de once a tres. — ¿Puedo ir a las cuatro? — No, ven a las dos.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Cuma hizmet ne zaman başlar?",
+          "On birde",
+          "Üçte",
+          "İkide",
+          "Aralığın ilk sayısı başlangıçtır.",
+          "de once a tres"
+        ],
+        "detail": [
+          "Hangi saat önerilir?",
+          "İki",
+          "Dört",
+          "Üç",
+          "Son cümle bir seçenek veriyor.",
+          "ven a las dos"
+        ]
+      },
+      "readingUse": "Kapanış saatiyle öğle arasındaki durum arasındaki farkı bir ziyaretçiye bildir.",
+      "listeningUse": "Bir ziyaretçi kapalı saatte gelmek istiyor. Çalışma aralığını ve mümkün bir saati söyle.",
+      "speaking": "Bir ziyaretçi kapalı saatte gelmek istiyor. Çalışma aralığını ve mümkün bir saati söyle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Her çalışma aralığı için başlama ve bitiş saatini ayrı not et.",
+        "main": "De sonrasındaki ilk saati bul.",
+        "detail": "En sonda önerilen saati, ziyaretçinin sorduğu saatten ayır."
+      },
+      "approach": "contrast",
+      "readingPurpose": "Doğru günün çalışma aralığını ve gün ortasındaki boşluğu bul.",
+      "genres": {
+        "reading": "hizmet çizelgesi",
+        "listening": "açılış saati teyidi",
+        "writing": "ziyaretçiye mesaj"
+      }
+    },
+    {
+      "id": "es.turno-mostrador",
+      "outcome": "A1.turno-mostrador",
+      "level": "A1",
+      "prerequisite": [
+        "es.horario-servicio"
+      ],
+      "title": "Sıra numarası ve hizmet masasını bul",
+      "objective": "Bir hizmetin veya boş sıranın olup olmadığını sor, belirli hizmet masasının yerini öğren ve kısa yön bilgisi ver.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Var olup olmadığını hay ile sor",
+        "Bilinen masanın konumunu estar ile sor"
+      ],
+      "situation": "Bir spor merkezi veya belediye binasında sıra almak istiyorsun.",
+      "bridge": "Hay, bir şeyin var olup olmadığını anlatır. Está/están, bilinen bir şeyin nerede olduğunu gösterir. Sıra için turno ve masa için ventanilla kullan.",
+      "models": [
+        {
+          "phrase": "¿Hay turnos para hoy? No hay turnos.",
+          "explanation": "Hay, sıranın varlığını sorar veya bildirir. No hay, bugün hiç sıra olmadığını söyler."
+        },
+        {
+          "phrase": "¿Dónde está la ventanilla dos? Está al fondo.",
+          "explanation": "Belirli masanın konumunu está ile sorarsın. Al fondo, en arkada demektir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Var olup olmadığını hay ile sor",
+          "incorrect": "¿Está algún turno libre?",
+          "correct": "¿Hay algún turno libre?",
+          "explanation": "Henüz belli olmayan bir sıra, makine veya hizmetin varlığını hay ile sor.",
+          "guided": [
+            [
+              "Bugün boş sıra var mı? ¿___ turnos para hoy?",
+              "Hay"
+            ],
+            [
+              "Bugün hiç fiş yok. No ___ tiques hoy.",
+              "hay"
+            ]
+          ],
+          "transfer": [
+            [
+              "Belediye binasında boş sıra olup olmadığını kibarca bir cümleyle sor.",
+              "¿Hay algún turno libre?",
+              "¿Hay turnos libres?"
+            ],
+            [
+              "Bugün hiç boş randevu yok. No ___ citas libres hoy.",
+              "hay"
+            ]
+          ],
+          "delayed": [
+            [
+              "Bir yedek hizmet masası olup olmadığını sor.",
+              "¿Hay otra ventanilla?",
+              "¿Hay una ventanilla más?"
+            ],
+            [
+              "“Bugün boş gişe yok” diye uyar: No ___ ventanillas libres hoy.",
+              "hay"
+            ]
+          ]
+        },
+        {
+          "label": "Bilinen masanın konumunu estar ile sor",
+          "incorrect": "¿Dónde hay la ventanilla tres?",
+          "correct": "¿Dónde está la ventanilla tres?",
+          "explanation": "Belirli bir masa veya cihazın yerini sorarken tekil está, çoğul están.",
+          "guided": [
+            [
+              "Ventanilla dos nerede? ¿Dónde ___ la ventanilla dos?",
+              "está"
+            ],
+            [
+              "İki makine nerede? ¿Dónde ___ las máquinas?",
+              "están"
+            ]
+          ],
+          "transfer": [
+            [
+              "Belirli bir sıra makinesinin yerini tam cümleyle sor.",
+              "¿Dónde está la máquina de turnos?",
+              "¿Dónde está la máquina para sacar turno?"
+            ],
+            [
+              "Boş olan iki koltuğun şimdi yerini sor: ¿Dónde ___ las sillas libres?",
+              "están"
+            ]
+          ],
+          "delayed": [
+            [
+              "Başka bir binada gişe dört nerede diye sor.",
+              "¿Dónde está la ventanilla cuatro?",
+              "¿Dónde está la ventanilla número cuatro?"
+            ],
+            [
+              "Bilinen giriş masası kapının yanında. La mesa ___ junto a la puerta.",
+              "está"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "sacar un turno",
+        "meaning": "sıra numarası almak",
+        "example": "Saca un turno antes de pasar a la sala.",
+        "usage": "Bekleme sırası için bir numara edinmek.",
+        "pronunciation": "/saˈkaɾ un ˈtuɾno/",
+        "collocations": [
+          "sacar un turno en la máquina",
+          "sacar un turno para hoy"
+        ],
+        "recognize": [
+          "“sacar un turno” bu bağlamda ne demek?",
+          "sıra numarası almak",
+          "sıradan çıkmak",
+          "ödeme istemek",
+          "Bekleme sırası için bir numara edinmek."
+        ],
+        "recall": [
+          "“sıra numarası almak” anlamındaki İspanyolca ifadeyi yaz.",
+          "sacar un turno"
+        ],
+        "use": "Yeni ziyaretçiye işlemden önce sıra almasını söyle."
+      },
+      "additionalWords": [
+        {
+          "term": "ventanilla",
+          "meaning": "işlem gişesi",
+          "example": "La ventanilla tres está abierta.",
+          "usage": "Bir görevlinin ziyaretçilerle işlem yaptığı gişe.",
+          "pronunciation": "/bentaˈniʎa/",
+          "collocations": [
+            "ir a la ventanilla",
+            "esperar en la ventanilla dos"
+          ],
+          "recognize": [
+            "“ventanilla” bu bağlamda ne demek?",
+            "işlem gişesi",
+            "sıra makinesi",
+            "toplantı alanı",
+            "Bir görevlinin ziyaretçilerle işlem yaptığı gişe."
+          ],
+          "recall": [
+            "“işlem gişesi” anlamındaki İspanyolca ifadeyi yaz.",
+            "ventanilla"
+          ],
+          "use": "İşlem için hangi gişeye gideceğini sor."
+        },
+        {
+          "term": "número de turno",
+          "meaning": "sıra numarası",
+          "example": "El número de turno sale en la pantalla.",
+          "usage": "Bekleyen ziyaretçinin sırasını gösteren sayı.",
+          "pronunciation": "/ˈnumeɾo ðe ˈtuɾno/",
+          "collocations": [
+            "mirar el número de turno",
+            "llevar un número de turno"
+          ],
+          "recognize": [
+            "“número de turno” bu bağlamda ne demek?",
+            "sıra numarası",
+            "telefon numarası",
+            "posta kodu",
+            "Bekleyen ziyaretçinin sırasını gösteren sayı."
+          ],
+          "recall": [
+            "“sıra numarası” anlamındaki İspanyolca ifadeyi yaz.",
+            "número de turno"
+          ],
+          "use": "Arkadaşına ekrandaki kendi sıra numarasını söyle."
+        },
+        {
+          "term": "sala de espera",
+          "meaning": "bekleme odası",
+          "example": "La sala de espera está al fondo.",
+          "usage": "Sırası gelmeden önce beklenen oda.",
+          "pronunciation": "/ˈsala ðe esˈpeɾa/",
+          "collocations": [
+            "sentarse en la sala de espera",
+            "buscar la sala de espera"
+          ],
+          "recognize": [
+            "“sala de espera” bu bağlamda ne demek?",
+            "bekleme odası",
+            "danışma bankosu",
+            "otopark",
+            "Sırası gelmeden önce beklenen oda."
+          ],
+          "recall": [
+            "“bekleme odası” anlamındaki İspanyolca ifadeyi yaz.",
+            "sala de espera"
+          ],
+          "use": "Yeni ziyaretçiye bekleme odasına gitmesini söyle."
+        },
+        {
+          "term": "junto a la entrada",
+          "meaning": "girişin yanında",
+          "example": "La máquina está junto a la entrada.",
+          "usage": "Söz konusu nesnenin girişe bitişik veya yakın konumda olması.",
+          "pronunciation": "/ˈxunto a la enˈtɾaða/",
+          "collocations": [
+            "esperar junto a la entrada",
+            "taquilla junto a la entrada"
+          ],
+          "recognize": [
+            "“junto a la entrada” bu bağlamda ne demek?",
+            "girişin yanında",
+            "üst katta",
+            "uzak sokakta",
+            "Söz konusu nesnenin girişe bitişik veya yakın konumda olması."
+          ],
+          "recall": [
+            "“girişin yanında” anlamındaki İspanyolca ifadeyi yaz.",
+            "junto a la entrada"
+          ],
+          "use": "Sıra fişinin alındığı makineyi konumuyla tarif et."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "pantalla",
+          "cue": "ekran"
+        }
+      ],
+      "writing": {
+        "prompt": "Bir merkezde bugün sıra var. Makine girişin yanında, bekleme odası en arkada. Yeni ziyaretçiye üç kısa İspanyolca cümleyle bilgi ver.",
+        "sample": "Hoy hay turnos. La máquina está junto a la entrada. La sala de espera está al fondo.",
+        "revision": "Yeni binada makine kapının karşısında, bekleme odası üst katta. İki konumu güncelle.",
+        "criteria": [
+          "Hay ile hizmetin varlığını bildir.",
+          "Belirli makine ve odanın konumlarını doğru ver."
+        ]
+      },
+      "input": {
+        "text": "Centro deportivo. Hay turnos para hoy. La máquina está junto a la entrada. Mira tu número en la pantalla.",
+        "reading": [
+          "Sıra makinesi nerede?",
+          "Girişin yanında",
+          "En arkada",
+          "Üst katta",
+          "Sonraki cümle makinenin konumunu gösteriyor.",
+          "La máquina está junto a la entrada"
+        ],
+        "transcript": "— ¿Hay turnos para hoy? — Sí, saca un turno. La sala de espera está al fondo.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Bugün sıra var mı?",
+          "Evet",
+          "Hayır",
+          "Sadece yarın",
+          "Sí isteği olumlu yanıtlıyor.",
+          "Sí, saca un turno"
+        ],
+        "detail": [
+          "Bekleme odası nerede?",
+          "En arkada",
+          "Girişte",
+          "Dışarıda",
+          "Son cümlede odanın yeri var.",
+          "está al fondo"
+        ]
+      },
+      "retry": {
+        "text": "Aviso de hoy. La máquina no funciona. Pide tu turno en la ventanilla uno. La sala de espera está en la planta baja.",
+        "reading": [
+          "Sıra bugün nereden alınır?",
+          "Gişe bir",
+          "Makineden",
+          "Üst kattan",
+          "Arızadan sonra alternatif gişe belirtiliyor.",
+          "en la ventanilla uno"
+        ],
+        "transcript": "— ¿Dónde están las dos máquinas? — Están al lado de la puerta. Hoy solo funciona la máquina de la izquierda.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Makineler nerede?",
+          "Kapının yanında",
+          "Üst katta",
+          "Gişenin arkasında",
+          "Están iki makinenin yerini bildiriyor.",
+          "al lado de la puerta"
+        ],
+        "detail": [
+          "Hangisi çalışıyor?",
+          "Soldaki makine",
+          "Sağdaki makine",
+          "Hiçbiri",
+          "Solo sözcüğü tek makineyi ayırıyor.",
+          "la máquina de la izquierda"
+        ]
+      },
+      "readingUse": "Bir ziyaretçiye nereden sıra alacağını ve sonra nereye gideceğini yaz.",
+      "listeningUse": "Yeni bir hizmet binasında bir sıra iste, makinenin yerini sor ve duyduğun konumu geri söyle.",
+      "speaking": "Yeni bir hizmet binasında bir sıra iste, makinenin yerini sor ve duyduğun konumu geri söyle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "İlk durumla ziyaretçiye verilen yeni talimatı birbirinden ayır.",
+        "main": "İki makinenin ortak yerini ikinci konuşmacı tarif ediyor.",
+        "detail": "Solo sözcüğünden sonra sol veya sağ bilgisini ara."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Hizmetin varlığını, sıra alma talimatını ve makinenin yerini ayır.",
+      "genres": {
+        "reading": "gişe duyurusu",
+        "listening": "sıra diyaloğu",
+        "writing": "yönlendirme"
+      }
+    },
+    {
+      "id": "es.visita-pasada",
+      "outcome": "A2.visita-pasada",
+      "level": "A2",
+      "prerequisite": [
+        "es.pasado-cerrado"
+      ],
+      "title": "Bitmiş bir ziyareti ir ve ser ile anlat",
+      "objective": "Geçmiş ziyarette gidilen yeri ve yaşanan etkinliği, fui/fue biçimlerinin iki işlevini ayırarak anlat.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Geçmişte gidilen yeri ir biçimiyle bildir",
+        "Ser biçimiyle geçmişte etkinliği değerlendir"
+      ],
+      "situation": "Dün bir sergiye, kursa veya aile ziyaretine gittin. Bir arkadaşın nereye gittiğini ve etkinliğin nasıl olduğunu soruyor.",
+      "bridge": "Pretérito indefinido’da ir ve ser aynı biçimleri alır: fui, fuiste, fue, fuimos… Bir hedefe hareket için a + yer, değerlendirme için sıfat veya etkinliğin niteliğini kullan.",
+      "models": [
+        {
+          "phrase": "Ayer fui al museo con mi hermana.",
+          "explanation": "Fui, burada ir fiilidir. Al museo hareketin hedefini gösterir."
+        },
+        {
+          "phrase": "La visita fue muy corta.",
+          "explanation": "Fue, burada ser fiilidir. Muy corta, ziyaretin niteliğini söyler."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Geçmişte gidilen yeri ir biçimiyle bildir",
+          "incorrect": "Ayer voy a la feria.",
+          "correct": "Ayer fui a la feria.",
+          "explanation": "Bitmiş gün için fui (yo), fue (él/ella), fuimos (nosotros) kullan. Hedef yer a ile bağlanır.",
+          "guided": [
+            [
+              "Dün pazara gittim. Ayer ___ al mercado. (yo, ir)",
+              "fui"
+            ],
+            [
+              "Dün kardeşin parka gitti. Mi hermano ___ al parque ayer. (ir)",
+              "fue"
+            ]
+          ],
+          "transfer": [
+            [
+              "Cumartesi arkadaşlarınla sergiye gittiniz. Bir arkadaşına 'Biz cumartesi sergiye gittik' yaz.",
+              "El sábado fuimos a la exposición.",
+              "Fuimos a la exposición el sábado."
+            ],
+            [
+              "Geçen hafta Lara kültür merkezine gitti: Lara ___ al centro cultural. (ir)",
+              "fue"
+            ]
+          ],
+          "delayed": [
+            [
+              "Dün mahalle kütüphanesine gittin. İspanyolca kısa bir ziyaret cümlesi yaz.",
+              "Ayer fui a la biblioteca del barrio.",
+              "Fui a la biblioteca del barrio ayer."
+            ],
+            [
+              "Bir ailece pazar günü istasyona gittiniz. El domingo ___ a la estación. (nosotros, ir)",
+              "fuimos"
+            ]
+          ]
+        },
+        {
+          "label": "Ser biçimiyle geçmişte etkinliği değerlendir",
+          "incorrect": "La charla fui muy útil.",
+          "correct": "La charla fue muy útil.",
+          "explanation": "Etkinlik tekilse fue, çoğulsa fueron. Hedef yer değil, etkinliğin niteliği anlatılır.",
+          "guided": [
+            [
+              "Sergi ilginçti. La exposición ___ interesante.",
+              "fue"
+            ],
+            [
+              "İki ziyaret kısaydı. Las dos visitas ___ cortas.",
+              "fueron"
+            ]
+          ],
+          "transfer": [
+            [
+              "Dünkü görüşmenin yararlı olduğunu tam bir cümleyle söyle.",
+              "La reunión de ayer fue útil.",
+              "Ayer la reunión fue útil."
+            ],
+            [
+              "Geçen yıl iki gösteri ücretsizdi: Los dos espectáculos ___ gratuitos.",
+              "fueron"
+            ]
+          ],
+          "delayed": [
+            [
+              "Pazar günkü gezinin kısa olduğunu tam bir cümleyle söyle.",
+              "La excursión del domingo fue corta.",
+              "La excursión fue corta el domingo."
+            ],
+            [
+              "Sergilerin ilginç olduğunu belirt: Las exposiciones ___ interesantes.",
+              "fueron"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "entrada gratuita",
+        "meaning": "ücretsiz giriş",
+        "example": "El museo tiene entrada gratuita los domingos.",
+        "usage": "Giriş için ücret alınmadığı anlamına gelir.",
+        "pronunciation": "/enˈtɾaða ɣɾaˈtwita/",
+        "collocations": [
+          "tener entrada gratuita",
+          "ofrecer entrada gratuita"
+        ],
+        "recognize": [
+          "“entrada gratuita” bu bağlamda ne demek?",
+          "ücretsiz giriş",
+          "ücretli ek tur",
+          "açılış saati",
+          "Giriş için ücret alınmadığı anlamına gelir."
+        ],
+        "recall": [
+          "“ücretsiz giriş” anlamındaki İspanyolca ifadeyi yaz.",
+          "entrada gratuita"
+        ],
+        "use": "Bir arkadaşına girişin ücretsiz olduğu günü duyur."
+      },
+      "additionalWords": [
+        {
+          "term": "exposición temporal",
+          "meaning": "geçici sergi",
+          "example": "La exposición temporal termina mañana.",
+          "usage": "Sınırlı süre boyunca açık olan sergi.",
+          "pronunciation": "/eksposiˈθjon tempoˈɾal/",
+          "collocations": [
+            "visitar una exposición temporal",
+            "abrir una exposición temporal"
+          ],
+          "recognize": [
+            "“exposición temporal” bu bağlamda ne demek?",
+            "geçici sergi",
+            "daimi koleksiyon",
+            "okuma odası",
+            "Sınırlı süre boyunca açık olan sergi."
+          ],
+          "recall": [
+            "“geçici sergi” anlamındaki İspanyolca ifadeyi yaz.",
+            "exposición temporal"
+          ],
+          "use": "Bir arkadaşına geçen hafta hangi sergiyi ziyaret ettiğini söyle."
+        },
+        {
+          "term": "centro cultural",
+          "meaning": "kültür merkezi",
+          "example": "Fuimos al centro cultural el viernes.",
+          "usage": "Sergi, konuşma veya kurs düzenleyen yer.",
+          "pronunciation": "/ˈθentɾo kultuˈɾal/",
+          "collocations": [
+            "ir al centro cultural",
+            "actividades del centro cultural"
+          ],
+          "recognize": [
+            "“centro cultural” bu bağlamda ne demek?",
+            "kültür merkezi",
+            "otobüs durağı",
+            "belediye gişesi",
+            "Sergi, konuşma veya kurs düzenleyen yer."
+          ],
+          "recall": [
+            "“kültür merkezi” anlamındaki İspanyolca ifadeyi yaz.",
+            "centro cultural"
+          ],
+          "use": "Hafta sonu ziyaret ettiğin kültür merkezini anlat."
+        },
+        {
+          "term": "visita guiada",
+          "meaning": "rehberli gezi",
+          "example": "La visita guiada duró media hora.",
+          "usage": "Bir rehberin eşlik ettiği ziyaret.",
+          "pronunciation": "/biˈsita ɣiˈaða/",
+          "collocations": [
+            "reservar una visita guiada",
+            "hacer una visita guiada"
+          ],
+          "recognize": [
+            "“visita guiada” bu bağlamda ne demek?",
+            "rehberli gezi",
+            "tek başına gezi",
+            "kayıt formu",
+            "Bir rehberin eşlik ettiği ziyaret."
+          ],
+          "recall": [
+            "“rehberli gezi” anlamındaki İspanyolca ifadeyi yaz.",
+            "visita guiada"
+          ],
+          "use": "Geçen ay bir rehberli geziye gidip gitmediğini söyle."
+        },
+        {
+          "term": "valer la pena",
+          "meaning": "değmek",
+          "example": "La exposición valió la pena.",
+          "usage": "Zaman veya çabaya değecek bir deneyimi anlatır.",
+          "pronunciation": "/baˈleɾ la ˈpena/",
+          "collocations": [
+            "valer la pena ir",
+            "valer la pena la visita"
+          ],
+          "recognize": [
+            "“valer la pena” bu bağlamda ne demek?",
+            "değmek",
+            "iptal olmak",
+            "erken kapanmak",
+            "Zaman veya çabaya değecek bir deneyimi anlatır."
+          ],
+          "recall": [
+            "“değmek” anlamındaki İspanyolca ifadeyi yaz.",
+            "valer la pena"
+          ],
+          "use": "Bir ziyaretin zamanına değip değmediğini arkadaşına söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "planta superior",
+          "cue": "üst kat"
+        }
+      ],
+      "writing": {
+        "prompt": "Dün bir kültür merkezine gittin. Kiminle gittiğini, etkinliğin nasıl olduğunu ve bir somut ayrıntıyı üç İspanyolca cümleyle yaz.",
+        "sample": "Ayer fui al centro cultural con Eva. La visita fue corta. Vimos una exposición en la planta superior.",
+        "revision": "Bu kez iki etkinliği değerlendir. Yer ve günü değiştir.",
+        "criteria": [
+          "Geçmişte gidilen yer ve zaman açık.",
+          "Fui/fue biçimlerinin hareket ve nitelik işlevleri ayrı."
+        ]
+      },
+      "input": {
+        "text": "Ayer fui a una exposición temporal con Lara. La entrada fue gratuita. Las fotos estaban en la planta superior.",
+        "reading": [
+          "Giriş nasıldı?",
+          "Ücretsiz",
+          "On avro",
+          "Yalnız üyeler için",
+          "Fue, girişin niteliğini bildirir.",
+          "La entrada fue gratuita"
+        ],
+        "transcript": "— ¿Adónde fuiste el domingo? — Fui al museo con mi vecina. La visita fue breve, pero valió la pena.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Pazar günü nereye gitti?",
+          "Müzeye",
+          "Sergi salonuna",
+          "Parkta bir konsere",
+          "Fui al museo ile hedef belirtiliyor.",
+          "Fui al museo"
+        ],
+        "detail": [
+          "Ziyaret nasıldı?",
+          "Kısa",
+          "Uzun",
+          "İptal",
+          "Fue breve, etkinliğin niteliğini söyler.",
+          "La visita fue breve"
+        ]
+      },
+      "retry": {
+        "text": "Fuimos al teatro el viernes. Los dos espectáculos fueron cortos. Después cenamos cerca del teatro.",
+        "reading": [
+          "Gösteriler nasıldı?",
+          "Kısa",
+          "Uzun",
+          "Ücretsiz",
+          "Fueron, çoğul gösterilerin niteliğini bildirir.",
+          "Los dos espectáculos fueron cortos"
+        ],
+        "transcript": "— Lina fue al centro cultural el lunes. — ¿Cómo fue el curso? — Fue útil, pero el aula era pequeña.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Lina hangi gün gitti?",
+          "Pazartesi",
+          "Salı",
+          "Cuma",
+          "İlk cümlede ziyaretin günü var.",
+          "el lunes"
+        ],
+        "detail": [
+          "Kurs hakkında ne söylendi?",
+          "Yararlı",
+          "Ücretsiz",
+          "Dolu",
+          "Fue, kursu değerlendirir.",
+          "Fue útil"
+        ]
+      },
+      "readingUse": "Bir arkadaşına gidilen yeri ve ziyaret değerlendirmesini ayrı cümlelerle aktar.",
+      "listeningUse": "Bir arkadaşın dünkü etkinliği soruyor. Önce nereye ve kiminle gittiğini söyle, sonra etkinliği değerlendir.",
+      "speaking": "Bir arkadaşın dünkü etkinliği soruyor. Önce nereye ve kiminle gittiğini söyle, sonra etkinliği değerlendir.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Bir yer adını, olayın nasıl olduğunu anlatan ifadeden ayır.",
+        "main": "Gidilen yerle kursun yapıldığı günü ayrı oku.",
+        "detail": "Kursun niteliğini anlatan kısa yanıtı bul."
+      },
+      "approach": "sequence",
+      "readingPurpose": "Tamamlanan ziyarette gidilen yeri ve etkinlik değerlendirmesini bul.",
+      "genres": {
+        "reading": "ziyaret notu",
+        "listening": "gezi diyaloğu",
+        "writing": "etkinlik anlatımı"
+      }
+    },
+    {
+      "id": "es.gestion-pasada",
+      "outcome": "A2.gestion-pasada",
+      "level": "A2",
+      "prerequisite": [
+        "es.visita-pasada"
+      ],
+      "title": "Bir işlemin sorununu ve sonucunu geçmişte bildir",
+      "objective": "Bitmiş bir işlemde hangi sorunun yaşandığını ve hangi adımın atıldığını tener ve hacer ile belirt.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Geçmişte yaşanan sorunu tuve/tuvo ile bildir",
+        "Bitmiş bir işlemi hice/hizo ile bildir"
+      ],
+      "situation": "Dün bir kayıt, iade veya belge işini halletmeye çalıştın. Bir arkadaşına ne olduğunu bildiriyorsun.",
+      "bridge": "Tener kökü tuv- olur: tuve, tuviste, tuvo. Hacer için hice, hiciste, hizo kullan. Üçüncü tekilde hizo z ile yazılır.",
+      "models": [
+        {
+          "phrase": "Tuve un problema con el formulario.",
+          "explanation": "Tuve, yo için tener fiilinin bitmiş geçmiş biçimidir."
+        },
+        {
+          "phrase": "La empleada hizo una copia.",
+          "explanation": "Hizo, bir başkasının bitirdiği eylemi anlatır. Yo biçimi hice’dir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Geçmişte yaşanan sorunu tuve/tuvo ile bildir",
+          "incorrect": "Ayer tení un problema.",
+          "correct": "Ayer tuve un problema.",
+          "explanation": "Tener fiilinde tuv- kökü ve bitmiş geçmiş sonları kullanılır.",
+          "guided": [
+            [
+              "Ben dün sorun yaşadım. Ayer ___ un problema. (yo, tener)",
+              "tuve"
+            ],
+            [
+              "Marta zaman buldu. Marta ___ tiempo el lunes. (tener)",
+              "tuvo"
+            ]
+          ],
+          "transfer": [
+            [
+              "'Dün kartımla ilgili bir sorun yaşadım' diye arkadaşına yaz.",
+              "Ayer tuve un problema con mi tarjeta.",
+              "Tuve un problema con mi tarjeta ayer."
+            ],
+            [
+              "Komşun kuyruğa girmek zorunda kaldı: Mi vecino ___ que hacer cola ayer. (tener)",
+              "tuvo"
+            ]
+          ],
+          "delayed": [
+            [
+              "Geçen cuma danışmada beklemek zorundaydın. İspanyolca tam cümleyle bildir.",
+              "El viernes pasado tuve que esperar en recepción.",
+              "Tuve que esperar en recepción el viernes pasado."
+            ],
+            [
+              "Geçen ay iki arkadaş sorun yaşadı. Las dos amigas ___ problemas el mes pasado. (tener)",
+              "tuvieron"
+            ]
+          ]
+        },
+        {
+          "label": "Bitmiş bir işlemi hice/hizo ile bildir",
+          "incorrect": "La encargada hico una copia.",
+          "correct": "La encargada hizo una copia.",
+          "explanation": "Hacer’ın yo biçimi hice, üçüncü tekil biçimi hizo, çoğul biçimi hicieron.",
+          "guided": [
+            [
+              "Ben bir kopya çıkardım. ___ una copia. (yo, hacer)",
+              "Hice"
+            ],
+            [
+              "Görevli değişiklik yaptı. La empleada ___ un cambio. (hacer)",
+              "hizo"
+            ]
+          ],
+          "transfer": [
+            [
+              "Dün bir fotokopi çıkardığını tam cümleyle yaz.",
+              "Ayer hice una fotocopia.",
+              "Hice una fotocopia ayer."
+            ],
+            [
+              "Görevli iki kopya çıkardı: El empleado ___ dos copias. (hacer)",
+              "hizo"
+            ]
+          ],
+          "delayed": [
+            [
+              "Geçen pazartesi bir başvuru yaptın. 'Dün' kullanmadan tam cümleyle yaz.",
+              "El lunes pasado hice una solicitud.",
+              "Hice una solicitud el lunes pasado."
+            ],
+            [
+              "İki görevli yeni liste hazırladı. Los empleados ___ una lista nueva. (hacer)",
+              "hicieron"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "hacer una gestión",
+        "meaning": "bir resmî işi halletmek",
+        "example": "Ayer hice una gestión en la oficina.",
+        "usage": "Bir başvuru veya belge işini yürütmek.",
+        "pronunciation": "/aˈθeɾ una xesˈtjon/",
+        "collocations": [
+          "hacer una gestión en persona",
+          "hacer una gestión por internet"
+        ],
+        "recognize": [
+          "“hacer una gestión” bu bağlamda ne demek?",
+          "bir resmî işi halletmek",
+          "belgeyi kaybetmek",
+          "servisi iptal etmek",
+          "Bir başvuru veya belge işini yürütmek."
+        ],
+        "recall": [
+          "“bir resmî işi halletmek” anlamındaki İspanyolca ifadeyi yaz.",
+          "hacer una gestión"
+        ],
+        "use": "Geçen hafta yaptığın kurgusal bir resmî işlemi anlat."
+      },
+      "additionalWords": [
+        {
+          "term": "fotocopia",
+          "meaning": "fotokopi",
+          "example": "El empleado me dio una fotocopia.",
+          "usage": "Bir belgenin makinede çıkarılan kopyası.",
+          "pronunciation": "/fotoˈkopja/",
+          "collocations": [
+            "hacer una fotocopia",
+            "entregar una fotocopia"
+          ],
+          "recognize": [
+            "“fotocopia” bu bağlamda ne demek?",
+            "fotokopi",
+            "orijinal belge",
+            "cevap mesajı",
+            "Bir belgenin makinede çıkarılan kopyası."
+          ],
+          "recall": [
+            "“fotokopi” anlamındaki İspanyolca ifadeyi yaz.",
+            "fotocopia"
+          ],
+          "use": "Bir görevliye kaç kopya istediğini söyle."
+        },
+        {
+          "term": "documento original",
+          "meaning": "asıl belge",
+          "example": "Necesitamos el documento original.",
+          "usage": "Kopya veya fotoğraf yerine belgenin kendisi.",
+          "pronunciation": "/dokuˈmento oɾixiˈnal/",
+          "collocations": [
+            "traer el documento original",
+            "pedir el documento original"
+          ],
+          "recognize": [
+            "“documento original” bu bağlamda ne demek?",
+            "asıl belge",
+            "kopya belge",
+            "boş tutanak",
+            "Kopya veya fotoğraf yerine belgenin kendisi."
+          ],
+          "recall": [
+            "“asıl belge” anlamındaki İspanyolca ifadeyi yaz.",
+            "documento original"
+          ],
+          "use": "Bir arkadaşına hangi belgenin aslını getireceğini bildir."
+        },
+        {
+          "term": "hacer cola",
+          "meaning": "sırada beklemek",
+          "example": "Tuvimos que hacer cola una hora.",
+          "usage": "İşlem sırası için kuyrukta beklemek.",
+          "pronunciation": "/aˈθeɾ ˈkola/",
+          "collocations": [
+            "hacer cola en la entrada",
+            "tener que hacer cola"
+          ],
+          "recognize": [
+            "“hacer cola” bu bağlamda ne demek?",
+            "sırada beklemek",
+            "sırasını kaçırmak",
+            "önceden randevu almak",
+            "İşlem sırası için kuyrukta beklemek."
+          ],
+          "recall": [
+            "“sırada beklemek” anlamındaki İspanyolca ifadeyi yaz.",
+            "hacer cola"
+          ],
+          "use": "Dün sırada ne kadar beklediğini anlat."
+        },
+        {
+          "term": "resguardo",
+          "meaning": "teslim belgesi",
+          "example": "Guarda el resguardo hasta el lunes.",
+          "usage": "Bir belge veya başvurunun alındığını gösteren yazı.",
+          "pronunciation": "/resˈɣwaɾðo/",
+          "collocations": [
+            "pedir un resguardo",
+            "guardar el resguardo"
+          ],
+          "recognize": [
+            "“resguardo” bu bağlamda ne demek?",
+            "teslim belgesi",
+            "bekleme fişi",
+            "yeni kopya",
+            "Bir belge veya başvurunun alındığını gösteren yazı."
+          ],
+          "recall": [
+            "“teslim belgesi” anlamındaki İspanyolca ifadeyi yaz.",
+            "resguardo"
+          ],
+          "use": "Bir işlem sonunda alınan teslim belgesini iste."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "sello",
+          "cue": "damga"
+        }
+      ],
+      "writing": {
+        "prompt": "Dün belgenin aslını getirmedin. Görevli kopya çıkardı ve sana teslim belgesi verdi. Bir arkadaşına hangi sorunu yaşadığını ve ne yaptığınızı üç cümleyle bildir.",
+        "sample": "Ayer tuve un problema. No llevé el documento original. La empleada hizo una fotocopia y me dio un resguardo.",
+        "revision": "Bu kez belge vardı ama iki kopya eksikti. Sorun ve çözümü yeni duruma göre yaz.",
+        "criteria": [
+          "Yaşanan sorun ile yapılan işlem ayrı.",
+          "Tener ve hacer için geçmiş kişi biçimleri uygun."
+        ]
+      },
+      "input": {
+        "text": "El lunes tuve un problema en la oficina. No llevé una copia. La empleada hizo una fotocopia y puso un sello en el formulario.",
+        "reading": [
+          "Görevli ne yaptı?",
+          "Fotokopi çıkardı",
+          "Kaydı iptal etti",
+          "Kuyruğu kapattı",
+          "Hizo, yapılan işlemi bildiriyor.",
+          "hizo una fotocopia"
+        ],
+        "transcript": "— Ayer tuve que hacer cola. — ¿Hiciste la gestión? — Sí. El empleado me dio un resguardo.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Ziyaretçi dün ne yapmak zorunda kaldı?",
+          "Sırada beklemek",
+          "Yarın yeniden gelmek",
+          "Damgayı silmek",
+          "Tuve que zorunluluk bildiriyor.",
+          "tuve que hacer cola"
+        ],
+        "detail": [
+          "İşlem sonunda ne aldı?",
+          "Teslim belgesi",
+          "İki para cezası",
+          "Yeni telefon",
+          "Son cümlede verilen nesne var.",
+          "me dio un resguardo"
+        ]
+      },
+      "retry": {
+        "text": "El viernes hice una copia, pero no tuve el documento original. Hoy tengo que volver a la oficina.",
+        "reading": [
+          "Dün hangi belge eksikti?",
+          "Asıl belge",
+          "Kopya",
+          "Kayıt fişi",
+          "Pero sonrasında eksiklik belirtiliyor.",
+          "no tuve el documento original"
+        ],
+        "transcript": "— Rosa tuvo un problema con su tarjeta. — ¿Qué hizo el empleado? — Hizo una tarjeta nueva.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Sorunu kim yaşadı?",
+          "Rosa",
+          "Görevli",
+          "Kopya çeken kişi",
+          "İlk cümlede tuve değil, Rosa tuvo var.",
+          "Rosa tuvo un problema"
+        ],
+        "detail": [
+          "Görevli ne yaptı?",
+          "Yeni kart hazırladı",
+          "Kuyruğu kapattı",
+          "Fotokopi çıkardı",
+          "Hizo sonrasındaki nesneye bak.",
+          "Hizo una tarjeta nueva"
+        ]
+      },
+      "readingUse": "Kopyayı ve asıl belgeyi karıştırmadan işlem sonucunu birine ilet.",
+      "listeningUse": "Bir işlemde yaşadığın bir sorunu ve görevlinin yaptığı şeyi ayrı geçmiş cümlelerle anlat.",
+      "speaking": "Bir işlemde yaşadığın bir sorunu ve görevlinin yaptığı şeyi ayrı geçmiş cümlelerle anlat.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Belgenin hazırlanan biçimini, daha sonra gerekli olacak biçimden ayır.",
+        "main": "Tuvo fiilinin öznesini bul.",
+        "detail": "Son yanıtın hangi nesneyi verdiğine dikkat et."
+      },
+      "approach": "sequence",
+      "readingPurpose": "Başvuruda neyin eksik kaldığını ve görevlinin ne yaptığını ayır.",
+      "genres": {
+        "reading": "işlem notu",
+        "listening": "belge görüşmesi",
+        "writing": "işlem özeti"
+      }
+    },
+    {
+      "id": "es.orden-incidente",
+      "outcome": "A2.orden-incidente",
+      "level": "A2",
+      "prerequisite": [
+        "es.pasado-cerrado"
+      ],
+      "title": "Bir günün olaylarını başlangıç, ara adım ve sonuçla sırala",
+      "objective": "Saatli bir olay kaydından en az üç adımı sıraya koy ve bir adımın ne kadar sürdüğünü bildir.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Olay sırasını bağlayıcıyla göster",
+        "Saat ile süreyi ayrı ifade et"
+      ],
+      "situation": "Bir arkadaşın dünkü teslim ve ziyaret saatlerini karıştırdı. Elinde üç satırlık olay kaydı var.",
+      "bridge": "Primero ilk adım, luego/ después sonraki, al final son adım demektir. A las bir saat noktasını, durante ise bir sürenin uzunluğunu bildirir.",
+      "models": [
+        {
+          "phrase": "Primero recogí el paquete. Luego fui a la biblioteca.",
+          "explanation": "Primero ve luego iki adımı sıralar. Sıralama sözcüklerini olayların gerçek sırasına göre koy."
+        },
+        {
+          "phrase": "La visita empezó a las once y duró una hora.",
+          "explanation": "A las once bir saat noktasıdır. Duró una hora yalnızca süreyi bildirir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Olay sırasını bağlayıcıyla göster",
+          "incorrect": "Al final llegué. Luego entré. (önce gelme)",
+          "correct": "Primero llegué. Luego entré.",
+          "explanation": "Primero ilk eylemin başına, luego veya después sonraki eylemin başına gelir. Al final son aşamayı gösterir.",
+          "guided": [
+            [
+              "İlk adım: ___ dejé la mochila en casa.",
+              "Primero"
+            ],
+            [
+              "Son adım: ___ volví a casa.",
+              "Al final"
+            ]
+          ],
+          "transfer": [
+            [
+              "Çizelge: 09.00 bilet aldım, 09.15 salona girdim. İki olayı sırayla tam cümlelerle yaz.",
+              "Primero compré la entrada. Luego entré en la sala.",
+              "Primero compré la entrada. Después entré en la sala."
+            ],
+            [
+              "Son kayıt kapanışı gösteriyor. ___ cerraron la puerta.",
+              "Al final"
+            ]
+          ],
+          "delayed": [
+            [
+              "Kayda göre önce trene bindin, sonra arkadaşını aradın. İki adımı İspanyolca sırala.",
+              "Primero tomé el tren. Luego llamé a mi amigo.",
+              "Primero cogí el tren. Después llamé a mi amigo."
+            ],
+            [
+              "İlk kayıt otele varış. Sıralama ifadesiyle yaz: ___ llegamos al hotel.",
+              "Primero"
+            ]
+          ]
+        },
+        {
+          "label": "Saat ile süreyi ayrı ifade et",
+          "incorrect": "Esperé a las dos horas.",
+          "correct": "Esperé durante dos horas.",
+          "explanation": "A las + saat olayın ne zaman olduğunu bildirir. Durante + süre olayın ne kadar devam ettiğini belirtir.",
+          "guided": [
+            [
+              "Görüşme beşte başladı. La reunión empezó ___ cinco.",
+              "a las"
+            ],
+            [
+              "İki saat bekledim. Esperé ___ dos horas.",
+              "durante"
+            ]
+          ],
+          "transfer": [
+            [
+              "Çizelgede teslim saati 9.00. Teslim zamanını bir İspanyolca cümleyle yaz.",
+              "La entrega fue a las nueve.",
+              "La entrega se hizo a las nueve."
+            ],
+            [
+              "On dakika çalıştık. Trabajamos ___ diez minutos.",
+              "durante"
+            ]
+          ],
+          "delayed": [
+            [
+              "Otobüs bekleyişin bir saat sürdü. Bekleyiş süreni tam cümleyle yaz.",
+              "Esperé el autobús durante una hora.",
+              "Esperé el autobús una hora.",
+              "Esperé al autobús durante una hora."
+            ],
+            [
+              "Etkinlik saat ikide bitti. Terminó ___ dos.",
+              "a las"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "orden de los hechos",
+        "meaning": "olayların sırası",
+        "example": "El informe muestra el orden de los hechos.",
+        "usage": "Olayların önce ve sonra nasıl gerçekleştiği.",
+        "pronunciation": "/ˈoɾðen ðe los ˈetʃos/",
+        "collocations": [
+          "explicar el orden de los hechos",
+          "anotar el orden de los hechos"
+        ],
+        "recognize": [
+          "“orden de los hechos” bu bağlamda ne demek?",
+          "olayların sırası",
+          "fiyat listesi",
+          "yer değişikliği",
+          "Olayların önce ve sonra nasıl gerçekleştiği."
+        ],
+        "recall": [
+          "“olayların sırası” anlamındaki İspanyolca ifadeyi yaz.",
+          "orden de los hechos"
+        ],
+        "use": "Geciken bir teslimin olay sırasını belirt."
+      },
+      "additionalWords": [
+        {
+          "term": "al rato",
+          "meaning": "bir süre sonra",
+          "example": "Al rato llegó el autobús.",
+          "usage": "Kesin süre vermeden kısa bir aradan sonraki olayı bildirir.",
+          "pronunciation": "/al ˈrato/",
+          "collocations": [
+            "volver al rato",
+            "llegar al rato"
+          ],
+          "recognize": [
+            "“al rato” bu bağlamda ne demek?",
+            "bir süre sonra",
+            "önceki gün",
+            "tam saatinde",
+            "Kesin süre vermeden kısa bir aradan sonraki olayı bildirir."
+          ],
+          "recall": [
+            "“bir süre sonra” anlamındaki İspanyolca ifadeyi yaz.",
+            "al rato"
+          ],
+          "use": "Bir konuşmadan kısa süre sonra ne olduğunu söyle."
+        },
+        {
+          "term": "apuntar la hora",
+          "meaning": "saati not etmek",
+          "example": "Apunté la hora de la llegada.",
+          "usage": "Olayın saatini yazılı olarak kaydetmek.",
+          "pronunciation": "/apunˈtaɾ la ˈoɾa/",
+          "collocations": [
+            "apuntar la hora exacta",
+            "apuntar la hora de salida"
+          ],
+          "recognize": [
+            "“apuntar la hora” bu bağlamda ne demek?",
+            "saati not etmek",
+            "saati değiştirmek",
+            "alarmı çalmak",
+            "Olayın saatini yazılı olarak kaydetmek."
+          ],
+          "recall": [
+            "“saati not etmek” anlamındaki İspanyolca ifadeyi yaz.",
+            "apuntar la hora"
+          ],
+          "use": "Bir görevliye varış saatini not etmesini iste."
+        },
+        {
+          "term": "media hora",
+          "meaning": "yarım saat",
+          "example": "La espera duró media hora.",
+          "usage": "Otuz dakikalık süre.",
+          "pronunciation": "/ˈmeðja ˈoɾa/",
+          "collocations": [
+            "esperar media hora",
+            "durar media hora"
+          ],
+          "recognize": [
+            "“media hora” bu bağlamda ne demek?",
+            "yarım saat",
+            "bir buçuk saat",
+            "üç dakika",
+            "Otuz dakikalık süre."
+          ],
+          "recall": [
+            "“yarım saat” anlamındaki İspanyolca ifadeyi yaz.",
+            "media hora"
+          ],
+          "use": "Bir randevunun yarım saat sürdüğünü bildir."
+        },
+        {
+          "term": "recoger un paquete",
+          "meaning": "paketi teslim almak",
+          "example": "Recogí un paquete en la oficina.",
+          "usage": "Bekleyen bir paketi gidip almak.",
+          "pronunciation": "/rekoˈxeɾ um paˈkete/",
+          "collocations": [
+            "recoger un paquete en persona",
+            "ir a recoger un paquete"
+          ],
+          "recognize": [
+            "“recoger un paquete” bu bağlamda ne demek?",
+            "paketi teslim almak",
+            "paketi göndermek",
+            "kargo ücretini kesmek",
+            "Bekleyen bir paketi gidip almak."
+          ],
+          "recall": [
+            "“paketi teslim almak” anlamındaki İspanyolca ifadeyi yaz.",
+            "recoger un paquete"
+          ],
+          "use": "Paketi hangi işten önce aldığını söyle."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "registro",
+          "cue": "olay kaydı"
+        }
+      ],
+      "writing": {
+        "prompt": "Dün 09.00’da bir paket aldın, 09.30’da danışmada beklemeye başladın ve 10.00’da bir arkadaşınla görüştün. Kaydı üç cümleyle aktar ve bekleme süresini ver.",
+        "sample": "Primero recogí un paquete a las nueve. Luego esperé en recepción durante media hora. Al final hablé con una amiga a las diez.",
+        "revision": "Bu kez önce arkadaşınla görüştün, sonra başka yerde sıra bekledin. İki saati ve olay sırasını güncelle.",
+        "criteria": [
+          "Üç olay kayıttaki sırada.",
+          "En az bir saat noktası ve bir süre ayrılmış."
+        ]
+      },
+      "input": {
+        "text": "Registro del martes. A las nueve recogí un paquete. Luego esperé media hora en la oficina. Al final hablé con Eva a las diez.",
+        "reading": [
+          "Eva ile görüşme ne zaman?",
+          "Onda",
+          "Dokuzda",
+          "Dokuz buçukta",
+          "Son cümle görüşme saatini veriyor.",
+          "hablé con Eva a las diez"
+        ],
+        "transcript": "— Primero fui al mercado. Luego llevé la compra a casa. Al rato salí otra vez para ver a Leo.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "İlk gittiği yer neresi?",
+          "Pazar",
+          "Ev",
+          "Leo’nun yanı",
+          "Primero ilk gidilen yeri işaretliyor.",
+          "Primero fui al mercado"
+        ],
+        "detail": [
+          "Ne zaman tekrar dışarı çıktı?",
+          "Bir süre sonra",
+          "Hemen",
+          "Önceki gün",
+          "Al rato yaklaşık bir süre verir.",
+          "Al rato salí otra vez"
+        ]
+      },
+      "retry": {
+        "text": "A las ocho llegó el autobús. El viaje duró media hora. Luego esperé en la estación durante diez minutos.",
+        "reading": [
+          "Yolculuk ne kadar sürdü?",
+          "Yarım saat",
+          "On dakika",
+          "Sekiz saat",
+          "Yolculuk süresi bekleyiş süresinden ayrı.",
+          "El viaje duró media hora"
+        ],
+        "transcript": "— A las cinco llamé a Sara. Luego preparé las bolsas. Al final salí a las seis.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Sara’yı ne zaman aradı?",
+          "Beşte",
+          "Altıda",
+          "Yarım saat sonra",
+          "İlk cümle aramayı saatle bağlıyor.",
+          "A las cinco llamé a Sara"
+        ],
+        "detail": [
+          "Son eylem neydi?",
+          "Evden çıkmak",
+          "Sara’yı aramak",
+          "Çanta hazırlamak",
+          "Al final son olayı ayırır.",
+          "Al final salí"
+        ]
+      },
+      "readingUse": "Çizelgeyi bir arkadaşına sırayla anlat ve bekleme süresini ekle.",
+      "listeningUse": "Bir arkadaşın dünkü sıralamayı yanlış anladı. Üç olayı ve bir sürenin uzunluğunu düzelterek anlat.",
+      "speaking": "Bir arkadaşın dünkü sıralamayı yanlış anladı. Üç olayı ve bir sürenin uzunluğunu düzelterek anlat.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Hangi hareketten söz edildiğini bul. Bir saat noktasıyla sürenin uzunluğunu farklı işaretle.",
+        "main": "Llamé ile aynı cümledeki saati bul.",
+        "detail": "Al final sonrası eyleme odaklan."
+      },
+      "approach": "sequence",
+      "readingPurpose": "Saat sırasını izle ve bir işlemin süresini başlangıç saatinden ayır.",
+      "genres": {
+        "reading": "saatli olay günlüğü",
+        "listening": "geçmiş gün aktarımı",
+        "writing": "olay sıralaması"
+      }
+    },
+    {
+      "id": "es.retraso-servicio",
+      "outcome": "A2.retraso-servicio",
+      "level": "A2",
+      "prerequisite": [
+        "es.orden-incidente"
+      ],
+      "title": "Gecikmenin nedenini ve sonucunu hizmet görevlisine bildir",
+      "objective": "Bir seyahat veya randevu gecikmesinin nedenini açıklayıp sonraki eylemi belirt.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Porque ile cümle, por ile isim halinde neden ver",
+        "Por eso ile sonucu belirt"
+      ],
+      "situation": "Bir ulaşım aksaklığı nedeniyle bir hizmete veya randevuya zamanında yetişemedin. Görevliye kısa bir açıklama yazıyorsun.",
+      "bridge": "Porque ardından neden cümlesi gelir. Por + isim daha kısa bir neden verir. Por eso, önceki olayın ardından ne yapıldığını bildirir.",
+      "models": [
+        {
+          "phrase": "Llegué tarde porque perdí el autobús.",
+          "explanation": "Porque sonrası gecikmenin nedenini açıklar."
+        },
+        {
+          "phrase": "La puerta estaba cerrada. Por eso llamé a recepción.",
+          "explanation": "Por eso, kapının kapalı olmasının sonucunu bildirir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Porque ile cümle, por ile isim halinde neden ver",
+          "incorrect": "Llegué tarde por se retrasó el tren.",
+          "correct": "Llegué tarde porque se retrasó el tren.",
+          "explanation": "Çekimli fiili olan neden için porque, isimle kısa neden için por kullan.",
+          "guided": [
+            [
+              "Cümle nedeni: No fui ___ estaba enfermo.",
+              "porque"
+            ],
+            [
+              "İsim nedeni: No salimos ___ la lluvia.",
+              "por"
+            ]
+          ],
+          "transfer": [
+            [
+              "Tren rötar yaptığı için geç kaldığını bir İspanyolca cümleyle açıkla.",
+              "Llegué tarde porque se retrasó el tren.",
+              "Llegué tarde porque el tren se retrasó."
+            ],
+            [
+              "Ofis tadilat nedeniyle kapalı: La oficina está cerrada ___ obras.",
+              "por"
+            ]
+          ],
+          "delayed": [
+            [
+              "Randevu saati karıştığı için danışmaya telefon ettiğini tam cümleyle yaz.",
+              "Llamé a recepción porque me equivoqué de hora.",
+              "Llamé a recepción porque confundí la hora."
+            ],
+            [
+              "Otobüs trafik nedeniyle geç geldi: El autobús llegó tarde ___ el tráfico.",
+              "por"
+            ]
+          ]
+        },
+        {
+          "label": "Por eso ile sonucu belirt",
+          "incorrect": "La consulta estaba cerrada. Porque pedí otra cita.",
+          "correct": "La consulta estaba cerrada. Por eso pedí otra cita.",
+          "explanation": "Por eso, önceki nedeni bildirdikten sonra o nedenin sonucuna geçer.",
+          "guided": [
+            [
+              "La máquina no funcionaba. ___ fui a la ventanilla.",
+              "Por eso"
+            ],
+            [
+              "Perdí el billete. ___ pedí otro.",
+              "Por eso"
+            ]
+          ],
+          "transfer": [
+            [
+              "El metro estaba cerrado. Sonucu ekle: “Bu yüzden taksiye bindim.”",
+              "Por eso tomé un taxi.",
+              "Por eso cogí un taxi."
+            ],
+            [
+              "Llegó tarde el repartidor. ___ cambié la hora de la visita.",
+              "Por eso"
+            ]
+          ],
+          "delayed": [
+            [
+              "Orijinal belgeyi getirmedin. Sonucu ekle: “Bu yüzden eve geri döndüm.”",
+              "Por eso volví a casa.",
+              "Por eso regresé a casa."
+            ],
+            [
+              "El centro no abrió el martes. ___ volví el miércoles.",
+              "Por eso"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "llegar con retraso",
+        "meaning": "gecikmeli varmak",
+        "example": "El tren llegó con retraso al centro.",
+        "usage": "Beklenen saatten sonra varmak.",
+        "pronunciation": "/ʎeˈɣaɾ kon reˈtɾaso/",
+        "collocations": [
+          "llegar con retraso de diez minutos",
+          "avisar que vas a llegar con retraso"
+        ],
+        "recognize": [
+          "“llegar con retraso” bu bağlamda ne demek?",
+          "gecikmeli varmak",
+          "erken gelmek",
+          "yolunu kaybetmek",
+          "Beklenen saatten sonra varmak."
+        ],
+        "recall": [
+          "“gecikmeli varmak” anlamındaki İspanyolca ifadeyi yaz.",
+          "llegar con retraso"
+        ],
+        "use": "Bir görevliye gecikmeli varacağını haber ver."
+      },
+      "additionalWords": [
+        {
+          "term": "perder el autobús",
+          "meaning": "otobüsü kaçırmak",
+          "example": "Perdí el autobús de las siete.",
+          "usage": "Kalkışı zamanında yakalayamamak.",
+          "pronunciation": "/peɾˈðeɾ el awtoˈβus/",
+          "collocations": [
+            "perder el último autobús",
+            "perder el autobús por poco"
+          ],
+          "recognize": [
+            "“perder el autobús” bu bağlamda ne demek?",
+            "otobüsü kaçırmak",
+            "otobüsü beklemek",
+            "bilet değiştirmek",
+            "Kalkışı zamanında yakalayamamak."
+          ],
+          "recall": [
+            "“otobüsü kaçırmak” anlamındaki İspanyolca ifadeyi yaz.",
+            "perder el autobús"
+          ],
+          "use": "Hangi otobüsü kaçırdığını belirt."
+        },
+        {
+          "term": "aviso de retraso",
+          "meaning": "gecikme bildirimi",
+          "example": "Vi un aviso de retraso en el móvil.",
+          "usage": "Gecikme olacağını bildiren kısa ileti.",
+          "pronunciation": "/aˈβiso ðe reˈtɾaso/",
+          "collocations": [
+            "enviar un aviso de retraso",
+            "recibir un aviso de retraso"
+          ],
+          "recognize": [
+            "“aviso de retraso” bu bağlamda ne demek?",
+            "gecikme bildirimi",
+            "erken çıkış",
+            "iptal ücreti",
+            "Gecikme olacağını bildiren kısa ileti."
+          ],
+          "recall": [
+            "“gecikme bildirimi” anlamındaki İspanyolca ifadeyi yaz.",
+            "aviso de retraso"
+          ],
+          "use": "Bir iş arkadaşına gecikme bildirimi gönder."
+        },
+        {
+          "term": "obras en la calle",
+          "meaning": "sokakta yol çalışması",
+          "example": "Hay obras en la calle Mayor.",
+          "usage": "Sokakta geçişi etkileyebilen yapım veya onarım işleri.",
+          "pronunciation": "/ˈoβɾas en la ˈkaʎe/",
+          "collocations": [
+            "pasar por obras en la calle",
+            "evitar una calle en obras"
+          ],
+          "recognize": [
+            "“obras en la calle” bu bağlamda ne demek?",
+            "sokakta yol çalışması",
+            "sokak pazarı",
+            "açılış töreni",
+            "Sokakta geçişi etkileyebilen yapım veya onarım işleri."
+          ],
+          "recall": [
+            "“sokakta yol çalışması” anlamındaki İspanyolca ifadeyi yaz.",
+            "obras en la calle"
+          ],
+          "use": "Bir ziyaretçiye neden başka bir sokaktan gittiğini söyle."
+        },
+        {
+          "term": "perder la cita",
+          "meaning": "randevuyu kaçırmak",
+          "example": "Perdí la cita porque llegué tarde.",
+          "usage": "Zamanında gelemediğin için randevunun geçmesi.",
+          "pronunciation": "/peɾˈðeɾ la ˈθita/",
+          "collocations": [
+            "evitar perder la cita",
+            "perder la cita de la mañana"
+          ],
+          "recognize": [
+            "“perder la cita” bu bağlamda ne demek?",
+            "randevuyu kaçırmak",
+            "randevuyu teyit etmek",
+            "sıra numarası almak",
+            "Zamanında gelemediğin için randevunun geçmesi."
+          ],
+          "recall": [
+            "“randevuyu kaçırmak” anlamındaki İspanyolca ifadeyi yaz.",
+            "perder la cita"
+          ],
+          "use": "Görevliye randevuyu neden kaçırdığını ve ne istediğini açıkla."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "desvío",
+          "cue": "alternatif yol"
+        }
+      ],
+      "writing": {
+        "prompt": "Yol çalışması nedeniyle otobüs geç geldi. Danışmaya randevuyu kaçırdığını söyle ve yeni saat iste. İspanyolca üç kısa cümle yaz.",
+        "sample": "El autobús llegó tarde por las obras. Por eso perdí la cita. ¿Hay otra hora hoy?",
+        "revision": "Bu kez treni kaçırdın ama randevuna geç de olsa gidebilirsin. Neden ve istediğin değişikliği yeniden yaz.",
+        "criteria": [
+          "Gecikmenin nedeni ile sonucu doğru ayrılmış.",
+          "Hizmet noktasına uygulanabilir bir istek yöneltilmiş."
+        ]
+      },
+      "input": {
+        "text": "Aviso del centro. Hay obras en la calle Mayor y los autobuses toman un desvío. Varios usuarios llegaron tarde. El centro ofrece horas nuevas.",
+        "reading": [
+          "Otobüsler neden farklı yola giriyor?",
+          "Yol çalışması yüzünden",
+          "Otogar kapalı",
+          "Bilet satılmıyor",
+          "İlk cümle çalışmayı ve alternatif yolu bağlıyor.",
+          "Hay obras en la calle Mayor"
+        ],
+        "transcript": "— Llegué tarde porque el tren se retrasó. — ¿Perdiste la cita? — Sí. Por eso pedí otra hora para mañana.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Gecikmenin nedeni nedir?",
+          "Tren gecikti",
+          "Randevu iptal oldu",
+          "Görevli geç geldi",
+          "Porque sonrasında ulaşım sorunu var.",
+          "el tren se retrasó"
+        ],
+        "detail": [
+          "Kişi ne yaptı?",
+          "Yarın için yeni saat istedi",
+          "Bilet aldı",
+          "Aynı saati teyit etti",
+          "Por eso sonrasında yeni eylem var.",
+          "pedí otra hora para mañana"
+        ]
+      },
+      "retry": {
+        "text": "La oficina cerró antes por obras. Fui a la ventanilla de la entrada y me dieron un turno para el jueves.",
+        "reading": [
+          "Ofis neden erken kapandı?",
+          "Tadilat nedeniyle",
+          "Perşembe olduğu için",
+          "Gişe kapalı olduğu için",
+          "Por kısa nedeni bildiriyor.",
+          "cerró antes por obras"
+        ],
+        "transcript": "— No pude llegar a tiempo porque había mucho tráfico. Por eso llamé antes de salir del taxi. — Tenemos un turno a las cuatro.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Neden zamanında varamadı?",
+          "Trafik",
+          "Taksi arızası",
+          "Randevuyu unutma",
+          "Nedeni veren söz çünküden sonra.",
+          "porque había mucho tráfico"
+        ],
+        "detail": [
+          "Görevli hangi saati öneriyor?",
+          "Dört",
+          "Üç",
+          "İki",
+          "Son cümle yeni zamanı verir.",
+          "turno a las cuatro"
+        ]
+      },
+      "readingUse": "Ofisin değişikliğini birine anlat ve gecikirse izlenecek adımı yaz.",
+      "listeningUse": "Görevliye neden geciktiğini bildir. Yardım seçeneklerinden birini iste ve önerilen saati geri söyle.",
+      "speaking": "Görevliye neden geciktiğini bildir. Yardım seçeneklerinden birini iste ve önerilen saati geri söyle.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Kapanışın sebebiyle sonradan yapılan işlemi ayır.",
+        "main": "Porque sonrasındaki durumu ara.",
+        "detail": "Görevlinin son cümlesinde verilen saati bul."
+      },
+      "approach": "sequence",
+      "readingPurpose": "İlk aksaklık ve sonuçta önerilen adımı farklı satırlarda belirle.",
+      "genres": {
+        "reading": "gecikme duyurusu",
+        "listening": "hizmet telafisi diyaloğu",
+        "writing": "gecikme açıklaması"
+      }
+    },
+    {
+      "id": "es.cita-servicio",
+      "outcome": "A2.cita-servicio",
+      "level": "A2",
+      "prerequisite": [
+        "es.cambiar-plan"
+      ],
+      "title": "Hizmet randevusu al ve gerektiğinde değiştir",
+      "objective": "Belirli amaçla randevu iste, saat teyidi al ve aynı randevudan söz ederken nesne zamiri kullan.",
+      "audioMode": "script-practice",
+      "grammarStrands": [
+        "Hizmetin amacı ile randevu gününü ayır",
+        "Randevuyu la, sırayı lo ile geri çağır"
+      ],
+      "situation": "Bir onarım noktasından, danışmadan veya klinikten randevu istiyorsun. İlk seçenek sana uymuyor.",
+      "bridge": "Para + mastar randevunun amacını, para el + gün veya para las + saat randevunun zamanını belirtir. Bilinen la cita için la, el turno için lo kullan.",
+      "models": [
+        {
+          "phrase": "Necesito una cita para recoger mi tarjeta.",
+          "explanation": "Para recoger randevunun ne için olduğunu söyler."
+        },
+        {
+          "phrase": "Tengo una cita el lunes. ¿La puedo cambiar al martes?",
+          "explanation": "La, daha önce söz edilen cita yerine geçer. Puedo cambiarla biçimi de kullanılabilir."
+        }
+      ],
+      "concepts": [
+        {
+          "label": "Hizmetin amacı ile randevu gününü ayır",
+          "incorrect": "Necesito una cita por recoger el informe.",
+          "correct": "Necesito una cita para recoger el informe.",
+          "explanation": "Amaç için para + mastar. Gün için para el + gün, saat için para las + saat kullan.",
+          "guided": [
+            [
+              "Belgeyi almak için: Necesito una cita ___ recoger el informe.",
+              "para"
+            ],
+            [
+              "Salı günü için: Quiero una cita ___ martes.",
+              "para el"
+            ]
+          ],
+          "transfer": [
+            [
+              "Kartını yenilemek için randevu iste. İspanyolca bir cümle yaz.",
+              "Necesito una cita para renovar mi tarjeta.",
+              "Quiero una cita para renovar mi tarjeta."
+            ],
+            [
+              "Saat dört randevusu: ¿Hay alguna cita ___ cuatro?",
+              "para las"
+            ]
+          ],
+          "delayed": [
+            [
+              "Evrak teslim etmek için bir randevu iste.",
+              "Necesito una cita para entregar los documentos.",
+              "Quiero una cita para entregar los documentos."
+            ],
+            [
+              "Perşembe gününe randevu iste: Me gustaría una cita ___ jueves.",
+              "para el"
+            ]
+          ]
+        },
+        {
+          "label": "Randevuyu la, sırayı lo ile geri çağır",
+          "incorrect": "Tengo una cita. ¿Lo puedo cambiar?",
+          "correct": "Tengo una cita. ¿La puedo cambiar?",
+          "explanation": "La cita için la, el turno için lo. Poder ile zamir çekimli fiilden önce ya da mastarın sonuna gelir.",
+          "guided": [
+            [
+              "El turno está confirmado. ¿___ puedo cambiar?",
+              "Lo"
+            ],
+            [
+              "La cita es a las once. ¿Puedo cambiar___?",
+              "la"
+            ]
+          ],
+          "transfer": [
+            [
+              "Pazartesi randevusunu salıya almak istiyorsun. Cita sözcüğünü tekrar etmeden bir soru yaz.",
+              "¿La puedo cambiar al martes?",
+              "¿Puedo cambiarla al martes?"
+            ],
+            [
+              "Bir sıra belli. ¿___ puedo confirmar por correo?",
+              "Lo"
+            ]
+          ],
+          "delayed": [
+            [
+              "Daha önce konuşulan randevuyu öğleden sonraya aldırmak için nesne zamirli soru yaz.",
+              "¿La puedo cambiar a la tarde?",
+              "¿Puedo cambiarla para la tarde?",
+              "¿La puedo cambiar para la tarde?"
+            ],
+            [
+              "El turno es para hoy. Quieres confirmarlo. ¿Puedo confirmar___?",
+              "lo"
+            ]
+          ]
+        }
+      ],
+      "word": {
+        "term": "pedir cita",
+        "meaning": "randevu istemek",
+        "example": "Necesito pedir cita para una revisión.",
+        "usage": "Bir hizmet için önceden görüşme saati almak.",
+        "pronunciation": "/peˈðiɾ ˈθita/",
+        "collocations": [
+          "pedir cita por teléfono",
+          "pedir cita para mañana"
+        ],
+        "recognize": [
+          "“pedir cita” bu bağlamda ne demek?",
+          "randevu istemek",
+          "randevuyu iptal etmek",
+          "numara ezberlemek",
+          "Bir hizmet için önceden görüşme saati almak."
+        ],
+        "recall": [
+          "“randevu istemek” anlamındaki İspanyolca ifadeyi yaz.",
+          "pedir cita"
+        ],
+        "use": "Belirli bir işlem için danışmadan randevu iste."
+      },
+      "additionalWords": [
+        {
+          "term": "hueco libre",
+          "meaning": "boş zaman aralığı",
+          "example": "Hay un hueco libre a las cuatro.",
+          "usage": "Takvimde henüz ayrılmamış zaman.",
+          "pronunciation": "/ˈweko ˈliβɾe/",
+          "collocations": [
+            "buscar un hueco libre",
+            "tener un hueco libre"
+          ],
+          "recognize": [
+            "“hueco libre” bu bağlamda ne demek?",
+            "boş zaman aralığı",
+            "kaçırılmış randevu",
+            "çalışma molası",
+            "Takvimde henüz ayrılmamış zaman."
+          ],
+          "recall": [
+            "“boş zaman aralığı” anlamındaki İspanyolca ifadeyi yaz.",
+            "hueco libre"
+          ],
+          "use": "Danışmaya bugün boş zaman aralığı olup olmadığını sor."
+        },
+        {
+          "term": "cambiar de fecha",
+          "meaning": "tarihi değiştirmek",
+          "example": "Tengo que cambiar de fecha porque trabajo el jueves.",
+          "usage": "Bir işi daha farklı bir tarihe taşımak.",
+          "pronunciation": "/kamˈbjaɾ ðe ˈfetʃa/",
+          "collocations": [
+            "querer cambiar de fecha",
+            "poder cambiar de fecha"
+          ],
+          "recognize": [
+            "“cambiar de fecha” bu bağlamda ne demek?",
+            "tarihi değiştirmek",
+            "saati ezberlemek",
+            "belgeyi yenilemek",
+            "Bir işi daha farklı bir tarihe taşımak."
+          ],
+          "recall": [
+            "“tarihi değiştirmek” anlamındaki İspanyolca ifadeyi yaz.",
+            "cambiar de fecha"
+          ],
+          "use": "Mevcut rezervasyon tarihinin neden uymadığını belirt."
+        },
+        {
+          "term": "confirmación de cita",
+          "meaning": "randevu teyidi",
+          "example": "La confirmación de cita llegó por correo.",
+          "usage": "Randevu gün ve saatini doğrulayan mesaj.",
+          "pronunciation": "/konfiɾmaˈθjon ðe ˈθita/",
+          "collocations": [
+            "enviar la confirmación de cita",
+            "recibir la confirmación de cita"
+          ],
+          "recognize": [
+            "“confirmación de cita” bu bağlamda ne demek?",
+            "randevu teyidi",
+            "iade talebi",
+            "kayıp bilet",
+            "Randevu gün ve saatini doğrulayan mesaj."
+          ],
+          "recall": [
+            "“randevu teyidi” anlamındaki İspanyolca ifadeyi yaz.",
+            "confirmación de cita"
+          ],
+          "use": "Görevliden randevuyu yazılı teyit etmesini iste."
+        },
+        {
+          "term": "presentar un documento",
+          "meaning": "belge sunmak",
+          "example": "Hay que presentar un documento en recepción.",
+          "usage": "Bir belgeyi kontrol veya işlem için görevliye vermek.",
+          "pronunciation": "/pɾesenˈtaɾ un dokuˈmento/",
+          "collocations": [
+            "presentar un documento válido",
+            "presentar un documento en ventanilla"
+          ],
+          "recognize": [
+            "“presentar un documento” bu bağlamda ne demek?",
+            "belge sunmak",
+            "belgeyi gizlemek",
+            "telefon numarasını çevirmek",
+            "Bir belgeyi kontrol veya işlem için görevliye vermek."
+          ],
+          "recall": [
+            "“belge sunmak” anlamındaki İspanyolca ifadeyi yaz.",
+            "presentar un documento"
+          ],
+          "use": "Randevuya hangi belgeyi götüreceğini teyit et."
+        }
+      ],
+      "receptive": [
+        {
+          "term": "Recepción",
+          "cue": "danışma"
+        }
+      ],
+      "writing": {
+        "prompt": "Danışmaya kartını yenilemek için randevu istediğini yaz. Pazartesi saat on bir uymuyor. Cita sözcüğünü tekrarlamadan salı günü için başka saat iste.",
+        "sample": "Necesito una cita para renovar mi tarjeta. El lunes a las once no puedo. ¿La puedo cambiar al martes por la tarde?",
+        "revision": "Bu kez salı kapalı. Bir başka gün öner ve yanına hangi belgeyi getirmen gerektiğini sor.",
+        "criteria": [
+          "Randevunun amacı ve istenen yeni zaman açık.",
+          "Önceki randevu la zamiriyle geri çağrılıyor."
+        ]
+      },
+      "input": {
+        "text": "Recepción del centro. Para renovar la tarjeta, pide cita. Hay un hueco libre el martes a las cuatro. Trae un documento de identidad.",
+        "reading": [
+          "Hangi işlem için randevu alınmalı?",
+          "Kart yenileme",
+          "Kayıt fişi doldurma",
+          "E-posta iletme",
+          "İlk talimat randevunun amacını veriyor.",
+          "Para renovar la tarjeta"
+        ],
+        "transcript": "— Tengo una cita el lunes. ¿La puedo cambiar? — Sí. Hay un hueco el jueves a las tres. — Gracias, lo apunto.",
+        "preparation": "Konuşma metnini okuyup ilk istek ile son yanıtı ayır.",
+        "main": [
+          "Yeni gün hangisi?",
+          "Perşembe",
+          "Pazartesi",
+          "Cuma",
+          "Görevli cevabında randevunun kaydırıldığı günü söylüyor.",
+          "el jueves a las tres"
+        ],
+        "detail": [
+          "Yeni randevu kaçta?",
+          "Üçte",
+          "Dörtte",
+          "Onda",
+          "Perşembe cümlesi saatini de veriyor.",
+          "a las tres"
+        ]
+      },
+      "retry": {
+        "text": "Para la revisión, el primer turno es el miércoles a las diez. El jueves no hay huecos.",
+        "reading": [
+          "İlk sıra hangi gün?",
+          "Çarşamba",
+          "Perşembe",
+          "Salı",
+          "İlk cümle ilk sıra bilgisini taşıyor.",
+          "el miércoles a las diez"
+        ],
+        "transcript": "— Tengo una cita para recoger el informe. ¿Puedo cambiarla a las cinco? — Sí, a las cinco en recepción.",
+        "preparation": "Yeni konuşmanın yer, saat veya kişisindeki değişikliğe dikkat et.",
+        "main": [
+          "Randevu ne için?",
+          "Raporu almak",
+          "Kimlik yenilemek",
+          "Belgeyi imzalamak",
+          "Para sonrasındaki eylem amacı verir.",
+          "para recoger el informe"
+        ],
+        "detail": [
+          "Beşte nereye gitmeli?",
+          "Danışmaya",
+          "Kütüphaneye",
+          "İstasyona",
+          "Son yanıttaki yer bilgisine bak.",
+          "a las cinco en recepción"
+        ]
+      },
+      "readingUse": "Bir ziyaretçiye randevu amacını, zamanı ve yanına alacağı belgeyi aktar.",
+      "listeningUse": "Görevliye randevu isteğinin amacını söyle. İlk saat uymuyorsa yeni bir saat iste ve yeri teyit et.",
+      "speaking": "Görevliye randevu isteğinin amacını söyle. İlk saat uymuyorsa yeni bir saat iste ve yeri teyit et.",
+      "speakingContext": "daily_conversation",
+      "recovery": {
+        "reading": "Her gün için randevu seçeneği var mı, varsa ne zaman, ayrı kontrol et.",
+        "main": "Para sonrasındaki mastarı bul.",
+        "detail": "Yeni saatin hemen ardından belirtilen yer adını ara."
+      },
+      "approach": "dialogue",
+      "readingPurpose": "Randevunun amacını, yeni saati ve gereken belgeyi ayır.",
+      "genres": {
+        "reading": "danışma notu",
+        "listening": "randevu diyaloğu",
+        "writing": "randevu talebi"
+      }
+    }
+  ]
+}

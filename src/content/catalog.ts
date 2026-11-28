@@ -29,6 +29,9 @@ import { spanishCourse, spanishLegacyCourse } from './curriculum/es'
 import { registerVocabularySenses } from './vocabulary'
 import vocabularyPhase5 from './vocabulary-phase-5.json' with { type: 'json' }
 import vocabularyPhase5Second from './vocabulary-phase-5-second.json' with { type: 'json' }
+import vocabularyMvp2bFirstWave from './vocabulary-mvp2b-first-wave.json' with { type: 'json' }
+import vocabularyEsMvp2bFirstWave from './vocabulary-es-mvp2b-first-wave.json' with { type: 'json' }
+import vocabularyRuMvp2bFirstWave from './vocabulary-ru-mvp2b-first-wave.json' with { type: 'json' }
 import vocabularyPilot from './vocabulary-pilot.json' with { type: 'json' }
 
 export function publishCourse(data: unknown): Course {
@@ -100,4 +103,7 @@ export function createCatalog(packs: typeof packedLessons): Record<Language, Cou
 
 export const catalog = createCatalog(packedLessons)
 // The raw Node catalog used by Playwright fixtures has no Vite pack loader.
-registerVocabularySenses(catalog, import.meta.env ? [...vocabularyPilot, ...vocabularyPhase5, ...vocabularyPhase5Second] : vocabularyPilot)
+registerVocabularySenses(catalog, import.meta.env
+  ? [...vocabularyPilot, ...vocabularyPhase5, ...vocabularyPhase5Second,
+      ...vocabularyMvp2bFirstWave, ...vocabularyEsMvp2bFirstWave, ...vocabularyRuMvp2bFirstWave]
+  : vocabularyPilot)
